@@ -2,8 +2,19 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: 00.index
+title: ECON2125/6012
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+- file: 01.introduction
+- file: 02.optimization_intro
+- file: 03.set_theory
+- file: 04.linear_algebra
+- file: 05.probability
+- file: 06.optimization_fundamentals
+- file: 07.unconstrained
+- file: 08.constrained
+- file: 09.practical_session
+- file: 10.envelope_maximum
+- file: 11.dynamic
+- file: 12.revision
+

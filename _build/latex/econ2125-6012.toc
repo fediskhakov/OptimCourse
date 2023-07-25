@@ -1,0 +1,30 @@
+\selectlanguage *{english}
+\contentsline {chapter}{\numberline {1}Welcome}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Plan for this lecture}{5}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Instructor}{7}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Timetable}{9}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Course web pages}{11}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Tutorials}{13}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Tutors}{15}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Prerequisites}{17}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Focus?}{19}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Assessment}{21}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Questions}{23}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Attendance}{25}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Comments for lectures notes/slides}{27}{chapter.13}%
+\contentsline {chapter}{\numberline {14}Definitions and facts}{29}{chapter.14}%
+\contentsline {chapter}{\numberline {15}Facts}{31}{chapter.15}%
+\contentsline {chapter}{\numberline {16}Note on Assessments}{33}{chapter.16}%
+\contentsline {chapter}{\numberline {17}Reading materials}{35}{chapter.17}%
+\contentsline {chapter}{\numberline {18}Key points for the administrative part}{37}{chapter.18}%
+\contentsline {chapter}{\numberline {19}Optimization intro, examples}{39}{chapter.19}%
+\contentsline {chapter}{\numberline {20}Elements of set theory and analysis}{41}{chapter.20}%
+\contentsline {chapter}{\numberline {21}Elements of linear algebra}{43}{chapter.21}%
+\contentsline {chapter}{\numberline {22}Elements of Probability}{45}{chapter.22}%
+\contentsline {chapter}{\numberline {23}Fundamentals of optimization}{47}{chapter.23}%
+\contentsline {chapter}{\numberline {24}Unconstrained optimization}{49}{chapter.24}%
+\contentsline {chapter}{\numberline {25}Constrained optimization}{51}{chapter.25}%
+\contentsline {chapter}{\numberline {26}Practical session}{53}{chapter.26}%
+\contentsline {chapter}{\numberline {27}Envelope and maximum theorems}{55}{chapter.27}%
+\contentsline {chapter}{\numberline {28}Dynamic optimization}{57}{chapter.28}%
+\contentsline {chapter}{\numberline {29}Revision}{59}{chapter.29}%
