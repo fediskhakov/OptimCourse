@@ -47,7 +47,7 @@ parse:
     - strikethrough
   myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
   myst_dmath_double_inline: true  # Allow display math ($$) within an inline context
-  myst_heading_anchors: 2 
+  myst_heading_anchors: 3 
   # myst_substitutions:
     # DEFINITION: |
     #   ```{admonition} Definition
