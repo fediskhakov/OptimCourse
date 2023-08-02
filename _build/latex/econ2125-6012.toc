@@ -1,0 +1,45 @@
+\selectlanguage *{english}
+\contentsline {chapter}{\numberline {1}Welcome}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Plan for this lecture}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Instructor}{3}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Timetable}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Course web pages}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Tutorials}{4}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Tutors}{4}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Prerequisites}{4}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Focus?}{5}{section.1.8}%
+\contentsline {section}{\numberline {1.9}Assessment}{5}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Questions}{5}{section.1.10}%
+\contentsline {section}{\numberline {1.11}Attendance}{5}{section.1.11}%
+\contentsline {section}{\numberline {1.12}Comments for lectures notes/slides}{6}{section.1.12}%
+\contentsline {section}{\numberline {1.13}Definitions and facts}{6}{section.1.13}%
+\contentsline {section}{\numberline {1.14}Facts}{6}{section.1.14}%
+\contentsline {section}{\numberline {1.15}Note on Assessments}{7}{section.1.15}%
+\contentsline {section}{\numberline {1.16}Reading materials}{7}{section.1.16}%
+\contentsline {section}{\numberline {1.17}Key points for the administrative part}{8}{section.1.17}%
+\contentsline {section}{\numberline {1.18}What you will learn in the course}{8}{section.1.18}%
+\contentsline {section}{\numberline {1.19}Further material and self\sphinxhyphen {}learning}{8}{section.1.19}%
+\contentsline {chapter}{\numberline {2}Univariate and bivariate optimization}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Announcements \& Reminders}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Plan for this lecture}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Computing}{10}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Computer Code in the Lectures}{12}{subsection.2.3.1}%
+\contentsline {section}{\numberline {2.4}Univariate Optimization}{12}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Finding optima}{15}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Shape Conditions and Sufficiency}{17}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Sufficiency and uniqueness with shape conditions}{19}{subsection.2.6.1}%
+\contentsline {section}{\numberline {2.7}Functions of two variables}{20}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Bivariate Optimization}{26}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Nasty secrets}{29}{subsection.2.8.1}%
+\contentsline {section}{\numberline {2.9}Second Order Partials}{29}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Shape conditions in 2D}{30}{section.2.10}%
+\contentsline {chapter}{\numberline {3}Elements of set theory and analysis}{35}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Elements of linear algebra}{37}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Elements of probability}{39}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Fundamentals of optimization}{41}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Unconstrained optimization}{43}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Constrained optimization}{45}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Practical session}{47}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Envelope and maximum theorems}{49}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Dynamic optimization}{51}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Revision}{53}{chapter.12}%
