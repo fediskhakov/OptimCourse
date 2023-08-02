@@ -759,15 +759,17 @@ x^2 &amp;  \text{ if } x &lt; 1
 <p>If <span class="math notranslate nohighlight">\(f\)</span> is differentiable and <span class="math notranslate nohighlight">\(x^*\)</span> is either an interior minimizer
 or an interior maximizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\([a, b]\)</span>, then <span class="math notranslate nohighlight">\(x^*\)</span> is stationary</p>
 </div>
-<p>Sketch of proof, for maximizers:
-$<span class="math notranslate nohighlight">\(
+<p>Sketch of proof, for maximizers:</p>
+<div class="math notranslate nohighlight">
+\[
 f'(x^*) = \, \lim_{h \to 0} \, \frac{f(x^* + h) - f(x^*)}{h}
 \qquad \text{(by def.)}
-\)</span><span class="math notranslate nohighlight">\( 
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \Rightarrow f(x^* + h) \approx f(x^*) + f'(x^*) h 
 \qquad \text{for small } h 
-\)</span>$</p>
+\]</div>
 <p>If <span class="math notranslate nohighlight">\(f'(x^*) \ne 0\)</span> then exists small <span class="math notranslate nohighlight">\(h\)</span> such that <span class="math notranslate nohighlight">\(f(x^* + h) &gt; f(x^*)\)</span></p>
 <p>Hence interior maximizers must be stationary — otherwise we can do better</p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> any interior maximizer stationary<br />
@@ -782,13 +784,14 @@ f'(x^*) = \, \lim_{h \to 0} \, \frac{f(x^* + h) - f(x^*)}{h}
 <p>Minimization: same idea</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
-<p>Let’s solve
-$<span class="math notranslate nohighlight">\( 
+<p>Let’s solve</p>
+<div class="math notranslate nohighlight">
+\[ 
 \max_{-2 \leq x \leq 5} f(x) 
 \quad \text{where} \quad
 f(x) = x^3 - 6x^2 + 4x + 8
-\)</span>$
-Steps</p>
+\]</div>
+<p>Steps</p>
 <ul class="simple">
 <li><p>Differentiate to get <span class="math notranslate nohighlight">\(f'(x) = 3x^2 - 12x + 4\)</span></p></li>
 <li><p>Solve <span class="math notranslate nohighlight">\(3x^2 - 12x + 4 = 0\)</span> to get stationary <span class="math notranslate nohighlight">\(x\)</span></p></li>
@@ -1160,12 +1163,13 @@ f(x_1^*, x_2^*) \geq f(x_1, x_2)
 </div>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
-<p>A point <span class="math notranslate nohighlight">\((x_1^*, x_2^*) \in I\)</span> is called a <em><strong>minimizer</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(I\)</span> if
-$<span class="math notranslate nohighlight">\(
+<p>A point <span class="math notranslate nohighlight">\((x_1^*, x_2^*) \in I\)</span> is called a <em><strong>minimizer</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(I\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[
 f(x_1^*, x_2^*) \leq f(x_1, x_2) 
 \quad \text{for all} \quad
 (x_1, x_2) \in I
-\)</span>$</p>
+\]</div>
 </div>
 <p>When they exist, the partial derivatives at <span class="math notranslate nohighlight">\((x_1, x_2) \in I\)</span> are</p>
 <div class="math notranslate nohighlight">
@@ -1315,10 +1319,11 @@ f(x_1, x_2)
 </div>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
-<p>If <span class="math notranslate nohighlight">\(f \colon I \to \mathbb{R}\)</span> is twice continuously differentiable at <span class="math notranslate nohighlight">\((x_1, x_2)\)</span>, then
-$<span class="math notranslate nohighlight">\(
+<p>If <span class="math notranslate nohighlight">\(f \colon I \to \mathbb{R}\)</span> is twice continuously differentiable at <span class="math notranslate nohighlight">\((x_1, x_2)\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
 f_{12}(x_1, x_2) = f_{21}(x_1, x_2)
-\)</span>$</p>
+\]</div>
 </div>
 <p><strong>Exercise:</strong> Confirm the results in the exercise above.</p>
 </section>

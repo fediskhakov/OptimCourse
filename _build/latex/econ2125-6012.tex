@@ -1453,15 +1453,17 @@ or an interior maximizer of \(f\) on \([a, b]\), then \(x^*\) is stationary
 
 \sphinxAtStartPar
 Sketch of proof, for maximizers:
-\$\(
+\begin{equation*}
+\begin{split}
 f'(x^*) = \, \lim_{h \to 0} \, \frac{f(x^* + h) - f(x^*)}{h}
 \qquad \text{(by def.)}
-\)\( 
-\)\(
+\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}
 \Rightarrow f(x^* + h) \approx f(x^*) + f'(x^*) h 
 \qquad \text{for small } h 
-\)\$
-
+\end{split}
+\end{equation*}
 \sphinxAtStartPar
 If \(f'(x^*) \ne 0\) then exists small \(h\) such that \(f(x^* + h) > f(x^*)\)
 
@@ -1498,11 +1500,14 @@ Minimization: same idea
 
 \sphinxAtStartPar
 Let’s solve
-\$\( 
+\begin{equation*}
+\begin{split} 
 \max_{-2 \leq x \leq 5} f(x) 
 \quad \text{where} \quad
 f(x) = x^3 - 6x^2 + 4x + 8
-\)\$
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
 Steps
 \begin{itemize}
 \item {} 
@@ -1974,12 +1979,13 @@ f(x_1^*, x_2^*) \geq f(x_1, x_2)
 
 \sphinxAtStartPar
 A point \((x_1^*, x_2^*) \in I\) is called a \sphinxstyleemphasis{\sphinxstylestrong{minimizer}} of \(f\) on \(I\) if
-\$\(
+\begin{equation*}
+\begin{split}
 f(x_1^*, x_2^*) \leq f(x_1, x_2) 
 \quad \text{for all} \quad
 (x_1, x_2) \in I
-\)\$
-\end{sphinxadmonition}
+\end{split}
+\end{equation*}\end{sphinxadmonition}
 
 \sphinxAtStartPar
 When they exist, the partial derivatives at \((x_1, x_2) \in I\) are
@@ -2208,10 +2214,11 @@ If \(\pi(k, \ell) = p k^{\alpha} \ell^{\beta} - w \ell - r k\) then
 
 \sphinxAtStartPar
 If \(f \colon I \to \mathbb{R}\) is twice continuously differentiable at \((x_1, x_2)\), then
-\$\(
+\begin{equation*}
+\begin{split}
 f_{12}(x_1, x_2) = f_{21}(x_1, x_2)
-\)\$
-\end{sphinxadmonition}
+\end{split}
+\end{equation*}\end{sphinxadmonition}
 
 \sphinxAtStartPar
 \sphinxstylestrong{Exercise:} Confirm the results in the exercise above.
