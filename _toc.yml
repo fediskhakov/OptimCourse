@@ -7,6 +7,7 @@ title: ECON2125/6012
 chapters:
 - file: 01.introduction
 - file: 02.optimization_intro
+- file: 02.exercises
 - file: 03.set_theory
 - file: 04.linear_algebra
 - file: 05.probability
