@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Elements of set theory" href="03.set_theory.html" />
+    <link rel="next" title="Solutions for the Exercise set A" href="02.exercises_solutions.html" />
     <link rel="prev" title="Univariate and bivariate optimization" href="02.optimization_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -164,6 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="01.introduction.html">Welcome</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02.optimization_intro.html">Univariate and bivariate optimization</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise set A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.exercises_solutions.html">Solutions for the Exercise set A</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03.set_theory.html">Elements of set theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03.exercises.html">Exercise set B</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04.linear_algebra.html">Elements of linear algebra</a></li>
@@ -368,8 +369,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-a-1">Question A.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-a-2">Question A.2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-a-3-profit-maximization-with-cobb-douglas-production-and-linear-costs">Question A.3: Profit maximization with Cobb-Douglas production and linear costs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-a-4">Question A.4*</a></li>
 </ul>
@@ -412,8 +411,7 @@ If you complete this course successfully you will have signiﬁcantly upgraded y
 <li><p>If you’re still stuck, try ﬂipping the problem around. In the previous example, suppose that the range of the function is not a linear subspace. What would that imply? Can you show that such an outcome is impossible?</p></li>
 <li><p>Be patient and don’t rush. You’ll get quicker naturally, with practice.</p></li>
 </ol>
-<section id="question-a-1">
-<h2>Question A.1<a class="headerlink" href="#question-a-1" title="Permalink to this heading">#</a></h2>
+<p><em><strong>Question A.1</strong></em></p>
 <p>Let <span class="math notranslate nohighlight">\(f \colon [-1, 1] \to \mathbb{R}\)</span> be defined by <span class="math notranslate nohighlight">\(f(x) = 1 - |x|\)</span>, where <span class="math notranslate nohighlight">\(|x|\)</span> is the absolute value of <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <ul class="simple">
 <li><p>Is the point <span class="math notranslate nohighlight">\(x = 0\)</span> a maximizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\([-1, 1]\)</span>?</p></li>
@@ -421,9 +419,7 @@ If you complete this course successfully you will have signiﬁcantly upgraded y
 <li><p>Is it an interior maximizer?</p></li>
 <li><p>Is it stationary?</p></li>
 </ul>
-</section>
-<section id="question-a-2">
-<h2>Question A.2<a class="headerlink" href="#question-a-2" title="Permalink to this heading">#</a></h2>
+<p><em><strong>Question A.2</strong></em></p>
 <p>Let <span class="math notranslate nohighlight">\(f \colon \mathbb{R} \to \mathbb{R}\)</span> be defined by <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span>.</p>
 <ul class="simple">
 <li><p>Write down the set of stationary points of this function.</p></li>
@@ -434,7 +430,6 @@ If you complete this course successfully you will have signiﬁcantly upgraded y
 <p>When we discussed these kinds of problems it was for functions of the form <span class="math notranslate nohighlight">\(f \colon [a, b] \to \mathbb{R}\)</span>.  Now the domain is all of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.
 However you can apply the same definitions and use similar reasoning.  Also, feel free to look up and use any helpful facts on trigonometric functions.</p>
 </div>
-</section>
 <section id="question-a-3-profit-maximization-with-cobb-douglas-production-and-linear-costs">
 <h2>Question A.3: Profit maximization with Cobb-Douglas production and linear costs<a class="headerlink" href="#question-a-3-profit-maximization-with-cobb-douglas-production-and-linear-costs" title="Permalink to this heading">#</a></h2>
 <p>A firm uses capital and labor to produce output.
@@ -481,7 +476,182 @@ p k^{\alpha} \ell^{\beta} - w \ell - r k
 <p class="admonition-title">Hint</p>
 <p>Is there a convenient change of variable to convert the problem to a univariate one.</p>
 </div>
-</section>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d.axes3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">xgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">ygrid</span> <span class="o">=</span> <span class="n">xgrid</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span> <span class="n">ygrid</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span>
+                <span class="n">y</span><span class="p">,</span>
+                <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
+                <span class="n">rstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">,</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+                <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fig_3d&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">t</span><span class="p">)</span>
+<span class="n">gp</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">xgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span> <span class="n">gp</span><span class="p">(</span><span class="n">xgrid</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fig_2d&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">root_scalar</span><span class="p">(</span><span class="n">gp</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;brentq&#39;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;res_text_1&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;The smallest stationary point is tm=</span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">root</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;res_text_2&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;The minimum is </span><span class="si">{</span><span class="n">g</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">root</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The smallest stationary point is tm=2.889969697678371&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The minimum is -0.24897613487740497&#39;
+</pre></div>
+</div>
+<img alt="_images/7e667ededfed90e7cfdd5e04185b793e6f2f689cfecb6d4850b534d03f325af8.png" src="_images/7e667ededfed90e7cfdd5e04185b793e6f2f689cfecb6d4850b534d03f325af8.png" />
+<img alt="_images/9347b4f115fd6333b69174adffbecc626c3ff4ff315e4503a61f9b76d6794b9a.png" src="_images/9347b4f115fd6333b69174adffbecc626c3ff4ff315e4503a61f9b76d6794b9a.png" />
+</div>
+</details>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solutions<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><em><strong>Question A.1</strong></em></p>
+<p class="sd-card-text">The point <span class="math notranslate nohighlight">\(x=0\)</span> is indeed a maximizer, since <span class="math notranslate nohighlight">\(f(x) = 1 -|x| \leq 1 = f(0)\)</span> for any <span class="math notranslate nohighlight">\(x \in [-1, 1]\)</span> (<span class="math notranslate nohighlight">\(|x|=0\)</span> if and only if <span class="math notranslate nohighlight">\(x=0\)</span>).
+It is also a unique maximizer, since no other point is a maximizer (because <span class="math notranslate nohighlight">\(1 -|x| &lt; 1\)</span> for any other <span class="math notranslate nohighlight">\(x\)</span>).
+It is an interior maximizer since <span class="math notranslate nohighlight">\(0\)</span> is not an end point of <span class="math notranslate nohighlight">\([-1, 1]\)</span>.
+It is not stationary because <span class="math notranslate nohighlight">\(f\)</span> is not differentiable at this point (sketch the graph if you like) and hence cannot satisfy <span class="math notranslate nohighlight">\(f'(x)=0\)</span>.</p>
+<p class="sd-card-text"><em><strong>Question A.2</strong></em></p>
+<p class="sd-card-text">The set <span class="math notranslate nohighlight">\(S\)</span> of stationary points of <span class="math notranslate nohighlight">\(f\)</span> are the points <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> such
+that <span class="math notranslate nohighlight">\(f'(x) = \cos(x) = 0\)</span>. By the definition of the cosine function this
+is the set</p>
+<div class="math notranslate nohighlight">
+\[
+S := \{ x \in \mathbb{R} : x = \pi/2 + k \pi \text{ for } k \in \mathbb{Z} \}
+\]</div>
+<p class="sd-card-text">Every point in the domain <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is interior (i.e, not an end point) and
+the function <span class="math notranslate nohighlight">\(f\)</span> is differentiable, so the set of maximizers will be
+contained in the set of stationary points. The same is true of the set of
+minimizers. From the definition of the sine function, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(\pi/2 + k \pi) =
+\begin{cases}
+    1 &amp; \text{ if $k$ is even} \\
+    -1 &amp; \text{ if $k$ is odd} \\
+\end{cases}
+\end{split}\]</div>
+<p class="sd-card-text">Hence the set of maximizers is</p>
+<div class="math notranslate nohighlight">
+\[
+M^* := \{ x \in \mathbb{R} : x = \pi/2 + k \pi \text{ for  \} k \text{ an
+even integer}}
+\]</div>
+<p class="sd-card-text">The set of minimizers is</p>
+<div class="math notranslate nohighlight">
+\[
+M_* := \{ x \in \mathbb{R} : x = \pi/2 + k \pi \text{ for  \} k \text{ an
+odd integer}}
+\]</div>
+<p class="sd-card-text"><em><strong>Question A.3</strong></em></p>
+<ol class="arabic">
+<li><p class="sd-card-text">The formulation is not correct. The revenue (after reincerting constant <span class="math notranslate nohighlight">\(A\)</span>) is <span class="math notranslate nohighlight">\(p A k^{\alpha} \ell^{\beta}\)</span>, the costs are <span class="math notranslate nohighlight">\(w \ell + r k\)</span>, and the choice variables are <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\ell\)</span> (<span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(r\)</span> are not chosen by the firm).<br />
+The constraint <span class="math notranslate nohighlight">\(\alpha + \beta &lt; 1\)</span> is irrelevant for the optimization problem, instead it is a constraint on the parameters for the problem to be well posed.
+Relevant constraints on the optimization problem are <span class="math notranslate nohighlight">\(k&gt;0\)</span> and <span class="math notranslate nohighlight">\(\ell&gt;0\)</span>, they can be first ignored and checked after we solve the unconstrained version of the problem.</p></li>
+<li><p class="sd-card-text">The correct formulation is (<span class="math notranslate nohighlight">\(A, p, \alpha, \beta, w, r\)</span> are parameters and should be fixed/found out before the firm solves the optimization problem)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   p A k^{\alpha} \ell^{\beta} - w \ell - r k
+   \rightarrow \max_{k, \ell}\\
+   \quad \mathrm{s.t.} \quad
+   k \ge 0, \ell \ge 0
+   \end{split}\]</div>
+</li>
+<li><p class="sd-card-text">See lecture notes</p></li>
+<li><p class="sd-card-text">See lecture notes</p></li>
+<li><p class="sd-card-text">Optimal strategy <span class="math notranslate nohighlight">\(k^*, \ell^*\)</span> are given in the lecture notes. The maximizer is unique because the objective function is strictly concave when <span class="math notranslate nohighlight">\(\alpha+\beta &lt; 1\)</span>.
+Proof:
+We check second order conditions for strict concavity.</p>
+<p class="sd-card-text">What we need: for any <span class="math notranslate nohighlight">\(k, \ell &gt; 0\)</span></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pi_{11}(k, \ell) &lt; 0\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pi_{11}(k, \ell) \, \pi_{22}(k, \ell) &gt;  \pi_{12}(k, \ell)^2\)</span>roof: <em>coming next</em></p></li>
+</ol>
+<p class="sd-card-text">The second order derivatives are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \pi_{11}(k,\ell) = (\alpha-1)\alpha pA k^{\alpha-2} \ell^\beta \\
+   \pi_{22}(k,\ell) = (\beta-1)\beta pA k^{\alpha} \ell^{\beta-2}\\
+   \pi_{12}(k, \ell) = \alpha \beta pA k^{\alpha-1} \ell^{\beta-1}.
+   \end{split}\]</div>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\(\alpha+\beta&lt;1\)</span> and <span class="math notranslate nohighlight">\(\alpha, \beta \geq 0\)</span>, we have <span class="math notranslate nohighlight">\(\alpha-1&lt;0\)</span>, which implies <span class="math notranslate nohighlight">\(\pi_{11}(k,\ell)&lt;0\)</span> for all <span class="math notranslate nohighlight">\(k, \ell &gt;0\)</span>.<br />
+Moreover, the second order differentials imply</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+   \pi_{11}(k, \ell) \, \pi_{22}(k, \ell) = (\alpha-1)(\beta-1)\alpha \beta p^2 A^2 k^{2\alpha-2} \ell^{2\beta-2}\\
+   (\pi_{22}(k, \ell))^2 = \alpha^2 \beta^2 p^2 A^2 k^{2\alpha-2} \ell^{2\beta-2}.
+   \end{split}\]</div>
+<p class="sd-card-text">Assuming that all parameters and variables are positive.
+Then, we obtain <span class="math notranslate nohighlight">\(\pi_{11}(k, \ell) \, \pi_{22}(k, \ell) &gt;  \pi_{12}(k, \ell)^2\)</span> if and only if <span class="math notranslate nohighlight">\((\alpha-1)(\beta-1) &gt; \alpha \beta\)</span> if and only if <span class="math notranslate nohighlight">\(1 &gt; \alpha + \beta\)</span>.</p>
+</li>
+</ol>
+<p class="sd-card-text"><em><strong>Question A.4</strong></em></p>
+<p class="sd-card-text">The graph of <span class="math notranslate nohighlight">\(f(x,y)\)</span> is</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/7e667ededfed90e7cfdd5e04185b793e6f2f689cfecb6d4850b534d03f325af8.png"><img alt="_images/7e667ededfed90e7cfdd5e04185b793e6f2f689cfecb6d4850b534d03f325af8.png" src="_images/7e667ededfed90e7cfdd5e04185b793e6f2f689cfecb6d4850b534d03f325af8.png" style="width: 80%;" /></a>
+</figure>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(t = x^2+y^2 \geq 0\)</span>.
+The function becomes $<span class="math notranslate nohighlight">\(f(x,y) = \frac{\cos(x^2+y^2)}{1 + x^2+y^2} = \frac{\cos(t)}{1 + t} =: g(t)  \quad (t \geq 0) .\)</span><span class="math notranslate nohighlight">\(
+First note that since \)</span>t \geq 0<span class="math notranslate nohighlight">\( and \)</span>\cos(t) \leq 1<span class="math notranslate nohighlight">\(, we have \)</span>g(t)\leq 1<span class="math notranslate nohighlight">\( and \)</span>g(0)=1<span class="math notranslate nohighlight">\(.
+Hence, \)</span>t=0<span class="math notranslate nohighlight">\( is a maximizer for \)</span>g<span class="math notranslate nohighlight">\(, or \)</span>(x,y)=(0,0)<span class="math notranslate nohighlight">\( is the maximizer for \)</span>f<span class="math notranslate nohighlight">\(.
+It is a unique maximizer, since if \)</span>g(t) &lt; 1<span class="math notranslate nohighlight">\( for \)</span>t &gt;0$.</p>
+<p class="sd-card-text">Next, we find the stationary points of <span class="math notranslate nohighlight">\(f\)</span> by finding the stationary points of <span class="math notranslate nohighlight">\(g\)</span>.
+The FOC is</p>
+<div class="math notranslate nohighlight">
+\[g'(t) = \frac{-\sin(t)(1+t) - \cos(t)}{(1+t)^2} = 0.\]</div>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\((1+t)^2&gt;0\)</span>, it must be</p>
+<div class="math notranslate nohighlight">
+\[-\sin(t)(1+t) - \cos(t) = 0 ⇔ t\sin(t) + \sin(t) + \cos(t)=0.\]</div>
+<p class="sd-card-text">The numerical solutions for the smallest stationary point <span class="math notranslate nohighlight">\(t_m\)</span> such that <span class="math notranslate nohighlight">\(\cos(t_m)&lt;0\)</span> are</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/9347b4f115fd6333b69174adffbecc626c3ff4ff315e4503a61f9b76d6794b9a.png"><img alt="_images/9347b4f115fd6333b69174adffbecc626c3ff4ff315e4503a61f9b76d6794b9a.png" src="_images/9347b4f115fd6333b69174adffbecc626c3ff4ff315e4503a61f9b76d6794b9a.png" style="width: 80%;" /></a>
+</figure>
+<p class="sd-card-text"><span class="output text_plain">‘The smallest stationary point is tm=2.889969697678371’</span></p>
+<p class="sd-card-text"><span class="output text_plain">‘The minimum is -0.24897613487740497’</span></p>
+<p class="sd-card-text">The minimizers are <span class="math notranslate nohighlight">\(\{(x,y)\in\mathbb{R}: x^2+y^2 = t_m\}\)</span>.
+To verify that <span class="math notranslate nohighlight">\(t_m\)</span> is the unique minimizer for <span class="math notranslate nohighlight">\(g\)</span>, since <span class="math notranslate nohighlight">\(\cos^2(t) + \sin^2(t)=1\)</span>, we rewrite FOC to get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+t\sin(t) + \sin(t) = \pm \sqrt{1-\sin^2(t)} \\
+⇔ \sin^2(t) = \frac{1}{2 + 2t + t^2} \\
+⇔ \cos^2(t) = 1 - \frac{1}{2+2t + t^2}=\frac{(1+t)^2}{2+2t + t^2}\\
+⇒ g(t) = \frac{\cos(t)}{1+t} = \pm \frac{1}{\sqrt{2+2t +t^2}}  \qquad (\text{$t$ is stationary point}).\end{split}\]</div>
+<p class="sd-card-text">Therefore, the smallest stationary point such that <span class="math notranslate nohighlight">\(\cos(t) &lt; 0\)</span> will be the unique minimizer for <span class="math notranslate nohighlight">\(g\)</span>.
+$$</p>
+</div>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -525,11 +695,11 @@ p k^{\alpha} \ell^{\beta} - w \ell - r k
       </div>
     </a>
     <a class="right-next"
-       href="03.set_theory.html"
+       href="02.exercises_solutions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Elements of set theory</p>
+        <p class="prev-next-title">Solutions for the Exercise set A</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -551,8 +721,6 @@ p k^{\alpha} \ell^{\beta} - w \ell - r k
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-a-1">Question A.1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-a-2">Question A.2</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-a-3-profit-maximization-with-cobb-douglas-production-and-linear-costs">Question A.3: Profit maximization with Cobb-Douglas production and linear costs</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-a-4">Question A.4*</a></li>
 </ul>
