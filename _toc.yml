@@ -7,9 +7,7 @@ title: ECON2125/6012
 chapters:
 - file: 01.introduction
 - file: 02.optimization_intro
-- file: 02.exercises
 - file: 03.set_theory
-- file: 03.exercises
 - file: 04.linear_algebra
 - file: 05.probability
 - file: 06.optimization_fundamentals
@@ -19,4 +17,5 @@ chapters:
 - file: 10.envelope_maximum
 - file: 11.dynamic
 - file: 12.revision
-
+- file: 02.exercises
+- file: 03.exercises
