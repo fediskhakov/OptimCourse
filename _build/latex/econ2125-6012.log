@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.30)  9 AUG 2023 17:06
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.30)  9 AUG 2023 17:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1809,32 +1809,63 @@ Chapter 3.
 
 ]
 Chapter 4.
-[39]
+[39] [40]
+File: 7e667ededfed90e7cfdd5e04185b793e6f2f689cfecb6d4850b534d03f325af8.png Grap
+hic file (type bmp)
+<7e667ededfed90e7cfdd5e04185b793e6f2f689cfecb6d4850b534d03f325af8.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 2854--2860
+[]\TU/FreeSerif(0)/m/n/10 Let $[] [] [][] [] [][] [] []$. The function becomes 
+$$[][][][] [][] [] [] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2854--2860
+[] [][] [][][][] [][] [] [][][]$$[][][][][][][][][][][][][][][][][][]$\TU/FreeS
+erif(0)/m/n/10 t \geq 0$[][][]$\cos(t) \leq 1$[] [][][][][][]$g(t)\leq
+ []
+
+
+Overfull \hbox (15.14851pt too wide) in paragraph at lines 2854--2860
+\TU/FreeSerif(0)/m/n/10 1$[][][]$g(0)=1$[][][][][][][]$t=0$[][][][][][][][][][]
+[][][][][]$g$[] [][]$(x,y)=(0,0)$[][][][][][][][][][][][][][][][][]$f$[][][][][
+][][][][][][][][][][][][][][][][][] [][][][][][][]$g(t)
+ []
+
+[41]
+File: 9347b4f115fd6333b69174adffbecc626c3ff4ff315e4503a61f9b76d6794b9a.png Grap
+hic file (type bmp)
+<9347b4f115fd6333b69174adffbecc626c3ff4ff315e4503a61f9b76d6794b9a.png>
+ [42]
+Chapter 5.
+[43
+
+]
 File: subset.png Graphic file (type bmp)
 <subset.png>
 File: notsubset.png Graphic file (type bmp)
 <notsubset.png>
- [40] [41]
+ [44] [45]
 File: no_x.png Graphic file (type bmp)
 <no_x.png>
- [42]
+ [46]
 File: real_line.png Graphic file (type bmp)
 <real_line.png>
- [43]
+ [47]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.40152pt on input line 3257.
+(Font)              scaled to size 14.40152pt on input line 3493.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.39845pt on input line 3257.
+(Font)              scaled to size 14.39845pt on input line 3493.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3257.
+(hyperref)                removing `math shift' on input line 3493.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 3257.
+(hyperref)                removing `\symbb' on input line 3493.
 
-[44]
+[48]
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
 ipt=math;language=dflt;!
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
@@ -1857,18 +1888,18 @@ File: allsets.png Graphic file (type bmp)
 <allsets.png>
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
 ipt=math;language=dflt;!
-[45] [46] [47]
+[49] [50] [51]
 File: cart_prod.png Graphic file (type bmp)
 <cart_prod.png>
- [48] [49]
+ [52] [53]
 File: function.png Graphic file (type bmp)
 <function.png>
- [50]
+ [54]
 File: allfunctions.png Graphic file (type bmp)
 <allfunctions.png>
 File: xy_non_func.png Graphic file (type bmp)
 <xy_non_func.png>
- [51]
+ [55]
 File: xy_func.png Graphic file (type bmp)
 <xy_func.png>
 File: preimage.png Graphic file (type bmp)
@@ -1877,12 +1908,12 @@ File: preimage2.png Graphic file (type bmp)
 <preimage2.png>
 File: range.png Graphic file (type bmp)
 <range.png>
- [52] [53] [54] [55]
+ [56] [57] [58] [59]
 File: range2.png Graphic file (type bmp)
 <range2.png>
 File: composition.png Graphic file (type bmp)
 <composition.png>
- [56]
+ [60]
 File: function1.png Graphic file (type bmp)
 <function1.png>
 File: bijection3.png Graphic file (type bmp)
@@ -1891,10 +1922,10 @@ File: function3.png Graphic file (type bmp)
 <function3.png>
 File: bijection2.png Graphic file (type bmp)
 <bijection2.png>
- [57]
+ [61]
 File: cubic.png Graphic file (type bmp)
 <cubic.png>
- [58]
+ [62]
 File: bijection2.png Graphic file (type bmp)
 <bijection2.png>
 File: bijection3.png Graphic file (type bmp)
@@ -1903,7 +1934,7 @@ File: bijection1.png Graphic file (type bmp)
 <bijection1.png>
 File: bijection3.png Graphic file (type bmp)
 <bijection3.png>
- [59]
+ [63]
 File: x_to_2x.png Graphic file (type bmp)
 <x_to_2x.png>
 File: k_to_minus_k.png Graphic file (type bmp)
@@ -1911,80 +1942,80 @@ File: k_to_minus_k.png Graphic file (type bmp)
 File: x_squared.png Graphic file (type bmp)
 <x_squared.png>
 
-[60] [61]
+[64] [65]
 File: bijec.png Graphic file (type bmp)
 <bijec.png>
 File: bij_inv.png Graphic file (type bmp)
 <bij_inv.png>
- [62] [63] [64]
+ [66] [67] [68]
 File: lattice.png Graphic file (type bmp)
 <lattice.png>
- [65] [66]
+ [69] [70]
 File: arctan.png Graphic file (type bmp)
 <arctan.png>
- [67] [68
+ [71] [72
 
 ]
-Chapter 5.
-[69]
-Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
-ipt=math;language=dflt;!
-Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
-ipt=math;language=dflt;!
-Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
-ipt=math;language=dflt;!
-[70]
 Chapter 6.
-File: coming_soon.png Graphic file (type bmp)
-<coming_soon.png>
-[71
-
-] [72
-
-]
+[73]
+Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
+ipt=math;language=dflt;!
+Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
+ipt=math;language=dflt;!
+Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
+ipt=math;language=dflt;!
+[74]
 Chapter 7.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
-[73] [74
+[75
+
+] [76
 
 ]
 Chapter 8.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
-[75] [76
+[77] [78
 
 ]
 Chapter 9.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
-[77] [78
+[79] [80
 
 ]
 Chapter 10.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
-[79] [80
+[81] [82
 
 ]
 Chapter 11.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
-[81] [82
+[83] [84
 
 ]
 Chapter 12.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
-[83] [84
+[85] [86
 
 ]
 Chapter 13.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
-[85] [86
+[87] [88
 
 ]
 Chapter 14.
+File: coming_soon.png Graphic file (type bmp)
+<coming_soon.png>
+[89] [90
+
+]
+Chapter 15.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
 (./econ2125-6012.ind)
@@ -2058,21 +2089,21 @@ The property list \__xpg_alias contains the pairs (without outer braces):
 >  {newzealand/target}  =>  {english}
 >  {newzealand/variant}  =>  {newzealand}
 >  {newzealand/options}  =>  {variant=newzealand}.
- [87] (./econ2125-6012.aux
+ [91] (./econ2125-6012.aux
 LaTeX Info: Redefining \rmfamily on input line 17.
 LaTeX Info: Redefining \sffamily on input line 17.
 LaTeX Info: Redefining \ttfamily on input line 17.
 )
 Package rerunfilecheck Info: File `econ2125-6012.out' has not changed.
-(rerunfilecheck)             Checksum: 777D6592CBA2665276F6DEF4E366C80B;5180.
+(rerunfilecheck)             Checksum: CDFA120388E8AD60CD3DF9169A629E8D;5591.
  ) 
 Here is how much of TeX's memory you used:
- 43816 strings out of 476683
- 1015190 string characters out of 5804047
- 1884018 words of memory out of 5000000
- 63200 multiletter control sequences out of 15000+600000
- 518929 words of font info for 123 fonts, out of 8000000 for 9000
+ 43835 strings out of 476683
+ 1016199 string characters out of 5804047
+ 1893018 words of memory out of 5000000
+ 63217 multiletter control sequences out of 15000+600000
+ 518937 words of font info for 124 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
- 99i,23n,115p,751b,2273s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,26n,115p,751b,2282s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on econ2125-6012.pdf (91 pages).
+Output written on econ2125-6012.pdf (95 pages).

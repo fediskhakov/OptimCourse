@@ -955,8 +955,8 @@ Please, watch the video and try to solve the puzzle yourself
 \sphinxstepscope
 
 
-\chapter{Univariate and bivariate optimization}
-\label{\detokenize{02.optimization_intro:univariate-and-bivariate-optimization}}\label{\detokenize{02.optimization_intro::doc}}
+\chapter{Lecture 1: Univariate and bivariate optimization}
+\label{\detokenize{02.optimization_intro:lecture-1-univariate-and-bivariate-optimization}}\label{\detokenize{02.optimization_intro::doc}}
 \sphinxAtStartPar
 \sphinxstylestrong{ECON2125/6012 Lecture 2}
 Fedor Iskhakov
@@ -2680,6 +2680,242 @@ Find all maximizers and minimizers of this function on \(\mathbb{R}^2\).
 \sphinxAtStartPar
 Is there a convenient change of variable to convert the problem to a univariate one.
 \end{sphinxadmonition}
+
+\sphinxstepscope
+
+
+\chapter{Solutions for the Exercise set A}
+\label{\detokenize{02.exercises_solutions:solutions-for-the-exercise-set-a}}\label{\detokenize{02.exercises_solutions::doc}}
+
+\section{Question A.1}
+\label{\detokenize{02.exercises_solutions:question-a-1}}
+\sphinxAtStartPar
+The point \(x=0\) is indeed a maximizer, since \(f(x) = 1 -|x| \leq 1 = f(0)\) for any \(x \in [-1, 1]\) (\(|x|=0\) if and only if \(x=0\)).
+It is also a unique maximizer, since no other point is a maximizer (because \(1 -|x| < 1\) for any other \(x\)).
+It is an interior maximizer since \(0\) is not an end point of \([-1, 1]\).
+It is not stationary because \(f\) is not differentiable at this point (sketch the graph if you like) and hence cannot satisfy \(f'(x)=0\).
+
+
+\section{Question A.2}
+\label{\detokenize{02.exercises_solutions:question-a-2}}
+\sphinxAtStartPar
+The set \(S\) of stationary points of \(f\) are the points \(x \in \mathbb{R}\) such
+that \(f'(x) = \cos(x) = 0\). By the definition of the cosine function this
+is the set
+\begin{equation*}
+\begin{split}
+S := \{ x \in \mathbb{R} : x = \pi/2 + k \pi \text{ for } k \in \mathbb{Z} \}
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Every point in the domain \(\mathbb{R}\) is interior (i.e, not an end point) and
+the function \(f\) is differentiable, so the set of maximizers will be
+contained in the set of stationary points. The same is true of the set of
+minimizers. From the definition of the sine function, we have
+\begin{equation*}
+\begin{split}
+f(\pi/2 + k \pi) =
+\begin{cases}
+    1 & \text{ if $k$ is even} \\
+    -1 & \text{ if $k$ is odd} \\
+\end{cases}
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Hence the set of maximizers is
+\begin{equation*}
+\begin{split}
+M^* := \{ x \in \mathbb{R} : x = \pi/2 + k \pi \text{ for  \} k \text{ an
+even integer}}
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+The set of minimizers is
+\begin{equation*}
+\begin{split}
+M_* := \{ x \in \mathbb{R} : x = \pi/2 + k \pi \text{ for  \} k \text{ an
+odd integer}}
+\end{split}
+\end{equation*}
+
+\section{Question A.3}
+\label{\detokenize{02.exercises_solutions:question-a-3}}\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+The formulation is not correct. The revenue (after reincerting constant \(A\)) is \(p A k^{\alpha} \ell^{\beta}\), the costs are \(w \ell + r k\), and the choice variables are \(k\) and \(\ell\) (\(w\) and \(r\) are not chosen by the firm).\\
+The constraint \(\alpha + \beta < 1\) is irrelevant for the optimization problem, instead it is a constraint on the parameters for the problem to be well posed.
+Relevant constraints on the optimization problem are \(k>0\) and \(\ell>0\), they can be first ignored and checked after we solve the unconstrained version of the problem.
+
+\item {} 
+\sphinxAtStartPar
+The correct formulation is (\(A, p, \alpha, \beta, w, r\) are parameters and should be fixed/found out before the firm solves the optimization problem)
+\begin{equation*}
+\begin{split}
+   p A k^{\alpha} \ell^{\beta} - w \ell - r k
+   \rightarrow \max_{k, \ell}\\
+   \quad \mathrm{s.t.} \quad
+   k \ge 0, \ell \ge 0
+   \end{split}
+\end{equation*}
+\item {} 
+\sphinxAtStartPar
+See lecture notes
+
+\item {} 
+\sphinxAtStartPar
+See lecture notes
+
+\item {} 
+\sphinxAtStartPar
+Optimal strategy \(k^*, \ell^*\) are given in the lecture notes. The maximizer is unique because the objective function is strictly concave when \(\alpha+\beta < 1\).
+Proof:
+We check second order conditions for strict concavity.
+
+\sphinxAtStartPar
+What we need: for any \(k, \ell > 0\)
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumii}{enumiii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+\(\pi_{11}(k, \ell) < 0\)
+
+\item {} 
+\sphinxAtStartPar
+\(\pi_{11}(k, \ell) \, \pi_{22}(k, \ell) >  \pi_{12}(k, \ell)^2\)roof: \sphinxstyleemphasis{coming next}
+
+\end{enumerate}
+
+\sphinxAtStartPar
+The second order derivatives are
+\begin{equation*}
+\begin{split}
+   \pi_{11}(k,\ell) = (\alpha-1)\alpha pA k^{\alpha-2} \ell^\beta \\
+   \pi_{22}(k,\ell) = (\beta-1)\beta pA k^{\alpha} \ell^{\beta-2}\\
+   \pi_{12}(k, \ell) = \alpha \beta pA k^{\alpha-1} \ell^{\beta-1}.
+   \end{split}
+\end{equation*}
+\sphinxAtStartPar
+Since \(\alpha+\beta<1\) and \(\alpha, \beta \geq 0\), we have \(\alpha-1<0\), which implies \(\pi_{11}(k,\ell)<0\) for all \(k, \ell >0\).\\
+Moreover, the second order differentials imply
+\begin{equation*}
+\begin{split}
+   \pi_{11}(k, \ell) \, \pi_{22}(k, \ell) = (\alpha-1)(\beta-1)\alpha \beta p^2 A^2 k^{2\alpha-2} \ell^{2\beta-2}\\
+   (\pi_{22}(k, \ell))^2 = \alpha^2 \beta^2 p^2 A^2 k^{2\alpha-2} \ell^{2\beta-2}.
+   \end{split}
+\end{equation*}
+\sphinxAtStartPar
+Assuming that all parameters and variables are positive.
+Then, we obtain \(\pi_{11}(k, \ell) \, \pi_{22}(k, \ell) >  \pi_{12}(k, \ell)^2\) if and only if \((\alpha-1)(\beta-1) > \alpha \beta\) if and only if \(1 > \alpha + \beta\).
+
+\end{enumerate}
+
+
+\section{Question A.4}
+\label{\detokenize{02.exercises_solutions:question-a-4}}
+\sphinxAtStartPar
+The graph of \(f(x,y)\) is
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+\PYG{k+kn}{from} \PYG{n+nn}{mpl\PYGZus{}toolkits}\PYG{n+nn}{.}\PYG{n+nn}{mplot3d}\PYG{n+nn}{.}\PYG{n+nn}{axes3d} \PYG{k+kn}{import} \PYG{n}{Axes3D}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{scipy} \PYG{k}{as} \PYG{n+nn}{sp}
+\PYG{k+kn}{from} \PYG{n+nn}{matplotlib} \PYG{k+kn}{import} \PYG{n}{cm}
+\PYG{n}{f} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{x}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{y}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{x}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{y}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{xgrid} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{50}\PYG{p}{)}
+\PYG{n}{ygrid} \PYG{o}{=} \PYG{n}{xgrid}
+\PYG{n}{x}\PYG{p}{,} \PYG{n}{y} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{meshgrid}\PYG{p}{(}\PYG{n}{xgrid}\PYG{p}{,} \PYG{n}{ygrid}\PYG{p}{)}
+\PYG{n}{fig} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{ax} \PYG{o}{=} \PYG{n}{fig}\PYG{o}{.}\PYG{n}{add\PYGZus{}subplot}\PYG{p}{(}\PYG{l+m+mi}{111}\PYG{p}{,} \PYG{n}{projection}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{3d}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{plot\PYGZus{}surface}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}
+                \PYG{n}{y}\PYG{p}{,}
+                \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{)}\PYG{p}{,}
+                \PYG{n}{rstride}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{cstride}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{,}
+                \PYG{n}{cmap}\PYG{o}{=}\PYG{n}{cm}\PYG{o}{.}\PYG{n}{jet}\PYG{p}{,}
+                \PYG{n}{alpha}\PYG{o}{=}\PYG{l+m+mf}{0.7}\PYG{p}{,}
+                \PYG{n}{linewidth}\PYG{o}{=}\PYG{l+m+mf}{0.25}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}zlim}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.5}\PYG{p}{,} \PYG{l+m+mf}{1.0}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{7e667ededfed90e7cfdd5e04185b793e6f2f689cfecb6d4850b534d03f325af8}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\sphinxAtStartPar
+Let \(t = x^2+y^2 \geq 0\).
+The function becomes \$\(f(x,y) = \frac{\cos(x^2+y^2)}{1 + x^2+y^2} = \frac{\cos(t)}{1 + t} =: g(t)  \quad (t \geq 0) .\)\(
+First note that since \)t \textbackslash{}geq 0\( and \)\textbackslash{}cos(t) \textbackslash{}leq 1\(, we have \)g(t)\textbackslash{}leq 1\( and \)g(0)=1\(.
+Hence, \)t=0\( is a maximizer for \)g\(, or \)(x,y)=(0,0)\( is the maximizer for \)f\(.
+It is a unique maximizer, since if \)g(t) < 1\( for \)t >0\$.
+
+\sphinxAtStartPar
+Next, we find the stationary points of \(f\) by finding the stationary points of \(g\).
+The FOC is
+\begin{equation*}
+\begin{split}g'(t) = \frac{-\sin(t)(1+t) - \cos(t)}{(1+t)^2} = 0.\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Since \((1+t)^2>0\), it must be
+\begin{equation*}
+\begin{split}-\sin(t)(1+t) - \cos(t) = 0 ⇔ t\sin(t) + \sin(t) + \cos(t)=0.\end{split}
+\end{equation*}
+\sphinxAtStartPar
+The numerical solutions for the smallest stationary point \(t_m\) such that \(\cos(t_m)<0\) are
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{g} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{t}\PYG{p}{:} \PYG{n}{np}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{+}\PYG{n}{t}\PYG{p}{)}
+\PYG{n}{gp} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{t}\PYG{p}{:} \PYG{n}{t} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{+} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)} \PYG{o}{+} \PYG{n}{np}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}
+\PYG{n}{xgrid} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{200}\PYG{p}{)}
+\PYG{n}{fig} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{p}{,} \PYG{l+m+mi}{6}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{xgrid}\PYG{p}{,} \PYG{n}{gp}\PYG{p}{(}\PYG{n}{xgrid}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{hlines}\PYG{p}{(}\PYG{n}{y}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{xmin}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{xmax}\PYG{o}{=}\PYG{l+m+mi}{10}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+
+\PYG{n}{res} \PYG{o}{=} \PYG{n}{sp}\PYG{o}{.}\PYG{n}{optimize}\PYG{o}{.}\PYG{n}{root\PYGZus{}scalar}\PYG{p}{(}\PYG{n}{gp}\PYG{p}{,} \PYG{n}{bracket}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{]}\PYG{p}{,} \PYG{n}{method}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{brentq}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{The smallest stationary point is tm= }\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{res}\PYG{o}{.}\PYG{n}{root}\PYG{p}{)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{The minimum is }\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{g}\PYG{p}{(}\PYG{n}{res}\PYG{o}{.}\PYG{n}{root}\PYG{p}{)}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{9347b4f115fd6333b69174adffbecc626c3ff4ff315e4503a61f9b76d6794b9a}.png}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+The smallest stationary point is tm=  2.889969697678371
+The minimum is  \PYGZhy{}0.24897613487740497
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\sphinxAtStartPar
+The minimizers are \(\{(x,y)\in\mathbb{R}: x^2+y^2 = t_m\}\).
+To verify that \(t_m\) is the unique minimizer for \(g\), since \(\cos^2(t) + \sin^2(t)=1\), we rewrite FOC to get
+\begin{equation*}
+\begin{split}
+t\sin(t) + \sin(t) = \pm \sqrt{1-\sin^2(t)} \\
+⇔ \sin^2(t) = \frac{1}{2 + 2t + t^2} \\
+⇔ \cos^2(t) = 1 - \frac{1}{2+2t + t^2}=\frac{(1+t)^2}{2+2t + t^2}\\
+⇒ g(t) = \frac{\cos(t)}{1+t} = \pm \frac{1}{\sqrt{2+2t +t^2}}  \qquad (\text{$t$ is stationary point}).\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Therefore, the smallest stationary point such that \(\cos(t) < 0\) will be the unique minimizer for \(g\).
+\$\$
 
 \sphinxstepscope
 
@@ -4584,7 +4820,7 @@ countable or has the power of the continuum
 \label{\detokenize{03.exercises:exercise-set-b}}\label{\detokenize{03.exercises::doc}}
 \sphinxAtStartPar
 Please, see the
-\DUrole{xref,myst}{\sphinxstylestrong{general comment on the tutorial exercises}}
+{\hyperref[\detokenize{02.exercises::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{\sphinxstylestrong{general comment on the tutorial exercises}}}}}
 
 
 \section{Question B.1}
@@ -4697,6 +4933,49 @@ show that they agree everywhere on the domain.  To show inequality,
 you need to give just one point in the domain where the function
 values differ.
 \end{sphinxadmonition}
+
+
+\section{Question B.6}
+\label{\detokenize{03.exercises:question-b-6}}
+\begin{sphinxadmonition}{note}{Fact: the sufficient conditions for concavity/convexity in 2D}
+
+\sphinxAtStartPar
+Let \(z = f(x,y)\) be a twice continuously differentiable function defined for all
+\((x, y) \in R^2\).
+
+\sphinxAtStartPar
+Then it holds:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\(f \text{ is convex } \iff f''_{1,1} \ge 0, \; f''_{2,2} \ge 0 , \text{ and } f''_{1,1} f''_{2,2} − (f′′_{1,2})^2 \ge 0\)
+
+\item {} 
+\sphinxAtStartPar
+\(f \text{ is concave } \iff f''_{1,1} \le 0, \; f''_{2,2} \le 0 , \text{ and } f''_{1,1} f''_{2,2} − (f′′_{1,2})^2 \ge 0\)
+
+\item {} 
+\sphinxAtStartPar
+\(f''_{1,1} > 0 \text{ and } f''_{1,1} f''_{2,2} −implies f \text{ is strictly convex}\)
+
+\item {} 
+\sphinxAtStartPar
+\(f''_{1,1} < 0 \text{ and } f''_{1,1} f''_{2,2} −implies f \text{ is strictly concave}\)
+
+\end{itemize}
+\end{sphinxadmonition}
+\begin{enumerate}
+\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+\item {} 
+\sphinxAtStartPar
+Find the largest domain \(S\) on which
+\(f(x, y) = x^2 − y^2 − xy − x^3\) is concave.
+
+\item {} 
+\sphinxAtStartPar
+How about strictly concave?
+
+\end{enumerate}
 
 \sphinxstepscope
 

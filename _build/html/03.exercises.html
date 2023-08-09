@@ -162,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01.introduction.html">Welcome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="02.optimization_intro.html">Univariate and bivariate optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.optimization_intro.html">Lecture 1: Univariate and bivariate optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02.exercises.html">Exercise set A</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02.exercises_solutions.html">Solutions for the Exercise set A</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03.set_theory.html">Elements of set theory</a></li>
@@ -374,6 +374,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-b-3">Question B.3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-b-4">Question B.4</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-b-5">Question B.5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-b-6">Question B.6</a></li>
 </ul>
             </nav>
         </div>
@@ -388,7 +389,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-set-b">
 <h1>Exercise set B<a class="headerlink" href="#exercise-set-b" title="Permalink to this heading">#</a></h1>
 <p>Please, see the
-<span class="xref myst"><strong>general comment on the tutorial exercises</strong></span></p>
+<a class="reference internal" href="02.exercises.html"><span class="doc std std-doc"><strong>general comment on the tutorial exercises</strong></span></a></p>
 <section id="question-b-1">
 <h2>Question B.1<a class="headerlink" href="#question-b-1" title="Permalink to this heading">#</a></h2>
 <p>Each of the definitions below is an attempt to define a set. Determine whether a set is indeed defined in each case, and if not explain why.</p>
@@ -447,6 +448,26 @@ show that they agree everywhere on the domain.  To show inequality,
 you need to give just one point in the domain where the function
 values differ.</p>
 </div>
+</section>
+<section id="question-b-6">
+<h2>Question B.6<a class="headerlink" href="#question-b-6" title="Permalink to this heading">#</a></h2>
+<div class="admonition-fact-the-sufficient-conditions-for-concavity-convexity-in-2d admonition">
+<p class="admonition-title">Fact: the sufficient conditions for concavity/convexity in 2D</p>
+<p>Let <span class="math notranslate nohighlight">\(z = f(x,y)\)</span> be a twice continuously differentiable function defined for all
+<span class="math notranslate nohighlight">\((x, y) \in R^2\)</span>.</p>
+<p>Then it holds:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f \text{ is convex } \iff f''_{1,1} \ge 0, \; f''_{2,2} \ge 0 , \text{ and } f''_{1,1} f''_{2,2} − (f′′_{1,2})^2 \ge 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f \text{ is concave } \iff f''_{1,1} \le 0, \; f''_{2,2} \le 0 , \text{ and } f''_{1,1} f''_{2,2} − (f′′_{1,2})^2 \ge 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f''_{1,1} &gt; 0 \text{ and } f''_{1,1} f''_{2,2} −implies f \text{ is strictly convex}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f''_{1,1} &lt; 0 \text{ and } f''_{1,1} f''_{2,2} −implies f \text{ is strictly concave}\)</span></p></li>
+</ul>
+</div>
+<ol class="arabic simple">
+<li><p>Find the largest domain <span class="math notranslate nohighlight">\(S\)</span> on which
+<span class="math notranslate nohighlight">\(f(x, y) = x^2 − y^2 − xy − x^3\)</span> is concave.</p></li>
+<li><p>How about strictly concave?</p></li>
+</ol>
 </section>
 </section>
 
@@ -522,6 +543,7 @@ values differ.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-b-3">Question B.3</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-b-4">Question B.4</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-b-5">Question B.5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-b-6">Question B.6</a></li>
 </ul>
   </nav></div>
 
