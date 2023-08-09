@@ -1,0 +1,801 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Welcome &#8212; ECON2125/6012</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01.introduction';</script>
+    <link rel="canonical" href="optim.iskh.me/01.introduction.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Univariate and bivariate optimization" href="02.optimization_intro.html" />
+    <link rel="prev" title="ECON2125/6012" href="00.index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="00.index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/penrose.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/penrose.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00.index.html">
+                    ECON2125/6012
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.optimization_intro.html">Univariate and bivariate optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.exercises.html">Exercise set A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.set_theory.html">Elements of set theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.exercises.html">Exercise set B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.linear_algebra.html">Elements of linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.probability.html">Elements of probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.optimization_fundamentals.html">Fundamentals of optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.unconstrained.html">Unconstrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.constrained.html">Constrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.practical_session.html">Practical session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.envelope_maximum.html">Envelope and maximum theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.dynamic.html">Dynamic optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.revision.html">Revision</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse/issues/new?title=Issue%20on%20page%20%2F01.introduction.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/01.introduction.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Welcome</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructor">Instructor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timetable">Timetable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-web-pages">Course web pages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials">Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutors">Tutors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#focus">Focus?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment">Assessment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attendance">Attendance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comments-for-lectures-notes-slides">Comments for lectures notes/slides</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions-and-facts">Definitions and facts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#facts">Facts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-assessments">Note on Assessments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-materials">Reading materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-for-the-administrative-part">Key points for the administrative part</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn-in-the-course">What you will learn in the course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-material-and-self-learning">Further material and self-learning</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
+<h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this heading">#</a></h1>
+<p>Course title: <strong>“Optimization for Economics and Financial Economics”</strong></p>
+<ul class="simple">
+<li><p>Elective second year course in the <em>Bachelor of Economics</em> program ECON2125</p></li>
+<li><p>Compulsory second math course in the <em>Master of Economics</em> program ECON6012</p></li>
+</ul>
+<p>The two courses are identical in content and assessment, but final grades may be adjusted depending on your program.</p>
+<section id="plan-for-this-lecture">
+<h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Organization</p></li>
+<li><p>Administrative topics</p></li>
+<li><p>Course content</p></li>
+<li><p>Self-learning materials</p></li>
+</ol>
+</section>
+<section id="instructor">
+<h2>Instructor<a class="headerlink" href="#instructor" title="Permalink to this heading">#</a></h2>
+<p><strong>Fedor Iskhakov</strong>
+Professor of Economics at RSE</p>
+<ul class="simple">
+<li><p>Office: 1021 HW Arndt Building</p></li>
+<li><p>Email: <a class="reference external" href="mailto:fedor&#46;iskhakov&#37;&#52;&#48;anu&#46;edu&#46;au">fedor<span>&#46;</span>iskhakov<span>&#64;</span>anu<span>&#46;</span>edu<span>&#46;</span>au</a></p></li>
+<li><p>Web: <a class="reference external" href="https://fedor.iskh.me">fedor.iskh.me</a></p></li>
+<li><p>Contact hours: Thursday 9:30-11:30</p></li>
+</ul>
+</section>
+<section id="timetable">
+<h2>Timetable<a class="headerlink" href="#timetable" title="Permalink to this heading">#</a></h2>
+<p><strong>Face-to-face:</strong></p>
+<ul class="simple">
+<li><p>Lectures: Thursday 15:30 — 17:30</p></li>
+<li><p>Location: <strong>DNF Dunbar Lecture Theatre, Physics Bldg 39A</strong></p></li>
+</ul>
+<p><strong>Online:</strong></p>
+<ul class="simple">
+<li><p>Echo-360 recordings on Wattle</p></li>
+<li><p>All notes and materials on <strong><a class="reference external" href="http://optim.iskh.me">optim.iskh.me</a></strong></p></li>
+</ul>
+<p>Face-to-face is strictly preferred</p>
+</section>
+<section id="course-web-pages">
+<h2>Course web pages<a class="headerlink" href="#course-web-pages" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://wattlecourses.anu.edu.au/course/view.php?id=41102">Wattle</a>
+Schedule, announcements, teaching team contacts, recordings, assignment, grades</p></li>
+<li><p><a class="reference external" href="https://optim.iskh.me">Online notes</a>
+Lecture notes, slides, assignment tasks</p></li>
+<li><p>Lecture slides should appear online the previous day before the lecture</p></li>
+<li><p>Details on assessment including the exam instructions will appear on Wattle</p></li>
+</ul>
+</section>
+<section id="tutorials">
+<h2>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Enrollments open on <em>Wattle</em></p></li>
+</ul>
+<p>Tutorial questions</p>
+<ul class="simple">
+<li><p>posted on the course website</p></li>
+<li><p>not assessed, help you learn and prepare</p></li>
+</ul>
+<p>Tutorials start on week 2</p>
+</section>
+<section id="tutors">
+<h2>Tutors<a class="headerlink" href="#tutors" title="Permalink to this heading">#</a></h2>
+<p><strong>Wending Liu</strong></p>
+<ul class="simple">
+<li><p>Email: <a class="reference external" href="mailto:Wending&#46;Liu&#37;&#52;&#48;anu&#46;edu&#46;au">Wending<span>&#46;</span>Liu<span>&#64;</span>anu<span>&#46;</span>edu<span>&#46;</span>au</a></p></li>
+<li><p>Room: Room 2084, Copland Bld (24)</p></li>
+<li><p>Office hours: <strong>Friday 1pm-3pm</strong></p></li>
+</ul>
+<p><strong>Chien Yeh</strong></p>
+<ul class="simple">
+<li><p>Email: <a class="reference external" href="mailto:Chien&#46;Yeh&#37;&#52;&#48;anu&#46;edu&#46;au">Chien<span>&#46;</span>Yeh<span>&#64;</span>anu<span>&#46;</span>edu<span>&#46;</span>au</a></p></li>
+<li><p>Room: Room 2106, Copland Bld (24)</p></li>
+<li><p>Office hours: <strong>Monday 2pm-4pm</strong></p></li>
+</ul>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>See <a class="reference external" href="https://programsandcourses.anu.edu.au/2023/course/ECON2125#terms">Course overview</a> and
+<a class="reference external" href="https://programsandcourses.anu.edu.au/course/ECON2125/Second%20Semester/6275">Class summary</a></p>
+<p>What you actually need to know:</p>
+<ul class="simple">
+<li><p>basic algebra</p></li>
+<li><p>basic calculus</p></li>
+<li><p>some idea of what a matrix is, etc.</p></li>
+</ul>
+<p>≈ content of EMET1001/EMET7001 math course</p>
+</section>
+<section id="focus">
+<h2>Focus?<a class="headerlink" href="#focus" title="Permalink to this heading">#</a></h2>
+<p><em>Q:</em> Is this optimization or a general math-econ course?</p>
+<p><em>A:</em> A general course on mathematical modeling for economics and financial economics. Optimization will be an important and recurring theme.</p>
+</section>
+<section id="assessment">
+<h2>Assessment<a class="headerlink" href="#assessment" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>3 timed open book tests (15% each)</p></li>
+<li><p>Final exam (55%)</p></li>
+</ul>
+<p>The three tests spread out through the semester will check the knowledge of the immediately preceding material. The final closed book in-person exam will cover the entire course.</p>
+</section>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Administrative questions: RSE admin</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Bronwyn Cammack</strong> Senior School Administrator</p></li>
+<li><p>Email: <a class="reference external" href="mailto:enquiries&#46;rse&#37;&#52;&#48;anu&#46;edu&#46;au">enquiries<span>&#46;</span>rse<span>&#64;</span>anu<span>&#46;</span>edu<span>&#46;</span>au</a></p></li>
+<li><p>“I can not register for the tutorial group”</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Content related questions: please, refer to the tutors</p></li>
+</ol>
+<ul class="simple">
+<li><p>“I don’t understand why this function is convex”</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Other questions: to Fedor</p></li>
+</ol>
+<ul class="simple">
+<li><p>“I’m working hard but still can not keep up”</p></li>
+<li><p>“Can I please have extra assignment for more practice”</p></li>
+</ul>
+</section>
+<section id="attendance">
+<h2>Attendance<a class="headerlink" href="#attendance" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Please, <strong>do not</strong> use email for <em>instructional</em> questions\Instead make use of the office hours</p></li>
+<li><p>Attendance of tutorials is <em>very highly</em> recommended<br />
+You will make your life much easier this way</p></li>
+<li><p>Attendance of lectures is <em>highly</em> recommended<br />
+But not mandatory</p></li>
+</ul>
+</section>
+<section id="comments-for-lectures-notes-slides">
+<h2>Comments for lectures notes/slides<a class="headerlink" href="#comments-for-lectures-notes-slides" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Cover exactly what you are required to know</p></li>
+<li><p>Code inserts are the exception, they are not assessable</p></li>
+</ul>
+<p>In particular, you need to know:</p>
+<ul class="simple">
+<li><p>The definitions from the notes</p></li>
+<li><p>The facts from the notes</p></li>
+<li><p>How to apply facts and definitions</p></li>
+</ul>
+<p>If a concept in not in the lecture notes, it is not assessable</p>
+</section>
+<section id="definitions-and-facts">
+<h2>Definitions and facts<a class="headerlink" href="#definitions-and-facts" title="Permalink to this heading">#</a></h2>
+<p>The lectures notes/slides are full of definitions and facts.</p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Functions <span class="math notranslate nohighlight">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> is called <em>continuous at</em> <span class="math notranslate nohighlight">\(x\)</span> if, for any sequence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> converging to <span class="math notranslate nohighlight">\(x\)</span>, we have <span class="math notranslate nohighlight">\(f(x_n) \rightarrow f(x)\)</span>.</p>
+</div>
+<p>Possible exam question: “Show  that if functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are continuous at <span class="math notranslate nohighlight">\(x\)</span>, so is <span class="math notranslate nohighlight">\(f+g\)</span>.”</p>
+<p>You should start the answer with the definition of continuity:</p>
+<p>“Let <span class="math notranslate nohighlight">\(\{x_n\}\)</span> be any sequence converging to <span class="math notranslate nohighlight">\(x\)</span>. We need to show that <span class="math notranslate nohighlight">\(f(x_n) + g(x_n) \rightarrow f(x) + g(x)\)</span>. To see this, note that …”</p>
+</section>
+<section id="facts">
+<h2>Facts<a class="headerlink" href="#facts" title="Permalink to this heading">#</a></h2>
+<p>In the lecture notes/slides you will often see</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>The only <span class="math notranslate nohighlight">\(N\)</span>-dimensional subset of <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span> is <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span>.</p>
+</div>
+<p>This means either:</p>
+<ul class="simple">
+<li><p>theorem</p></li>
+<li><p>proposition</p></li>
+<li><p>lemma</p></li>
+<li><p>true statement</p></li>
+</ul>
+<p>All well known results. You need to remember them, have some intuition for, and be able to apply.</p>
+</section>
+<section id="note-on-assessments">
+<h2>Note on Assessments<a class="headerlink" href="#note-on-assessments" title="Permalink to this heading">#</a></h2>
+<p>Assessable = definitions and facts + last year level math + a few simple steps of logic</p>
+<p>Exams and tests will award:</p>
+<ul class="simple">
+<li><p>Hard work</p></li>
+<li><p>Deeper understanding of the concepts</p></li>
+</ul>
+<p>In each question there will be a <em>easy</em> path to the solution</p>
+</section>
+<section id="reading-materials">
+<h2>Reading materials<a class="headerlink" href="#reading-materials" title="Permalink to this heading">#</a></h2>
+<p><strong>Primary reference:</strong> lecture slides</p>
+<p><strong>Books:</strong></p>
+<a class="reference internal image-reference" href="_images/simon_blume.png"><img alt="_images/simon_blume.png" src="_images/simon_blume.png" style="height: 100px;" /></a>
+<a class="reference internal image-reference" href="_images/sundaram.png"><img alt="_images/sundaram.png" src="_images/sundaram.png" style="height: 100px;" /></a>
+<a class="reference internal image-reference" href="_images/stachurski.png"><img alt="_images/stachurski.png" src="_images/stachurski.png" style="height: 100px;" /></a>
+<ul class="simple">
+<li><p>“Mathematics for Economists” (1994) by Simon, C. and L. Blume</p></li>
+<li><p>“A First Course in Optimization” (1996) Theory by Rangarajan Sundaram</p></li>
+<li><p>“A Primer in Econometric Theory” (2016) by John Stachurski</p></li>
+</ul>
+<p>Readings are supplementary but will provide a more detailed explanation with additional examples.</p>
+<ul class="simple">
+<li><p>Each lecture will reference book chapters</p></li>
+</ul>
+</section>
+<section id="key-points-for-the-administrative-part">
+<h2>Key points for the administrative part<a class="headerlink" href="#key-points-for-the-administrative-part" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Tutorials start next week, <strong>please register before the next lecture</strong></p></li>
+<li><p>Course content = what’s in lecture notes/slides</p></li>
+<li><p>Lecture slides are available online and will be updated throughout the semester</p></li>
+<li><p>Optimization is a recurring theme but not the only topic</p></li>
+</ul>
+</section>
+<section id="what-you-will-learn-in-the-course">
+<h2>What you will learn in the course<a class="headerlink" href="#what-you-will-learn-in-the-course" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The lecture plan is on the course website <a class="reference external" href="https://optim.iskh.me">optim.iskh.me</a> and <a class="reference external" href="https://programsandcourses.anu.edu.au/course/ECON2125/Second%20Semester/6275">Class summary</a></p></li>
+<li><p>See the list of topics on the left</p></li>
+</ul>
+<p>Essentially:</p>
+<ol class="arabic simple">
+<li><p><strong>Mathematical foundations</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>elements of analysis</p></li>
+<li><p>elements of linear algebra</p></li>
+<li><p>elements of probability</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><strong>Optimization theory</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>when solution exists</p></li>
+<li><p>unconstrained optimization</p></li>
+<li><p>optimization with equality constraints</p></li>
+<li><p>optimization with inequality constraints</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><strong>Further topics</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Parameterized optimization problems</p></li>
+<li><p>Optimization in dynamics</p></li>
+</ul>
+</section>
+<section id="further-material-and-self-learning">
+<h2>Further material and self-learning<a class="headerlink" href="#further-material-and-self-learning" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Each lecture will suggest some material for further reading and learning</p></li>
+<li><p>Today: <strong>The Wason Selection Task</strong> logical problem</p></li>
+<li><p>Mathematics relies on rules of logic</p></li>
+<li><p>Yet, for human brain applying mathematical logic may be difficult, and dependent on the domain</p></li>
+</ul>
+<p>Please, watch the video and try to solve the puzzle yourself
+<a class="reference external" href="https://youtu.be/iR97LBgpsl8">youtu.be/iR97LBgpsl8</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="00.index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ECON2125/6012</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02.optimization_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Univariate and bivariate optimization</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructor">Instructor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timetable">Timetable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-web-pages">Course web pages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials">Tutorials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutors">Tutors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#focus">Focus?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment">Assessment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#questions">Questions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attendance">Attendance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comments-for-lectures-notes-slides">Comments for lectures notes/slides</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions-and-facts">Definitions and facts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#facts">Facts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-assessments">Note on Assessments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-materials">Reading materials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-points-for-the-administrative-part">Key points for the administrative part</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn-in-the-course">What you will learn in the course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-material-and-self-learning">Further material and self-learning</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fedor Iskhakov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
