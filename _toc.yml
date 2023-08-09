@@ -8,6 +8,7 @@ chapters:
 - file: 01.introduction
 - file: 02.optimization_intro
 - file: 02.exercises
+- file: 02.exercises_solutions
 - file: 03.set_theory
 - file: 03.exercises
 - file: 04.linear_algebra
