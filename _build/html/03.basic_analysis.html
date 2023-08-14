@@ -1,0 +1,2033 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Basic analysis &#8212; ECON2125/6012</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '03.basic_analysis';</script>
+    <link rel="canonical" href="optim.iskh.me/03.basic_analysis.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Elements of linear algebra" href="04.linear_algebra.html" />
+    <link rel="prev" title="Elements of set theory" href="03.set_theory.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="00.index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/penrose.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/penrose.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00.index.html">
+                    ECON2125/6012
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01.introduction.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.optimization_intro.html">Univariate and bivariate optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.set_theory.html">Elements of set theory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.linear_algebra.html">Elements of linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.probability.html">Elements of probability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.optimization_fundamentals.html">Fundamentals of optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.unconstrained.html">Unconstrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.constrained.html">Constrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.practical_session.html">Practical session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.envelope_maximum.html">Envelope and maximum theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.dynamic.html">Dynamic optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.revision.html">Revision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.exercises.html">Exercise set A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.exercises.html">Exercise set B</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse/issues/new?title=Issue%20on%20page%20%2F03.basic_analysis.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/03.basic_analysis.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Basic analysis</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-numbers">Real Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-sets">Bounded sets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epsilon-balls-epsilon-balls">Epsilon-balls (<span class="math notranslate nohighlight">\(\epsilon\)</span>-balls)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences">Sequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">Convergence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-limits">Properties of Limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-limits">Operations with limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-sums">Infinite Sums</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cauchy-sequences">Cauchy Sequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsequences">Subsequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">Derivatives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-series">Taylor series</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-in-mathbb-r-k">Analysis in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norm-and-distance">Norm and distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-sets-and-epsilon-balls">Bounded sets and <span class="math notranslate nohighlight">\(\epsilon\)</span>-balls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-vs-componentwise-convergence">Vector vs Componentwise Convergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-scalar-to-vector-analysis">From Scalar to Vector Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-sums-in-mathbb-r-k">Infinite Sums in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-and-closed-sets">Open and Closed Sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#closed-sets">Closed Sets</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-open-and-closed-sets">Properties of Open and Closed Sets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity">Continuity</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-analysis">
+<h1>Basic analysis<a class="headerlink" href="#basic-analysis" title="Permalink to this heading">#</a></h1>
+<p><strong>ECON2125/6012 Lecture 3</strong><br />
+Fedor Iskhakov</p>
+<p><em>(second part of lecture 3)</em></p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let <span class="math notranslate nohighlight">\(F(x)\)</span> be a profit function, so for solving profit maximization we have to solve <span class="math notranslate nohighlight">\(f(x)=0\)</span> where <span class="math notranslate nohighlight">\(f(x)=F'(x)\)</span>.</p>
+<p>Or: we want to solve an equation <span class="math notranslate nohighlight">\(g(x) = y\)</span> for <span class="math notranslate nohighlight">\(x\)</span>, equivalently
+<span class="math notranslate nohighlight">\(f(x) = g(x) - y\)</span></p>
+</div>
+<figure class="align-default" id="root">
+<img alt="_images/root.png" src="_images/root.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 31 </span><span class="caption-text">Existence of a root</span><a class="headerlink" href="#root" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="no-root">
+<img alt="_images/no_root.png" src="_images/no_root.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 32 </span><span class="caption-text">Non-existence of a root</span><a class="headerlink" href="#no-root" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>One answer: a solution exists under certain conditions including continuity.</p>
+<p>Questions:</p>
+<ul class="simple">
+<li><p>So how can I tell if <span class="math notranslate nohighlight">\(f\)</span> is continuous?</p></li>
+<li><p>Can we weaken the continuity assumption?</p></li>
+<li><p>Does this work in multiple dimensions?</p></li>
+<li><p>When is the root unique?</p></li>
+<li><p>How can we compute it?</p></li>
+</ul>
+<p><em>These are typical problems in analysis</em></p>
+<section id="real-numbers">
+<h2>Real Numbers<a class="headerlink" href="#real-numbers" title="Permalink to this heading">#</a></h2>
+<p>Recall that <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> denotes the continuous real line</p>
+<figure class="align-default" id="real-line">
+<img alt="_images/real_line.png" src="_images/real_line.png" />
+</figure>
+<p>Can be thought of as <span class="math notranslate nohighlight">\(\mathbb{Q} \cup \mathbb I\)</span> where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> is the rational numbers</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb I\)</span> is the irrational numbers</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<ul class="simple">
+<li><p>Between any two real numbers <span class="math notranslate nohighlight">\(a &lt; b\)</span> there exists a rational
+number</p></li>
+<li><p>Between any two real numbers <span class="math notranslate nohighlight">\(a &lt; b\)</span> there exists an irrational
+number</p></li>
+</ul>
+</div>
+<p>Thus, the rationals and irrationals are “all mixed together”</p>
+</section>
+<section id="bounded-sets">
+<h2>Bounded sets<a class="headerlink" href="#bounded-sets" title="Permalink to this heading">#</a></h2>
+<p>The <em><strong>absolute value</strong></em> of <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> denoted <span class="math notranslate nohighlight">\(|x|\)</span> is <span class="math notranslate nohighlight">\(|x| := \max\{x, -x\}\)</span>.</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">subplots</span><span class="p">():</span>
+    <span class="s2">&quot;Custom subplots with axes throught the origin&quot;</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+    <span class="c1"># Set the axes through the origin</span>
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom&#39;</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="s1">&#39;zero&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">((</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;g-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$f(x) = |x|$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$f(x) = x$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="_images/325d114ec199e5a53f69355c4e5969a6aab8d506b9b4fab754330ef81df3b0b3.png"><img alt="_images/325d114ec199e5a53f69355c4e5969a6aab8d506b9b4fab754330ef81df3b0b3.png" class="align-center" src="_images/325d114ec199e5a53f69355c4e5969a6aab8d506b9b4fab754330ef81df3b0b3.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>For any <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}\)</span>, the following statements hold</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(|x| \leq y\)</span> if and only if <span class="math notranslate nohighlight">\(-y \leq x \leq y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|x| &lt; y\)</span> if and only if <span class="math notranslate nohighlight">\(-y &lt; x &lt; y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|x| = 0\)</span> if and only if <span class="math notranslate nohighlight">\(x=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|xy| = |x| |y|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|x+y| \leq |x| + |y|\)</span></p></li>
+</ol>
+<p>Last inequality is called the <em><strong>triangle inequality</strong></em></p>
+</div>
+<p><strong>Exercise:</strong> Using these rules, show that if <span class="math notranslate nohighlight">\(x, y, z \in \mathbb{R}\)</span>, then</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(|x-y| \leq |x| + |y|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|x-y| \leq |x - z| + |z - y|\)</span></p></li>
+</ol>
+<p>(Hint: <span class="math notranslate nohighlight">\(x-y = x-z+z-y\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(A \subset \mathbb{R}\)</span> is called <em><strong>bounded</strong></em> if
+<span class="math notranslate nohighlight">\(\exists \; M \in \mathbb{R}\)</span> s.t. <span class="math notranslate nohighlight">\(|x| \leq M\)</span>, all <span class="math notranslate nohighlight">\(x \in A\)</span></p>
+<figure class="align-default" id="bounded">
+<img alt="_images/bounded.png" src="_images/bounded.png" />
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Every finite subset <span class="math notranslate nohighlight">\(A\)</span> of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is bounded</p>
+</div>
+<p>Set <span class="math notranslate nohighlight">\(M := \max \{  |a| : a \in A \}\)</span></p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\(\mathbb{N}\)</span> is unbounded</p>
+</div>
+<p>For any <span class="math notranslate nohighlight">\(M \in \mathbb{R}\)</span> there is an <span class="math notranslate nohighlight">\(n\)</span> that exceeds it</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\((a, b)\)</span> is bounded for any <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span></p>
+</div>
+<p>Each <span class="math notranslate nohighlight">\(x \in (a, b)\)</span> satisfies <span class="math notranslate nohighlight">\(|x| \leq M := \max\{ |a|, |b| \}\)</span></p>
+<p><strong>Exercise:</strong> Check it</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are bounded sets then so is <span class="math notranslate nohighlight">\(A \cup B\)</span></p>
+</div>
+<p><strong>Proof:</strong>  Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be bounded sets and let <span class="math notranslate nohighlight">\(C := A \cup B\)</span></p>
+<p>By definition, <span class="math notranslate nohighlight">\(\exists \, M_A\)</span> and <span class="math notranslate nohighlight">\(M_B\)</span> with</p>
+<div class="math notranslate nohighlight">
+\[
+|a| \leq M_A, \text{ all } a \in A, 
+\quad \quad
+|b| \leq M_B, \text{ all } b \in B
+\]</div>
+<p>Let <span class="math notranslate nohighlight">\(M_C := \max\{M_A , M_B\}\)</span> and fix any <span class="math notranslate nohighlight">\(x \in C\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+x \in C
+\implies x \in A \text{ or } x \in B
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\text{therefore } |x| \leq M_A \quad \text{or} \quad |x| \leq M_B
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\text{therefore } |x| \leq M_C
+\]</div>
+</section>
+<section id="epsilon-balls-epsilon-balls">
+<h2>Epsilon-balls (<span class="math notranslate nohighlight">\(\epsilon\)</span>-balls)<a class="headerlink" href="#epsilon-balls-epsilon-balls" title="Permalink to this heading">#</a></h2>
+<p>Given <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> and <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span>, the <em><strong><span class="math notranslate nohighlight">\(\epsilon\)</span>-ball</strong></em>
+around <span class="math notranslate nohighlight">\(a\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+B_{\epsilon}(a) 
+:= \{ x \in \mathbb{R} : |a - x| &lt; \epsilon \}
+\]</div>
+<p>Equivalently,</p>
+<div class="math notranslate nohighlight">
+\[
+B_\epsilon(a)
+= \{ x \in \mathbb{R} :  a - \epsilon &lt; x &lt; a + \epsilon \}
+\]</div>
+<figure class="align-default" id="eps-ball1d">
+<img alt="_images/eps_ball1D.png" src="_images/eps_ball1D.png" />
+</figure>
+<p><strong>Exercise:</strong> Check equivalence</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(x\)</span> is in every <span class="math notranslate nohighlight">\(\epsilon\)</span>-ball around <span class="math notranslate nohighlight">\(a\)</span> then <span class="math notranslate nohighlight">\(x=a\)</span></p>
+</div>
+<p><strong>Proof:</strong></p>
+<p>Suppose to the contrary that</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x\)</span> is in every <span class="math notranslate nohighlight">\(\epsilon\)</span>-ball around <span class="math notranslate nohighlight">\(a\)</span> and yet <span class="math notranslate nohighlight">\(x \ne a\)</span></p></li>
+</ul>
+<p>Since <span class="math notranslate nohighlight">\(x\)</span> is not <span class="math notranslate nohighlight">\(a\)</span> we must have <span class="math notranslate nohighlight">\(|x-a| &gt; 0\)</span></p>
+<p>Set <span class="math notranslate nohighlight">\(\epsilon := |x-a|\)</span></p>
+<p>Since <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, we have <span class="math notranslate nohighlight">\(x \in B_{\epsilon}(a)\)</span></p>
+<p>This means that <span class="math notranslate nohighlight">\(|x-a| &lt; \epsilon\)</span></p>
+<p>That is, <span class="math notranslate nohighlight">\(|x - a| &lt; |x - a|\)</span> — contradiction</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(a \ne b\)</span>, then <span class="math notranslate nohighlight">\(\exists \; \epsilon &gt; 0\)</span> such that <span class="math notranslate nohighlight">\(B_{\epsilon}(a)\)</span> and <span class="math notranslate nohighlight">\(B_{\epsilon}(b)\)</span> are disjoint.</p>
+</div>
+<figure class="align-default" id="disjnt-balls1">
+<img alt="_images/disjnt_balls0.png" src="_images/disjnt_balls0.png" />
+</figure>
+<p><strong>Proof:</strong> Let <span class="math notranslate nohighlight">\(a, b \in \mathbb{R}\)</span> with <span class="math notranslate nohighlight">\(a \ne b\)</span></p>
+<p>If we set <span class="math notranslate nohighlight">\(\epsilon := |a-b|/2\)</span>, then <span class="math notranslate nohighlight">\(B_{\epsilon}(a)\)</span> and
+<span class="math notranslate nohighlight">\(B_\epsilon(b)\)</span> are disjoint</p>
+<p>To see this, suppose to the contrary that <span class="math notranslate nohighlight">\(\exists \, x \in B_{\epsilon}(a) \cap B_\epsilon(B)\)</span></p>
+<p>Then <span class="math notranslate nohighlight">\( |x - a| &lt; |a -b|/2\)</span> and <span class="math notranslate nohighlight">\(|x - b| &lt; |a -b|/2\)</span></p>
+<p>But then</p>
+<div class="math notranslate nohighlight">
+\[
+|a - b| \leq |a - x| + |x - b| &lt; |a -b|/2 + |a -b|/2 = |a-b|
+\]</div>
+<p>Contradiction!</p>
+</section>
+<section id="sequences">
+<h2>Sequences<a class="headerlink" href="#sequences" title="Permalink to this heading">#</a></h2>
+<p>A <em><strong>sequence</strong></em> is a function from <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
+<ul class="simple">
+<li><p>to each <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span> we associate one <span class="math notranslate nohighlight">\(x_n \in \mathbb{R}\)</span></p></li>
+</ul>
+<p>Typically written as <span class="math notranslate nohighlight">\(\{x_n\}_{n=1}^{\infty}\)</span> or <span class="math notranslate nohighlight">\(\{x_n\}\)</span> or <span class="math notranslate nohighlight">\(\{x_1, x_2, x_3, \ldots\}\)</span></p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\{x_n\} = \{2, 4, 6, \ldots \}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\{x_n\} = \{1, 1/2, 1/4, \ldots \}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\{x_n\} = \{1, -1, 1, -1, \ldots \}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\{x_n\} = \{0, 0, 0, \ldots \}\)</span></p></li>
+</ul>
+</div>
+<p>Sequence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> is called</p>
+<ul class="simple">
+<li><p><em><strong>bounded</strong></em> if <span class="math notranslate nohighlight">\(\{x_1, x_2, \ldots\}\)</span> is a bounded set</p></li>
+<li><p><em><strong>monotone increasing</strong></em>  if <span class="math notranslate nohighlight">\(x_{n+1} \geq x_n\)</span> for all <span class="math notranslate nohighlight">\(n\)</span></p></li>
+<li><p><em><strong>monotone decreasing</strong></em>  if <span class="math notranslate nohighlight">\(x_{n+1} \leq x_n\)</span> for all <span class="math notranslate nohighlight">\(n\)</span></p></li>
+<li><p><em><strong>monotone</strong></em>  if it is either monotone increasing or monotone
+decreasing</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x_n = 1/n\)</span> is monotone decreasing, bounded</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_n = (-1)^n\)</span> is not monotone but is bounded</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_n = 2n\)</span> is monotone increasing but not bounded</p></li>
+</ul>
+</div>
+</section>
+<section id="convergence">
+<h2>Convergence<a class="headerlink" href="#convergence" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(\{x_n\}\)</span> be a sequence</p>
+<p>Suppose, for any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, we can find an <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+x_n \in B_\epsilon(a) \text{ for all } n \geq N
+\]</div>
+<p>Then <span class="math notranslate nohighlight">\(\{x_n\}\)</span> is said to <em><strong>converge</strong></em> to <span class="math notranslate nohighlight">\(a\)</span></p>
+<p>Convergence to <span class="math notranslate nohighlight">\(a\)</span> in symbols,</p>
+<div class="math notranslate nohighlight">
+\[
+\forall \, \epsilon &gt; 0, \;
+\exists \, N \in \mathbb{N} \; 
+\mathrm{ such that } n \geq \mathbb{N} \implies x_n \in B_{\epsilon}(a)
+\]</div>
+<p>The sequence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> is eventually in this <span class="math notranslate nohighlight">\(\epsilon\)</span>-ball around <span class="math notranslate nohighlight">\(a\)</span></p>
+<figure class="align-default" id="convergent-seqs1">
+<img alt="_images/convergent_seqs1.png" src="_images/convergent_seqs1.png" />
+</figure>
+<p>…and this one</p>
+<figure class="align-default" id="convergent-seqs2">
+<img alt="_images/convergent_seqs2.png" src="_images/convergent_seqs2.png" />
+</figure>
+<p>…and this one</p>
+<figure class="align-default" id="convergent-seqs3">
+<img alt="_images/convergent_seqs3.png" src="_images/convergent_seqs3.png" />
+</figure>
+<p>…and this one</p>
+<figure class="align-default" id="convergent-seqs4">
+<img alt="_images/convergent_seqs4.png" src="_images/convergent_seqs4.png" />
+</figure>
+<p>The point <span class="math notranslate nohighlight">\(a\)</span> is called the <em><strong>limit</strong></em> of the sequence, and we write</p>
+<div class="math notranslate nohighlight">
+\[ 
+x_n \to a \quad \text{as} \quad n \to \infty
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{n \to \infty} x_n = a
+\]</div>
+<p>We call <span class="math notranslate nohighlight">\(\{ x_n \}\)</span> <em><strong>convergent</strong></em> if it converges to some limit in
+<span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\(\{x_n\}\)</span> defined by <span class="math notranslate nohighlight">\(x_n = 1 + 1/n\)</span> converges to <span class="math notranslate nohighlight">\(1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x_n \to 1 \; \mathrm{as} \; n \to \infty
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\lim_{n \to \infty} x_n = 1
+\]</div>
+</div>
+<p>To prove this must show that <span class="math notranslate nohighlight">\(\forall \, \epsilon &gt; 0\)</span>, there is an <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> such that</p>
+<div class="math notranslate nohighlight" id="equation-eq-lim">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-lim" title="Permalink to this equation">#</a></span>\[n \geq N
+\implies
+|x_n - 1| &lt; \epsilon\]</div>
+<p>To show this formally we need to come up with an  “algorithm”</p>
+<ol class="arabic simple">
+<li><p>You give me any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span></p></li>
+<li><p>I respond with an <span class="math notranslate nohighlight">\(N\)</span> such that <a class="reference internal" href="#equation-eq-lim">(1)</a> holds</p></li>
+</ol>
+<p>In general, as <span class="math notranslate nohighlight">\(\epsilon\)</span> shrinks, <span class="math notranslate nohighlight">\(N\)</span> will have to grow
+Here’s how to do this for the case <span class="math notranslate nohighlight">\(1 + 1/n\)</span> converges to <span class="math notranslate nohighlight">\(1\)</span></p>
+<p>First pick an arbitrary <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span></p>
+<p>Now we have to come up with an <span class="math notranslate nohighlight">\(N\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+n \geq N
+\implies
+|1 + 1/n - 1| &lt; \epsilon
+\]</div>
+<p>Let <span class="math notranslate nohighlight">\(N\)</span> be the first integer greater than <span class="math notranslate nohighlight">\( 1/\epsilon\)</span></p>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+n \geq N 
+\implies n &gt; 1/\epsilon 
+\implies 1/n &lt; \epsilon 
+\implies |1 + 1/n - 1| &lt; \epsilon 
+\]</div>
+<p>Remark: Any <span class="math notranslate nohighlight">\(N' &gt; N\)</span> would also work</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>The sequence <span class="math notranslate nohighlight">\(x_n = 2^{-n}\)</span> converges to <span class="math notranslate nohighlight">\(0\)</span> as <span class="math notranslate nohighlight">\(n \to \infty\)</span></p>
+</div>
+<p><strong>Proof:</strong>
+Must show that, <span class="math notranslate nohighlight">\(\forall \, \epsilon &gt; 0\)</span>, <span class="math notranslate nohighlight">\(\exists \, N \in \mathbb{N}\)</span> such that</p>
+<div class="math notranslate nohighlight" id="equation-eq-cc">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-cc" title="Permalink to this equation">#</a></span>\[n \geq N
+\implies
+|2^{-n} - 0| &lt; \epsilon\]</div>
+<p>So pick any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, and observe that</p>
+<div class="math notranslate nohighlight">
+\[
+|2^{-n} - 0| &lt; \epsilon
+\; \iff \;
+2^{-n}  &lt; \epsilon
+\; \iff \;
+n &gt; - \frac{\ln \epsilon}{\ln 2}
+\]</div>
+<p>Hence we take <span class="math notranslate nohighlight">\(N\)</span> to be the first integer greater than <span class="math notranslate nohighlight">\(- \ln \epsilon /
+\ln 2\)</span></p>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+n \geq N 
+\implies n &gt; -\frac{\ln \epsilon}{\ln 2}
+\implies \text{ (2) }
+\]</div>
+<p>What if we want to show that <span class="math notranslate nohighlight">\(x_n \to a\)</span> fails?</p>
+<p>To show convergence fails we need to show the <em><strong>negation</strong></em>
+of</p>
+<div class="math notranslate nohighlight">
+\[
+\forall \,\; \epsilon &gt; 0, \;\; 
+\exists \,\; N \in \mathbb{N} \;\mathrm{such\;that}\; n \geq N
+\implies x_n \in B_{\epsilon}(a)
+\]</div>
+<p>Negation: there is an <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> where we can’t find any such <span class="math notranslate nohighlight">\(N\)</span></p>
+<p>More specifically, <span class="math notranslate nohighlight">\(\exists \, \epsilon &gt; 0\)</span> such that, which ever <span class="math notranslate nohighlight">\(N \in
+\mathbb{N}\)</span> we look at, there’s an <span class="math notranslate nohighlight">\(n \geq N\)</span> with <span class="math notranslate nohighlight">\(x_n\)</span> outside <span class="math notranslate nohighlight">\(B_{\epsilon}(a)\)</span></p>
+<p>One way to say this: There exists a <span class="math notranslate nohighlight">\(B_\epsilon(a)\)</span> such that <span class="math notranslate nohighlight">\(x_n \notin
+B_\epsilon(a)\)</span> infinitely often</p>
+<p>This is the kind of picture we’re thinking of</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">rc</span>
+<span class="n">rc</span><span class="p">(</span><span class="s1">&#39;font&#39;</span><span class="p">,</span><span class="o">**</span><span class="p">{</span><span class="s1">&#39;family&#39;</span><span class="p">:</span><span class="s1">&#39;serif&#39;</span><span class="p">,</span><span class="s1">&#39;serif&#39;</span><span class="p">:[</span><span class="s1">&#39;Palatino&#39;</span><span class="p">]})</span>
+<span class="n">rc</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="n">usetex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">epsilon</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">def</span> <span class="nf">x</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="p">(</span><span class="mf">0.7</span><span class="p">))</span> <span class="o">-</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">8</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">subplots</span><span class="p">(</span><span class="n">fs</span><span class="p">):</span>
+    <span class="s2">&quot;Custom subplots with axes throught the origin&quot;</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+    <span class="c1"># Set the axes through the origin</span>
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;bottom&#39;</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">(</span><span class="s1">&#39;zero&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">]:</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="n">spine</span><span class="p">]</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">subplots</span><span class="p">((</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  
+
+<span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">x</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s1">&#39;ko&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$x_n$&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$a$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hlines</span><span class="p">([</span><span class="n">a</span> <span class="o">-</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">],</span> <span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">((</span><span class="n">xmin</span><span class="p">,</span> <span class="n">xmax</span><span class="p">),</span> <span class="n">a</span> <span class="o">-</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">((</span><span class="n">a</span> <span class="o">-</span> <span class="n">epsilon</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">epsilon</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">((</span><span class="sa">r</span><span class="s1">&#39;$a - \epsilon$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$a$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$a + \epsilon$&#39;</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="_images/5fbbd51f35f701b13d6cb96a1f38df9a8607cf9378ee6a9de22ac366a4b0bc7d.png"><img alt="_images/5fbbd51f35f701b13d6cb96a1f38df9a8607cf9378ee6a9de22ac366a4b0bc7d.png" class="align-center" src="_images/5fbbd51f35f701b13d6cb96a1f38df9a8607cf9378ee6a9de22ac366a4b0bc7d.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>The sequence <span class="math notranslate nohighlight">\(x_n = (-1)^n\)</span> does <em><strong>not</strong></em> converge to 1</p>
+</div>
+<p><strong>Proof:</strong> This is what we want to show</p>
+<div class="math notranslate nohighlight">
+\[
+\exists \,\;  \epsilon &gt; 0 \;\text{ such that } x_n \notin B_{\epsilon}(1)
+\text{ infinitely often}
+\]</div>
+<p>Since it’s a “there exists”, we need to come up with such an <span class="math notranslate nohighlight">\(\epsilon\)</span></p>
+<p>Let’s try <span class="math notranslate nohighlight">\(\epsilon = 0.5\)</span>, so that</p>
+<div class="math notranslate nohighlight">
+\[
+B_\epsilon(1) = \{ x \in \mathbb{R} : |x - 1| &lt; 0.5 \} = (0.5, 1.5 )
+\]</div>
+<p>If <span class="math notranslate nohighlight">\(n\)</span> is odd then <span class="math notranslate nohighlight">\(x_n = -1\)</span>, which is not in <span class="math notranslate nohighlight">\((0.5, 1.5)\)</span></p>
+<p>Hence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> not in <span class="math notranslate nohighlight">\(B_\epsilon(1)\)</span> infinitely often</p>
+</section>
+<section id="properties-of-limits">
+<h2>Properties of Limits<a class="headerlink" href="#properties-of-limits" title="Permalink to this heading">#</a></h2>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Let <span class="math notranslate nohighlight">\(\{x_n\}\)</span> be a sequence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span>.
+Then</p>
+<div class="math notranslate nohighlight">
+\[
+x_n \to a \iff |x_n - a| \to 0
+\]</div>
+</div>
+<p><strong>Proof:</strong> Compare the definitions:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x_n \to a\)</span> <span class="math notranslate nohighlight">\(\iff\)</span> <span class="math notranslate nohighlight">\(\forall \, \epsilon &gt; 0\)</span>, <span class="math notranslate nohighlight">\(\exists \, N \in
+\mathbb{N}\)</span> s.t. <span class="math notranslate nohighlight">\(|x_n - a| &lt; \epsilon\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|x_n - a| \to 0\)</span> <span class="math notranslate nohighlight">\(\iff\)</span> <span class="math notranslate nohighlight">\(\forall \, \epsilon &gt; 0\)</span>, <span class="math notranslate nohighlight">\(\exists \, N \in
+\mathbb{N}\)</span> s.t. <span class="math notranslate nohighlight">\(||x_n - a| - 0| &lt; \epsilon\)</span></p></li>
+</ul>
+<p>Clearly these statements are equivalent</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Each sequence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> has at most one limit</p>
+</div>
+<p><strong>Proof:</strong> Suppose instead that <span class="math notranslate nohighlight">\(x_n \to a \text{ and } x_n \to b \text{ with } a \ne b \)</span></p>
+<p>Take disjoint <span class="math notranslate nohighlight">\(\epsilon\)</span>-balls around <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span></p>
+<figure class="align-default" id="disjnt-balls2">
+<img alt="_images/disjnt_balls0.png" src="_images/disjnt_balls0.png" />
+</figure>
+<p>Since <span class="math notranslate nohighlight">\(x_n \to a\)</span> and <span class="math notranslate nohighlight">\(x_n \to b\)</span>,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\exists \; N_a\)</span> s.t. <span class="math notranslate nohighlight">\(n \geq N_a \implies x_n \in B_{\epsilon}(a)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\exists \; N_b\)</span> s.t. <span class="math notranslate nohighlight">\(n \geq N_b \implies x_n \in B_{\epsilon}(b)\)</span></p></li>
+</ul>
+<p>But then <span class="math notranslate nohighlight">\(n \geq \max\{N_a, N_b\} \implies \)</span> <span class="math notranslate nohighlight">\(x_n \in B_{\epsilon}(a)\)</span> and <span class="math notranslate nohighlight">\(x_n \in B_{\epsilon}(b)\)</span></p>
+<p>Contradiction of disjoint</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Every convergent sequence is bounded</p>
+</div>
+<p><strong>Proof:</strong> Let <span class="math notranslate nohighlight">\(\{x_n\}\)</span> be convergent with <span class="math notranslate nohighlight">\(x_n \to a\)</span></p>
+<p>Fix any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> and choose <span class="math notranslate nohighlight">\(N\)</span> s.t. <span class="math notranslate nohighlight">\(x_n \in B_{\epsilon}(a)\)</span> when
+<span class="math notranslate nohighlight">\(n \geq N\)</span></p>
+<p>Regarded as sets,</p>
+<div class="math notranslate nohighlight">
+\[\{x_n\} \subset \{x_1, \ldots, x_{N-1}\} \cup B_{\epsilon}(a)\]</div>
+<p>Both of these sets are bounded</p>
+<ul class="simple">
+<li><p>First because finite sets are bounded</p></li>
+<li><p>Second because <span class="math notranslate nohighlight">\(B_{\epsilon}(a)\)</span> is bounded</p></li>
+</ul>
+<p>Moreover, finite unions of bounded sets are bounded</p>
+</section>
+<section id="operations-with-limits">
+<h2>Operations with limits<a class="headerlink" href="#operations-with-limits" title="Permalink to this heading">#</a></h2>
+<p>Here are some basic tools for working with limits</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(x_n \to x\)</span> and  <span class="math notranslate nohighlight">\(y_n \to y\)</span>, then</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x_n + y_n \to x +  y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_n y_n \to x y\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_n /y_n \to x / y\)</span> when <span class="math notranslate nohighlight">\(y_n\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are <span class="math notranslate nohighlight">\(\ne 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_n \leq y_n\)</span> for all <span class="math notranslate nohighlight">\(n \implies x \leq y\)</span></p></li>
+</ol>
+</div>
+<p>Let’s check that <span class="math notranslate nohighlight">\(x_n \to x\)</span> and <span class="math notranslate nohighlight">\(y_n \to y\)</span> implies <span class="math notranslate nohighlight">\(x_n + y_n \to x +  y\)</span></p>
+<p><strong>Proof:</strong> Fix <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span></p>
+<p>Need to find <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> such that</p>
+<div class="math notranslate nohighlight" id="equation-eq-cb">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq-cb" title="Permalink to this equation">#</a></span>\[n \geq N 
+\; \implies \;
+|(x_n + y_n) - (x + y)| &lt; \epsilon\]</div>
+<p>Note that</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(|(x_n + y_n) - (x + y)| \leq |x_n - x| + |y_n - y|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\exists N_x \in \mathbb{N}\)</span> such that <span class="math notranslate nohighlight">\(n \geq N_x \implies |x_n - x| &lt; \epsilon/2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\exists N_y \in \mathbb{N}\)</span> such that <span class="math notranslate nohighlight">\(n \geq N_y \implies |y_n - y| &lt; \epsilon/2\)</span></p></li>
+</ul>
+<p><strong>Exercise:</strong> Show <span class="math notranslate nohighlight">\(N := \max\{N_x, N_y\}\)</span> satisfies <a class="reference internal" href="#equation-eq-cb">(3)</a>
+Let’s also check the claim that <span class="math notranslate nohighlight">\(x_n \to x\)</span>,  <span class="math notranslate nohighlight">\(y_n \to y\)</span>  and
+<span class="math notranslate nohighlight">\(x_n \leq y_n\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span> implies <span class="math notranslate nohighlight">\(x \leq y\)</span></p>
+<p><strong>Proof:</strong> Suppose instead that <span class="math notranslate nohighlight">\(x &gt; y\)</span></p>
+<p>Take disjoint <span class="math notranslate nohighlight">\(\epsilon\)</span>-balls <span class="math notranslate nohighlight">\(B_\epsilon(x)\)</span> and <span class="math notranslate nohighlight">\(B_\epsilon(y)\)</span> around
+these points</p>
+<figure class="align-default" id="disjnt-balls">
+<img alt="_images/disjnt_balls0.png" src="_images/disjnt_balls0.png" />
+</figure>
+<p>Exists an <span class="math notranslate nohighlight">\(n\)</span> such that <span class="math notranslate nohighlight">\(x_n \in B_\epsilon(x)\)</span> and <span class="math notranslate nohighlight">\(y_n \in B_\epsilon(y)\)</span></p>
+<p>But then <span class="math notranslate nohighlight">\(x_n &gt; y_n\)</span>, a contradiction</p>
+<p>In words: “Weak inequalities are preserved under limits”</p>
+<p>Here’s another property of limits, called the “squeeze theorem”</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Let <span class="math notranslate nohighlight">\(\{x_n\}\)</span> <span class="math notranslate nohighlight">\(\{y_n\}\)</span> and <span class="math notranslate nohighlight">\(\{z_n\}\)</span> be sequences in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>. If</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x_n \leq y_n \leq z_n\)</span> for all <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_n \to a\)</span> and <span class="math notranslate nohighlight">\(z_n \to a\)</span></p></li>
+</ol>
+<p>then <span class="math notranslate nohighlight">\(y_n \to a\)</span> also holds</p>
+</div>
+<p><strong>Proof:</strong> Pick any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span></p>
+<p>We can choose an</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N_x \in \mathbb{N}\)</span> such that <span class="math notranslate nohighlight">\(n \geq N_x \implies x_n \in B_\epsilon(a)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N_z \in \mathbb{N}\)</span> such that <span class="math notranslate nohighlight">\(n \geq N_z \implies z_n \in B_\epsilon(a)\)</span></p></li>
+</ul>
+<p><strong>Exercise:</strong> Show that <span class="math notranslate nohighlight">\(n \geq \max\{N_x, N_z\} \implies y_n \in B_\epsilon(a)\)</span></p>
+</section>
+<section id="infinite-sums">
+<h2>Infinite Sums<a class="headerlink" href="#infinite-sums" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(\{x_n\}\)</span> be a sequence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=1}^{\infty} x_n := \lim_{k\to \infty} \sum_{n=1}^k x_n  
+\]</div>
+<p>Thus, <span class="math notranslate nohighlight">\(\sum_{n=1}^{\infty} x_n\)</span> is defined, if it exists, as the limit
+of <span class="math notranslate nohighlight">\(\{y_k\}\)</span> where</p>
+<div class="math notranslate nohighlight">
+\[
+y_k :=  \sum_{n=1}^k x_n  
+\]</div>
+<p>Other notation:</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_n x_n, 
+\quad \sum_{n \geq 1} x_n,
+\quad \sum_{n \in \mathbb{N}} x_n,
+\quad \text{etc.}
+\]</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>If <span class="math notranslate nohighlight">\(x_n = \alpha^n\)</span> for <span class="math notranslate nohighlight">\(\alpha \in (0, 1)\)</span>, then</p>
+</div>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=1}^{\infty} x_n 
+= \lim_{k\to \infty} \sum_{n=1}^k \alpha^n
+= \lim_{k\to \infty} \alpha \frac{1 - \alpha^k}{1 - \alpha}
+=  \frac{\alpha}{1 - \alpha}
+\]</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>If <span class="math notranslate nohighlight">\(x_n = (-1)^n\)</span> the limit fails to exist because</p>
+</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+y_k 
+= \sum_{n=1}^k x_n
+=
+\begin{cases}
+0 &amp; \text{if $k$ is even}    
+\\
+-1 &amp; \text{otherwise}
+\end{cases}
+\end{split}\]</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(\{x_n\}\)</span> is nonnegative and <span class="math notranslate nohighlight">\(\sum_n x_n &lt; \infty\)</span>, then <span class="math notranslate nohighlight">\(x_n \to 0\)</span></p>
+</div>
+<p><strong>Proof:</strong>  Suppose to the contrary that <span class="math notranslate nohighlight">\(x_n \to 0\)</span> fails</p>
+<p>Then<br />
+<span class="math notranslate nohighlight">\(\exists \; \epsilon &gt; 0\)</span> such that <span class="math notranslate nohighlight">\(x_n \notin B_\epsilon(0)\)</span>
+infinitely often</p>
+<p>Since <span class="math notranslate nohighlight">\(x_n\)</span> is nonnegative,
+<span class="math notranslate nohighlight">\(\exists \; \epsilon &gt; 0\)</span> such that <span class="math notranslate nohighlight">\(x_n\)</span> exceeds <span class="math notranslate nohighlight">\(\epsilon\)</span> infinitely often</p>
+<p>But then <span class="math notranslate nohighlight">\(\sum_n x_n\)</span> cannot be finite — contradiction</p>
+</section>
+<section id="cauchy-sequences">
+<h2>Cauchy Sequences<a class="headerlink" href="#cauchy-sequences" title="Permalink to this heading">#</a></h2>
+<p>Informal definition: Cauchy sequences are those where <span class="math notranslate nohighlight">\(|x_n - x_{n+1}|\)</span> gets smaller and smaller</p>
+<figure class="align-default" id="cauchy">
+<img alt="_images/cauchy.png" src="_images/cauchy.png" />
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Sequences generated by iterative methods for solving nonlinear equations often have this property</p>
+</div>
+<p>Cauchy sequences “look like” they are converging to something</p>
+<p>A key <em><strong>axiom</strong></em> of analysis is that such sequences do converge to
+something — details follow</p>
+<div class="important admonition">
+<p class="admonition-title">Definition</p>
+<p>A sequence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> is called <em><strong>Cauchy</strong></em> if
+<span class="math notranslate nohighlight">\(\forall \; \epsilon &gt; 0, \;\; \exists \; N \in \mathbb{N}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+n \geq N 
+\text{ and } \forall j \geq 1 \;\; 
+\implies |x_n - x_{n+j}| &lt; \epsilon
+\]</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\(\{x_n\}\)</span> defined by <span class="math notranslate nohighlight">\(x_n = \alpha^n\)</span> where <span class="math notranslate nohighlight">\(\alpha \in
+(0, 1)\)</span> is Cauchy</p>
+</div>
+<p><strong>Proof:</strong> For any <span class="math notranslate nohighlight">\(n , j\)</span> we have</p>
+<div class="math notranslate nohighlight">
+\[
+|x_n - x_{n+j}|
+= |\alpha^n - \alpha^{n+j}| 
+= \alpha^n |1 - \alpha^j|  \leq \alpha^n
+\]</div>
+<p>Fix <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span></p>
+<p>We can show that <span class="math notranslate nohighlight">\(n &gt; \log(\epsilon) / \log(\alpha) \implies \alpha^n &lt; \epsilon\)</span> (<strong>Exercise</strong>)</p>
+<p>Hence any integer <span class="math notranslate nohighlight">\(N &gt; \log(\epsilon) / \log(\alpha)\)</span> the sequence is Cauchy by definition.</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>For any sequence, convergent <span class="math notranslate nohighlight">\(\iff\)</span> Cauchy</p>
+</div>
+<p>Proof of <span class="math notranslate nohighlight">\(\implies\)</span>:</p>
+<p>Let <span class="math notranslate nohighlight">\(\{x_n\}\)</span> be a sequence converging to some <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span></p>
+<p>Fix <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span></p>
+<p>We can choose <span class="math notranslate nohighlight">\(N\)</span> s.t.</p>
+<div class="math notranslate nohighlight">
+\[
+n \geq N \;\; \implies \;\; |x_n - a | &lt; \frac{\epsilon}{2} 
+\]</div>
+<p>For this <span class="math notranslate nohighlight">\(N\)</span> we have <span class="math notranslate nohighlight">\(n \geq N\)</span> and <span class="math notranslate nohighlight">\(j \geq 1\)</span> implies</p>
+<div class="math notranslate nohighlight">
+\[
+|x_n - x_{n+j}|
+\leq |x_n - a| + |x_{n+j} - a|
+&lt; \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+\]</div>
+<p>Proof of <span class="math notranslate nohighlight">\(\Leftarrow\)</span>:</p>
+<p>This is basically an <em><strong>axiom</strong></em> in the definition of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
+<p>Either</p>
+<ol class="arabic simple">
+<li><p>We assume it, or</p></li>
+<li><p>We assume something else that’s essentially equivalent</p></li>
+</ol>
+<p>Implications:</p>
+<ul class="simple">
+<li><p>There are no “gaps” in the real line</p></li>
+<li><p>To check <span class="math notranslate nohighlight">\(\{x_n\}\)</span> converges to something we just need to check Cauchy property</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Every bounded monotone sequence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is convergent</p>
+</div>
+<p>Sketch of <strong>Proof:</strong></p>
+<p>Suffices to show that <span class="math notranslate nohighlight">\(\{x_n\}\)</span> is Cauchy</p>
+<p>Suppose not</p>
+<p>Then no matter how far we go down the sequence we can find another jump
+of size <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span></p>
+<p>Since monotone, all the jumps are in the same direction</p>
+<p>But then <span class="math notranslate nohighlight">\(\{x_n\}\)</span> not bounded — a contradiction</p>
+<p>Full <strong>Proof:</strong> See any text on analysis</p>
+</section>
+<section id="subsequences">
+<h2>Subsequences<a class="headerlink" href="#subsequences" title="Permalink to this heading">#</a></h2>
+<p>A sequence <span class="math notranslate nohighlight">\(\{x_{n_k} \}\)</span> is called a <em><strong>subsequence</strong></em> of <span class="math notranslate nohighlight">\(\{x_n\}\)</span> if</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\{x_{n_k} \}\)</span> is a subset of <span class="math notranslate nohighlight">\(\{x_n\}\)</span></p></li>
+<li><p>the indices <span class="math notranslate nohighlight">\(n_k\)</span> are strictly increasing</p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<div class="math notranslate nohighlight">
+\[
+\{x_n\} = \{x_1, x_2, x_3, x_4, x_5, \ldots\} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\{x_{n_k}\} = \{x_2, x_4, x_6, x_8 \ldots\} 
+\]</div>
+</div>
+<p>In this case</p>
+<div class="math notranslate nohighlight">
+\[
+\{n_k\} = \{n_1, n_2, n_3, \ldots\} = \{2, 4, 6, \ldots\}
+\]</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\(\{\frac{1}{1}, \frac{1}{3}, \frac{1}{5},\ldots\}\)</span> is a
+subsequence of <span class="math notranslate nohighlight">\(\{\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, \ldots\}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\{\frac{1}{1}, \frac{1}{2}, \frac{1}{3},\ldots\}\)</span> is a
+subsequence of <span class="math notranslate nohighlight">\(\{\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, \ldots\}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\{\frac{1}{2}, \frac{1}{2}, \frac{1}{2},\ldots\}\)</span> is <em><strong>not</strong></em> a
+subsequence of <span class="math notranslate nohighlight">\(\{\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, \ldots\}\)</span></p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Every sequence has a monotone subsequence</p>
+</div>
+<p><strong>Proof:</strong> Omitted</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>The sequence <span class="math notranslate nohighlight">\(x_n = (-1)^n\)</span> has monotone subsequence</p>
+<div class="math notranslate nohighlight">
+\[
+\{x_2, x_4, x_6, \ldots \}
+= \{1, 1, 1, \ldots \}
+\]</div>
+</div>
+<p>This leads us to the famous <em><strong>Bolzano-Weierstrass theorem</strong></em>,
+to be used later when we discuss optimization.</p>
+<div class="important admonition">
+<p class="admonition-title">Fact: Bolzano-Weierstrass theorem</p>
+<p>Every bounded sequence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> has a convergent subsequence</p>
+</div>
+<p><strong>Proof:</strong>  Let <span class="math notranslate nohighlight">\(\{x_n\}\)</span> be a bounded sequence</p>
+<p>There exists a monotone subsequence</p>
+<ul class="simple">
+<li><p>which is itself a bounded sequence  (why?)</p></li>
+<li><p>and hence both monotone and bounded</p></li>
+</ul>
+<p>Every bounded monotone sequence converges</p>
+<p>Hence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> has a convergent subsequence</p>
+</section>
+<section id="derivatives">
+<h2>Derivatives<a class="headerlink" href="#derivatives" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(f \colon (a, b) \to \mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(x \in (a, b)\)</span></p>
+<p>Let <span class="math notranslate nohighlight">\(H\)</span> be all sequences <span class="math notranslate nohighlight">\(\{h_n\}\)</span> such that
+<span class="math notranslate nohighlight">\(h_n \ne 0\)</span> and <span class="math notranslate nohighlight">\(h_n \to 0\)</span></p>
+<p>If there exists a constant <span class="math notranslate nohighlight">\(f'(x)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{f(x + h_n) - f(x)}{h_n} \to f'(x)
+\]</div>
+<p>for every <span class="math notranslate nohighlight">\(\{h_n\} \in H\)</span>, then</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> is said to be <em><strong>differentiable</strong></em> at <span class="math notranslate nohighlight">\(x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x)\)</span> is called the <em><strong>derivative</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x\)</span></p></li>
+</ul>
+<figure class="align-default" id="derivative">
+<img alt="_images/derivative.png" src="_images/derivative.png" />
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let <span class="math notranslate nohighlight">\(f \colon \mathbb{R} \to \mathbb{R}\)</span> be defined by <span class="math notranslate nohighlight">\(f(x) = x^2\)</span></p>
+</div>
+<p>Fix any <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> and any <span class="math notranslate nohighlight">\(h_n \to 0\)</span> with <span class="math notranslate nohighlight">\(n \to \infty\)</span></p>
+<p>We have</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{f(x + h_n) - f(x)}{h_n} 
+= \frac{(x + h_n)^2 - x^2}{h_n} =
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \frac{x^2 + 2xh_n + h_n^2 - x^2}{h_n}
+= 2x + h_n
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\text{therefore }
+f'(x)
+= \lim_{n \to \infty} (2x + h_n)
+= 2x
+\]</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let <span class="math notranslate nohighlight">\(f \colon \mathbb{R} \to \mathbb{R}\)</span> be defined by <span class="math notranslate nohighlight">\(f(x) = |x|\)</span></p>
+</div>
+<p>This function is not differentiable at <span class="math notranslate nohighlight">\(x=0\)</span></p>
+<p>Indeed, if <span class="math notranslate nohighlight">\(h_n = 1/n\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{f(0 + h_n) - f(0)}{h_n} 
+= \frac{|0 + 1/n| - |0|}{1/n} \to 1
+\]</div>
+<p>On the other hand, if <span class="math notranslate nohighlight">\(h_n = -1/n\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{f(0 + h_n) - f(0)}{h_n} 
+= \frac{|0 - 1/n| - |0|}{-1/n} \to -1
+\]</div>
+<section id="taylor-series">
+<h3>Taylor series<a class="headerlink" href="#taylor-series" title="Permalink to this heading">#</a></h3>
+<p>Loosely speaking, if <span class="math notranslate nohighlight">\(f \colon \mathbb{R} \to \mathbb{R}\)</span> is suitably
+differentiable at <span class="math notranslate nohighlight">\(a\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) \approx f(a) + f'(a)(x-a) 
+\]</div>
+<p>for <span class="math notranslate nohighlight">\(x\)</span> very close to <span class="math notranslate nohighlight">\(a\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) \approx f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 
+\]</div>
+<p>on a slightly wider interval, etc.</p>
+<p>These are the 1st and 2nd order <em><strong>Taylor series approximations</strong></em>
+to <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(a\)</span> respectively</p>
+<p>As the order goes higher we get better approximation</p>
+<figure class="align-default" id="taylor-4">
+<img alt="_images/taylor_4.png" src="_images/taylor_4.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 33 </span><span class="caption-text">4th order Taylor series for <span class="math notranslate nohighlight">\(f(x) = \sin(x)/x\)</span> at 0</span><a class="headerlink" href="#taylor-4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="taylor-6">
+<img alt="_images/taylor_6.png" src="_images/taylor_6.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 34 </span><span class="caption-text">6th order Taylor series for <span class="math notranslate nohighlight">\(f(x) = \sin(x)/x\)</span> at 0</span><a class="headerlink" href="#taylor-6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="taylor-8">
+<img alt="_images/taylor_8.png" src="_images/taylor_8.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 35 </span><span class="caption-text">8th order Taylor series for <span class="math notranslate nohighlight">\(f(x) = \sin(x)/x\)</span> at 0</span><a class="headerlink" href="#taylor-8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="taylor-10">
+<img alt="_images/taylor_10.png" src="_images/taylor_10.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 36 </span><span class="caption-text">10th order Taylor series for <span class="math notranslate nohighlight">\(f(x) = \sin(x)/x\)</span> at 0</span><a class="headerlink" href="#taylor-10" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="analysis-in-mathbb-r-k">
+<h2>Analysis in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span><a class="headerlink" href="#analysis-in-mathbb-r-k" title="Permalink to this heading">#</a></h2>
+<p>Now we switch from studying points <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> to vectors
+<span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^K\)</span></p>
+<ul class="simple">
+<li><p>Replace distance <span class="math notranslate nohighlight">\(|x - y|\)</span> with <span class="math notranslate nohighlight">\(\| {\bf x} - {\bf y} \|\)</span></p></li>
+</ul>
+<p>Many of the same results go through <em><strong>otherwise unchanged</strong></em></p>
+<p>We state the analogous results briefly since</p>
+<ul class="simple">
+<li><p>You already have the intuition from <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p></li>
+<li><p>Similar arguments, just replacing <span class="math notranslate nohighlight">\(|\cdot|\)</span> with <span class="math notranslate nohighlight">\(\| \cdot \|\)</span></p></li>
+</ul>
+<p>We’ll spend longer on things that are different</p>
+<section id="norm-and-distance">
+<h3>Norm and distance<a class="headerlink" href="#norm-and-distance" title="Permalink to this heading">#</a></h3>
+<p>The (Euclidean) <em><strong>norm</strong></em> of <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+\| {\bf x} \| 
+:= \sqrt{{\bf x}' {\bf x} } 
+= \left( \sum_{n=1}^N x_n^2 \right)^{1/2}
+\]</div>
+<p>Interpretation:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\| {\bf x} \|\)</span> represents the <em>length</em> of <span class="math notranslate nohighlight">\({\bf x}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\| {\bf x} - {\bf y} \|\)</span> represents distance between <span class="math notranslate nohighlight">\({\bf x}\)</span> and <span class="math notranslate nohighlight">\({\bf y}\)</span></p></li>
+</ul>
+<figure class="align-default" id="vec">
+<img alt="_images/vec.png" src="_images/vec.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Length of red line <span class="math notranslate nohighlight">\(= \sqrt{x_1^2 + x_2^2} =: \|{\bf x}\|\)</span></span><a class="headerlink" href="#vec" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p><span class="math notranslate nohighlight">\(\| {\bf x} - {\bf y} \|\)</span> represents distance between <span class="math notranslate nohighlight">\({\bf x}\)</span> and <span class="math notranslate nohighlight">\({\bf y}\)</span></p>
+<figure class="align-default" id="vec-minus">
+<img alt="_images/vec_minus.png" src="_images/vec_minus.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Length of red line <span class="math notranslate nohighlight">\(= \|{\bf x} - {\bf y}\|\)</span></span><a class="headerlink" href="#vec-minus" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>For any <span class="math notranslate nohighlight">\(\alpha \in \mathbb{R}\)</span> and any <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in \mathbb{R}^N\)</span>, the following statements are true:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\| {\bf x} \| \geq 0\)</span> and <span class="math notranslate nohighlight">\(\| {\bf x} \| = 0\)</span> if and only if
+<span class="math notranslate nohighlight">\({\bf x} = {\bf 0}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\| \alpha {\bf x} \| = |\alpha| \| {\bf x} \|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\| {\bf x} + {\bf y} \| \leq  \| {\bf x} \| + \| {\bf y} \|\)</span>
+(<em><strong>triangle inequality</strong></em>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(| {\bf x}' {\bf y} | \leq  \| {\bf x} \| \| {\bf y} \|\)</span>
+(<em><strong>Cauchy-Schwarz inequality</strong></em>)</p></li>
+</ul>
+</div>
+<p>For example, let’s show that <span class="math notranslate nohighlight">\(\| {\bf x} \| = 0 \iff {\bf x} = {\bf 0}\)</span></p>
+<p>First let’s assume that <span class="math notranslate nohighlight">\(\| {\bf x} \| = 0\)</span> and show <span class="math notranslate nohighlight">\({\bf x} = {\bf 0}\)</span></p>
+<p>Since <span class="math notranslate nohighlight">\(\| {\bf x} \| = 0\)</span> we have <span class="math notranslate nohighlight">\(\| {\bf x} \|^2 = 0\)</span> and hence
+<span class="math notranslate nohighlight">\(\sum_{n=1}^N x^2_n = 0\)</span></p>
+<p>That is <span class="math notranslate nohighlight">\(x_n = 0\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, or, equivalently, <span class="math notranslate nohighlight">\({\bf x} = {\bf 0}\)</span></p>
+<p>Next let’s assume that <span class="math notranslate nohighlight">\({\bf x} = {\bf 0}\)</span> and show <span class="math notranslate nohighlight">\(\| {\bf x} \| = 0\)</span></p>
+<p>This is immediate from the definition of the norm</p>
+</section>
+<section id="bounded-sets-and-epsilon-balls">
+<h3>Bounded sets and <span class="math notranslate nohighlight">\(\epsilon\)</span>-balls<a class="headerlink" href="#bounded-sets-and-epsilon-balls" title="Permalink to this heading">#</a></h3>
+<p>A set <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^K\)</span> called <em><strong>bounded</strong></em> if</p>
+<div class="math notranslate nohighlight">
+\[
+\exists \, M \in \mathbb{R} 
+\; \mathrm{such\;that} \;
+\|{\bf x}\| \leq M, \quad \forall \; {\bf x} \in A
+\]</div>
+<p>Remarks:</p>
+<ul class="simple">
+<li><p>A <em><strong>generalization</strong></em> of the scalar definition</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(K=1\)</span>, the norm <span class="math notranslate nohighlight">\(\| \cdot \|\)</span> reduces to <span class="math notranslate nohighlight">\(|\cdot|\)</span></p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are bounded sets then so is <span class="math notranslate nohighlight">\(C := A \cup B\)</span></p>
+</div>
+<p><strong>Proof:</strong>  Same as the scalar case — just replace <span class="math notranslate nohighlight">\(|\cdot|\)</span> with <span class="math notranslate nohighlight">\(\| \cdot \|\)</span></p>
+<p><strong>Exercise:</strong> Check it</p>
+<p>For <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, the <span class="math notranslate nohighlight">\(\epsilon\)</span>-ball <span class="math notranslate nohighlight">\(B_{\epsilon}({\bf a})\)</span> around
+<span class="math notranslate nohighlight">\({\bf a} \in \mathbb{R}^K\)</span> is all <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^K\)</span> such that <span class="math notranslate nohighlight">\(\|{\bf a} - {\bf x}\|
+&lt; \epsilon\)</span></p>
+<figure class="align-default" id="eps-ball2d">
+<a class="reference internal image-reference" href="_images/eps_ball2D.png"><img alt="_images/eps_ball2D.png" src="_images/eps_ball2D.png" style="width: 393.6px; height: 347.20000000000005px;" /></a>
+</figure>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\({\bf x}\)</span> is in every <span class="math notranslate nohighlight">\(\epsilon\)</span>-ball around <span class="math notranslate nohighlight">\({\bf a}\)</span> then
+<span class="math notranslate nohighlight">\({\bf x}={\bf a}\)</span></p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\({\bf a} \ne {\bf b}\)</span>, then <span class="math notranslate nohighlight">\(\exists \, \epsilon &gt; 0\)</span> such that
+<span class="math notranslate nohighlight">\(B_\epsilon({\bf a}) \cap B_\epsilon({\bf b}) = \emptyset\)</span></p>
+</div>
+<p>A <em><strong>sequence</strong></em> <span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> is a function from <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></p>
+<p>Sequence <span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span> is said to <em><strong>converge</strong></em> to <span class="math notranslate nohighlight">\({\bf a} \in \mathbb{R}^K\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[
+\forall \epsilon &gt; 0, 
+\;
+\exists \, N \in \mathbb{N}
+\; 
+\mathrm{such\;that}  n \geq \mathbb{N} \implies {\bf x}_n \in B_{\epsilon}({\bf a})
+\]</div>
+<p>We say: “<span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span> is eventually in any <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood of <span class="math notranslate nohighlight">\({\bf a}\)</span>”</p>
+<p>In this case <span class="math notranslate nohighlight">\({\bf a}\)</span> is called the <em><strong>limit</strong></em> of the sequence, and we write</p>
+<div class="math notranslate nohighlight">
+\[ 
+{\bf x}_n \to {\bf a} \; \text{ as } \; n \to \infty
+\quad \text{or} \quad
+\lim_{n \to \infty} {\bf x}_n = {\bf a}
+\]</div>
+<p>We call <span class="math notranslate nohighlight">\(\{ {\bf x}_n \}\)</span> <em><strong>convergent</strong></em> if it converges to some limit in</p>
+<p><span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/convergence.png"><img alt="_images/convergence.png" src="_images/convergence.png" style="width: 905.6px; height: 460.0px;" /></a>
+</figure>
+<figure class="align-default" id="convergence2">
+<a class="reference internal image-reference" href="_images/convergence2.png"><img alt="_images/convergence2.png" src="_images/convergence2.png" style="width: 905.6px; height: 460.0px;" /></a>
+</figure>
+<figure class="align-default" id="convergence3">
+<a class="reference internal image-reference" href="_images/convergence3.png"><img alt="_images/convergence3.png" src="_images/convergence3.png" style="width: 905.6px; height: 460.0px;" /></a>
+</figure>
+</section>
+<section id="vector-vs-componentwise-convergence">
+<h3>Vector vs Componentwise Convergence<a class="headerlink" href="#vector-vs-componentwise-convergence" title="Permalink to this heading">#</a></h3>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>A sequence <span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> converges to <span class="math notranslate nohighlight">\({\bf a} \in \mathbb{R}^K\)</span>
+if and only if each component sequence converges in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
+<p>That is,
+$$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8aaf60e5-4b1c-4e48-af3f-6fd939b1a4e1">
+<span class="eqno">(4)<a class="headerlink" href="#equation-8aaf60e5-4b1c-4e48-af3f-6fd939b1a4e1" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+x^1_n \\
+\vdots \\
+x^K_n 
+\end{pmatrix}\]</div>
+<p>\to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1634ed5c-30de-4035-88ba-674247796a00">
+<span class="eqno">(5)<a class="headerlink" href="#equation-1634ed5c-30de-4035-88ba-674247796a00" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+a^1 \\
+\vdots \\
+a^K 
+\end{pmatrix}\]</div>
+<p>\quad \text{in } \mathbb{R}^K
+\quad \iff \quad
+\begin{array}{cc}
+x^1_n \to a^1 &amp;  \quad \text{in } \mathbb{R} \
+\vdots        &amp;  \
+x^K_n \to a^K &amp;  \quad \text{in } \mathbb{R}
+\end{array}
+$$</p>
+<p>$$</p>
+</div>
+<figure class="align-default" id="norm-and-pointwise">
+<img alt="_images/norm_and_pointwise.png" src="_images/norm_and_pointwise.png" />
+</figure>
+</section>
+</section>
+<section id="from-scalar-to-vector-analysis">
+<h2>From Scalar to Vector Analysis<a class="headerlink" href="#from-scalar-to-vector-analysis" title="Permalink to this heading">#</a></h2>
+<p>More definitions analogous to scalar case:</p>
+<p>A sequence <span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span> is called <em><strong>Cauchy</strong></em> if</p>
+<div class="math notranslate nohighlight">
+\[
+\forall \; \epsilon &gt; 0, \;\; \exists \; N \in \mathbb{N} 
+\; \mathrm{such\;that}\;  n, m \geq N \implies \| {\bf x}_n - {\bf x}_m \| &lt; \epsilon
+\]</div>
+<p>A sequence <span class="math notranslate nohighlight">\(\{{\bf x}_{n_k} \}\)</span> is called a <em><strong>subsequence</strong></em> of <span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span> if</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\{{\bf x}_{n_k} \}\)</span> is a subset of <span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span></p></li>
+<li><p>the indices <span class="math notranslate nohighlight">\(n_k\)</span> are strictly increasing</p></li>
+</ol>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Analogous to the scalar case,</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\({\bf x}_n \to {\bf a}\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> if and only if <span class="math notranslate nohighlight">\(\|{\bf x}_n -
+{\bf a}\| \to 0\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span> and <span class="math notranslate nohighlight">\({\bf y}_n \to {\bf y}\)</span> then <span class="math notranslate nohighlight">\({\bf x}_n +
+{\bf y}_n \to {\bf x} +  {\bf y}\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span> and <span class="math notranslate nohighlight">\(\alpha \in \mathbb{R}\)</span> then <span class="math notranslate nohighlight">\(\alpha {\bf x}_n 
+\to \alpha {\bf x}\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span> and <span class="math notranslate nohighlight">\({\bf z} \in \mathbb{R}^K\)</span> then <span class="math notranslate nohighlight">\({\bf z}' {\bf x}_n 
+\to {\bf z}' {\bf x}\)</span></p></li>
+<li><p>Each sequence in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> has at most one limit</p></li>
+<li><p>Every convergent sequence in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> is bounded</p></li>
+<li><p>Every convergent sequence in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> is Cauchy</p></li>
+<li><p>Every Cauchy sequence in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> is convergent</p></li>
+</ol>
+</div>
+<p><strong>Exercise:</strong> Adapt proofs given for the scalar case to these results</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let’s check that</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf x}_n \to {\bf a} \text{ in } \mathbb{R}^K
+\; \iff \;
+\|{\bf x}_n - {\bf a}\| \to 0 \text{ in } \mathbb{R}
+\]</div>
+</div>
+<p><strong>Proof:</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\({\bf x}_n \to {\bf a}\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> means that</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\forall \, \epsilon &gt; 0, 
+\;
+\exists \, N \in \mathbb{N}
+\; \mathrm{such\;that}  \; 
+n \geq \mathbb{N} \implies \| {\bf x}_n - {\bf a} \| &lt; \epsilon
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\|{\bf x}_n - {\bf a}\| \to 0\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> means that</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\forall\,  \epsilon &gt; 0, 
+\;
+\exists \, N \in \mathbb{N}
+\; \mathrm{such\;that}  \;
+n \geq \mathbb{N} \implies | \| {\bf x}_n - {\bf a} \| - 0 | &lt; \epsilon
+\]</div>
+<p>Obviously equivalent</p>
+<p>Reminder — these facts are more general than scalar ones!</p>
+<ul class="simple">
+<li><p>True for any finite <span class="math notranslate nohighlight">\(K\)</span></p></li>
+<li><p>So true for <span class="math notranslate nohighlight">\(K = 1\)</span></p></li>
+<li><p>This recovers the corresponding scalar fact</p></li>
+</ul>
+<p><em>You can forget the scalar fact if you remember the vector one</em></p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(\{ {\bf x}_n \}\)</span> converges to <span class="math notranslate nohighlight">\({\bf x}\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span>, then every
+subsequence of <span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span> also converges to <span class="math notranslate nohighlight">\({\bf x}\)</span></p>
+</div>
+<figure class="align-default" id="subseqconverg">
+<a class="reference internal image-reference" href="_images/subseqconverg.png"><img alt="_images/subseqconverg.png" src="_images/subseqconverg.png" style="width: 905.6px; height: 460.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Convergence of subsequences</span><a class="headerlink" href="#subseqconverg" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="infinite-sums-in-mathbb-r-k">
+<h3>Infinite Sums in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span><a class="headerlink" href="#infinite-sums-in-mathbb-r-k" title="Permalink to this heading">#</a></h3>
+<p>Analogous to the scalar case, an infinite sum in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> is the limit of
+the partial sum:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span> is a sequence in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span>, then</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=1}^{\infty} {\bf x}_n := \lim_{J\to \infty} \sum_{n=1}^J {\bf x}_n  
+\text{ if the limit exists}
+\]</div>
+<p>In other words,</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf y} = \sum_{n=1}^{\infty} {\bf x}_n 
+\quad \iff \quad
+\lim_{J \to \infty}
+\;
+\left\| \sum_{n=1}^J {\bf x}_n  - {\bf y} \right\|
+\to 0
+\]</div>
+</section>
+</section>
+<section id="open-and-closed-sets">
+<h2>Open and Closed Sets<a class="headerlink" href="#open-and-closed-sets" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(G \subset \mathbb{R}^K\)</span></p>
+<p>We call <span class="math notranslate nohighlight">\({\bf x} \in G\)</span> <em><strong>interior</strong></em> to <span class="math notranslate nohighlight">\(G\)</span> if
+<span class="math notranslate nohighlight">\(\exists \; \epsilon &gt; 0\)</span> with <span class="math notranslate nohighlight">\(B_\epsilon({\bf x}) \subset G\)</span></p>
+<p>Loosely speaking, interior means “not on the boundary”</p>
+<figure class="align-default" id="interior">
+<img alt="_images/interior.png" src="_images/interior.png" />
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>If <span class="math notranslate nohighlight">\(G = (a, b)\)</span> for some <span class="math notranslate nohighlight">\(a &lt; b\)</span>, then any <span class="math notranslate nohighlight">\(x \in (a, b)\)</span> is interior</p>
+</div>
+<figure class="align-default" id="x-interior">
+<img alt="_images/x_interior.png" src="_images/x_interior.png" />
+</figure>
+<p><strong>Proof:</strong> Fix any <span class="math notranslate nohighlight">\(a &lt; b\)</span> and any <span class="math notranslate nohighlight">\(x \in (a, b)\)</span></p>
+<p>Let <span class="math notranslate nohighlight">\(\epsilon := \min\{x - a, b - x\}\)</span></p>
+<p>If <span class="math notranslate nohighlight">\(y \in B_\epsilon(x)\)</span> then <span class="math notranslate nohighlight">\(y &lt; b\)</span> because</p>
+<div class="math notranslate nohighlight">
+\[
+y 
+= y + x - x
+\leq |y - x| + x
+&lt; \epsilon + x 
+\leq b - x + x = b
+\]</div>
+<p><strong>Exercise:</strong> Show <span class="math notranslate nohighlight">\(y \in B_\epsilon(x) \implies y &gt; a\)</span></p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>If <span class="math notranslate nohighlight">\(G = [-1, 1]\)</span>, then <span class="math notranslate nohighlight">\(1\)</span> is not interior</p>
+</div>
+<figure class="align-default" id="not-interior">
+<img alt="_images/not_interior.png" src="_images/not_interior.png" />
+</figure>
+<p>Intuitively, any <span class="math notranslate nohighlight">\(\epsilon\)</span>-ball centered on <span class="math notranslate nohighlight">\(1\)</span> will contain points <span class="math notranslate nohighlight">\(&gt; 1\)</span></p>
+<p>More formally, pick any <span class="math notranslate nohighlight">\(\epsilon  &gt; 0\)</span> and consider <span class="math notranslate nohighlight">\(B_\epsilon(1)\)</span></p>
+<p>There exists a <span class="math notranslate nohighlight">\(y \in B_\epsilon(1)\)</span> such that <span class="math notranslate nohighlight">\(y \notin [-1, 1]\)</span></p>
+<p>For example, consider the point <span class="math notranslate nohighlight">\(y := 1 + \epsilon/2\)</span></p>
+<p><strong>Exercise:</strong> Check this point: lies in <span class="math notranslate nohighlight">\(B_\epsilon(1)\)</span> but not in <span class="math notranslate nohighlight">\([-1, 1]\)</span></p>
+<p>A set <span class="math notranslate nohighlight">\(G\subset \mathbb{R}^K\)</span> is called <em><strong>open</strong></em> if all of its points are interior</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Open sets:</p>
+<ul class="simple">
+<li><p>any “open” interval <span class="math notranslate nohighlight">\((a,b) \subset \mathbb{R}\)</span>, since we showed all points are interior</p></li>
+<li><p>any “open” ball <span class="math notranslate nohighlight">\(B_\epsilon({\bf a}) = {\bf x} \in
+\mathbb{R}^K : \|{\bf x} - {\bf a} \| &lt; \epsilon\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> itself</p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Sets that are not open</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((a,b]\)</span> because <span class="math notranslate nohighlight">\(b\)</span> is not interior</p></li>
+<li><p><span class="math notranslate nohighlight">\([a,b)\)</span> because <span class="math notranslate nohighlight">\(a\)</span> is not interior</p></li>
+</ul>
+</div>
+<section id="closed-sets">
+<h3>Closed Sets<a class="headerlink" href="#closed-sets" title="Permalink to this heading">#</a></h3>
+<p>A set <span class="math notranslate nohighlight">\(F \subset \mathbb{R}^K\)</span> is called <em><strong>closed</strong></em> if every
+convergent sequence in <span class="math notranslate nohighlight">\(F\)</span> converges to a point in <span class="math notranslate nohighlight">\(F\)</span></p>
+<p>Rephrased: If <span class="math notranslate nohighlight">\(\{{\bf x}_n\} \subset F\)</span> and <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span> for some
+<span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^K\)</span>, then <span class="math notranslate nohighlight">\({\bf x} \in F\)</span></p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>All of <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> is closed because every sequence converging to a point in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> converges to a point in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span>… right?</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>If <span class="math notranslate nohighlight">\((-1, 1) \subset \mathbb{R}\)</span> is {\bf not} closed</p>
+</div>
+<p><strong>Proof:</strong> True because</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x_n := 1-1/n\)</span> is a sequence in <span class="math notranslate nohighlight">\((-1, 1)\)</span> converging to <span class="math notranslate nohighlight">\(1\)</span>,</p></li>
+<li><p>and yet <span class="math notranslate nohighlight">\(1 \notin (-1, 1)\)</span></p></li>
+</ol>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>If <span class="math notranslate nohighlight">\(F = [a, b] \subset \mathbb{R}\)</span> then <span class="math notranslate nohighlight">\(F\)</span> is closed in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
+</div>
+<p><strong>Proof:</strong> Take any sequence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> such that</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x_n \in F\)</span> for all <span class="math notranslate nohighlight">\(n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_n \to x\)</span> for some <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span></p></li>
+</ul>
+<p>We claim that <span class="math notranslate nohighlight">\(x \in F\)</span></p>
+<p>Recall that (weak) inequalities are preserved under limits:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x_n \leq b\)</span> for all <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(x_n \to x\)</span>, so <span class="math notranslate nohighlight">\(x \leq b\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_n \geq a\)</span> for all <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(x_n \to x\)</span>, so <span class="math notranslate nohighlight">\(x \geq a\)</span></p></li>
+</ul>
+<p>therefore <span class="math notranslate nohighlight">\(x \in [a, b] =: F\)</span></p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Any “hyperplane” of the form</p>
+<div class="math notranslate nohighlight">
+\[
+H = \{ {\bf x} \in \mathbb{R}^K : {\bf x}' {\bf a} = c \}
+\]</div>
+<p>is closed</p>
+</div>
+<p><strong>Proof:</strong> Fix <span class="math notranslate nohighlight">\({\bf a} \in \mathbb{R}^K\)</span> and <span class="math notranslate nohighlight">\(c \in \mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(H\)</span> be as above</p>
+<p>Let <span class="math notranslate nohighlight">\(\{{\bf x}_n\} \subset H\)</span> with <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x} \in \mathbb{R}^K\)</span></p>
+<p>We claim that <span class="math notranslate nohighlight">\({\bf x} \in H\)</span></p>
+<p>Since <span class="math notranslate nohighlight">\({\bf x}_n \in H\)</span> and <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span> we have
+$<span class="math notranslate nohighlight">\(
+{\bf x}_n ' {\bf a} \to {\bf x}' {\bf a} \text{ in } \mathbb{R}
+\quad \text{and} \quad
+{\bf x}_n' {\bf a} = c \text{ for all } n
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\text{therefore } 
+{\bf x}' {\bf a} = \lim_{n} {\bf x}_n' {\bf a} 
+= \lim_n c
+= c
+\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\text{therefore } 
+{\bf x} \in H
+\)</span>$</p>
+</section>
+</section>
+<section id="properties-of-open-and-closed-sets">
+<h2>Properties of Open and Closed Sets<a class="headerlink" href="#properties-of-open-and-closed-sets" title="Permalink to this heading">#</a></h2>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p><span class="math notranslate nohighlight">\(G \subset \mathbb{R}^K\)</span> is open <span class="math notranslate nohighlight">\(\iff \; G^c\)</span> is closed</p>
+</div>
+<p><strong>Proof:</strong> Let’s just check <span class="math notranslate nohighlight">\(\implies\)</span></p>
+<p>Pick any <span class="math notranslate nohighlight">\(G\)</span> and let <span class="math notranslate nohighlight">\(F := G^c\)</span></p>
+<p>Suppose to the contrary that <span class="math notranslate nohighlight">\(G\)</span> is open but <span class="math notranslate nohighlight">\(F\)</span> is not closed, so</p>
+<p><span class="math notranslate nohighlight">\(\exists\)</span> a sequence <span class="math notranslate nohighlight">\(\{{\bf x}_n\} \subset F\)</span> with limit <span class="math notranslate nohighlight">\({\bf x} \notin F\)</span></p>
+<p>Then <span class="math notranslate nohighlight">\({\bf x} \in G\)</span>, and since <span class="math notranslate nohighlight">\(G\)</span> open, <span class="math notranslate nohighlight">\(\exists \, \epsilon &gt; 0\)</span> such
+that <span class="math notranslate nohighlight">\(B_\epsilon({\bf x}) \subset G\)</span></p>
+<p>Since <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span> we can choose an <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> with <span class="math notranslate nohighlight">\({\bf x}_N \in
+B_\epsilon({\bf x})\)</span></p>
+<p>This contradicts <span class="math notranslate nohighlight">\({\bf x}_n \in F\)</span> for all <span class="math notranslate nohighlight">\(n\)</span></p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<ol class="arabic simple">
+<li><p>Any union of open sets is open</p></li>
+<li><p>Any intersection of closed sets is closed</p></li>
+</ol>
+</div>
+<p><em><strong>Proof of first fact:</strong></em></p>
+<p>Let <span class="math notranslate nohighlight">\(G := \cup_{\lambda \in \Lambda} G_\lambda\)</span>, where each <span class="math notranslate nohighlight">\(G_\lambda\)</span> is
+open</p>
+<p>We claim that any given <span class="math notranslate nohighlight">\({\bf x} \in G\)</span> is interior to <span class="math notranslate nohighlight">\(G\)</span></p>
+<p>Pick any <span class="math notranslate nohighlight">\({\bf x} \in G\)</span></p>
+<p>By definition, <span class="math notranslate nohighlight">\({\bf x} \in G_\lambda\)</span> for some <span class="math notranslate nohighlight">\(\lambda\)</span></p>
+<p>Since <span class="math notranslate nohighlight">\(G_\lambda\)</span> is open, <span class="math notranslate nohighlight">\(\exists \, \epsilon &gt; 0\)</span> such that <span class="math notranslate nohighlight">\(B_\epsilon({\bf x})
+\subset G_\lambda\)</span></p>
+<p>But <span class="math notranslate nohighlight">\(G_\lambda \subset G\)</span>, so <span class="math notranslate nohighlight">\(B_\epsilon({\bf x}) \subset G\)</span> also holds</p>
+<p>In other words, <span class="math notranslate nohighlight">\({\bf x}\)</span> is interior to <span class="math notranslate nohighlight">\(G\)</span></p>
+</section>
+<section id="continuity">
+<h2>Continuity<a class="headerlink" href="#continuity" title="Permalink to this heading">#</a></h2>
+<p>One of the most fundamental properties of functions</p>
+<p>Related to existence of</p>
+<ul class="simple">
+<li><p>optima</p></li>
+<li><p>roots</p></li>
+<li><p>fixed points</p></li>
+<li><p>etc</p></li>
+</ul>
+<p>as well as a variety of other useful concepts</p>
+<p>A function <span class="math notranslate nohighlight">\(F\)</span> is called <em><strong>bounded</strong></em> if its range is a bounded set.</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(G\)</span> are bounded, then so are <span class="math notranslate nohighlight">\(F+G\)</span>, <span class="math notranslate nohighlight">\(F \cdot G\)</span> and <span class="math notranslate nohighlight">\(\alpha F\)</span></p>
+</div>
+<p>Proof for the case <span class="math notranslate nohighlight">\(F + G\)</span>:</p>
+<p>Let <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(G\)</span> be bounded functions</p>
+<p><span class="math notranslate nohighlight">\(\exists\)</span> <span class="math notranslate nohighlight">\(M_F\)</span> and <span class="math notranslate nohighlight">\(M_G\)</span> s.t.
+<span class="math notranslate nohighlight">\(\| F({\bf x}) \| \leq M_F\)</span> and <span class="math notranslate nohighlight">\(\| G({\bf x}) \| \leq M_G\)</span>
+for all <span class="math notranslate nohighlight">\({\bf x}\)</span></p>
+<p>Fix any <span class="math notranslate nohighlight">\({\bf x}\)</span> and let <span class="math notranslate nohighlight">\(M := M_F + M_G\)</span></p>
+<p>Applying the triangle inequality gives</p>
+<div class="math notranslate nohighlight">
+\[
+\| (F + G)({\bf x}) \|
+:= \| F({\bf x}) + G({\bf x}) \|
+\leq \| F({\bf x}) \| + \| G({\bf x}) \| 
+\leq M
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\({\bf x}\)</span> was arbitrary this bound holds for all <span class="math notranslate nohighlight">\({\bf x}\)</span></p>
+<p>Let <span class="math notranslate nohighlight">\(F \colon A \to \mathbb{R}^J\)</span> where <span class="math notranslate nohighlight">\(A\)</span> is a subset of <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></p>
+<p><span class="math notranslate nohighlight">\(F\)</span> is called <em><strong>continuous at</strong></em> <span class="math notranslate nohighlight">\({\bf x} \in A\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf x}_n \to {\bf x}
+\quad \implies \quad
+F({\bf x}_n) \to F({\bf x}) 
+\]</div>
+<p>Requires that</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F({\bf x}_n)\)</span> converges for each choice of <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span>,</p></li>
+<li><p>The limit is always the same, and that limit is <span class="math notranslate nohighlight">\(F({\bf x})\)</span></p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(F\)</span> is called <em><strong>continuous</strong></em> if it is continuous at every <span class="math notranslate nohighlight">\({\bf x} \in
+A\)</span></p>
+<figure class="align-default" id="cont-func">
+<img alt="_images/cont_func.png" src="_images/cont_func.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Continuity</span><a class="headerlink" href="#cont-func" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="discont-func">
+<img alt="_images/discont_func.png" src="_images/discont_func.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Discontinuity at <span class="math notranslate nohighlight">\(x\)</span></span><a class="headerlink" href="#discont-func" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let <span class="math notranslate nohighlight">\({\bf A}\)</span> be an <span class="math notranslate nohighlight">\(J \times K\)</span> matrix and let <span class="math notranslate nohighlight">\(F({\bf x}) = {\bf A}
+{\bf x}\)</span></p>
+<p>The function <span class="math notranslate nohighlight">\(F\)</span> is continuous at every <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^K\)</span></p>
+</div>
+<p>To see this take</p>
+<ul class="simple">
+<li><p>any <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^K\)</span></p></li>
+<li><p>any <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span></p></li>
+</ul>
+<p>By the definition of the matrix norm <span class="math notranslate nohighlight">\(\| {\bf A} \|\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+\| {\bf A} {\bf x}_n - {\bf A} {\bf x} \|
+= \| {\bf A} ({\bf x}_n - {\bf x}) \|
+\leq \| {\bf A} \| \| {\bf x}_n - {\bf x} \|
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\text{therefore }
+{\bf x}_n \to {\bf x} \implies
+{\bf A} {\bf x}_n \to {\bf A} {\bf x} 
+\]</div>
+<p>Exactly what rules are we using here?</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(f \colon \mathbb{R} \to \mathbb{R}\)</span> is differentiable at <span class="math notranslate nohighlight">\(x\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> is continuous at <span class="math notranslate nohighlight">\(x\)</span></p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Some functions known to be continuous on their domains:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x \mapsto x^\alpha\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x \mapsto |x|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x \mapsto \log(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x \mapsto \exp(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x \mapsto \sin(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x \mapsto \cos(x)\)</span></p></li>
+</ul>
+</div>
+<p>Discontinuous at zero: <span class="math notranslate nohighlight">\(x \mapsto \mathbb{1}\{x &gt; 0\}\)</span>.
+Let <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(G\)</span> be functions and let <span class="math notranslate nohighlight">\(\alpha \in \mathbb{R}\)</span></p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(G\)</span> are continuous at <span class="math notranslate nohighlight">\({\bf x}\)</span> then so is <span class="math notranslate nohighlight">\(F + G\)</span>,
+where</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+(F + G)({\bf x}) := F({\bf x}) + G({\bf x})
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p>If <span class="math notranslate nohighlight">\(F\)</span> is continuous at <span class="math notranslate nohighlight">\({\bf x}\)</span> then so is <span class="math notranslate nohighlight">\(\alpha F\)</span>, where</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+(\alpha F)({\bf x}) := \alpha F({\bf x})
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p>If <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(G\)</span> are continuous at <span class="math notranslate nohighlight">\({\bf x}\)</span> and real valued then so is
+<span class="math notranslate nohighlight">\(FG\)</span>, where</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+(FG)({\bf x}) := F({\bf x}) \cdot G({\bf x})
+\]</div>
+<p>In the latter case, if in addition <span class="math notranslate nohighlight">\(G({\bf x}) \ne 0\)</span>, then <span class="math notranslate nohighlight">\(F/G\)</span> is also continuous.</p>
+</div>
+<p>As a result, set of continuous functions is “closed” under elementary
+arithmetic operations</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>The function <span class="math notranslate nohighlight">\(F \colon \mathbb{R} \to \mathbb{R}\)</span> defined by</p>
+<div class="math notranslate nohighlight">
+\[
+F(x) = \frac{\exp(x) + \sin(x)}{2 + \cos(x)} + \frac{x^4}{2}
+- \frac{\cos^3(x)}{8!}
+\]</div>
+<p>is continuous</p>
+</div>
+<p><strong>Proof:</strong> Just repeatedly apply the rules on the previous slide</p>
+<p>Let’s just check that</p>
+<div class="math notranslate nohighlight">
+\[
+\text{$F$ and $G$ continuous at ${\bf x}$}
+\implies 
+\text{$F + G$ continuous at ${\bf x}$}
+\]</div>
+<p><strong>Proof:</strong> Let <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(G\)</span> be continuous at <span class="math notranslate nohighlight">\({\bf x}\)</span></p>
+<p>Pick any <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span></p>
+<p>We claim that
+<span class="math notranslate nohighlight">\(F({\bf x}_n) + G({\bf x}_n) \to F({\bf x}) + G({\bf x})\)</span></p>
+<p>By assumption, <span class="math notranslate nohighlight">\(F({\bf x}_n) \to F({\bf x})\)</span> and <span class="math notranslate nohighlight">\(G({\bf x}_n) \to G({\bf x})\)</span></p>
+<p>From this and the triangle inequality we get</p>
+<div class="math notranslate nohighlight">
+\[
+\| F({\bf x}_n) + G({\bf x}_n) - (F({\bf x}) + G({\bf x})) \|
+\leq 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\leq 
+\| F({\bf x}_n) - F({\bf x}) \|
++
+\| G({\bf x}_n) - G({\bf x}) \|
+\to 0
+\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03.set_theory.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Elements of set theory</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="04.linear_algebra.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Elements of linear algebra</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#real-numbers">Real Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-sets">Bounded sets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epsilon-balls-epsilon-balls">Epsilon-balls (<span class="math notranslate nohighlight">\(\epsilon\)</span>-balls)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences">Sequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">Convergence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-limits">Properties of Limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-limits">Operations with limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-sums">Infinite Sums</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cauchy-sequences">Cauchy Sequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsequences">Subsequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">Derivatives</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-series">Taylor series</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-in-mathbb-r-k">Analysis in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norm-and-distance">Norm and distance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-sets-and-epsilon-balls">Bounded sets and <span class="math notranslate nohighlight">\(\epsilon\)</span>-balls</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-vs-componentwise-convergence">Vector vs Componentwise Convergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#from-scalar-to-vector-analysis">From Scalar to Vector Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-sums-in-mathbb-r-k">Infinite Sums in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-and-closed-sets">Open and Closed Sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#closed-sets">Closed Sets</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-open-and-closed-sets">Properties of Open and Closed Sets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity">Continuity</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fedor Iskhakov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
