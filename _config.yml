@@ -63,7 +63,6 @@ parse:
 #######################################################################################
 # HTML-specific settings
 html:
-  announcement: "Solutions for Exercise set B posted"
   favicon                   : "_static/favicon/favicon.ico"  # A path to a favicon image
   use_edit_page_button      : false  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
   use_repository_button     : true  # Whether to add a link to your repository button
@@ -77,7 +76,7 @@ html:
   comments:
     hypothesis              : false
     utterances              : false
-  announcement              : "" # A banner announcement at the top of the site.
+  announcement              : "Solutions for Exercise set B posted" # A banner announcement at the top of the site.
 
 #######################################################################################
 # LaTeX-specific settings
