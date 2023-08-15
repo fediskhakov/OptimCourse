@@ -8,9 +8,8 @@ chapters:
 - file: 01.introduction
 - file: 02.optimization_intro
 - file: 03.set_theory
-- file: 03.basic_analysis
-- file: 04.linear_algebra
-- file: 05.probability
+- file: 04.basic_analysis
+- file: 05.linear_algebra
 - file: 06.optimization_fundamentals
 - file: 07.unconstrained
 - file: 08.constrained
