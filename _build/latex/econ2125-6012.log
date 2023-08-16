@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.30)  16 AUG 2023 11:30
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.30)  16 AUG 2023 13:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2134,7 +2134,11 @@ Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:sc
 ipt=math;language=dflt;!
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
 ipt=math;language=dflt;!
-[131] (./econ2125-6012.ind)
+[131] [132]
+Chapter 15.
+[133
+
+] (./econ2125-6012.ind)
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2205,21 +2209,21 @@ The property list \__xpg_alias contains the pairs (without outer braces):
 >  {newzealand/target}  =>  {english}
 >  {newzealand/variant}  =>  {newzealand}
 >  {newzealand/options}  =>  {variant=newzealand}.
- [132] (./econ2125-6012.aux
+ [134] (./econ2125-6012.aux
 LaTeX Info: Redefining \rmfamily on input line 17.
 LaTeX Info: Redefining \sffamily on input line 17.
 LaTeX Info: Redefining \ttfamily on input line 17.
 )
 Package rerunfilecheck Info: File `econ2125-6012.out' has not changed.
-(rerunfilecheck)             Checksum: 4973D80B4D9405DEE3E144B52E91A4A8;7205.
+(rerunfilecheck)             Checksum: 21C9215B874C1CCDB555081470FDB62D;7587.
  ) 
 Here is how much of TeX's memory you used:
- 44164 strings out of 476683
- 1024496 string characters out of 5804047
- 1912018 words of memory out of 5000000
- 63507 multiletter control sequences out of 15000+600000
+ 44172 strings out of 476683
+ 1024691 string characters out of 5804047
+ 1911018 words of memory out of 5000000
+ 63515 multiletter control sequences out of 15000+600000
  521219 words of font info for 141 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  99i,27n,115p,751b,2273s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on econ2125-6012.pdf (138 pages).
+Output written on econ2125-6012.pdf (140 pages).

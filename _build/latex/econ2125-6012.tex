@@ -4474,7 +4474,7 @@ Mainly review of key ideas
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-Simon \& Blume:
+Simon \& Blume: 12.1, 12.2, 12.3, 12.4, 12.5 10.1, 10.2, 10.3, 10.4, 13.4
 
 \item {} 
 \sphinxAtStartPar
@@ -8064,6 +8064,89 @@ We just replace all the inequality in question 1 to strict inequality, and we ge
 
 \end{enumerate}
 
+\sphinxstepscope
+
+
+\chapter{Exercise set C}
+\label{\detokenize{04.exercises:exercise-set-c}}\label{\detokenize{04.exercises::doc}}
+\sphinxAtStartPar
+Please, see the
+{\hyperref[\detokenize{02.exercises::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{\sphinxstylestrong{general comment on the tutorial exercises}}}}}
+
+
+\section{Question C.1}
+\label{\detokenize{04.exercises:question-c-1}}
+\sphinxAtStartPar
+Consider two convergent sequences in \(\mathbb{R}^n\), \(\{{\bf x}_i\}_{i=1}^\infty\) and
+\(\{{\bf y}_i\}_{i=1}^\infty\) such that
+\begin{equation*}
+\begin{split}
+\lim_{i \to \infty} {\bf x}_i = {\bf x} \in \mathbb{R}^n, \quad
+\lim_{i \to \infty} {\bf y}_i = {\bf y} \in \mathbb{R}^n
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Prove the following properties of the limits:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\(\lim_{i \to \infty} ({\bf x}_i+{\bf y}_i) = {\bf x} + {\bf y}\)
+
+\item {} 
+\sphinxAtStartPar
+\(\lim_{i \to \infty} ({\bf x}_i{\bf y}_i) = {\bf x}{\bf y}\)
+
+\item {} 
+\sphinxAtStartPar
+\({\bf x}_i \le {\bf y}_i\) for \(\forall i\) component\sphinxhyphen{}wise \(\implies {\bf x} \le {\bf y}\)
+
+\end{itemize}
+
+\begin{sphinxadmonition}{tip}{Tip:}
+\sphinxAtStartPar
+Definition of the limit in \(\mathbb{R}^n\) is essentially unchanged from the definition of the limit in \(\mathbb{R}\)
+\end{sphinxadmonition}
+
+
+\section{Question C.2}
+\label{\detokenize{04.exercises:question-c-2}}
+\sphinxAtStartPar
+Show that the Cobb\sphinxhyphen{}Douglas production function
+\(f(k,l) = k^\alpha l^\beta\) from \([0,\infty) \times [0,\infty)\) to \(\mathbb{R}\) is continuous everywhere in its domain.
+
+\begin{sphinxadmonition}{tip}{Tip:}
+\sphinxAtStartPar
+You can use the fact that, for any \(a \in \mathbb{R}\) the function \(g(x) = x^a\) is continuous at any \(x \in [0,\infty)\). This was mentioned towards the end of lecture 4.
+Also, remember that norm convergence implies element by element convergence.
+\end{sphinxadmonition}
+
+
+\section{Question C.3}
+\label{\detokenize{04.exercises:question-c-3}}
+\sphinxAtStartPar
+Let \(\beta \in (0,1)\). Show that the utility function \(u(c_1,c_2) = \sqrt{c_1} + \beta \sqrt{c_2}\) from \([0,\infty) \times [0,\infty)\) to \(\mathbb{R}\) to \(\mathbb{R}\) is continuous everywhere in its domain.
+
+
+\section{Question C.4}
+\label{\detokenize{04.exercises:question-c-4}}
+\sphinxAtStartPar
+Let \(A\) be the set of all consumption pairs \((c_1,c_2)\) such that \(c_1 \ge 0\), \(c_2 \ge 0\) and \(p_1 c_1 + p_2 c_2 \le M\) Here \(p_1\), \(p_2\) and \(M\) are positive constants. Show that \(A\) is a closed subset of \(\mathbb{R}^2\).
+
+\begin{sphinxadmonition}{tip}{Tip:}
+\sphinxAtStartPar
+Weak inequalities are preserved under limits
+\end{sphinxadmonition}
+
+
+\section{Question C.5}
+\label{\detokenize{04.exercises:question-c-5}}
+\sphinxAtStartPar
+Let \({\bf x}, {\bf y} \in \mathbb{R}^N\) and \(\| {\bf x} \| \) denote the Euclidean norm.  Verify the \sphinxstyleemphasis{\sphinxstylestrong{Parallelogram Equality}} given by
+\begin{equation*}
+\begin{split}
+\| {\bf x} + {\bf y} \|^2 + \| {\bf x} - {\bf y} \|^2 = 2 \big( \| {\bf x} \|^2 + \| {\bf y} \|^2 \big)
+\end{split}
+\end{equation*}
 
 
 
