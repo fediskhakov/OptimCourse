@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.30)  15 AUG 2023 23:54
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.30)  16 AUG 2023 11:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1936,7 +1936,7 @@ File: bounded.png Graphic file (type bmp)
  [69]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4719.
+(hyperref)                removing `math shift' on input line 4721.
 
 File: eps_ball1D.png Graphic file (type bmp)
 <eps_ball1D.png>
@@ -1983,15 +1983,15 @@ File: taylor_10.png Graphic file (type bmp)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5978.
+(hyperref)                removing `math shift' on input line 5980.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 5978.
+(hyperref)                removing `\symbb' on input line 5980.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 5978.
+(hyperref)                removing `superscript' on input line 5980.
 
 [86] [87] [88] [89]
 File: vec.png Graphic file (type bmp)
@@ -2000,17 +2000,17 @@ File: vec_minus.png Graphic file (type bmp)
 <vec_minus.png>
  [90]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 6101.
+(Font)              scaled to size 8.00085pt on input line 6103.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 6101.
+(Font)              scaled to size 6.00064pt on input line 6103.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 6101.
+(Font)              scaled to size 7.99915pt on input line 6103.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 6101.
+(Font)              scaled to size 5.99936pt on input line 6103.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6101.
+(hyperref)                removing `math shift' on input line 6103.
 
 File: eps_ball2D.png Graphic file (type bmp)
 <eps_ball2D.png>
@@ -2030,15 +2030,15 @@ File: subseqconverg.png Graphic file (type bmp)
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6430.
+(hyperref)                removing `math shift' on input line 6432.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 6430.
+(hyperref)                removing `\symbb' on input line 6432.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 6430.
+(hyperref)                removing `superscript' on input line 6432.
 
 [96]
 File: interior.png Graphic file (type bmp)
@@ -2216,7 +2216,7 @@ Package rerunfilecheck Info: File `econ2125-6012.out' has not changed.
 Here is how much of TeX's memory you used:
  44164 strings out of 476683
  1024496 string characters out of 5804047
- 1911018 words of memory out of 5000000
+ 1912018 words of memory out of 5000000
  63507 multiletter control sequences out of 15000+600000
  521219 words of font info for 141 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
