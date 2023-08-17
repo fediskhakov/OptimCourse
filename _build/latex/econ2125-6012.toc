@@ -100,6 +100,6 @@
 \contentsline {chapter}{\numberline {15}Exercise set C}{133}{chapter.15}%
 \contentsline {section}{\numberline {15.1}Question C.1}{133}{section.15.1}%
 \contentsline {section}{\numberline {15.2}Question C.2}{133}{section.15.2}%
-\contentsline {section}{\numberline {15.3}Question C.3}{133}{section.15.3}%
+\contentsline {section}{\numberline {15.3}Question C.3}{134}{section.15.3}%
 \contentsline {section}{\numberline {15.4}Question C.4}{134}{section.15.4}%
 \contentsline {section}{\numberline {15.5}Question C.5}{134}{section.15.5}%
