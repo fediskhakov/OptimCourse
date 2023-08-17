@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.30)  16 AUG 2023 13:45
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.30)  17 AUG 2023 14:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1920,13 +1920,14 @@ File: arctan.png Graphic file (type bmp)
 <arctan.png>
  [63] [64]
 Chapter 4.
+[65
+
+]
 File: root.png Graphic file (type bmp)
 <root.png>
 File: no_root.png Graphic file (type bmp)
 <no_root.png>
-[65
-
-] [66] [67]
+ [66] [67]
 File: 325d114ec199e5a53f69355c4e5969a6aab8d506b9b4fab754330ef81df3b0b3.png Grap
 hic file (type bmp)
 <325d114ec199e5a53f69355c4e5969a6aab8d506b9b4fab754330ef81df3b0b3.png>
@@ -1936,7 +1937,7 @@ File: bounded.png Graphic file (type bmp)
  [69]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4721.
+(hyperref)                removing `math shift' on input line 4747.
 
 File: eps_ball1D.png Graphic file (type bmp)
 <eps_ball1D.png>
@@ -1948,12 +1949,11 @@ File: convergent_seqs1.png Graphic file (type bmp)
 <convergent_seqs1.png>
 File: convergent_seqs2.png Graphic file (type bmp)
 <convergent_seqs2.png>
- [72]
 File: convergent_seqs3.png Graphic file (type bmp)
 <convergent_seqs3.png>
 File: convergent_seqs4.png Graphic file (type bmp)
 <convergent_seqs4.png>
- [73] [74] [75]
+ [72] [73] [74] [75]
 File: 5fbbd51f35f701b13d6cb96a1f38df9a8607cf9378ee6a9de22ac366a4b0bc7d.png Grap
 hic file (type bmp)
 <5fbbd51f35f701b13d6cb96a1f38df9a8607cf9378ee6a9de22ac366a4b0bc7d.png>
@@ -1972,8 +1972,6 @@ File: derivative.png Graphic file (type bmp)
  [84]
 File: taylor_4.png Graphic file (type bmp)
 <taylor_4.png>
-
-[85]
 File: taylor_6.png Graphic file (type bmp)
 <taylor_6.png>
 File: taylor_8.png Graphic file (type bmp)
@@ -1981,71 +1979,71 @@ File: taylor_8.png Graphic file (type bmp)
 File: taylor_10.png Graphic file (type bmp)
 <taylor_10.png>
 
+[85] [86] [87] [88] [89]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 5980.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 5980.
+(hyperref)                removing `math shift' on input line 6006.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 5980.
+(hyperref)                removing `\symbb' on input line 6006.
 
-[86] [87] [88] [89]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 6006.
+
 File: vec.png Graphic file (type bmp)
 <vec.png>
 File: vec_minus.png Graphic file (type bmp)
 <vec_minus.png>
- [90]
+[90]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 6103.
+(Font)              scaled to size 8.00085pt on input line 6129.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 6103.
+(Font)              scaled to size 6.00064pt on input line 6129.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 6103.
+(Font)              scaled to size 7.99915pt on input line 6129.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 6103.
+(Font)              scaled to size 5.99936pt on input line 6129.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6103.
+(hyperref)                removing `math shift' on input line 6129.
 
+[91]
 File: eps_ball2D.png Graphic file (type bmp)
 <eps_ball2D.png>
-[91]
+ [92]
 File: convergence.png Graphic file (type bmp)
 <convergence.png>
 File: convergence2.png Graphic file (type bmp)
 <convergence2.png>
 File: convergence3.png Graphic file (type bmp)
 <convergence3.png>
- [92] [93]
+ [93]
 File: norm_and_pointwise.png Graphic file (type bmp)
 <norm_and_pointwise.png>
  [94] [95]
 File: subseqconverg.png Graphic file (type bmp)
 <subseqconverg.png>
+ [96]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 6458.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6432.
+(hyperref)                removing `\symbb' on input line 6458.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 6432.
+(hyperref)                removing `superscript' on input line 6458.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 6432.
-
-[96]
 File: interior.png Graphic file (type bmp)
 <interior.png>
 File: x_interior.png Graphic file (type bmp)
 <x_interior.png>
- [97]
+[97]
 File: not_interior.png Graphic file (type bmp)
 <not_interior.png>
  [98] [99] [100] [101] [102]
@@ -2220,7 +2218,7 @@ Package rerunfilecheck Info: File `econ2125-6012.out' has not changed.
 Here is how much of TeX's memory you used:
  44172 strings out of 476683
  1024691 string characters out of 5804047
- 1911018 words of memory out of 5000000
+ 1912018 words of memory out of 5000000
  63515 multiletter control sequences out of 15000+600000
  521219 words of font info for 141 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191

@@ -59,7 +59,7 @@
 \contentsline {section}{\numberline {4.2}Plan for this lecture}{65}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Bounded sets}{68}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Epsilon\sphinxhyphen {}balls (\(\mitepsilon \)\sphinxhyphen {}balls)}{70}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Sequences}{72}{section.4.5}%
+\contentsline {section}{\numberline {4.5}Sequences}{71}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Convergence}{72}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Properties of Limits}{77}{section.4.7}%
 \contentsline {section}{\numberline {4.8}Operations with limits}{78}{section.4.8}%
@@ -68,12 +68,12 @@
 \contentsline {section}{\numberline {4.11}Subsequences}{83}{section.4.11}%
 \contentsline {section}{\numberline {4.12}Derivatives}{84}{section.4.12}%
 \contentsline {subsection}{\numberline {4.12.1}Taylor series}{85}{subsection.4.12.1}%
-\contentsline {section}{\numberline {4.13}Analysis in \(\symbb {R}^K\)}{86}{section.4.13}%
+\contentsline {section}{\numberline {4.13}Analysis in \(\symbb {R}^K\)}{90}{section.4.13}%
 \contentsline {subsection}{\numberline {4.13.1}Norm and distance}{90}{subsection.4.13.1}%
 \contentsline {subsection}{\numberline {4.13.2}Bounded sets and \(\mitepsilon \)\sphinxhyphen {}balls}{91}{subsection.4.13.2}%
-\contentsline {subsection}{\numberline {4.13.3}Vector vs Componentwise Convergence}{92}{subsection.4.13.3}%
+\contentsline {subsection}{\numberline {4.13.3}Vector vs Componentwise Convergence}{94}{subsection.4.13.3}%
 \contentsline {section}{\numberline {4.14}From Scalar to Vector Analysis}{94}{section.4.14}%
-\contentsline {subsection}{\numberline {4.14.1}Infinite Sums in \(\symbb {R}^K\)}{96}{subsection.4.14.1}%
+\contentsline {subsection}{\numberline {4.14.1}Infinite Sums in \(\symbb {R}^K\)}{97}{subsection.4.14.1}%
 \contentsline {section}{\numberline {4.15}Open and Closed Sets}{97}{section.4.15}%
 \contentsline {subsection}{\numberline {4.15.1}Closed Sets}{99}{subsection.4.15.1}%
 \contentsline {section}{\numberline {4.16}Properties of Open and Closed Sets}{100}{section.4.16}%
