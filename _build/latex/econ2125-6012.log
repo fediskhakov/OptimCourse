@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.30)  17 AUG 2023 20:05
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.30)  17 AUG 2023 22:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1937,7 +1937,7 @@ File: bounded.png Graphic file (type bmp)
  [69]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4747.
+(hyperref)                removing `math shift' on input line 4748.
 
 File: eps_ball1D.png Graphic file (type bmp)
 <eps_ball1D.png>
@@ -1972,6 +1972,8 @@ File: derivative.png Graphic file (type bmp)
  [84]
 File: taylor_4.png Graphic file (type bmp)
 <taylor_4.png>
+
+[85]
 File: taylor_6.png Graphic file (type bmp)
 <taylor_6.png>
 File: taylor_8.png Graphic file (type bmp)
@@ -1979,71 +1981,71 @@ File: taylor_8.png Graphic file (type bmp)
 File: taylor_10.png Graphic file (type bmp)
 <taylor_10.png>
 
-[85] [86] [87] [88] [89]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6006.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 6006.
+(hyperref)                removing `math shift' on input line 6011.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 6006.
+(hyperref)                removing `\symbb' on input line 6011.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 6011.
+
+[86] [87] [88] [89]
 File: vec.png Graphic file (type bmp)
 <vec.png>
 File: vec_minus.png Graphic file (type bmp)
 <vec_minus.png>
-[90]
+ [90]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00085pt on input line 6129.
+(Font)              scaled to size 8.00085pt on input line 6134.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 6129.
+(Font)              scaled to size 6.00064pt on input line 6134.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99915pt on input line 6129.
+(Font)              scaled to size 7.99915pt on input line 6134.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 6129.
+(Font)              scaled to size 5.99936pt on input line 6134.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6129.
+(hyperref)                removing `math shift' on input line 6134.
 
-[91]
 File: eps_ball2D.png Graphic file (type bmp)
 <eps_ball2D.png>
- [92]
+[91]
 File: convergence.png Graphic file (type bmp)
 <convergence.png>
 File: convergence2.png Graphic file (type bmp)
 <convergence2.png>
 File: convergence3.png Graphic file (type bmp)
 <convergence3.png>
- [93]
+ [92] [93]
 File: norm_and_pointwise.png Graphic file (type bmp)
 <norm_and_pointwise.png>
  [94] [95]
 File: subseqconverg.png Graphic file (type bmp)
 <subseqconverg.png>
- [96]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6458.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 6458.
+(hyperref)                removing `math shift' on input line 6463.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 6458.
+(hyperref)                removing `\symbb' on input line 6463.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 6463.
+
+[96]
 File: interior.png Graphic file (type bmp)
 <interior.png>
 File: x_interior.png Graphic file (type bmp)
 <x_interior.png>
-[97]
+ [97]
 File: not_interior.png Graphic file (type bmp)
 <not_interior.png>
  [98] [99] [100] [101] [102]
@@ -2051,68 +2053,68 @@ File: cont_func.png Graphic file (type bmp)
 <cont_func.png>
 File: discont_func.png Graphic file (type bmp)
 <discont_func.png>
- [103] [104] [105] [106]
-Chapter 5.
-File: coming_soon.png Graphic file (type bmp)
-<coming_soon.png>
-[107
-
-] [108
+ [103] [104] [105] [106] [107] [108
 
 ]
-Chapter 6.
+Chapter 5.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
 [109] [110
 
 ]
-Chapter 7.
+Chapter 6.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
 [111] [112
 
 ]
-Chapter 8.
+Chapter 7.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
 [113] [114
 
 ]
-Chapter 9.
+Chapter 8.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
 [115] [116
 
 ]
-Chapter 10.
+Chapter 9.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
 [117] [118
 
 ]
-Chapter 11.
+Chapter 10.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
 [119] [120
 
 ]
-Chapter 12.
+Chapter 11.
 File: coming_soon.png Graphic file (type bmp)
 <coming_soon.png>
 [121] [122
 
 ]
+Chapter 12.
+File: coming_soon.png Graphic file (type bmp)
+<coming_soon.png>
+[123] [124
+
+]
 Chapter 13.
-[123] [124] [125]
+[125] [126] [127]
 File: 7e667ededfed90e7cfdd5e04185b793e6f2f689cfecb6d4850b534d03f325af8.png Grap
 hic file (type bmp)
 <7e667ededfed90e7cfdd5e04185b793e6f2f689cfecb6d4850b534d03f325af8.png>
 File: 9347b4f115fd6333b69174adffbecc626c3ff4ff315e4503a61f9b76d6794b9a.png Grap
 hic file (type bmp)
 <9347b4f115fd6333b69174adffbecc626c3ff4ff315e4503a61f9b76d6794b9a.png>
- [126] [127] [128]
+ [128] [129] [130]
 Chapter 14.
-[129
+[131
 
 ]
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
@@ -2121,7 +2123,7 @@ Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:sc
 ipt=math;language=dflt;!
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
 ipt=math;language=dflt;!
-[130]
+[132]
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
 ipt=math;language=dflt;!
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
@@ -2132,9 +2134,9 @@ Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:sc
 ipt=math;language=dflt;!
 Missing character: There is no ⧵ (U+29F5) in font [latinmodern-math.otf]/OT:scr
 ipt=math;language=dflt;!
-[131] [132]
+[133] [134]
 Chapter 15.
-[133
+[135
 
 ] (./econ2125-6012.ind)
 The property list \polyglossia@langsetup contains the pairs (without outer
@@ -2207,7 +2209,7 @@ The property list \__xpg_alias contains the pairs (without outer braces):
 >  {newzealand/target}  =>  {english}
 >  {newzealand/variant}  =>  {newzealand}
 >  {newzealand/options}  =>  {variant=newzealand}.
- [134] (./econ2125-6012.aux
+ [136] (./econ2125-6012.aux
 LaTeX Info: Redefining \rmfamily on input line 17.
 LaTeX Info: Redefining \sffamily on input line 17.
 LaTeX Info: Redefining \ttfamily on input line 17.
@@ -2218,10 +2220,10 @@ Package rerunfilecheck Info: File `econ2125-6012.out' has not changed.
 Here is how much of TeX's memory you used:
  44172 strings out of 476683
  1024691 string characters out of 5804047
- 1912018 words of memory out of 5000000
+ 1911018 words of memory out of 5000000
  63515 multiletter control sequences out of 15000+600000
  521219 words of font info for 141 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  99i,27n,115p,751b,2273s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on econ2125-6012.pdf (140 pages).
+Output written on econ2125-6012.pdf (142 pages).

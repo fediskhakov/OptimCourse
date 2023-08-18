@@ -588,15 +588,16 @@ x \in (a, b) \iff a &lt; x &lt; b
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(0 \le a \le b \implies x &gt; 0, x = |x| &lt; |b| = b = \max\{|a|,|b|\}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(a \le b \le 0 \implies a &lt; x &lt; 0, |x|= -x &lt; -a = |a| = \max\{|a|,|b|\}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(a \le 0 \le b \implies\)</span>
-$<span class="math notranslate nohighlight">\(
+<li><p><span class="math notranslate nohighlight">\(a \le 0 \le b \implies\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{cases}
 |x|&lt;|b|, x \ge 0\\
 |x|&lt;|a|, x &lt; 0
 \end{cases}
 \implies |x|&lt; \max\{|a|,|b|\} \text{ from 1. and 2.}
-\)</span>$</p></li>
-</ol>
+\end{split}\]</div>
 </div>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
@@ -739,7 +740,7 @@ x_n \in B_\epsilon(a) \text{ for all } n \geq N
 \[
 \forall \, \epsilon &gt; 0, \;
 \exists \, N \in \mathbb{N} \; 
-\text{ such that } n \geq \mathbb{N} \implies x_n \in B_{\epsilon}(a)
+\text{ such that } n \geq N \implies x_n \in B_{\epsilon}(a)
 \]</div>
 <p>The sequence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> is eventually in this <span class="math notranslate nohighlight">\(\epsilon\)</span>-ball around <span class="math notranslate nohighlight">\(a\)</span></p>
 <figure class="align-default" id="convergent-seqs1">
@@ -766,12 +767,13 @@ x_n \to a \text{ as } n \to \infty
 \quad \text{ or } \quad
 \lim_{n \to \infty} x_n = a,
 \]</div>
-<p>if
-$<span class="math notranslate nohighlight">\(
+<p>if</p>
+<div class="math notranslate nohighlight">
+\[
 \forall \, \epsilon &gt; 0, \;
 \exists \, N \in \mathbb{N} \; 
-\text{ such that } n \geq \mathbb{N} \implies x_n \in B_{\epsilon}(a)
-\)</span>$</p>
+\text{ such that } n \geq N \implies x_n \in B_{\epsilon}(a)
+\]</div>
 </div>
 <p>We call <span class="math notranslate nohighlight">\(\{ x_n \}\)</span> <em><strong>convergent</strong></em> if it converges to some limit in
 <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
@@ -1004,7 +1006,9 @@ x_n \to a \iff |x_n - a| \to 0
 <span class="math notranslate nohighlight">\(n \geq N\)</span></p>
 <p>Regarded as sets,</p>
 <div class="math notranslate nohighlight">
-\[\{x_n\} \subset \{x_1, \ldots, x_{N-1}\} \cup B_{\epsilon}(a)\]</div>
+\[
+\{x_n\} \subset \{x_1, \ldots, x_{N-1}\} \cup B_{\epsilon}(a)
+\]</div>
 <p>Both of these sets are bounded</p>
 <ul class="simple">
 <li><p>First because finite sets are bounded</p></li>
@@ -1108,13 +1112,14 @@ y_k :=  \sum_{n=1}^k x_n
 \]</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
-<p>If <span class="math notranslate nohighlight">\(x_n = \alpha^n\)</span> for <span class="math notranslate nohighlight">\(\alpha \in (0, 1)\)</span>, then
-$<span class="math notranslate nohighlight">\(
+<p>If <span class="math notranslate nohighlight">\(x_n = \alpha^n\)</span> for <span class="math notranslate nohighlight">\(\alpha \in (0, 1)\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[
 \sum_{n=1}^{\infty} x_n 
 = \lim_{k\to \infty} \sum_{n=1}^k \alpha^n
 = \lim_{k\to \infty} \alpha \frac{1 - \alpha^k}{1 - \alpha}
 =  \frac{\alpha}{1 - \alpha}
-\)</span>$</p>
+\]</div>
 </div>
 <p><em><strong>Exercise:</strong></em> show that <span class="math notranslate nohighlight">\(\sum_{n=1}^k \alpha^n
 = \alpha \frac{1 - \alpha^k}{1 - \alpha}\)</span>.</p>
@@ -1585,7 +1590,7 @@ to <span class="math notranslate nohighlight">\(f\)</span> at <span class="math 
 \;
 \exists \, N \in \mathbb{N}
 \; 
-\text{ such that }  n \geq \mathbb{N} \implies {\bf x}_n \in B_{\epsilon}({\bf a})
+\text{ such that }  n \geq N \implies {\bf x}_n \in B_{\epsilon}({\bf a})
 \]</div>
 </div>
 <p>We say: “<span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span> is eventually in any <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighborhood of <span class="math notranslate nohighlight">\({\bf a}\)</span>”</p>
@@ -1705,7 +1710,7 @@ x^K_n \to a^K &amp;  \quad \text{in } \mathbb{R}
 \;
 \exists \, N \in \mathbb{N}
 \; \mathrm{such\;that}  \; 
-n \geq \mathbb{N} \implies \| {\bf x}_n - {\bf a} \| &lt; \epsilon
+n \geq N \implies \| {\bf x}_n - {\bf a} \| &lt; \epsilon
 \]</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\|{\bf x}_n - {\bf a}\| \to 0\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> means that</p></li>
@@ -1716,7 +1721,7 @@ n \geq \mathbb{N} \implies \| {\bf x}_n - {\bf a} \| &lt; \epsilon
 \;
 \exists \, N \in \mathbb{N}
 \; \mathrm{such\;that}  \;
-n \geq \mathbb{N} \implies | \| {\bf x}_n - {\bf a} \| - 0 | &lt; \epsilon
+n \geq N \implies | \| {\bf x}_n - {\bf a} \| - 0 | &lt; \epsilon
 \]</div>
 <p>Obviously equivalent</p>
 </div>
@@ -1887,22 +1892,25 @@ H = \{ {\bf x} \in \mathbb{R}^K : {\bf x}' {\bf a} = c \}
 <p>Fix <span class="math notranslate nohighlight">\({\bf a} \in \mathbb{R}^K\)</span> and <span class="math notranslate nohighlight">\(c \in \mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(H\)</span> be as above</p>
 <p>Let <span class="math notranslate nohighlight">\(\{{\bf x}_n\} \subset H\)</span> with <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x} \in \mathbb{R}^K\)</span></p>
 <p>We claim that <span class="math notranslate nohighlight">\({\bf x} \in H\)</span></p>
-<p>Since <span class="math notranslate nohighlight">\({\bf x}_n \in H\)</span> and <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span> we have
-$<span class="math notranslate nohighlight">\(
+<p>Since <span class="math notranslate nohighlight">\({\bf x}_n \in H\)</span> and <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span> we have</p>
+<div class="math notranslate nohighlight">
+\[
 {\bf x}_n ' {\bf a} \to {\bf x}' {\bf a} \text{ in } \mathbb{R}
 \quad \text{and} \quad
 {\bf x}_n' {\bf a} = c \text{ for all } n
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \text{therefore } 
 {\bf x}' {\bf a} = \lim_{n} {\bf x}_n' {\bf a} 
 = \lim_n c
 = c
-\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \text{therefore } 
 {\bf x} \in H
-\)</span>$</p>
+\]</div>
 </div>
 </section>
 </section>
@@ -2161,7 +2169,7 @@ F(x) = \frac{\exp(x) + \sin(x)}{2 + \cos(x)} + \frac{x^4}{2}
 \implies 
 \text{$F + G$ continuous at ${\bf x}$}
 \]</div>
-<p><strong>Proof:</strong> Let <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(G\)</span> be continuous at <span class="math notranslate nohighlight">\({\bf x}\)</span></p>
+<p>Let <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(G\)</span> be continuous at <span class="math notranslate nohighlight">\({\bf x}\)</span></p>
 <p>Pick any <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span></p>
 <p>We claim that
 <span class="math notranslate nohighlight">\(F({\bf x}_n) + G({\bf x}_n) \to F({\bf x}) + G({\bf x})\)</span></p>

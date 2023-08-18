@@ -68,38 +68,38 @@
 \contentsline {section}{\numberline {4.11}Subsequences}{83}{section.4.11}%
 \contentsline {section}{\numberline {4.12}Derivatives}{84}{section.4.12}%
 \contentsline {subsection}{\numberline {4.12.1}Taylor series}{85}{subsection.4.12.1}%
-\contentsline {section}{\numberline {4.13}Analysis in \(\symbb {R}^K\)}{90}{section.4.13}%
+\contentsline {section}{\numberline {4.13}Analysis in \(\symbb {R}^K\)}{86}{section.4.13}%
 \contentsline {subsection}{\numberline {4.13.1}Norm and distance}{90}{subsection.4.13.1}%
 \contentsline {subsection}{\numberline {4.13.2}Bounded sets and \(\mitepsilon \)\sphinxhyphen {}balls}{91}{subsection.4.13.2}%
-\contentsline {subsection}{\numberline {4.13.3}Vector vs Componentwise Convergence}{94}{subsection.4.13.3}%
+\contentsline {subsection}{\numberline {4.13.3}Vector vs Componentwise Convergence}{92}{subsection.4.13.3}%
 \contentsline {section}{\numberline {4.14}From Scalar to Vector Analysis}{94}{section.4.14}%
-\contentsline {subsection}{\numberline {4.14.1}Infinite Sums in \(\symbb {R}^K\)}{97}{subsection.4.14.1}%
+\contentsline {subsection}{\numberline {4.14.1}Infinite Sums in \(\symbb {R}^K\)}{96}{subsection.4.14.1}%
 \contentsline {section}{\numberline {4.15}Open and Closed Sets}{97}{section.4.15}%
 \contentsline {subsection}{\numberline {4.15.1}Closed Sets}{99}{subsection.4.15.1}%
 \contentsline {section}{\numberline {4.16}Properties of Open and Closed Sets}{100}{section.4.16}%
 \contentsline {section}{\numberline {4.17}Continuity}{102}{section.4.17}%
-\contentsline {section}{\numberline {4.18}Extra material}{106}{section.4.18}%
-\contentsline {chapter}{\numberline {5}Elements of linear algebra}{107}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Fundamentals of optimization}{109}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Unconstrained optimization}{111}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Constrained optimization}{113}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Practical session}{115}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Envelope and maximum theorems}{117}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Dynamic optimization}{119}{chapter.11}%
-\contentsline {chapter}{\numberline {12}Revision}{121}{chapter.12}%
-\contentsline {chapter}{\numberline {13}Exercise set A}{123}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Question A.3: Profit maximization with Cobb\sphinxhyphen {}Douglas production and linear costs}{124}{section.13.1}%
-\contentsline {section}{\numberline {13.2}Question A.4*}{125}{section.13.2}%
-\contentsline {chapter}{\numberline {14}Exercise set B}{129}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Question B.1}{129}{section.14.1}%
-\contentsline {section}{\numberline {14.2}Question B.2}{129}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Question B.3}{130}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Question B.4}{130}{section.14.4}%
-\contentsline {section}{\numberline {14.5}Question B.5}{130}{section.14.5}%
-\contentsline {section}{\numberline {14.6}Question B.6}{130}{section.14.6}%
-\contentsline {chapter}{\numberline {15}Exercise set C}{133}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Question C.1}{133}{section.15.1}%
-\contentsline {section}{\numberline {15.2}Question C.2}{133}{section.15.2}%
-\contentsline {section}{\numberline {15.3}Question C.3}{134}{section.15.3}%
-\contentsline {section}{\numberline {15.4}Question C.4}{134}{section.15.4}%
-\contentsline {section}{\numberline {15.5}Question C.5}{134}{section.15.5}%
+\contentsline {section}{\numberline {4.18}Extra material}{107}{section.4.18}%
+\contentsline {chapter}{\numberline {5}Elements of linear algebra}{109}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Fundamentals of optimization}{111}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Unconstrained optimization}{113}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Constrained optimization}{115}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Practical session}{117}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Envelope and maximum theorems}{119}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Dynamic optimization}{121}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Revision}{123}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Exercise set A}{125}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Question A.3: Profit maximization with Cobb\sphinxhyphen {}Douglas production and linear costs}{126}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Question A.4*}{127}{section.13.2}%
+\contentsline {chapter}{\numberline {14}Exercise set B}{131}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Question B.1}{131}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Question B.2}{131}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Question B.3}{132}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Question B.4}{132}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Question B.5}{132}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Question B.6}{132}{section.14.6}%
+\contentsline {chapter}{\numberline {15}Exercise set C}{135}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Question C.1}{135}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Question C.2}{135}{section.15.2}%
+\contentsline {section}{\numberline {15.3}Question C.3}{136}{section.15.3}%
+\contentsline {section}{\numberline {15.4}Question C.4}{136}{section.15.4}%
+\contentsline {section}{\numberline {15.5}Question C.5}{136}{section.15.5}%

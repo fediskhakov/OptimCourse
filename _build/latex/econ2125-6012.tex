@@ -4695,16 +4695,17 @@ Cases:
 \item {} 
 \sphinxAtStartPar
 \(a \le 0 \le b \implies\)
-\$\(
+
+\end{enumerate}
+\begin{equation*}
+\begin{split}
 \begin{cases}
 |x|<|b|, x \ge 0\\
 |x|<|a|, x < 0
 \end{cases}
 \implies |x|< \max\{|a|,|b|\} \text{ from 1. and 2.}
-\)\$
-
-\end{enumerate}
-\end{sphinxadmonition}
+\end{split}
+\end{equation*}\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Fact}
 
@@ -4948,7 +4949,7 @@ Convergence to \(a\) in symbols,
 \begin{split}
 \forall \, \epsilon > 0, \;
 \exists \, N \in \mathbb{N} \; 
-\text{ such that } n \geq \mathbb{N} \implies x_n \in B_{\epsilon}(a)
+\text{ such that } n \geq N \implies x_n \in B_{\epsilon}(a)
 \end{split}
 \end{equation*}
 \sphinxAtStartPar
@@ -5000,12 +5001,13 @@ x_n \to a \text{ as } n \to \infty
 \end{equation*}
 \sphinxAtStartPar
 if
-\$\(
+\begin{equation*}
+\begin{split}
 \forall \, \epsilon > 0, \;
 \exists \, N \in \mathbb{N} \; 
-\text{ such that } n \geq \mathbb{N} \implies x_n \in B_{\epsilon}(a)
-\)\$
-\end{sphinxadmonition}
+\text{ such that } n \geq N \implies x_n \in B_{\epsilon}(a)
+\end{split}
+\end{equation*}\end{sphinxadmonition}
 
 \sphinxAtStartPar
 We call \(\{ x_n \}\) \sphinxstyleemphasis{\sphinxstylestrong{convergent}} if it converges to some limit in
@@ -5298,7 +5300,9 @@ Fix any \(\epsilon > 0\) and choose \(N\) s.t. \(x_n \in B_{\epsilon}(a)\) when
 \sphinxAtStartPar
 Regarded as sets,
 \begin{equation*}
-\begin{split}\{x_n\} \subset \{x_1, \ldots, x_{N-1}\} \cup B_{\epsilon}(a)\end{split}
+\begin{split}
+\{x_n\} \subset \{x_1, \ldots, x_{N-1}\} \cup B_{\epsilon}(a)
+\end{split}
 \end{equation*}
 \sphinxAtStartPar
 Both of these sets are bounded
@@ -5501,13 +5505,14 @@ Other notation:
 
 \sphinxAtStartPar
 If \(x_n = \alpha^n\) for \(\alpha \in (0, 1)\), then
-\$\(
+\begin{equation*}
+\begin{split}
 \sum_{n=1}^{\infty} x_n 
 = \lim_{k\to \infty} \sum_{n=1}^k \alpha^n
 = \lim_{k\to \infty} \alpha \frac{1 - \alpha^k}{1 - \alpha}
 =  \frac{\alpha}{1 - \alpha}
-\)\$
-\end{sphinxadmonition}
+\end{split}
+\end{equation*}\end{sphinxadmonition}
 
 \sphinxAtStartPar
 \sphinxstyleemphasis{\sphinxstylestrong{Exercise:}} show that \(\sum_{n=1}^k \alpha^n
@@ -6209,7 +6214,7 @@ Sequence \(\{{\bf x}_n\}\) is said to \sphinxstyleemphasis{\sphinxstylestrong{co
 \;
 \exists \, N \in \mathbb{N}
 \; 
-\text{ such that }  n \geq \mathbb{N} \implies {\bf x}_n \in B_{\epsilon}({\bf a})
+\text{ such that }  n \geq N \implies {\bf x}_n \in B_{\epsilon}({\bf a})
 \end{split}
 \end{equation*}\end{sphinxadmonition}
 
@@ -6399,7 +6404,7 @@ Let’s check that
 \;
 \exists \, N \in \mathbb{N}
 \; \mathrm{such\;that}  \; 
-n \geq \mathbb{N} \implies \| {\bf x}_n - {\bf a} \| < \epsilon
+n \geq N \implies \| {\bf x}_n - {\bf a} \| < \epsilon
 \end{split}
 \end{equation*}\begin{itemize}
 \item {} 
@@ -6413,7 +6418,7 @@ n \geq \mathbb{N} \implies \| {\bf x}_n - {\bf a} \| < \epsilon
 \;
 \exists \, N \in \mathbb{N}
 \; \mathrm{such\;that}  \;
-n \geq \mathbb{N} \implies | \| {\bf x}_n - {\bf a} \| - 0 | < \epsilon
+n \geq N \implies | \| {\bf x}_n - {\bf a} \| - 0 | < \epsilon
 \end{split}
 \end{equation*}
 \sphinxAtStartPar
@@ -6719,22 +6724,25 @@ We claim that \({\bf x} \in H\)
 
 \sphinxAtStartPar
 Since \({\bf x}_n \in H\) and \({\bf x}_n \to {\bf x}\) we have
-\$\(
+\begin{equation*}
+\begin{split}
 {\bf x}_n ' {\bf a} \to {\bf x}' {\bf a} \text{ in } \mathbb{R}
 \quad \text{and} \quad
 {\bf x}_n' {\bf a} = c \text{ for all } n
-\)\(
-\)\(
+\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}
 \text{therefore } 
 {\bf x}' {\bf a} = \lim_{n} {\bf x}_n' {\bf a} 
 = \lim_n c
 = c
-\)\(
-\)\(
+\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}
 \text{therefore } 
 {\bf x} \in H
-\)\$
-\end{sphinxadmonition}
+\end{split}
+\end{equation*}\end{sphinxadmonition}
 
 
 \section{Properties of Open and Closed Sets}
@@ -7214,7 +7222,7 @@ Let’s just check that
 \end{split}
 \end{equation*}
 \sphinxAtStartPar
-\sphinxstylestrong{Proof:} Let \(F\) and \(G\) be continuous at \({\bf x}\)
+Let \(F\) and \(G\) be continuous at \({\bf x}\)
 
 \sphinxAtStartPar
 Pick any \({\bf x}_n \to {\bf x}\)
