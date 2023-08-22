@@ -76,7 +76,7 @@ html:
   comments:
     hypothesis              : false
     utterances              : false
-  announcement              : "Latest update: solutions for Exercise set B, updates to Lecture 4, Exercise set C" # A banner announcement at the top of the site.
+  announcement              : "Latest update: solutions for Exercise set C (please reload the page)" # A banner announcement at the top of the site.
 
 #######################################################################################
 # LaTeX-specific settings

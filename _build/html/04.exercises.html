@@ -115,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: solutions for Exercise set B, updates to Lecture 4, Exercise set C</div>
+    <div class="bd-header-announcement__content">Latest update: solutions for Exercise set C (please reload the page)</div>
   </div>
 
   
@@ -448,7 +448,132 @@ Also, remember that norm convergence implies element by element convergence.</p>
 \[
 \| {\bf x} + {\bf y} \|^2 + \| {\bf x} - {\bf y} \|^2 = 2 \big( \| {\bf x} \|^2 + \| {\bf y} \|^2 \big)
 \]</div>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solutions<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><em><strong>Question C.1</strong></em></p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(\{\mathbf{x}_i\}_{i=1}^\infty\)</span> and <span class="math notranslate nohighlight">\(\{\mathbf{y}_i\}_{i=1}^\infty\)</span> be two converget sequences in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> such that <span class="math notranslate nohighlight">\(\mathbf{x}_i \to \mathbf{x} \in \mathbb{R}^n\)</span> and <span class="math notranslate nohighlight">\(\mathbf{y}_i \to y \in \mathbb{R}^n\)</span> as <span class="math notranslate nohighlight">\(i \to \infty\)</span>.
+Recall that <span class="math notranslate nohighlight">\(\mathbf{x}_i \to \mathbf{x}\)</span> if and only if <span class="math notranslate nohighlight">\(\|\mathbf{x}_i - \mathbf{x}\| \to 0\)</span>.</p>
+<p class="sd-card-text"><strong>Proof</strong> of <span class="math notranslate nohighlight">\(\lim_{i \to \infty} (\mathbf{x}_i + \mathbf{y}_i) = \mathbf{x} + \mathbf{y}\)</span></p>
+<p class="sd-card-text">Fix <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>.
+Since <span class="math notranslate nohighlight">\(\mathbf{x}_i \to \mathbf{x}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{y}_i \to \mathbf{y}\)</span>, there exists an <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\|\mathbf{x}_i - \mathbf{x}\| &lt; \frac{\varepsilon}{2} \qquad \text{and} \qquad  \|\mathbf{y}_i - \mathbf{y}\| &lt; \frac{\varepsilon}{2}
+\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i \geq N\)</span>.
+Hence, the triangle inequality yields</p>
+<div class="math notranslate nohighlight">
+\[
+\|(\mathbf{x}_i + \mathbf{y}_i) - (\mathbf{x} + \mathbf{y})\| = \|\mathbf{x}_i - \mathbf{x} + \mathbf{y}_i - \mathbf{y}\| \leq \|\mathbf{x}_i - \mathbf{x}\| + \|\mathbf{y}_i - \mathbf{y}\|&lt; \varepsilon
+\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i \geq N\)</span>. Therefore, since <span class="math notranslate nohighlight">\(\varepsilon\)</span> is arbitrary, we have <span class="math notranslate nohighlight">\(\mathbf{x}_i + \mathbf{y}_i \to \mathbf{x} + \mathbf{y}\)</span> as <span class="math notranslate nohighlight">\(i \to \infty\)</span>.</p>
+<p class="sd-card-text"><strong>Proof</strong> of <span class="math notranslate nohighlight">\(\lim_{i \to \infty} (\mathbf{x}_i' \mathbf{y}_i) = \mathbf{x}' \mathbf{y}\)</span></p>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\(\{\mathbf{x}_i\}_{i=1}^\infty\)</span> and <span class="math notranslate nohighlight">\(\{\mathbf{y}_i\}_{i=1}^\infty\)</span> are convergent sequences, they are bounded (why?) by constants <span class="math notranslate nohighlight">\(M_x &gt; 0\)</span> and <span class="math notranslate nohighlight">\(M_y &gt;0\)</span>, respectively.
+That is, we have <span class="math notranslate nohighlight">\(\|\mathbf{x}_i\|\leq M_x\)</span> and <span class="math notranslate nohighlight">\(\|\mathbf{y}_i\|\leq M_y\)</span> for all <span class="math notranslate nohighlight">\(i\in\mathbb{N}\)</span>.</p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(M:= \max\{M_x, M_y, \|\mathbf{x}\|, \|\mathbf{y}\|\}\)</span>.
+Fix <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>.
+Again, since these sequences are convergent, there is an <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\|\mathbf{x}_i - \mathbf{x}\| &lt; \frac{\varepsilon}{2M}, \qquad \text{and} \qquad \|\mathbf{y}_i - \mathbf{y}\| &lt; \frac{\varepsilon}{2M}
+\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i \geq N\)</span>.
+The tirangle inequality and Cauchy-Schwarz inequality imply</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+|\mathbf{x}_i' \mathbf{y}_i - \mathbf{x}'\mathbf{y}| &amp;= |\mathbf{x}_i' \mathbf{y}_i - \mathbf{x}' \mathbf{y}_i + \mathbf{x}' \mathbf{y}_i - \mathbf{x}'\mathbf{y}|\\
+&amp; \leq |\mathbf{x}_i' \mathbf{y}_i - \mathbf{x}' \mathbf{y}_i| + |\mathbf{x}' \mathbf{y}_i - \mathbf{x}'\mathbf{y}| \\
+&amp; = |(\mathbf{x}_i - \mathbf{x})' \mathbf{y}_i| + |\mathbf{x}'(\mathbf{y}_i-\mathbf{y})| \\
+&amp;\leq \|\mathbf{y}_i\| \|\mathbf{x}_i-\mathbf{x}\| + \|\mathbf{x}\|\|\mathbf{y}_i - \mathbf{y}\| \\
+&amp; \leq M \|\mathbf{x}_i - \mathbf{x}\| + M \|\mathbf{y}_i - \mathbf{y}\| \\
+&amp;&lt; M \frac{\varepsilon}{2M}+ M \frac{\varepsilon}{2M}&lt; \varepsilon
+\end{align*}
+\end{split}\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i \geq N\)</span>.
+Therefore, since <span class="math notranslate nohighlight">\(\varepsilon\)</span> is arbitrary, we have <span class="math notranslate nohighlight">\(\mathbf{x}_i'\mathbf{y}_i \to \mathbf{x}'\mathbf{y}\)</span> as <span class="math notranslate nohighlight">\(i \to \infty\)</span>.</p>
+<p class="sd-card-text"><strong>Proof</strong> of “<span class="math notranslate nohighlight">\(\mathbf{x}_i \leq \mathbf{y}_i\)</span> for all <span class="math notranslate nohighlight">\(i\)</span> component-wise <span class="math notranslate nohighlight">\(\Longrightarrow \mathbf{x} \leq \mathbf{y}\)</span>”</p>
+<p class="sd-card-text">Assume that <span class="math notranslate nohighlight">\(\mathbf{x}_i \leq \mathbf{y}_i\)</span> for all <span class="math notranslate nohighlight">\(i\)</span>.
+Toward contradiction, suppose that <span class="math notranslate nohighlight">\(\mathbf{x} \nleq \mathbf{y}\)</span>.
+Then, there is <span class="math notranslate nohighlight">\(k\in\{1, 2, \dots, n\}\)</span> such that <span class="math notranslate nohighlight">\(\mathbf{x}(k) &gt; \mathbf{y}(k)\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{x}(k)\)</span> denotes the <span class="math notranslate nohighlight">\(k\)</span>-th component of <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^n\)</span>.
+Let <span class="math notranslate nohighlight">\(\varepsilon = \mathbf{x}(k) - \mathbf{y}(k) &gt; 0\)</span>.
+Since the convergences of <span class="math notranslate nohighlight">\(\{\mathbf{x}_i\}_{i=1}^\infty\)</span> and <span class="math notranslate nohighlight">\(\{\mathbf{y}_i\}_{i=1}^\infty\)</span> imply the convergences of <span class="math notranslate nohighlight">\(\{\mathbf{x}_i(k)\}_{i=1}^\infty\)</span> and <span class="math notranslate nohighlight">\(\{\mathbf{y}_i(k)\}_{i=1}^\infty\)</span> (why?),
+there is an <span class="math notranslate nohighlight">\(N\in\mathbb{N}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\mathbf{x}_i(k) - \mathbf{x}(k)| &lt; \frac{\varepsilon}{4} \qquad \text{and} \qquad |\mathbf{y}_i(k) - \mathbf{y}(k)| &lt; \frac{\varepsilon}{4} \\
+\Rightarrow \mathbf{x}_i(k) &gt; \mathbf{x}(k) - \frac{\varepsilon}{4}  \qquad \text{and} \qquad \mathbf{y}_i(k) &lt; \mathbf{y}(k) + \frac{\varepsilon}{4}
+\end{split}\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i \geq N\)</span>.
+This implies that <span class="math notranslate nohighlight">\(\mathbf{x}_i(k) &gt; \mathbf{y}_i(k)\)</span> for all <span class="math notranslate nohighlight">\(i \geq N\)</span>.
+To see this, observe that</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{x}_i(k) - \mathbf{y}_i(k) &gt; \mathbf{x}(k) - \frac{\varepsilon}{4} -  \Big(\mathbf{y}(k) +\frac{\varepsilon}{4}\Big)&gt; \mathbf{x}(k) - \mathbf{y}(k) -\frac{\varepsilon}{2} = \varepsilon - \frac{\varepsilon}{2} = \frac{\varepsilon}{2}&gt; 0
+\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i \geq N\)</span>.
+Since <span class="math notranslate nohighlight">\(\mathbf{x}_i(k)\leq \mathbf{y}_i(k)\)</span> for all <span class="math notranslate nohighlight">\(i\)</span> by assumption, we obtain a contraction, which implies that it must be <span class="math notranslate nohighlight">\(\mathbf{x} \leq \mathbf{y}\)</span>.</p>
+<p class="sd-card-text"><em><strong>Question C.2</strong></em></p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\((k, \ell)\)</span> be any point in <span class="math notranslate nohighlight">\(A\)</span>, and let <span class="math notranslate nohighlight">\(\{(k_n, \ell_n)\}\)</span> be any
+sequence converging to <span class="math notranslate nohighlight">\((k, \ell)\)</span> in the sense of convergence in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>. We wish to show that</p>
+<div class="math notranslate nohighlight">
+\[
+f(k_n, \ell_n) \to f(k, \ell)
+\]</div>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\((k_n, \ell_n) \to (k, \ell)\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, we know from the facts on
+convergence in norm that the individual components converge in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.
+That is,</p>
+<div class="math notranslate nohighlight">
+\[
+k_n \to k
+\quad \text{and} \quad
+\ell_n \to \ell
+\]</div>
+<p class="sd-card-text">We also know from the facts that, for any <span class="math notranslate nohighlight">\(a\)</span>, the function <span class="math notranslate nohighlight">\(g(x) = x^a\)</span>
+is continuous at <span class="math notranslate nohighlight">\(x\)</span>. It follows from the definition of continuity and
+the convergence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> above that <span class="math notranslate nohighlight">\(k_n^\alpha \to k^{\alpha}\)</span> and <span class="math notranslate nohighlight">\(\ell^{\beta}_n \to
+\ell^\beta\)</span>.</p>
+<p class="sd-card-text">Moreover, we know that, for any sequences <span class="math notranslate nohighlight">\(\{y_n\}\)</span> and
+<span class="math notranslate nohighlight">\(\{z_n\}\)</span>, if <span class="math notranslate nohighlight">\(y_n \to y\)</span> and <span class="math notranslate nohighlight">\(z_n \to z\)</span>, then <span class="math notranslate nohighlight">\(y_n z_n \to yz\)</span>. Hence</p>
+<div class="math notranslate nohighlight">
+\[
+    k_n^\alpha \ell^{\beta}_n \to k^{\alpha}\ell^\beta
+\]</div>
+<p class="sd-card-text">That is, <span class="math notranslate nohighlight">\(f(k_n, \ell_n) \to f(k, \ell)\)</span>. Hence <span class="math notranslate nohighlight">\(f\)</span> satisfies the
+definition of continity.</p>
+<p class="sd-card-text"><em><strong>Question C.3</strong></em></p>
+<p class="sd-card-text">The proof is analogous to the proof of continuity of the Cobb-Douglas
+production function given above.</p>
+<p class="sd-card-text"><em><strong>Question C.4</strong></em></p>
+<p class="sd-card-text">To show that <span class="math notranslate nohighlight">\(A\)</span> is closed, we need to show that the limit of any sequence
+contained in <span class="math notranslate nohighlight">\(A\)</span> is also in <span class="math notranslate nohighlight">\(A\)</span>. To this end,
+let <span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span> be an arbitrary sequence in <span class="math notranslate nohighlight">\(A\)</span> coverging to a point
+<span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^2\)</span>.
+Since <span class="math notranslate nohighlight">\({\bf x}_n \in A\)</span> for all <span class="math notranslate nohighlight">\(n\)</span> we have
+<span class="math notranslate nohighlight">\({\bf x}_n \geq {\bf 0}\)</span> in the sense of the component-vise vector inequality
+and <span class="math notranslate nohighlight">\({\bf x}_n' {\bf p} \leq m\)</span>, where <span class="math notranslate nohighlight">\({\bf p} = (p_1, p_2)\)</span>.
+We need to show that the same is true for <span class="math notranslate nohighlight">\({\bf x}\)</span>.</p>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span>, we have
+<span class="math notranslate nohighlight">\({\bf x}_n' {\bf p} \to {\bf x}' {\bf p}\)</span>. Since limits preserve weak
+inequalities and <span class="math notranslate nohighlight">\({\bf x}_n' {\bf p} \leq m\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, we have
+<span class="math notranslate nohighlight">\({\bf x}' {\bf p} \leq m\)</span>. Hence it remains only to show that <span class="math notranslate nohighlight">\({\bf x} \geq
+0\)</span>. Again using the fact that weak inequalities are preserved under
+limits, combined with <span class="math notranslate nohighlight">\({\bf x}_n \geq {\bf 0}\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, gives
+<span class="math notranslate nohighlight">\({\bf x} \geq {\bf 0}\)</span> as required.</p>
+<p class="sd-card-text"><em><strong>Question C.5</strong></em></p>
+<p class="sd-card-text">From the definition of Euclidean norm, we have <span class="math notranslate nohighlight">\(\|{\bf x}\|^2 = \sum_{i=1}^{N}x_i^2\)</span> where <span class="math notranslate nohighlight">\(x_i\)</span> are components of <span class="math notranslate nohighlight">\({\bf x}\)</span>. Therefore:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\| {\bf x} + {\bf y} \|^2 + \| {\bf x} - {\bf y} \|^2 = \sum_{i=1}^{N}(x_i+y_i)^2 + \sum_{i=1}^{N}(x_i-y_i)^2 = \\
+= \sum_{i=1}^{N} \Big( 2 x_i^2 + 2 x_i y_i - 2 x_i y_i + 2 y_i^2 \Big) = 2 \sum_{i=1}^{N}x_i^2 + 2 \sum_{i=1}^{N}y_i^2 = 2 \big( \| {\bf x} \|^2 + \| {\bf y} \|^2 \big)
+\end{split}\]</div>
+</div>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
