@@ -2,11 +2,11 @@
 # (without the root node which is made automatically in the converter)
 
 - pattern:
-    re: \\begin\{frame\}
+    re: \\begin\{frame\}\S*
     st: 
 
 - pattern:
-    re: \\end\{frame\}
+    re: \\end\{frame\}\S*
     st: 
 
 - pattern:
@@ -98,30 +98,6 @@
     st:
 
 - pattern:
-    re: \\bold(\w)
-    st: '{\\bf \1}'
-
-- pattern:
-    re: \\label\{(.*?)\}
-    st: label:\1
-
-- pattern:
-    re: \\eqref\{(.*?)\}
-    st: '{eq}`\1`'
-
-- pattern:
-    re: \\setntn\{(.*?)\}\s?\{(.*?)\}
-    st: '\{ \1 \\colon \2 \}'
-
-- pattern:
-    re: '``(.*?)"'
-    st: '"\1"'
-
-- pattern:
-    re: \fore
-    st: \text{ therefore }
-
-- pattern:
     re: \\navy\{(.*?)\}
     st: '***\1***'
 
@@ -133,9 +109,45 @@
     re: \\underline\{(.*?)\}
     st: '***\1***'
 
+# - pattern:
+#     re: \{\\bf ([\w ]*?)\}
+#     st: '**\1**'
+
 - pattern:
-    re: \{\\bf ([\w ]*?)\}
-    st: '**\1**'
+    re: \\bold(\w)(?=[^a-zA-Z0-9])
+    st: '{\\bf \1}'
+
+- pattern:
+    re: \\boldzero
+    st: '{\\bf 0}'
+
+- pattern:
+    re: \\boldone
+    st: '{\\bf 1}'
+
+- pattern:
+    re: \\bold(alpha|beta|gamma|theta|epsilon|mu|Sigma|Phi|Pi|Lambda|phi|psi)(?=[^a-zA-Z0-9])
+    st: '{\\boldsymbol \\\1}'
+
+- pattern:
+    re: \\hbold(\w)(?=[^a-zA-Z0-9])
+    st: '{\\hat{\\bf \1}}'
+
+- pattern:
+    re: \\hbold(alpha|beta|gamma)(?=[^a-zA-Z0-9])
+    st: '{\\hat{\\boldsymbol \\\1}}'
+
+- pattern:
+    re: \\setntn\{(.*?)\}\s?\{(.*?)\}
+    st: '\{ \1 \\colon \2 \}'
+
+- pattern:
+    re: '``(.*?)"'
+    st: '"\1"'
+
+- pattern:
+    re: \\fore
+    st: \\implies
 
 - pattern:
     re: \\begin\{example\}((.|\n)*?)\\end\{example\}
@@ -154,36 +166,103 @@
       %
 
 - pattern:
-    re:
-    st:
+    re: '\& ='
+    st: =
 
 - pattern:
-    re:
-    st:
+    re: \\Span(?=[^a-zA-Z0-9])
+    st: \\mathrm{span}
 
 - pattern:
-    re:
-    st:
+    re: \\dimension(?=[^a-zA-Z0-9])
+    st: \\mathrm{dim}
 
 - pattern:
-    re:
-    st:
+    re: \\(cl|argmax|interior|Prob|kernel|diag|sgn|determinant|trace|rank|cov|corr|range|var|mse|se|row|col|fracpart)(?=[^a-zA-Z0-9])
+    st: \\mathrm{\1}
 
 - pattern:
-    re:
-    st:
+    re: '\\begin\{equation\*?\}(?:\n)*(?:\\label\{([\w:]*)\}\s+)?([\s\S]+?)(?:\n)*\\end\{equation\*?\}'
+    st: |
+      $$
+      \2
+      $$ (\1)
 
 - pattern:
-    re:
-    st:
+    re: '\\begin\{multline\*?\}(?:\n)*(?:\\label\{([\w:]*)\}\s+)?([\s\S]+?)(?:\n)*\\end\{multline\*?\}'
+    st: |
+      $$
+      \2
+      $$ (\1)
+
+# Cross-referencing
+# - pattern:
+#     re: \\label\{(.*?)\}
+#     st: label:\1
 
 - pattern:
-    re:
-    st:
+    re: \\eqref\{(.*?)\}
+    st: '{eq}`\1`'
+
+# Code blocks
+- pattern:
+    re: '\\begin\{pythoncode\*?\}((.|\n)+?)\\end\{pythoncode\*?\}'
+    st: |
+      <!--
+      ```{code-cell} python3
+      :tags: [hide/remote-cell/input/output]
+      ---
+      mystnb:
+      image:
+          width: 80%
+          align: center
+      ---
+      tags:
+      - hide-input
+      - remove-output
+
+      \1
+
+      ```
+      -->
+
+# All types of pictures
+- pattern:
+    re: \\begin\{figure\}(?:\[\w\]|)(?:\n)*(?:\\begin\{center\})?(?:\\centering)?(?:\n)*(?:\\scalebox{[\d.]+})?(?:\n)*\{\\(?:includegraphics|input)(?:\[.*\])?\{(?:[./\w])*?(\w*).(?:pdf_t|pdf|tex)\}\}(?:\n)*(?:\\caption\{(?:\\label\{([\w:]*)\} )?([\s\S]*?)\})?(?:\n)*(?:\\end\{center\})?(?:\n)*\\end\{figure\}
+    st: |
+      ```{figure} _static/plots/\1.png
+      :name: \2
+
+      \3
+      ```
 
 - pattern:
-    re:
-    st:
+    re: \\Eg (.*)
+    st: |
+      ```{admonition} Example
+      :class: tip
+
+      \1
+      ```
+
+- pattern:
+    re: \\Egs (.*)
+    st: |
+      ```{admonition} Example
+      :class: tip
+
+      \1
+      ```
+
+- pattern:
+    re: \\Facts? (.*)
+    st: |
+      ```{admonition} Fact
+      :class: important
+
+      \1
+      ```
+
 
 # in the end check that every $$ is paired with %
 # - pattern:
@@ -191,8 +270,15 @@
 #     st: '%\n\1\n%'
 
 - pattern:
-    re: '\$\$'
-    st: '%\n$$\n%'
+    re: '\$\$ \(\)'
+    st: '$$'
+
+- pattern:
+    re: '\$\$(.*)?'
+    st: |
+      %
+      $$\1
+      %
 
 - pattern:
     re: '(%\s)+%'

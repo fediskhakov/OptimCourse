@@ -10,7 +10,7 @@ import re
 import yaml
 
 # Settings
-verbose = True  # for debugging
+verbose = False  # for debugging
 
 
 def main(args):
