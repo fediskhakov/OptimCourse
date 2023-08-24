@@ -497,7 +497,7 @@ Fedor Iskhakov</p>
 <li><p>Stachurski: 2.1, 3.1, 3.2</p></li>
 <li><p>Simon &amp; Blume: 6.1, 6.2, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 11, 16, 23.7, 23.8</p></li>
 <li><p>Sundaram: 1.3, Appendix C.1, C.2</p></li>
-<li><p>Extra study material in the bottom of this document</p></li>
+<li><p><a class="reference internal" href="#extra-study-material"><span class="std std-ref">Extra study material in the bottom of this document</span></a></p></li>
 </ul>
 </section>
 <section id="intro-to-linear-algebra">
@@ -671,7 +671,7 @@ x_3
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solutions is x=[ 0.00000000e+00 -9.00719925e+15  4.50359963e+15]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5d/cjhpvdlx7lg8zt1ypw5fcyy40000gn/T/ipykernel_12623/3978225594.py:8: LinAlgWarning: Ill-conditioned matrix (rcond=4.11194e-18): result may not be accurate.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5d/cjhpvdlx7lg8zt1ypw5fcyy40000gn/T/ipykernel_12858/3978225594.py:8: LinAlgWarning: Ill-conditioned matrix (rcond=4.11194e-18): result may not be accurate.
   x=solve(A, b)
 </pre></div>
 </div>
@@ -720,10 +720,10 @@ x_N
 <p><span class="caption-number">Fig. 42 </span><span class="caption-text">Visualization of vector <span class="math notranslate nohighlight">\({\bf x}\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></span><a class="headerlink" href="#f-vec" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id2">
 <img alt="_images/vecs.png" src="_images/vecs.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Three vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 43 </span><span class="caption-text">Three vectors in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The vector of ones will be denoted <span class="math notranslate nohighlight">\({\bf 1}\)</span></p>
@@ -1274,10 +1274,10 @@ as</p>
 <li><p>the origin <span class="math notranslate nohighlight">\({\bf 0}\)</span> (set <span class="math notranslate nohighlight">\(\alpha = 0\)</span>)</p></li>
 </ul>
 </div>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id3">
 <img alt="_images/span_of_one_vec.png" src="_images/span_of_one_vec.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 48 </span><span class="caption-text">The span of <span class="math notranslate nohighlight">\({\bf 1} := (1,1)\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 48 </span><span class="caption-text">The span of <span class="math notranslate nohighlight">\({\bf 1} := (1,1)\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -1522,10 +1522,10 @@ x_2
 <p>In other words, <span class="math notranslate nohighlight">\(P \subset \mathrm{span}\{{\bf e}_1, {\bf e}_2\}\)</span></p>
 <p>Conversely (check it) we have <span class="math notranslate nohighlight">\(\mathrm{span}\{{\bf e}_1, {\bf e}_2\} \subset P\)</span></p>
 </div>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="id4">
 <img alt="_images/flat_plane_e_vecs.png" src="_images/flat_plane_e_vecs.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 52 </span><span class="caption-text"><span class="math notranslate nohighlight">\(\mathrm{span}\{{\bf e}_1, {\bf e}_2\} = P\)</span></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 52 </span><span class="caption-text"><span class="math notranslate nohighlight">\(\mathrm{span}\{{\bf e}_1, {\bf e}_2\} = P\)</span></span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1867,22 +1867,22 @@ X \text{ linearly independent }
 \end{split}\]</div>
 <p>The span of this pair is a plane in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span></p>
 <p>But if we drop either one the span reduces to a line</p>
-<figure class="align-default" id="id4">
+<figure class="align-default" id="id5">
 <img alt="_images/nonredundant1.png" src="_images/nonredundant1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 54 </span><span class="caption-text">The span of <span class="math notranslate nohighlight">\(\{{\bf x}_1, {\bf x}_2\}\)</span> is a plane</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id5">
-<img alt="_images/nonredundant2.png" src="_images/nonredundant2.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 55 </span><span class="caption-text">The span of <span class="math notranslate nohighlight">\(\{{\bf x}_1\}\)</span> alone is a line</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 54 </span><span class="caption-text">The span of <span class="math notranslate nohighlight">\(\{{\bf x}_1, {\bf x}_2\}\)</span> is a plane</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="id6">
+<img alt="_images/nonredundant2.png" src="_images/nonredundant2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 55 </span><span class="caption-text">The span of <span class="math notranslate nohighlight">\(\{{\bf x}_1\}\)</span> alone is a line</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id7">
 <img alt="_images/nonredundant3.png" src="_images/nonredundant3.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 56 </span><span class="caption-text">The span of <span class="math notranslate nohighlight">\(\{{\bf x}_2\}\)</span> alone is a line</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 56 </span><span class="caption-text">The span of <span class="math notranslate nohighlight">\(\{{\bf x}_2\}\)</span> alone is a line</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2085,10 +2085,10 @@ then <span class="math notranslate nohighlight">\(X\)</span> is linearly depende
 <li><p>because <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> is spanned by the two vectors <span class="math notranslate nohighlight">\({\bf e}_1, {\bf e}_2\)</span></p></li>
 </ul>
 </div>
-<figure class="align-default" id="id7">
+<figure class="align-default" id="id8">
 <img alt="_images/vecs.png" src="_images/vecs.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 58 </span><span class="caption-text">Must be linearly dependent</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 58 </span><span class="caption-text">Must be linearly dependent</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -2123,10 +2123,10 @@ P := \{ (x_1, x_2, 0) \in \mathbb{R}^3 \colon x_1, x_2 \in \mathbb{R \}}
 \end{split}\]</div>
 <p>Therefore any three vectors lying in <span class="math notranslate nohighlight">\(P\)</span> are linearly dependent</p>
 </div>
-<figure class="align-default" id="id8">
+<figure class="align-default" id="id9">
 <img alt="_images/flat_plane.png" src="_images/flat_plane.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 59 </span><span class="caption-text">Any three vectors in <span class="math notranslate nohighlight">\(P\)</span> are linearly dependent</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 59 </span><span class="caption-text">Any three vectors in <span class="math notranslate nohighlight">\(P\)</span> are linearly dependent</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2231,10 +2231,10 @@ P := \{ (x_1, x_2, 0) \in \mathbb{R}^3 \colon x_1, x_2 \in \mathbb{R \}}
 <p>Moreover, <span class="math notranslate nohighlight">\(\{{\bf e}_1, {\bf e}_2\}\)</span> is linearly independent (why?)</p>
 <p>Hence <span class="math notranslate nohighlight">\(\{{\bf e}_1, {\bf e}_2\}\)</span> is a basis for <span class="math notranslate nohighlight">\(P\)</span></p>
 </div>
-<figure class="align-default" id="id9">
+<figure class="align-default" id="id10">
 <img alt="_images/flat_plane_e_vecs.png" src="_images/flat_plane_e_vecs.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 60 </span><span class="caption-text">The pair <span class="math notranslate nohighlight">\(\{{\bf e}_1, {\bf e}_2\}\)</span> form a basis for <span class="math notranslate nohighlight">\(P\)</span></span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 60 </span><span class="caption-text">The pair <span class="math notranslate nohighlight">\(\{{\bf e}_1, {\bf e}_2\}\)</span> form a basis for <span class="math notranslate nohighlight">\(P\)</span></span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>What are the implications of <span class="math notranslate nohighlight">\(B\)</span> being a basis of <span class="math notranslate nohighlight">\(S\)</span>?</p>
@@ -2281,10 +2281,10 @@ a linear combination of the basis vectors</p></li>
 <li><p><span class="math notranslate nohighlight">\(B\)</span> is linearly independent in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> (dropping either reduces span)</p></li>
 </ul>
 <p>Hence <span class="math notranslate nohighlight">\(B\)</span> is a basis for the plane <span class="math notranslate nohighlight">\(S\)</span></p>
-<figure class="align-default" id="id10">
+<figure class="align-default" id="id11">
 <img alt="_images/nonredundant1.png" src="_images/nonredundant1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 61 </span><span class="caption-text">The pair <span class="math notranslate nohighlight">\(\{{\bf x}_1, {\bf x}_2\}\)</span> is a basis of its span</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 61 </span><span class="caption-text">The pair <span class="math notranslate nohighlight">\(\{{\bf x}_1, {\bf x}_2\}\)</span> is a basis of its span</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -2473,11 +2473,11 @@ T(\alpha {\bf x} + \beta {\bf y})
 %
 \end{split}\]</div>
 </div>
-<figure class="align-default" id="id11">
+<figure class="align-default" id="id12">
 <img alt="_images/linfunc.png" src="_images/linfunc.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 62 </span><span class="caption-text">The graph of <span class="math notranslate nohighlight">\(T {\bf x} = c_1 x_1 + c_2 x_2\)</span> is a plane
-through the origin</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+through the origin</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Remark: Thinking of linear functions as those whose graph is a straight
@@ -2685,10 +2685,10 @@ equivalent!</p>
 <ul class="simple">
 <li><p>Don’t forget: We are talking about <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span> here</p></li>
 </ul>
-<figure class="align-default" id="id12">
+<figure class="align-default" id="id13">
 <img alt="_images/linbijec.png" src="_images/linbijec.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 63 </span><span class="caption-text">The case of <span class="math notranslate nohighlight">\(N=1\)</span>, nonsingular and singular</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 63 </span><span class="caption-text">The case of <span class="math notranslate nohighlight">\(N=1\)</span>, nonsingular and singular</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Proof that <span class="math notranslate nohighlight">\(T\)</span> onto <span class="math notranslate nohighlight">\(\iff\)</span> <span class="math notranslate nohighlight">\(V := \{T{\bf e}_1, \ldots, T{\bf e}_N\}\)</span> is
@@ -3587,10 +3587,10 @@ c
 <li><p>so <span class="math notranslate nohighlight">\((b, -d)\)</span> is not a scalar multiple of <span class="math notranslate nohighlight">\({\bf 1}\)</span> <span class="math notranslate nohighlight">\(\iff\)</span> <span class="math notranslate nohighlight">\(b \ne -d\)</span></p></li>
 </ul>
 </div>
-<figure class="align-default" id="id13">
+<figure class="align-default" id="id14">
 <img alt="_images/not_multiple_of_one.png" src="_images/not_multiple_of_one.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 64 </span><span class="caption-text"><span class="math notranslate nohighlight">\((b, -d)\)</span> is not a scalar multiple of <span class="math notranslate nohighlight">\({\bf 1}\)</span></span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 64 </span><span class="caption-text"><span class="math notranslate nohighlight">\((b, -d)\)</span> is not a scalar multiple of <span class="math notranslate nohighlight">\({\bf 1}\)</span></span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -3724,10 +3724,10 @@ p
 </div>
 </div>
 </div>
-<figure class="align-default" id="id14">
+<figure class="align-default" id="id15">
 <img alt="_images/simple_mkt.png" src="_images/simple_mkt.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 65 </span><span class="caption-text">Equilibrium <span class="math notranslate nohighlight">\((p^*, q^*)\)</span> in the one good case</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 65 </span><span class="caption-text">Equilibrium <span class="math notranslate nohighlight">\((p^*, q^*)\)</span> in the one good case</span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="important admonition">
@@ -3941,10 +3941,10 @@ x_k \mathrm{col}_k({\bf A}) = {\bf b}\)</span></p></li>
 <p>Thus if <span class="math notranslate nohighlight">\({\bf b}\)</span> is not in this plane then <span class="math notranslate nohighlight">\({\bf A} {\bf x} = {\bf b}\)</span> has no
 solution</p>
 </div>
-<figure class="align-default" id="id15">
+<figure class="align-default" id="id16">
 <img alt="_images/not_in_span.png" src="_images/not_in_span.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 66 </span><span class="caption-text">The vector <span class="math notranslate nohighlight">\({\bf b}\)</span> is not in <span class="math notranslate nohighlight">\(\mathrm{span}({\bf A})\)</span></span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 66 </span><span class="caption-text">The vector <span class="math notranslate nohighlight">\({\bf b}\)</span> is not in <span class="math notranslate nohighlight">\(\mathrm{span}({\bf A})\)</span></span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>When <span class="math notranslate nohighlight">\({\bf A}\)</span> is <span class="math notranslate nohighlight">\(N \times N\)</span> and singular how rare is scenario <span class="math notranslate nohighlight">\({\bf b} \in
@@ -4095,10 +4095,10 @@ a_{21} &amp; a_{22} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=[[-0.01806185  1.19559581]
- [-0.98004816 -1.18599186]]
-det(A)=1.1931626765352268
-det(inv(A))=0.8381086834729499
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=[[-0.7023872  -0.31101767]
+ [-1.04808102  0.4992778 ]]
+det(A)=-0.6766580530149127
+det(inv(A))=-1.4778513246748595
 </pre></div>
 </div>
 </div>
@@ -4674,10 +4674,10 @@ Check Ax=lm*x: [ 0.70710678 -0.70710678] = [ 0.70710678 -0.70710678]
 </div>
 </div>
 </div>
-<figure class="align-default" id="id16">
+<figure class="align-default" id="id17">
 <img alt="_images/eigenvecs.png" src="_images/eigenvecs.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 67 </span><span class="caption-text">The eigenvectors of <span class="math notranslate nohighlight">\({\bf A}\)</span></span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 67 </span><span class="caption-text">The eigenvectors of <span class="math notranslate nohighlight">\({\bf A}\)</span></span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Consider the matrix</p>
@@ -4705,16 +4705,16 @@ such that</p>
 <div class="math notranslate nohighlight">
 \[{\bf R} {\bf x} = \lambda {\bf x}\]</div>
 <p>In other words, no <em><strong>real-valued</strong></em> eigenpairs exist</p>
-<figure class="align-default" id="id17">
+<figure class="align-default" id="id18">
 <img alt="_images/rotation_1.png" src="_images/rotation_1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 68 </span><span class="caption-text">The matrix <span class="math notranslate nohighlight">\({\bf R}\)</span> rotates points by <span class="math notranslate nohighlight">\(90^{\circ}\)</span></span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 68 </span><span class="caption-text">The matrix <span class="math notranslate nohighlight">\({\bf R}\)</span> rotates points by <span class="math notranslate nohighlight">\(90^{\circ}\)</span></span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id18">
+<figure class="align-default" id="id19">
 <img alt="_images/rotation_2.png" src="_images/rotation_2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 69 </span><span class="caption-text">The matrix <span class="math notranslate nohighlight">\({\bf R}\)</span> rotates points by <span class="math notranslate nohighlight">\(90^{\circ}\)</span></span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 69 </span><span class="caption-text">The matrix <span class="math notranslate nohighlight">\({\bf R}\)</span> rotates points by <span class="math notranslate nohighlight">\(90^{\circ}\)</span></span><a class="headerlink" href="#id19" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>But <span class="math notranslate nohighlight">\({\bf R} {\bf x} = \lambda {\bf x}\)</span> can hold <em><strong>if</strong></em> we allow
@@ -5427,7 +5427,7 @@ for all <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)<
 <p>In particular, <span class="math notranslate nohighlight">\({\bf A}\)</span> is nonsingular</p>
 </section>
 <section id="extra-study-material">
-<h2>Extra study material<a class="headerlink" href="#extra-study-material" title="Permalink to this heading">#</a></h2>
+<span id="id1"></span><h2>Extra study material<a class="headerlink" href="#extra-study-material" title="Permalink to this heading">#</a></h2>
 <p>Watch <a class="reference external" href="https://youtu.be/fNk_zzaMoSs?si=X6EK-AqVhQOBplZj">excellent video series on linear algebra</a> by Grant Sanderson (3blue1brown) — best visualisations for strong intuition</p>
 </section>
 </section>
