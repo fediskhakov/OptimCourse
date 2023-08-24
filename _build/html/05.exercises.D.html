@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Practical session &#8212; ECON2125/6012</title>
+    <title>Exercise set D &#8212; ECON2125/6012</title>
   
   
   
@@ -61,13 +61,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '09.practical_session';</script>
-    <link rel="canonical" href="optim.iskh.me/09.practical_session.html" />
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '05.exercises.D';</script>
+    <link rel="canonical" href="optim.iskh.me/05.exercises.D.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Envelope and maximum theorems" href="10.envelope_maximum.html" />
-    <link rel="prev" title="Constrained optimization" href="08.constrained.html" />
+    <link rel="prev" title="Exercise set C" href="04.exercises.C.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,14 +174,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="06.optimization_fundamentals.html">Fundamentals of optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.unconstrained.html">Unconstrained optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08.constrained.html">Constrained optimization</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Practical session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.practical_session.html">Practical session</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10.envelope_maximum.html">Envelope and maximum theorems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11.dynamic.html">Dynamic optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12.revision.html">Revision</a></li>
 <li class="toctree-l1"><a class="reference internal" href="02.exercises.A.html">Exercise set A</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03.exercises.B.html">Exercise set B</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04.exercises.C.html">Exercise set C</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05.exercises.D.html">Exercise set D</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise set D</a></li>
 </ul>
 
     </div>
@@ -252,7 +253,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/fediskhakov/OptimCourse/issues/new?title=Issue%20on%20page%20%2F09.practical_session.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/fediskhakov/OptimCourse/issues/new?title=Issue%20on%20page%20%2F05.exercises.D.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/09.practical_session.md" target="_blank"
+      <li><a href="_sources/05.exercises.D.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -351,7 +352,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -362,11 +365,27 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Practical session</h1>
+    <h1>Exercise set D</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-1">Question D.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-2">Question D.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-3">Question D.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-4">Question D.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-5">Question D.5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-6">Question D.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-7">Question D.7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-8">Question D.8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-9">Question D.9</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -376,9 +395,104 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practical-session">
-<h1>Practical session<a class="headerlink" href="#practical-session" title="Permalink to this heading">#</a></h1>
-<a class="reference internal image-reference" href="_images/coming_soon.png"><img alt="soming soon" class="align-center" src="_images/coming_soon.png" style="width: 514.0px; height: 360.0px;" /></a>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-set-d">
+<h1>Exercise set D<a class="headerlink" href="#exercise-set-d" title="Permalink to this heading">#</a></h1>
+<p>Please, see the
+<a class="reference internal" href="02.exercises.A.html"><span class="doc std std-doc"><strong>general comment on the tutorial exercises</strong></span></a></p>
+<section id="question-d-1">
+<h2>Question D.1<a class="headerlink" href="#question-d-1" title="Permalink to this heading">#</a></h2>
+<p>Consider the matrix <span class="math notranslate nohighlight">\({\bf A}\)</span> defined by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+%
+{\bf A} = 
+\begin{pmatrix}
+1 &amp; 0 \\
+0.5 &amp; -12 \\
+-2 &amp; 7 
+\end{pmatrix}
+%
+\end{split}\]</div>
+<p>Do the columns of this matrix form a basis of <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>? Why or why not?</p>
+</section>
+<section id="question-d-2">
+<h2>Question D.2<a class="headerlink" href="#question-d-2" title="Permalink to this heading">#</a></h2>
+<p>Is <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> a linear subspace of <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>? Why or why not?</p>
+</section>
+<section id="question-d-3">
+<h2>Question D.3<a class="headerlink" href="#question-d-3" title="Permalink to this heading">#</a></h2>
+<p>Show that if <span class="math notranslate nohighlight">\(T \colon \mathbb{R}^K \to \mathbb{R}^N\)</span> is a linear function then <span class="math notranslate nohighlight">\({\bf 0} \in \mathrm{ker}(T)\)</span>.</p>
+</section>
+<section id="question-d-4">
+<h2>Question D.4<a class="headerlink" href="#question-d-4" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(S\)</span> be any nonempty subset of <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span> with the following two
+properties:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in S \implies {\bf x} + {\bf y} \in S\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c \in \mathbb{R}\)</span> and <span class="math notranslate nohighlight">\({\bf x} \in S \implies c{\bf x} \in S\)</span></p></li>
+</ul>
+<p>Is <span class="math notranslate nohighlight">\(S\)</span> a linear subspace of <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span>?</p>
+</section>
+<section id="question-d-5">
+<h2>Question D.5<a class="headerlink" href="#question-d-5" title="Permalink to this heading">#</a></h2>
+<p>If <span class="math notranslate nohighlight">\(S\)</span> is a linear subspace of <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span> then any linear combination of <span class="math notranslate nohighlight">\(K\)</span>
+elements of <span class="math notranslate nohighlight">\(S\)</span> is also in <span class="math notranslate nohighlight">\(S\)</span>. Show this for the case <span class="math notranslate nohighlight">\(K = 3\)</span>.</p>
+</section>
+<section id="question-d-6">
+<h2>Question D.6<a class="headerlink" href="#question-d-6" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(\{{\bf x}_1, {\bf x}_2\}\)</span> be a linearly independent set in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> and let
+<span class="math notranslate nohighlight">\(\gamma\)</span> be a nonzero scalar. Is it true that <span class="math notranslate nohighlight">\(\{\gamma {\bf x}_1, \gamma
+{\bf x}_2\}\)</span> is also linearly independent?</p>
+</section>
+<section id="question-d-7">
+<h2>Question D.7<a class="headerlink" href="#question-d-7" title="Permalink to this heading">#</a></h2>
+<p>Is
+$$
+z=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a5169645-b9b8-4fd1-8ee8-871a7e656259">
+<span class="eqno">(8)<a class="headerlink" href="#equation-a5169645-b9b8-4fd1-8ee8-871a7e656259" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+-3.98 \\
+11.73 \\
+-4.32
+\end{pmatrix}\]</div>
+<div class="math notranslate nohighlight">
+\[
+in the span of $X:=\{{\bf x}_1, {\bf x}_2, {\bf x}_3\}$, where
+\]</div>
+<p>{\bf x}_1=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-83bbf97d-7014-4331-9380-e950233e99e2">
+<span class="eqno">(9)<a class="headerlink" href="#equation-83bbf97d-7014-4331-9380-e950233e99e2" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+-4 \\
+0 \\
+0
+\end{pmatrix}\]</div>
+<p>;;
+{\bf x}_2=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b526730c-6b5b-4cc4-b035-17857037a66b">
+<span class="eqno">(10)<a class="headerlink" href="#equation-b526730c-6b5b-4cc4-b035-17857037a66b" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+1 \\
+2 \\
+0
+\end{pmatrix}\]</div>
+<p>;;
+{\bf x}_3=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9ed625bb-d177-4980-b6a8-75123b50aa4d">
+<span class="eqno">(11)<a class="headerlink" href="#equation-9ed625bb-d177-4980-b6a8-75123b50aa4d" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+0 \\
+1 \\
+-1
+\end{pmatrix}\]</div>
+<p>$$</p>
+</section>
+<section id="question-d-8">
+<h2>Question D.8<a class="headerlink" href="#question-d-8" title="Permalink to this heading">#</a></h2>
+<p>What is the rank of the <span class="math notranslate nohighlight">\(N \times N\)</span> identity matrix <span class="math notranslate nohighlight">\({\bf I}\)</span>?</p>
+<p>What about the upper-triangular matrix which non-zero elements are <span class="math notranslate nohighlight">\(1\)</span>?</p>
+</section>
+<section id="question-d-9">
+<h2>Question D.9<a class="headerlink" href="#question-d-9" title="Permalink to this heading">#</a></h2>
+<p>Show that if <span class="math notranslate nohighlight">\(T: \mathbb{R}^N \to \mathbb{R}^N\)</span> is nonsingular, i.e. linear bijection, the inverse map <span class="math notranslate nohighlight">\(T^{-1}\)</span> is also linear.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -413,22 +527,13 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="08.constrained.html"
+       href="04.exercises.C.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Constrained optimization</p>
+        <p class="prev-next-title">Exercise set C</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="10.envelope_maximum.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Envelope and maximum theorems</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -439,6 +544,28 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-1">Question D.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-2">Question D.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-3">Question D.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-4">Question D.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-5">Question D.5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-6">Question D.6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-7">Question D.7</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-8">Question D.8</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-d-9">Question D.9</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

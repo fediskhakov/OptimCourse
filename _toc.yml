@@ -17,6 +17,7 @@ chapters:
 - file: 10.envelope_maximum
 - file: 11.dynamic
 - file: 12.revision
-- file: 02.exercises
-- file: 03.exercises
-- file: 04.exercises
+- file: 02.exercises.A
+- file: 03.exercises.B
+- file: 04.exercises.C
+- file: 05.exercises.D

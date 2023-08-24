@@ -1,0 +1,706 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercise set C &#8212; ECON2125/6012</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04.exercises.C';</script>
+    <link rel="canonical" href="optim.iskh.me/04.exercises.C.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exercise set D" href="05.exercises.D.html" />
+    <link rel="prev" title="Exercise set B" href="03.exercises.B.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Latest update: lecture 5 (linear algebra), exercise set D</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="00.index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/penrose.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/penrose.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00.index.html">
+                    ECON2125/6012
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01.introduction.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.optimization_intro.html">Univariate and bivariate optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.set_theory.html">Elements of set theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.basic_analysis.html">Basics of real analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.linear_algebra.html">Elements of linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.optimization_fundamentals.html">Fundamentals of optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.unconstrained.html">Unconstrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.constrained.html">Constrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.practical_session.html">Practical session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.envelope_maximum.html">Envelope and maximum theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.dynamic.html">Dynamic optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.revision.html">Revision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.exercises.A.html">Exercise set A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.exercises.B.html">Exercise set B</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise set C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.exercises.D.html">Exercise set D</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse/issues/new?title=Issue%20on%20page%20%2F04.exercises.C.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/04.exercises.C.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise set C</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-c-1">Question C.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-c-2">Question C.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-c-3">Question C.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-c-4">Question C.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-c-5">Question C.5</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-set-c">
+<h1>Exercise set C<a class="headerlink" href="#exercise-set-c" title="Permalink to this heading">#</a></h1>
+<p>Please, see the
+<a class="reference internal" href="02.exercises.A.html"><span class="doc std std-doc"><strong>general comment on the tutorial exercises</strong></span></a></p>
+<section id="question-c-1">
+<h2>Question C.1<a class="headerlink" href="#question-c-1" title="Permalink to this heading">#</a></h2>
+<p>Consider two convergent sequences in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, <span class="math notranslate nohighlight">\(\{{\bf x}_i\}_{i=1}^\infty\)</span> and
+<span class="math notranslate nohighlight">\(\{{\bf y}_i\}_{i=1}^\infty\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{i \to \infty} {\bf x}_i = {\bf x} \in \mathbb{R}^n, \quad
+\lim_{i \to \infty} {\bf y}_i = {\bf y} \in \mathbb{R}^n
+\]</div>
+<p>Prove the following properties of the limits:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lim_{i \to \infty} ({\bf x}_i+{\bf y}_i) = {\bf x} + {\bf y}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\lim_{i \to \infty} ({\bf x}_i'{\bf y}_i) = {\bf x}'{\bf y}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\({\bf x}_i \le {\bf y}_i\)</span> for <span class="math notranslate nohighlight">\(\forall i\)</span> component-wise <span class="math notranslate nohighlight">\(\implies {\bf x} \le {\bf y}\)</span></p></li>
+</ul>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>The scalar product <span class="math notranslate nohighlight">\({\bf x}'{\bf y}\)</span> of two vector is <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is defined by <span class="math notranslate nohighlight">\({\bf x}'{\bf y} = \sum_{j=1}^n x_j y_j\)</span></p>
+<p>Component-wise comparison of the vectors is defined as <span class="math notranslate nohighlight">\({\bf x} \le {\bf y} \iff x_j \le y_j\)</span> for all <span class="math notranslate nohighlight">\(j\in\{1,\dots,N\}\)</span></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Definition of the limit in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> is essentially unchanged from the definition of the limit in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
+</div>
+</section>
+<section id="question-c-2">
+<h2>Question C.2<a class="headerlink" href="#question-c-2" title="Permalink to this heading">#</a></h2>
+<p>Show that the Cobb-Douglas production function
+<span class="math notranslate nohighlight">\(f(k,l) = k^\alpha l^\beta\)</span> from <span class="math notranslate nohighlight">\([0,\infty) \times [0,\infty)\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is continuous everywhere in its domain.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use the fact that, for any <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span> the function <span class="math notranslate nohighlight">\(g(x) = x^a\)</span> is continuous at any <span class="math notranslate nohighlight">\(x \in [0,\infty)\)</span>. This was mentioned towards the end of lecture 4.
+Also, remember that norm convergence implies element by element convergence.</p>
+</div>
+</section>
+<section id="question-c-3">
+<h2>Question C.3<a class="headerlink" href="#question-c-3" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(\beta \in (0,1)\)</span>. Show that the utility function <span class="math notranslate nohighlight">\(u(c_1,c_2) = \sqrt{c_1} + \beta \sqrt{c_2}\)</span> from <span class="math notranslate nohighlight">\([0,\infty) \times [0,\infty)\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is continuous everywhere in its domain.</p>
+</section>
+<section id="question-c-4">
+<h2>Question C.4<a class="headerlink" href="#question-c-4" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be the set of all consumption pairs <span class="math notranslate nohighlight">\((c_1,c_2)\)</span> such that <span class="math notranslate nohighlight">\(c_1 \ge 0\)</span>, <span class="math notranslate nohighlight">\(c_2 \ge 0\)</span> and <span class="math notranslate nohighlight">\(p_1 c_1 + p_2 c_2 \le M\)</span> Here <span class="math notranslate nohighlight">\(p_1\)</span>, <span class="math notranslate nohighlight">\(p_2\)</span> and <span class="math notranslate nohighlight">\(M\)</span> are positive constants. Show that <span class="math notranslate nohighlight">\(A\)</span> is a closed subset of <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Weak inequalities are preserved under limits</p>
+</div>
+</section>
+<section id="question-c-5">
+<h2>Question C.5<a class="headerlink" href="#question-c-5" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in \mathbb{R}^N\)</span> and <span class="math notranslate nohighlight">\(\| {\bf x} \| \)</span> denote the Euclidean norm.  Verify the <em><strong>Parallelogram Equality</strong></em> given by</p>
+<div class="math notranslate nohighlight">
+\[
+\| {\bf x} + {\bf y} \|^2 + \| {\bf x} - {\bf y} \|^2 = 2 \big( \| {\bf x} \|^2 + \| {\bf y} \|^2 \big)
+\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solutions<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><em><strong>Question C.1</strong></em></p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(\{\mathbf{x}_i\}_{i=1}^\infty\)</span> and <span class="math notranslate nohighlight">\(\{\mathbf{y}_i\}_{i=1}^\infty\)</span> be two converget sequences in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span> such that <span class="math notranslate nohighlight">\(\mathbf{x}_i \to \mathbf{x} \in \mathbb{R}^n\)</span> and <span class="math notranslate nohighlight">\(\mathbf{y}_i \to y \in \mathbb{R}^n\)</span> as <span class="math notranslate nohighlight">\(i \to \infty\)</span>.
+Recall that <span class="math notranslate nohighlight">\(\mathbf{x}_i \to \mathbf{x}\)</span> if and only if <span class="math notranslate nohighlight">\(\|\mathbf{x}_i - \mathbf{x}\| \to 0\)</span>.</p>
+<p class="sd-card-text"><strong>Proof</strong> of <span class="math notranslate nohighlight">\(\lim_{i \to \infty} (\mathbf{x}_i + \mathbf{y}_i) = \mathbf{x} + \mathbf{y}\)</span></p>
+<p class="sd-card-text">Fix <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>.
+Since <span class="math notranslate nohighlight">\(\mathbf{x}_i \to \mathbf{x}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{y}_i \to \mathbf{y}\)</span>, there exists an <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\|\mathbf{x}_i - \mathbf{x}\| &lt; \frac{\varepsilon}{2} \qquad \text{and} \qquad  \|\mathbf{y}_i - \mathbf{y}\| &lt; \frac{\varepsilon}{2}
+\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i \geq N\)</span>.
+Hence, the triangle inequality yields</p>
+<div class="math notranslate nohighlight">
+\[
+\|(\mathbf{x}_i + \mathbf{y}_i) - (\mathbf{x} + \mathbf{y})\| = \|\mathbf{x}_i - \mathbf{x} + \mathbf{y}_i - \mathbf{y}\| \leq \|\mathbf{x}_i - \mathbf{x}\| + \|\mathbf{y}_i - \mathbf{y}\|&lt; \varepsilon
+\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i \geq N\)</span>. Therefore, since <span class="math notranslate nohighlight">\(\varepsilon\)</span> is arbitrary, we have <span class="math notranslate nohighlight">\(\mathbf{x}_i + \mathbf{y}_i \to \mathbf{x} + \mathbf{y}\)</span> as <span class="math notranslate nohighlight">\(i \to \infty\)</span>.</p>
+<p class="sd-card-text"><strong>Proof</strong> of <span class="math notranslate nohighlight">\(\lim_{i \to \infty} (\mathbf{x}_i' \mathbf{y}_i) = \mathbf{x}' \mathbf{y}\)</span></p>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\(\{\mathbf{x}_i\}_{i=1}^\infty\)</span> and <span class="math notranslate nohighlight">\(\{\mathbf{y}_i\}_{i=1}^\infty\)</span> are convergent sequences, they are bounded (why?) by constants <span class="math notranslate nohighlight">\(M_x &gt; 0\)</span> and <span class="math notranslate nohighlight">\(M_y &gt;0\)</span>, respectively.
+That is, we have <span class="math notranslate nohighlight">\(\|\mathbf{x}_i\|\leq M_x\)</span> and <span class="math notranslate nohighlight">\(\|\mathbf{y}_i\|\leq M_y\)</span> for all <span class="math notranslate nohighlight">\(i\in\mathbb{N}\)</span>.</p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(M:= \max\{M_x, M_y, \|\mathbf{x}\|, \|\mathbf{y}\|\}\)</span>.
+Fix <span class="math notranslate nohighlight">\(\varepsilon &gt; 0\)</span>.
+Again, since these sequences are convergent, there is an <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\|\mathbf{x}_i - \mathbf{x}\| &lt; \frac{\varepsilon}{2M}, \qquad \text{and} \qquad \|\mathbf{y}_i - \mathbf{y}\| &lt; \frac{\varepsilon}{2M}
+\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i \geq N\)</span>.
+The tirangle inequality and Cauchy-Schwarz inequality imply</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+|\mathbf{x}_i' \mathbf{y}_i - \mathbf{x}'\mathbf{y}| &amp;= |\mathbf{x}_i' \mathbf{y}_i - \mathbf{x}' \mathbf{y}_i + \mathbf{x}' \mathbf{y}_i - \mathbf{x}'\mathbf{y}|\\
+&amp; \leq |\mathbf{x}_i' \mathbf{y}_i - \mathbf{x}' \mathbf{y}_i| + |\mathbf{x}' \mathbf{y}_i - \mathbf{x}'\mathbf{y}| \\
+&amp; = |(\mathbf{x}_i - \mathbf{x})' \mathbf{y}_i| + |\mathbf{x}'(\mathbf{y}_i-\mathbf{y})| \\
+&amp;\leq \|\mathbf{y}_i\| \|\mathbf{x}_i-\mathbf{x}\| + \|\mathbf{x}\|\|\mathbf{y}_i - \mathbf{y}\| \\
+&amp; \leq M \|\mathbf{x}_i - \mathbf{x}\| + M \|\mathbf{y}_i - \mathbf{y}\| \\
+&amp;&lt; M \frac{\varepsilon}{2M}+ M \frac{\varepsilon}{2M}&lt; \varepsilon
+\end{align*}
+\end{split}\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i \geq N\)</span>.
+Therefore, since <span class="math notranslate nohighlight">\(\varepsilon\)</span> is arbitrary, we have <span class="math notranslate nohighlight">\(\mathbf{x}_i'\mathbf{y}_i \to \mathbf{x}'\mathbf{y}\)</span> as <span class="math notranslate nohighlight">\(i \to \infty\)</span>.</p>
+<p class="sd-card-text"><strong>Proof</strong> of “<span class="math notranslate nohighlight">\(\mathbf{x}_i \leq \mathbf{y}_i\)</span> for all <span class="math notranslate nohighlight">\(i\)</span> component-wise <span class="math notranslate nohighlight">\(\Longrightarrow \mathbf{x} \leq \mathbf{y}\)</span>”</p>
+<p class="sd-card-text">Assume that <span class="math notranslate nohighlight">\(\mathbf{x}_i \leq \mathbf{y}_i\)</span> for all <span class="math notranslate nohighlight">\(i\)</span>.
+Toward contradiction, suppose that <span class="math notranslate nohighlight">\(\mathbf{x} \nleq \mathbf{y}\)</span>.
+Then, there is <span class="math notranslate nohighlight">\(k\in\{1, 2, \dots, n\}\)</span> such that <span class="math notranslate nohighlight">\(\mathbf{x}(k) &gt; \mathbf{y}(k)\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{x}(k)\)</span> denotes the <span class="math notranslate nohighlight">\(k\)</span>-th component of <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathbb{R}^n\)</span>.
+Let <span class="math notranslate nohighlight">\(\varepsilon = \mathbf{x}(k) - \mathbf{y}(k) &gt; 0\)</span>.
+Since the convergences of <span class="math notranslate nohighlight">\(\{\mathbf{x}_i\}_{i=1}^\infty\)</span> and <span class="math notranslate nohighlight">\(\{\mathbf{y}_i\}_{i=1}^\infty\)</span> imply the convergences of <span class="math notranslate nohighlight">\(\{\mathbf{x}_i(k)\}_{i=1}^\infty\)</span> and <span class="math notranslate nohighlight">\(\{\mathbf{y}_i(k)\}_{i=1}^\infty\)</span> (why?),
+there is an <span class="math notranslate nohighlight">\(N\in\mathbb{N}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+|\mathbf{x}_i(k) - \mathbf{x}(k)| &lt; \frac{\varepsilon}{4} \qquad \text{and} \qquad |\mathbf{y}_i(k) - \mathbf{y}(k)| &lt; \frac{\varepsilon}{4} \\
+\Rightarrow \mathbf{x}_i(k) &gt; \mathbf{x}(k) - \frac{\varepsilon}{4}  \qquad \text{and} \qquad \mathbf{y}_i(k) &lt; \mathbf{y}(k) + \frac{\varepsilon}{4}
+\end{split}\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i \geq N\)</span>.
+This implies that <span class="math notranslate nohighlight">\(\mathbf{x}_i(k) &gt; \mathbf{y}_i(k)\)</span> for all <span class="math notranslate nohighlight">\(i \geq N\)</span>.
+To see this, observe that</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{x}_i(k) - \mathbf{y}_i(k) &gt; \mathbf{x}(k) - \frac{\varepsilon}{4} -  \Big(\mathbf{y}(k) +\frac{\varepsilon}{4}\Big)&gt; \mathbf{x}(k) - \mathbf{y}(k) -\frac{\varepsilon}{2} = \varepsilon - \frac{\varepsilon}{2} = \frac{\varepsilon}{2}&gt; 0
+\]</div>
+<p class="sd-card-text">for all <span class="math notranslate nohighlight">\(i \geq N\)</span>.
+Since <span class="math notranslate nohighlight">\(\mathbf{x}_i(k)\leq \mathbf{y}_i(k)\)</span> for all <span class="math notranslate nohighlight">\(i\)</span> by assumption, we obtain a contraction, which implies that it must be <span class="math notranslate nohighlight">\(\mathbf{x} \leq \mathbf{y}\)</span>.</p>
+<p class="sd-card-text"><em><strong>Question C.2</strong></em></p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\((k, \ell)\)</span> be any point in <span class="math notranslate nohighlight">\(A\)</span>, and let <span class="math notranslate nohighlight">\(\{(k_n, \ell_n)\}\)</span> be any
+sequence converging to <span class="math notranslate nohighlight">\((k, \ell)\)</span> in the sense of convergence in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>. We wish to show that</p>
+<div class="math notranslate nohighlight">
+\[
+f(k_n, \ell_n) \to f(k, \ell)
+\]</div>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\((k_n, \ell_n) \to (k, \ell)\)</span> in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, we know from the facts on
+convergence in norm that the individual components converge in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.
+That is,</p>
+<div class="math notranslate nohighlight">
+\[
+k_n \to k
+\quad \text{and} \quad
+\ell_n \to \ell
+\]</div>
+<p class="sd-card-text">We also know from the facts that, for any <span class="math notranslate nohighlight">\(a\)</span>, the function <span class="math notranslate nohighlight">\(g(x) = x^a\)</span>
+is continuous at <span class="math notranslate nohighlight">\(x\)</span>. It follows from the definition of continuity and
+the convergence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> above that <span class="math notranslate nohighlight">\(k_n^\alpha \to k^{\alpha}\)</span> and <span class="math notranslate nohighlight">\(\ell^{\beta}_n \to
+\ell^\beta\)</span>.</p>
+<p class="sd-card-text">Moreover, we know that, for any sequences <span class="math notranslate nohighlight">\(\{y_n\}\)</span> and
+<span class="math notranslate nohighlight">\(\{z_n\}\)</span>, if <span class="math notranslate nohighlight">\(y_n \to y\)</span> and <span class="math notranslate nohighlight">\(z_n \to z\)</span>, then <span class="math notranslate nohighlight">\(y_n z_n \to yz\)</span>. Hence</p>
+<div class="math notranslate nohighlight">
+\[
+    k_n^\alpha \ell^{\beta}_n \to k^{\alpha}\ell^\beta
+\]</div>
+<p class="sd-card-text">That is, <span class="math notranslate nohighlight">\(f(k_n, \ell_n) \to f(k, \ell)\)</span>. Hence <span class="math notranslate nohighlight">\(f\)</span> satisfies the
+definition of continity.</p>
+<p class="sd-card-text"><em><strong>Question C.3</strong></em></p>
+<p class="sd-card-text">The proof is analogous to the proof of continuity of the Cobb-Douglas
+production function given above.</p>
+<p class="sd-card-text"><em><strong>Question C.4</strong></em></p>
+<p class="sd-card-text">To show that <span class="math notranslate nohighlight">\(A\)</span> is closed, we need to show that the limit of any sequence
+contained in <span class="math notranslate nohighlight">\(A\)</span> is also in <span class="math notranslate nohighlight">\(A\)</span>. To this end,
+let <span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span> be an arbitrary sequence in <span class="math notranslate nohighlight">\(A\)</span> coverging to a point
+<span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^2\)</span>.
+Since <span class="math notranslate nohighlight">\({\bf x}_n \in A\)</span> for all <span class="math notranslate nohighlight">\(n\)</span> we have
+<span class="math notranslate nohighlight">\({\bf x}_n \geq {\bf 0}\)</span> in the sense of the component-vise vector inequality
+and <span class="math notranslate nohighlight">\({\bf x}_n' {\bf p} \leq m\)</span>, where <span class="math notranslate nohighlight">\({\bf p} = (p_1, p_2)\)</span>.
+We need to show that the same is true for <span class="math notranslate nohighlight">\({\bf x}\)</span>.</p>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\({\bf x}_n \to {\bf x}\)</span>, we have
+<span class="math notranslate nohighlight">\({\bf x}_n' {\bf p} \to {\bf x}' {\bf p}\)</span>. Since limits preserve weak
+inequalities and <span class="math notranslate nohighlight">\({\bf x}_n' {\bf p} \leq m\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, we have
+<span class="math notranslate nohighlight">\({\bf x}' {\bf p} \leq m\)</span>. Hence it remains only to show that <span class="math notranslate nohighlight">\({\bf x} \geq
+0\)</span>. Again using the fact that weak inequalities are preserved under
+limits, combined with <span class="math notranslate nohighlight">\({\bf x}_n \geq {\bf 0}\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, gives
+<span class="math notranslate nohighlight">\({\bf x} \geq {\bf 0}\)</span> as required.</p>
+<p class="sd-card-text"><em><strong>Question C.5</strong></em></p>
+<p class="sd-card-text">From the definition of Euclidean norm, we have <span class="math notranslate nohighlight">\(\|{\bf x}\|^2 = \sum_{i=1}^{N}x_i^2\)</span> where <span class="math notranslate nohighlight">\(x_i\)</span> are components of <span class="math notranslate nohighlight">\({\bf x}\)</span>. Therefore:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\| {\bf x} + {\bf y} \|^2 + \| {\bf x} - {\bf y} \|^2 = \sum_{i=1}^{N}(x_i+y_i)^2 + \sum_{i=1}^{N}(x_i-y_i)^2 = \\
+= \sum_{i=1}^{N} \Big( 2 x_i^2 + 2 x_i y_i - 2 x_i y_i + 2 y_i^2 \Big) = 2 \sum_{i=1}^{N}x_i^2 + 2 \sum_{i=1}^{N}y_i^2 = 2 \big( \| {\bf x} \|^2 + \| {\bf y} \|^2 \big)
+\end{split}\]</div>
+</div>
+</details></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="03.exercises.B.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise set B</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="05.exercises.D.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise set D</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-c-1">Question C.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-c-2">Question C.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-c-3">Question C.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-c-4">Question C.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-c-5">Question C.5</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fedor Iskhakov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
