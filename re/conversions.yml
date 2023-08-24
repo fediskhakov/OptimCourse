@@ -1,0 +1,208 @@
+# Replacement patterns to be applied
+# (without the root node which is made automatically in the converter)
+
+- pattern:
+    re: \\begin\{frame\}
+    st: 
+
+- pattern:
+    re: \\end\{frame\}
+    st: 
+
+- pattern:
+    re: \\section\{(.*?)\}
+    st: '## \1'
+
+- pattern:
+    re: \\frametitle\{(.*?)\}
+    st: '### \1'
+
+- pattern:
+    re: \\RR
+    st: \\mathbb{R}
+
+- pattern:
+    re: \\ZZ
+    st: \\mathbb{Z}
+
+- pattern:
+    re: \\NN
+    st: \\mathbb{N}
+
+- pattern:
+    re: \\QQ
+    st: \\mathbb{Q}
+
+- pattern:
+    re: \\not=
+    st: \\ne
+
+- pattern:
+    re: |
+      \\item (.*)
+      \\end\{itemize\}
+    st: '- \1'
+
+- pattern:
+    re: |
+      \\item (.*)
+      \\end\{enumerate\}
+    st: '9. \1'
+
+- pattern:
+    re: |
+      \\begin\{itemize\}\s*
+      (?:\\item|-)
+    st: '-'
+
+- pattern:
+    re: |
+      \\begin\{enumerate\}\s*
+      (?:\\item|9.)
+    st: '1. '
+
+- pattern:
+    re: \\item
+    st: '- '
+
+- pattern:
+    re: .*\{itemize\}.*
+    st: 
+
+- pattern:
+    re: .*\{enumerate\}.*
+    st: 
+
+- pattern:
+    re: \\range
+    st: \\mathrm{rng}
+
+- pattern:
+    re: \\st
+    st: \\text{ such that }
+
+- pattern:
+    re: (?<=\s)\\Ex(?=\s)
+    st: '**Exercise:** '
+
+- pattern:
+    re: \\vspace\{.*
+    st:
+
+- pattern:
+    re: \\begin{center}
+    st:
+
+- pattern:
+    re: \\end{center}
+    st:
+
+- pattern:
+    re: \\bold(\w)
+    st: '{\\bf \1}'
+
+- pattern:
+    re: \\label\{(.*?)\}
+    st: label:\1
+
+- pattern:
+    re: \\eqref\{(.*?)\}
+    st: '{eq}`\1`'
+
+- pattern:
+    re: \\setntn\{(.*?)\}\s?\{(.*?)\}
+    st: '\{ \1 \\colon \2 \}'
+
+- pattern:
+    re: '``(.*?)"'
+    st: '"\1"'
+
+- pattern:
+    re: \fore
+    st: \text{ therefore }
+
+- pattern:
+    re: \\navy\{(.*?)\}
+    st: '***\1***'
+
+- pattern:
+    re: \\red\{(.*?)\}
+    st: '***\1***'
+
+- pattern:
+    re: \\underline\{(.*?)\}
+    st: '***\1***'
+
+- pattern:
+    re: \{\\bf ([\w ]*?)\}
+    st: '**\1**'
+
+- pattern:
+    re: \\begin\{example\}((.|\n)*?)\\end\{example\}
+    st: |
+      ```{admonition} Example
+      :class: tip
+
+      \1
+      ```
+
+- pattern:
+    re: \\begin\{align\*?\}((.|\n)*?)\\end\{align\*?\}
+    st: |
+      %
+      $$\1$$
+      %
+
+- pattern:
+    re:
+    st:
+
+- pattern:
+    re:
+    st:
+
+- pattern:
+    re:
+    st:
+
+- pattern:
+    re:
+    st:
+
+- pattern:
+    re:
+    st:
+
+- pattern:
+    re:
+    st:
+
+- pattern:
+    re:
+    st:
+
+- pattern:
+    re:
+    st:
+
+# in the end check that every $$ is paired with %
+# - pattern:
+#     re: '(?<=[^%]\s)(\$\$\n(.|\n)*?\n\$\$)(?=\s[^%])'
+#     st: '%\n\1\n%'
+
+- pattern:
+    re: '\$\$'
+    st: '%\n$$\n%'
+
+- pattern:
+    re: '(%\s)+%'
+    st: '%'
+
+
+
+
+
+
+
+
+
