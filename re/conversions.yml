@@ -237,7 +237,7 @@
       ```
 
 - pattern:
-    re: \\Eg (.*)
+    re: \\Eg(.*)
     st: |
       ```{admonition} Example
       :class: tip
@@ -246,7 +246,7 @@
       ```
 
 - pattern:
-    re: \\Egs (.*)
+    re: \\Egs(.*)
     st: |
       ```{admonition} Example
       :class: tip

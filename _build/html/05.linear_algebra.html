@@ -434,7 +434,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonal-matrices">Diagonal Matrices</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonalization">Diagonalization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-euclidean-matrix-norm">The Euclidean Matrix Norm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neumann-series-optional">Neumann Series [optional]</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-forms">Quadratic Forms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-study-material">Extra study material</a></li>
 </ul>
@@ -665,7 +670,7 @@ x_3
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solutions is x=[ 0.00000000e+00 -9.00719925e+15  4.50359963e+15]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5d/cjhpvdlx7lg8zt1ypw5fcyy40000gn/T/ipykernel_4110/3978225594.py:8: LinAlgWarning: Ill-conditioned matrix (rcond=4.11194e-18): result may not be accurate.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5d/cjhpvdlx7lg8zt1ypw5fcyy40000gn/T/ipykernel_11876/3978225594.py:8: LinAlgWarning: Ill-conditioned matrix (rcond=4.11194e-18): result may not be accurate.
   x=solve(A, b)
 </pre></div>
 </div>
@@ -4089,10 +4094,10 @@ a_{21} &amp; a_{22} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=[[-0.52364577 -2.41210304]
- [ 0.36305837  0.45614708]]
-det(A)=0.636874700867797
-det(inv(A))=1.570167567713733
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=[[-0.77436316  1.86292693]
+ [-1.12856582  0.29910498]]
+det(A)=1.8708197829212825
+det(inv(A))=0.5345250296843137
 </pre></div>
 </div>
 </div>
@@ -4567,58 +4572,43 @@ b_3 \\
 </section>
 <section id="eigenvalues-and-eigenvectors">
 <h2>Eigenvalues and Eigenvectors<a class="headerlink" href="#eigenvalues-and-eigenvectors" title="Permalink to this heading">#</a></h2>
-<a class="reference internal image-reference" href="_images/coming_soon.png"><img alt="soming soon" class="align-center" src="_images/coming_soon.png" style="width: 205.60000000000002px; height: 144.0px;" /></a>
-<!-- 
-
-Let ${\bf A}$ be $N \times N$ 
-
-In general ${\bf A}$ maps ${\bf x}$ to some arbitrary new location ${\bf A} {\bf x}$
-
-But sometimes ${\bf x}$ will only be ***scaled***:
-%
-$$
+<p>Let <span class="math notranslate nohighlight">\({\bf A}\)</span> be <span class="math notranslate nohighlight">\(N \times N\)</span></p>
+<p>In general <span class="math notranslate nohighlight">\({\bf A}\)</span> maps <span class="math notranslate nohighlight">\({\bf x}\)</span> to some arbitrary new location <span class="math notranslate nohighlight">\({\bf A} {\bf x}\)</span></p>
+<p>But sometimes <span class="math notranslate nohighlight">\({\bf x}\)</span> will only be <em><strong>scaled</strong></em>:</p>
+<div class="math notranslate nohighlight" id="equation-eq-eiei">
+<span class="eqno">(8)<a class="headerlink" href="#equation-eq-eiei" title="Permalink to this equation">#</a></span>\[
 %
 {\bf A} {\bf x} = \lambda {\bf x}
 \quad \text{for some scalar $\lambda$}
 %
-$$ (eq:eiei)
-%
-
-```{admonition} Definition
-:class: caution
-
-If {eq}`eq:eiei` holds and ${\bf x}$ is nonzero, then 
-%
-1. ${\bf x}$ is called an ***eigenvector*** of ${\bf A}$
-and $\lambda$ is called an ***eigenvalue***
-
-9. $({\bf x}, \lambda)$ is called an ***eigenpair***
-
-```
-
-Clearly $({\bf x}, \lambda)$ is an eigenpair of ${\bf A}$ $\implies$
-$(\alpha {\bf x}, \lambda)$ is an eigenpair of ${\bf A}$ for any nonzero $\alpha$
-
-```{admonition} Example
-:class: tip
-
-Let
-%
-$$
+\]</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>If <a class="reference internal" href="#equation-eq-eiei">(8)</a> holds and <span class="math notranslate nohighlight">\({\bf x}\)</span> is nonzero, then</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\({\bf x}\)</span> is called an <em><strong>eigenvector</strong></em> of <span class="math notranslate nohighlight">\({\bf A}\)</span>
+and <span class="math notranslate nohighlight">\(\lambda\)</span> is called an <em><strong>eigenvalue</strong></em></p></li>
+<li><p><span class="math notranslate nohighlight">\(({\bf x}, \lambda)\)</span> is called an <em><strong>eigenpair</strong></em></p></li>
+</ol>
+</div>
+<p>Clearly <span class="math notranslate nohighlight">\(({\bf x}, \lambda)\)</span> is an eigenpair of <span class="math notranslate nohighlight">\({\bf A}\)</span> <span class="math notranslate nohighlight">\(\implies\)</span>
+<span class="math notranslate nohighlight">\((\alpha {\bf x}, \lambda)\)</span> is an eigenpair of <span class="math notranslate nohighlight">\({\bf A}\)</span> for any nonzero <span class="math notranslate nohighlight">\(\alpha\)</span></p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 {\bf A} :=
 \begin{pmatrix}
-1 & -1 \\
-3 & 5
+1 &amp; -1 \\
+3 &amp; 5
 \end{pmatrix}
 %
-$$
-%
-
-Then
-
-%
-$$
+\end{split}\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 \lambda = 2 
 \quad \text{ and } \quad
@@ -4629,18 +4619,15 @@ $$
 -1
 \end{pmatrix}
 %
-$$
-%
-
-form an eigenpair because ${\bf x} \ne {\bf 0}$ and
-
-%
-$$
+\end{split}\]</div>
+<p>form an eigenpair because <span class="math notranslate nohighlight">\({\bf x} \ne {\bf 0}\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 {\bf A} {\bf x} =
 \begin{pmatrix}
-1 & -1 \\
-3 & 5
+1 &amp; -1 \\
+3 &amp; 5
 \end{pmatrix}
 \begin{pmatrix}
 1 \\
@@ -4659,102 +4646,87 @@ $$
 =
 \lambda {\bf x} 
 %
-$$
-%
-```
-
-
-\Eg
-
-
-```{code-cell} python3
-:tags: [hide/remote-cell/input/output]
----
-mystnb:
-image:
-width: 80%
-align: center
----
-tags:
-- hide-input
-- remove-output
-
-In [3]: import numpy as np
-In [4]: A = [[1, 2],
-...: [2, 1]]
-
-In [5]: eigvals, eigvecs = np.linalg.eig(A)
-
-In [6]: x = eigvecs[:,0] # Let x = first eigenvector
-In [7]: lm = eigvals[0] # Let lm = first eigenvalue
-
-In [8]: np.dot(A, x) # Compute Ax
-Out[8]: array([ 2.12132034, 2.12132034])
-In [9]: lm * x # Compute lm x 
-Out[9]: array([ 2.12132034, 2.12132034])
-
-```
-
-```{figure} _static/plots/eigenvecs.png
-:name: 
-
-The eigenvectors of ${\bf A}$
-```
-
-Consider the matrix 
-%
-$$
+\end{split}\]</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+     <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="n">eigvals</span><span class="p">,</span> <span class="n">eigvecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">eigvals</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="n">eigvecs</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span>
+  <span class="n">lm</span> <span class="o">=</span> <span class="n">eigvals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Eigenpair </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">:</span><span class="se">\n</span><span class="si">{</span><span class="n">lm</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1"> --&gt; </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Check Ax=lm*x: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">lm</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenpair 0:
+3.00000 --&gt; [0.70710678 0.70710678]
+Check Ax=lm*x: [2.12132034 2.12132034] = [2.12132034 2.12132034]
+Eigenpair 1:
+-1.00000 --&gt; [-0.70710678  0.70710678]
+Check Ax=lm*x: [ 0.70710678 -0.70710678] = [ 0.70710678 -0.70710678]
+</pre></div>
+</div>
+</div>
+</div>
+<figure class="align-default" id="id16">
+<img alt="_images/eigenvecs.png" src="_images/eigenvecs.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 67 </span><span class="caption-text">The eigenvectors of <span class="math notranslate nohighlight">\({\bf A}\)</span></span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Consider the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 {\bf R} := 
 \left(
 \begin{array}{cc}
-0 & -1 \\
-1 & 0 \\
+0 &amp; -1 \\
+1 &amp; 0 \\
 \end{array}
 \right)
 %
-$$
-%
-
-Induces counter-clockwise rotation on any point by $90^{\circ}$
-
-Hence no point ${\bf x}$ is scaled
-
-Hence there exists ***no*** pair $\lambda \in \mathbb{R}$ and ${\bf x} \ne
-{\bf 0}$
-such that
-%
-$${\bf R} {\bf x} = \lambda {\bf x}$$ 
-%
-
-- In other words, no ***real-valued*** eigenpairs exist
-
-```{figure} _static/plots/rotation_1.png
-:name: 
-
-The matrix ${\bf R}$ rotates points by $90^{\circ}$
-```
-
-```{figure} _static/plots/rotation_2.png
-:name: 
-
-The matrix ${\bf R}$ rotates points by $90^{\circ}$
-```
-
-But ${\bf R} {\bf x} = \lambda {\bf x}$ can hold ***if*** we allow
-complex values
-
-```{admonition} Example
-:class: tip
-
-```
-%
-$$
+\end{split}\]</div>
+<p>Induces counter-clockwise rotation on any point by <span class="math notranslate nohighlight">\(90^{\circ}\)</span></p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The rows of the matrix show where the classic basis vectors are translated to.</p>
+</div>
+<p>Hence no point <span class="math notranslate nohighlight">\({\bf x}\)</span> is scaled</p>
+<p>Hence there exists <em><strong>no</strong></em> pair <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span> and <span class="math notranslate nohighlight">\({\bf x} \ne
+{\bf 0}\)</span>
+such that</p>
+<div class="math notranslate nohighlight">
+\[{\bf R} {\bf x} = \lambda {\bf x}\]</div>
+<p>In other words, no <em><strong>real-valued</strong></em> eigenpairs exist</p>
+<figure class="align-default" id="id17">
+<img alt="_images/rotation_1.png" src="_images/rotation_1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 68 </span><span class="caption-text">The matrix <span class="math notranslate nohighlight">\({\bf R}\)</span> rotates points by <span class="math notranslate nohighlight">\(90^{\circ}\)</span></span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id18">
+<img alt="_images/rotation_2.png" src="_images/rotation_2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 69 </span><span class="caption-text">The matrix <span class="math notranslate nohighlight">\({\bf R}\)</span> rotates points by <span class="math notranslate nohighlight">\(90^{\circ}\)</span></span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>But <span class="math notranslate nohighlight">\({\bf R} {\bf x} = \lambda {\bf x}\)</span> can hold <em><strong>if</strong></em> we allow
+complex values</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 \left(
 \begin{array}{cc}
-0 & -1 \\
-1 & 0 \\
+0 &amp; -1 \\
+1 &amp; 0 \\
 \end{array}
 \right)
 \begin{pmatrix}
@@ -4773,12 +4745,11 @@ i
 -i
 \end{pmatrix}
 %
-$$
-%
-
-That is,
-%
-$$
+\end{split}\]</div>
+</div>
+<p>That is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 {\bf R} {\bf x} = \lambda {\bf x}
 \quad \text{for} \quad
@@ -4790,76 +4761,70 @@ $$
 -i
 \end{pmatrix}
 %
-$$
-%
-
-Hence $({\bf x}, \lambda)$ is an eigenpair provided we admit complex values 
-
-We do, since this is standard
-
-```{admonition} Fact
-:class: important
-
-For any square matrix ${\bf A}$ 
-```
-%
-$$
+\end{split}\]</div>
+<p>Hence <span class="math notranslate nohighlight">\(({\bf x}, \lambda)\)</span> is an eigenpair provided we admit complex values</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We do, since this is standard, but will not go into details in this course</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>For any square matrix <span class="math notranslate nohighlight">\({\bf A}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
 %
 \lambda \text{ is an eigenvalue of } {\bf A} \; \iff \;
 \det({\bf A} - \lambda {\bf I}) = 0
 %
-$$
-%
-
-Proof: Let ${\bf A}$ by $N \times N$ and let ${\bf I}$ be the $N \times N$
-identity
-
-We have
-%
-$$
+\]</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Let <span class="math notranslate nohighlight">\({\bf A}\)</span> by <span class="math notranslate nohighlight">\(N \times N\)</span> and let <span class="math notranslate nohighlight">\({\bf I}\)</span> be the <span class="math notranslate nohighlight">\(N \times N\)</span>
+identity</p>
+<p>We have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 \det({\bf A} - \lambda {\bf I}) = 0
-& \iff {\bf A} - \lambda {\bf I} \text{ is singular}
+\iff {\bf A} - \lambda {\bf I} \text{ is singular}
 \\
-& \iff \exists \, {\bf x} \ne {\bf 0} \text{ such that }
+\iff \exists \, {\bf x} \ne {\bf 0} \text{ such that }
 ({\bf A} - \lambda {\bf I}) {\bf x} = {\bf 0}
 \\
-& \iff \exists \, {\bf x} \ne {\bf 0} \text{ such that }
+\iff \exists \, {\bf x} \ne {\bf 0} \text{ such that }
 {\bf A} {\bf x} = \lambda {\bf x}
 \\
-& \iff \lambda 
+\iff \lambda 
 \text{ is an eigenvalue of } {\bf A}
 %
-$$
-%
-
-```{admonition} Example
-:class: tip
-
-In the $2 \times 2$ case,
-```
-%
-$$
+\end{split}\]</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>In the <span class="math notranslate nohighlight">\(2 \times 2\)</span> case,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 {\bf A} =
 \left(
 \begin{array}{cc}
-a & b \\
-c & d \\
+a &amp; b \\
+c &amp; d \\
 \end{array}
 \right)
 \quad \implies \quad
 {\bf A} - \lambda {\bf I} =
 \left(
 \begin{array}{cc}
-a - \lambda & b \\
-c & d - \lambda 
+a - \lambda &amp; b \\
+c &amp; d - \lambda 
 \end{array}
 \right)
 %
-$$
-%
-$$
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 \implies
 \det({\bf A} - \lambda {\bf I}) 
@@ -4867,28 +4832,23 @@ $$
 \\
 = \lambda^2 - (a + d) \lambda + (ad - bc)
 %
-$$
-%
-
-Hence the eigenvalues of ${\bf A}$ are given by the two roots of 
-%
-$$
+\end{split}\]</div>
+<p>Hence the eigenvalues of <span class="math notranslate nohighlight">\({\bf A}\)</span> are given by the two roots of</p>
+<div class="math notranslate nohighlight">
+\[
 %
 \lambda^2 - (a + d) \lambda + (ad - bc) = 0
 %
-$$
-%
-
-Equivalently,
-%
-$$
+\]</div>
+<p>Equivalently,</p>
+<div class="math notranslate nohighlight">
+\[
 %
 \lambda^2 - \mathrm{trace}({\bf A}) \lambda + \det({\bf A}) = 0
 %
-$$
-%
-
-### Existence of Eigenvalues
+\]</div>
+</div>
+<!-- ### Existence of Eigenvalues
 
 Fix $N \times N$ matrix ${\bf A}$ 
 
@@ -4948,35 +4908,34 @@ $$
 = 1/\lambda_1, \ldots, 1/\lambda_N
 %
 $$
-%
-
-### Diagonalization
-
-Square matrix ${\bf A}$ is said to be ***similar*** to square matrix ${\bf B}$ if 
-%
-$$
+% 
+-->
+<section id="diagonalization">
+<h3>Diagonalization<a class="headerlink" href="#diagonalization" title="Permalink to this heading">#</a></h3>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Square matrix <span class="math notranslate nohighlight">\({\bf A}\)</span> is said to be <em><strong>similar</strong></em> to square matrix <span class="math notranslate nohighlight">\({\bf B}\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[
 %
 \exists \text{ invertible matrix ${\bf P}$ such that }
 {\bf A} = {\bf P} {\bf B} {\bf P}^{-1}
 %
-$$ 
-%
-
-```{figure} _static/plots/diagonalize.png
-:name: 
-
-```
-
-```{admonition} Fact
-:class: important
-
-If ${\bf A}$ is similar to ${\bf B}$, then ${\bf A}^t$ is similar to
-```
-${\bf B}^t$ for all $t \in \mathbb{N}$
-
-Proof for case $t=2$: 
-%
-$$
+\]</div>
+</div>
+<figure class="align-default">
+<img alt="_images/diagonalize.png" src="_images/diagonalize.png" />
+</figure>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\({\bf A}\)</span> is similar to <span class="math notranslate nohighlight">\({\bf B}\)</span>, then <span class="math notranslate nohighlight">\({\bf A}^t\)</span> is similar to
+<span class="math notranslate nohighlight">\({\bf B}^t\)</span> for all <span class="math notranslate nohighlight">\(t \in \mathbb{N}\)</span></p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Proof for case <span class="math notranslate nohighlight">\(t=2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 {\bf A}^2
 = {\bf A} {\bf A} \\
@@ -4984,69 +4943,61 @@ $$
 = {\bf P} {\bf B} {\bf B} {\bf P}^{-1} \\
 = {\bf P} {\bf B}^2 {\bf P}^{-1} 
 %
-$$
-%
-
-If ${\bf A}$ is similar to a diagonal matrix, then ${\bf A}$ is
-called ***diagonalizable***
-
-```{admonition} Fact
-:class: important
-
-Let ${\bf A}$ be diagonalizable with ${\bf A} = {\bf P} {\bf D}
-```
-{\bf P}^{-1}$ and let
-%
-1. ${\bf D} = \mathrm{diag}(\lambda_1, \ldots, \lambda_N)$
-9. ${\bf p}_n := \mathrm{col}_n({\bf P})$
-%
-Then $({\bf p}_n, \lambda_n)$ is an eigenpair of ${\bf A}$ for each $n$
-
-Proof: From ${\bf A} = {\bf P} {\bf D} {\bf P}^{-1}$ we get ${\bf A} {\bf P} = {\bf P} {\bf D}$
-
-Equating $n$-th column on each side gives 
-%
-$$
+\end{split}\]</div>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>If <span class="math notranslate nohighlight">\({\bf A}\)</span> is similar to a diagonal matrix, then <span class="math notranslate nohighlight">\({\bf A}\)</span> is
+called <em><strong>diagonalizable</strong></em></p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Let <span class="math notranslate nohighlight">\({\bf A}\)</span> be diagonalizable with <span class="math notranslate nohighlight">\({\bf A} = {\bf P} {\bf D}
+{\bf P}^{-1}\)</span> and let</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\({\bf D} = \mathrm{diag}(\lambda_1, \ldots, \lambda_N)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\({\bf p}_n := \mathrm{col}_n({\bf P})\)</span></p></li>
+</ol>
+<p>Then <span class="math notranslate nohighlight">\(({\bf p}_n, \lambda_n)\)</span> is an eigenpair of <span class="math notranslate nohighlight">\({\bf A}\)</span> for each <span class="math notranslate nohighlight">\(n\)</span></p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>From <span class="math notranslate nohighlight">\({\bf A} = {\bf P} {\bf D} {\bf P}^{-1}\)</span> we get <span class="math notranslate nohighlight">\({\bf A} {\bf P} = {\bf P} {\bf D}\)</span></p>
+<p>Equating <span class="math notranslate nohighlight">\(n\)</span>-th column on each side gives</p>
+<div class="math notranslate nohighlight">
+\[
 %
 {\bf A} {\bf p}_n = \lambda_n {\bf p}_n
 %
-$$
-%
-
-Moreover ${\bf p}_n \ne {\bf 0}$ because ${\bf P}$ is invertible (which
-facts?)
-
-```{admonition} Fact
-:class: important
-
-If $N \times N$ matrix ${\bf A}$ has $N$ distinct eigenvalues
-```
-$\lambda_1, \ldots, \lambda_N$, then
-${\bf A}$ is diagonalizable as ${\bf A} = {\bf P} {\bf D} {\bf P}^{-1}$ where
-%
-1. ${\bf D} = \mathrm{diag}(\lambda_1, \ldots, \lambda_N)$
-9. $\mathrm{col}_n({\bf P})$ is an eigenvector for $\lambda_n$
-
-```{admonition} Example
-:class: tip
-
-Let
-```
-%
-$$
+\]</div>
+<p>Moreover <span class="math notranslate nohighlight">\({\bf p}_n \ne {\bf 0}\)</span> because <span class="math notranslate nohighlight">\({\bf P}\)</span> is invertible (which facts?)</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(N \times N\)</span> matrix <span class="math notranslate nohighlight">\({\bf A}\)</span> has <span class="math notranslate nohighlight">\(N\)</span> distinct eigenvalues
+<span class="math notranslate nohighlight">\(\lambda_1, \ldots, \lambda_N\)</span>, then
+<span class="math notranslate nohighlight">\({\bf A}\)</span> is diagonalizable as <span class="math notranslate nohighlight">\({\bf A} = {\bf P} {\bf D} {\bf P}^{-1}\)</span> where</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\({\bf D} = \mathrm{diag}(\lambda_1, \ldots, \lambda_N)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathrm{col}_n({\bf P})\)</span> is an eigenvector for <span class="math notranslate nohighlight">\(\lambda_n\)</span></p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 {\bf A} :=
 \begin{pmatrix}
-1 & -1 \\
-3 & 5
+1 &amp; -1 \\
+3 &amp; 5
 \end{pmatrix}
 %
-$$
-%
-
-The eigenvalues of ${\bf A}$ are 2 and 4, while the eigenvectors are
-%
-$$
+\end{split}\]</div>
+<p>The eigenvalues of <span class="math notranslate nohighlight">\({\bf A}\)</span> are 2 and 4, while the eigenvectors are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 {\bf p}_1 :=
 \begin{pmatrix}
@@ -5060,62 +5011,65 @@ $$
 -3
 \end{pmatrix}
 %
-$$
-%
-
-Hence
-%
-$$
+\end{split}\]</div>
+<p>Hence</p>
+<div class="math notranslate nohighlight">
+\[
 %
 {\bf A} = {\bf P} \mathrm{diag}(2, 4) {\bf P}^{-1}
 %
-$$
-%
-
-
-```{code-cell} python3
-:tags: [hide/remote-cell/input/output]
----
-mystnb:
-image:
-width: 80%
-align: center
----
-tags:
-- hide-input
-- remove-output
-
-In [1]: import numpy as np
-In [2]: from numpy.linalg import inv
-
-In [3]: A = [[1, -1],
-...: [3, 5]]
-
-In [4]: D = np.diag((2, 4))
-
-In [5]: P = [[1, 1], # Matrix of eigenvectors
-...: [-1, -3]]
-
-In [6]: np.dot(P, np.dot(D, inv(P))) # PDP^{-1} = A?
-Out[6]: 
-array([[ 1., -1.],
-[ 3., 5.]])
-
-```
-
-## Matrix Norm
-
-### The Euclidean Matrix Norm
-
-The concept of norm is very helpful for working with vectors
-
-- provides notions of distance, similarity, convergence
-
-How about an analogous concept for matrices?
-
-Given $N \times K$ matrix ${\bf A}$, we define 
-%
-$$
+\]</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">inv</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+              <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
+<span class="n">eigvals</span><span class="p">,</span> <span class="n">eigvecs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">eigvals</span><span class="p">)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">eigvecs</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A =&#39;</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;D =&#39;</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P =&#39;</span><span class="p">,</span><span class="n">P</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P^-1 =&#39;</span><span class="p">,</span><span class="n">inv</span><span class="p">(</span><span class="n">P</span><span class="p">),</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;P*D*P^-1 =&#39;</span><span class="p">,</span><span class="n">P</span><span class="nd">@D@inv</span><span class="p">(</span><span class="n">P</span><span class="p">),</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =
+[[ 1 -1]
+ [ 3  5]]
+D =
+[[2. 0.]
+ [0. 4.]]
+P =
+[[-0.70710678  0.31622777]
+ [ 0.70710678 -0.9486833 ]]
+P^-1 =
+[[-2.12132034 -0.70710678]
+ [-1.58113883 -1.58113883]]
+P*D*P^-1 =
+[[ 1. -1.]
+ [ 3.  5.]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-euclidean-matrix-norm">
+<h3>The Euclidean Matrix Norm<a class="headerlink" href="#the-euclidean-matrix-norm" title="Permalink to this heading">#</a></h3>
+<p>The concept of norm is very helpful for working with vectors:
+provides notions of distance, similarity, convergence</p>
+<p>How about an analogous concept for matrices?</p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Given <span class="math notranslate nohighlight">\(N \times K\)</span> matrix <span class="math notranslate nohighlight">\({\bf A}\)</span>, denote
+<span class="math notranslate nohighlight">\(\| {\bf A} \|\)</span> the <em><strong>matrix norm</strong></em> of <span class="math notranslate nohighlight">\({\bf A}\)</span>.</p>
+<p><em><strong>Euclidean matrix norm</strong></em> is defined by</p>
+<div class="math notranslate nohighlight">
+\[
 %
 \| {\bf A} \| :=
 \max \left\{ 
@@ -5123,17 +5077,12 @@ $$
 {\bf x} \in \mathbb{R}^K, \; {\bf x} \ne {\bf 0}
 \right\}
 %
-$$
-%
-
-- LHS is the ***matrix norm*** of ${\bf A}$
-- RHS is ordinary Euclidean vector norms
-
-In the maximization we can restrict attention to ${\bf x}$ s.t. $\| {\bf x} \| = 1$
-
-To see this let
-%
-$$
+\]</div>
+</div>
+<p>In the maximization we can restrict attention to <span class="math notranslate nohighlight">\({\bf x}\)</span> s.t. <span class="math notranslate nohighlight">\(\| {\bf x} \| = 1\)</span></p>
+<p>To see this let</p>
+<div class="math notranslate nohighlight">
+\[
 %
 a :=
 \max_{{\bf x} \ne {\bf 0}} \frac{\| {\bf A} {\bf x} \|}{ \| {\bf x} \|} 
@@ -5142,20 +5091,17 @@ b :=
 \max_{\| {\bf x} \| = 1} \frac{\| {\bf A} {\bf x} \|}{ \| {\bf x} \|} 
 = \max_{\| {\bf x} \| = 1} \| {\bf A} {\bf x} \|
 %
-$$
-%
-
-Evidently $a \geq b$ because max is over a larger domain
-
-To see the reverse let 
-
-- ${\bf x}_a$ be the maximizer over ${\bf x} \ne {\bf 0}$ and
-let $\alpha := 1 / \| {\bf x}_a\|$
-- ${\bf x}_b := \alpha {\bf x}_a $ 
-
-Then 
-%
-$$
+\]</div>
+<p>Evidently <span class="math notranslate nohighlight">\(a \geq b\)</span> because max is over a larger domain</p>
+<p>To see the reverse let</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\({\bf x}_a\)</span> be the maximizer over <span class="math notranslate nohighlight">\({\bf x} \ne {\bf 0}\)</span> and
+let <span class="math notranslate nohighlight">\(\alpha := 1 / \| {\bf x}_a\|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\({\bf x}_b := \alpha {\bf x}_a \)</span></p></li>
+</ul>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[
 %
 b 
 \geq \frac{ \| {\bf A} {\bf x}_b \| }{ \| {\bf x}_b \|}
@@ -5163,93 +5109,76 @@ b
 = \frac{\alpha}{\alpha} \frac{\| {\bf A} {\bf x}_a \|}{ \| {\bf x}_a \|}
 = a
 %
-$$
-%
-
-**Exercise:** Show that for any ${\bf x}$ we have $\|{\bf A} {\bf x}\| \leq \| {\bf A} \| \| {\bf x} \|$
-
-If $\| {\bf A} \| < 1$ then ${\bf A}$ is called ***contractive*** --- it
-shrinks the norm
-
-```{figure} _static/plots/contractive.png
-:name: 
-
-```
-
-The matrix norm has similar properties to the Euclidean norm
-
-```{admonition} Fact
-:class: important
-
-For conformable matrices ${\bf A}$ and ${\bf B}$, we have
-```
-%
-1. $\| {\bf A} \| = {\bf 0}$ if and only if all entries of
-${\bf A}$ are zero
-
-- $\| \alpha {\bf A} \| = |\alpha| \| {\bf A} \|$ for any scalar
-$\alpha$
-
-- $\| {\bf A} + {\bf B} \| \leq \| {\bf A} \| + \| {\bf B} \|$
-
-9. $\| {\bf A} {\bf B} \| \leq \| {\bf A} \| \| {\bf B} \|$
-
-The last inequality is called the submultiplicative property of the matrix
-norm
-
-For square ${\bf A}$ it implies that $\|{\bf A}^k\| \leq \|{\bf A} \|^k$ for any $k \in \mathbb{N}$
-
-```{admonition} Fact
-:class: important
-
-For the diagonal matrix
-```
-%
-$$
+\]</div>
+<!-- **Exercise:** Show that for any ${\bf x}$ we have $\|{\bf A} {\bf x}\| \leq \| {\bf A} \| \| {\bf x} \|$ -->
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>If <span class="math notranslate nohighlight">\(\| {\bf A} \| &lt; 1\)</span> then <span class="math notranslate nohighlight">\({\bf A}\)</span> is called <em><strong>contractive</strong></em> — it
+shrinks the norm</p>
+</div>
+<figure class="align-default">
+<img alt="_images/contractive.png" src="_images/contractive.png" />
+</figure>
+<p>The matrix norm has similar properties to the Euclidean norm</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>For conformable matrices <span class="math notranslate nohighlight">\({\bf A}\)</span> and <span class="math notranslate nohighlight">\({\bf B}\)</span>, we have</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\| {\bf A} \| = {\bf 0}\)</span> if and only if all entries of
+<span class="math notranslate nohighlight">\({\bf A}\)</span> are zero</p></li>
+<li><p><span class="math notranslate nohighlight">\(\| \alpha {\bf A} \| = |\alpha| \| {\bf A} \|\)</span> for any scalar
+<span class="math notranslate nohighlight">\(\alpha\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\| {\bf A} + {\bf B} \| \leq \| {\bf A} \| + \| {\bf B} \|\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\| {\bf A} {\bf B} \| \leq \| {\bf A} \| \| {\bf B} \|\)</span></p></li>
+</ol>
+<p>The last inequality is called the submultiplicative property of the matrix
+norm</p>
+</div>
+<p>For square <span class="math notranslate nohighlight">\({\bf A}\)</span> it implies that <span class="math notranslate nohighlight">\(\|{\bf A}^k\| \leq \|{\bf A} \|^k\)</span> for any <span class="math notranslate nohighlight">\(k \in \mathbb{N}\)</span></p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>For the diagonal matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 {\bf D} = 
 \mathrm{diag}(d_1, \ldots, d_N) 
 =
 \left(
 \begin{array}{cccc}
-d_1 & 0 & \cdots & 0 \\
-0 & d_2 & \cdots & 0 \\
-\vdots & \vdots & & \vdots \\
-0 & 0 & \cdots & d_N \\
+d_1 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; d_2 &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp; d_N \\
 \end{array}
 \right)
 %
-$$
-%
-
-we have
-
-%
-$$ 
+\end{split}\]</div>
+<p>we have</p>
+<div class="math notranslate nohighlight">
+\[ 
 %
 \| {\bf D} \| = \max_n |d_n|
 %
-$$
-%
-
-Let $\{ {\bf A}_j \}$ and ${\bf A}$ be $N \times K$ matrices
-
-- If $\| {\bf A}_j - {\bf A} \| \to 0$ then we say that ${\bf A}_j$
-***converges*** to ${\bf A}$
-
-- If $\sum_{j=1}^J {\bf A}_j$ converges to some matrix
-${\bf B}_{\infty}$ as $J \to \infty$ we write
-%
-$$
+\]</div>
+</div>
+<p>We can use matrices as elements of sequences</p>
+<p>Let <span class="math notranslate nohighlight">\(\{ {\bf A}_j \}\)</span> and <span class="math notranslate nohighlight">\({\bf A}\)</span> be <span class="math notranslate nohighlight">\(N \times K\)</span> matrices</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\| {\bf A}_j - {\bf A} \| \to 0\)</span> then we say that <span class="math notranslate nohighlight">\({\bf A}_j\)</span>
+<em><strong>converges</strong></em> to <span class="math notranslate nohighlight">\({\bf A}\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\sum_{j=1}^J {\bf A}_j\)</span> converges to some matrix
+<span class="math notranslate nohighlight">\({\bf B}_{\infty}\)</span> as <span class="math notranslate nohighlight">\(J \to \infty\)</span> we write</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
 %
 \sum_{j=1}^{\infty} {\bf A}_j = {\bf B}_{\infty}
 %
-$$
-%
-
-In other words,
-%
-$$
+\]</div>
+<p>In other words,</p>
+<div class="math notranslate nohighlight">
+\[
 %
 {\bf B}_{\infty} = \sum_{j=1}^{\infty} {\bf A}_j 
 \quad \iff \quad
@@ -5258,101 +5187,79 @@ $$
 \left\| \sum_{j=1}^J {\bf A}_j - {\bf B}_{\infty} \right\|
 \to 0
 %
-$$
-%
-
-## Neumann Series
-
-### Neumann Series
-
-Consider the difference equation ${\bf x}_{t+1} = {\bf A} {\bf x}_t + {\bf b}$, where 
-%
-- ${\bf x}_t \in \mathbb{R}^N$ represents the values of some variables at time $t$
-
-- ${\bf A}$ and ${\bf b}$ form the parameters in the law of motion for ${\bf x}_t$
-
-Question of interest: is there an ${\bf x}$ such that 
-%
-$$
+\]</div>
+</section>
+<section id="neumann-series-optional">
+<h3>Neumann Series [optional]<a class="headerlink" href="#neumann-series-optional" title="Permalink to this heading">#</a></h3>
+<p>Consider the difference equation <span class="math notranslate nohighlight">\({\bf x}_{t+1} = {\bf A} {\bf x}_t + {\bf b}\)</span>, where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\({\bf x}_t \in \mathbb{R}^N\)</span> represents the values of some variables at time <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\({\bf A}\)</span> and <span class="math notranslate nohighlight">\({\bf b}\)</span> form the parameters in the law of motion for <span class="math notranslate nohighlight">\({\bf x}_t\)</span></p></li>
+</ul>
+<p>Question of interest: is there an <span class="math notranslate nohighlight">\({\bf x}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
 %
 {\bf x}_t = {\bf x} \; \implies \; {\bf x}_{t+1} = {\bf x}
 %
-$$
-%
-
-In other words, we seek an ${\bf x} \in \mathbb{R}^N$ that solves the system of equations
-%
-$$
+\]</div>
+<p>In other words, we seek an <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)</span> that solves the system of equations</p>
+<div class="math notranslate nohighlight">
+\[
 %
 {\bf x} = {\bf A} {\bf x} + {\bf b}, 
 \quad \text{where} \quad {\bf A} \text{ is } N \times N
 \text{ and } {\bf b} \text{ is } N \times 1
 %
-$$
-%
-
-We can get some insight from the scalar case $x = a x + b$
-
-If $|a| < 1$, then this equation has the solution
-%
-$$
+\]</div>
+<p>We can get some insight from the scalar case <span class="math notranslate nohighlight">\(x_{t+1} = a x_t + b\)</span></p>
+<p>If <span class="math notranslate nohighlight">\(|a| &lt; 1\)</span>, then this equation has the solution</p>
+<div class="math notranslate nohighlight">
+\[
 %
 \bar x 
 = \frac{b}{1-a} 
 = b \sum_{k=0}^{\infty} a^k 
 %
-$$
-%
-
-Does an analogous result hold in the vector case ${\bf x} = {\bf A} {\bf x} + {\bf b}$?
-
-Yes, if we replace condition $|a| < 1$ with $\| {\bf A} \| < 1$ 
-
-Let ${\bf b}$ be any vector in $\mathbb{R}^N$ and ${\bf A}$ be an $N \times N$ matrix
-
-The next result is called the ***Neumann series lemma*** 
-
-```{admonition} Fact
-:class: important
-
-If $\| {\bf A}^k \| < 1$ for some $k \in \mathbb{N}$, then ${\bf I} - {\bf A}$
-```
-is invertible and
-%
-$$
+\]</div>
+<p>Does an analogous result hold in the vector case <span class="math notranslate nohighlight">\({\bf x} = {\bf A} {\bf x} + {\bf b}\)</span>?</p>
+<p>Yes, if we replace condition <span class="math notranslate nohighlight">\(|a| &lt; 1\)</span> with <span class="math notranslate nohighlight">\(\| {\bf A} \| &lt; 1\)</span></p>
+<p>Let <span class="math notranslate nohighlight">\({\bf b}\)</span> be any vector in <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span> and <span class="math notranslate nohighlight">\({\bf A}\)</span> be an <span class="math notranslate nohighlight">\(N \times N\)</span> matrix</p>
+<p>The next result is called the <em><strong>Neumann series lemma</strong></em></p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(\| {\bf A}^k \| &lt; 1\)</span> for some <span class="math notranslate nohighlight">\(k \in \mathbb{N}\)</span>, then <span class="math notranslate nohighlight">\({\bf I} - {\bf A}\)</span> is invertible and</p>
+<div class="math notranslate nohighlight">
+\[
 %
 ({\bf I} - {\bf A})^{-1} = \sum_{j=0}^{\infty} {\bf A}^j
 %
-$$
-%
-
-In this case ${\bf x} = {\bf A} {\bf x} + {\bf b}$ has the unique solution
-%
-$$
+\]</div>
+<p>In this case <span class="math notranslate nohighlight">\({\bf x} = {\bf A} {\bf x} + {\bf b}\)</span> has the unique solution</p>
+<div class="math notranslate nohighlight">
+\[
 %
 \bar {\bf x} = \sum_{j=0}^{\infty} {\bf A}^j {\bf b} 
 %
-$$
-%
-
-Sketch of proof that $({\bf I} - {\bf A})^{-1} = \sum_{j=0}^{\infty} {\bf A}^j$ 
-for case $\|{\bf A} \| < 1$
-
-We have $({\bf I} - {\bf A}) \sum_{j=0}^{\infty} {\bf A}^j =
-{\bf I} $ because
-%
-$$
+\]</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Sketch of proof that <span class="math notranslate nohighlight">\(({\bf I} - {\bf A})^{-1} = \sum_{j=0}^{\infty} {\bf A}^j\)</span>
+for case <span class="math notranslate nohighlight">\(\|{\bf A} \| &lt; 1\)</span></p>
+<p>We have <span class="math notranslate nohighlight">\(({\bf I} - {\bf A}) \sum_{j=0}^{\infty} {\bf A}^j =
+{\bf I} \)</span> because</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 \left\|
 ({\bf I} - {\bf A}) \sum_{j=0}^{\infty} {\bf A}^j - {\bf I}
 \right\|
-& 
 =
 \left\|
 ({\bf I} - {\bf A}) \lim_{J \to \infty}\sum_{j=0}^J {\bf A}^j - {\bf I}
 \right\|
 \\
-& 
 =
 \lim_{J \to \infty}
 \left\|
@@ -5365,35 +5272,26 @@ $$
 {\bf A}^J 
 \right\|
 \\
-& \leq
+\leq
 \lim_{J \to \infty}
 \left\| {\bf A} \right\|^J = 0
 %
-$$
-%
-
-How to test the hypotheses of the Neumann series lemma?
-
-The ***spectral radius*** of square matrix ${\bf A}$ is
-%
-$$
+\end{split}\]</div>
+</div>
+<p>How to test the hypotheses of the Neumann series lemma?</p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>The <em><strong>spectral radius</strong></em> of square matrix <span class="math notranslate nohighlight">\({\bf A}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
 %
 \rho({\bf A}) := \max \{ |\lambda| \colon \lambda \text{ is an eigenvalue of \} {\bf A}}
 %
-$$
-%
-
-Here $|\lambda|$ is the ***modulus*** of the possibly complex number $\lambda$
-
-```{admonition} Example
-:class: tip
-
-If $\lambda = a + ib$, then 
-```
-%
-$$|\lambda| = (a^2 + b^2)^{1/2}$$
-%
-
+\]</div>
+</div>
+<p>Here <span class="math notranslate nohighlight">\(|\lambda|\)</span> is the <em><strong>modulus</strong></em> of the possibly complex number <span class="math notranslate nohighlight">\(\lambda\)</span>.
+That is, if <span class="math notranslate nohighlight">\(\lambda = a + ib\)</span>, then <span class="math notranslate nohighlight">\(|\lambda| = \sqrt{a^2 + b^2}\)</span>.</p>
+<!-- 
 ```{admonition} Example
 :class: tip
 
@@ -5406,7 +5304,10 @@ If $\lambda \in \mathbb{R}$, then $|\lambda|$ is the absolute value
 If $\rho({\bf A}) < 1$, then $\| {\bf A}^j \| < 1$ for some $j \in \mathbb{N}$ 
 ```
 
-Proof, for diagonalizable ${\bf A}$:
+````{admonition} Proof
+:class: dropdown
+
+For diagonalizable ${\bf A}$:
 
 We have ${\bf A}^j = {\bf P} {\bf D}^j {\bf P}^{-1}$ where
 %
@@ -5443,7 +5344,10 @@ $$
 %
 
 This is $<1$ for large enough $j$ because $\rho({\bf A}) < 1$
- -->
+
+```` 
+-->
+</section>
 </section>
 <section id="quadratic-forms">
 <h2>Quadratic Forms<a class="headerlink" href="#quadratic-forms" title="Permalink to this heading">#</a></h2>
@@ -5478,13 +5382,13 @@ for all <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)<
 <figure class="align-default" id="f-qform-pd">
 <img alt="_images/qform_pd.png" src="_images/qform_pd.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 67 </span><span class="caption-text">A positive definite case: <span class="math notranslate nohighlight">\(Q({\bf x}) = {\bf x}' {\bf I} {\bf x}\)</span></span><a class="headerlink" href="#f-qform-pd" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 70 </span><span class="caption-text">A positive definite case: <span class="math notranslate nohighlight">\(Q({\bf x}) = {\bf x}' {\bf I} {\bf x}\)</span></span><a class="headerlink" href="#f-qform-pd" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="f-qform-nd">
 <img alt="_images/qform_nd.png" src="_images/qform_nd.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 68 </span><span class="caption-text">A negative definite case: <span class="math notranslate nohighlight">\(Q({\bf x}) =
+<p><span class="caption-number">Fig. 71 </span><span class="caption-text">A negative definite case: <span class="math notranslate nohighlight">\(Q({\bf x}) =
 {\bf x}'(-{\bf I}){\bf x}\)</span></span><a class="headerlink" href="#f-qform-nd" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
@@ -5497,7 +5401,7 @@ for all <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)<
 <figure class="align-default" id="f-qform-indef">
 <img alt="_images/qform_indef.png" src="_images/qform_indef.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 69 </span><span class="caption-text">Indefinite quadratic function <span class="math notranslate nohighlight">\(Q({\bf x}) = x_1^2/2 +
+<p><span class="caption-number">Fig. 72 </span><span class="caption-text">Indefinite quadratic function <span class="math notranslate nohighlight">\(Q({\bf x}) = x_1^2/2 +
 8 x_1 x_2 + x_2^2/2\)</span></span><a class="headerlink" href="#f-qform-indef" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
@@ -5652,7 +5556,12 @@ for all <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)<
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonal-matrices">Diagonal Matrices</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eigenvalues-and-eigenvectors">Eigenvalues and Eigenvectors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diagonalization">Diagonalization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-euclidean-matrix-norm">The Euclidean Matrix Norm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neumann-series-optional">Neumann Series [optional]</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quadratic-forms">Quadratic Forms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-study-material">Extra study material</a></li>
 </ul>
