@@ -6,7 +6,15 @@
     st: 
 
 - pattern:
+    re: \\begin\{question\}\S*
+    st: 
+
+- pattern:
     re: \\end\{frame\}\S*
+    st: 
+
+- pattern:
+    re: \\end\{question\}\S*
     st: 
 
 - pattern:
@@ -265,15 +273,12 @@
 
 
 # in the end check that every $$ is paired with %
-# - pattern:
-#     re: '(?<=[^%]\s)(\$\$\n(.|\n)*?\n\$\$)(?=\s[^%])'
-#     st: '%\n\1\n%'
 
-- pattern:
+- pattern: # remove empty equation numbers
     re: '\$\$ \(\)'
     st: '$$'
 
-- pattern:
+- pattern: # $$ with % on both sides
     re: '\$\$(.*)?'
     st: |
       %
