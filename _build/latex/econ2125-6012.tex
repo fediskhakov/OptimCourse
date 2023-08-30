@@ -18808,7 +18808,226 @@ What about the upper\sphinxhyphen{}triangular matrix which non\sphinxhyphen{}zer
 \label{\detokenize{05.exercises.D:question-d-9}}
 \sphinxAtStartPar
 Show that if \(T: \mathbb{R}^N \to \mathbb{R}^N\) is nonsingular, i.e. linear bijection, the inverse map \(T^{-1}\) is also linear.
+\subsubsection*{Solutions}
 
+\sphinxAtStartPar
+\sphinxstylestrong{Question D.1}
+
+\sphinxAtStartPar
+No, these two vectors do not form a basis of \(\mathbb{R}^3\).  If it did then \(\mathbb{R}^3\) would be
+spanned by just two vectors.  This is impossible.  For example, it would
+imply by the exchange lemma that any three vectors in \(\mathbb{R}^3\) are linearly
+dependent.  We know this is false.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Question D.2}
+
+\sphinxAtStartPar
+This is a bit of a trick question, but to solve it you just need to look
+carefully at the definitions (as always). A linear subspace of \(\mathbb{R}^3\) is
+a subset of \(\mathbb{R}^3\) with certain properties. \(\mathbb{R}^3\) is a collection of
+3\sphinxhyphen{}tuples \((x_1, x_2, x_3)\) where each \(x_i\) is a real number. Elements of
+\(\mathbb{R}^2\) are 2\sphinxhyphen{}tuples (pairs), and hence not elements of \(\mathbb{R}^3\).
+Therefore \(\mathbb{R}^2\) is not a subset of \(\mathbb{R}^3\), and in particular not a
+linear subspace of \(\mathbb{R}^3\).
+
+\sphinxAtStartPar
+\sphinxstylestrong{Question D.3}
+
+\sphinxAtStartPar
+Let \(T\) be as in the question. We need to show that \(T {\bf 0} =
+{\bf 0}\).
+Here’s one proof. We know from the definition of scalar
+multiplication that \(0 {\bf x} = {\bf 0}\) for any vector \({\bf x}\).
+Hence, letting \({\bf x}\) and \({\bf y}\) be any vectors in \(\mathbb{R}^K\) and
+applying the definition of linearity,
+\begin{equation*}
+\begin{split}
+%
+T{\bf 0} = T(0 {\bf x} + 0 {\bf y}) = 0 T{\bf x} + 0 T {\bf y} 
+= {\bf 0} + {\bf 0} 
+= {\bf 0}
+%
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+\sphinxstylestrong{Question D.4}
+
+\sphinxAtStartPar
+Yes, \(S\) must be a linear subspace of \(\mathbb{R}^N\). To see this, pick any
+\({\bf x}\) and \({\bf y}\) in \(S\) and any scalars \(\alpha, \beta\).
+To establish our claim we need to show that \({\bf z} := \alpha {\bf x} +
+\beta {\bf y}\) is in \(S\). To see that this is so observe that by (\(\text{ such that }ar\text{ such that }ar\))
+we have \({\bf u} := \alpha{\bf x} \in S\)
+and \({\bf v} := \beta{\bf y} \in S\). By (\(\text{ such that }ar\)) we then have \({\bf u} +
+{\bf v} \in S\). In other words, \({\bf z} \in S\) as claimed.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Question D.5}
+
+\sphinxAtStartPar
+Let \({\bf x}_i \in S\) and \(\alpha_i \in \mathbb{R}\) for \(i=1,2,3\). We claim that
+\begin{equation}\label{equation:05.exercises.D:eq:cis}
+\begin{split}
+\alpha_1 {\bf x}_1 +
+\alpha_2 {\bf x}_2 +
+\alpha_3 {\bf x}_3 
+\in S
+\end{split}
+\end{equation}
+\sphinxAtStartPar
+To see this let \({\bf y} := \alpha_1 {\bf x}_1 + \alpha_2 {\bf x}_2\). By the
+definition of linear subspaces we know that \({\bf y} \in S\).
+Using the definition of linear subspaces again we have \({\bf y} + \alpha_3
+{\bf x}_3 \in S\). Hence \eqref{equation:05.exercises.D:eq:cis} is confirmed.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Question D.6}
+
+\sphinxAtStartPar
+The answer is yes. Here’s one proof: Suppose to the contrary that
+\(\{\gamma {\bf x}_1, \gamma {\bf x}_2\}\) is linearly dependent. Then one
+element can be written as a linear combination of the others. In our
+setting with only two vectors, this translates to \(\gamma {\bf x}_1 =
+\alpha \gamma {\bf x}_2\) for some \(\alpha\). Since \(\gamma \ne 0\) we can
+multiply each side by \(1/\gamma\) to get \({\bf x}_1 = \alpha {\bf x}_2\). But
+now each \({\bf x}_i\) is a multiple of the other. This contradicts linear
+independence of \(\{{\bf x}_1, {\bf x}_2\}\).
+
+\sphinxAtStartPar
+Here’s another proof: Take any \(\alpha_1, \alpha_2 \in \mathbb{R}\) with
+\begin{equation}\label{equation:05.exercises.D:eq:lio}
+\begin{split}
+\alpha_1 \gamma {\bf x}_1 + \alpha_2 \gamma {\bf x}_2 = {\bf 0}
+\end{split}
+\end{equation}
+\sphinxAtStartPar
+We need to show that \(\alpha_1 = \alpha_2 = 0\). To see this, observe that
+\begin{equation*}
+\begin{split}
+\alpha_1 \gamma {\bf x}_1 + \alpha_2 \gamma {\bf x}_2 
+= \gamma (\alpha_1 {\bf x}_1 + \alpha_2 {\bf x}_2)
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Hence \(\gamma (\alpha_1 {\bf x}_1 + \alpha_2 {\bf x}_2) = {\bf 0}\).
+Since \(\gamma \ne 0\), the only way this could occur is that
+\( \alpha_1 {\bf x}_1 + \alpha_2 {\bf x}_2 = {\bf 0}\).
+But \(\{{\bf x}_1, {\bf x}_2\}\) is linearly independent, so this implies
+that \(\alpha_1 = \alpha_2 = 0\). The proof is done.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Question D.7}
+
+\sphinxAtStartPar
+There is an easy way to do this: We know that any linearly
+independent set of 3 vectors in \(\mathbb{R}^3\) will span \(\mathbb{R}^3\). Since \({\bf z} \in \mathbb{R}^3\), this will include \({\bf z}\). So all we need to do is
+show that \(X\) is linearly independent. To this end, take any scalars
+\(\alpha_1, \alpha_2, \alpha_3\) with
+\begin{equation*}
+\begin{split}
+\alpha_1
+\begin{pmatrix}
+-4 \\
+0 \\
+0
+\end{pmatrix}
++
+\alpha_2
+\begin{pmatrix}
+1 \\
+2 \\
+0
+\end{pmatrix}
++
+\alpha_3
+\begin{pmatrix}
+0 \\
+1 \\
+-1
+\end{pmatrix}
+=
+{\bf 0}
+:=
+\begin{pmatrix}
+0 \\
+0 \\
+0
+\end{pmatrix}
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Write as a linear system of 3 equations and show that the only solution is \(\alpha_1=\alpha_2=\alpha_3=0\).
+In this case the set would be linearly independent.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Question D.8}
+
+\sphinxAtStartPar
+By definition, \(\mathrm{rank}({\bf I})\) is equal to the dimension of the span of
+its columns. Its columns are the \(N\) canonical basis vectors in \(\mathbb{R}^N\),
+which we know span all of \(\mathbb{R}^N\). Hence
+\begin{equation*}
+\begin{split}
+\mathrm{rank}({\bf I}) = \dim(\mathbb{R}^N) = N
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+\sphinxstyleemphasis{Draft of the proof for the second question:}
+For the upper triangular matrix start by showing that the columns are linearly independent, and because there are \(N\) of them, they span the whole space \(\mathbb{R}^N\), thus the expression above applies again, and the rank is \(N\).
+
+\sphinxAtStartPar
+\sphinxstylestrong{Question D.9}
+
+\sphinxAtStartPar
+Let \(T \colon \mathbb{R}^N \to \mathbb{R}^N\) be nonsingular and let \(T^{-1}\)
+be its inverse. To see that \(T^{-1}\) is linear we need to show that for any
+pair \({\bf x}, {\bf y}\) in \(\mathbb{R}^N\) (which is the domain of \(T^{-1}\)) and any
+scalars \(\alpha\) and \(\beta\), the following equality holds:
+\begin{equation*}
+\begin{split}
+T^{-1}(\alpha {\bf x} + \beta {\bf y}) = \alpha T^{-1}{\bf x} + \beta T^{-1} {\bf y}.
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+In the proof we will exploit the fact that \(T\) is by assumption a linear
+bijection.
+
+\sphinxAtStartPar
+So pick any vectors \({\bf x}, {\bf y} \in \mathbb{R}^N\) and any two scalars \(\alpha,
+\beta\). Since \(T\) is a bijection, we know that \({\bf x}\) and \({\bf y}\) have
+unique preimages under \(T\). In particular, there exist unique vectors
+\({\bf u}\) and \({\bf v}\) such that
+\begin{equation*}
+\begin{split}
+%
+T{\bf u} = {\bf x} 
+\quad \text{and} \quad
+T{\bf v} = {\bf y} 
+%
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Using these definitions, linearity of \(T\) and the fact that \(T^{-1}\) is the
+inverse of \(T\), we have
+\begin{equation*}
+\begin{split}
+%
+T^{-1}(\alpha {\bf x} + \beta {\bf y})
+= T^{-1}(\alpha T{\bf u} + \beta T {\bf v}) \\
+= T^{-1}(T(\alpha {\bf u} + \beta {\bf v})) \\
+= \alpha {\bf u} + \beta {\bf v} \\
+= \alpha T^{-1} {\bf x} + \beta T^{-1} {\bf y}.
+%
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+This chain of equalities confirms
+\begin{equation*}
+\begin{split}
+T^{-1}(\alpha {\bf x} + \beta {\bf y}) = \alpha T^{-1}{\bf x} + \beta T^{-1} {\bf y}.
+\end{split}
+\end{equation*}
 \sphinxstepscope
 
 

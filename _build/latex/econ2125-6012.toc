@@ -183,10 +183,10 @@
 \contentsline {section}{\numberline {16.7}Question D.7}{256}{section.16.7}%
 \contentsline {section}{\numberline {16.8}Question D.8}{256}{section.16.8}%
 \contentsline {section}{\numberline {16.9}Question D.9}{256}{section.16.9}%
-\contentsline {chapter}{\numberline {17}Exercise set E}{257}{chapter.17}%
-\contentsline {section}{\numberline {17.1}Question E.1}{257}{section.17.1}%
-\contentsline {section}{\numberline {17.2}Question E.2}{257}{section.17.2}%
-\contentsline {section}{\numberline {17.3}Question E.3}{257}{section.17.3}%
-\contentsline {section}{\numberline {17.4}Question E.4}{257}{section.17.4}%
-\contentsline {section}{\numberline {17.5}Question E.5}{258}{section.17.5}%
-\contentsline {section}{\numberline {17.6}Question E.6}{258}{section.17.6}%
+\contentsline {chapter}{\numberline {17}Exercise set E}{259}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Question E.1}{259}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Question E.2}{259}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Question E.3}{259}{section.17.3}%
+\contentsline {section}{\numberline {17.4}Question E.4}{259}{section.17.4}%
+\contentsline {section}{\numberline {17.5}Question E.5}{260}{section.17.5}%
+\contentsline {section}{\numberline {17.6}Question E.6}{260}{section.17.6}%

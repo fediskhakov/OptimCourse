@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.30)  30 AUG 2023 13:22
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.3.30)  30 AUG 2023 13:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2399,9 +2399,9 @@ Chapter 15.
 Chapter 16.
 [255
 
-] [256]
+] [256] [257] [258]
 Chapter 17.
-[257
+[259
 
 ] (./econ2125-6012.ind)
 The property list \polyglossia@langsetup contains the pairs (without outer
@@ -2474,7 +2474,7 @@ The property list \__xpg_alias contains the pairs (without outer braces):
 >  {newzealand/target}  =>  {english}
 >  {newzealand/variant}  =>  {newzealand}
 >  {newzealand/options}  =>  {variant=newzealand}.
- [258] (./econ2125-6012.aux
+ [260] (./econ2125-6012.aux
 LaTeX Info: Redefining \rmfamily on input line 17.
 LaTeX Info: Redefining \sffamily on input line 17.
 LaTeX Info: Redefining \ttfamily on input line 17.
@@ -2483,12 +2483,12 @@ Package rerunfilecheck Info: File `econ2125-6012.out' has not changed.
 (rerunfilecheck)             Checksum: D65FACD3DC74123BB5C22C4B609EF08D;14591.
  ) 
 Here is how much of TeX's memory you used:
- 44767 strings out of 476683
- 1038958 string characters out of 5804047
+ 44769 strings out of 476683
+ 1039022 string characters out of 5804047
  1920018 words of memory out of 5000000
- 64056 multiletter control sequences out of 15000+600000
+ 64058 multiletter control sequences out of 15000+600000
  522672 words of font info for 150 fonts, out of 8000000 for 9000
  1349 hyphenation exceptions out of 8191
  99i,26n,115p,751b,2290s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on econ2125-6012.pdf (264 pages).
+Output written on econ2125-6012.pdf (266 pages).
