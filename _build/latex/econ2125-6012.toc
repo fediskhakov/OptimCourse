@@ -132,72 +132,61 @@
 \contentsline {section}{\numberline {6.2}Plan for this lecture}{185}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Sequences and limits in \(\symbb {R}^K\)}{185}{section.6.3}%
 \contentsline {section}{\numberline {6.4}Open and Closed Sets}{188}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Closed Sets}{191}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.1}Closed Sets}{190}{subsection.6.4.1}%
 \contentsline {subsection}{\numberline {6.4.2}Properties of Open and Closed Sets}{192}{subsection.6.4.2}%
 \contentsline {section}{\numberline {6.5}Continuity}{194}{section.6.5}%
 \contentsline {subsection}{\numberline {6.5.1}Reminder on functions >>}{194}{subsection.6.5.1}%
 \contentsline {subsection}{\numberline {6.5.2}Bounded functions}{196}{subsection.6.5.2}%
 \contentsline {subsection}{\numberline {6.5.3}Continuous functions}{197}{subsection.6.5.3}%
-\contentsline {section}{\numberline {6.6}Suprema and Infima}{200}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1}Fundamentals of Optimization}{201}{subsection.6.6.1}%
-\contentsline {section}{\numberline {6.7}Sup and Inf}{201}{section.6.7}%
-\contentsline {subsection}{\numberline {6.7.1}Suprema and Infima}{201}{subsection.6.7.1}%
-\contentsline {section}{\numberline {6.8}Max and Min}{205}{section.6.8}%
-\contentsline {subsection}{\numberline {6.8.1}Maxima and Minima of Sets}{205}{subsection.6.8.1}%
-\contentsline {subsection}{\numberline {6.8.2}Existence of Max and Min}{205}{subsection.6.8.2}%
-\contentsline {subsection}{\numberline {6.8.3}Max/Min vs Sup/Inf}{207}{subsection.6.8.3}%
-\contentsline {section}{\numberline {6.9}Existence of Optima}{207}{section.6.9}%
-\contentsline {subsection}{\numberline {6.9.1}Existence of Max and Min for Sets}{207}{subsection.6.9.1}%
-\contentsline {subsection}{\numberline {6.9.2}Max and Min for Functions}{210}{subsection.6.9.2}%
-\contentsline {section}{\numberline {6.10}Properties of Optima}{211}{section.6.10}%
-\contentsline {subsection}{\numberline {6.10.1}Properties of Optima}{211}{subsection.6.10.1}%
-\contentsline {subsection}{\numberline {6.10.2}Introduction}{219}{subsection.6.10.2}%
-\contentsline {section}{\numberline {6.11}Convex Sets}{219}{section.6.11}%
-\contentsline {subsection}{\numberline {6.11.1}Convex Sets}{219}{subsection.6.11.1}%
-\contentsline {section}{\numberline {6.12}Convex/Concave Functions}{222}{section.6.12}%
-\contentsline {subsection}{\numberline {6.12.1}Convex Functions}{222}{subsection.6.12.1}%
-\contentsline {subsection}{\numberline {6.12.2}Concave Functions}{225}{subsection.6.12.2}%
-\contentsline {subsection}{\numberline {6.12.3}Preservation of Shape}{226}{subsection.6.12.3}%
-\contentsline {subsection}{\numberline {6.12.4}Derivative Conditions}{227}{subsection.6.12.4}%
-\contentsline {section}{\numberline {6.13}Uniqueness of Optimizers}{228}{section.6.13}%
-\contentsline {subsection}{\numberline {6.13.1}Uniqueness of Maximizers and Minimizers}{228}{subsection.6.13.1}%
-\contentsline {subsection}{\numberline {6.13.2}A Sufficient Condition}{228}{subsection.6.13.2}%
-\contentsline {chapter}{\numberline {7}Unconstrained optimization}{231}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Constrained optimization}{233}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Practical session}{235}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Envelope and maximum theorems}{237}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Dynamic optimization}{239}{chapter.11}%
-\contentsline {chapter}{\numberline {12}Revision}{241}{chapter.12}%
-\contentsline {chapter}{\numberline {13}Exercise set A}{243}{chapter.13}%
-\contentsline {section}{\numberline {13.1}Question A.3: Profit maximization with Cobb\sphinxhyphen {}Douglas production and linear costs}{244}{section.13.1}%
-\contentsline {section}{\numberline {13.2}Question A.4*}{245}{section.13.2}%
-\contentsline {chapter}{\numberline {14}Exercise set B}{249}{chapter.14}%
-\contentsline {section}{\numberline {14.1}Question B.1}{249}{section.14.1}%
-\contentsline {section}{\numberline {14.2}Question B.2}{249}{section.14.2}%
-\contentsline {section}{\numberline {14.3}Question B.3}{250}{section.14.3}%
-\contentsline {section}{\numberline {14.4}Question B.4}{250}{section.14.4}%
-\contentsline {section}{\numberline {14.5}Question B.5}{250}{section.14.5}%
-\contentsline {section}{\numberline {14.6}Question B.6}{250}{section.14.6}%
-\contentsline {chapter}{\numberline {15}Exercise set C}{253}{chapter.15}%
-\contentsline {section}{\numberline {15.1}Question C.1}{253}{section.15.1}%
-\contentsline {section}{\numberline {15.2}Question C.2}{253}{section.15.2}%
-\contentsline {section}{\numberline {15.3}Question C.3}{254}{section.15.3}%
-\contentsline {section}{\numberline {15.4}Question C.4}{254}{section.15.4}%
-\contentsline {section}{\numberline {15.5}Question C.5}{254}{section.15.5}%
-\contentsline {chapter}{\numberline {16}Exercise set D}{257}{chapter.16}%
-\contentsline {section}{\numberline {16.1}Question D.1}{257}{section.16.1}%
-\contentsline {section}{\numberline {16.2}Question D.2}{257}{section.16.2}%
-\contentsline {section}{\numberline {16.3}Question D.3}{257}{section.16.3}%
-\contentsline {section}{\numberline {16.4}Question D.4}{257}{section.16.4}%
-\contentsline {section}{\numberline {16.5}Question D.5}{258}{section.16.5}%
-\contentsline {section}{\numberline {16.6}Question D.6}{258}{section.16.6}%
-\contentsline {section}{\numberline {16.7}Question D.7}{258}{section.16.7}%
-\contentsline {section}{\numberline {16.8}Question D.8}{258}{section.16.8}%
-\contentsline {section}{\numberline {16.9}Question D.9}{258}{section.16.9}%
-\contentsline {chapter}{\numberline {17}Exercise set E}{259}{chapter.17}%
-\contentsline {section}{\numberline {17.1}Question E.1}{259}{section.17.1}%
-\contentsline {section}{\numberline {17.2}Question E.2}{259}{section.17.2}%
-\contentsline {section}{\numberline {17.3}Question E.3}{259}{section.17.3}%
-\contentsline {section}{\numberline {17.4}Question E.4}{259}{section.17.4}%
-\contentsline {section}{\numberline {17.5}Question E.5}{260}{section.17.5}%
-\contentsline {section}{\numberline {17.6}Question E.6}{260}{section.17.6}%
+\contentsline {section}{\numberline {6.6}Suprema and Infima (\(\mathrm {sup}\) + \(\mathrm {inf}\))}{201}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1}Maxima and Minima of Sets}{206}{subsection.6.6.1}%
+\contentsline {subsection}{\numberline {6.6.2}Relationship between max/min and sup/inf}{208}{subsection.6.6.2}%
+\contentsline {section}{\numberline {6.7}Existence of optima for functions}{208}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1}Weierstrass extreme value theorem}{210}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2}Properties of Optima}{211}{subsection.6.7.2}%
+\contentsline {section}{\numberline {6.8}Concavity and uniqueness of optima}{219}{section.6.8}%
+\contentsline {subsection}{\numberline {6.8.1}Convex Sets}{219}{subsection.6.8.1}%
+\contentsline {subsection}{\numberline {6.8.2}Convex Functions}{222}{subsection.6.8.2}%
+\contentsline {subsection}{\numberline {6.8.3}Concave Functions}{225}{subsection.6.8.3}%
+\contentsline {subsection}{\numberline {6.8.4}Preservation of Shape}{226}{subsection.6.8.4}%
+\contentsline {section}{\numberline {6.9}Uniqueness of Optimizers}{227}{section.6.9}%
+\contentsline {subsection}{\numberline {6.9.1}A Sufficient Condition}{228}{subsection.6.9.1}%
+\contentsline {chapter}{\numberline {7}Unconstrained optimization}{229}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Constrained optimization}{231}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Practical session}{233}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Envelope and maximum theorems}{235}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Dynamic optimization}{237}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Revision}{239}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Exercise set A}{241}{chapter.13}%
+\contentsline {section}{\numberline {13.1}Question A.3: Profit maximization with Cobb\sphinxhyphen {}Douglas production and linear costs}{242}{section.13.1}%
+\contentsline {section}{\numberline {13.2}Question A.4*}{243}{section.13.2}%
+\contentsline {chapter}{\numberline {14}Exercise set B}{247}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Question B.1}{247}{section.14.1}%
+\contentsline {section}{\numberline {14.2}Question B.2}{247}{section.14.2}%
+\contentsline {section}{\numberline {14.3}Question B.3}{248}{section.14.3}%
+\contentsline {section}{\numberline {14.4}Question B.4}{248}{section.14.4}%
+\contentsline {section}{\numberline {14.5}Question B.5}{248}{section.14.5}%
+\contentsline {section}{\numberline {14.6}Question B.6}{248}{section.14.6}%
+\contentsline {chapter}{\numberline {15}Exercise set C}{251}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Question C.1}{251}{section.15.1}%
+\contentsline {section}{\numberline {15.2}Question C.2}{251}{section.15.2}%
+\contentsline {section}{\numberline {15.3}Question C.3}{252}{section.15.3}%
+\contentsline {section}{\numberline {15.4}Question C.4}{252}{section.15.4}%
+\contentsline {section}{\numberline {15.5}Question C.5}{252}{section.15.5}%
+\contentsline {chapter}{\numberline {16}Exercise set D}{255}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Question D.1}{255}{section.16.1}%
+\contentsline {section}{\numberline {16.2}Question D.2}{255}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Question D.3}{255}{section.16.3}%
+\contentsline {section}{\numberline {16.4}Question D.4}{255}{section.16.4}%
+\contentsline {section}{\numberline {16.5}Question D.5}{256}{section.16.5}%
+\contentsline {section}{\numberline {16.6}Question D.6}{256}{section.16.6}%
+\contentsline {section}{\numberline {16.7}Question D.7}{256}{section.16.7}%
+\contentsline {section}{\numberline {16.8}Question D.8}{256}{section.16.8}%
+\contentsline {section}{\numberline {16.9}Question D.9}{256}{section.16.9}%
+\contentsline {chapter}{\numberline {17}Exercise set E}{257}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Question E.1}{257}{section.17.1}%
+\contentsline {section}{\numberline {17.2}Question E.2}{257}{section.17.2}%
+\contentsline {section}{\numberline {17.3}Question E.3}{257}{section.17.3}%
+\contentsline {section}{\numberline {17.4}Question E.4}{257}{section.17.4}%
+\contentsline {section}{\numberline {17.5}Question E.5}{258}{section.17.5}%
+\contentsline {section}{\numberline {17.6}Question E.6}{258}{section.17.6}%

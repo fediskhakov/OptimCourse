@@ -84,7 +84,7 @@
         
 
 \title{ECON2125/6012}
-\date{Aug 28, 2023}
+\date{Aug 30, 2023}
 \release{}
 \author{Fedor Iskhakov}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -7673,7 +7673,7 @@ Solutions is x=[ 0.00000000e+00 \PYGZhy{}9.00719925e+15  4.50359963e+15]
 \end{sphinxVerbatim}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-/var/folders/5d/cjhpvdlx7lg8zt1ypw5fcyy40000gn/T/ipykernel\PYGZus{}78942/3978225594.py:8: LinAlgWarning: Ill\PYGZhy{}conditioned matrix (rcond=4.11194e\PYGZhy{}18): result may not be accurate.
+/var/folders/5d/cjhpvdlx7lg8zt1ypw5fcyy40000gn/T/ipykernel\PYGZus{}98027/3978225594.py:8: LinAlgWarning: Ill\PYGZhy{}conditioned matrix (rcond=4.11194e\PYGZhy{}18): result may not be accurate.
   x=solve(A, b)
 \end{sphinxVerbatim}
 
@@ -12681,10 +12681,10 @@ Show the following are equivalent:
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-A=[[\PYGZhy{}0.81567747 \PYGZhy{}0.1106213 ]
- [ 0.14365792 \PYGZhy{}0.57852857]]
-det(A)=0.48778434078537375
-det(inv(A))=2.0500863114833003
+A=[[\PYGZhy{}0.17412201  1.21509467]
+ [\PYGZhy{}0.3087902   1.08162961]]
+det(A)=0.1868738001242868
+det(inv(A))=5.351204927255271
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
@@ -14409,7 +14409,7 @@ Watch \sphinxhref{https://youtu.be/fNk\_zzaMoSs?si=X6EK-AqVhQOBplZj}{excellent v
 \chapter{Fundamentals of optimization}
 \label{\detokenize{06.optimization_fundamentals:fundamentals-of-optimization}}\label{\detokenize{06.optimization_fundamentals::doc}}
 \sphinxAtStartPar
-\sphinxstylestrong{ECON2125/6012 Lecture 2}
+\sphinxstylestrong{ECON2125/6012 Lecture 6}
 Fedor Iskhakov
 
 
@@ -14421,7 +14421,7 @@ Fedor Iskhakov
 
 \item {} 
 \sphinxAtStartPar
-\sphinxstyleemphasis{Test 2} due date extended to Sept 6th (23:59)
+\sphinxstyleemphasis{Test 2} due date \sphinxstylestrong{extended to Sept 6th (23:59)}
 
 \end{itemize}
 
@@ -14444,10 +14444,6 @@ Suprema and infima
 \item {} 
 \sphinxAtStartPar
 Existence of optima
-
-\item {} 
-\sphinxAtStartPar
-Multivariate calculus
 
 \item {} 
 \sphinxAtStartPar
@@ -14490,9 +14486,6 @@ The (Euclidean) \sphinxstyleemphasis{\sphinxstylestrong{norm}} of \({\bf x} \in 
 %
 \end{split}
 \end{equation*}\end{sphinxadmonition}
-
-\sphinxAtStartPar
-Recall the properties of the norm from the lecture on analysis, and the corresponding tutorial
 
 \sphinxAtStartPar
 Interpretation:
@@ -15545,11 +15538,43 @@ From this and the triangle inequality we get
 \end{split}
 \end{equation*}\end{sphinxadmonition}
 
-
-\section{Suprema and Infima}
-\label{\detokenize{06.optimization_fundamentals:suprema-and-infima}}
 \sphinxAtStartPar
-The set of maximizers/minimizers can be
+End of review, \sphinxstylestrong{new topic} next >>>
+
+
+\section{Suprema and Infima (\protect\(\mathrm{sup}\protect\) + \protect\(\mathrm{inf}\protect\))}
+\label{\detokenize{06.optimization_fundamentals:suprema-and-infima-mathrm-sup-mathrm-inf}}
+\sphinxAtStartPar
+In the introductory lecture we have seen a few simple examples of optimization problems. Like in many introductory econ/finance cources
+we get well behaved, prepackaged problems.
+
+\sphinxAtStartPar
+Usually they
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+have a solution
+
+\item {} 
+\sphinxAtStartPar
+the solution is unique and not hard to find
+
+\end{itemize}
+
+\sphinxAtStartPar
+However, for the \sphinxstyleemphasis{majority} of problems such properties aren’t guaranteed
+
+\sphinxAtStartPar
+We need some idea of how to check these things
+
+\sphinxAtStartPar
+Consider the problem of finding the “maximum” or “minimum” of a function
+
+\sphinxAtStartPar
+A first issue is that such values might not be well defined
+
+\sphinxAtStartPar
+Recall that the set of maximizers/minimizers can be
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -15584,49 +15609,8 @@ x^2 &  \text{ if } x < 1
 \capstart
 
 \noindent\sphinxincludegraphics[width=0.800\linewidth]{{dc6ae1475886bdbf3870fb56da4b850ca80141076ee12d4c620b333af6eb564d}.png}
-\caption{No maximizer on \([0, 2]\)}\label{\detokenize{06.optimization_fundamentals:id5}}\end{figure}
+\caption{No maximizer on \([0, 2]\)}\label{\detokenize{06.optimization_fundamentals:id1}}\end{figure}
 \end{sphinxadmonition}
-
-
-\subsection{Fundamentals of Optimization}
-\label{\detokenize{06.optimization_fundamentals:id1}}
-\sphinxAtStartPar
-In elementary econ / finance courses we get well behaved, prepackaged problems
-
-\sphinxAtStartPar
-Usually they
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-have a solution
-
-\item {} 
-\sphinxAtStartPar
-the solution is unique and not hard to find
-
-\end{itemize}
-
-\sphinxAtStartPar
-We discussed such problems in the first few lectures
-
-\sphinxAtStartPar
-However, when we tackle new proplems such properties aren’t guaranteed
-
-\sphinxAtStartPar
-We need some idea of how to check these things
-
-
-\section{Sup and Inf}
-\label{\detokenize{06.optimization_fundamentals:sup-and-inf}}
-
-\subsection{Suprema and Infima}
-\label{\detokenize{06.optimization_fundamentals:id2}}
-\sphinxAtStartPar
-Consider the problem of finding
-the “maximum” or “minimum” of a function
-
-\sphinxAtStartPar
-A first issue is that such values might not be well defined
 
 \sphinxAtStartPar
 This leads us to start with “suprema” and “infima”
@@ -15641,10 +15625,10 @@ Agree with max and min when the latter exist
 
 \end{itemize}
 
-\sphinxAtStartPar
-Let \(A \subset \mathbb{R}\)
+\begin{sphinxadmonition}{note}{Definition}
 
 \sphinxAtStartPar
+Let \(A \subset \mathbb{R}\).
 A number \(u \in \mathbb{R}\) is called an \sphinxstyleemphasis{\sphinxstylestrong{upper bound}} of \(A\) if
 \begin{equation*}
 \begin{split}
@@ -15652,33 +15636,34 @@ A number \(u \in \mathbb{R}\) is called an \sphinxstyleemphasis{\sphinxstylestro
 a \leq u \quad \text{for all} \quad a \in A
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
 If \(A = (0, 1)\) then 10 is an upper bound of \(A\)
-\end{sphinxadmonition}
 
 \sphinxAtStartPar
-\textbackslash{}hspace\{1em\} \(\because \quad\) Every element of \((0, 1)\) is \(\leq 10\)
+\(\because \quad\) Every element of \((0, 1)\) is \(\leq 10\)
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
 If \(A = (0, 1)\) then 1 is an upper bound of \(A\)
-\end{sphinxadmonition}
 
 \sphinxAtStartPar
-\textbackslash{}hspace\{1em\} \(\because \quad\) Every element of \((0, 1)\) is \(\leq 1\)
+\(\because \quad\) Every element of \((0, 1)\) is \(\leq 1\)
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
 If \(A = (0, 1)\) then \(0.5\) is \sphinxstyleemphasis{\sphinxstylestrong{not}} an upper bound of \(A\)
-\end{sphinxadmonition}
 
 \sphinxAtStartPar
-\textbackslash{}hspace\{1em\} \(\because \quad\) \(0.6 \in (0, 1)\) and \(0.5 < 0.6\)
+\(\because \quad\) \(\exists\, a = 0.6 \in (0, 1) = A\) and \(0.5 < 0.6\)
+\end{sphinxadmonition}
 
 \sphinxAtStartPar
 Let \(U(A) :=\) set of all upper bounds of \(A\)
@@ -15689,11 +15674,7 @@ Let \(U(A) :=\) set of all upper bounds of \(A\)
 \noindent\sphinxincludegraphics{{upper_bounds}.png}
 \end{figure}
 
-\begin{sphinxadmonition}{note}{Example}
-
-\sphinxAtStartPar
-s
-\end{sphinxadmonition}
+\begin{sphinxadmonition}{note}{Examples}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -15712,9 +15693,16 @@ If \(A = (0, 1) \cup (2, 3)\), then \(U(A) = [3, \infty)\)
 If \(A = \mathbb{N}\), then \(U(A) = \emptyset\)
 
 \end{itemize}
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Definition}
 
 \sphinxAtStartPar
-If \(s\) is a number satisfying
+The \sphinxstyleemphasis{least upper bound} of \(A\) is called \sphinxstyleemphasis{\sphinxstylestrong{supremum}} of \(A\).
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+In other words, if \(s\) is a number satisfying
 \begin{equation*}
 \begin{split}
 %
@@ -15725,16 +15713,13 @@ s \leq u, \; \forall \, u \in U(A)
 \end{split}
 \end{equation*}
 \sphinxAtStartPar
-then \(s\) is called the \sphinxstyleemphasis{\sphinxstylestrong{supremum}} of \(A\) and we write \(s = \sup A\)
+then \(s\) is the \sphinxstyleemphasis{\sphinxstylestrong{supremum}} of \(A\) and we write \(s = \sup A\)
 
 \begin{figure}[htbp]
 \centering
 
 \noindent\sphinxincludegraphics{{sup}.png}
 \end{figure}
-
-\sphinxAtStartPar
-Also called the \sphinxstyleemphasis{\sphinxstylestrong{least upper bound}} of \(A\)
 
 \begin{sphinxadmonition}{note}{Example}
 
@@ -15748,17 +15733,17 @@ If \(A = (0, 1]\), then \(U(A) = [1, \infty)\), so \(\sup A = 1\)
 If \(A = (0, 1)\), then \(U(A) = [1, \infty)\), so \(\sup A = 1\)
 \end{sphinxadmonition}
 
+\begin{sphinxadmonition}{note}{Definition}
+
 \sphinxAtStartPar
 A set \(A \subset \mathbb{R}\) is called \sphinxstyleemphasis{\sphinxstylestrong{bounded above}} if \(U(A)\) is not empty
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Fact}
 
 \sphinxAtStartPar
-If \(A\) is nonempty and bounded above then \(A\)
+If \(A\) is nonempty and bounded above then \(A\) has a supremum in \(\mathbb{R}\)
 \end{sphinxadmonition}
-
-\sphinxAtStartPar
-has a supremum in \(\mathbb{R}\)
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -15777,7 +15762,44 @@ What if \(A\) is not bounded above, so that \(U(A) = \emptyset\)?
 We follow the convention that \(\sup A := \infty\) in this case
 
 \sphinxAtStartPar
-Now the supremum of a nonempty subset of \(\mathbb{R}\) \{\textbackslash{}bf always\} exists
+Now the supremum of a nonempty subset of \(\mathbb{R}\) \sphinxstylestrong{always} exists
+
+\begin{sphinxadmonition}{note}{Note:}
+\sphinxAtStartPar
+Aside: Conventions for dealing with symbols “\(\infty\)’’ and ``\(-\infty\)”
+
+\sphinxAtStartPar
+If \(a \in \mathbb{R}\), then
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\(a + \infty = \infty\)
+
+\item {} 
+\sphinxAtStartPar
+\(a - \infty = -\infty\)
+
+\item {} 
+\sphinxAtStartPar
+\(a \times \infty = \infty\) if \(a \ne 0\), \(0 \times \infty = 0\)
+
+\item {} 
+\sphinxAtStartPar
+\(-\infty < a < \infty\)
+
+\item {} 
+\sphinxAtStartPar
+\(\infty + \infty = \infty\)
+
+\item {} 
+\sphinxAtStartPar
+\(-\infty - \infty = -\infty\)
+
+\end{itemize}
+
+\sphinxAtStartPar
+But \(\infty - \infty\) is not defined
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Fact}
 
@@ -15791,8 +15813,10 @@ If \(A \subset B\), then \(\sup A \leq \sup B\)
 \noindent\sphinxincludegraphics{{sup_ab}.png}
 \end{figure}
 
+\begin{sphinxadmonition}{note}{Proof}
+
 \sphinxAtStartPar
-Proof: Let \(A \subset B\)
+Let \(A \subset B\)
 
 \sphinxAtStartPar
 If \(\sup B = \infty\) then the claim is trivial so suppose \(\bar b = \sup B < \infty\)
@@ -15808,18 +15832,19 @@ It follows that \(\bar b \in U(A)\)
 
 \sphinxAtStartPar
 Hence \(\sup A \leq \bar b\)
-
-\sphinxAtStartPar
-Let \(A\) be any set bounded from above and let \(s := \sup A\)
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Fact}
 
 \sphinxAtStartPar
-There exists a sequence \(\{x_n\}\) in \(A\) with \(x_n \to s\)
+Let \(A\) be any set bounded from above and let \(s := \sup A\).
+There exists a sequence \(\{x_n\}\) in \(A\) with \(x_n \to s\).
 \end{sphinxadmonition}
 
+\begin{sphinxadmonition}{note}{Proof}
+
 \sphinxAtStartPar
-Proof: Note that
+Note that
 \begin{equation*}
 \begin{split}
 %
@@ -15827,7 +15852,7 @@ Proof: Note that
 %
 \end{split}
 \end{equation*}
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
 
 \noindent\sphinxincludegraphics{{sup_seq}.png}
@@ -15838,23 +15863,26 @@ Proof: Note that
 
 \sphinxAtStartPar
 The sequence \(\{x_n\}\) lies in \(A\) and converges to \(s\)
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Definition}
 
 \sphinxAtStartPar
 A \sphinxstyleemphasis{\sphinxstylestrong{lower bound}} of \(A \subset \mathbb{R}\) is any \(\ell \in \mathbb{R}\) with \(\ell \leq a\) for all \(a \in A\)
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Definition}
 
 \sphinxAtStartPar
 If \(i \in \mathbb{R}\) is an lower bound for \(A\) with \(i \geq \ell\) for every
 lower bound \(\ell\) of \(A\), then \(i\) is called the
 \sphinxstyleemphasis{\sphinxstylestrong{infimum}} of \(A\)
+\end{sphinxadmonition}
 
 \sphinxAtStartPar
-Write \(i = \inf A\)
+Infimum is written as \(i = \inf A\)
 
 \begin{sphinxadmonition}{note}{Example}
-
-\sphinxAtStartPar
-s
-\end{sphinxadmonition}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -15865,6 +15893,7 @@ If \(A = [0, 1]\), then \(\inf A = 0\)
 If \(A = (0, 1)\), then \(\inf A = 0\)
 
 \end{itemize}
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Fact}
 
@@ -15876,17 +15905,10 @@ Every nonempty subset of \(\mathbb{R}\) bounded from below has an infimum
 If \(A\) is unbounded below then we set \(\inf A = -\infty\)
 
 
-\section{Max and Min}
-\label{\detokenize{06.optimization_fundamentals:max-and-min}}
-
 \subsection{Maxima and Minima of Sets}
 \label{\detokenize{06.optimization_fundamentals:maxima-and-minima-of-sets}}
 \sphinxAtStartPar
-In optimization we’re mainly interested in maximizing / minimizing
-functions
-
-\sphinxAtStartPar
-If we maximize a function, say, then the problem looks like
+In optimization we’re mainly interested in maximizing and minimizing functions
 \begin{equation*}
 \begin{split}
 %
@@ -15895,19 +15917,16 @@ If we maximize a function, say, then the problem looks like
 \end{split}
 \end{equation*}
 \sphinxAtStartPar
-As we’ll see, the problem is the same as finding the largest number in the range of \(f\)
+As we’ll see, the problem is the same as finding the largest number in the \sphinxstylestrong{range of} \(f\)
 
 \sphinxAtStartPar
-That is, the largest number in the set
+That is, the largest number \sphinxstylestrong{in the set}
 \begin{equation*}
 \begin{split}
-%
-f(A) := \{ f({\bf x}) \colon {\bf x \} \in A}
-%
+f(A) := \{ f({\bf x}) \colon {\bf x } \in A\}
 \end{split}
 \end{equation*}
-\sphinxAtStartPar
-So let’s start by thinking about the largest value in a set
+\begin{sphinxadmonition}{note}{Definition}
 
 \sphinxAtStartPar
 We call \(a^*\) the \sphinxstyleemphasis{\sphinxstylestrong{maximum}} of \(A \subset \mathbb{R}\) and write \(a^* = \max A\) if
@@ -15921,12 +15940,15 @@ a \leq a^*
 a \in A 
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
 If \(A = [0, 1]\) then \(\max A = 1\)
 \end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Definition}
 
 \sphinxAtStartPar
 We call \(a^*\) the \sphinxstyleemphasis{\sphinxstylestrong{minimum}} of \(A \subset \mathbb{R}\) and write \(a^* = \min A\) if
@@ -15940,58 +15962,46 @@ a^* \leq a
 a \in A 
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
 If \(A = [0, 1]\) then \(\min A = 0\)
 \end{sphinxadmonition}
 
+\begin{sphinxadmonition}{note}{Fact}
 
-\subsection{Existence of Max and Min}
-\label{\detokenize{06.optimization_fundamentals:existence-of-max-and-min}}
 \sphinxAtStartPar
-:class: tip
+If \(A \subset \mathbb{R}\) is finite then \(\max A\) and \(\min A\) always exist
+\end{sphinxadmonition}
 
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-
-\PYGZpc{}\PYGZhy{} \PYGZdl{}\PYGZbs{}max\PYGZbs{}\PYGZob{}2, 4, 6, 8\PYGZbs{}\PYGZcb{} = 8\PYGZdl{}
-\PYGZpc{}\PYGZhy{} \PYGZdl{}\PYGZbs{}min\PYGZbs{}\PYGZob{}2, 4, 6, 8\PYGZbs{}\PYGZcb{} = 2\PYGZdl{}
-
-\PYGZpc{}
-
-\PYGZpc{}Common notation for max and min over pairs:
-\PYGZpc{}\PYGZpc{}
-
-\PYGZpc{}\PYGZhy{} \PYGZdl{}x \PYGZbs{}vee y := \PYGZbs{}max\PYGZbs{}\PYGZob{}x, y\PYGZbs{}\PYGZcb{}\PYGZdl{} 
-\PYGZpc{}\PYGZhy{} \PYGZdl{}x \PYGZbs{}wedge y := \PYGZbs{}min\PYGZbs{}\PYGZob{}x, y\PYGZbs{}\PYGZcb{}\PYGZdl{}
-
-\PYGZpc{}
-
-\PYGZpc{}
-
-\PYGZpc{}Some facts about max and min for pairs:
-
-\PYGZpc{}
-
-\PYGZpc{}```\PYGZob{}admonition\PYGZcb{} Fact
-:class: important
-
-For any \PYGZdl{}x, y \PYGZbs{}in \PYGZbs{}mathbb\PYGZob{}R\PYGZcb{}\PYGZdl{} and \PYGZdl{}a \PYGZbs{}in \PYGZbs{}mathbb\PYGZob{}R\PYGZcb{}\PYGZus{}+ := [0, \PYGZbs{}infty)\PYGZdl{}, we have
-\end{sphinxVerbatim}
-\begin{equation*}
-\begin{split}x \vee y + x \wedge y = y + x\end{split}
-\end{equation*}\begin{equation*}
-\begin{split}x \vee y + x \wedge y = x + y\end{split}
-\end{equation*}
+\begin{sphinxadmonition}{note}{Example}
+\begin{itemize}
+\item {} 
 \sphinxAtStartPar
-For infinite subsets of \(\mathbb{R}\), max and min may not exist
+\(\max\{2, 4, 6, 8\} = 8\)
+
+\item {} 
+\sphinxAtStartPar
+\(\min\{2, 4, 6, 8\} = 2\)
+
+\end{itemize}
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Fact}
+
+\sphinxAtStartPar
+For infinite subsets of \(\mathbb{R}\), max and min may not exist!
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
 \(\max \mathbb{N}\) does not exist
 \end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Proof}
 
 \sphinxAtStartPar
 Suppose to the contrary that \(n^* = \max \mathbb{N}\)
@@ -16021,12 +16031,15 @@ n^{**} > n^*
 \end{equation*}
 \sphinxAtStartPar
 This contradicts the definition of \(n^*\)
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
 \(\max (0, 1)\) does not exist
 \end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Proof}
 
 \sphinxAtStartPar
 Suppose to the contrary that \(a^* = \max (0, 1)\)
@@ -16057,10 +16070,11 @@ a^{**} \in (0, 1) \text{ and } a^{**} > a^*
 \end{equation*}
 \sphinxAtStartPar
 Contradicts hypothesis that \(a^*\) is the maximum
+\end{sphinxadmonition}
 
 
-\subsection{Max/Min vs Sup/Inf}
-\label{\detokenize{06.optimization_fundamentals:max-min-vs-sup-inf}}
+\subsection{Relationship between max/min and sup/inf}
+\label{\detokenize{06.optimization_fundamentals:relationship-between-max-min-and-sup-inf}}
 \sphinxAtStartPar
 When max and min exist they agree with sup and inf
 
@@ -16068,7 +16082,6 @@ When max and min exist they agree with sup and inf
 
 \sphinxAtStartPar
 Let \(A\) be any subset of \(\mathbb{R}\)
-\end{sphinxadmonition}
 \begin{enumerate}
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
@@ -16080,6 +16093,9 @@ If \(\sup A \in A\), then \(\max A\) exists and \(\max A = \sup A\)
 If \(\inf A \in A\), then \(\min A\) exists and \(\min A = \inf A\)
 
 \end{enumerate}
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Proof}
 
 \sphinxAtStartPar
 Proof of case 1: Let \(a^* := \sup A\) and suppose \(a^* \in A\)
@@ -16092,21 +16108,16 @@ Since \(a^* \in A\), we need only show that \(a \leq a^*\) for all \(a \in A\)
 
 \sphinxAtStartPar
 This follows from \(a^* = \sup A\), which implies \(a^* \in U(A)\)
+\end{sphinxadmonition}
 
-
-\section{Existence of Optima}
-\label{\detokenize{06.optimization_fundamentals:existence-of-optima}}
-
-\subsection{Existence of Max and Min for Sets}
-\label{\detokenize{06.optimization_fundamentals:existence-of-max-and-min-for-sets}}
 \begin{sphinxadmonition}{note}{Fact}
 
 \sphinxAtStartPar
 If \(F \subset \mathbb{R}\) is a closed and bounded, then
+\(\max F\) and \(\min F\) both exist
 \end{sphinxadmonition}
 
-\sphinxAtStartPar
-\(\max F\) and \(\min F\) both exist
+\begin{sphinxadmonition}{note}{Proof}
 
 \sphinxAtStartPar
 Proof for the max case:
@@ -16129,117 +16140,79 @@ Since \(F\) is closed, this implies that \(\sup F \in F\)
 
 \sphinxAtStartPar
 Hence \(\max F\) exists and \(\max F = \sup F\)
+\end{sphinxadmonition}
+
+
+\section{Existence of optima for functions}
+\label{\detokenize{06.optimization_fundamentals:existence-of-optima-for-functions}}
+\sphinxAtStartPar
+Now we turn to suprema and infima, maxima and minima (extrema) for functions
 
 \sphinxAtStartPar
-:class: important
+This is not a new concept — it’s just about extrema of sets — but the sets are the \sphinxstylestrong{range} of functions
 
 \sphinxAtStartPar
-If \(K\) is closed and bounded and \(F\) is continuous, then \(F(K)\) is
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZpc{}also closed and bounded
-
-\PYGZpc{}
-
-\PYGZpc{}\PYGZbs{}begin\PYGZob{}figure\PYGZcb{}
-\PYGZpc{}\PYGZbs{}scalebox\PYGZob{}.4\PYGZcb{}\PYGZob{}\PYGZbs{}includegraphics\PYGZob{}compact\PYGZus{}image.pdf\PYGZcb{}\PYGZcb{}
-\PYGZpc{}\PYGZbs{}end\PYGZob{}figure\PYGZcb{}
-
-\PYGZpc{}
-
-\PYGZpc{}
-
-\PYGZpc{}Proof: Let \PYGZdl{}F\PYGZdl{} and \PYGZdl{}K\PYGZdl{} be as specified
-
-\PYGZpc{}
-
-\PYGZpc{}We claim every sequence in \PYGZdl{}F(K)\PYGZdl{} has a subsequence converging
-\PYGZpc{}to a point in \PYGZdl{}F(K)\PYGZdl{}
-
-\PYGZpc{}
-
-\PYGZpc{}Let \PYGZdl{}\PYGZbs{}\PYGZob{}\PYGZob{}\PYGZbs{}bf y\PYGZcb{}\PYGZus{}n\PYGZbs{}\PYGZcb{} \PYGZbs{}subset F(K)\PYGZdl{} 
-
-\PYGZpc{}By definition, we can take \PYGZdl{}\PYGZbs{}\PYGZob{}\PYGZob{}\PYGZbs{}bf x\PYGZcb{}\PYGZus{}n\PYGZbs{}\PYGZcb{} \PYGZbs{}subset K\PYGZdl{} with \PYGZdl{}F(\PYGZob{}\PYGZbs{}bf x\PYGZcb{}\PYGZus{}n) = \PYGZob{}\PYGZbs{}bf y\PYGZcb{}\PYGZus{}n\PYGZdl{} for each \PYGZdl{}n\PYGZdl{}
-
-\PYGZpc{}Since \PYGZdl{}K\PYGZdl{} compact, \PYGZdl{}\PYGZbs{}exists\PYGZdl{} subsequence \PYGZdl{}\PYGZbs{}\PYGZob{}\PYGZob{}\PYGZbs{}bf x\PYGZcb{}\PYGZus{}\PYGZob{}n\PYGZus{}k\PYGZcb{}\PYGZbs{}\PYGZcb{}\PYGZdl{} with \PYGZdl{}\PYGZob{}\PYGZbs{}bf x\PYGZcb{}\PYGZus{}\PYGZob{}n\PYGZus{}k\PYGZcb{} \PYGZbs{}to \PYGZob{}\PYGZbs{}bf x\PYGZcb{} \PYGZbs{}in K\PYGZdl{}
-
-\PYGZpc{}By continuity of \PYGZdl{}F\PYGZdl{} we have \PYGZdl{}F (\PYGZob{}\PYGZbs{}bf x\PYGZcb{}\PYGZus{}\PYGZob{}n\PYGZus{}k\PYGZcb{}) \PYGZbs{}to F (\PYGZob{}\PYGZbs{}bf x\PYGZcb{})\PYGZdl{}
-
-\PYGZpc{}Since \PYGZdl{}\PYGZob{}\PYGZbs{}bf x\PYGZcb{} \PYGZbs{}in K\PYGZdl{} we have \PYGZdl{}F (\PYGZob{}\PYGZbs{}bf x\PYGZcb{}) \PYGZbs{}in F(K)\PYGZdl{} 
-
-\PYGZpc{}In summary, \PYGZdl{}\PYGZob{}\PYGZbs{}bf y\PYGZcb{}\PYGZus{}\PYGZob{}n\PYGZus{}k\PYGZcb{} = F (\PYGZob{}\PYGZbs{}bf x\PYGZcb{}\PYGZus{}\PYGZob{}n\PYGZus{}k\PYGZcb{}) \PYGZbs{}to\PYGZdl{} a point in \PYGZdl{}K\PYGZdl{}
-
-\PYGZpc{}
-
-\PYGZsh{}\PYGZsh{} Optimizing Functions
-
-\PYGZsh{}\PYGZsh{}\PYGZsh{} Optimizing Functions
-
-Now we turn to extrema (sup / max / etc.) for functions
-
-This is not a new concept \PYGZhy{}\PYGZhy{}\PYGZhy{} it\PYGZsq{}s just about extrema of sets
-
-...but the sets are the range of functions
-
 In particular
-\PYGZpc{}
-\PYGZhy{} The sup of a function \PYGZdl{}f\PYGZdl{} is just the sup of its range
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+The sup of a function \(f\) is just the sup of its range
 
-\PYGZhy{} The max of a function \PYGZdl{}f\PYGZdl{} is just the max of its range
+\item {} 
+\sphinxAtStartPar
+The max of a function \(f\) is just the max of its range
 
-\PYGZhy{} etc.
+\end{itemize}
 
+\sphinxAtStartPar
 Througout we use the notation
-\PYGZpc{}
-\PYGZdl{}\PYGZdl{}
-\PYGZpc{}
-f(A) := \PYGZbs{}\PYGZob{} f(\PYGZob{}\PYGZbs{}bf x\PYGZcb{}) \PYGZbs{}colon \PYGZob{}\PYGZbs{}bf x \PYGZbs{}\PYGZcb{} \PYGZbs{}in A\PYGZcb{}
-\PYGZpc{}
-\PYGZdl{}\PYGZdl{}
-\PYGZpc{}
+\begin{equation*}
+\begin{split}
+f(A) := \{ f({\bf x}) \colon {\bf x } \in A\}
+\end{split}
+\end{equation*}
+\begin{sphinxadmonition}{note}{Definition}
 
-\PYGZsh{}\PYGZsh{}\PYGZsh{} Sup and Inf for Functions
+\sphinxAtStartPar
+Let \(f \colon A \to \mathbb{R}\), where \(A\) is any set
 
-Let \PYGZdl{}f \PYGZbs{}colon A \PYGZbs{}to \PYGZbs{}mathbb\PYGZob{}R\PYGZcb{}\PYGZdl{}, where \PYGZdl{}A\PYGZdl{} is any set 
+\sphinxAtStartPar
+The \sphinxstyleemphasis{\sphinxstylestrong{supremum of \(f\) on \(A\)}} is defined as
+\begin{equation*}
+\begin{split}
+%
+\sup_{{\bf x} \in A} f({\bf x}) 
+:= \sup f(A)
+%
+\end{split}
+\end{equation*}
+\sphinxAtStartPar
+The \sphinxstyleemphasis{\sphinxstylestrong{infimum of \(f\) on \(A\)}} is defined as
+\begin{equation*}
+\begin{split}
+%
+\inf_{{\bf x} \in A} f({\bf x}) 
+:= \inf f(A)
+%
+\end{split}
+\end{equation*}\end{sphinxadmonition}
 
-The ***supremum of \PYGZdl{}f\PYGZdl{} on \PYGZdl{}A\PYGZdl{}*** is defined as
-\PYGZpc{}
-\PYGZdl{}\PYGZdl{}
-\PYGZpc{}
-\PYGZbs{}sup\PYGZus{}\PYGZob{}\PYGZob{}\PYGZbs{}bf x\PYGZcb{} \PYGZbs{}in A\PYGZcb{} f(\PYGZob{}\PYGZbs{}bf x\PYGZcb{}) 
-:= \PYGZbs{}sup f(A)
-\PYGZpc{}
-\PYGZdl{}\PYGZdl{}
-\PYGZpc{}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-The ***infimum of \PYGZdl{}f\PYGZdl{} on \PYGZdl{}A\PYGZdl{}*** is defined as
-\PYGZpc{} 
-\PYGZpc{}
-\PYGZdl{}\PYGZdl{}
-\PYGZpc{}
-\PYGZbs{}inf\PYGZus{}\PYGZob{}\PYGZob{}\PYGZbs{}bf x\PYGZcb{} \PYGZbs{}in A\PYGZcb{} f(\PYGZob{}\PYGZbs{}bf x\PYGZcb{}) 
-:= \PYGZbs{}inf f(A)
-\PYGZpc{}
-\PYGZdl{}\PYGZdl{}
-\PYGZpc{}
-
-```\PYGZob{}figure\PYGZcb{} \PYGZus{}static/plots/func\PYGZus{}sup.png
-:name: 
-
-The supremum of \PYGZdl{}f\PYGZdl{} on \PYGZdl{}A\PYGZdl{}
-\end{sphinxVerbatim}
+\noindent\sphinxincludegraphics{{func_sup}.png}
+\caption{The supremum of \(f\) on \(A\)}\label{\detokenize{06.optimization_fundamentals:id2}}\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \capstart
 
 \noindent\sphinxincludegraphics{{func_inf}.png}
-\caption{The infimum of \(f\) on \(A\)}\label{\detokenize{06.optimization_fundamentals:id6}}\end{figure}
+\caption{The infimum of \(f\) on \(A\)}\label{\detokenize{06.optimization_fundamentals:id3}}\end{figure}
 
+\begin{sphinxadmonition}{note}{Definition}
 
-\subsection{Max and Min for Functions}
-\label{\detokenize{06.optimization_fundamentals:max-and-min-for-functions}}
 \sphinxAtStartPar
 Let \(f \colon A \to \mathbb{R}\) where \(A\) is any set
 
@@ -16262,42 +16235,46 @@ The \sphinxstyleemphasis{\sphinxstylestrong{minimum}} of \(f\) on \(A\) is defin
 := \min f(A)
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Definition}
+
 \sphinxAtStartPar
 A \sphinxstyleemphasis{\sphinxstylestrong{maximizer}} of \(f\) on \(A\) is a point \({\bf a}^* \in A\) such that
 \begin{equation*}
 \begin{split}
 %
-f({\bf a}^*) = \max_{{\bf x} \in A} f({\bf x})
+f({\bf a}^*) = \max_{{\bf x} \in A} f({\bf x}),
 %
 \end{split}
 \end{equation*}
 \sphinxAtStartPar
-Equivalent:
+or equivalently
 \begin{equation*}
 \begin{split}
-%
 {\bf a}^* \in A \text{ and } f({\bf a}^*) \geq f({\bf x}) \text{ for all
 } {\bf x} \in A
-%
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \sphinxAtStartPar
-The set of all maximizers denoted by
+The set of all maximizers is typically denoted by
 \begin{equation*}
 \begin{split}\mathrm{argmax}_{{\bf x} \in A}f({\bf x})\end{split}
 \end{equation*}
+\begin{sphinxadmonition}{note}{Definition}
+
 \sphinxAtStartPar
 A \sphinxstyleemphasis{\sphinxstylestrong{minimizer}} of \(f\) on \(A\) is a point \({\bf a}^* \in A\) such that
 \begin{equation*}
 \begin{split}
 %
-f({\bf a}^*) = \min_{{\bf x} \in A} f({\bf x})
+f({\bf a}^*) = \min_{{\bf x} \in A} f({\bf x}),
 %
 \end{split}
 \end{equation*}
 \sphinxAtStartPar
-Equivalent:
+or equivalently
 \begin{equation*}
 \begin{split}
 %
@@ -16305,42 +16282,44 @@ Equivalent:
 } {\bf x} \in A
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \sphinxAtStartPar
 The set of all minimizers denoted by
 \begin{equation*}
-\begin{split}\argmin_{{\bf x} \in A}f({\bf x})\end{split}
+\begin{split}\mathrm{argmin}_{{\bf x} \in A}f({\bf x})\end{split}
 \end{equation*}
-\sphinxAtStartPar
-Now we come to the famous \{\textbackslash{}bf Weierstrass extreme value theorem\}
 
-\begin{sphinxadmonition}{note}{Fact}
+\subsection{Weierstrass extreme value theorem}
+\label{\detokenize{06.optimization_fundamentals:weierstrass-extreme-value-theorem}}
+\begin{sphinxadmonition}{note}{Fact (Weierstrass extreme value theorem)}
 
 \sphinxAtStartPar
-If \(f\) is continuous and \(A\) is closed and bounded, then \(f\) has both a
+If \(f\) is continuous and \(A\) is closed and bounded, then \(f\) has both a maximizer and a minimizer in \(A\).
 \end{sphinxadmonition}
 
-\sphinxAtStartPar
-maximizer and a minimizer in \(A\)
+\begin{sphinxadmonition}{note}{Proof}
 
 \sphinxAtStartPar
-Proof sketch for the max case:
-
-\sphinxAtStartPar
-Can show under the assumptions that \(f(A)\) is closed and bounded
+Sketch:
 \begin{itemize}
+\item {} 
+\sphinxAtStartPar
+can show under the assumptions that \(f(A)\) is closed and bounded
+
 \item {} 
 \sphinxAtStartPar
 proof uses Bolzano–Weierstrass theorem, details omitted
 
 \end{itemize}
+\end{sphinxadmonition}
 
 \sphinxAtStartPar
 Hence the max of \(f(A)\) exists, and we can write
 \begin{equation*}
 \begin{split}
 %
-M^* := \max f(A) := \max \{ f({\bf x}) \colon {\bf x \} \in A}
+M^* := \max f(A) := \max \{ f({\bf x}) \colon {\bf x } \in A\}
 %
 \end{split}
 \end{equation*}
@@ -16351,7 +16330,6 @@ The point \({\bf x}^* \in A\) such that \(f({\bf x}^*) = M^*\) is a maximizer
 
 \sphinxAtStartPar
 Consider the problem
-\end{sphinxadmonition}
 \begin{equation*}
 \begin{split} 
 %
@@ -16378,6 +16356,7 @@ where
 all parameters \(> 0\)
 
 \end{itemize}
+\end{sphinxadmonition}
 
 \sphinxAtStartPar
 Let \(B\) be all \((c_1, c_2)\) satisfying the constraint
@@ -16392,40 +16371,21 @@ Let \(B\) be all \((c_1, c_2)\) satisfying the constraint
 We conclude that a maximizer exists
 
 
-\section{Properties of Optima}
-\label{\detokenize{06.optimization_fundamentals:properties-of-optima}}
-
 \subsection{Properties of Optima}
-\label{\detokenize{06.optimization_fundamentals:id3}}
+\label{\detokenize{06.optimization_fundamentals:properties-of-optima}}
 \sphinxAtStartPar
 We now state some useful facts regarding optima
 
 \sphinxAtStartPar
-Sometimes we state properties about sups and infs
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-rather than max and min
-
-\end{itemize}
+Sometimes we state properties about sups and infs rather than max and min — this is so we don’t have to keep saying “if it exsits”
 
 \sphinxAtStartPar
-This is so we don’t have to keep saying “if it exsits”
-
-\sphinxAtStartPar
-But remember that if it does exist then the same properties apply
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-if a max exists, then it’s a sup, etc.
-
-\end{itemize}
+But remember that if it does exist then the same properties apply: if a max exists, then it’s a sup, etc.
 
 \begin{sphinxadmonition}{note}{Fact}
 
 \sphinxAtStartPar
 If \(A \subset B\) and \(f \colon B \to \mathbb{R}\), then
-\end{sphinxadmonition}
 \begin{equation*}
 \begin{split}
 %
@@ -16434,12 +16394,15 @@ If \(A \subset B\) and \(f \colon B \to \mathbb{R}\), then
 \inf_{{\bf x} \in A} f({\bf x}) \geq \inf_{{\bf x} \in B} f({\bf x})
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \begin{figure}[htbp]
 \centering
 
 \noindent\sphinxincludegraphics{{sup_ab_func}.png}
 \end{figure}
+
+\begin{sphinxadmonition}{note}{Proof}
 
 \sphinxAtStartPar
 Proof, for the sup case:
@@ -16476,6 +16439,7 @@ So \(f({\bf x}) = y\) for some \({\bf x} \in B\), and hence \(y \in f(B)\)
 
 \sphinxAtStartPar
 Thus \(f(A) \subset f(B)\) as was to be shown
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Example}
 
@@ -16526,14 +16490,14 @@ Hence the maximal value goes up as \(m\) increases
 \capstart
 
 \noindent\sphinxincludegraphics{{bset1}.png}
-\caption{Budget set \(B(m)\)}\label{\detokenize{06.optimization_fundamentals:id7}}\end{figure}
+\caption{Budget set \(B(m)\)}\label{\detokenize{06.optimization_fundamentals:id4}}\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \capstart
 
 \noindent\sphinxincludegraphics{{bset2}.png}
-\caption{Budget set \(B(m')\)}\label{\detokenize{06.optimization_fundamentals:id8}}\end{figure}
+\caption{Budget set \(B(m')\)}\label{\detokenize{06.optimization_fundamentals:id5}}\end{figure}
 
 \begin{sphinxadmonition}{note}{Example}
 
@@ -16578,7 +16542,7 @@ However, we can always reduce the ssr by including irrelevant variables
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-e.g., \(z_n = \) consumption of bacon in kgs per annum
+e.g., \(z_n = \) consumption of apples in kgs per annum
 
 \end{itemize}
 \begin{equation*}
@@ -16592,7 +16556,7 @@ e.g., \(z_n = \) consumption of bacon in kgs per annum
 \end{split}
 \end{equation*}
 \sphinxAtStartPar
-Proof: Let
+Indeed, let
 \begin{equation*}
 \begin{split}
 %
@@ -16622,30 +16586,32 @@ Then
 
 \sphinxAtStartPar
 If \(f \colon A \to \mathbb{R}\), then
-\end{sphinxadmonition}
 \begin{equation*}
 \begin{split}
 %
 {\bf a}^* \in \mathrm{argmax}_{{\bf x} \in A}f({\bf x})
 \; \iff \;
-{\bf a}^* \in \argmin_{{\bf x} \in A} -f({\bf x})
+{\bf a}^* \in \mathrm{argmin}_{{\bf x} \in A} -f({\bf x})
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \begin{figure}[htbp]
 \centering
 
 \noindent\sphinxincludegraphics{{max_min}.png}
 \end{figure}
 
+\begin{sphinxadmonition}{note}{Proof}
+
 \sphinxAtStartPar
-Proof: Let’s prove that, when \(g = -f\),
+Let’s prove that, when \(g = -f\),
 \begin{equation*}
 \begin{split}
 %
 {\bf a}^* \in \mathrm{argmax}_{{\bf x} \in A}f({\bf x})
 \; \implies \;
-{\bf a}^* \in \argmin_{{\bf x} \in A}g({\bf x})
+{\bf a}^* \in \mathrm{argmin}_{{\bf x} \in A}g({\bf x})
 %
 \end{split}
 \end{equation*}
@@ -16677,20 +16643,44 @@ Hence \({\bf a}^*\) is a minimizer of \(g\) on \(A\)
 because the last inequality was shown for any \({\bf x} \in A\)
 
 \end{itemize}
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
 Most numerical routines provide minimization only
-\end{sphinxadmonition}
 
 \sphinxAtStartPar
 Suppose we want to maximize \(f(x) = 3 \ln x - x\) on \((0, \infty)\)
 
 \sphinxAtStartPar
 We can do this by finding the minimizer of \(-f\)
+\end{sphinxadmonition}
 
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{scipy}\PYG{n+nn}{.}\PYG{n+nn}{optimize} \PYG{k+kn}{import} \PYG{n}{fminbound}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{n}{f} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{l+m+mi}{3} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{x}
+\PYG{n}{g} \PYG{o}{=} \PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:} \PYG{o}{\PYGZhy{}}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} Find min of \PYGZhy{}f}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Maximizer of f(x) on [1,100] is x=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{fminbound}\PYG{p}{(}\PYG{n}{g}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{)}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+Maximizer of f(x) on [1,100] is x= 3.0000015012062393
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\begin{sphinxadmonition}{note}{Fact}
 
 \sphinxAtStartPar
 Given \(A \subset \mathbb{R}^K\), let
@@ -16705,16 +16695,16 @@ Given \(A \subset \mathbb{R}^K\), let
 
 \end{itemize}
 
-\begin{sphinxadmonition}{note}{Fact}
-
 \sphinxAtStartPar
 If \(h\) is strictly increasing, then
-\end{sphinxadmonition}
 \begin{equation*}
 \begin{split}\mathrm{argmax}_{{\bf x} \in A}f({\bf x}) =\mathrm{argmax}_{{\bf x} \in A}g({\bf x})\end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Proof}
+
 \sphinxAtStartPar
-Proof of \(\subset\): Let \({\bf a}^* \in \mathrm{argmax}_{{\bf x} \in A}f({\bf x})\)
+Let \({\bf a}^* \in \mathrm{argmax}_{{\bf x} \in A}f({\bf x})\)
 
 \sphinxAtStartPar
 If \({\bf x} \in A\), then \(f({\bf x}) \leq f({\bf a}^*)\), and hence \(h(f({\bf x})) \leq h(f({\bf a}^*)) \quad\)
@@ -16724,22 +16714,19 @@ In other words, \(g({\bf x}) \leq g({\bf a}^*)\) for any \({\bf x} \in A\)
 
 \sphinxAtStartPar
 Hence \({\bf a}^* \in \mathrm{argmax}_{{\bf x} \in A} g({\bf x})\) as claimed
+\end{sphinxadmonition}
 
 \begin{figure}[htbp]
 \centering
 \capstart
 
 \noindent\sphinxincludegraphics{{max_preserved}.png}
-\caption{Increasing transform \(h(x) = \exp(x/2)\) preserves the maximizer}\label{\detokenize{06.optimization_fundamentals:id9}}\end{figure}
+\caption{Increasing transform \(h(x) = \exp(x/2)\) preserves the maximizer}\label{\detokenize{06.optimization_fundamentals:id6}}\end{figure}
 
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
-A well known statistical problem is to maximize the exponential likelihood
-\end{sphinxadmonition}
-
-\sphinxAtStartPar
-function:
+A well known statistical problem is to maximize the likelihood of exponential distribution:
 \begin{equation*}
 \begin{split}
 %
@@ -16772,30 +16759,24 @@ The unique solution
 \end{equation*}
 \sphinxAtStartPar
 is also the unique maximiser of \(L(\lambda)\)
+\end{sphinxadmonition}
 
 \sphinxAtStartPar
-In the next few slides
-\begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
+In the next several propositions
+\begin{itemize}
 \item {} 
 \sphinxAtStartPar
 \(A\) is any set
 
-\end{enumerate}
-\begin{itemize}
 \item {} 
 \sphinxAtStartPar
 \(f\) is some function from \(A\) to \(\mathbb{R}\)
 
-\end{itemize}
-\begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
-\setcounter{enumi}{8}
 \item {} 
 \sphinxAtStartPar
 \(g\) is some function from \(A\) to \(\mathbb{R}\)
 
-\end{enumerate}
+\end{itemize}
 
 \sphinxAtStartPar
 To simplify notation, we define
@@ -16817,7 +16798,7 @@ and
 %
 \end{split}
 \end{equation*}
-\begin{sphinxadmonition}{note}{admonition}
+\begin{sphinxadmonition}{note}{Fact}
 \begin{equation*}
 \begin{split}
 %
@@ -16828,8 +16809,10 @@ f({\bf x}) \leq g({\bf x}) \text{ for all } {\bf x} \in A
 \end{split}
 \end{equation*}\end{sphinxadmonition}
 
+\begin{sphinxadmonition}{note}{Proof}
+
 \sphinxAtStartPar
-Proof: Fix any such functions \(f\) and \(g\) and any \({\bf x} \in A\)
+Fix any such functions \(f\) and \(g\) and any \({\bf x} \in A\)
 
 \sphinxAtStartPar
 We have
@@ -16841,7 +16824,7 @@ f({\bf x}) \leq g({\bf x}) \leq \sup g
 \end{split}
 \end{equation*}
 \sphinxAtStartPar
-Hence \(\sup g\) is an upper bound for \(\{ f({\bf x}) \colon {\bf x \} \in A}\)
+Hence \(\sup g\) is an upper bound for \(\{ f({\bf x}) \colon {\bf x } \in A\}\)
 
 \sphinxAtStartPar
 Since the supremum is the least upper bound, this gives
@@ -16851,7 +16834,8 @@ Since the supremum is the least upper bound, this gives
 \sup f \leq \sup g
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \begin{sphinxadmonition}{note}{Fact}
 \begin{equation*}
 \begin{split}
@@ -16862,8 +16846,10 @@ Since the supremum is the least upper bound, this gives
 \end{split}
 \end{equation*}\end{sphinxadmonition}
 
+\begin{sphinxadmonition}{note}{Proof}
+
 \sphinxAtStartPar
-Proof: Fix any such functions \(f\) and \(g\) and any \({\bf x} \in A\)
+Fix any such functions \(f\) and \(g\) and any \({\bf x} \in A\)
 
 \sphinxAtStartPar
 We have
@@ -16889,7 +16875,8 @@ f({\bf x}) + g({\bf x}) \leq \sup f + \sup g
 \sup (f + g) \leq \sup f + \sup g
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \begin{sphinxadmonition}{note}{Fact}
 \begin{equation*}
 \begin{split}
@@ -16900,8 +16887,10 @@ f({\bf x}) + g({\bf x}) \leq \sup f + \sup g
 \end{split}
 \end{equation*}\end{sphinxadmonition}
 
+\begin{sphinxadmonition}{note}{Proof}
+
 \sphinxAtStartPar
-Proof: Picking any such \(f, g\), we have
+Picking any such \(f, g\), we have
 \begin{equation*}
 \begin{split}
 %
@@ -16914,61 +16903,19 @@ Proof: Picking any such \(f, g\), we have
 \end{equation*}\begin{equation*}
 \begin{split}
 %
-\therefore \; \sup f - \sup g \leq \sup | f - g |
+\text{therefore } \; \sup f - \sup g \leq \sup | f - g |
 %
 \end{split}
 \end{equation*}
 \sphinxAtStartPar
 Same argument reversing roles of \(f\) and \(g\) finishes the proof
+\end{sphinxadmonition}
 
 
-\subsection{Introduction}
-\label{\detokenize{06.optimization_fundamentals:introduction}}
+\section{Concavity and uniqueness of optima}
+\label{\detokenize{06.optimization_fundamentals:concavity-and-uniqueness-of-optima}}
 \sphinxAtStartPar
-In this lecture we study topics such as
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-Convexity / concavity
-
-\item {} 
-\sphinxAtStartPar
-and uniqueness in optimization
-
-\item {} 
-\sphinxAtStartPar
-sufficient conditions for optimality
-
-\item {} 
-\sphinxAtStartPar
-how to detect these properties?
-
-\item {} 
-\sphinxAtStartPar
-Zeros of functions
-
-\item {} 
-\sphinxAtStartPar
-solving nonlinear equations
-
-\item {} 
-\sphinxAtStartPar
-existence of solutions
-
-\item {} 
-\sphinxAtStartPar
-applications
-
-\end{itemize}
-
-
-\section{Convex Sets}
-\label{\detokenize{06.optimization_fundamentals:convex-sets}}
-
-\subsection{Convex Sets}
-\label{\detokenize{06.optimization_fundamentals:id4}}
-\sphinxAtStartPar
-Uniqueness of optima often connected to convexity / concavity
+Uniqueness of optima is directly connected to convexity / concavity
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -16983,6 +16930,11 @@ Convexity and concavity are shape properties for functions
 \sphinxAtStartPar
 However, only one fundamental concept: convex sets
 
+
+\subsection{Convex Sets}
+\label{\detokenize{06.optimization_fundamentals:convex-sets}}
+\begin{sphinxadmonition}{note}{Definition}
+
 \sphinxAtStartPar
 A set \(C \subset \mathbb{R}^K\) is called \sphinxstyleemphasis{\sphinxstylestrong{convex}} if
 \begin{equation*}
@@ -16993,7 +16945,8 @@ A set \(C \subset \mathbb{R}^K\) is called \sphinxstyleemphasis{\sphinxstylestro
 \lambda {\bf x} + (1 - \lambda) {\bf y} \in C
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \sphinxAtStartPar
 Remark: This is vector addition and scalar multiplication
 
@@ -17003,7 +16956,7 @@ Convexity \(\iff\) line between any two points in \(C\) lies in \(C\)
 \begin{figure}[htbp]
 \centering
 
-\noindent\sphinxincludegraphics{{convex}.png}
+\noindent\sphinxincludegraphics[scale=0.5]{{convex}.png}
 \end{figure}
 
 \sphinxAtStartPar
@@ -17012,17 +16965,16 @@ A non\sphinxhyphen{}convex set
 \begin{figure}[htbp]
 \centering
 
-\noindent\sphinxincludegraphics{{non_convex}.png}
+\noindent\sphinxincludegraphics[scale=0.5]{{non_convex}.png}
 \end{figure}
 
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
-The “positive cone” \$P := \{ \{\textbackslash{}bf x\} \textbackslash{}in \textbackslash{}mathbb\{R\}\textasciicircum{}K \textbackslash{}colon \{\textbackslash{}bf x \} \textbackslash{}geq
+The “positive cone” \(P := \{ {\bf x} \in \mathbb{R}^K \colon {\bf x } \geq {\bf 0} \}\) is convex
 \end{sphinxadmonition}
 
-\sphinxAtStartPar
-\{\textbackslash{}bf 0\} \}\$ is convex
+\begin{sphinxadmonition}{note}{Proof}
 
 \sphinxAtStartPar
 To see this, pick any \({\bf x}\), \({\bf y}\) in \(P\) and any \(\lambda \in [0, 1]\)
@@ -17049,15 +17001,18 @@ It is clear that \(z_k \geq 0\) for all \(k\)
 
 \sphinxAtStartPar
 Hence \({\bf z} \in P\) as claimed
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
-Every \(\epsilon\)\sphinxhyphen{}ball is convex
+Every \(\epsilon\)\sphinxhyphen{}ball in \(\mathbb{R}^K\) is convex.
 \end{sphinxadmonition}
 
+\begin{sphinxadmonition}{note}{Proof}
+
 \sphinxAtStartPar
-Proof: Fix \({\bf a} \in \mathbb{R}^K\), \(\epsilon > 0\) and let
+Fix \({\bf a} \in \mathbb{R}^K\), \(\epsilon > 0\) and let
 \(B_\epsilon({\bf a})\) be the \(\epsilon\)\sphinxhyphen{}ball
 
 \sphinxAtStartPar
@@ -17069,39 +17024,42 @@ The point \(\lambda {\bf x} + (1 - \lambda) {\bf y}\) lies in
 \begin{equation*}
 \begin{split}
 %
-\| \lambda {\bf x} + (1 - \lambda) {\bf y} - {\bf a} \|
+& \| \lambda {\bf x} + (1 - \lambda) {\bf y} - {\bf a} \|
 = \| \lambda {\bf x} - \lambda {\bf a} 
-+ (1 - \lambda) {\bf y} - (1 - \lambda) {\bf a} \|
-\\
-& \leq \| \lambda {\bf x} - \lambda {\bf a} \|
-+ \| (1 - \lambda) {\bf y} - (1 - \lambda) {\bf a} \|
-\\
++ (1 - \lambda) {\bf y} - (1 - \lambda) {\bf a} \| \leq
+\\ &
+\leq \| \lambda {\bf x} - \lambda {\bf a} \|
++ \| (1 - \lambda) {\bf y} - (1 - \lambda) {\bf a} \| =
+\\ &
 = \lambda \| {\bf x} - {\bf a} \|
-+ (1 - \lambda) \| {\bf y} - {\bf a} \|
-\\
-& < \lambda \epsilon + (1 - \lambda) \epsilon
-\\
++ (1 - \lambda) \| {\bf y} - {\bf a} \| <>
+\\ &
+< \lambda \epsilon + (1 - \lambda) \epsilon =
+\\ &
 = \epsilon
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
 Let \({\bf p} \in \mathbb{R}^K\) and let \(M\) be the “half\sphinxhyphen{}space”
-\end{sphinxadmonition}
 \begin{equation*}
 \begin{split}
 %
-M := \{ {\bf x} \in \mathbb{R}^K \colon {\bf p \}' {\bf x} \leq m}
+M := \{ {\bf x} \in \mathbb{R}^K \colon {\bf p }' {\bf x} \leq m\}
 %
 \end{split}
 \end{equation*}
 \sphinxAtStartPar
 The set \(M\) is convex
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Proof}
 
 \sphinxAtStartPar
-Proof: Let \({\bf p}\), \(m\) and \(M\) be as described
+Let \({\bf p}\), \(m\) and \(M\) be as described
 
 \sphinxAtStartPar
 Fix \({\bf x}\), \({\bf y}\) in \(M\) and \(\lambda \in [0, 1]\)
@@ -17112,7 +17070,6 @@ Then \(\lambda {\bf x} + (1 - \lambda) {\bf y} \in M\) because
 \begin{split}
 %
 {\bf p}'[\lambda {\bf x} + (1 - \lambda) {\bf y} ] =
-\\
 \lambda {\bf p}'{\bf x} + (1 - \lambda) {\bf p}'{\bf y} 
 \leq \lambda m + (1 - \lambda) m
 = m
@@ -17121,6 +17078,7 @@ Then \(\lambda {\bf x} + (1 - \lambda) {\bf y} \in M\) because
 \end{equation*}
 \sphinxAtStartPar
 Hence \(M\) is convex
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Fact}
 
@@ -17128,8 +17086,10 @@ Hence \(M\) is convex
 If \(A\) and \(B\) are convex, then so is \(A \cap B\)
 \end{sphinxadmonition}
 
+\begin{sphinxadmonition}{note}{Proof}
+
 \sphinxAtStartPar
-Proof: Let \(A\) and \(B\) be convex and let \(C := A \cap B\)
+Let \(A\) and \(B\) be convex and let \(C := A \cap B\)
 
 \sphinxAtStartPar
 Pick any \({\bf x}\), \({\bf y}\) in \(C\) and any \(\lambda \in [0, 1]\)
@@ -17149,31 +17109,34 @@ Since \({\bf x}\) and \({\bf y}\) lie in \(B\) and \(B\) is convex we have \({\b
 
 \sphinxAtStartPar
 Hence \({\bf z} \in A \cap B\)
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
 Let \({\bf p} \in \mathbb{R}^K\) be a vector of prices and consider the budget set
-\end{sphinxadmonition}
 \begin{equation*}
 \begin{split}
 %
-B(m) := \{ {\bf x} \in \mathbb{R}^K \colon {\bf x \} \geq {\bf 0} \text{ and }
-{\bf p}' {\bf x} \leq m}
+B(m) := \{ {\bf x} \in \mathbb{R}^K \colon {\bf x } \geq {\bf 0} \text{ and }
+{\bf p}' {\bf x} \leq m\}
 %
 \end{split}
 \end{equation*}
 \sphinxAtStartPar
 The budget set \(B(m)\) is convex
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Proof}
 
 \sphinxAtStartPar
 To see this, note that \(B(m) = P \cap M\) where
 \begin{equation*}
 \begin{split}
 %
-P := \{ {\bf x} \in \mathbb{R}^K \colon {\bf x \} \geq {\bf 0} }
+P := \{ {\bf x} \in \mathbb{R}^K \colon {\bf x } \geq {\bf 0} \}
 \qquad
-M := \{ {\bf x} \in \mathbb{R}^K \colon {\bf p \}' {\bf x} \leq m}
+M := \{ {\bf x} \in \mathbb{R}^K \colon {\bf p }' {\bf x} \leq m\}
 %
 \end{split}
 \end{equation*}
@@ -17188,15 +17151,15 @@ We already know that
 
 \sphinxAtStartPar
 Hence \(B(m)\) is convex
+\end{sphinxadmonition}
 
-
-\section{Convex/Concave Functions}
-\label{\detokenize{06.optimization_fundamentals:convex-concave-functions}}
 
 \subsection{Convex Functions}
 \label{\detokenize{06.optimization_fundamentals:convex-functions}}
 \sphinxAtStartPar
 Let \(A \subset \mathbb{R}^K\) be a convex set and let \(f\) be a function from \(A\) to \(\mathbb{R}\)
+
+\begin{sphinxadmonition}{note}{Definition}
 
 \sphinxAtStartPar
 \(f\) is called \sphinxstyleemphasis{\sphinxstylestrong{convex}} if
@@ -17210,6 +17173,9 @@ f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 \end{equation*}
 \sphinxAtStartPar
 for all \({\bf x}, {\bf y} \in A\) and all \(\lambda \in [0, 1]\)
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Definition}
 
 \sphinxAtStartPar
 \(f\) is called \sphinxstyleemphasis{\sphinxstylestrong{strictly convex}} if
@@ -17223,19 +17189,19 @@ f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 \end{equation*}
 \sphinxAtStartPar
 for all \({\bf x}, {\bf y} \in A\) with \({\bf x} \ne {\bf y}\) and all \(\lambda \in (0, 1)\)
+\end{sphinxadmonition}
 
 \begin{figure}[htbp]
 \centering
 \capstart
 
 \noindent\sphinxincludegraphics{{convex_function}.png}
-\caption{A strictly convex function on a subset of \(\mathbb{R}\)}\label{\detokenize{06.optimization_fundamentals:id10}}\end{figure}
+\caption{A strictly convex function on a subset of \(\mathbb{R}\)}\label{\detokenize{06.optimization_fundamentals:id7}}\end{figure}
 
 \begin{sphinxadmonition}{note}{Fact}
 
 \sphinxAtStartPar
-\(f \colon A \to \mathbb{R}\) is convex if and only if its \sphinxstyleemphasis{\sphinxstylestrong{epigraph}}
-\end{sphinxadmonition}
+\(f \colon A \to \mathbb{R}\) is convex if and only if its \sphinxstyleemphasis{\sphinxstylestrong{epigraph}} (aka supergraph)
 \begin{equation*}
 \begin{split}
 %
@@ -17245,6 +17211,7 @@ E_f := \{ ({\bf x}, y) \in A \times \mathbb{R} \colon f({\bf x \}) \leq y}
 \end{equation*}
 \sphinxAtStartPar
 is a convex subset of \(\mathbb{R}^K \times \mathbb{R}\)
+\end{sphinxadmonition}
 
 \begin{figure}[htbp]
 \centering
@@ -17257,13 +17224,15 @@ is a convex subset of \(\mathbb{R}^K \times \mathbb{R}\)
 \capstart
 
 \noindent\sphinxincludegraphics{{qform_pd}.png}
-\caption{A strictly convex function on a subset of \(\mathbb{R}^2\)}\label{\detokenize{06.optimization_fundamentals:id11}}\end{figure}
+\caption{A strictly convex function on a subset of \(\mathbb{R}^2\)}\label{\detokenize{06.optimization_fundamentals:id8}}\end{figure}
 
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
 \(f({\bf x}) = \|{\bf x}\|\) is convex on \(\mathbb{R}^K\)
 \end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Proof}
 
 \sphinxAtStartPar
 To see this recall that, by the properties of norms,
@@ -17287,24 +17256,24 @@ f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 \lambda f({\bf x}) + (1 - \lambda) f({\bf y})
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \begin{sphinxadmonition}{note}{Example}
 
 \sphinxAtStartPar
 \(f(x) = \cos(x)\) is \sphinxstyleemphasis{\sphinxstylestrong{not}} convex on \(\mathbb{R}\) because
-\end{sphinxadmonition}
 \begin{equation*}
 \begin{split}
 %
 1 = f(2\pi) = f(\pi/2 + 3\pi/2) > f(\pi)/2 + f(3\pi)/2 = -1
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 \begin{sphinxadmonition}{note}{Fact}
 
 \sphinxAtStartPar
 If \({\bf A}\) is \(K \times K\) and positive definite, then
-\end{sphinxadmonition}
 \begin{equation*}
 \begin{split}
 %
@@ -17315,6 +17284,9 @@ Q({\bf x}) = {\bf x}' {\bf A} {\bf x}
 \end{equation*}
 \sphinxAtStartPar
 is strictly convex on \(\mathbb{R}^K\)
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Proof}
 
 \sphinxAtStartPar
 Proof: Fix \({\bf x}, {\bf y} \in \mathbb{R}^K\) with \({\bf x} \ne {\bf y}\) and \(\lambda \in (0, 1)\)
@@ -17344,12 +17316,15 @@ Hence
 > Q(\lambda {\bf x} + (1 - \lambda) {\bf y})
 %
 \end{split}
-\end{equation*}
+\end{equation*}\end{sphinxadmonition}
+
 
 \subsection{Concave Functions}
 \label{\detokenize{06.optimization_fundamentals:concave-functions}}
 \sphinxAtStartPar
 Let \(A \subset \mathbb{R}^K\) be a convex and let \(f\) be a function from \(A\) to \(\mathbb{R}\)
+
+\begin{sphinxadmonition}{note}{Definition}
 
 \sphinxAtStartPar
 \(f\) is called \sphinxstyleemphasis{\sphinxstylestrong{concave}} if
@@ -17363,6 +17338,9 @@ f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 \end{equation*}
 \sphinxAtStartPar
 for all \({\bf x}, {\bf y} \in A\) and all \(\lambda \in [0, 1]\)
+\end{sphinxadmonition}
+
+\begin{sphinxadmonition}{note}{Definition}
 
 \sphinxAtStartPar
 \(f\) is called \sphinxstyleemphasis{\sphinxstylestrong{strictly concave}} if
@@ -17376,6 +17354,7 @@ f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 \end{equation*}
 \sphinxAtStartPar
 for all \({\bf x}, {\bf y} \in A\) with \({\bf x} \ne {\bf y}\) and all \(\lambda \in (0, 1)\)
+\end{sphinxadmonition}
 
 \sphinxAtStartPar
 \sphinxstylestrong{Exercise:} Show that
@@ -17394,8 +17373,7 @@ for all \({\bf x}, {\bf y} \in A\) with \({\bf x} \ne {\bf y}\) and all \(\lambd
 \begin{sphinxadmonition}{note}{Fact}
 
 \sphinxAtStartPar
-\(f \colon A \to \mathbb{R}\) is concave if and only if its \sphinxstyleemphasis{\sphinxstylestrong{hypograph}}
-\end{sphinxadmonition}
+\(f \colon A \to \mathbb{R}\) is concave if and only if its \sphinxstyleemphasis{\sphinxstylestrong{hypograph}} (aka subgraph)
 \begin{equation*}
 \begin{split}
 %
@@ -17405,6 +17383,7 @@ H_f := \{ ({\bf x}, y) \in A \times \mathbb{R} \colon f({\bf x \}) \geq y}
 \end{equation*}
 \sphinxAtStartPar
 is a convex subset of \(\mathbb{R}^K \times \mathbb{R}\)
+\end{sphinxadmonition}
 
 \begin{figure}[htbp]
 \centering
@@ -17423,7 +17402,6 @@ to \(\mathbb{R}\)
 
 \sphinxAtStartPar
 If \(f\) and \(g\) are convex (resp., concave) and \(\alpha \geq 0\), then
-\end{sphinxadmonition}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -17434,12 +17412,12 @@ If \(f\) and \(g\) are convex (resp., concave) and \(\alpha \geq 0\), then
 \(f + g\) is convex (resp., concave)
 
 \end{itemize}
+\end{sphinxadmonition}
 
 \begin{sphinxadmonition}{note}{Fact}
 
 \sphinxAtStartPar
 If \(f\) and \(g\) are strictly convex (resp., strictly concave) and \(\alpha > 0\), then
-\end{sphinxadmonition}
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -17450,6 +17428,7 @@ If \(f\) and \(g\) are strictly convex (resp., strictly concave) and \(\alpha > 
 \(f + g\) is strictly convex (resp., strictly concave)
 
 \end{itemize}
+\end{sphinxadmonition}
 
 \sphinxAtStartPar
 Let’s prove that \(f\) and \(g\) convex \(\implies h := f + g\) convex
@@ -17462,19 +17441,20 @@ We have
 \begin{equation*}
 \begin{split}
 %
+& 
 h(\lambda {\bf x} + (1 - \lambda) {\bf y})
 = f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 + g(\lambda {\bf x} + (1 - \lambda) {\bf y})
-\\
-& \leq 
+\\ &
+\leq 
 \lambda f({\bf x}) + (1 - \lambda) f({\bf y})
 +
 \lambda g({\bf x}) + (1 - \lambda) g({\bf y})
-\\
+\\ &
 =
 \lambda [f({\bf x}) + g({\bf x})]
 + (1 - \lambda) [f({\bf y}) + g({\bf y})]
-\\
+\\ &
 =
 \lambda h({\bf x}) + (1 - \lambda) h({\bf y})
 %
@@ -17484,135 +17464,12 @@ h(\lambda {\bf x} + (1 - \lambda) {\bf y})
 Hence \(h\) is convex
 
 
-\subsection{Derivative Conditions}
-\label{\detokenize{06.optimization_fundamentals:derivative-conditions}}
-\sphinxAtStartPar
-The \(i,j\)\sphinxhyphen{}th cross partial of \(f \colon A \to \mathbb{R}\) at \({\bf x} \in A\) is
-\begin{equation*}
-\begin{split}
-%
-f_{ij}({\bf x})
-:= \frac{\partial^2}{\partial x_i \partial x_j} 
-f({\bf x})
-\qquad (1 \leq i, j \leq K)
-%
-\end{split}
-\end{equation*}
-\sphinxAtStartPar
-We say that \(f\) is \sphinxstyleemphasis{\sphinxstylestrong{a \(C^2\) function}} if these partials are all
-continuous in \({\bf x}\) for all \({\bf x} \in A\)
-
-\sphinxAtStartPar
-The \sphinxstyleemphasis{\sphinxstylestrong{Hessian matrix}} of \(f\) at \({\bf x}\) is the matrix of cross
-partials
-\begin{equation*}
-\begin{split}
-%
-H({\bf x})
-:=
-\begin{pmatrix}
-f_{11}({\bf x}) & \cdots & f_{1K}({\bf x}) \\
-& \vdots & \\
-f_{K1}({\bf x}) & \cdots & f_{KK}({\bf x}) 
-\end{pmatrix}
-%
-\end{split}
-\end{equation*}
+\section{Uniqueness of Optimizers}
+\label{\detokenize{06.optimization_fundamentals:uniqueness-of-optimizers}}
 \begin{sphinxadmonition}{note}{Fact}
 
 \sphinxAtStartPar
-If \(f \colon A \to \mathbb{R}\) is a \(C^2\) function where \(A \subset \mathbb{R}^K\)
-\end{sphinxadmonition}
-
-\sphinxAtStartPar
-is open and convex, then
-\begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
-\item {} 
-\sphinxAtStartPar
-\(H({\bf x})\) nonnegative definite for all \({\bf x} \in A\)
-\(\iff f\) convex
-
-\end{enumerate}
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\(H({\bf x})\) nonpositive definite for all \({\bf x} \in A\)
-\(\iff f\) concave
-
-\end{itemize}
-
-\sphinxAtStartPar
-In addition,
-\begin{enumerate}
-\sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
-\item {} 
-\sphinxAtStartPar
-\(H({\bf x})\) positive definite for all \({\bf x} \in A\)
-\(\implies f\) strictly convex
-
-\end{enumerate}
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\(H({\bf x})\) negative definite for all \({\bf x} \in A\)
-\(\implies f\) strictly concave
-
-\end{itemize}
-
-\sphinxAtStartPar
-Proof: Omitted
-
-\begin{sphinxadmonition}{note}{Example}
-
-\sphinxAtStartPar
-Let \(A := (0, \infty) \times (0, \infty)\) and let \(U \colon A \to \mathbb{R}\) be the
-\end{sphinxadmonition}
-
-\sphinxAtStartPar
-utility function
-\begin{equation*}
-\begin{split}
-%
-U(c_1, c_2) = \alpha \ln c_1 + \beta \ln c_2
-%
-\end{split}
-\end{equation*}
-\sphinxAtStartPar
-Assume that \(\alpha\) and \(\beta\) are both strictly positive
-
-\sphinxAtStartPar
-\sphinxstylestrong{Exercise:} Show that the Hessian at \({\bf c} := (c_1, c_2) \in A\) has the form
-\begin{equation*}
-\begin{split}
-%
-H({\bf c})
-:=
-\begin{pmatrix}
-- \frac{\alpha}{c_1^2} & 0 \\
-0 & - \frac{\beta}{c_2^2} 
-\end{pmatrix}
-%
-\end{split}
-\end{equation*}
-\sphinxAtStartPar
-\sphinxstylestrong{Exercise:} Show that any diagonal matrix with strictly negative elements along
-the principle diagonal is negative definite
-
-\sphinxAtStartPar
-Conclude that \(U\) is strictly concave on \(A\)
-
-
-\section{Uniqueness of Optimizers}
-\label{\detokenize{06.optimization_fundamentals:uniqueness-of-optimizers}}
-
-\subsection{Uniqueness of Maximizers and Minimizers}
-\label{\detokenize{06.optimization_fundamentals:uniqueness-of-maximizers-and-minimizers}}
-\sphinxAtStartPar
 Let \(A \subset \mathbb{R}^K\) be convex and let \(f \colon A \to \mathbb{R}\)
-
-\sphinxAtStartPar
-\textbackslash{}Facts
 \begin{enumerate}
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
@@ -17624,6 +17481,7 @@ If \(f\) is strictly convex, then \(f\) has at most one minimizer on \(A\)
 If \(f\) is strictly concave, then \(f\) has at most one maximizer on \(A\)
 
 \end{enumerate}
+\end{sphinxadmonition}
 
 \sphinxAtStartPar
 Interpretation, strictly concave case:
@@ -17641,6 +17499,8 @@ but if it does, then it has exactly one
 in other words, we have uniqueness
 
 \end{itemize}
+
+\begin{sphinxadmonition}{note}{Proof}
 
 \sphinxAtStartPar
 Proof for the case where \(f\) is strictly concave:
@@ -17678,6 +17538,7 @@ f\left( \frac{1}{2} {\bf a} + \frac{1}{2} {\bf b} \right)
 \end{equation*}
 \sphinxAtStartPar
 This contradicts the assumption that \({\bf a}\) is a maximizer
+\end{sphinxadmonition}
 
 
 \subsection{A Sufficient Condition}
@@ -17706,21 +17567,19 @@ f({\bf x}^*)
 
 \sphinxAtStartPar
 If \(f\) and \(A\) are as above and \({\bf x}^* \in A\) is stationary, then
-\end{sphinxadmonition}
 \begin{enumerate}
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 \sphinxAtStartPar
 \(f\) strictly concave \(\implies\) \({\bf x}^*\) is the unique maximizer of \(f\) on \(A\)
 
-\end{enumerate}
-\begin{itemize}
 \item {} 
 \sphinxAtStartPar
 \(f\) strictly convex \(\implies\) \({\bf x}^*\) is the unique
 minimizer of \(f\) on \(A\)
 
-\end{itemize}
+\end{enumerate}
+\end{sphinxadmonition}
 
 \begin{figure}[htbp]
 \centering
@@ -17735,26 +17594,7 @@ minimizer of \(f\) on \(A\)
 \label{\detokenize{07.unconstrained:unconstrained-optimization}}\label{\detokenize{07.unconstrained::doc}}
 \noindent{\hspace*{\fill}\sphinxincludegraphics[scale=1.0]{{coming_soon}.png}\hspace*{\fill}}
 
-\sphinxAtStartPar
-Thoughts:
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-start with multivariate calculus
 
-\item {} 
-\sphinxAtStartPar
-review existance and uniqueness conditions from last lecture, but now focus on derivative based methods
-
-\item {} 
-\sphinxAtStartPar
-examples
-
-\item {} 
-\sphinxAtStartPar
-algorithms + code
-
-\end{itemize}
 
 \sphinxstepscope
 

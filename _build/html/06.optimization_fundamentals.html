@@ -391,43 +391,24 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-functions">Continuous functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suprema-and-infima">Suprema and Infima</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Fundamentals of Optimization</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sup-and-inf">Sup and Inf</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Suprema and Infima</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#max-and-min">Max and Min</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suprema-and-infima-mathrm-sup-mathrm-inf">Suprema and Infima (<span class="math notranslate nohighlight">\(\mathrm{sup}\)</span> + <span class="math notranslate nohighlight">\(\mathrm{inf}\)</span>)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima-and-minima-of-sets">Maxima and Minima of Sets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#existence-of-max-and-min">Existence of Max and Min</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-min-vs-sup-inf">Max/Min vs Sup/Inf</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relationship-between-max-min-and-sup-inf">Relationship between max/min and sup/inf</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existence-of-optima">Existence of Optima</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#existence-of-max-and-min-for-sets">Existence of Max and Min for Sets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-and-min-for-functions">Max and Min for Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existence-of-optima-for-functions">Existence of optima for functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weierstrass-extreme-value-theorem">Weierstrass extreme value theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-optima">Properties of Optima</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-optima">Properties of Optima</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Properties of Optima</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-sets">Convex Sets</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Convex Sets</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-concave-functions">Convex/Concave Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concavity-and-uniqueness-of-optima">Concavity and uniqueness of optima</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-sets">Convex Sets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-functions">Convex Functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concave-functions">Concave Functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preservation-of-shape">Preservation of Shape</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivative-conditions">Derivative Conditions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-of-optimizers">Uniqueness of Optimizers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-of-maximizers-and-minimizers">Uniqueness of Maximizers and Minimizers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sufficient-condition">A Sufficient Condition</a></li>
 </ul>
 </li>
@@ -444,13 +425,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fundamentals-of-optimization">
 <h1>Fundamentals of optimization<a class="headerlink" href="#fundamentals-of-optimization" title="Permalink to this heading">#</a></h1>
-<p><strong>ECON2125/6012 Lecture 2</strong>
+<p><strong>ECON2125/6012 Lecture 6</strong>
 Fedor Iskhakov</p>
 <section id="announcements-reminders">
 <h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><em>Test 1</em> results and discussion</p></li>
-<li><p><em>Test 2</em> due date extended to Sept 6th (23:59)</p></li>
+<li><p><em>Test 2</em> due date <strong>extended to Sept 6th (23:59)</strong></p></li>
 </ul>
 </section>
 <section id="plan-for-this-lecture">
@@ -460,7 +441,6 @@ Fedor Iskhakov</p>
 <li><p>Continuity of functions</p></li>
 <li><p>Suprema and infima</p></li>
 <li><p>Existence of optima</p></li>
-<li><p>Multivariate calculus</p></li>
 <li><p>Uniqueness of optima</p></li>
 </ol>
 <p><strong>Supplementary reading:</strong></p>
@@ -487,7 +467,6 @@ Fedor Iskhakov</p>
 %
 \]</div>
 </div>
-<p>Recall the properties of the norm from the lecture on analysis, and the corresponding tutorial</p>
 <p>Interpretation:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\| {\bf x} \|\)</span> represents the <em>length</em> of <span class="math notranslate nohighlight">\({\bf x}\)</span></p></li>
@@ -1125,10 +1104,28 @@ F(x) = \frac{\exp(x) + \sin(x)}{2 + \cos(x)} + \frac{x^4}{2}
 %
 \]</div>
 </div>
+<p>End of review, <strong>new topic</strong> next &gt;&gt;&gt;</p>
 </section>
 </section>
-<section id="suprema-and-infima">
-<h2>Suprema and Infima<a class="headerlink" href="#suprema-and-infima" title="Permalink to this heading">#</a></h2>
+<section id="suprema-and-infima-mathrm-sup-mathrm-inf">
+<h2>Suprema and Infima (<span class="math notranslate nohighlight">\(\mathrm{sup}\)</span> + <span class="math notranslate nohighlight">\(\mathrm{inf}\)</span>)<a class="headerlink" href="#suprema-and-infima-mathrm-sup-mathrm-inf" title="Permalink to this heading">#</a></h2>
+<p>In the introductory lecture we have seen a few simple examples of optimization problems. Like in many introductory econ/finance cources
+we get well behaved, prepackaged problems.</p>
+<p>Usually they</p>
+<ul class="simple">
+<li><p>have a solution</p></li>
+<li><p>the solution is unique and not hard to find</p></li>
+</ul>
+<p>However, for the <em>majority</em> of problems such properties aren’t guaranteed</p>
+<p>We need some idea of how to check these things</p>
+<p>Consider the problem of finding the “maximum” or “minimum” of a function</p>
+<p>A first issue is that such values might not be well defined</p>
+<p>Recall that the set of maximizers/minimizers can be</p>
+<ul class="simple">
+<li><p>empty</p></li>
+<li><p>a singleton (contains one element)</p></li>
+<li><p>infinite (contains infinitely many elements)</p></li>
+</ul>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1170,12 +1167,6 @@ F(x) = \frac{\exp(x) + \sin(x)}{2 + \cos(x)} + \frac{x^4}{2}
 </div>
 </details>
 </div>
-<p>The set of maximizers/minimizers can be</p>
-<ul class="simple">
-<li><p>empty</p></li>
-<li><p>a singleton (contains one element)</p></li>
-<li><p>infinite (contains infinitely many elements)</p></li>
-</ul>
 <div class="tip admonition">
 <p class="admonition-title">Example: no maximizers</p>
 <p>The following function has no maximizers on <span class="math notranslate nohighlight">\([0, 2]\)</span></p>
@@ -1188,76 +1179,62 @@ x^2 &amp;  \text{ if } x &lt; 1
 1/2 &amp;  \text{ otherwise}
 \end{cases}
 \end{split}\]</div>
-<figure class="align-center" id="id5">
+<figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/dc6ae1475886bdbf3870fb56da4b850ca80141076ee12d4c620b333af6eb564d.png"><img alt="_images/dc6ae1475886bdbf3870fb56da4b850ca80141076ee12d4c620b333af6eb564d.png" src="_images/dc6ae1475886bdbf3870fb56da4b850ca80141076ee12d4c620b333af6eb564d.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 75 </span><span class="caption-text">No maximizer on <span class="math notranslate nohighlight">\([0, 2]\)</span></span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 75 </span><span class="caption-text">No maximizer on <span class="math notranslate nohighlight">\([0, 2]\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
-<section id="id1">
-<h3>Fundamentals of Optimization<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<p>In elementary econ / finance courses we get well behaved, prepackaged problems</p>
-<p>Usually they</p>
-<ul class="simple">
-<li><p>have a solution</p></li>
-<li><p>the solution is unique and not hard to find</p></li>
-</ul>
-<p>We discussed such problems in the first few lectures</p>
-<p>However, when we tackle new proplems such properties aren’t guaranteed</p>
-<p>We need some idea of how to check these things</p>
-</section>
-</section>
-<section id="sup-and-inf">
-<h2>Sup and Inf<a class="headerlink" href="#sup-and-inf" title="Permalink to this heading">#</a></h2>
-<section id="id2">
-<h3>Suprema and Infima<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<p>Consider the problem of finding
-the “maximum” or “minimum” of a function</p>
-<p>A first issue is that such values might not be well defined</p>
 <p>This leads us to start with “suprema” and “infima”</p>
 <ul class="simple">
 <li><p>Always well defined</p></li>
 <li><p>Agree with max and min when the latter exist</p></li>
 </ul>
-<p>Let <span class="math notranslate nohighlight">\(A \subset \mathbb{R}\)</span></p>
-<p>A number <span class="math notranslate nohighlight">\(u \in \mathbb{R}\)</span> is called an <em><strong>upper bound</strong></em> of <span class="math notranslate nohighlight">\(A\)</span> if</p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subset \mathbb{R}\)</span>.
+A number <span class="math notranslate nohighlight">\(u \in \mathbb{R}\)</span> is called an <em><strong>upper bound</strong></em> of <span class="math notranslate nohighlight">\(A\)</span> if</p>
 <div class="math notranslate nohighlight">
 \[
 %
 a \leq u \quad \text{for all} \quad a \in A
 %
 \]</div>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>If <span class="math notranslate nohighlight">\(A = (0, 1)\)</span> then 10 is an upper bound of <span class="math notranslate nohighlight">\(A\)</span></p>
+<p><span class="math notranslate nohighlight">\(\because \quad\)</span> Every element of <span class="math notranslate nohighlight">\((0, 1)\)</span> is <span class="math notranslate nohighlight">\(\leq 10\)</span></p>
 </div>
-<p>\hspace{1em} <span class="math notranslate nohighlight">\(\because \quad\)</span> Every element of <span class="math notranslate nohighlight">\((0, 1)\)</span> is <span class="math notranslate nohighlight">\(\leq 10\)</span></p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>If <span class="math notranslate nohighlight">\(A = (0, 1)\)</span> then 1 is an upper bound of <span class="math notranslate nohighlight">\(A\)</span></p>
+<p><span class="math notranslate nohighlight">\(\because \quad\)</span> Every element of <span class="math notranslate nohighlight">\((0, 1)\)</span> is <span class="math notranslate nohighlight">\(\leq 1\)</span></p>
 </div>
-<p>\hspace{1em} <span class="math notranslate nohighlight">\(\because \quad\)</span> Every element of <span class="math notranslate nohighlight">\((0, 1)\)</span> is <span class="math notranslate nohighlight">\(\leq 1\)</span></p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>If <span class="math notranslate nohighlight">\(A = (0, 1)\)</span> then <span class="math notranslate nohighlight">\(0.5\)</span> is <em><strong>not</strong></em> an upper bound of <span class="math notranslate nohighlight">\(A\)</span></p>
+<p><span class="math notranslate nohighlight">\(\because \quad\)</span> <span class="math notranslate nohighlight">\(\exists\, a = 0.6 \in (0, 1) = A\)</span> and <span class="math notranslate nohighlight">\(0.5 &lt; 0.6\)</span></p>
 </div>
-<p>\hspace{1em} <span class="math notranslate nohighlight">\(\because \quad\)</span> <span class="math notranslate nohighlight">\(0.6 \in (0, 1)\)</span> and <span class="math notranslate nohighlight">\(0.5 &lt; 0.6\)</span></p>
 <p>Let <span class="math notranslate nohighlight">\(U(A) :=\)</span> set of all upper bounds of <span class="math notranslate nohighlight">\(A\)</span></p>
 <figure class="align-default">
 <img alt="_images/upper_bounds.png" src="_images/upper_bounds.png" />
 </figure>
 <div class="tip admonition">
-<p class="admonition-title">Example</p>
-<p>s</p>
-</div>
+<p class="admonition-title">Examples</p>
 <ul class="simple">
 <li><p>If <span class="math notranslate nohighlight">\(A = [0, 1]\)</span>, then <span class="math notranslate nohighlight">\(U(A) = [1, \infty)\)</span></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(A = (0, 1)\)</span>, then <span class="math notranslate nohighlight">\(U(A) = [1, \infty)\)</span></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(A = (0, 1) \cup (2, 3)\)</span>, then <span class="math notranslate nohighlight">\(U(A) = [3, \infty)\)</span></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(A = \mathbb{N}\)</span>, then <span class="math notranslate nohighlight">\(U(A) = \emptyset\)</span></p></li>
 </ul>
-<p>If <span class="math notranslate nohighlight">\(s\)</span> is a number satisfying</p>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>The <em>least upper bound</em> of <span class="math notranslate nohighlight">\(A\)</span> is called <em><strong>supremum</strong></em> of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+</div>
+<p>In other words, if <span class="math notranslate nohighlight">\(s\)</span> is a number satisfying</p>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -1266,11 +1243,10 @@ s \in U(A)
 s \leq u, \; \forall \, u \in U(A)
 %
 \]</div>
-<p>then <span class="math notranslate nohighlight">\(s\)</span> is called the <em><strong>supremum</strong></em> of <span class="math notranslate nohighlight">\(A\)</span> and we write <span class="math notranslate nohighlight">\(s = \sup A\)</span></p>
+<p>then <span class="math notranslate nohighlight">\(s\)</span> is the <em><strong>supremum</strong></em> of <span class="math notranslate nohighlight">\(A\)</span> and we write <span class="math notranslate nohighlight">\(s = \sup A\)</span></p>
 <figure class="align-default">
 <img alt="_images/sup.png" src="_images/sup.png" />
 </figure>
-<p>Also called the <em><strong>least upper bound</strong></em> of <span class="math notranslate nohighlight">\(A\)</span></p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>If <span class="math notranslate nohighlight">\(A = (0, 1]\)</span>, then <span class="math notranslate nohighlight">\(U(A) = [1, \infty)\)</span>, so <span class="math notranslate nohighlight">\(\sup A = 1\)</span></p>
@@ -1279,19 +1255,35 @@ s \leq u, \; \forall \, u \in U(A)
 <p class="admonition-title">Example</p>
 <p>If <span class="math notranslate nohighlight">\(A = (0, 1)\)</span>, then <span class="math notranslate nohighlight">\(U(A) = [1, \infty)\)</span>, so <span class="math notranslate nohighlight">\(\sup A = 1\)</span></p>
 </div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p>A set <span class="math notranslate nohighlight">\(A \subset \mathbb{R}\)</span> is called <em><strong>bounded above</strong></em> if <span class="math notranslate nohighlight">\(U(A)\)</span> is not empty</p>
+</div>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
-<p>If <span class="math notranslate nohighlight">\(A\)</span> is nonempty and bounded above then <span class="math notranslate nohighlight">\(A\)</span></p>
+<p>If <span class="math notranslate nohighlight">\(A\)</span> is nonempty and bounded above then <span class="math notranslate nohighlight">\(A\)</span> has a supremum in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
 </div>
-<p>has a supremum in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
 <ul class="simple">
 <li><p>Equivalent to the fact that all Cauchy sequences converge</p></li>
 <li><p>Same principle: <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> has no “gaps” or “holes”</p></li>
 </ul>
 <p>What if <span class="math notranslate nohighlight">\(A\)</span> is not bounded above, so that <span class="math notranslate nohighlight">\(U(A) = \emptyset\)</span>?</p>
 <p>We follow the convention that <span class="math notranslate nohighlight">\(\sup A := \infty\)</span> in this case</p>
-<p>Now the supremum of a nonempty subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> {\bf always} exists</p>
+<p>Now the supremum of a nonempty subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> <strong>always</strong> exists</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Aside: Conventions for dealing with symbols “<span class="math notranslate nohighlight">\(\infty\)</span>’’ and ``<span class="math notranslate nohighlight">\(-\infty\)</span>”</p>
+<p>If <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span>, then</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a + \infty = \infty\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a - \infty = -\infty\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a \times \infty = \infty\)</span> if <span class="math notranslate nohighlight">\(a \ne 0\)</span>, <span class="math notranslate nohighlight">\(0 \times \infty = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-\infty &lt; a &lt; \infty\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\infty + \infty = \infty\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(-\infty - \infty = -\infty\)</span></p></li>
+</ul>
+<p>But <span class="math notranslate nohighlight">\(\infty - \infty\)</span> is not defined</p>
+</div>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <p>If <span class="math notranslate nohighlight">\(A \subset B\)</span>, then <span class="math notranslate nohighlight">\(\sup A \leq \sup B\)</span></p>
@@ -1299,18 +1291,23 @@ s \leq u, \; \forall \, u \in U(A)
 <figure class="align-default">
 <img alt="_images/sup_ab.png" src="_images/sup_ab.png" />
 </figure>
-<p>Proof: Let <span class="math notranslate nohighlight">\(A \subset B\)</span></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subset B\)</span></p>
 <p>If <span class="math notranslate nohighlight">\(\sup B = \infty\)</span> then the claim is trivial so suppose <span class="math notranslate nohighlight">\(\bar b = \sup B &lt; \infty\)</span></p>
 <p>By definition, <span class="math notranslate nohighlight">\(\bar b \in U(B)\)</span>, so <span class="math notranslate nohighlight">\(b \leq \bar b\)</span> for all <span class="math notranslate nohighlight">\(b \in B\)</span></p>
 <p>Since each <span class="math notranslate nohighlight">\(a \in A\)</span> is also in <span class="math notranslate nohighlight">\(B\)</span>, we then have <span class="math notranslate nohighlight">\(a \leq \bar b\)</span> for all <span class="math notranslate nohighlight">\(a \in A \)</span></p>
 <p>It follows that <span class="math notranslate nohighlight">\(\bar b \in U(A)\)</span></p>
 <p>Hence <span class="math notranslate nohighlight">\(\sup A \leq \bar b\)</span></p>
-<p>Let <span class="math notranslate nohighlight">\(A\)</span> be any set bounded from above and let <span class="math notranslate nohighlight">\(s := \sup A\)</span></p>
+</div>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
-<p>There exists a sequence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> in <span class="math notranslate nohighlight">\(A\)</span> with <span class="math notranslate nohighlight">\(x_n \to s\)</span></p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be any set bounded from above and let <span class="math notranslate nohighlight">\(s := \sup A\)</span>.
+There exists a sequence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> in <span class="math notranslate nohighlight">\(A\)</span> with <span class="math notranslate nohighlight">\(x_n \to s\)</span>.</p>
 </div>
-<p>Proof: Note that</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Note that</p>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -1322,48 +1319,47 @@ s \leq u, \; \forall \, u \in U(A)
 </figure>
 <p>(Otherwise <span class="math notranslate nohighlight">\(s\)</span> is not a sup, because <span class="math notranslate nohighlight">\(s-\frac{1}{n}\)</span> is a smaller upper bound)</p>
 <p>The sequence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> lies in <span class="math notranslate nohighlight">\(A\)</span> and converges to <span class="math notranslate nohighlight">\(s\)</span></p>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p>A <em><strong>lower bound</strong></em> of <span class="math notranslate nohighlight">\(A \subset \mathbb{R}\)</span> is any <span class="math notranslate nohighlight">\(\ell \in \mathbb{R}\)</span> with <span class="math notranslate nohighlight">\(\ell \leq a\)</span> for all <span class="math notranslate nohighlight">\(a \in A\)</span></p>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p>If <span class="math notranslate nohighlight">\(i \in \mathbb{R}\)</span> is an lower bound for <span class="math notranslate nohighlight">\(A\)</span> with <span class="math notranslate nohighlight">\(i \geq \ell\)</span> for every
 lower bound <span class="math notranslate nohighlight">\(\ell\)</span> of <span class="math notranslate nohighlight">\(A\)</span>, then <span class="math notranslate nohighlight">\(i\)</span> is called the
 <em><strong>infimum</strong></em> of <span class="math notranslate nohighlight">\(A\)</span></p>
-<p>Write <span class="math notranslate nohighlight">\(i = \inf A\)</span></p>
+</div>
+<p>Infimum is written as <span class="math notranslate nohighlight">\(i = \inf A\)</span></p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
-<p>s</p>
-</div>
 <ul class="simple">
 <li><p>If <span class="math notranslate nohighlight">\(A = [0, 1]\)</span>, then <span class="math notranslate nohighlight">\(\inf A = 0\)</span></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(A = (0, 1)\)</span>, then <span class="math notranslate nohighlight">\(\inf A = 0\)</span></p></li>
 </ul>
+</div>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <p>Every nonempty subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> bounded from below has an infimum</p>
 </div>
 <p>If <span class="math notranslate nohighlight">\(A\)</span> is unbounded below then we set <span class="math notranslate nohighlight">\(\inf A = -\infty\)</span></p>
-</section>
-</section>
-<section id="max-and-min">
-<h2>Max and Min<a class="headerlink" href="#max-and-min" title="Permalink to this heading">#</a></h2>
 <section id="maxima-and-minima-of-sets">
 <h3>Maxima and Minima of Sets<a class="headerlink" href="#maxima-and-minima-of-sets" title="Permalink to this heading">#</a></h3>
-<p>In optimization we’re mainly interested in maximizing / minimizing
-functions</p>
-<p>If we maximize a function, say, then the problem looks like</p>
+<p>In optimization we’re mainly interested in maximizing and minimizing functions</p>
 <div class="math notranslate nohighlight">
 \[
 %
 \max_{{\bf x} \in A} f({\bf x})
 %
 \]</div>
-<p>As we’ll see, the problem is the same as finding the largest number in the range of <span class="math notranslate nohighlight">\(f\)</span></p>
-<p>That is, the largest number in the set</p>
+<p>As we’ll see, the problem is the same as finding the largest number in the <strong>range of</strong> <span class="math notranslate nohighlight">\(f\)</span></p>
+<p>That is, the largest number <strong>in the set</strong></p>
 <div class="math notranslate nohighlight">
 \[
-%
-f(A) := \{ f({\bf x}) \colon {\bf x \} \in A}
-%
+f(A) := \{ f({\bf x}) \colon {\bf x } \in A\}
 \]</div>
-<p>So let’s start by thinking about the largest value in a set</p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p>We call <span class="math notranslate nohighlight">\(a^*\)</span> the <em><strong>maximum</strong></em> of <span class="math notranslate nohighlight">\(A \subset \mathbb{R}\)</span> and write <span class="math notranslate nohighlight">\(a^* = \max A\)</span> if</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1375,10 +1371,13 @@ a \leq a^*
 a \in A 
 %
 \]</div>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>If <span class="math notranslate nohighlight">\(A = [0, 1]\)</span> then <span class="math notranslate nohighlight">\(\max A = 1\)</span></p>
 </div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p>We call <span class="math notranslate nohighlight">\(a^*\)</span> the <em><strong>minimum</strong></em> of <span class="math notranslate nohighlight">\(A \subset \mathbb{R}\)</span> and write <span class="math notranslate nohighlight">\(a^* = \min A\)</span> if</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1390,49 +1389,32 @@ a^* \leq a
 a \in A 
 %
 \]</div>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>If <span class="math notranslate nohighlight">\(A = [0, 1]\)</span> then <span class="math notranslate nohighlight">\(\min A = 0\)</span></p>
 </div>
-</section>
-<section id="existence-of-max-and-min">
-<h3>Existence of Max and Min<a class="headerlink" href="#existence-of-max-and-min" title="Permalink to this heading">#</a></h3>
-<p>:class: tip</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-%- $\max\{2, 4, 6, 8\} = 8$
-%- $\min\{2, 4, 6, 8\} = 2$
-
-%
-
-%Common notation for max and min over pairs:
-%%
-
-%- $x \vee y := \max\{x, y\}$ 
-%- $x \wedge y := \min\{x, y\}$
-
-%
-
-%
-
-%Some facts about max and min for pairs:
-
-%
-
-%```{admonition} Fact
-:class: important
-
-For any $x, y \in \mathbb{R}$ and $a \in \mathbb{R}_+ := [0, \infty)$, we have
-</pre></div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(A \subset \mathbb{R}\)</span> is finite then <span class="math notranslate nohighlight">\(\max A\)</span> and <span class="math notranslate nohighlight">\(\min A\)</span> always exist</p>
 </div>
-<div class="math notranslate nohighlight">
-\[x \vee y + x \wedge y = y + x\]</div>
-<div class="math notranslate nohighlight">
-\[x \vee y + x \wedge y = x + y\]</div>
-<p>For infinite subsets of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, max and min may not exist</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\max\{2, 4, 6, 8\} = 8\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\min\{2, 4, 6, 8\} = 2\)</span></p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>For infinite subsets of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, max and min may not exist!</p>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p><span class="math notranslate nohighlight">\(\max \mathbb{N}\)</span> does not exist</p>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
 <p>Suppose to the contrary that <span class="math notranslate nohighlight">\(n^* = \max \mathbb{N}\)</span></p>
 <p>By the definition of the maximum, <span class="math notranslate nohighlight">\(n^* \in \mathbb{N}\)</span></p>
 <p>Now consider</p>
@@ -1452,10 +1434,13 @@ n^{**} &gt; n^*
 %
 \]</div>
 <p>This contradicts the definition of <span class="math notranslate nohighlight">\(n^*\)</span></p>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p><span class="math notranslate nohighlight">\(\max (0, 1)\)</span> does not exist</p>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
 <p>Suppose to the contrary that <span class="math notranslate nohighlight">\(a^* = \max (0, 1)\)</span></p>
 <p>By the definition of the maximum, <span class="math notranslate nohighlight">\(a^* \in (0, 1)\)</span></p>
 <p>Hence <span class="math notranslate nohighlight">\(a^* &lt; 1\)</span></p>
@@ -1474,33 +1459,33 @@ a^{**} \in (0, 1) \text{ and } a^{**} &gt; a^*
 %
 \]</div>
 <p>Contradicts hypothesis that <span class="math notranslate nohighlight">\(a^*\)</span> is the maximum</p>
+</div>
 </section>
-<section id="max-min-vs-sup-inf">
-<h3>Max/Min vs Sup/Inf<a class="headerlink" href="#max-min-vs-sup-inf" title="Permalink to this heading">#</a></h3>
+<section id="relationship-between-max-min-and-sup-inf">
+<h3>Relationship between max/min and sup/inf<a class="headerlink" href="#relationship-between-max-min-and-sup-inf" title="Permalink to this heading">#</a></h3>
 <p>When max and min exist they agree with sup and inf</p>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be any subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
-</div>
 <ol class="arabic simple">
 <li><p>If <span class="math notranslate nohighlight">\(\sup A \in A\)</span>, then <span class="math notranslate nohighlight">\(\max A\)</span> exists and <span class="math notranslate nohighlight">\(\max A = \sup A\)</span></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(\inf A \in A\)</span>, then <span class="math notranslate nohighlight">\(\min A\)</span> exists and <span class="math notranslate nohighlight">\(\min A = \inf A\)</span></p></li>
 </ol>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
 <p>Proof of case 1: Let <span class="math notranslate nohighlight">\(a^* := \sup A\)</span> and suppose <span class="math notranslate nohighlight">\(a^* \in A\)</span></p>
 <p>We want to show that <span class="math notranslate nohighlight">\(\max A = a^*\)</span></p>
 <p>Since <span class="math notranslate nohighlight">\(a^* \in A\)</span>, we need only show that <span class="math notranslate nohighlight">\(a \leq a^*\)</span> for all <span class="math notranslate nohighlight">\(a \in A\)</span></p>
 <p>This follows from <span class="math notranslate nohighlight">\(a^* = \sup A\)</span>, which implies <span class="math notranslate nohighlight">\(a^* \in U(A)\)</span></p>
-</section>
-</section>
-<section id="existence-of-optima">
-<h2>Existence of Optima<a class="headerlink" href="#existence-of-optima" title="Permalink to this heading">#</a></h2>
-<section id="existence-of-max-and-min-for-sets">
-<h3>Existence of Max and Min for Sets<a class="headerlink" href="#existence-of-max-and-min-for-sets" title="Permalink to this heading">#</a></h3>
+</div>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
-<p>If <span class="math notranslate nohighlight">\(F \subset \mathbb{R}\)</span> is a closed and bounded, then</p>
+<p>If <span class="math notranslate nohighlight">\(F \subset \mathbb{R}\)</span> is a closed and bounded, then
+<span class="math notranslate nohighlight">\(\max F\)</span> and <span class="math notranslate nohighlight">\(\min F\)</span> both exist</p>
 </div>
-<p><span class="math notranslate nohighlight">\(\max F\)</span> and <span class="math notranslate nohighlight">\(\min F\)</span> both exist</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
 <p>Proof for the max case:</p>
 <p>Since <span class="math notranslate nohighlight">\(F\)</span> is bounded,</p>
 <ul class="simple">
@@ -1509,110 +1494,57 @@ a^{**} \in (0, 1) \text{ and } a^{**} &gt; a^*
 </ul>
 <p>Since <span class="math notranslate nohighlight">\(F\)</span> is closed, this implies that <span class="math notranslate nohighlight">\(\sup F \in F\)</span></p>
 <p>Hence <span class="math notranslate nohighlight">\(\max F\)</span> exists and <span class="math notranslate nohighlight">\(\max F = \sup F\)</span></p>
-<p>:class: important</p>
-<p>If <span class="math notranslate nohighlight">\(K\)</span> is closed and bounded and <span class="math notranslate nohighlight">\(F\)</span> is continuous, then <span class="math notranslate nohighlight">\(F(K)\)</span> is</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>%also closed and bounded
-
-%
-
-%\begin{figure}
-%\scalebox{.4}{\includegraphics{compact_image.pdf}}
-%\end{figure}
-
-%
-
-%
-
-%Proof: Let $F$ and $K$ be as specified
-
-%
-
-%We claim every sequence in $F(K)$ has a subsequence converging
-%to a point in $F(K)$
-
-%
-
-%Let $\{{\bf y}_n\} \subset F(K)$ 
-
-%By definition, we can take $\{{\bf x}_n\} \subset K$ with $F({\bf x}_n) = {\bf y}_n$ for each $n$
-
-%Since $K$ compact, $\exists$ subsequence $\{{\bf x}_{n_k}\}$ with ${\bf x}_{n_k} \to {\bf x} \in K$
-
-%By continuity of $F$ we have $F ({\bf x}_{n_k}) \to F ({\bf x})$
-
-%Since ${\bf x} \in K$ we have $F ({\bf x}) \in F(K)$ 
-
-%In summary, ${\bf y}_{n_k} = F ({\bf x}_{n_k}) \to$ a point in $K$
-
-%
-
-## Optimizing Functions
-
-### Optimizing Functions
-
-Now we turn to extrema (sup / max / etc.) for functions
-
-This is not a new concept --- it&#39;s just about extrema of sets
-
-...but the sets are the range of functions
-
-In particular
-%
-- The sup of a function $f$ is just the sup of its range
-
-- The max of a function $f$ is just the max of its range
-
-- etc.
-
-Througout we use the notation
-%
-$$
-%
-f(A) := \{ f({\bf x}) \colon {\bf x \} \in A}
-%
-$$
-%
-
-### Sup and Inf for Functions
-
-Let $f \colon A \to \mathbb{R}$, where $A$ is any set 
-
-The ***supremum of $f$ on $A$*** is defined as
-%
-$$
+</div>
+</section>
+</section>
+<section id="existence-of-optima-for-functions">
+<h2>Existence of optima for functions<a class="headerlink" href="#existence-of-optima-for-functions" title="Permalink to this heading">#</a></h2>
+<p>Now we turn to suprema and infima, maxima and minima (extrema) for functions</p>
+<p>This is not a new concept — it’s just about extrema of sets — but the sets are the <strong>range</strong> of functions</p>
+<p>In particular</p>
+<ul class="simple">
+<li><p>The sup of a function <span class="math notranslate nohighlight">\(f\)</span> is just the sup of its range</p></li>
+<li><p>The max of a function <span class="math notranslate nohighlight">\(f\)</span> is just the max of its range</p></li>
+</ul>
+<p>Througout we use the notation</p>
+<div class="math notranslate nohighlight">
+\[
+f(A) := \{ f({\bf x}) \colon {\bf x } \in A\}
+\]</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Let <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span>, where <span class="math notranslate nohighlight">\(A\)</span> is any set</p>
+<p>The <em><strong>supremum of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span></strong></em> is defined as</p>
+<div class="math notranslate nohighlight">
+\[
 %
 \sup_{{\bf x} \in A} f({\bf x}) 
 := \sup f(A)
 %
-$$
-%
-
-The ***infimum of $f$ on $A$*** is defined as
-% 
-%
-$$
+\]</div>
+<p>The <em><strong>infimum of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span></strong></em> is defined as</p>
+<div class="math notranslate nohighlight">
+\[
 %
 \inf_{{\bf x} \in A} f({\bf x}) 
 := \inf f(A)
 %
-$$
-%
-
-```{figure} _static/plots/func_sup.png
-:name: 
-
-The supremum of $f$ on $A$
-</pre></div>
+\]</div>
 </div>
-<figure class="align-default" id="id6">
-<img alt="_images/func_inf.png" src="_images/func_inf.png" />
+<figure class="align-default" id="id2">
+<img alt="_images/func_sup.png" src="_images/func_sup.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 76 </span><span class="caption-text">The infimum of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span></span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 76 </span><span class="caption-text">The supremum of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-</section>
-<section id="max-and-min-for-functions">
-<h3>Max and Min for Functions<a class="headerlink" href="#max-and-min-for-functions" title="Permalink to this heading">#</a></h3>
+<figure class="align-default" id="id3">
+<img alt="_images/func_inf.png" src="_images/func_inf.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 77 </span><span class="caption-text">The infimum of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p>Let <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span> where <span class="math notranslate nohighlight">\(A\)</span> is any set</p>
 <p>The <em><strong>maximum</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span> is defined as</p>
 <div class="math notranslate nohighlight">
@@ -1630,32 +1562,36 @@ The supremum of $f$ on $A$
 := \min f(A)
 %
 \]</div>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p>A <em><strong>maximizer</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span> is a point <span class="math notranslate nohighlight">\({\bf a}^* \in A\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
 %
-f({\bf a}^*) = \max_{{\bf x} \in A} f({\bf x})
+f({\bf a}^*) = \max_{{\bf x} \in A} f({\bf x}),
 %
 \]</div>
-<p>Equivalent:</p>
+<p>or equivalently</p>
 <div class="math notranslate nohighlight">
 \[
-%
 {\bf a}^* \in A \text{ and } f({\bf a}^*) \geq f({\bf x}) \text{ for all
 } {\bf x} \in A
-%
 \]</div>
-<p>The set of all maximizers denoted by</p>
+</div>
+<p>The set of all maximizers is typically denoted by</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{argmax}_{{\bf x} \in A}f({\bf x})\]</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p>A <em><strong>minimizer</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span> is a point <span class="math notranslate nohighlight">\({\bf a}^* \in A\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
 %
-f({\bf a}^*) = \min_{{\bf x} \in A} f({\bf x})
+f({\bf a}^*) = \min_{{\bf x} \in A} f({\bf x}),
 %
 \]</div>
-<p>Equivalent:</p>
+<p>or equivalently</p>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -1663,32 +1599,35 @@ f({\bf a}^*) = \min_{{\bf x} \in A} f({\bf x})
 } {\bf x} \in A
 %
 \]</div>
+</div>
 <p>The set of all minimizers denoted by</p>
 <div class="math notranslate nohighlight">
-\[\argmin_{{\bf x} \in A}f({\bf x})\]</div>
-<p>Now we come to the famous {\bf Weierstrass extreme value theorem}</p>
+\[\mathrm{argmin}_{{\bf x} \in A}f({\bf x})\]</div>
+<section id="weierstrass-extreme-value-theorem">
+<h3>Weierstrass extreme value theorem<a class="headerlink" href="#weierstrass-extreme-value-theorem" title="Permalink to this heading">#</a></h3>
 <div class="important admonition">
-<p class="admonition-title">Fact</p>
-<p>If <span class="math notranslate nohighlight">\(f\)</span> is continuous and <span class="math notranslate nohighlight">\(A\)</span> is closed and bounded, then <span class="math notranslate nohighlight">\(f\)</span> has both a</p>
+<p class="admonition-title">Fact (Weierstrass extreme value theorem)</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is continuous and <span class="math notranslate nohighlight">\(A\)</span> is closed and bounded, then <span class="math notranslate nohighlight">\(f\)</span> has both a maximizer and a minimizer in <span class="math notranslate nohighlight">\(A\)</span>.</p>
 </div>
-<p>maximizer and a minimizer in <span class="math notranslate nohighlight">\(A\)</span></p>
-<p>Proof sketch for the max case:</p>
-<p>Can show under the assumptions that <span class="math notranslate nohighlight">\(f(A)\)</span> is closed and bounded</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Sketch:</p>
 <ul class="simple">
+<li><p>can show under the assumptions that <span class="math notranslate nohighlight">\(f(A)\)</span> is closed and bounded</p></li>
 <li><p>proof uses Bolzano–Weierstrass theorem, details omitted</p></li>
 </ul>
+</div>
 <p>Hence the max of <span class="math notranslate nohighlight">\(f(A)\)</span> exists, and we can write</p>
 <div class="math notranslate nohighlight">
 \[
 %
-M^* := \max f(A) := \max \{ f({\bf x}) \colon {\bf x \} \in A}
+M^* := \max f(A) := \max \{ f({\bf x}) \colon {\bf x } \in A\}
 %
 \]</div>
 <p>The point <span class="math notranslate nohighlight">\({\bf x}^* \in A\)</span> such that <span class="math notranslate nohighlight">\(f({\bf x}^*) = M^*\)</span> is a maximizer</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Consider the problem</p>
-</div>
 <div class="math notranslate nohighlight">
 \[ 
 %
@@ -1707,30 +1646,20 @@ M^* := \max f(A) := \max \{ f({\bf x}) \colon {\bf x \} \in A}
 <li><p><span class="math notranslate nohighlight">\(r=\)</span> interest rate, <span class="math notranslate nohighlight">\(w=\)</span> wealth, <span class="math notranslate nohighlight">\(\beta=\)</span> discount factor</p></li>
 <li><p>all parameters <span class="math notranslate nohighlight">\(&gt; 0\)</span></p></li>
 </ul>
+</div>
 <p>Let <span class="math notranslate nohighlight">\(B\)</span> be all <span class="math notranslate nohighlight">\((c_1, c_2)\)</span> satisfying the constraint</p>
 <p><strong>Exercise:</strong> Show that the budget set <span class="math notranslate nohighlight">\(B\)</span> is a closed, bounded subset of <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></p>
 <p><strong>Exercise:</strong> Show that <span class="math notranslate nohighlight">\(U\)</span> is continuous on <span class="math notranslate nohighlight">\(B\)</span></p>
 <p>We conclude that a maximizer exists</p>
 </section>
-</section>
 <section id="properties-of-optima">
-<h2>Properties of Optima<a class="headerlink" href="#properties-of-optima" title="Permalink to this heading">#</a></h2>
-<section id="id3">
-<h3>Properties of Optima<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Properties of Optima<a class="headerlink" href="#properties-of-optima" title="Permalink to this heading">#</a></h3>
 <p>We now state some useful facts regarding optima</p>
-<p>Sometimes we state properties about sups and infs</p>
-<ul class="simple">
-<li><p>rather than max and min</p></li>
-</ul>
-<p>This is so we don’t have to keep saying “if it exsits”</p>
-<p>But remember that if it does exist then the same properties apply</p>
-<ul class="simple">
-<li><p>if a max exists, then it’s a sup, etc.</p></li>
-</ul>
+<p>Sometimes we state properties about sups and infs rather than max and min — this is so we don’t have to keep saying “if it exsits”</p>
+<p>But remember that if it does exist then the same properties apply: if a max exists, then it’s a sup, etc.</p>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <p>If <span class="math notranslate nohighlight">\(A \subset B\)</span> and <span class="math notranslate nohighlight">\(f \colon B \to \mathbb{R}\)</span>, then</p>
-</div>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -1739,9 +1668,12 @@ M^* := \max f(A) := \max \{ f({\bf x}) \colon {\bf x \} \in A}
 \inf_{{\bf x} \in A} f({\bf x}) \geq \inf_{{\bf x} \in B} f({\bf x})
 %
 \]</div>
+</div>
 <figure class="align-default">
 <img alt="_images/sup_ab_func.png" src="_images/sup_ab_func.png" />
 </figure>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
 <p>Proof, for the sup case:</p>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(f\)</span> be as in the statement of the fact</p>
 <p>We already know that <span class="math notranslate nohighlight">\(C \subset D \implies \sup C \leq \sup D\)</span></p>
@@ -1760,6 +1692,7 @@ M^* := \max f(A) := \max \{ f({\bf x}) \colon {\bf x \} \in A}
 <p>Since <span class="math notranslate nohighlight">\(A \subset B\)</span> we must have <span class="math notranslate nohighlight">\({\bf x} \in B\)</span></p>
 <p>So <span class="math notranslate nohighlight">\(f({\bf x}) = y\)</span> for some <span class="math notranslate nohighlight">\({\bf x} \in B\)</span>, and hence <span class="math notranslate nohighlight">\(y \in f(B)\)</span></p>
 <p>Thus <span class="math notranslate nohighlight">\(f(A) \subset f(B)\)</span> as was to be shown</p>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>“If you have more choice then you’re better off”</p>
@@ -1792,16 +1725,16 @@ x_i &gt; 0 \text{ and } p_1 x_1 + p_2 x_2 \leq m
 \]</div>
 <p>Clearly <span class="math notranslate nohighlight">\(m \leq m' \implies B(m) \subset B(m')\)</span></p>
 <p>Hence the maximal value goes up as <span class="math notranslate nohighlight">\(m\)</span> increases</p>
-<figure class="align-default" id="id7">
+<figure class="align-default" id="id4">
 <img alt="_images/bset1.png" src="_images/bset1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 77 </span><span class="caption-text">Budget set <span class="math notranslate nohighlight">\(B(m)\)</span></span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 78 </span><span class="caption-text">Budget set <span class="math notranslate nohighlight">\(B(m)\)</span></span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id8">
+<figure class="align-default" id="id5">
 <img alt="_images/bset2.png" src="_images/bset2.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 78 </span><span class="caption-text">Budget set <span class="math notranslate nohighlight">\(B(m')\)</span></span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 79 </span><span class="caption-text">Budget set <span class="math notranslate nohighlight">\(B(m')\)</span></span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -1831,7 +1764,7 @@ y_n = \alpha + \beta x_n + \epsilon_n
 \]</div>
 <p>However, we can always reduce the ssr by including irrelevant variables</p>
 <ul class="simple">
-<li><p>e.g., <span class="math notranslate nohighlight">\(z_n = \)</span> consumption of bacon in kgs per annum</p></li>
+<li><p>e.g., <span class="math notranslate nohighlight">\(z_n = \)</span> consumption of apples in kgs per annum</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
@@ -1842,7 +1775,7 @@ y_n = \alpha + \beta x_n + \epsilon_n
 \, \leq {\rm ssr}_a
 %
 \]</div>
-<p>Proof: Let</p>
+<p>Indeed, let</p>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -1868,25 +1801,27 @@ f({\boldsymbol \theta})
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <p>If <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span>, then</p>
-</div>
 <div class="math notranslate nohighlight">
 \[
 %
 {\bf a}^* \in \mathrm{argmax}_{{\bf x} \in A}f({\bf x})
 \; \iff \;
-{\bf a}^* \in \argmin_{{\bf x} \in A} -f({\bf x})
+{\bf a}^* \in \mathrm{argmin}_{{\bf x} \in A} -f({\bf x})
 %
 \]</div>
+</div>
 <figure class="align-default">
 <img alt="_images/max_min.png" src="_images/max_min.png" />
 </figure>
-<p>Proof: Let’s prove that, when <span class="math notranslate nohighlight">\(g = -f\)</span>,</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Let’s prove that, when <span class="math notranslate nohighlight">\(g = -f\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
 %
 {\bf a}^* \in \mathrm{argmax}_{{\bf x} \in A}f({\bf x})
 \; \implies \;
-{\bf a}^* \in \argmin_{{\bf x} \in A}g({\bf x})
+{\bf a}^* \in \mathrm{argmin}_{{\bf x} \in A}g({\bf x})
 %
 \]</div>
 <p>To begin, let <span class="math notranslate nohighlight">\({\bf a}^*\)</span> be a maximizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span></p>
@@ -1909,62 +1844,57 @@ g({\bf a}^*) \leq g({\bf x})
 <ul class="simple">
 <li><p>because the last inequality was shown for any <span class="math notranslate nohighlight">\({\bf x} \in A\)</span></p></li>
 </ul>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Most numerical routines provide minimization only</p>
-</div>
 <p>Suppose we want to maximize <span class="math notranslate nohighlight">\(f(x) = 3 \ln x - x\)</span> on <span class="math notranslate nohighlight">\((0, \infty)\)</span></p>
 <p>We can do this by finding the minimizer of <span class="math notranslate nohighlight">\(-f\)</span></p>
-<!--
-```{code-cell} python3
-:tags: [hide/remote-cell/input/output]
----
-mystnb:
-image:
-width: 80%
-align: center
----
-tags:
-- hide-input
-- remove-output
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">fminbound</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-In [1]: from scipy.optimize import fminbound
-In [2]: import numpy as np
-
-In [3]: f = lambda x: 3 * np.log(x) - x
-In [4]: g = lambda x: -f(x) # Find min of -f
-
-In [5]: fminbound(g, 1, 100)
-Out[5]: 3.0000015012062393
-
-```
--->
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">x</span>
+<span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># Find min of -f</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Maximizer of f(x) on [1,100] is x=&#39;</span><span class="p">,</span> <span class="n">fminbound</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximizer of f(x) on [1,100] is x= 3.0000015012062393
+</pre></div>
+</div>
+</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
 <p>Given <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^K\)</span>, let</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(f \colon A \to B \subset \mathbb{R}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(h \colon B \to \mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(g := h \circ f\)</span></p></li>
 </ul>
-<div class="important admonition">
-<p class="admonition-title">Fact</p>
 <p>If <span class="math notranslate nohighlight">\(h\)</span> is strictly increasing, then</p>
-</div>
 <div class="math notranslate nohighlight">
 \[\mathrm{argmax}_{{\bf x} \in A}f({\bf x}) =\mathrm{argmax}_{{\bf x} \in A}g({\bf x})\]</div>
-<p>Proof of <span class="math notranslate nohighlight">\(\subset\)</span>: Let <span class="math notranslate nohighlight">\({\bf a}^* \in \mathrm{argmax}_{{\bf x} \in A}f({\bf x})\)</span></p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Let <span class="math notranslate nohighlight">\({\bf a}^* \in \mathrm{argmax}_{{\bf x} \in A}f({\bf x})\)</span></p>
 <p>If <span class="math notranslate nohighlight">\({\bf x} \in A\)</span>, then <span class="math notranslate nohighlight">\(f({\bf x}) \leq f({\bf a}^*)\)</span>, and hence <span class="math notranslate nohighlight">\(h(f({\bf x})) \leq h(f({\bf a}^*)) \quad\)</span></p>
 <p>In other words, <span class="math notranslate nohighlight">\(g({\bf x}) \leq g({\bf a}^*)\)</span> for any <span class="math notranslate nohighlight">\({\bf x} \in A\)</span></p>
 <p>Hence <span class="math notranslate nohighlight">\({\bf a}^* \in \mathrm{argmax}_{{\bf x} \in A} g({\bf x})\)</span> as claimed</p>
-<figure class="align-default" id="id9">
+</div>
+<figure class="align-default" id="id6">
 <img alt="_images/max_preserved.png" src="_images/max_preserved.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 79 </span><span class="caption-text">Increasing transform <span class="math notranslate nohighlight">\(h(x) = \exp(x/2)\)</span> preserves the maximizer</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 80 </span><span class="caption-text">Increasing transform <span class="math notranslate nohighlight">\(h(x) = \exp(x/2)\)</span> preserves the maximizer</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
-<p>A well known statistical problem is to maximize the exponential likelihood</p>
-</div>
-<p>function:</p>
+<p>A well known statistical problem is to maximize the likelihood of exponential distribution:</p>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -1991,16 +1921,13 @@ L(\lambda)
 %
 \]</div>
 <p>is also the unique maximiser of <span class="math notranslate nohighlight">\(L(\lambda)\)</span></p>
-<p>In the next few slides</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(A\)</span> is any set</p></li>
-</ol>
+</div>
+<p>In the next several propositions</p>
 <ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A\)</span> is any set</p></li>
 <li><p><span class="math notranslate nohighlight">\(f\)</span> is some function from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p></li>
-</ul>
-<ol class="arabic simple" start="9">
 <li><p><span class="math notranslate nohighlight">\(g\)</span> is some function from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p></li>
-</ol>
+</ul>
 <p>To simplify notation, we define</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2018,7 +1945,7 @@ L(\lambda)
 %
 \]</div>
 <div class="important admonition">
-<p class="admonition-title">admonition</p>
+<p class="admonition-title">Fact</p>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -2028,7 +1955,9 @@ f({\bf x}) \leq g({\bf x}) \text{ for all } {\bf x} \in A
 %
 \]</div>
 </div>
-<p>Proof: Fix any such functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> and any <span class="math notranslate nohighlight">\({\bf x} \in A\)</span></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Fix any such functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> and any <span class="math notranslate nohighlight">\({\bf x} \in A\)</span></p>
 <p>We have</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2036,7 +1965,7 @@ f({\bf x}) \leq g({\bf x}) \text{ for all } {\bf x} \in A
 f({\bf x}) \leq g({\bf x}) \leq \sup g
 %
 \]</div>
-<p>Hence <span class="math notranslate nohighlight">\(\sup g\)</span> is an upper bound for <span class="math notranslate nohighlight">\(\{ f({\bf x}) \colon {\bf x \} \in A}\)</span></p>
+<p>Hence <span class="math notranslate nohighlight">\(\sup g\)</span> is an upper bound for <span class="math notranslate nohighlight">\(\{ f({\bf x}) \colon {\bf x } \in A\}\)</span></p>
 <p>Since the supremum is the least upper bound, this gives</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2044,6 +1973,7 @@ f({\bf x}) \leq g({\bf x}) \leq \sup g
 \sup f \leq \sup g
 %
 \]</div>
+</div>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <div class="math notranslate nohighlight">
@@ -2054,7 +1984,9 @@ f({\bf x}) \leq g({\bf x}) \leq \sup g
 %
 \]</div>
 </div>
-<p>Proof: Fix any such functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> and any <span class="math notranslate nohighlight">\({\bf x} \in A\)</span></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Fix any such functions <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> and any <span class="math notranslate nohighlight">\({\bf x} \in A\)</span></p>
 <p>We have</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2078,6 +2010,7 @@ f({\bf x}) + g({\bf x}) \leq \sup f + \sup g
 \sup (f + g) \leq \sup f + \sup g
 %
 \]</div>
+</div>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <div class="math notranslate nohighlight">
@@ -2088,7 +2021,9 @@ f({\bf x}) + g({\bf x}) \leq \sup f + \sup g
 %
 \]</div>
 </div>
-<p>Proof: Picking any such <span class="math notranslate nohighlight">\(f, g\)</span>, we have</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Picking any such <span class="math notranslate nohighlight">\(f, g\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 %
@@ -2101,36 +2036,25 @@ f({\bf x}) + g({\bf x}) \leq \sup f + \sup g
 <div class="math notranslate nohighlight">
 \[
 %
-\therefore \; \sup f - \sup g \leq \sup | f - g |
+\text{therefore } \; \sup f - \sup g \leq \sup | f - g |
 %
 \]</div>
 <p>Same argument reversing roles of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> finishes the proof</p>
-</section>
-<section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h3>
-<p>In this lecture we study topics such as</p>
-<ul class="simple">
-<li><p>Convexity / concavity</p></li>
-<li><p>and uniqueness in optimization</p></li>
-<li><p>sufficient conditions for optimality</p></li>
-<li><p>how to detect these properties?</p></li>
-<li><p>Zeros of functions</p></li>
-<li><p>solving nonlinear equations</p></li>
-<li><p>existence of solutions</p></li>
-<li><p>applications</p></li>
-</ul>
+</div>
 </section>
 </section>
-<section id="convex-sets">
-<h2>Convex Sets<a class="headerlink" href="#convex-sets" title="Permalink to this heading">#</a></h2>
-<section id="id4">
-<h3>Convex Sets<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
-<p>Uniqueness of optima often connected to convexity / concavity</p>
+<section id="concavity-and-uniqueness-of-optima">
+<h2>Concavity and uniqueness of optima<a class="headerlink" href="#concavity-and-uniqueness-of-optima" title="Permalink to this heading">#</a></h2>
+<p>Uniqueness of optima is directly connected to convexity / concavity</p>
 <ul class="simple">
 <li><p>Convexity is a shape property for sets</p></li>
 <li><p>Convexity and concavity are shape properties for functions</p></li>
 </ul>
 <p>However, only one fundamental concept: convex sets</p>
+<section id="convex-sets">
+<h3>Convex Sets<a class="headerlink" href="#convex-sets" title="Permalink to this heading">#</a></h3>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p>A set <span class="math notranslate nohighlight">\(C \subset \mathbb{R}^K\)</span> is called <em><strong>convex</strong></em> if</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2140,20 +2064,22 @@ f({\bf x}) + g({\bf x}) \leq \sup f + \sup g
 \lambda {\bf x} + (1 - \lambda) {\bf y} \in C
 %
 \]</div>
+</div>
 <p>Remark: This is vector addition and scalar multiplication</p>
 <p>Convexity <span class="math notranslate nohighlight">\(\iff\)</span> line between any two points in <span class="math notranslate nohighlight">\(C\)</span> lies in <span class="math notranslate nohighlight">\(C\)</span></p>
 <figure class="align-default">
-<img alt="_images/convex.png" src="_images/convex.png" />
+<a class="reference internal image-reference" href="_images/convex.png"><img alt="_images/convex.png" src="_images/convex.png" style="width: 589.0px; height: 364.0px;" /></a>
 </figure>
 <p>A non-convex set</p>
 <figure class="align-default">
-<img alt="_images/non_convex.png" src="_images/non_convex.png" />
+<a class="reference internal image-reference" href="_images/non_convex.png"><img alt="_images/non_convex.png" src="_images/non_convex.png" style="width: 589.0px; height: 360.5px;" /></a>
 </figure>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
-<p>The “positive cone” $P := { {\bf x} \in \mathbb{R}^K \colon {\bf x } \geq</p>
+<p>The “positive cone” <span class="math notranslate nohighlight">\(P := \{ {\bf x} \in \mathbb{R}^K \colon {\bf x } \geq {\bf 0} \}\)</span> is convex</p>
 </div>
-<p>{\bf 0} }$ is convex</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
 <p>To see this, pick any <span class="math notranslate nohighlight">\({\bf x}\)</span>, <span class="math notranslate nohighlight">\({\bf y}\)</span> in <span class="math notranslate nohighlight">\(P\)</span> and any <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span></p>
 <p>Let <span class="math notranslate nohighlight">\({\bf z} := \lambda {\bf x} + (1 - \lambda) {\bf y}\)</span> and let <span class="math notranslate nohighlight">\(z_k :=
 {\bf e}_k' {\bf z}\)</span></p>
@@ -2164,11 +2090,14 @@ f({\bf x}) + g({\bf x}) \leq \sup f + \sup g
 </ul>
 <p>It is clear that <span class="math notranslate nohighlight">\(z_k \geq 0\)</span> for all <span class="math notranslate nohighlight">\(k\)</span></p>
 <p>Hence <span class="math notranslate nohighlight">\({\bf z} \in P\)</span> as claimed</p>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
-<p>Every <span class="math notranslate nohighlight">\(\epsilon\)</span>-ball is convex</p>
+<p>Every <span class="math notranslate nohighlight">\(\epsilon\)</span>-ball in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> is convex.</p>
 </div>
-<p>Proof: Fix <span class="math notranslate nohighlight">\({\bf a} \in \mathbb{R}^K\)</span>, <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> and let
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Fix <span class="math notranslate nohighlight">\({\bf a} \in \mathbb{R}^K\)</span>, <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> and let
 <span class="math notranslate nohighlight">\(B_\epsilon({\bf a})\)</span> be the <span class="math notranslate nohighlight">\(\epsilon\)</span>-ball</p>
 <p>Pick any <span class="math notranslate nohighlight">\({\bf x}\)</span>, <span class="math notranslate nohighlight">\({\bf y}\)</span> in <span class="math notranslate nohighlight">\(B_\epsilon({\bf a})\)</span> and any <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span></p>
 <p>The point <span class="math notranslate nohighlight">\(\lambda {\bf x} + (1 - \lambda) {\bf y}\)</span> lies in
@@ -2176,51 +2105,56 @@ f({\bf x}) + g({\bf x}) \leq \sup f + \sup g
 <div class="math notranslate nohighlight">
 \[\begin{split}
 %
-\| \lambda {\bf x} + (1 - \lambda) {\bf y} - {\bf a} \|
+&amp; \| \lambda {\bf x} + (1 - \lambda) {\bf y} - {\bf a} \|
 = \| \lambda {\bf x} - \lambda {\bf a} 
-+ (1 - \lambda) {\bf y} - (1 - \lambda) {\bf a} \|
-\\
-&amp; \leq \| \lambda {\bf x} - \lambda {\bf a} \|
-+ \| (1 - \lambda) {\bf y} - (1 - \lambda) {\bf a} \|
-\\
++ (1 - \lambda) {\bf y} - (1 - \lambda) {\bf a} \| \leq
+\\ &amp;
+\leq \| \lambda {\bf x} - \lambda {\bf a} \|
++ \| (1 - \lambda) {\bf y} - (1 - \lambda) {\bf a} \| =
+\\ &amp;
 = \lambda \| {\bf x} - {\bf a} \|
-+ (1 - \lambda) \| {\bf y} - {\bf a} \|
-\\
-&amp; &lt; \lambda \epsilon + (1 - \lambda) \epsilon
-\\
++ (1 - \lambda) \| {\bf y} - {\bf a} \| &lt;&gt;
+\\ &amp;
+&lt; \lambda \epsilon + (1 - \lambda) \epsilon =
+\\ &amp;
 = \epsilon
 %
 \end{split}\]</div>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Let <span class="math notranslate nohighlight">\({\bf p} \in \mathbb{R}^K\)</span> and let <span class="math notranslate nohighlight">\(M\)</span> be the “half-space”</p>
-</div>
 <div class="math notranslate nohighlight">
 \[
 %
-M := \{ {\bf x} \in \mathbb{R}^K \colon {\bf p \}' {\bf x} \leq m}
+M := \{ {\bf x} \in \mathbb{R}^K \colon {\bf p }' {\bf x} \leq m\}
 %
 \]</div>
 <p>The set <span class="math notranslate nohighlight">\(M\)</span> is convex</p>
-<p>Proof: Let <span class="math notranslate nohighlight">\({\bf p}\)</span>, <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(M\)</span> be as described</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Let <span class="math notranslate nohighlight">\({\bf p}\)</span>, <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(M\)</span> be as described</p>
 <p>Fix <span class="math notranslate nohighlight">\({\bf x}\)</span>, <span class="math notranslate nohighlight">\({\bf y}\)</span> in <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span></p>
 <p>Then <span class="math notranslate nohighlight">\(\lambda {\bf x} + (1 - \lambda) {\bf y} \in M\)</span> because</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
+\[
 %
 {\bf p}'[\lambda {\bf x} + (1 - \lambda) {\bf y} ] =
-\\
 \lambda {\bf p}'{\bf x} + (1 - \lambda) {\bf p}'{\bf y} 
 \leq \lambda m + (1 - \lambda) m
 = m
 %
-\end{split}\]</div>
+\]</div>
 <p>Hence <span class="math notranslate nohighlight">\(M\)</span> is convex</p>
+</div>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <p>If <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are convex, then so is <span class="math notranslate nohighlight">\(A \cap B\)</span></p>
 </div>
-<p>Proof: Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be convex and let <span class="math notranslate nohighlight">\(C := A \cap B\)</span></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be convex and let <span class="math notranslate nohighlight">\(C := A \cap B\)</span></p>
 <p>Pick any <span class="math notranslate nohighlight">\({\bf x}\)</span>, <span class="math notranslate nohighlight">\({\bf y}\)</span> in <span class="math notranslate nohighlight">\(C\)</span> and any <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span></p>
 <p>Set</p>
 <div class="math notranslate nohighlight">
@@ -2230,25 +2164,28 @@ M := \{ {\bf x} \in \mathbb{R}^K \colon {\bf p \}' {\bf x} \leq m}
 <p>Since <span class="math notranslate nohighlight">\({\bf x}\)</span> and <span class="math notranslate nohighlight">\({\bf y}\)</span> lie in <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is convex we have <span class="math notranslate nohighlight">\({\bf z}
 \in B\)</span></p>
 <p>Hence <span class="math notranslate nohighlight">\({\bf z} \in A \cap B\)</span></p>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Let <span class="math notranslate nohighlight">\({\bf p} \in \mathbb{R}^K\)</span> be a vector of prices and consider the budget set</p>
-</div>
 <div class="math notranslate nohighlight">
 \[
 %
-B(m) := \{ {\bf x} \in \mathbb{R}^K \colon {\bf x \} \geq {\bf 0} \text{ and }
-{\bf p}' {\bf x} \leq m}
+B(m) := \{ {\bf x} \in \mathbb{R}^K \colon {\bf x } \geq {\bf 0} \text{ and }
+{\bf p}' {\bf x} \leq m\}
 %
 \]</div>
 <p>The budget set <span class="math notranslate nohighlight">\(B(m)\)</span> is convex</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
 <p>To see this, note that <span class="math notranslate nohighlight">\(B(m) = P \cap M\)</span> where</p>
 <div class="math notranslate nohighlight">
 \[
 %
-P := \{ {\bf x} \in \mathbb{R}^K \colon {\bf x \} \geq {\bf 0} }
+P := \{ {\bf x} \in \mathbb{R}^K \colon {\bf x } \geq {\bf 0} \}
 \qquad
-M := \{ {\bf x} \in \mathbb{R}^K \colon {\bf p \}' {\bf x} \leq m}
+M := \{ {\bf x} \in \mathbb{R}^K \colon {\bf p }' {\bf x} \leq m\}
 %
 \]</div>
 <p>We already know that</p>
@@ -2256,13 +2193,13 @@ M := \{ {\bf x} \in \mathbb{R}^K \colon {\bf p \}' {\bf x} \leq m}
 <li><p><span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(M\)</span> are convex, intersections of convex sets are convex</p></li>
 </ul>
 <p>Hence <span class="math notranslate nohighlight">\(B(m)\)</span> is convex</p>
+</div>
 </section>
-</section>
-<section id="convex-concave-functions">
-<h2>Convex/Concave Functions<a class="headerlink" href="#convex-concave-functions" title="Permalink to this heading">#</a></h2>
 <section id="convex-functions">
 <h3>Convex Functions<a class="headerlink" href="#convex-functions" title="Permalink to this heading">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^K\)</span> be a convex set and let <span class="math notranslate nohighlight">\(f\)</span> be a function from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p><span class="math notranslate nohighlight">\(f\)</span> is called <em><strong>convex</strong></em> if</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2272,6 +2209,9 @@ f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 %
 \]</div>
 <p>for all <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in A\)</span> and all <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span></p>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p><span class="math notranslate nohighlight">\(f\)</span> is called <em><strong>strictly convex</strong></em> if</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2281,16 +2221,16 @@ f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 %
 \]</div>
 <p>for all <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in A\)</span> with <span class="math notranslate nohighlight">\({\bf x} \ne {\bf y}\)</span> and all <span class="math notranslate nohighlight">\(\lambda \in (0, 1)\)</span></p>
-<figure class="align-default" id="id10">
+</div>
+<figure class="align-default" id="id7">
 <img alt="_images/convex_function.png" src="_images/convex_function.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 80 </span><span class="caption-text">A strictly convex function on a subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 81 </span><span class="caption-text">A strictly convex function on a subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
-<p><span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span> is convex if and only if its <em><strong>epigraph</strong></em></p>
-</div>
+<p><span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span> is convex if and only if its <em><strong>epigraph</strong></em> (aka supergraph)</p>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -2298,19 +2238,22 @@ E_f := \{ ({\bf x}, y) \in A \times \mathbb{R} \colon f({\bf x \}) \leq y}
 %
 \]</div>
 <p>is a convex subset of <span class="math notranslate nohighlight">\(\mathbb{R}^K \times \mathbb{R}\)</span></p>
+</div>
 <figure class="align-default">
 <img alt="_images/epigraph.png" src="_images/epigraph.png" />
 </figure>
-<figure class="align-default" id="id11">
+<figure class="align-default" id="id8">
 <img alt="_images/qform_pd.png" src="_images/qform_pd.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 81 </span><span class="caption-text">A strictly convex function on a subset of <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 82 </span><span class="caption-text">A strictly convex function on a subset of <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p><span class="math notranslate nohighlight">\(f({\bf x}) = \|{\bf x}\|\)</span> is convex on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></p>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
 <p>To see this recall that, by the properties of norms,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -2330,20 +2273,20 @@ f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 \lambda f({\bf x}) + (1 - \lambda) f({\bf y})
 %
 \]</div>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p><span class="math notranslate nohighlight">\(f(x) = \cos(x)\)</span> is <em><strong>not</strong></em> convex on <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> because</p>
-</div>
 <div class="math notranslate nohighlight">
 \[
 %
 1 = f(2\pi) = f(\pi/2 + 3\pi/2) &gt; f(\pi)/2 + f(3\pi)/2 = -1
 %
 \]</div>
+</div>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <p>If <span class="math notranslate nohighlight">\({\bf A}\)</span> is <span class="math notranslate nohighlight">\(K \times K\)</span> and positive definite, then</p>
-</div>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -2352,6 +2295,9 @@ Q({\bf x}) = {\bf x}' {\bf A} {\bf x}
 %
 \]</div>
 <p>is strictly convex on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
 <p>Proof: Fix <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in \mathbb{R}^K\)</span> with <span class="math notranslate nohighlight">\({\bf x} \ne {\bf y}\)</span> and <span class="math notranslate nohighlight">\(\lambda \in (0, 1)\)</span></p>
 <p><strong>Exercise:</strong> Show that</p>
 <div class="math notranslate nohighlight">
@@ -2373,10 +2319,13 @@ hand side is <span class="math notranslate nohighlight">\(&gt; 0\)</span></p>
 &gt; Q(\lambda {\bf x} + (1 - \lambda) {\bf y})
 %
 \]</div>
+</div>
 </section>
 <section id="concave-functions">
 <h3>Concave Functions<a class="headerlink" href="#concave-functions" title="Permalink to this heading">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^K\)</span> be a convex and let <span class="math notranslate nohighlight">\(f\)</span> be a function from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p><span class="math notranslate nohighlight">\(f\)</span> is called <em><strong>concave</strong></em> if</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2386,6 +2335,9 @@ f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 %
 \]</div>
 <p>for all <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in A\)</span> and all <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span></p>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
 <p><span class="math notranslate nohighlight">\(f\)</span> is called <em><strong>strictly concave</strong></em> if</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2395,6 +2347,7 @@ f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 %
 \]</div>
 <p>for all <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in A\)</span> with <span class="math notranslate nohighlight">\({\bf x} \ne {\bf y}\)</span> and all <span class="math notranslate nohighlight">\(\lambda \in (0, 1)\)</span></p>
+</div>
 <p><strong>Exercise:</strong> Show that</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(f\)</span> is concave if and only if <span class="math notranslate nohighlight">\(-f\)</span> is convex</p></li>
@@ -2402,8 +2355,7 @@ f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 </ol>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
-<p><span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span> is concave if and only if its <em><strong>hypograph</strong></em></p>
-</div>
+<p><span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span> is concave if and only if its <em><strong>hypograph</strong></em> (aka subgraph)</p>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -2411,6 +2363,7 @@ H_f := \{ ({\bf x}, y) \in A \times \mathbb{R} \colon f({\bf x \}) \geq y}
 %
 \]</div>
 <p>is a convex subset of <span class="math notranslate nohighlight">\(\mathbb{R}^K \times \mathbb{R}\)</span></p>
+</div>
 <figure class="align-default">
 <img alt="_images/hypograph.png" src="_images/hypograph.png" />
 </figure>
@@ -2422,140 +2375,64 @@ to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <p>If <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are convex (resp., concave) and <span class="math notranslate nohighlight">\(\alpha \geq 0\)</span>, then</p>
-</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\alpha f\)</span> is convex (resp., concave)</p></li>
 <li><p><span class="math notranslate nohighlight">\(f + g\)</span> is convex (resp., concave)</p></li>
 </ul>
+</div>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <p>If <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are strictly convex (resp., strictly concave) and <span class="math notranslate nohighlight">\(\alpha &gt; 0\)</span>, then</p>
-</div>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\alpha f\)</span> is strictly convex (resp., strictly concave)</p></li>
 <li><p><span class="math notranslate nohighlight">\(f + g\)</span> is strictly convex (resp., strictly concave)</p></li>
 </ul>
+</div>
 <p>Let’s prove that <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> convex <span class="math notranslate nohighlight">\(\implies h := f + g\)</span> convex</p>
 <p>Pick any <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in A\)</span> and <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span></p>
 <p>We have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 %
+&amp; 
 h(\lambda {\bf x} + (1 - \lambda) {\bf y})
 = f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 + g(\lambda {\bf x} + (1 - \lambda) {\bf y})
-\\
-&amp; \leq 
+\\ &amp;
+\leq 
 \lambda f({\bf x}) + (1 - \lambda) f({\bf y})
 +
 \lambda g({\bf x}) + (1 - \lambda) g({\bf y})
-\\
+\\ &amp;
 =
 \lambda [f({\bf x}) + g({\bf x})]
 + (1 - \lambda) [f({\bf y}) + g({\bf y})]
-\\
+\\ &amp;
 =
 \lambda h({\bf x}) + (1 - \lambda) h({\bf y})
 %
 \end{split}\]</div>
 <p>Hence <span class="math notranslate nohighlight">\(h\)</span> is convex</p>
 </section>
-<section id="derivative-conditions">
-<h3>Derivative Conditions<a class="headerlink" href="#derivative-conditions" title="Permalink to this heading">#</a></h3>
-<p>The <span class="math notranslate nohighlight">\(i,j\)</span>-th cross partial of <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span> at <span class="math notranslate nohighlight">\({\bf x} \in A\)</span> is</p>
-<div class="math notranslate nohighlight">
-\[
-%
-f_{ij}({\bf x})
-:= \frac{\partial^2}{\partial x_i \partial x_j} 
-f({\bf x})
-\qquad (1 \leq i, j \leq K)
-%
-\]</div>
-<p>We say that <span class="math notranslate nohighlight">\(f\)</span> is <em><strong>a <span class="math notranslate nohighlight">\(C^2\)</span> function</strong></em> if these partials are all
-continuous in <span class="math notranslate nohighlight">\({\bf x}\)</span> for all <span class="math notranslate nohighlight">\({\bf x} \in A\)</span></p>
-<p>The <em><strong>Hessian matrix</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\({\bf x}\)</span> is the matrix of cross
-partials</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-%
-H({\bf x})
-:=
-\begin{pmatrix}
-f_{11}({\bf x}) &amp; \cdots &amp; f_{1K}({\bf x}) \\
-&amp; \vdots &amp; \\
-f_{K1}({\bf x}) &amp; \cdots &amp; f_{KK}({\bf x}) 
-\end{pmatrix}
-%
-\end{split}\]</div>
-<div class="important admonition">
-<p class="admonition-title">Fact</p>
-<p>If <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span> is a <span class="math notranslate nohighlight">\(C^2\)</span> function where <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^K\)</span></p>
-</div>
-<p>is open and convex, then</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(H({\bf x})\)</span> nonnegative definite for all <span class="math notranslate nohighlight">\({\bf x} \in A\)</span>
-<span class="math notranslate nohighlight">\(\iff f\)</span> convex</p></li>
-</ol>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(H({\bf x})\)</span> nonpositive definite for all <span class="math notranslate nohighlight">\({\bf x} \in A\)</span>
-<span class="math notranslate nohighlight">\(\iff f\)</span> concave</p></li>
-</ul>
-<p>In addition,</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(H({\bf x})\)</span> positive definite for all <span class="math notranslate nohighlight">\({\bf x} \in A\)</span>
-<span class="math notranslate nohighlight">\(\implies f\)</span> strictly convex</p></li>
-</ol>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(H({\bf x})\)</span> negative definite for all <span class="math notranslate nohighlight">\({\bf x} \in A\)</span>
-<span class="math notranslate nohighlight">\(\implies f\)</span> strictly concave</p></li>
-</ul>
-<p>Proof: Omitted</p>
-<div class="tip admonition">
-<p class="admonition-title">Example</p>
-<p>Let <span class="math notranslate nohighlight">\(A := (0, \infty) \times (0, \infty)\)</span> and let <span class="math notranslate nohighlight">\(U \colon A \to \mathbb{R}\)</span> be the</p>
-</div>
-<p>utility function</p>
-<div class="math notranslate nohighlight">
-\[
-%
-U(c_1, c_2) = \alpha \ln c_1 + \beta \ln c_2
-%
-\]</div>
-<p>Assume that <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are both strictly positive</p>
-<p><strong>Exercise:</strong> Show that the Hessian at <span class="math notranslate nohighlight">\({\bf c} := (c_1, c_2) \in A\)</span> has the form</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-%
-H({\bf c})
-:=
-\begin{pmatrix}
-- \frac{\alpha}{c_1^2} &amp; 0 \\
-0 &amp; - \frac{\beta}{c_2^2} 
-\end{pmatrix}
-%
-\end{split}\]</div>
-<p><strong>Exercise:</strong> Show that any diagonal matrix with strictly negative elements along
-the principle diagonal is negative definite</p>
-<p>Conclude that <span class="math notranslate nohighlight">\(U\)</span> is strictly concave on <span class="math notranslate nohighlight">\(A\)</span></p>
-</section>
 </section>
 <section id="uniqueness-of-optimizers">
 <h2>Uniqueness of Optimizers<a class="headerlink" href="#uniqueness-of-optimizers" title="Permalink to this heading">#</a></h2>
-<section id="uniqueness-of-maximizers-and-minimizers">
-<h3>Uniqueness of Maximizers and Minimizers<a class="headerlink" href="#uniqueness-of-maximizers-and-minimizers" title="Permalink to this heading">#</a></h3>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
 <p>Let <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^K\)</span> be convex and let <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span></p>
-<p>\Facts</p>
 <ol class="arabic simple">
 <li><p>If <span class="math notranslate nohighlight">\(f\)</span> is strictly convex, then <span class="math notranslate nohighlight">\(f\)</span> has at most one minimizer on <span class="math notranslate nohighlight">\(A\)</span></p></li>
 <li><p>If <span class="math notranslate nohighlight">\(f\)</span> is strictly concave, then <span class="math notranslate nohighlight">\(f\)</span> has at most one maximizer on <span class="math notranslate nohighlight">\(A\)</span></p></li>
 </ol>
+</div>
 <p>Interpretation, strictly concave case:</p>
 <ul class="simple">
 <li><p>we don’t know in general if <span class="math notranslate nohighlight">\(f\)</span> has a maximizer</p></li>
 <li><p>but if it does, then it has exactly one</p></li>
 <li><p>in other words, we have uniqueness</p></li>
 </ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
 <p>Proof for the case where <span class="math notranslate nohighlight">\(f\)</span> is strictly concave:</p>
 <p>Suppose to the contrary that</p>
 <ul class="simple">
@@ -2575,7 +2452,7 @@ f\left( \frac{1}{2} {\bf a} + \frac{1}{2} {\bf b} \right)
 %
 \]</div>
 <p>This contradicts the assumption that <span class="math notranslate nohighlight">\({\bf a}\)</span> is a maximizer</p>
-</section>
+</div>
 <section id="a-sufficient-condition">
 <h3>A Sufficient Condition<a class="headerlink" href="#a-sufficient-condition" title="Permalink to this heading">#</a></h3>
 <p>We can now restate more precisely optimization results stated in the
@@ -2595,14 +2472,12 @@ f({\bf x}^*)
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <p>If <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(A\)</span> are as above and <span class="math notranslate nohighlight">\({\bf x}^* \in A\)</span> is stationary, then</p>
-</div>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(f\)</span> strictly concave <span class="math notranslate nohighlight">\(\implies\)</span> <span class="math notranslate nohighlight">\({\bf x}^*\)</span> is the unique maximizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span></p></li>
-</ol>
-<ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(f\)</span> strictly convex <span class="math notranslate nohighlight">\(\implies\)</span> <span class="math notranslate nohighlight">\({\bf x}^*\)</span> is the unique
 minimizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span></p></li>
-</ul>
+</ol>
+</div>
 <figure class="align-default">
 <img alt="_images/concave_max.png" src="_images/concave_max.png" />
 </figure>
@@ -2691,43 +2566,24 @@ minimizer of <span class="math notranslate nohighlight">\(f\)</span> on <span cl
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-functions">Continuous functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suprema-and-infima">Suprema and Infima</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Fundamentals of Optimization</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sup-and-inf">Sup and Inf</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Suprema and Infima</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#max-and-min">Max and Min</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#suprema-and-infima-mathrm-sup-mathrm-inf">Suprema and Infima (<span class="math notranslate nohighlight">\(\mathrm{sup}\)</span> + <span class="math notranslate nohighlight">\(\mathrm{inf}\)</span>)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima-and-minima-of-sets">Maxima and Minima of Sets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#existence-of-max-and-min">Existence of Max and Min</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-min-vs-sup-inf">Max/Min vs Sup/Inf</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relationship-between-max-min-and-sup-inf">Relationship between max/min and sup/inf</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existence-of-optima">Existence of Optima</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#existence-of-max-and-min-for-sets">Existence of Max and Min for Sets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#max-and-min-for-functions">Max and Min for Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#existence-of-optima-for-functions">Existence of optima for functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weierstrass-extreme-value-theorem">Weierstrass extreme value theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-optima">Properties of Optima</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-optima">Properties of Optima</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Properties of Optima</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-sets">Convex Sets</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Convex Sets</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-concave-functions">Convex/Concave Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concavity-and-uniqueness-of-optima">Concavity and uniqueness of optima</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-sets">Convex Sets</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-functions">Convex Functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concave-functions">Concave Functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preservation-of-shape">Preservation of Shape</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivative-conditions">Derivative Conditions</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-of-optimizers">Uniqueness of Optimizers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-of-maximizers-and-minimizers">Uniqueness of Maximizers and Minimizers</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-sufficient-condition">A Sufficient Condition</a></li>
 </ul>
 </li>
