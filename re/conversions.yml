@@ -186,7 +186,7 @@
     st: \\mathrm{dim}
 
 - pattern:
-    re: \\(cl|argmax|interior|Prob|kernel|diag|sgn|determinant|trace|rank|cov|corr|range|var|mse|se|row|col|fracpart)(?=[^a-zA-Z0-9])
+    re: \\(cl|argmax|argmin|interior|Prob|kernel|diag|sgn|determinant|trace|rank|cov|corr|range|var|mse|se|row|col|fracpart)(?=[^a-zA-Z0-9])
     st: \\mathrm{\1}
 
 - pattern:
