@@ -672,7 +672,7 @@ x_3
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solutions is x=[ 0.00000000e+00 -9.00719925e+15  4.50359963e+15]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5d/cjhpvdlx7lg8zt1ypw5fcyy40000gn/T/ipykernel_98027/3978225594.py:8: LinAlgWarning: Ill-conditioned matrix (rcond=4.11194e-18): result may not be accurate.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5d/cjhpvdlx7lg8zt1ypw5fcyy40000gn/T/ipykernel_16633/3978225594.py:8: LinAlgWarning: Ill-conditioned matrix (rcond=4.11194e-18): result may not be accurate.
   x=solve(A, b)
 </pre></div>
 </div>
@@ -1215,22 +1215,30 @@ Inner product = 60
 <div class="dropdown admonition">
 <p class="admonition-title">Proof</p>
 <p>Fix nonzero <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)</span></p>
-<p>Let <span class="math notranslate nohighlight">\({\hat{\bf x}} := \alpha {\bf x}\)</span> when <span class="math notranslate nohighlight">\(\alpha := 1/\|{\bf x}\|\)</span>, that is <span class="math notranslate nohighlight">\({\hat{\bf x}} := {\bf x} / \| {\bf x} \|\)</span></p>
-<p>Evidently <span class="math notranslate nohighlight">\(\| {\hat{\bf x}} \| = 1\)</span></p>
+<p>Let <span class="math notranslate nohighlight">\({\hat{\bf x}} := \alpha {\bf x}\)</span> where <span class="math notranslate nohighlight">\(\alpha := 1/\|{\bf x}\|\)</span>, that is <span class="math notranslate nohighlight">\({\hat{\bf x}} := {\bf x} / \| {\bf x} \|\)</span></p>
+<p>Evidently <span class="math notranslate nohighlight">\(\| {\hat{\bf x}} \| = 1\)</span> and so it satisfies the constraint</p>
+<p>Let’s show that <span class="math notranslate nohighlight">\({\hat{\bf x}}\)</span> is the solution to the optimization problem</p>
 <p>Pick any other <span class="math notranslate nohighlight">\({\bf y} \in \mathbb{R}^N\)</span> satisfying <span class="math notranslate nohighlight">\(\| {\bf y} \| = 1\)</span></p>
-<p>The Cauchy-Schwarz inequality yields</p>
+<p>We have</p>
 <div class="math notranslate nohighlight">
 \[
-%
 {\bf y}' {\bf x}
 \leq |{\bf y}' {\bf x}|
 \leq \| {\bf y} \| \| {\bf x} \|
 = \| {\bf x} \|
+= \frac{\| {\bf x} \| ^ 2}{ \| {\bf x} \| }
 = \frac{{\bf x}' {\bf x}}{ \| {\bf x} \| }
 = {\hat{\bf x}}' {\bf x}
-%
 \]</div>
-<p>Hence <span class="math notranslate nohighlight">\({\hat{\bf x}}\)</span> is the maximizer, as claimed</p>
+<ol class="arabic simple">
+<li><p>The first inequality trivially follows from the definition of the absolute value of a scalar</p></li>
+<li><p>The second inequality is the application of Cauchy-Schwarz inequality</p></li>
+<li><p>The third equality takes into account that <span class="math notranslate nohighlight">\(\| {\bf y} \| = 1\)</span></p></li>
+<li><p>The forth equality is multiplication of enumerator and denominator by a constant</p></li>
+<li><p>The fifth equality follows from <span class="math notranslate nohighlight">\(\| {\bf x} \| = \sqrt{{\bf x}'{\bf x}}\)</span></p></li>
+<li><p>The sixth equality follows from the properties of the inner product</p></li>
+</ol>
+<p>Taking first and last expression in the above inequality yields that <span class="math notranslate nohighlight">\({\hat{\bf x}}\)</span> is the maximizer, as claimed</p>
 </div>
 </section>
 <section id="span">
@@ -4096,10 +4104,10 @@ a_{21} &amp; a_{22} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=[[-0.17412201  1.21509467]
- [-0.3087902   1.08162961]]
-det(A)=0.1868738001242868
-det(inv(A))=5.351204927255271
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=[[ 0.0325809   0.44193813]
+ [-0.98803862  0.2530756 ]]
+det(A)=0.4448973718205078
+det(inv(A))=2.2477093894891476
 </pre></div>
 </div>
 </div>
