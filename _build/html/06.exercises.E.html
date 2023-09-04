@@ -457,7 +457,148 @@ strictly positive.</p>
 <h2>Question E.6<a class="headerlink" href="#question-e-6" title="Permalink to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be a nonempty bounded set and let <span class="math notranslate nohighlight">\(B := \{ b \in \mathbb{R} \colon b = 2a \text{ for some } a \in A\}\)</span>.
 Obtain <span class="math notranslate nohighlight">\(\sup B\)</span> in terms of <span class="math notranslate nohighlight">\(\sup A\)</span>. Justify your answer.</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solutions<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Question E.1</strong></p>
+<p class="sd-card-text">Pick any <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}\)</span> and any <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span>.
+By the triangle inequality, we have</p>
+<div class="math notranslate nohighlight">
+\[
+%
+|\lambda x + (1 - \lambda) y|
+\leq |\lambda x| + |(1 - \lambda) y|
+%
+\]</div>
+<p class="sd-card-text">and hence</p>
+<div class="math notranslate nohighlight">
+\[
+%
+- |\lambda x + (1 - \lambda) y|
+\geq - |\lambda x| - |(1 - \lambda) y|
+= - \lambda |x| - (1 - \lambda) |y|
+%
+\]</div>
+<p class="sd-card-text">That is, <span class="math notranslate nohighlight">\(f(\lambda x + (1 - \lambda) y) \geq \lambda f(x) + (1 -
+\lambda)f(y)\)</span>. Hence <span class="math notranslate nohighlight">\(f\)</span> is concave as claimed.</p>
+<p class="sd-card-text"><strong>Question E.2</strong></p>
+<p class="sd-card-text">The condition for nonsingularity of <span class="math notranslate nohighlight">\((a)\)</span> is <span class="math notranslate nohighlight">\(a \ne 0\)</span>. There are many
+ways we could show this. One is that <span class="math notranslate nohighlight">\({\bf A}\)</span> is nonsingular when <span class="math notranslate nohighlight">\({\bf A}
+{\bf x} = {\bf 0} \implies {\bf x} = {\bf 0}\)</span>. Here this translates to
+<span class="math notranslate nohighlight">\(ax = 0 \implies x = 0\)</span>. The question then becomes, for what <span class="math notranslate nohighlight">\(a\)</span> is this
+implication true? It is true exactly when <span class="math notranslate nohighlight">\(a \ne 0\)</span>, for if <span class="math notranslate nohighlight">\(a
+\ne 0\)</span> and <span class="math notranslate nohighlight">\(ax=0\)</span>, the only possibility is that <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+<p class="sd-card-text"><strong>Question E.3</strong></p>
+<p class="sd-card-text">The function <span class="math notranslate nohighlight">\(f\)</span> has a unique minimizer at <span class="math notranslate nohighlight">\(x^* = 0\)</span> if and only if <span class="math notranslate nohighlight">\(c
+\ne 0\)</span>. Here’s one proof: If <span class="math notranslate nohighlight">\(c \ne 0\)</span> then the function is strictly
+convex. Moreover, it is stationary at <span class="math notranslate nohighlight">\(x^* = 0\)</span>. Hence, by our facts on
+minimization under convexity, <span class="math notranslate nohighlight">\(x^*\)</span> is the unique minimizer. The
+condition is necessary and sufficient because if <span class="math notranslate nohighlight">\(c = 0\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> is a constant
+function, which clearly does not have a unique minimizer.</p>
+<p class="sd-card-text">Here’s a second (more direct) proof that the correct condition is <span class="math notranslate nohighlight">\(c
+\ne 0\)</span>. Suppose first that <span class="math notranslate nohighlight">\(c \ne0\)</span> and
+pick any <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>. We have</p>
+<div class="math notranslate nohighlight">
+\[
+%
+f(x) = (cx)^2 + z \geq z = f(0)
+%
+\]</div>
+<p class="sd-card-text">This tells us that <span class="math notranslate nohighlight">\(x^* = 0\)</span> is a minimizer. Moreover,</p>
+<div class="math notranslate nohighlight">
+\[
+%
+f(x) = (cx)^2 + z &gt; z = f(0)
+\quad \text{whenever} \quad
+x \ne x^*
+%
+\]</div>
+<p class="sd-card-text">Hence <span class="math notranslate nohighlight">\(x^* = 0\)</span> is the unique minimizer.</p>
+<p class="sd-card-text">Suppose next that <span class="math notranslate nohighlight">\(x^* = 0\)</span> is the unique minimizer. Then it must be that <span class="math notranslate nohighlight">\(c
+\ne0\)</span>, for if <span class="math notranslate nohighlight">\(c=0\)</span> then <span class="math notranslate nohighlight">\(f(x) = f(x^*)\)</span> for every <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>.</p>
+<p class="sd-card-text"><strong>Question E.4</strong></p>
+<p class="sd-card-text">Suppose first that <span class="math notranslate nohighlight">\({\bf C}\)</span> has linearly independent columns. We claim
+that <span class="math notranslate nohighlight">\({\bf x} = {\bf 0}\)</span> is the unique minimizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span>. To see
+this observe that if <span class="math notranslate nohighlight">\({\bf x} = {\bf 0}\)</span> then <span class="math notranslate nohighlight">\(f({\bf x}) = z\)</span>. On the
+other hand, if <span class="math notranslate nohighlight">\({\bf x} \ne {\bf 0}\)</span>, then, by linear independence,
+<span class="math notranslate nohighlight">\({\bf C}{\bf x}\)</span> is not the origin, and hence <span class="math notranslate nohighlight">\(\| {\bf C}{\bf x} \| &gt; 0\)</span>.
+Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+%
+f({\bf x}) 
+= {\bf x}' {\bf C}' {\bf C} {\bf x} + z
+= ({\bf C} {\bf x} )' {\bf C} {\bf x} + z
+= \| {\bf C} {\bf x} \|^2 + z &gt; z
+%
+\]</div>
+<p class="sd-card-text">Thus <span class="math notranslate nohighlight">\({\bf x} = {\bf 0}\)</span> is the unique minimizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> as
+claimed.</p>
+<p class="sd-card-text">Since this is an “if and only if” proof we also need to show that when
+<span class="math notranslate nohighlight">\(f\)</span> has a unique minimizer on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span>, it must be that <span class="math notranslate nohighlight">\({\bf C}\)</span> has
+linearly independent columns. Suppose to the contrary that
+the columns of <span class="math notranslate nohighlight">\({\bf C}\)</span> are not linearly independent. We will show that
+multiple minimizers exist.</p>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\(f({\bf x}) = \| {\bf C} {\bf x} \|^2 + z\)</span> it is clear that <span class="math notranslate nohighlight">\(f({\bf x})
+\geq z\)</span>, and hence <span class="math notranslate nohighlight">\({\bf x} = {\bf 0}\)</span> is one minimizer.
+(At this point, <span class="math notranslate nohighlight">\(f\)</span> evaluates to <span class="math notranslate nohighlight">\(z\)</span>.) Since
+the columns of <span class="math notranslate nohighlight">\({\bf C}\)</span> are not linearly independent, there
+exists a nonzero vector <span class="math notranslate nohighlight">\({\bf y}\)</span> such that <span class="math notranslate nohighlight">\({\bf C} {\bf y} = {\bf 0}\)</span>.
+At this vector we clearly have <span class="math notranslate nohighlight">\(f({\bf y}) = z\)</span>. Hence <span class="math notranslate nohighlight">\({\bf y}\)</span> is another
+minimizer.</p>
+<p class="sd-card-text"><strong>Question E.5</strong></p>
+<p class="sd-card-text">First, show that <span class="math notranslate nohighlight">\(U(c_1, c_2) = \sqrt c_1 + \beta \sqrt{c_2}\)</span> is continuous and that</p>
+<div class="math notranslate nohighlight">
+\[
+B := \{ (c_1, c_2) \colon c_i \geq 0 \text{ and }
+p_1 c_1 + p_2 c_2 \leq m\}
+\]</div>
+<p class="sd-card-text">is closed. Hence, by the Weierstrass extreme value theorem, a maximizer
+will exist whenever <span class="math notranslate nohighlight">\(B\)</span> is bounded. If <span class="math notranslate nohighlight">\(p_1\)</span> and <span class="math notranslate nohighlight">\(p_2\)</span> are strictly
+positive then <span class="math notranslate nohighlight">\(B\)</span> is bounded. This is intuitive but we can also show it
+formally by observing that <span class="math notranslate nohighlight">\((c_1, c_2) \in B\)</span> implies <span class="math notranslate nohighlight">\(c_i \leq m / p_i\)</span>
+for <span class="math notranslate nohighlight">\(i =1,2\)</span>. Hence</p>
+<div class="math notranslate nohighlight">
+\[
+%
+{\bf c} := (c_1, c_2) \in B
+\implies \| {\bf c} \|
+\leq M := \sqrt{ \left(\frac{m}{p_1}\right)^2 
++ \left(\frac{m}{p_2}\right)^2 }
+%
+\]</div>
+<p class="sd-card-text">We also need to show that if one price is zero then no maximizer exists.
+Suppose to the contrary that <span class="math notranslate nohighlight">\(p_1 = 0\)</span>. Intuitively, no maximizer exists
+because we can always consumer more of good one, thereby increasing our
+utility. To formalize this we can
+suppose that a maximizer exists and derive a contradiction. To this end,
+suppose that <span class="math notranslate nohighlight">\({\bf c}^* = (c_1^*,
+c_2^*)\)</span> is a maximizer of <span class="math notranslate nohighlight">\(U\)</span> over <span class="math notranslate nohighlight">\(B\)</span>. Since <span class="math notranslate nohighlight">\(p_1 = 0\)</span>,
+the fact that <span class="math notranslate nohighlight">\((c_1^*, c_2^*) \in B\)</span> implies <span class="math notranslate nohighlight">\({\bf c}^{**} := (c_1^* + 1,
+c_2^*) \in B\)</span>. Since <span class="math notranslate nohighlight">\(U\)</span> is strictly increasing in its first argument,
+we also have <span class="math notranslate nohighlight">\(U({\bf c}^{**}) &gt; U({\bf c}^*)\)</span>. This contradicts the
+statement that <span class="math notranslate nohighlight">\({\bf c}^*\)</span> is a maximizer of <span class="math notranslate nohighlight">\(U\)</span> over <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p class="sd-card-text"><strong>Question E.6</strong></p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be as stated in the question. We claim that <span class="math notranslate nohighlight">\(\sup B =
+\bar b\)</span> where <span class="math notranslate nohighlight">\(\bar b := 2 \sup A\)</span>. According to the definition of the
+supremum, to prove this we need to show that</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(b \leq \bar b\)</span> for all <span class="math notranslate nohighlight">\(b \in B\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\bar b \leq u\)</span> for all <span class="math notranslate nohighlight">\(u \in U(B)\)</span></p></li>
+</ol>
+<p class="sd-card-text">Regarding part 1, pick any <span class="math notranslate nohighlight">\(b \in B\)</span>. By definition, <span class="math notranslate nohighlight">\(b = 2a\)</span> for some <span class="math notranslate nohighlight">\(a
+\in A\)</span>. We know that <span class="math notranslate nohighlight">\(a \leq \sup A\)</span> and hence <span class="math notranslate nohighlight">\(2 a \leq 2 \sup A\)</span>.
+Therefore <span class="math notranslate nohighlight">\(b = 2a \leq \bar b\)</span>, as was to be shown.</p>
+<p class="sd-card-text">Regarding part 2, take any <span class="math notranslate nohighlight">\(u \in U(B)\)</span>. For any <span class="math notranslate nohighlight">\(a \in A\)</span> we have <span class="math notranslate nohighlight">\(2a
+\in B\)</span> and hence <span class="math notranslate nohighlight">\(2a \leq u\)</span>. Therefore <span class="math notranslate nohighlight">\(a \leq u/2\)</span> for all <span class="math notranslate nohighlight">\(a \in A\)</span>,
+and hence <span class="math notranslate nohighlight">\(u/2\)</span> is an upper bound of <span class="math notranslate nohighlight">\(A\)</span>. Therefore <span class="math notranslate nohighlight">\(\sup A \leq u/2\)</span>.
+Rearranging gives <span class="math notranslate nohighlight">\(\bar b \leq u\)</span>, as claimed.</p>
+</div>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
