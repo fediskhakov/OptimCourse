@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '07.unconstrained';</script>
     <link rel="canonical" href="optim.iskh.me/07.unconstrained.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -352,7 +354,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -368,6 +372,42 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-optimization-problem">An optimization problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-the-optimization-problem">Components of the optimization problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-of-the-optimization-problems">Classes of the optimization problems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-one-dimensional-optimization">Review of one-dimensional optimization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sufficiency-and-uniqueness-with-shape-conditions">Sufficiency and uniqueness with shape conditions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-calculus">Multivariate calculus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-of-differentiation">Rules of differentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-derivatives">Higher order derivatives</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-oder-conditions-foc-necessary">First oder conditions (FOC), necessary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-conditions-soc">Second order conditions (SOC)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#establishing-definiteness-of-hessian-in-mathbb-r-2-case">Establishing definiteness of Hessian in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> case</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convexity-sufficiency-and-uniqueness">Convexity, sufficiency and uniqueness</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-functions">Convex functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concave-functions">Concave Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hessian-based-criterion">Hessian based criterion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-of-optimizers">Uniqueness of optimizers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roadmap-for-unconstrained-optimization">Roadmap for unconstrained optimization</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -379,111 +419,1322 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="unconstrained-optimization">
 <h1>Unconstrained optimization<a class="headerlink" href="#unconstrained-optimization" title="Permalink to this heading">#</a></h1>
-<a class="reference internal image-reference" href="_images/coming_soon.png"><img alt="soming soon" class="align-center" src="_images/coming_soon.png" style="width: 514.0px; height: 360.0px;" /></a>
-<!-- 
-Thoughts:
-- start with multivariate calculus
-- review existance and uniqueness conditions from last lecture, but now focus on derivative based methods
-- examples
-- algorithms + code
+<p><strong>ECON2125/6012 Lecture 7</strong>
+Fedor Iskhakov</p>
+<section id="announcements-reminders">
+<h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><em>Test 2</em> <a class="reference external" href="https://www.dropbox.com/scl/fi/specehca5vp3qqqo07ocn/test2_distr_prelim.png?rlkey=wytv2hxscmbur18cy504p77k9&amp;dl=0">results and discussion</a></p></li>
+<li><p>Exam is <em>preliminary</em> scheduled to <strong>Monday, 6 November</strong>  9:00 to 12:15</p></li>
+</ul>
+</section>
+<section id="plan-for-this-lecture">
+<h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Optimization problems in economics</p></li>
+<li><p>Multivariate calculus</p></li>
+<li><p>Necessary (first order) condition in <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span></p></li>
+<li><p>Sufficient (second order) and shape conditions</p></li>
+</ol>
+<p><strong>Supplementary reading:</strong></p>
+<ul class="simple">
+<li><p>Simon &amp; Blume: 13.1, 13.2, 13.3, 14.1, 14.3, 14.4, 14.5, 14.8, whole of chapter 17</p></li>
+<li><p>Sundaram: 1.4, 1.5, 2.1, 2.2, 4.1 to 4.4</p></li>
+</ul>
+</section>
+<section id="an-optimization-problem">
+<h2>An optimization problem<a class="headerlink" href="#an-optimization-problem" title="Permalink to this heading">#</a></h2>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Consider a (monopolistic) firm that is facing a market demand for its products <span class="math notranslate nohighlight">\(D(p) = \alpha + \frac{1}{4\alpha}p^2-p\)</span> and the cost of production <span class="math notranslate nohighlight">\(C(q) = \beta q + \delta q^2\)</span>.
+As usual, <span class="math notranslate nohighlight">\(p\)</span> and <span class="math notranslate nohighlight">\(q\)</span> denote price and quantity of product, respectively.</p>
+<p>To maximize its profit <span class="math notranslate nohighlight">\(\pi(p,q) = pq-C(q)\)</span>, the firm solves the following <em>optimization problem</em></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Pi(\alpha,\beta,\delta) 
+= \max_{p,q} \pi(p,q)
+= \max_{p,q} \big[ p q - C(q) \big]
+\\
+\text {subject to}
+\\
+q = D(p)\\
+q \ge 0\\
+p &gt; 0
+\end{split}\]</div>
+<p>Plugging in the functions <span class="math notranslate nohighlight">\(D(p)\)</span> and <span class="math notranslate nohighlight">\(C(q)\)</span> we have an equivalent formulation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Pi(\alpha,\beta,\delta) 
+= \max_{p,q} \big[ (p-\beta) q - \delta q^2 \big]
+\\
+\text {subject to}
+\\
+q = \alpha + \frac{1}{4\alpha}p^2-p\\
+q \ge 0\\
+p &gt; 0
+\end{split}\]</div>
+</div>
+<section id="components-of-the-optimization-problem">
+<h3>Components of the optimization problem<a class="headerlink" href="#components-of-the-optimization-problem" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Objective function</strong>: function to be maximized or minimized, also known as <em>maximand</em> <br />
+In the example above profit function <span class="math notranslate nohighlight">\(\pi(p,q) = pq - C(q)\)</span> to be maximized</p></li>
+<li><p><strong>Decision/choice variables</strong>: the variables that the agent can control in order to optimize the objective function, also known as <em>controls</em><br />
+In the example above price <span class="math notranslate nohighlight">\(p\)</span> and quantity <span class="math notranslate nohighlight">\(q\)</span> variables that the firm can choose to maximize its profit</p></li>
+<li><p><strong>Equality constraints</strong>: restrictions on the choice variables in the form of equalities <br />
+In the example above <span class="math notranslate nohighlight">\(q = \alpha + \frac{1}{4\alpha}p^2-p\)</span></p></li>
+<li><p><strong>Inequality constraints (weak and strict)</strong>: restrictions on the choice variables in the form of inequalities <br />
+In the example above <span class="math notranslate nohighlight">\(q \ge 0\)</span> and <span class="math notranslate nohighlight">\(p &gt; 0\)</span></p></li>
+<li><p><strong>Parameters</strong>: the variables that are not controlled by the agent, but affect the objective function and/or constraints <br />
+In the example above <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span> and <span class="math notranslate nohighlight">\(\delta\)</span> are parameters of the problem</p></li>
+<li><p><strong>Value function</strong>: the “optimized” value of the objective function as a function of parameters <br />
+In the example above <span class="math notranslate nohighlight">\(\Pi(\alpha,\beta,\delta)\)</span> is the value function</p></li>
+</ol>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>The general form of the optimization problem is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V(\theta) 
+= \max_{x} f(x,\theta)
+\\
+\text {subject to}
+\\
+g_i(x,\theta) = 0, \; i\in\{1,\dots,I\}\\
+h_j(x,\theta) \le 0, \; j\in\{1,\dots,J\}
+\end{split}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x,\theta) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span> is an objective function</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \in \mathbb{R}^N\)</span> are decision/choice variables</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta \in \mathbb{R}^K\)</span> are parameters</p></li>
+<li><p><span class="math notranslate nohighlight">\(g_i(x,\theta) = 0, \; i\in\{1,\dots,I\}\)</span> where <span class="math notranslate nohighlight">\(g_i \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span>, are equality constraints</p></li>
+<li><p><span class="math notranslate nohighlight">\(h_i(x,\theta) \le 0, \; i\in\{1,\dots,I\}\)</span> where <span class="math notranslate nohighlight">\(h_i \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span>, are inequality constraints</p></li>
+<li><p><span class="math notranslate nohighlight">\(V(\theta) \colon \mathbb{R}^K \to \mathbb{R}\)</span> is a value function</p></li>
+</ul>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>The set of admissible choices (admissible set) contains all the choices that satisfy the constraints of the optimization problem.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sometimes the equality constraints are dropped from the definition of the optimization problem, because they can always be represented as a pair of inequality constraints <span class="math notranslate nohighlight">\(g_i(x,\theta) \le 0\)</span> and <span class="math notranslate nohighlight">\(-g_j(x,\theta) \le 0\)</span></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that strict inequality constraints are not present in the definition above, although they may be present in the economic applications. You already know that this has to do with the intention to keep the set of admissible choices closed, such that the solution of the problem (has a better chance to) exist. Sometimes they are added to the definition.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">A roadmap for formulating an optimization problem (in economics)</p>
+<ol class="arabic simple">
+<li><p>Determine which variables are choice variables and which are parameters according to what the economic agent has control over</p></li>
+<li><p>Determine whether the optimization problem is a maximization or a minimization problem</p></li>
+<li><p>Determine the objective function of the economic agent (and thus the optimization problem)</p></li>
+<li><p>Determine the constraints of the optimization problem: equality and inequality, paying particular attention to whether inequalities should be strict or weak (the latter has huge implications for the existence of the solution)</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Consider a decision maker who is deciding how to divide the money they have between food and services, bank deposit and buying some crypto.
+Discuss and Write down the corresponding optimization problem.
+<em>[class exercise]</em></p>
+</div>
+</section>
+<section id="classes-of-the-optimization-problems">
+<h3>Classes of the optimization problems<a class="headerlink" href="#classes-of-the-optimization-problems" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Static optimization: finite number of choice variables</p></li>
+</ol>
+<ul class="simple">
+<li><p>singe instance of choice</p></li>
+<li><p>deterministic finite horizon dynamic choice models can be represented as static</p></li>
+<li><p>our main focus in this course</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Dynamic programming: some choice variables are infinite sequences, solved using similar techniques as static optimization</p></li>
+</ol>
+<ul class="simple">
+<li><p>will touch upon in the end of the course</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Deterministic optimal control: some “choice variables” are functions, completely new theory is needed</p></li>
+<li><p>Stochastic optimal control: “choice variables” are functions, objective function is a <em>stochastic process</em>, yet more theory is needed</p></li>
+</ol>
+</section>
+</section>
+<section id="review-of-one-dimensional-optimization">
+<h2>Review of one-dimensional optimization<a class="headerlink" href="#review-of-one-dimensional-optimization" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(f \colon [a, b] \to \mathbb{R}\)</span> be a differentiable function</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> takes <span class="math notranslate nohighlight">\(x \in [a, b] \subset \mathbb{R}\)</span> and returns number <span class="math notranslate nohighlight">\(f(x)\)</span></p></li>
+<li><p>derivative <span class="math notranslate nohighlight">\(f'(x)\)</span> exists for all <span class="math notranslate nohighlight">\(x\)</span> with <span class="math notranslate nohighlight">\(a &lt; x &lt; b\)</span></p></li>
+</ul>
+<p>Differentiability implies that <span class="math notranslate nohighlight">\(f\)</span> is continuous, and because the interval <span class="math notranslate nohighlight">\([a,b]\)</span> is closed and bounded, <span class="math notranslate nohighlight">\(f\)</span> has a maximum and a minimum on <span class="math notranslate nohighlight">\([a,b]\)</span> by the Weierstrass extreme value theorem.</p>
+<div class="caution admonition">
+<p class="admonition-title">Reminder of definitions</p>
+<p>A  point <span class="math notranslate nohighlight">\(x^* \in [a, b]\)</span> is called a</p>
+<ul class="simple">
+<li><p><em><strong>maximizer</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\([a, b]\)</span> if <span class="math notranslate nohighlight">\(f(x^*) \geq f(x)\)</span> for all <span class="math notranslate nohighlight">\(x \in [a,b]\)</span></p></li>
+<li><p><em><strong>minimizer</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\([a, b]\)</span> if <span class="math notranslate nohighlight">\(f(x^*) \leq f(x)\)</span> for all <span class="math notranslate nohighlight">\(x \in [a,b]\)</span></p></li>
+</ul>
+<p>Point  <span class="math notranslate nohighlight">\(x\)</span> is called <em><strong>interior</strong></em> to <span class="math notranslate nohighlight">\([a, b]\)</span> if <span class="math notranslate nohighlight">\(a &lt; x &lt; b\)</span></p>
+<p>A <em><strong>stationary point</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\([a, b]\)</span> is an interior point <span class="math notranslate nohighlight">\(x\)</span> with <span class="math notranslate nohighlight">\(f'(x) = 0\)</span></p>
+</div>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/stationary.png"><img alt="_images/stationary.png" src="_images/stationary.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 83 </span><span class="caption-text">Both <span class="math notranslate nohighlight">\(x^*\)</span> and <span class="math notranslate nohighlight">\(x^{**}\)</span> are stationary</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is differentiable and <span class="math notranslate nohighlight">\(x^*\)</span> is either an interior minimizer
+or an interior maximizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\([a, b]\)</span>, then <span class="math notranslate nohighlight">\(x^*\)</span> is stationary</p>
+</div>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> any interior maximizer stationary<br />
+<span class="math notranslate nohighlight">\(\Rightarrow\)</span> set of interior maximizers <span class="math notranslate nohighlight">\(\subset\)</span> set of stationary points<br />
+<span class="math notranslate nohighlight">\(\Rightarrow\)</span> maximizers <span class="math notranslate nohighlight">\(\subset \text{stationary points} \cup \{a\} \cup \{b\}\)</span></p>
+<p>Algorithm for finding maximizers/minimizers:</p>
+<ol class="arabic simple">
+<li><p>Locate stationary points</p></li>
+<li><p>Evaluate <span class="math notranslate nohighlight">\(y = f(x)\)</span> for each stationary <span class="math notranslate nohighlight">\(x\)</span> and for <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span></p></li>
+<li><p>Pick point giving largest <span class="math notranslate nohighlight">\(y\)</span> value</p></li>
+</ol>
+<section id="sufficiency-and-uniqueness-with-shape-conditions">
+<h3>Sufficiency and uniqueness with shape conditions<a class="headerlink" href="#sufficiency-and-uniqueness-with-shape-conditions" title="Permalink to this heading">#</a></h3>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Sufficient conditions for <em>concavity</em> in one dimension</p>
+<p>Let <span class="math notranslate nohighlight">\(f \colon [a, b] \to \mathbb{R}\)</span></p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(f''(x) \leq 0\)</span> for all <span class="math notranslate nohighlight">\(x \in (a, b)\)</span> then <span class="math notranslate nohighlight">\(f\)</span> is concave on <span class="math notranslate nohighlight">\((a, b)\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f''(x) &lt; 0\)</span> for all <span class="math notranslate nohighlight">\(x \in (a, b)\)</span> then <span class="math notranslate nohighlight">\(f\)</span> is <strong>strictly</strong> concave on <span class="math notranslate nohighlight">\((a, b)\)</span></p></li>
+</ul>
+<p>Sufficient conditions for <em>convexity</em> in one dimension</p>
+<p>Let <span class="math notranslate nohighlight">\(f \colon [a, b] \to \mathbb{R}\)</span></p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(f''(x) \geq 0\)</span> for all <span class="math notranslate nohighlight">\(x \in (a, b)\)</span> then <span class="math notranslate nohighlight">\(f\)</span> is convex on <span class="math notranslate nohighlight">\((a, b)\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f''(x) &gt; 0\)</span> for all <span class="math notranslate nohighlight">\(x \in (a, b)\)</span> then <span class="math notranslate nohighlight">\(f\)</span> is <strong>strictly</strong>
+convex on <span class="math notranslate nohighlight">\((a, b)\)</span></p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>For maximizers:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(f \colon [a,b] \to \mathbb{R}\)</span> is <em>concave</em> and <span class="math notranslate nohighlight">\(x^* \in (a, b)\)</span> is
+stationary then <span class="math notranslate nohighlight">\(x^*\)</span> is a maximizer</p></li>
+<li><p>If, in addition, <span class="math notranslate nohighlight">\(f\)</span> is <em>strictly concave</em>, then <span class="math notranslate nohighlight">\(x^*\)</span> is the
+unique maximizer</p></li>
+</ul>
+<p>For minimizers:</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(f \colon [a,b] \to \mathbb{R}\)</span> is <em>convex</em> and <span class="math notranslate nohighlight">\(x^* \in (a, b)\)</span> is
+stationary then <span class="math notranslate nohighlight">\(x^*\)</span> is a minimizer</p></li>
+<li><p>If, in addition, <span class="math notranslate nohighlight">\(f\)</span> is <em>strictly convex</em>, then <span class="math notranslate nohighlight">\(x^*\)</span> is the
+unique minimizer</p></li>
+</ul>
+</div>
+<p>Let us generalize these results to the multivariate case.</p>
+</section>
+</section>
+<section id="multivariate-calculus">
+<h2>Multivariate calculus<a class="headerlink" href="#multivariate-calculus" title="Permalink to this heading">#</a></h2>
+<div class="caution admonition">
+<p class="admonition-title">Reminder of the derivative in one dimension</p>
+<p>Let <span class="math notranslate nohighlight">\(f \colon (a, b) \to \mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(x \in (a, b)\)</span></p>
+<p>Let <span class="math notranslate nohighlight">\(H\)</span> be all sequences <span class="math notranslate nohighlight">\(\{h_n\}\)</span> such that
+<span class="math notranslate nohighlight">\(h_n \ne 0\)</span> and <span class="math notranslate nohighlight">\(h_n \to 0\)</span></p>
+<p>If there exists a constant <span class="math notranslate nohighlight">\(f'(x)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{f(x + h_n) - f(x)}{h_n} \to f'(x)
+\]</div>
+<p>for every <span class="math notranslate nohighlight">\(\{h_n\} \in H\)</span>, then</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> is said to be <em><strong>differentiable</strong></em> at <span class="math notranslate nohighlight">\(x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f'(x)\)</span> is called the <em><strong>derivative</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x\)</span></p></li>
+</ul>
+</div>
+<p>In higher dimensions this definition has to be adjusted to account for the fact that <span class="math notranslate nohighlight">\(h_n\)</span> is a vector in <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span></p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Let</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A \subset \mathbb{R}^N\)</span> be an open set in <span class="math notranslate nohighlight">\(N\)</span>-dimensional space.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}^K\)</span> be a <span class="math notranslate nohighlight">\(K\)</span> dimensional vector function</p></li>
+<li><p><span class="math notranslate nohighlight">\({\bf x} \in A\)</span>, and so <span class="math notranslate nohighlight">\(\exists \epsilon \colon B_{\epsilon}({\bf x}) \subset A\)</span></p></li>
+</ul>
+<p>Then if there exists a <span class="math notranslate nohighlight">\(K \times N\)</span> matrix <span class="math notranslate nohighlight">\(J\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\|f({\bf x} + {\bf h}_n) - f({\bf x}) - J {\bf h}_n\|}{\|{\bf h}_n\|} \to {\bf 0}
+\]</div>
+<p>for all converging to zero sequences <span class="math notranslate nohighlight">\(\{{\bf h}_n\}\)</span>, <span class="math notranslate nohighlight">\({\bf h}_n \in B_{\epsilon}({\bf 0}) \setminus \{{\bf 0}\}\)</span>, <span class="math notranslate nohighlight">\({\bf h}_n \to {\bf 0}\)</span>,
+then</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> is said to be <em><strong>differentiable</strong></em> at <span class="math notranslate nohighlight">\({\bf x}\)</span></p></li>
+<li><p>matrix <span class="math notranslate nohighlight">\(J\)</span> is called the <em><strong>total derivative</strong></em> (or <em><strong>Jacobian</strong></em> matrix) of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\({\bf x}\)</span>, and is denoted by <span class="math notranslate nohighlight">\(Df({\bf x})\)</span> or simply <span class="math notranslate nohighlight">\(f'({\bf x})\)</span></p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The vector function <span class="math notranslate nohighlight">\(f \colon \mathbb{R}^N \to \mathbb{R}^K\)</span> (also known as <em>vector-valued</em> function)
+can be thought of as a tuple of <span class="math notranslate nohighlight">\(K\)</span> functions
+<span class="math notranslate nohighlight">\(f_j \colon \mathbb{R}^N \to \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(j \in \{1, \dots, K\}\)</span></p>
+</div>
+<p>Contrast the definition of total derivative to the definition of the <em>partial derivative</em></p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Let <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\({\bf x} \in A \subset \mathbb{R}^N\)</span>.
+Denote <span class="math notranslate nohighlight">\({\bf e}_i\)</span> the <span class="math notranslate nohighlight">\(i\)</span>-th unit vector in <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span>, i.e. <span class="math notranslate nohighlight">\({\bf e}_i = (0, \dots, 0, 1, 0, \dots, 0)\)</span> where <span class="math notranslate nohighlight">\(1\)</span> is in the <span class="math notranslate nohighlight">\(i\)</span>-th position.</p>
+<p>If there exists a constant <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\| f({\bf x} + h_n {\bf e}_i) - f({\bf x})\|}{h_n} \to a
+\]</div>
+<p>for every sequence <span class="math notranslate nohighlight">\(\{h_n\}\)</span>, <span class="math notranslate nohighlight">\(h_n \in \mathbb{R}\)</span>,
+such that <span class="math notranslate nohighlight">\(h_n \ne 0\)</span> and <span class="math notranslate nohighlight">\(h_n \to 0\)</span> as <span class="math notranslate nohighlight">\(n \to \infty\)</span>, then
+<span class="math notranslate nohighlight">\(a\)</span> is called a <strong>partial derivative</strong> of <span class="math notranslate nohighlight">\(f\)</span> with respect to <span class="math notranslate nohighlight">\(x_i\)</span> at <span class="math notranslate nohighlight">\({\bf x}\)</span>, and is denoted <span class="math notranslate nohighlight">\(f'_i({\bf x})\)</span> or <span class="math notranslate nohighlight">\(\frac{\partial f}{\partial x_i}({\bf x})\)</span></p>
+</div>
+<p>Total derivative of <span class="math notranslate nohighlight">\(f \colon \mathbb{R}^N \to \mathbb{R}^K\)</span> defines a linear map <span class="math notranslate nohighlight">\(J \colon \mathbb{R}^N \to \mathbb{R}^K\)</span> given by <span class="math notranslate nohighlight">\(K \times N\)</span> matrix <span class="math notranslate nohighlight">\(Df(x)\)</span> which gives a <em>affine</em> approximation of function <span class="math notranslate nohighlight">\(f\)</span> by a tangent hyperplane at point <span class="math notranslate nohighlight">\({\bf x}\)</span>.
+This is similar to the tangent line to a one-dimensional function determined by a derivative at any given point.</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If a vector function <span class="math notranslate nohighlight">\(f \colon \mathbb{R}^N \to \mathbb{R}^K\)</span> is differentiable at <span class="math notranslate nohighlight">\({\bf x}\)</span>, then all partial derivatives at <span class="math notranslate nohighlight">\({\bf x}\)</span> exist and the total derivative (Jacobian) is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Df({\bf x}) =
+\left(
+\begin{array}{ccc}
+\frac{\partial f_1}{\partial x_1}({\bf x}) &amp; 
+\cdots &amp;
+\frac{\partial f_1}{\partial x_N}({\bf x}) \\
+\vdots &amp; \ddots &amp; \vdots \\
+\frac{\partial f_K}{\partial x_1}({\bf x}) &amp;
+\cdots &amp; 
+\frac{\partial f_K}{\partial x_N}({\bf x})
+\end{array}
+\right)
+\end{split}\]</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If all partial derivatives of <span class="math notranslate nohighlight">\(f \colon \mathbb{R}^N \to \mathbb{R}^K\)</span> exist and are continuous in <span class="math notranslate nohighlight">\({\bf x}\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> is differentiable at <span class="math notranslate nohighlight">\({\bf x}\)</span></p>
+</div>
+<p>The last two facts can be stated for sets by adding the condition that the statements hold in all elements on the sets (such as “for all <span class="math notranslate nohighlight">\({\bf x} \in A\)</span>”)</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f \colon
+\left(
+\begin{array}{c}
+x_1 \\
+x_2 \\
+x_3
+\end{array}
+\right)
+\mapsto
+\left(
+\begin{array}{l}
+x_1^2 + x_2 x_3 \\
+x_1+x_2^2+x_3^3
+\end{array}
+\right)
+\end{split}\]</div>
+<p>Partial derivatives are</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f_1}{\partial x_1} = 2 x_1, \;
+\frac{\partial f_1}{\partial x_2} = x_3, \;
+\frac{\partial f_1}{\partial x_3} = x_2 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f_2}{\partial x_1} = 1, \;
+\frac{\partial f_2}{\partial x_2} = 2x_2, \;
+\frac{\partial f_2}{\partial x_3} = 3x_3^2
+\]</div>
+<p>Jacobian matrix is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Df({\bf x}) = 
+\left(
+\begin{array}{rrr}
+2x_1, &amp; x_3, &amp; x_2 \\
+1, &amp; 2x_2, &amp; 3x_3^2
+\end{array}
+\right)
+\end{split}\]</div>
+<p>Now, evaluating at a particular points</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Df({\bf 0}) = 
+\left(
+\begin{array}{rrr}
+0, &amp; 0, &amp; 0 \\
+1, &amp; 0, &amp; 0
+\end{array}
+\right)
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Df({\bf 1}) = 
+\left(
+\begin{array}{rrr}
+2, &amp; 1, &amp; 1 \\
+1, &amp; 2, &amp; 3
+\end{array}
+\right)
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Df((1,2,3)') = 
+\left(
+\begin{array}{rrr}
+2, &amp; 3, &amp; 2 \\
+1, &amp; 4, &amp; 27
+\end{array}
+\right)
+\end{split}\]</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f \colon
+\left(
+\begin{array}{c}
+x_1 \\
+x_2 \\
+x_3
+\end{array}
+\right)
+\mapsto
+\left(
+\begin{array}{l}
+x_1 + x_1 x_2 x_3 \\
+x_1+2x_2-x_3 \\
+x_1+2x_3 \\
+x_2x_3
+\end{array}
+\right)
+\end{split}\]</div>
+<p><strong>Exercise:</strong> Derive Jacobian maxtix of <span class="math notranslate nohighlight">\(f\)</span> and compute the  total derivative of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\({\bf x} = (1, 0, 2)\)</span></p>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>For a function <span class="math notranslate nohighlight">\(f \colon \mathbb{R}^N \to \mathbb{R}\)</span> the Jacobian matrix takes is <span class="math notranslate nohighlight">\(1 \times N\)</span> vector which is called <em><strong>gradient</strong></em> and is often denoted <span class="math notranslate nohighlight">\(\nabla f({\bf x}) \in \mathbb{R}^N\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f({\bf x}) = \left(\frac{\partial f}{\partial x_1}, \dots, \frac{\partial f}{\partial x_N} \right) \in \mathbb{R}^N
+\]</div>
+</div>
+<section id="rules-of-differentiation">
+<h3>Rules of differentiation<a class="headerlink" href="#rules-of-differentiation" title="Permalink to this heading">#</a></h3>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> denote an open set in <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span> and let <span class="math notranslate nohighlight">\(f, g \colon A \to \mathbb{R}^K\)</span> be differentiable functions at <span class="math notranslate nohighlight">\({\bf x} \in A\)</span>.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f+g\)</span> is differentiable at <span class="math notranslate nohighlight">\({\bf x}\)</span> and <span class="math notranslate nohighlight">\(D(f+g)({\bf x}) = Df({\bf x}) + Dg({\bf x})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(cf\)</span> is differentiable at <span class="math notranslate nohighlight">\({\bf x}\)</span> and <span class="math notranslate nohighlight">\(D(cf)({\bf x}) = c Df({\bf x})\)</span> for any scalar <span class="math notranslate nohighlight">\(c\)</span></p></li>
+</ol>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact: Product (Leibniz) rule</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> denote an open set in <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span> and let <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(g \colon A \to \mathbb{R}^K\)</span> be both differentiable functions at <span class="math notranslate nohighlight">\({\bf x} \in A\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(f g\)</span> is differentiable at <span class="math notranslate nohighlight">\({\bf x}\)</span> and <span class="math notranslate nohighlight">\(D(f g)({\bf x}) = f({\bf x}) Dg({\bf x}) + g({\bf x}) \nabla f({\bf x})\)</span></p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact: Dot product rule</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> denote an open set in <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span> and let <span class="math notranslate nohighlight">\(f,g \colon A \to \mathbb{R}^K\)</span> be both differentiable functions at <span class="math notranslate nohighlight">\({\bf x} \in A\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(f \cdot g\)</span> is differentiable at <span class="math notranslate nohighlight">\({\bf x}\)</span> and <span class="math notranslate nohighlight">\(D(f \cdot g)({\bf x}) = [f({\bf x})]' Dg({\bf x}) + [g({\bf x})]' Df({\bf x})\)</span>, where <span class="math notranslate nohighlight">\([\cdot]'\)</span> denotes vector transpose</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact: Chain rule</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> denote an open set in <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span> and <span class="math notranslate nohighlight">\(C\)</span> denote an open set in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span>.
+Let <span class="math notranslate nohighlight">\(f \colon A \to C\)</span> be differentiable at <span class="math notranslate nohighlight">\({\bf x} \in A\)</span>, and
+<span class="math notranslate nohighlight">\(g \colon C \to \mathbb{R}^L\)</span> be differentiable at <span class="math notranslate nohighlight">\(f({\bf x}) \in C\)</span>.</p>
+<p>Then the composition <span class="math notranslate nohighlight">\(g \circ f\)</span> is differentiable at <span class="math notranslate nohighlight">\({\bf x}\)</span> and its total derivatibe is given by <span class="math notranslate nohighlight">\(D(g \circ f)({\bf x}) = Dg(f({\bf x})) Df({\bf x})\)</span></p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f \colon
+\left(
+\begin{array}{c}
+x_1 \\
+x_2 \\
+x_3
+\end{array}
+\right)
+\mapsto
+\left(
+\begin{array}{l}
+x_1^3 + x_2 x_3 \\
+x_2+x_1 x_3^2
+\end{array}
+\right)
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Df({\bf x}) = 
+\left(
+\begin{array}{lll}
+3x_1^2, &amp; x_3, &amp; x_2 \\
+x_3^2, &amp; 1, &amp; 2x_1x_3
+\end{array}
+\right)
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+g \colon
+\left(
+\begin{array}{c}
+y_1 \\
+y_2
+\end{array}
+\right)
+\mapsto
+\left(
+\begin{array}{l}
+2 y_1^2 \\
+y_1 + y_2 \\
+y_1 - y_2 \\
+4 y_2^2 \\
+\end{array}
+\right)
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Dg({\bf y}) = 
+\left(
+\begin{array}{lll}
+4y_1, &amp; 0 \\
+1, &amp; 1 \\
+1, &amp; -1 \\
+0, &amp; 8y_2
+\end{array}
+\right)
+\end{split}\]</div>
+<p>Applying the chain rule</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+D(g \circ f)({\bf x}) = 
+\left(
+\begin{array}{lll}
+4(x_1^3 + x_2 x_3), &amp; 0 \\
+1, &amp; 1 \\
+1, &amp; -1 \\
+0, &amp; 8(x_2+x_1 x_3^2)
+\end{array}
+\right)
+\left(
+\begin{array}{lll}
+3x_1^2, &amp; x_3, &amp; x_2 \\
+x_3^2, &amp; 1, &amp; 2x_1x_3
+\end{array}
+\right)
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+D(g \circ f)({\bf x}) = 
+\left(
+\begin{array}{lll}
+12x_1^2(x_1^3 + x_2 x_3), &amp; 
+4x_3(x_1^3 + x_2 x_3), &amp; 
+4x_2(x_1^3 + x_2 x_3)\\
+3x_1^2+x_3^2, &amp;
+x_3+1, &amp;
+x_2+2x_1x_3 \\
+3x_1^2-x_3^2, &amp;
+x_3-1, &amp;
+x_2-2x_1x_3 \\
+8x_3^2(x_2+x_1 x_3^2), &amp;
+8(x_2+x_1 x_3^2), &amp;
+16 x_1 x_3(x_2+x_1 x_3^2)
+\end{array}
+\right)
+\end{split}\]</div>
+<p>Now we can evaluate <span class="math notranslate nohighlight">\(D(g \circ f)({\bf x})\)</span> at a particular points in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span></p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f \colon
+\left(
+\begin{array}{c}
+x_1 \\
+x_2
+\end{array}
+\right)
+\mapsto
+\left(
+\begin{array}{l}
+x_1^2 + x_2^2 \\
+x_1 x_2
+\end{array}
+\right)
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+g \colon
+\left(
+\begin{array}{c}
+y_1 \\
+y_2
+\end{array}
+\right)
+\mapsto
+(y_1+2 y_2)^2
+\end{split}\]</div>
+<p><strong>Exercise:</strong> Using the chain rule, find the total derivative of the composition <span class="math notranslate nohighlight">\(g \circ f\)</span>.</p>
+</div>
+<ul class="simple">
+<li><p>The chain rule very powerful tool in computing complex derivatives (think backwards propagation in deep neural networks)</p></li>
+</ul>
+</section>
+<section id="higher-order-derivatives">
+<h3>Higher order derivatives<a class="headerlink" href="#higher-order-derivatives" title="Permalink to this heading">#</a></h3>
+<p>The higher order derivatives of the function in one dimension generalize naturally to the multivariate case, but the complexity of the needed matrixes and multidimensional arrays (<em>tensors</em>) grows fast.</p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> denote an open set in <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span>, and let <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span>. Assume that <span class="math notranslate nohighlight">\(f\)</span> is twice differentiable at <span class="math notranslate nohighlight">\({\bf x} \in A\)</span>.</p>
+<p>The total derivative of the gradient of function <span class="math notranslate nohighlight">\(f\)</span> at point <span class="math notranslate nohighlight">\({\bf x}\)</span>, <span class="math notranslate nohighlight">\(\nabla f({\bf x})\)</span> is called the <em><strong>Hessian</strong></em> matrix of <span class="math notranslate nohighlight">\(f\)</span> denoted by <span class="math notranslate nohighlight">\(Hf\)</span> or <span class="math notranslate nohighlight">\(\nabla^2 f\)</span>, and is given by a <span class="math notranslate nohighlight">\(N \times N\)</span> matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Hf({\bf x}) = \nabla^2 f({\bf x}) = 
+\left(
+\begin{array}{ccc}
+\frac{\partial^2 f}{\partial x_1 \partial x_1}({\bf x}) &amp; 
+\cdots &amp;
+\frac{\partial^2 f}{\partial x_1 \partial x_N}({\bf x}) \\
+\vdots &amp; \ddots &amp; \vdots \\
+\frac{\partial^2 f}{\partial x_N \partial x_1}({\bf x}) &amp;
+\cdots &amp; 
+\frac{\partial^2 f}{\partial x_N \partial x_N}({\bf x})
+\end{array}
+\right)
+\end{split}\]</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>For every <span class="math notranslate nohighlight">\({\bf x} \in A \subset \mathbb{R}^N\)</span> where <span class="math notranslate nohighlight">\(A\)</span> is an open and <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}^N\)</span> is twice continuously differentiable, the Hessian matrix <span class="math notranslate nohighlight">\(\nabla^2 f({\bf x})\)</span> is symmetric</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f \colon
+\left(
+\begin{array}{c}
+x_1 \\
+x_2
+\end{array}
+\right)
+\mapsto
+(x_1 - 2 x_2)^2
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla^2 f({\bf x}) = 
+\left(
+\begin{array}{rr}
+2, &amp; -4 \\ -4, &amp; 8
+\end{array}
+\right)
+\end{split}\]</div>
+<p><strong>Exercise:</strong> check</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f \colon
+\left(
+\begin{array}{c}
+x_1 \\
+x_2
+\end{array}
+\right)
+\mapsto
+(x_1 - 2 x_2)^3
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla^2 f({\bf x}) = 
+6 (x_1 - 2 x_2) 
+\left(
+\begin{array}{rr}
+1, &amp; -2 \\ -2, &amp; 4
+\end{array}
+\right)
+\end{split}\]</div>
+<p><strong>Exercise:</strong> check</p>
+</div>
+</section>
+</section>
+<section id="first-oder-conditions-foc-necessary">
+<h2>First oder conditions (FOC), necessary<a class="headerlink" href="#first-oder-conditions-foc-necessary" title="Permalink to this heading">#</a></h2>
+<p>In this lecture we focus on the <em>unconstrained</em> optimization problems of the form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\max_{x} f(x,\theta) \text{ also written as } f(x,\theta) \rightarrow \max,\\
+\min_{x} f(x,\theta) \text{ also written as } f(x,\theta) \rightarrow \min,
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(f(x,\theta) \colon \mathbb{R}^N \to \mathbb{R}\)</span> and unless stated otherwise is assumed to be continuous and twice continuously differentiable everywhere on <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span>.
+Parameter <span class="math notranslate nohighlight">\(\theta\)</span> may or may not be present.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Twice continuously differentiable functions are said to be <span class="math notranslate nohighlight">\(C^2\)</span>.</p>
+</div>
+<ul class="simple">
+<li><p>Every point in the whole space <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span> is interior, therefore all maximizers/minimizers have to be stationary points</p></li>
+<li><p>Assuming differentiability implies we can focus on derivative based conditions</p></li>
+</ul>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Given a function <span class="math notranslate nohighlight">\(f \colon \mathbb{R}^N \to \mathbb{R}\)</span>, a point <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)</span> is called a <em><strong>stationary point</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> if <span class="math notranslate nohighlight">\(\nabla f({\bf x}) = {\bf 0}\)</span></p>
+</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Given a function <span class="math notranslate nohighlight">\(f \colon \mathbb{R}^N \to \mathbb{R}\)</span>, a point <span class="math notranslate nohighlight">\({\bf x^\star} \in \mathbb{R}^N\)</span> is called a <em><strong>local maximizer/minimizer</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> if <span class="math notranslate nohighlight">\(\exists \epsilon\)</span> such that <span class="math notranslate nohighlight">\(f({\bf x}) \le f({\bf x^\star})\)</span> for all <span class="math notranslate nohighlight">\(x \in B_{\epsilon}({\bf x^\star})\)</span></p>
+<p>If the inequality is strict, then <span class="math notranslate nohighlight">\({\bf x^\star}\)</span> is called a <em><strong>strict</strong></em> local maximizer/minimizer of <span class="math notranslate nohighlight">\(f\)</span></p>
+</div>
+<p>A maximizer/minimizer (global) must also be a local one, but the opposite is not necessarily true.</p>
+<div class="important admonition">
+<p class="admonition-title">Fact (Necessary condition for optima)</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x,\theta) \colon \mathbb{R}^N \to \mathbb{R}\)</span> be a differentiable function and let <span class="math notranslate nohighlight">\({\bf x^\star} \in \mathbb{R}^N\)</span> be a local maximizer/minimizer of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\({\bf x^\star}\)</span> is a stationary point of <span class="math notranslate nohighlight">\(f\)</span>, that is <span class="math notranslate nohighlight">\(\nabla f({\bf x^\star}) = {\bf 0}\)</span></p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Consider quadratic form <span class="math notranslate nohighlight">\(f({\bf x}) = {\bf x}' A {\bf x}\)</span> where
+<span class="math notranslate nohighlight">\(A =
+\left( 
+\begin{array}{rr}
+1,&amp; 0.5 \\
+0.5,&amp; 2
+\end{array}
+\right)\)</span></p>
+<p>Solving the FOC</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f({\bf x}) = 2 {\bf x}' A = 0 \implies {\bf x} = {\bf 0}
+\]</div>
+<p>The point <span class="math notranslate nohighlight">\((0,0)\)</span> should be an optimizer.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
 
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mf">.5</span><span class="p">],[</span><span class="mf">.5</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="nd">@A@x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">zs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">Y</span><span class="p">))])</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">zs</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
-### Derivative Conditions
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">160</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> 
+            <span class="n">rstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+            <span class="n">cstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span><span class="n">yticks</span><span class="o">=</span><span class="p">[],</span><span class="n">zticks</span><span class="o">=</span><span class="p">[])</span>
 
-The $i,j$-th cross partial of $f \colon A \to \mathbb{R}$ at ${\bf x} \in A$ is
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">160</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="s1">&#39;box&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="p">[],</span><span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">160</span><span class="p">)</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot_wireframe</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> 
+            <span class="n">rstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+            <span class="n">cstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">f0</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">)))</span><span class="o">+</span><span class="mf">0.1</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="n">f0</span><span class="p">,</span><span class="n">f0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">f0</span><span class="p">,</span><span class="n">f0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax3</span><span class="p">,</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span><span class="n">yticks</span><span class="o">=</span><span class="p">[],</span><span class="n">zticks</span><span class="o">=</span><span class="p">[])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="_images/f1df54196712e9b167e31baacff643d11207698d9e02e22f6589844fa4241cb9.png"><img alt="_images/f1df54196712e9b167e31baacff643d11207698d9e02e22f6589844fa4241cb9.png" class="align-center" src="_images/f1df54196712e9b167e31baacff643d11207698d9e02e22f6589844fa4241cb9.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/413f3299c16b4bce93c05b6d3a89365c78323c7bac7958e65fa3babad13f4d70.png"><img alt="_images/413f3299c16b4bce93c05b6d3a89365c78323c7bac7958e65fa3babad13f4d70.png" class="align-center" src="_images/413f3299c16b4bce93c05b6d3a89365c78323c7bac7958e65fa3babad13f4d70.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/480aa3e8eb7e6636fd9d44acf42a154e3830ec9261d51c2d2a46f10985c57e91.png"><img alt="_images/480aa3e8eb7e6636fd9d44acf42a154e3830ec9261d51c2d2a46f10985c57e91.png" class="align-center" src="_images/480aa3e8eb7e6636fd9d44acf42a154e3830ec9261d51c2d2a46f10985c57e91.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Consider quadratic form <span class="math notranslate nohighlight">\(f({\bf x}) = {\bf x}' A {\bf x}\)</span> where
+<span class="math notranslate nohighlight">\(A =
+\left( 
+\begin{array}{rr}
+1,&amp; 0.5 \\
+0.5,&amp; -2
+\end{array}
+\right)\)</span></p>
+<p>Solving the FOC</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f({\bf x}) = 2 {\bf x}' A = 0 \implies {\bf x} = {\bf 0}
+\]</div>
+<p>The point <span class="math notranslate nohighlight">\((0,0)\)</span> should be an optimizer?</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mf">.5</span><span class="p">],[</span><span class="mf">.5</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="nd">@A@x</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">zs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">f</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">Y</span><span class="p">))])</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">zs</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">160</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> 
+            <span class="n">rstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+            <span class="n">cstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span><span class="n">yticks</span><span class="o">=</span><span class="p">[],</span><span class="n">zticks</span><span class="o">=</span><span class="p">[])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">160</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="s1">&#39;box&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span> <span class="n">xticks</span><span class="o">=</span><span class="p">[],</span><span class="n">yticks</span><span class="o">=</span><span class="p">[])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">dpi</span><span class="o">=</span><span class="mi">160</span><span class="p">)</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot_wireframe</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> 
+            <span class="n">rstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> 
+            <span class="n">cstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+            <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+            <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">f0</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">)))</span><span class="o">+</span><span class="mf">0.1</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="n">f0</span><span class="p">,</span><span class="n">f0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">f0</span><span class="p">,</span><span class="n">f0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax3</span><span class="p">,</span><span class="n">xticks</span><span class="o">=</span><span class="p">[],</span><span class="n">yticks</span><span class="o">=</span><span class="p">[],</span><span class="n">zticks</span><span class="o">=</span><span class="p">[])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="_images/60ea5d040a8cb150d805afb1ed4646a1a05f87d1a1039320f2df5ba7089e2b01.png"><img alt="_images/60ea5d040a8cb150d805afb1ed4646a1a05f87d1a1039320f2df5ba7089e2b01.png" class="align-center" src="_images/60ea5d040a8cb150d805afb1ed4646a1a05f87d1a1039320f2df5ba7089e2b01.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/5a649bfdd1a9c608b18d510fa280c2c5e7d4f8591a57b4f8d1f374d556e38061.png"><img alt="_images/5a649bfdd1a9c608b18d510fa280c2c5e7d4f8591a57b4f8d1f374d556e38061.png" class="align-center" src="_images/5a649bfdd1a9c608b18d510fa280c2c5e7d4f8591a57b4f8d1f374d556e38061.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/c3a437a523864af50af0c717dc13d2f1d37a03ce62bed6f51dea8be784b3e4dc.png"><img alt="_images/c3a437a523864af50af0c717dc13d2f1d37a03ce62bed6f51dea8be784b3e4dc.png" class="align-center" src="_images/c3a437a523864af50af0c717dc13d2f1d37a03ce62bed6f51dea8be784b3e4dc.png" style="width: 80%;" /></a>
+</div>
+</div>
+<ul class="simple">
+<li><p>This is an example of a <strong>saddle point</strong> where the FOC hold, yet the point is not a local maximizer/minimizer!</p></li>
+<li><p>Similar to <span class="math notranslate nohighlight">\(x=0\)</span> in <span class="math notranslate nohighlight">\(f(x) = x^3\)</span>: derivative is zero, yet the point is not an optimizer</p></li>
+<li><p>How to distinguish saddle points from optima? Key insight: the function has different second order derivatives in different directions!</p></li>
+</ul>
+</section>
+<section id="second-order-conditions-soc">
+<h2>Second order conditions (SOC)<a class="headerlink" href="#second-order-conditions-soc" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>allow to establish whether the stationary point is a local maximizer/minimizer or a saddle point</p></li>
+<li><p>help to determine whether an optimizer is a maximizer or a minimizer</p></li>
+<li><p>do not give definitive answer in all cases, unfortunately</p></li>
+</ul>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be a <span class="math notranslate nohighlight">\(N \times N\)</span> symmetric matrix. It is called</p>
+<ul class="simple">
+<li><p><em><strong>positive definite</strong></em> if <span class="math notranslate nohighlight">\({\bf x}' {\bf A} {\bf x} &gt; 0\)</span> for all <span class="math notranslate nohighlight">\({\bf x}
+\in \mathbb{R}^N\)</span> with <span class="math notranslate nohighlight">\({\bf x} \ne {\bf 0}\)</span></p></li>
+<li><p><em><strong>nonnegative definite</strong></em> (or <em><strong>positive semi-definite</strong></em>) if <span class="math notranslate nohighlight">\({\bf x}' {\bf A} {\bf x} \geq 0\)</span>
+for all <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)</span></p></li>
+<li><p><em><strong>negative definite</strong></em> if <span class="math notranslate nohighlight">\({\bf x}' {\bf A} {\bf x} &lt; 0\)</span> for all <span class="math notranslate nohighlight">\({\bf x}
+\in \mathbb{R}^N\)</span> with <span class="math notranslate nohighlight">\({\bf x} \ne {\bf 0}\)</span></p></li>
+<li><p><em><strong>nonpositive definite</strong></em> (or <em><strong>negative semi-definite</strong></em>) if <span class="math notranslate nohighlight">\({\bf x}' {\bf A} {\bf x} \leq 0\)</span>
+for all <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)</span></p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact (necessary SOC)</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x) \colon \mathbb{R}^N \to \mathbb{R}\)</span> be a twice continuously differentiable function and let <span class="math notranslate nohighlight">\({\bf x^\star} \in \mathbb{R}^N\)</span> be a local maximizer/minimizer of <span class="math notranslate nohighlight">\(f\)</span>. Then:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> has a local maximum at <span class="math notranslate nohighlight">\({\bf x^\star} \implies Hf({\bf x^\star})\)</span> is negative semi-definite</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> has a local minimum at <span class="math notranslate nohighlight">\({\bf x^\star} \implies Hf({\bf x^\star})\)</span> is positive semi-definite</p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact (sufficient SOC)</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x) \colon \mathbb{R}^N \to \mathbb{R}\)</span> be a twice continuously differentiable function.
+Then:</p>
+<ul class="simple">
+<li><p>if for some <span class="math notranslate nohighlight">\({\bf x^\star} \in \mathbb{R}^N\)</span> <span class="math notranslate nohighlight">\(\nabla f({\bf x^\star}) = {\bf 0}\)</span> (FOC satisfied) and
+<span class="math notranslate nohighlight">\(Hf({\bf x^\star})\)</span> is negative definite, then <span class="math notranslate nohighlight">\({\bf x^\star}\)</span> is a <strong>strict local maximum</strong> of <span class="math notranslate nohighlight">\(f\)</span></p></li>
+<li><p>if for some <span class="math notranslate nohighlight">\({\bf x^\star} \in \mathbb{R}^N\)</span> <span class="math notranslate nohighlight">\(\nabla f({\bf x^\star}) = {\bf 0}\)</span> (FOC satisfied) and
+<span class="math notranslate nohighlight">\(Hf({\bf x^\star})\)</span> is positive definite, then <span class="math notranslate nohighlight">\({\bf x^\star}\)</span> is a <strong>strict local minimum</strong> of <span class="math notranslate nohighlight">\(f\)</span></p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>observe that SOC are only necessary in the “weak” form, but are sufficient in the “strong” form</p></li>
+<li><p>this leaves room for ambiguity when we can not arrive at a conclusion — particular stationary point <em><strong>may</strong></em> be a local maximum or minimum</p></li>
+<li><p>but we can rule out saddle points for sure, in this case neither semi-definiteness nor definiteness can be established, the Hessian is <em><strong>indefinite</strong></em></p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Consider a one dimensional function <span class="math notranslate nohighlight">\(f(x) = (x-1)^2\)</span>, <span class="math notranslate nohighlight">\(\nabla f(x)=2x-2\)</span>, <span class="math notranslate nohighlight">\(Hf(x) = 2\)</span>.</p>
+<p>Point <span class="math notranslate nohighlight">\(x=1\)</span> is a stationary point where FOC is satisfied.</p>
+<p>Treating <span class="math notranslate nohighlight">\(Hf(x)\)</span> as <span class="math notranslate nohighlight">\(1 \times 1\)</span> matrix, we can see it is positive definite at <span class="math notranslate nohighlight">\(x=1\)</span> (<span class="math notranslate nohighlight">\(y'[2]y = 2y^2 &gt; 0\)</span> for all <span class="math notranslate nohighlight">\(y \ne 0\)</span>), therefore <span class="math notranslate nohighlight">\(x=1\)</span> <em><strong>is a strict local minimum</strong></em> of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Consider a one dimensional function <span class="math notranslate nohighlight">\(f(x) = x^2-1\)</span>, <span class="math notranslate nohighlight">\(\nabla f(x)=2x\)</span>, <span class="math notranslate nohighlight">\(Hf(x) = 2\)</span>.</p>
+<p>Point <span class="math notranslate nohighlight">\(x=0\)</span> is a stationary point where FOC is satisfied.</p>
+<p>Treating <span class="math notranslate nohighlight">\(Hf(x)\)</span> as <span class="math notranslate nohighlight">\(1 \times 1\)</span> matrix, we can see it is positive definite at <span class="math notranslate nohighlight">\(x=0\)</span> (<span class="math notranslate nohighlight">\(y'[2]y = 2y^2 &gt; 0\)</span> for all <span class="math notranslate nohighlight">\(y \ne 0\)</span>), therefore <span class="math notranslate nohighlight">\(x=0\)</span> <em><strong>is a strict local minimum</strong></em> of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Consider a one dimensional function <span class="math notranslate nohighlight">\(f(x) = (x-1)^4\)</span>, <span class="math notranslate nohighlight">\(\nabla f(x)=4(x-1)^3\)</span>, <span class="math notranslate nohighlight">\(Hf(x) = 12(x-1)^2\)</span>.</p>
+<p>Point <span class="math notranslate nohighlight">\(x=1\)</span> is a stationary point where FOC is satisfied.</p>
+<p>Treating <span class="math notranslate nohighlight">\(Hf(x)\)</span> as <span class="math notranslate nohighlight">\(1 \times 1\)</span> matrix, we can see it is positive semi-definite (and negative semi-definite) at <span class="math notranslate nohighlight">\(x=1\)</span> (<span class="math notranslate nohighlight">\(y'[0]y = 0 \ge 0\)</span> and <span class="math notranslate nohighlight">\(y'[0]y = 0 \le 0\)</span> for all <span class="math notranslate nohighlight">\(y \in \mathbb{R}\)</span>), therefore at <span class="math notranslate nohighlight">\(x=1\)</span> function <span class="math notranslate nohighlight">\(f\)</span> <em><strong>may have a local minimum</strong></em>. But <em><strong>may have a local maximum</strong></em> as well.
+<em>No definite conclusion!</em> (In reality it is a local and global minimum)</p>
+</div>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>Consider a one dimensional function <span class="math notranslate nohighlight">\(f(x) = (x+1)^3\)</span>, <span class="math notranslate nohighlight">\(\nabla f(x)=3(x+1)^2\)</span>, <span class="math notranslate nohighlight">\(Hf(x) = 6(x+1)\)</span>.</p>
+<p>Point <span class="math notranslate nohighlight">\(x=-1\)</span> is a stationary point where FOC is satisfied.</p>
+<p>Treating <span class="math notranslate nohighlight">\(Hf(x)\)</span> as <span class="math notranslate nohighlight">\(1 \times 1\)</span> matrix, we can see it is positive semi-definite (and negative semi-definite) at <span class="math notranslate nohighlight">\(x=-1\)</span> (<span class="math notranslate nohighlight">\(y'[0]y = 0 \ge 0\)</span> and <span class="math notranslate nohighlight">\(y'[0]y = 0 \le 0\)</span> for all <span class="math notranslate nohighlight">\(y \in \mathbb{R}\)</span>), therefore at <span class="math notranslate nohighlight">\(x=1\)</span> function <span class="math notranslate nohighlight">\(f\)</span> <em><strong>may have a local minimum</strong></em>. But <em><strong>may have a local maximum</strong></em> as well.
+<em>No definite conclusion!</em> (In reality it is neither local minimum nor maximum)</p>
+</div>
+<section id="establishing-definiteness-of-hessian-in-mathbb-r-2-case">
+<h3>Establishing definiteness of Hessian in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> case<a class="headerlink" href="#establishing-definiteness-of-hessian-in-mathbb-r-2-case" title="Permalink to this heading">#</a></h3>
+<p>Recall the following facts from the lecture on linear algebra</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>A symmetric matrix <span class="math notranslate nohighlight">\({\bf A}\)</span> is</p>
+<ul class="simple">
+<li><p>positive definite <span class="math notranslate nohighlight">\(\iff\)</span> all eigenvalues are strictly positive</p></li>
+<li><p>negative definite <span class="math notranslate nohighlight">\(\iff\)</span> all eigenvalues are strictly negative</p></li>
+<li><p>nonpositive definite <span class="math notranslate nohighlight">\(\iff\)</span> all eigenvalues are nonpositive</p></li>
+<li><p>nonnegative definite <span class="math notranslate nohighlight">\(\iff\)</span> all eigenvalues are nonnegative</p></li>
+<li><p>indefinite <span class="math notranslate nohighlight">\(\iff\)</span> there are both positive and negative eigenvalues</p></li>
+</ul>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>For any square matrix <span class="math notranslate nohighlight">\({\bf A}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
 %
-$$
+\lambda \text{ is an eigenvalue of } {\bf A} \; \iff \;
+\det({\bf A} - \lambda {\bf I}) = 0
 %
-f_{ij}({\bf x})
-:= \frac{\partial^2}{\partial x_i \partial x_j} 
-f({\bf x})
-\qquad (1 \leq i, j \leq K)
+\]</div>
+</div>
+<p>Let <span class="math notranslate nohighlight">\(H\)</span> be a <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+H =
+\left(
+\begin{array}{cc}
+a &amp; b \\
+c &amp; d \\
+\end{array}
+\right)
+\quad \implies \quad
+H - \lambda {\bf I} =
+\left(
+\begin{array}{cc}
+a - \lambda &amp; b \\
+c &amp; d - \lambda 
+\end{array}
+\right)
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\implies
+\det(H - \lambda {\bf I}) 
+= (a - \lambda)(d - \lambda) - bc
+\\
+= \lambda^2 - (a + d) \lambda + (ad - bc)
+\\
+= \lambda^2 - \mathrm{trace}(H) \lambda + \det(H)
+\end{split}\]</div>
+<p>Hence the the two eigenvalues <span class="math notranslate nohighlight">\(\lambda_1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2\)</span> of <span class="math notranslate nohighlight">\(H\)</span> are given by the two roots of</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda^2 - \mathrm{trace}(H) \lambda + \det(H)  = 0
+\]</div>
+<p>From the <a class="reference external" href="https://en.wikipedia.org/wiki/Vieta%27s_formulas">Viets’s formulas</a> for a quadratic polynomial we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\lambda_1 + \lambda_2 = \mathrm{trace}(H) \\
+\lambda_1 \lambda_2 = \mathrm{det}(H)
+\end{split}\]</div>
+<p>Applying this result to a Hessian of a function <span class="math notranslate nohighlight">\(f: \mathbb{R}^2 \to \mathbb{R}\)</span> we have</p>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Given a twice continuously differentiable function <span class="math notranslate nohighlight">\(f: \mathbb{R}^2 \to \mathbb{R}\)</span> and a stationary point <span class="math notranslate nohighlight">\({\bf x^\star}: \; \nabla f({\bf x^\star}) = {\bf 0}\)</span>, the second order conditions provide:</p>
+<ol class="arabic simple">
+<li><p>if <span class="math notranslate nohighlight">\(\mathrm{det}(Hf({\bf x^\star})) &gt; 0\)</span> and <span class="math notranslate nohighlight">\(\mathrm{trace}(Hf({\bf x^\star})) &gt; 0\)</span> <span class="math notranslate nohighlight">\(\implies\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_1 &gt; 0\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 &gt; 0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(Hf({\bf x^\star})\)</span> is positive definite,</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> has a strict local minimum at <span class="math notranslate nohighlight">\({\bf x^\star}\)</span></p></li>
+</ul>
+</li>
+<li><p>if <span class="math notranslate nohighlight">\(\mathrm{det}(Hf({\bf x^\star})) &gt; 0\)</span> and <span class="math notranslate nohighlight">\(\mathrm{trace}(Hf({\bf x^\star})) &lt; 0\)</span> <span class="math notranslate nohighlight">\(\implies\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_1 &lt; 0\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 &lt; 0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(Hf({\bf x^\star})\)</span> is negative definite,</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> has a strict local maximum at <span class="math notranslate nohighlight">\({\bf x^\star}\)</span></p></li>
+</ul>
+</li>
+<li><p>if <span class="math notranslate nohighlight">\(\mathrm{det}(Hf({\bf x^\star})) = 0\)</span> and <span class="math notranslate nohighlight">\(\mathrm{trace}(Hf({\bf x^\star})) &gt; 0\)</span> <span class="math notranslate nohighlight">\(\implies\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_1 = 0\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 &gt; 0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(Hf({\bf x^\star})\)</span> is positive semi-definite (nonnegative definite),</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> may have a local minimum <span class="math notranslate nohighlight">\({\bf x^\star}\)</span></p></li>
+<li><p>undeceive!</p></li>
+</ul>
+</li>
+<li><p>if <span class="math notranslate nohighlight">\(\mathrm{det}(Hf({\bf x^\star})) = 0\)</span> and <span class="math notranslate nohighlight">\(\mathrm{trace}(Hf({\bf x^\star})) &lt; 0\)</span> <span class="math notranslate nohighlight">\(\implies\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_1 = 0\)</span> and <span class="math notranslate nohighlight">\(\lambda_2 &lt; 0\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(Hf({\bf x^\star})\)</span> is negative semi-definite (nonpositive definite),</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> may have a local maximum <span class="math notranslate nohighlight">\({\bf x^\star}\)</span></p></li>
+<li><p>undeceive!</p></li>
+</ul>
+</li>
+<li><p>if <span class="math notranslate nohighlight">\(\mathrm{det}(Hf({\bf x^\star})) &lt; 0\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_1\)</span> and <span class="math notranslate nohighlight">\(\lambda_2\)</span> have different signs,</p></li>
+<li><p><span class="math notranslate nohighlight">\(Hf({\bf x^\star})\)</span> is indefinite,</p></li>
+<li><p><span class="math notranslate nohighlight">\({\bf x^\star}\)</span> is a saddle point of <span class="math notranslate nohighlight">\(f\)</span></p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Consider a two dimensional function <span class="math notranslate nohighlight">\(f({\bf x}) = (x_1-1)^2 + x_1 x_2^2\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla f({\bf x})=\big( 2(x_1-1) + x_2^2, \; 2 x_1 x_2 \big), \quad
+Hf({\bf x})=
+\left(
+\begin{array}{ll}
+2,&amp; 2 x_2 \\
+2 x_2,&amp; 2 x_1 
+\end{array}
+\right)
+\end{split}\]</div>
+<p>Point <span class="math notranslate nohighlight">\({\bf x_1^\star}=(1,0)\)</span> is a stationary point where FOC is satisfied.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Hf({\bf x^\star}) = 
+\left(
+\begin{array}{ll}
+2,&amp; 0 \\
+0,&amp; 2 
+\end{array}
+\right), \quad
+\mathrm{det}(Hf({\bf x^\star})) = 4 &gt; 0, \quad
+\mathrm{trace}(Hf({\bf x^\star})) = 4 &gt; 0
+\end{split}\]</div>
+<p>Therefore at <span class="math notranslate nohighlight">\({\bf x_1^\star}=(1,0)\)</span> function <span class="math notranslate nohighlight">\(f\)</span> has a strict local minimum.</p>
+<p>Point <span class="math notranslate nohighlight">\({\bf x_2^\star}=(1+\tfrac{\sqrt{2}}{2},-\sqrt{2})\)</span> is also a stationary point where FOC is satisfied.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Hf({\bf x^\star}) = 
+\left(
+\begin{array}{ll}
+2,&amp; 2\sqrt{2} \\
+2\sqrt{2},&amp; 2-\sqrt{2} 
+\end{array}
+\right), \quad
+\mathrm{det}(Hf({\bf x^\star})) = -4 - 2\sqrt{2} &lt; 0
+\end{split}\]</div>
+<p>Therefore at <span class="math notranslate nohighlight">\({\bf x_2^\star}=(1,0)\)</span> function <span class="math notranslate nohighlight">\(f\)</span> has a saddle point.</p>
+<p>Point <span class="math notranslate nohighlight">\({\bf x_3^\star}=(1-\tfrac{\sqrt{2}}{2},\sqrt{2})\)</span> is yet another stationary point where FOC is satisfied.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Hf({\bf x^\star}) = 
+\left(
+\begin{array}{ll}
+2,&amp; -2\sqrt{2} \\
+-2\sqrt{2},&amp; 2+\sqrt{2} 
+\end{array}
+\right), \quad
+\mathrm{det}(Hf({\bf x^\star})) =  2\sqrt{2} -4 &lt; 0
+\end{split}\]</div>
+<p>Therefore again, at <span class="math notranslate nohighlight">\({\bf x_3^\star}=(1,0)\)</span> function <span class="math notranslate nohighlight">\(f\)</span> has a saddle point.</p>
+</div>
+</section>
+</section>
+<section id="convexity-sufficiency-and-uniqueness">
+<h2>Convexity, sufficiency and uniqueness<a class="headerlink" href="#convexity-sufficiency-and-uniqueness" title="Permalink to this heading">#</a></h2>
+<p>A path to globally sufficient conditions for optimality is through establishing the shape of the objective function</p>
+<ul class="simple">
+<li><p>Concave functions <span class="math notranslate nohighlight">\(\rightarrow\)</span> local maxima are global maxima</p></li>
+<li><p>Convex functions <span class="math notranslate nohighlight">\(\rightarrow\)</span> local minima are global minima</p></li>
+<li><p>Strict concavity/convexity <span class="math notranslate nohighlight">\(\rightarrow\)</span> uniqueness of the maximum/minimum</p></li>
+</ul>
+<section id="convex-functions">
+<h3>Convex functions<a class="headerlink" href="#convex-functions" title="Permalink to this heading">#</a></h3>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p><span class="math notranslate nohighlight">\(f \colon A \subset\mathbb{R}^N \to  \mathbb{R}\)</span> is called <em><strong>convex</strong></em> if
+<span class="math notranslate nohighlight">\(
+f(\lambda {\bf x} + (1 - \lambda) {\bf y})
+\leq \lambda f({\bf x}) + (1 - \lambda) f({\bf y})
+\)</span>
+for all <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in A\)</span> and all <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span></p>
+<p><span class="math notranslate nohighlight">\(f\)</span> is called <em><strong>strictly convex</strong></em> if
+<span class="math notranslate nohighlight">\(
+f(\lambda {\bf x} + (1 - \lambda) {\bf y})
+&lt; \lambda f({\bf x}) + (1 - \lambda) f({\bf y})
+\)</span>
+for all <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in A\)</span> with <span class="math notranslate nohighlight">\({\bf x} \ne {\bf y}\)</span> and all <span class="math notranslate nohighlight">\(\lambda \in (0, 1)\)</span></p>
+</div>
+<figure class="align-default" id="id2">
+<img alt="_images/convex_function.png" src="_images/convex_function.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 84 </span><span class="caption-text">A strictly convex function on a subset of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<img alt="_images/qform_pd.png" src="_images/qform_pd.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 85 </span><span class="caption-text">A strictly convex function on a subset of <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p><span class="math notranslate nohighlight">\(f({\bf x}) = \|{\bf x}\|\)</span> is convex on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>To see this recall that, by the properties of norms,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\|\lambda {\bf x} + (1 - \lambda) {\bf y}\|
+\leq \|\lambda {\bf x}\| + \|(1 - \lambda) {\bf y}\|
+\\
+= \lambda \|{\bf x}\| + (1 - \lambda) \|{\bf y}\|
+\end{split}\]</div>
+<p>That is,</p>
+<div class="math notranslate nohighlight">
+\[
 %
-$$
+f(\lambda {\bf x} + (1 - \lambda) {\bf y})
+\leq 
+\lambda f({\bf x}) + (1 - \lambda) f({\bf y})
 %
-
-We say that $f$ is ***a $C^2$ function*** if these partials are all
-continuous in ${\bf x}$ for all ${\bf x} \in A$
-
-The ***Hessian matrix*** of $f$ at ${\bf x}$ is the matrix of cross
-partials
+\]</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\({\bf A}\)</span> is <span class="math notranslate nohighlight">\(K \times K\)</span> and positive definite, then
+<span class="math notranslate nohighlight">\(Q({\bf x}) = {\bf x}' {\bf A} {\bf x}, {\bf x} \in \mathbb{R}^K\)</span>
+is strictly convex on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Proof: Fix <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in \mathbb{R}^K\)</span> with <span class="math notranslate nohighlight">\({\bf x} \ne {\bf y}\)</span> and <span class="math notranslate nohighlight">\(\lambda \in (0, 1)\)</span></p>
+<p><strong>Exercise:</strong> Show that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
-$$
+\lambda Q({\bf x}) + (1 - \lambda) Q({\bf y})
+ - Q(\lambda {\bf x} + (1 - \lambda) {\bf y})
+\\
+= \lambda (1 - \lambda) ({\bf x} - {\bf y})' {\bf A} ({\bf x} - {\bf y})
 %
-H({\bf x})
-:=
-\begin{pmatrix}
-f_{11}({\bf x}) & \cdots & f_{1K}({\bf x}) \\
-& \vdots & \\
-f_{K1}({\bf x}) & \cdots & f_{KK}({\bf x}) 
-\end{pmatrix}
+\end{split}\]</div>
+<p>Since <span class="math notranslate nohighlight">\({\bf x} - {\bf y} \ne {\bf 0}\)</span> and <span class="math notranslate nohighlight">\(0 &lt; \lambda &lt; 1\)</span>, the right
+hand side is <span class="math notranslate nohighlight">\(&gt; 0\)</span></p>
+<p>Hence</p>
+<div class="math notranslate nohighlight">
+\[
 %
-$$
+\lambda Q({\bf x}) + (1 - \lambda) Q({\bf y})
+&gt; Q(\lambda {\bf x} + (1 - \lambda) {\bf y})
 %
-
-```{admonition} Fact
-:class: important
-
-If $f \colon A \to \mathbb{R}$ is a $C^2$ function where $A \subset \mathbb{R}^K$
-```
-is open and convex, then
+\]</div>
+</div>
+</section>
+<section id="concave-functions">
+<h3>Concave Functions<a class="headerlink" href="#concave-functions" title="Permalink to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^K\)</span> be a convex and let <span class="math notranslate nohighlight">\(f\)</span> be a function from <span class="math notranslate nohighlight">\(A\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p><span class="math notranslate nohighlight">\(f\)</span> is called <em><strong>concave</strong></em> if</p>
+<div class="math notranslate nohighlight">
+\[
 %
-1. $H({\bf x})$ nonnegative definite for all ${\bf x} \in A$
-$\iff f$ convex
-
-- $H({\bf x})$ nonpositive definite for all ${\bf x} \in A$
-$\iff f$ concave
-
+f(\lambda {\bf x} + (1 - \lambda) {\bf y})
+\geq \lambda f({\bf x}) + (1 - \lambda) f({\bf y})
 %
-
-In addition,
+\]</div>
+<p>for all <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in A\)</span> and all <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span></p>
+<p><span class="math notranslate nohighlight">\(f\)</span> is called <em><strong>strictly concave</strong></em> if</p>
+<div class="math notranslate nohighlight">
+\[
 %
-1. $H({\bf x})$ positive definite for all ${\bf x} \in A$
-$\implies f$ strictly convex
-
-- $H({\bf x})$ negative definite for all ${\bf x} \in A$
-$\implies f$ strictly concave
-
+f(\lambda {\bf x} + (1 - \lambda) {\bf y})
+&gt; \lambda f({\bf x}) + (1 - \lambda) f({\bf y})
 %
-
-Proof: Omitted
-
-```{admonition} Example
-:class: tip
-
-Let $A := (0, \infty) \times (0, \infty)$ and let $U \colon A \to \mathbb{R}$ be the
-```
-utility function
-%
-$$
+\]</div>
+<p>for all <span class="math notranslate nohighlight">\({\bf x}, {\bf y} \in A\)</span> with <span class="math notranslate nohighlight">\({\bf x} \ne {\bf y}\)</span> and all <span class="math notranslate nohighlight">\(\lambda \in (0, 1)\)</span></p>
+</div>
+<p><strong>Exercise:</strong> Show that</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> is concave if and only if <span class="math notranslate nohighlight">\(-f\)</span> is convex</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> is strictly concave if and only if <span class="math notranslate nohighlight">\(-f\)</span> is strictly convex</p></li>
+</ol>
+</section>
+<section id="hessian-based-criterion">
+<h3>Hessian based criterion<a class="headerlink" href="#hessian-based-criterion" title="Permalink to this heading">#</a></h3>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>If <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span> is a <span class="math notranslate nohighlight">\(C^2\)</span> function where <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^K\)</span> is open and convex, then</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(Hf({\bf x})\)</span> positive semi-definite (nonnegative definite) for all <span class="math notranslate nohighlight">\({\bf x} \in A\)</span> <span class="math notranslate nohighlight">\(\iff f\)</span> convex</p></li>
+<li><p><span class="math notranslate nohighlight">\(Hf({\bf x})\)</span> negative semi-definite (nonpositive definite) for all <span class="math notranslate nohighlight">\({\bf x} \in A\)</span> <span class="math notranslate nohighlight">\(\iff f\)</span> concave</p></li>
+</ol>
+<p>In addition,</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(Hf({\bf x})\)</span> positive definite for all <span class="math notranslate nohighlight">\({\bf x} \in A\)</span> <span class="math notranslate nohighlight">\(\implies f\)</span> strictly convex</p></li>
+<li><p><span class="math notranslate nohighlight">\(Hf({\bf x})\)</span> negative definite for all <span class="math notranslate nohighlight">\({\bf x} \in A\)</span> <span class="math notranslate nohighlight">\(\implies f\)</span> strictly concave</p></li>
+</ol>
+</div>
+<p>Proof: Omitted</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let <span class="math notranslate nohighlight">\(A := (0, \infty) \times (0, \infty)\)</span> and let <span class="math notranslate nohighlight">\(U \colon A \to \mathbb{R}\)</span> be the utility function</p>
+<div class="math notranslate nohighlight">
+\[
 %
 U(c_1, c_2) = \alpha \ln c_1 + \beta \ln c_2
 %
-$$
-%
-
-Assume that $\alpha$ and $\beta$ are both strictly positive
-
-**Exercise:** Show that the Hessian at ${\bf c} := (c_1, c_2) \in A$ has the form
-%
-$$
+\]</div>
+<p>Assume that <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are both strictly positive</p>
+<p><strong>Exercise:</strong> Show that the Hessian at <span class="math notranslate nohighlight">\({\bf c} := (c_1, c_2) \in A\)</span> has the form</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 %
 H({\bf c})
 :=
 \begin{pmatrix}
-- \frac{\alpha}{c_1^2} & 0 \\
-0 & - \frac{\beta}{c_2^2} 
+- \frac{\alpha}{c_1^2} &amp; 0 \\
+0 &amp; - \frac{\beta}{c_2^2} 
 \end{pmatrix}
 %
-$$
+\end{split}\]</div>
+<p><strong>Exercise:</strong> Show that any diagonal matrix with strictly negative elements along
+the principle diagonal is negative definite</p>
+<p>Conclude that <span class="math notranslate nohighlight">\(U\)</span> is strictly concave on <span class="math notranslate nohighlight">\(A\)</span></p>
+</div>
+</section>
+<section id="uniqueness-of-optimizers">
+<h3>Uniqueness of optimizers<a class="headerlink" href="#uniqueness-of-optimizers" title="Permalink to this heading">#</a></h3>
+<div class="important admonition">
+<p class="admonition-title">Fact</p>
+<p>Let <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^K\)</span> be convex and let <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span></p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(f\)</span> is strictly convex, then <span class="math notranslate nohighlight">\(f\)</span> has at most one minimizer on <span class="math notranslate nohighlight">\(A\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f\)</span> is strictly concave, then <span class="math notranslate nohighlight">\(f\)</span> has at most one maximizer on <span class="math notranslate nohighlight">\(A\)</span></p></li>
+</ol>
+</div>
+<p>Interpretation, strictly concave case:</p>
+<ul class="simple">
+<li><p>we don’t know in general if <span class="math notranslate nohighlight">\(f\)</span> has a maximizer</p></li>
+<li><p>but if it does, then it has exactly one</p></li>
+<li><p>in other words, we have uniqueness</p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">Proof</p>
+<p>Proof for the case where <span class="math notranslate nohighlight">\(f\)</span> is strictly concave:</p>
+<p>Suppose to the contrary that</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\({\bf a}\)</span> and <span class="math notranslate nohighlight">\({\bf b}\)</span> are distinct points in <span class="math notranslate nohighlight">\(A\)</span></p></li>
+<li><p>both are maximizers of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span></p></li>
+</ul>
+<p>By the def of maximizers, <span class="math notranslate nohighlight">\(f({\bf a}) \geq f({\bf b})\)</span> and <span class="math notranslate nohighlight">\(f({\bf b}) \geq f({\bf a})\)</span></p>
+<p>Hence we have <span class="math notranslate nohighlight">\(f({\bf a}) = f({\bf b})\)</span></p>
+<p>By strict concavity, then</p>
+<div class="math notranslate nohighlight">
+\[
 %
-
-**Exercise:** Show that any diagonal matrix with strictly negative elements along
-the principle diagonal is negative definite
-
-Conclude that $U$ is strictly concave on $A$
-
- --></section>
+f\left( \frac{1}{2} {\bf a} + \frac{1}{2} {\bf b} \right)
+&gt; \frac{1}{2} f( {\bf a}) + \frac{1}{2} f( {\bf b})
+= \frac{1}{2} f( {\bf a}) + \frac{1}{2} f( {\bf a})
+= f({\bf a})
+%
+\]</div>
+<p>This contradicts the assumption that <span class="math notranslate nohighlight">\({\bf a}\)</span> is a maximizer</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Fact (sufficient conditions)</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(A\)</span> are as above and <span class="math notranslate nohighlight">\({\bf x}^* \in A\)</span> is stationary (FOC are satisfied), then</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f\)</span> strictly concave <span class="math notranslate nohighlight">\(\implies\)</span> <span class="math notranslate nohighlight">\({\bf x}^*\)</span> is the unique maximizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> strictly convex <span class="math notranslate nohighlight">\(\implies\)</span> <span class="math notranslate nohighlight">\({\bf x}^*\)</span> is the unique minimizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(A\)</span></p></li>
+</ol>
+</div>
+<figure class="align-default">
+<img alt="_images/concave_max.png" src="_images/concave_max.png" />
+</figure>
+</section>
+</section>
+<section id="roadmap-for-unconstrained-optimization">
+<h2>Roadmap for unconstrained optimization<a class="headerlink" href="#roadmap-for-unconstrained-optimization" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Assuming that the domain of the objective function is the whole space, check that it is continuous and for derivative based methods twice continuously differentiable</p></li>
+<li><p>Derive the gradient and Hessian of the objective function. If it can be shown that the function is globally concave or convex, checking SOC (below) is not necessary, and global optima can be established</p></li>
+<li><p>Find all stationary points by solving FOC</p></li>
+<li><p>Check SOC to determine whether found stationary points are (local) maxima or minima and filter out saddle points</p></li>
+<li><p>Assess whether any of the local optima are global by comparing function values at these points, and inspecting the shape of the function to determine if its value anywhere exceeds the best local optimum (limits at the positive and negative infinities, possible vertical asymptotes, etc.)</p></li>
+</ol>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -543,6 +1794,48 @@ Conclude that $U$ is strictly concave on $A$
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-optimization-problem">An optimization problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-the-optimization-problem">Components of the optimization problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-of-the-optimization-problems">Classes of the optimization problems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-one-dimensional-optimization">Review of one-dimensional optimization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sufficiency-and-uniqueness-with-shape-conditions">Sufficiency and uniqueness with shape conditions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multivariate-calculus">Multivariate calculus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-of-differentiation">Rules of differentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#higher-order-derivatives">Higher order derivatives</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-oder-conditions-foc-necessary">First oder conditions (FOC), necessary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-conditions-soc">Second order conditions (SOC)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#establishing-definiteness-of-hessian-in-mathbb-r-2-case">Establishing definiteness of Hessian in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> case</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convexity-sufficiency-and-uniqueness">Convexity, sufficiency and uniqueness</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convex-functions">Convex functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concave-functions">Concave Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hessian-based-criterion">Hessian based criterion</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniqueness-of-optimizers">Uniqueness of optimizers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roadmap-for-unconstrained-optimization">Roadmap for unconstrained optimization</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
