@@ -457,25 +457,24 @@ u_1 \\ u_2
 <p>In order to estimate the vector of parameters of the model <span class="math notranslate nohighlight">\(\beta\)</span>, the econometrician maximizes the likelihood of observing the data <span class="math notranslate nohighlight">\(D = \big(\{x_j\}_{j \in \{1,2\}},\{z_i,y_i\}_{i \in \{1,\dots,N\}}\big)\)</span>. The log-likelihood function <span class="math notranslate nohighlight">\(logL \colon \mathbb{R}^{2+J+2N} \to \mathbb{R}\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[
-logL(\beta,D) = \sum_{i=1}^N \ell_i(\beta,x_1,x_2,z_i,y_i),
+L(\beta,D) = \prod_{i=1}^N \ell_i(\beta,x,y_i),
 \]</div>
 <p>where the individual log-likelihood contribution is given by a scalar product function <span class="math notranslate nohighlight">\(\ell_i \colon \mathbb{R}^6 \to \mathbb{R}\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\ell_i(\beta,x_1,x_2,z_i,y_i) = 
-\left(
+\ell_i(\beta,x,y_i) = 
+\left[p_1 \left(
 \begin{array}{l}
-y_i \\
-1-y_i
+\beta \cdot x_1 \\
+\beta \cdot x_2
 \end{array}
-\right)
-\cdot 
-\log\left(p \left(
+\right)\right]^{y_i}
+\left[p_2 \left(
 \begin{array}{l}
-\beta \cdot h(x_1,z_i) \\
-\beta \cdot h(x_2,z_i)
+\beta \cdot x_1 \\
+\beta \cdot x_2
 \end{array}
-\right) \right)
+\right)\right]^{1-y_i}
 \end{split}\]</div>
 <p>Assignments:</p>
 <ol class="arabic simple">
