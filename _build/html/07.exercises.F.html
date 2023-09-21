@@ -421,7 +421,7 @@ Show that the same function can be represented as <span class="math notranslate 
 <h2>Question F.3<a class="headerlink" href="#question-f-3" title="Permalink to this heading">#</a></h2>
 <p>This exercise takes you on a tour of a binary logit model and its properties.</p>
 <p>Consider a model when a decision maker is making a choice between <span class="math notranslate nohighlight">\(J=2\)</span> two alternatives, each of which has a scalar characteristic <span class="math notranslate nohighlight">\(x_j \in \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(j=1,2\)</span>. Econometrician observes data on these characteristics, the choice made by the decision maker <span class="math notranslate nohighlight">\(y_i \in \{0,1\}\)</span> and an attribute of the decision maker, <span class="math notranslate nohighlight">\(z_i \in \mathbb{R}\)</span>. The positive value of <span class="math notranslate nohighlight">\(y_i\)</span> denotes that the first alternative was chosen. The data is indexed with <span class="math notranslate nohighlight">\(i\)</span> and has <span class="math notranslate nohighlight">\(N\)</span> observations, i.e. <span class="math notranslate nohighlight">\(i \in \{1,\dots,N\}\)</span>.</p>
-<p>To rationalize the data the econometrician assumes that the utility of each alternative is given by a scalar product of a vector of parameters <span class="math notranslate nohighlight">\(\beta \in \mathbb{R}^3\)</span> and a vector function <span class="math notranslate nohighlight">\(h \colon \mathbb{R}^2 \to \mathbb{R}^3\)</span> of alternative and decision maker attributes. Let</p>
+<p>To rationalize the data the econometrician assumes that the utility of each alternative is given by a scalar product of a vector of parameters <span class="math notranslate nohighlight">\(\beta \in \mathbb{R}^2\)</span> and a vector function <span class="math notranslate nohighlight">\(h \colon \mathbb{R}^2 \to \mathbb{R}^2\)</span> of alternative and decision maker attributes. Let</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 h \colon
@@ -433,11 +433,11 @@ x \\ z
 \mapsto 
 \left(
 \begin{array}{l}
-x \\ z \\ xz
+x \\ xz
 \end{array}
 \right)
 \end{split}\]</div>
-<p>In line with the random utility model, the econometrician also assumes that the utility of each alternative contains the additively separable random component which has an appropriately centered type I extreme value distribution, such that the choice probabilities for the two alternatives is given by a vector function <span class="math notranslate nohighlight">\(p \colon \mathbb{R}^2 \to (0,1) \subset \mathbb{R}^2\)</span></p>
+<p>In line with the random utility model, the econometrician also assumes that the utility of each alternative contains the additively separable random component which has an appropriately centered type I extreme value distribution, such that the choice probabilities for the two alternatives are given by a vector function <span class="math notranslate nohighlight">\(p \colon \mathbb{R}^2 \to (0,1) \subset \mathbb{R}^2\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 p \colon
@@ -454,12 +454,12 @@ u_1 \\ u_2
 \end{array}
 \right)
 \end{split}\]</div>
-<p>In order to estimate the vector of parameters of the model <span class="math notranslate nohighlight">\(\beta\)</span>, the econometrician maximizes the likelihood of observing the data <span class="math notranslate nohighlight">\(D = \big(\{x_j\}_{j \in \{1,2\}},\{z_i,y_i\}_{i \in \{1,\dots,N\}}\big)\)</span>. The log-likelihood function <span class="math notranslate nohighlight">\(logL \colon \mathbb{R}^{3+J+2N} \to \mathbb{R}\)</span> is given by</p>
+<p>In order to estimate the vector of parameters of the model <span class="math notranslate nohighlight">\(\beta\)</span>, the econometrician maximizes the likelihood of observing the data <span class="math notranslate nohighlight">\(D = \big(\{x_j\}_{j \in \{1,2\}},\{z_i,y_i\}_{i \in \{1,\dots,N\}}\big)\)</span>. The log-likelihood function <span class="math notranslate nohighlight">\(logL \colon \mathbb{R}^{2+J+2N} \to \mathbb{R}\)</span> is given by</p>
 <div class="math notranslate nohighlight">
 \[
 logL(\beta,D) = \sum_{i=1}^N \ell_i(\beta,x_1,x_2,z_i,y_i),
 \]</div>
-<p>where the individual log-likelihood contribution is given by a scalar product function <span class="math notranslate nohighlight">\(\ell_i \colon \mathbb{R}^7 \to \mathbb{R}\)</span></p>
+<p>where the individual log-likelihood contribution is given by a scalar product function <span class="math notranslate nohighlight">\(\ell_i \colon \mathbb{R}^6 \to \mathbb{R}\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \ell_i(\beta,x_1,x_2,z_i,y_i) = 
@@ -493,7 +493,7 @@ y_i \\
 </ul>
 </li>
 <li><p>Derive the gradient and Hessian of the log-likelihood function. Make sure that all multiplied vectors and matrices are conformable.</p></li>
-<li><p>Derive conditions under which the logit model has a unique maximum likelihood estimator.</p></li>
+<li><p>Derive conditions under which the likelihood function has a unique maximizer (and thus the logit model has a unique maximum likelihood estimator).</p></li>
 </ol>
 </section>
 </section>
