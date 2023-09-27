@@ -42,6 +42,34 @@
     st: \\mathbb{Q}
 
 - pattern:
+    re: \\fF
+    st: \\mathcal{F}
+- pattern:
+    re: \\gG
+    st: \\mathcal{G}
+- pattern:
+    re: \\hH
+    st: \\mathcal{H}
+- pattern:
+    re: \\nN
+    st: \\mathcal{N}
+- pattern:
+    re: \\dD
+    st: \\mathcal{D}
+- pattern:
+    re: \\lL
+    st: \\mathcal{L}
+- pattern:
+    re: \\oO
+    st: \\mathcal{O}
+- pattern:
+    re: \\pP
+    st: \\mathcal{P}
+
+
+
+
+- pattern:
     re: \\not=
     st: \\ne
 

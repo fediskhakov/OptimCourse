@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '10.envelope_maximum';</script>
     <link rel="canonical" href="optim.iskh.me/10.envelope_maximum.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -353,7 +355,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -369,6 +373,19 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-function-and-optimization-problem-parameters">Value function and optimization problem parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrange-multiplyers-as-shadow-prices">Lagrange multiplyers as shadow prices</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -380,7 +397,63 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="envelope-and-maximum-theorems">
 <h1>Envelope and maximum theorems<a class="headerlink" href="#envelope-and-maximum-theorems" title="Permalink to this heading">#</a></h1>
+<p><strong>ECON2125/6012 Lecture 8</strong>
+Fedor Iskhakov</p>
+<section id="announcements-reminders">
+<h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>None?</p></li>
+</ul>
+</section>
+<section id="plan-for-this-lecture">
+<h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Envelope theorems</p></li>
+<li><p>Theorem of maximum</p></li>
+</ol>
+</section>
+<section id="value-function-and-optimization-problem-parameters">
+<h2>Value function and optimization problem parameters<a class="headerlink" href="#value-function-and-optimization-problem-parameters" title="Permalink to this heading">#</a></h2>
+<p>Let’s start with recalling the definition of a general optimization problem</p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>The general form of the optimization problem is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V(\theta) 
+= \max_{x} f(x,\theta)
+\\
+\text {subject to}
+\\
+g_i(x,\theta) = 0, \; i\in\{1,\dots,I\}\\
+h_j(x,\theta) \le 0, \; j\in\{1,\dots,J\}
+\end{split}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x,\theta) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span> is an objective function</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \in \mathbb{R}^N\)</span> are decision/choice variables</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta \in \mathbb{R}^K\)</span> are parameters</p></li>
+<li><p><span class="math notranslate nohighlight">\(g_i(x,\theta) = 0, \; i\in\{1,\dots,I\}\)</span> where <span class="math notranslate nohighlight">\(g_i \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span>, are equality constraints</p></li>
+<li><p><span class="math notranslate nohighlight">\(h_i(x,\theta) \le 0, \; i\in\{1,\dots,I\}\)</span> where <span class="math notranslate nohighlight">\(h_i \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span>, are inequality constraints</p></li>
+<li><p><span class="math notranslate nohighlight">\(V(\theta) \colon \mathbb{R}^K \to \mathbb{R}\)</span> is a value function</p></li>
+</ul>
+</div>
+<p>This lecture focuses on the <em>value function</em> in the optimization problem <span class="math notranslate nohighlight">\(V(\theta)\)</span>, and how it depends on the parameters <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<ul class="simple">
+<li><p>In economics usually used to study how the optimized behavior changes when the circumstances of the decision-making process change</p>
+<ul>
+<li><p>income/budget/wealth changes</p></li>
+<li><p>effects in the behavior change importance</p></li>
+<li><p>intertemporal effects of changes in other time periods</p></li>
+</ul>
+</li>
+</ul>
+<section id="lagrange-multiplyers-as-shadow-prices">
+<h3>Lagrange multiplyers as shadow prices<a class="headerlink" href="#lagrange-multiplyers-as-shadow-prices" title="Permalink to this heading">#</a></h3>
+<p>In the equality constrained optimization problem, the Lagrange multiplier <span class="math notranslate nohighlight">\(\lambda_i\)</span> can be interpreted as the shadow price of the constraint <span class="math notranslate nohighlight">\(g_i(x,\theta) = 0\)</span>.</p>
 <a class="reference internal image-reference" href="_images/coming_soon.png"><img alt="soming soon" class="align-center" src="_images/coming_soon.png" style="width: 514.0px; height: 360.0px;" /></a>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -441,6 +514,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-function-and-optimization-problem-parameters">Value function and optimization problem parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrange-multiplyers-as-shadow-prices">Lagrange multiplyers as shadow prices</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
