@@ -1,0 +1,733 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercise set E &#8212; ECON2125/6012</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '06.exercises.E';</script>
+    <link rel="canonical" href="optim.iskh.me/06.exercises.E.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exercise set F" href="07.exercises.F.html" />
+    <link rel="prev" title="Exercise set D" href="05.exercises.D.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Latest update: lecture 8 'Constrained optimization', exercise set G and solutions to the exercise set F</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="00.index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/penrose.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/penrose.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00.index.html">
+                    ECON2125/6012
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01.introduction.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.optimization_intro.html">Univariate and bivariate optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.set_theory.html">Elements of set theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.basic_analysis.html">Basics of real analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.linear_algebra.html">Elements of linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.optimization_fundamentals.html">Fundamentals of optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.unconstrained.html">Unconstrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.constrained.html">Constrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.practical_session.html">Practical session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.envelope_maximum.html">Envelope and maximum theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.dynamic.html">Dynamic optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.revision.html">Revision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.exercises.A.html">Exercise set A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.exercises.B.html">Exercise set B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.exercises.C.html">Exercise set C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.exercises.D.html">Exercise set D</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise set E</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.exercises.F.html">Exercise set F</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.exercises.G.html">Exercise set G</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse/issues/new?title=Issue%20on%20page%20%2F06.exercises.E.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/06.exercises.E.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise set E</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-e-1">Question E.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-e-2">Question E.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-e-3">Question E.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-e-4">Question E.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-e-5">Question E.5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-e-6">Question E.6</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-set-e">
+<h1>Exercise set E<a class="headerlink" href="#exercise-set-e" title="Permalink to this heading">#</a></h1>
+<p>Please, see the
+<a class="reference internal" href="02.exercises.A.html"><span class="doc std std-doc"><strong>general comment on the tutorial exercises</strong></span></a></p>
+<section id="question-e-1">
+<h2>Question E.1<a class="headerlink" href="#question-e-1" title="Permalink to this heading">#</a></h2>
+<p>Show that the function <span class="math notranslate nohighlight">\(f(x) = - |x|\)</span> from <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is concave.</p>
+</section>
+<section id="question-e-2">
+<h2>Question E.2<a class="headerlink" href="#question-e-2" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\({\bf A}\)</span> be the <span class="math notranslate nohighlight">\(1 \times 1\)</span> matrix <span class="math notranslate nohighlight">\((a)\)</span>. Give a necessary and
+sufficient condition on <span class="math notranslate nohighlight">\(a\)</span> (that is, an “if and only if” condition on
+<span class="math notranslate nohighlight">\(a\)</span>) under which <span class="math notranslate nohighlight">\({\bf A}\)</span> is nonsingular.</p>
+</section>
+<section id="question-e-3">
+<h2>Question E.3<a class="headerlink" href="#question-e-3" title="Permalink to this heading">#</a></h2>
+<p>Consider the function <span class="math notranslate nohighlight">\(f\)</span> from <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> defined by</p>
+<div class="math notranslate nohighlight">
+\[
+%
+f(x) = (c x)^2 + z
+%
+\]</div>
+<p>Give a necessary and sufficient (if and only if) condition on <span class="math notranslate nohighlight">\(c\)</span> under
+which <span class="math notranslate nohighlight">\(f\)</span> has a unique minimizer.</p>
+</section>
+<section id="question-e-4">
+<h2>Question E.4<a class="headerlink" href="#question-e-4" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\({\bf C}\)</span> be an <span class="math notranslate nohighlight">\(N \times K\)</span> matrix, let <span class="math notranslate nohighlight">\(z \in \mathbb{R}\)</span> and consider the function
+<span class="math notranslate nohighlight">\(f\)</span> from <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> defined by</p>
+<div class="math notranslate nohighlight">
+\[
+%
+f({\bf x}) = {\bf x}' {\bf C}' {\bf C} {\bf x} + z
+%
+\]</div>
+<p>Show that <span class="math notranslate nohighlight">\(f\)</span> has a unique minimizer on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> if and only if <span class="math notranslate nohighlight">\({\bf C}\)</span>
+has linearly independent columns.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Obviously, you should
+draw intuition from the preceding question. Also, what does linear
+independence of the columns of <span class="math notranslate nohighlight">\({\bf C}\)</span> say about the vector <span class="math notranslate nohighlight">\({\bf C}
+{\bf x}\)</span> for different choices of <span class="math notranslate nohighlight">\({\bf x}\)</span>?</p>
+</div>
+</section>
+<section id="question-e-5">
+<h2>Question E.5<a class="headerlink" href="#question-e-5" title="Permalink to this heading">#</a></h2>
+<p>Consider the maximization problem</p>
+<div class="math notranslate nohighlight">
+\[
+%
+\max_{c_1, c_2} ( \sqrt c_1 + \beta \sqrt{c_2})
+%
+\]</div>
+<p>subject to <span class="math notranslate nohighlight">\(c_1, c_2 \geq 0\)</span> and <span class="math notranslate nohighlight">\(p_1 c_1 + p_2 c_2 \leq m\)</span>.
+Here <span class="math notranslate nohighlight">\(p_1, p_2\)</span> and <span class="math notranslate nohighlight">\(m\)</span> are nonnegative constants, and <span class="math notranslate nohighlight">\(\beta \in (0, 1)\)</span>.</p>
+<p>Show that this problem has a solution if and only if <span class="math notranslate nohighlight">\(p_1\)</span> and <span class="math notranslate nohighlight">\(p_2\)</span> are both
+strictly positive.</p>
+</section>
+<section id="question-e-6">
+<h2>Question E.6<a class="headerlink" href="#question-e-6" title="Permalink to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be a nonempty bounded set and let <span class="math notranslate nohighlight">\(B := \{ b \in \mathbb{R} \colon b = 2a \text{ for some } a \in A\}\)</span>.
+Obtain <span class="math notranslate nohighlight">\(\sup B\)</span> in terms of <span class="math notranslate nohighlight">\(\sup A\)</span>. Justify your answer.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solutions<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Question E.1</strong></p>
+<p class="sd-card-text">Pick any <span class="math notranslate nohighlight">\(x, y \in \mathbb{R}\)</span> and any <span class="math notranslate nohighlight">\(\lambda \in [0, 1]\)</span>.
+By the triangle inequality, we have</p>
+<div class="math notranslate nohighlight">
+\[
+%
+|\lambda x + (1 - \lambda) y|
+\leq |\lambda x| + |(1 - \lambda) y|
+%
+\]</div>
+<p class="sd-card-text">and hence</p>
+<div class="math notranslate nohighlight">
+\[
+%
+- |\lambda x + (1 - \lambda) y|
+\geq - |\lambda x| - |(1 - \lambda) y|
+= - \lambda |x| - (1 - \lambda) |y|
+%
+\]</div>
+<p class="sd-card-text">That is, <span class="math notranslate nohighlight">\(f(\lambda x + (1 - \lambda) y) \geq \lambda f(x) + (1 -
+\lambda)f(y)\)</span>. Hence <span class="math notranslate nohighlight">\(f\)</span> is concave as claimed.</p>
+<p class="sd-card-text"><strong>Question E.2</strong></p>
+<p class="sd-card-text">The condition for nonsingularity of <span class="math notranslate nohighlight">\((a)\)</span> is <span class="math notranslate nohighlight">\(a \ne 0\)</span>. There are many
+ways we could show this. One is that <span class="math notranslate nohighlight">\({\bf A}\)</span> is nonsingular when <span class="math notranslate nohighlight">\({\bf A}
+{\bf x} = {\bf 0} \implies {\bf x} = {\bf 0}\)</span>. Here this translates to
+<span class="math notranslate nohighlight">\(ax = 0 \implies x = 0\)</span>. The question then becomes, for what <span class="math notranslate nohighlight">\(a\)</span> is this
+implication true? It is true exactly when <span class="math notranslate nohighlight">\(a \ne 0\)</span>, for if <span class="math notranslate nohighlight">\(a
+\ne 0\)</span> and <span class="math notranslate nohighlight">\(ax=0\)</span>, the only possibility is that <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+<p class="sd-card-text"><strong>Question E.3</strong></p>
+<p class="sd-card-text">The function <span class="math notranslate nohighlight">\(f\)</span> has a unique minimizer at <span class="math notranslate nohighlight">\(x^* = 0\)</span> if and only if <span class="math notranslate nohighlight">\(c
+\ne 0\)</span>. Here’s one proof: If <span class="math notranslate nohighlight">\(c \ne 0\)</span> then the function is strictly
+convex. Moreover, it is stationary at <span class="math notranslate nohighlight">\(x^* = 0\)</span>. Hence, by our facts on
+minimization under convexity, <span class="math notranslate nohighlight">\(x^*\)</span> is the unique minimizer. The
+condition is necessary and sufficient because if <span class="math notranslate nohighlight">\(c = 0\)</span>, then <span class="math notranslate nohighlight">\(f\)</span> is a constant
+function, which clearly does not have a unique minimizer.</p>
+<p class="sd-card-text">Here’s a second (more direct) proof that the correct condition is <span class="math notranslate nohighlight">\(c
+\ne 0\)</span>. Suppose first that <span class="math notranslate nohighlight">\(c \ne0\)</span> and
+pick any <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>. We have</p>
+<div class="math notranslate nohighlight">
+\[
+%
+f(x) = (cx)^2 + z \geq z = f(0)
+%
+\]</div>
+<p class="sd-card-text">This tells us that <span class="math notranslate nohighlight">\(x^* = 0\)</span> is a minimizer. Moreover,</p>
+<div class="math notranslate nohighlight">
+\[
+%
+f(x) = (cx)^2 + z &gt; z = f(0)
+\quad \text{whenever} \quad
+x \ne x^*
+%
+\]</div>
+<p class="sd-card-text">Hence <span class="math notranslate nohighlight">\(x^* = 0\)</span> is the unique minimizer.</p>
+<p class="sd-card-text">Suppose next that <span class="math notranslate nohighlight">\(x^* = 0\)</span> is the unique minimizer. Then it must be that <span class="math notranslate nohighlight">\(c
+\ne0\)</span>, for if <span class="math notranslate nohighlight">\(c=0\)</span> then <span class="math notranslate nohighlight">\(f(x) = f(x^*)\)</span> for every <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span>.</p>
+<p class="sd-card-text"><strong>Question E.4</strong></p>
+<p class="sd-card-text">Suppose first that <span class="math notranslate nohighlight">\({\bf C}\)</span> has linearly independent columns. We claim
+that <span class="math notranslate nohighlight">\({\bf x} = {\bf 0}\)</span> is the unique minimizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span>. To see
+this observe that if <span class="math notranslate nohighlight">\({\bf x} = {\bf 0}\)</span> then <span class="math notranslate nohighlight">\(f({\bf x}) = z\)</span>. On the
+other hand, if <span class="math notranslate nohighlight">\({\bf x} \ne {\bf 0}\)</span>, then, by linear independence,
+<span class="math notranslate nohighlight">\({\bf C}{\bf x}\)</span> is not the origin, and hence <span class="math notranslate nohighlight">\(\| {\bf C}{\bf x} \| &gt; 0\)</span>.
+Therefore</p>
+<div class="math notranslate nohighlight">
+\[
+%
+f({\bf x}) 
+= {\bf x}' {\bf C}' {\bf C} {\bf x} + z
+= ({\bf C} {\bf x} )' {\bf C} {\bf x} + z
+= \| {\bf C} {\bf x} \|^2 + z &gt; z
+%
+\]</div>
+<p class="sd-card-text">Thus <span class="math notranslate nohighlight">\({\bf x} = {\bf 0}\)</span> is the unique minimizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> as
+claimed.</p>
+<p class="sd-card-text">Since this is an “if and only if” proof we also need to show that when
+<span class="math notranslate nohighlight">\(f\)</span> has a unique minimizer on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span>, it must be that <span class="math notranslate nohighlight">\({\bf C}\)</span> has
+linearly independent columns. Suppose to the contrary that
+the columns of <span class="math notranslate nohighlight">\({\bf C}\)</span> are not linearly independent. We will show that
+multiple minimizers exist.</p>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\(f({\bf x}) = \| {\bf C} {\bf x} \|^2 + z\)</span> it is clear that <span class="math notranslate nohighlight">\(f({\bf x})
+\geq z\)</span>, and hence <span class="math notranslate nohighlight">\({\bf x} = {\bf 0}\)</span> is one minimizer.
+(At this point, <span class="math notranslate nohighlight">\(f\)</span> evaluates to <span class="math notranslate nohighlight">\(z\)</span>.) Since
+the columns of <span class="math notranslate nohighlight">\({\bf C}\)</span> are not linearly independent, there
+exists a nonzero vector <span class="math notranslate nohighlight">\({\bf y}\)</span> such that <span class="math notranslate nohighlight">\({\bf C} {\bf y} = {\bf 0}\)</span>.
+At this vector we clearly have <span class="math notranslate nohighlight">\(f({\bf y}) = z\)</span>. Hence <span class="math notranslate nohighlight">\({\bf y}\)</span> is another
+minimizer.</p>
+<p class="sd-card-text"><strong>Question E.5</strong></p>
+<p class="sd-card-text">First, show that <span class="math notranslate nohighlight">\(U(c_1, c_2) = \sqrt c_1 + \beta \sqrt{c_2}\)</span> is continuous and that</p>
+<div class="math notranslate nohighlight">
+\[
+B := \{ (c_1, c_2) \colon c_i \geq 0 \text{ and }
+p_1 c_1 + p_2 c_2 \leq m\}
+\]</div>
+<p class="sd-card-text">is closed. Hence, by the Weierstrass extreme value theorem, a maximizer
+will exist whenever <span class="math notranslate nohighlight">\(B\)</span> is bounded. If <span class="math notranslate nohighlight">\(p_1\)</span> and <span class="math notranslate nohighlight">\(p_2\)</span> are strictly
+positive then <span class="math notranslate nohighlight">\(B\)</span> is bounded. This is intuitive but we can also show it
+formally by observing that <span class="math notranslate nohighlight">\((c_1, c_2) \in B\)</span> implies <span class="math notranslate nohighlight">\(c_i \leq m / p_i\)</span>
+for <span class="math notranslate nohighlight">\(i =1,2\)</span>. Hence</p>
+<div class="math notranslate nohighlight">
+\[
+%
+{\bf c} := (c_1, c_2) \in B
+\implies \| {\bf c} \|
+\leq M := \sqrt{ \left(\frac{m}{p_1}\right)^2 
++ \left(\frac{m}{p_2}\right)^2 }
+%
+\]</div>
+<p class="sd-card-text">We also need to show that if one price is zero then no maximizer exists.
+Suppose to the contrary that <span class="math notranslate nohighlight">\(p_1 = 0\)</span>. Intuitively, no maximizer exists
+because we can always consumer more of good one, thereby increasing our
+utility. To formalize this we can
+suppose that a maximizer exists and derive a contradiction. To this end,
+suppose that <span class="math notranslate nohighlight">\({\bf c}^* = (c_1^*,
+c_2^*)\)</span> is a maximizer of <span class="math notranslate nohighlight">\(U\)</span> over <span class="math notranslate nohighlight">\(B\)</span>. Since <span class="math notranslate nohighlight">\(p_1 = 0\)</span>,
+the fact that <span class="math notranslate nohighlight">\((c_1^*, c_2^*) \in B\)</span> implies <span class="math notranslate nohighlight">\({\bf c}^{**} := (c_1^* + 1,
+c_2^*) \in B\)</span>. Since <span class="math notranslate nohighlight">\(U\)</span> is strictly increasing in its first argument,
+we also have <span class="math notranslate nohighlight">\(U({\bf c}^{**}) &gt; U({\bf c}^*)\)</span>. This contradicts the
+statement that <span class="math notranslate nohighlight">\({\bf c}^*\)</span> is a maximizer of <span class="math notranslate nohighlight">\(U\)</span> over <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p class="sd-card-text"><strong>Question E.6</strong></p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be as stated in the question. We claim that <span class="math notranslate nohighlight">\(\sup B =
+\bar b\)</span> where <span class="math notranslate nohighlight">\(\bar b := 2 \sup A\)</span>. According to the definition of the
+supremum, to prove this we need to show that</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(b \leq \bar b\)</span> for all <span class="math notranslate nohighlight">\(b \in B\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\bar b \leq u\)</span> for all <span class="math notranslate nohighlight">\(u \in U(B)\)</span></p></li>
+</ol>
+<p class="sd-card-text">Regarding part 1, pick any <span class="math notranslate nohighlight">\(b \in B\)</span>. By definition, <span class="math notranslate nohighlight">\(b = 2a\)</span> for some <span class="math notranslate nohighlight">\(a
+\in A\)</span>. We know that <span class="math notranslate nohighlight">\(a \leq \sup A\)</span> and hence <span class="math notranslate nohighlight">\(2 a \leq 2 \sup A\)</span>.
+Therefore <span class="math notranslate nohighlight">\(b = 2a \leq \bar b\)</span>, as was to be shown.</p>
+<p class="sd-card-text">Regarding part 2, take any <span class="math notranslate nohighlight">\(u \in U(B)\)</span>. For any <span class="math notranslate nohighlight">\(a \in A\)</span> we have <span class="math notranslate nohighlight">\(2a
+\in B\)</span> and hence <span class="math notranslate nohighlight">\(2a \leq u\)</span>. Therefore <span class="math notranslate nohighlight">\(a \leq u/2\)</span> for all <span class="math notranslate nohighlight">\(a \in A\)</span>,
+and hence <span class="math notranslate nohighlight">\(u/2\)</span> is an upper bound of <span class="math notranslate nohighlight">\(A\)</span>. Therefore <span class="math notranslate nohighlight">\(\sup A \leq u/2\)</span>.
+Rearranging gives <span class="math notranslate nohighlight">\(\bar b \leq u\)</span>, as claimed.</p>
+</div>
+</details></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="05.exercises.D.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise set D</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="07.exercises.F.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise set F</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-e-1">Question E.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-e-2">Question E.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-e-3">Question E.3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-e-4">Question E.4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-e-5">Question E.5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-e-6">Question E.6</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fedor Iskhakov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

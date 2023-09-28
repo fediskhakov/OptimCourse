@@ -1,0 +1,797 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercise set A &#8212; ECON2125/6012</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '02.exercises.A';</script>
+    <link rel="canonical" href="optim.iskh.me/02.exercises.A.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exercise set B" href="03.exercises.B.html" />
+    <link rel="prev" title="Revision" href="12.revision.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Latest update: lecture 8 'Constrained optimization', exercise set G and solutions to the exercise set F</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="00.index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/penrose.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/penrose.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00.index.html">
+                    ECON2125/6012
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01.introduction.html">Welcome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.optimization_intro.html">Univariate and bivariate optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.set_theory.html">Elements of set theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.basic_analysis.html">Basics of real analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.linear_algebra.html">Elements of linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.optimization_fundamentals.html">Fundamentals of optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.unconstrained.html">Unconstrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.constrained.html">Constrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.practical_session.html">Practical session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.envelope_maximum.html">Envelope and maximum theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.dynamic.html">Dynamic optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.revision.html">Revision</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise set A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.exercises.B.html">Exercise set B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.exercises.C.html">Exercise set C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.exercises.D.html">Exercise set D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.exercises.E.html">Exercise set E</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.exercises.F.html">Exercise set F</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.exercises.G.html">Exercise set G</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse/issues/new?title=Issue%20on%20page%20%2F02.exercises.A.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/02.exercises.A.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise set A</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-a-3-profit-maximization-with-cobb-douglas-production-and-linear-costs">Question A.3: Profit maximization with Cobb-Douglas production and linear costs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-a-4">Question A.4*</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-set-a">
+<h1>Exercise set A<a class="headerlink" href="#exercise-set-a" title="Permalink to this heading">#</a></h1>
+<p><strong>General comment on the tutorial exercises</strong></p>
+<ul class="simple">
+<li><p>these questions are not directly assessable and solutions are provided in a separate document</p></li>
+<li><p>the aim is to help you better understand the material we have covered so far and start to prepare for actual assessments</p></li>
+<li><p>if you are having no particular problems with this course then
+please carry on to the questions below; if, on the other hand, you are having difﬁculty with the material, then please read on</p></li>
+<li><p>this is an upper level course on mathematics for economists that pushes you beyond the boundaries of the kind of things we do in high school or ﬁrst year university</p></li>
+<li><p>many people ﬁnd this material hard at ﬁrst, however, the experience is that anyone who works diligently and consistently can and will do well</p></li>
+</ul>
+<p>Here are few tips on getting through and doing well:</p>
+<ol class="arabic simple">
+<li><p>It’s hard to “wing” this course, even if you did well at maths in high school. It’s also very hard to follow everything just from the lectures.
+It takes practice to do well, just like playing guitar or learning a language. The ﬁrst resource is the lecture slides, and the more often you read them the more the deﬁnitions will stick and the material will gel in your head.</p></li>
+<li><p>Each time you are having difficulty with a new concept try googling it. Have a look at Wikipedia, find a video on YouTube, or some of the other online resources. They might phrase or explain the concept in a way that ﬁts better with your brain.</p></li>
+<li><p>Work consistently throughout the semester. Concepts become clearer and more familiar the more times that you go over them—with at least one sleep in between to allow your brain to organize neurons and synapses to store and categorize this new information.</p></li>
+<li><p>Make use of your tutors. They are very knowledgable and are willing to put in time to help anyone who is genuinely trying (although much less inclined to help those who aren’t).</p></li>
+<li><p>Send me feedback if you think it’s something I can help with (e.g., more practice questions on a certain topic) or drop in during my ofﬁce hours to discuss.</p></li>
+<li><p>Above all, remember that the course material is nontrivial for a reason. Doing straightforward calculations applying well known rules or memorizing “cookbooks” of facts are not particularly useful, mainly because computers are far, far better than humans at these kinds of activities. What is still very useful—probably more than ever—is understanding concepts and how they relate to each other, and building up your ability to digest technical material and think in a logical way.
+If you complete this course successfully you will have signiﬁcantly upgraded your mathematical skills.</p></li>
+</ol>
+<p>Finally, here are some tips on doing proofs:</p>
+<ol class="arabic simple">
+<li><p>In many instances there will be an easy way to do things, if you can spot it. A question that seems to require a long calculation will likely have an easy answer if you know the relevant fact.</p></li>
+<li><p>If you feel stuck, remember that the hardest step is getting started, and for proofs the best place to start is always the relevant deﬁnitions. If you are asked to show that the range of a given function is a linear subspace, start by writing down those two deﬁnitions. They will tell you more speciﬁcally what you need to show. If you’re still stuck, review any facts from the lecture slides related to those deﬁnitions. Is there a different way to describe the range of this function? Is there some fact related to linear subspaces that might be helpful?</p></li>
+<li><p>If you’re still stuck, try ﬂipping the problem around. In the previous example, suppose that the range of the function is not a linear subspace. What would that imply? Can you show that such an outcome is impossible?</p></li>
+<li><p>Be patient and don’t rush. You’ll get quicker naturally, with practice.</p></li>
+</ol>
+<p><em><strong>Question A.1</strong></em></p>
+<p>Let <span class="math notranslate nohighlight">\(f \colon [-1, 1] \to \mathbb{R}\)</span> be defined by <span class="math notranslate nohighlight">\(f(x) = 1 - |x|\)</span>, where <span class="math notranslate nohighlight">\(|x|\)</span> is the absolute value of <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<ul class="simple">
+<li><p>Is the point <span class="math notranslate nohighlight">\(x = 0\)</span> a maximizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\([-1, 1]\)</span>?</p></li>
+<li><p>Is it a unique maximizer?</p></li>
+<li><p>Is it an interior maximizer?</p></li>
+<li><p>Is it stationary?</p></li>
+</ul>
+<p><em><strong>Question A.2</strong></em></p>
+<p>Let <span class="math notranslate nohighlight">\(f \colon \mathbb{R} \to \mathbb{R}\)</span> be defined by <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span>.</p>
+<ul class="simple">
+<li><p>Write down the set of stationary points of this function.</p></li>
+<li><p>Which of these, if any, are maximizers, and which are minimizers?</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When we discussed these kinds of problems it was for functions of the form <span class="math notranslate nohighlight">\(f \colon [a, b] \to \mathbb{R}\)</span>.  Now the domain is all of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>.
+However you can apply the same definitions and use similar reasoning.  Also, feel free to look up and use any helpful facts on trigonometric functions.</p>
+</div>
+<section id="question-a-3-profit-maximization-with-cobb-douglas-production-and-linear-costs">
+<h2>Question A.3: Profit maximization with Cobb-Douglas production and linear costs<a class="headerlink" href="#question-a-3-profit-maximization-with-cobb-douglas-production-and-linear-costs" title="Permalink to this heading">#</a></h2>
+<p>A firm uses capital and labor to produce output.
+When it employs <span class="math notranslate nohighlight">\(k\)</span> units of capital and <span class="math notranslate nohighlight">\(\ell\)</span> units of labor, its output is <span class="math notranslate nohighlight">\(A k^{\alpha} \ell^{\beta}\)</span> units, where <span class="math notranslate nohighlight">\(A\)</span> is a positive number, and <span class="math notranslate nohighlight">\(\alpha + \beta &lt; 1\)</span>.</p>
+<p>The unit price of capital is <span class="math notranslate nohighlight">\(r\)</span>, and the unit price of labor is <span class="math notranslate nohighlight">\(w\)</span>; both are non-negative.
+The firm would like to maximize the profits taking the price <span class="math notranslate nohighlight">\(p\)</span> of the output as given.</p>
+<p>The firm’s chief economist <em>Bob</em> presented the following formulation of the firm’s optimization problem to the CEO <em>Alice</em>:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Choose } k, \ell, w \text{ and } r \text{ to maximize } 
+p k^{\alpha} \ell^{\beta} - w \ell - r k 
+\quad \mathrm{s.t.} \quad
+\alpha + \beta &lt; 1
+\]</div>
+<p>Questions:</p>
+<ol class="arabic simple">
+<li><p>Is this formulation of the firm’s optimization problem correct?</p></li>
+</ol>
+<ul class="simple">
+<li><p>What part reflects the revenue?</p></li>
+<li><p>What part reflects the costs?</p></li>
+<li><p>What are the choice variables?</p></li>
+<li><p>Are there any constraints to be taken into account?</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Right down the problem after <em>Alice</em> have updated the formulation.</p></li>
+<li><p>Approach the problem as unconstrained maximization, and follow the steps in the lecture to find find all stationary points (solve the FOCs).</p></li>
+<li><p>Write down second order partial derivatives and verify the shape conditions for the profit function.</p></li>
+<li><p>What is the optimal strategy for the firm? Is the maximizer unique? Why?</p></li>
+</ol>
+</section>
+<section id="question-a-4">
+<h2>Question A.4*<a class="headerlink" href="#question-a-4" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Exercises marked with an asterisk <strong>(*)</strong> are optional and more difficult.</p>
+</div>
+<ol class="arabic simple">
+<li><p>Find all stationary points of the function
+<span class="math notranslate nohighlight">\(f(x, y) = \frac{\cos(x^2 + y^2)}{1 + x^2 + y^2}\)</span>.</p></li>
+<li><p>Find all maximizers and minimizers of this function on <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.</p></li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Is there a convenient change of variable to convert the problem to a univariate one.</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">myst_nb</span> <span class="kn">import</span> <span class="n">glue</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d.axes3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">xgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">ygrid</span> <span class="o">=</span> <span class="n">xgrid</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span> <span class="n">ygrid</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">x</span><span class="p">,</span>
+                <span class="n">y</span><span class="p">,</span>
+                <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span>
+                <span class="n">rstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">cstride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">,</span>
+                <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+                <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fig_3d&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">t</span><span class="p">)</span>
+<span class="n">gp</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">xgrid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xgrid</span><span class="p">,</span> <span class="n">gp</span><span class="p">(</span><span class="n">xgrid</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;fig_2d&quot;</span><span class="p">,</span> <span class="n">fig</span><span class="p">,</span> <span class="n">display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">root_scalar</span><span class="p">(</span><span class="n">gp</span><span class="p">,</span> <span class="n">bracket</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;brentq&#39;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;res_text_1&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;The smallest stationary point is tm=</span><span class="si">{</span><span class="n">res</span><span class="o">.</span><span class="n">root</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">glue</span><span class="p">(</span><span class="s2">&quot;res_text_2&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;The minimum is </span><span class="si">{</span><span class="n">g</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">root</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The smallest stationary point is tm=2.889969697678371&#39;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;The minimum is -0.24897613487740497&#39;
+</pre></div>
+</div>
+<img alt="_images/9f17d8225a84f50e4af3428865a35a303a960a7dfc688ae24291d0485ed2538d.png" src="_images/9f17d8225a84f50e4af3428865a35a303a960a7dfc688ae24291d0485ed2538d.png" />
+<img alt="_images/b8f4ba23545cba1a4ae33535ce31abda505ac10be9092284e5b78c1b9df38010.png" src="_images/b8f4ba23545cba1a4ae33535ce31abda505ac10be9092284e5b78c1b9df38010.png" />
+</div>
+</details>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solutions<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><em><strong>Question A.1</strong></em></p>
+<p class="sd-card-text">The point <span class="math notranslate nohighlight">\(x=0\)</span> is indeed a maximizer, since <span class="math notranslate nohighlight">\(f(x) = 1 -|x| \leq 1 = f(0)\)</span> for any <span class="math notranslate nohighlight">\(x \in [-1, 1]\)</span> (<span class="math notranslate nohighlight">\(|x|=0\)</span> if and only if <span class="math notranslate nohighlight">\(x=0\)</span>).
+It is also a unique maximizer, since no other point is a maximizer (because <span class="math notranslate nohighlight">\(1 -|x| &lt; 1\)</span> for any other <span class="math notranslate nohighlight">\(x\)</span>).
+It is an interior maximizer since <span class="math notranslate nohighlight">\(0\)</span> is not an end point of <span class="math notranslate nohighlight">\([-1, 1]\)</span>.
+It is not stationary because <span class="math notranslate nohighlight">\(f\)</span> is not differentiable at this point (sketch the graph if you like) and hence cannot satisfy <span class="math notranslate nohighlight">\(f'(x)=0\)</span>.</p>
+<p class="sd-card-text"><em><strong>Question A.2</strong></em></p>
+<p class="sd-card-text">The set <span class="math notranslate nohighlight">\(S\)</span> of stationary points of <span class="math notranslate nohighlight">\(f\)</span> are the points <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> such
+that <span class="math notranslate nohighlight">\(f'(x) = \cos(x) = 0\)</span>. By the definition of the cosine function this
+is the set</p>
+<div class="math notranslate nohighlight">
+\[
+S := \{ x \in \mathbb{R} : x = \pi/2 + k \pi \text{ for } k \in \mathbb{Z} \}
+\]</div>
+<p class="sd-card-text">Every point in the domain <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> is interior (i.e, not an end point) and
+the function <span class="math notranslate nohighlight">\(f\)</span> is differentiable, so the set of maximizers will be
+contained in the set of stationary points. The same is true of the set of
+minimizers. From the definition of the sine function, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(\pi/2 + k \pi) =
+\begin{cases}
+    1 &amp; \text{ if $k$ is even} \\
+    -1 &amp; \text{ if $k$ is odd} \\
+\end{cases}
+\end{split}\]</div>
+<p class="sd-card-text">Hence the set of maximizers is</p>
+<div class="math notranslate nohighlight">
+\[
+M^* := \{ x \in \mathbb{R} : x = \pi/2 + k \pi \text{ for  } k \text{ an
+even integer}\}
+\]</div>
+<p class="sd-card-text">The set of minimizers is</p>
+<div class="math notranslate nohighlight">
+\[
+M_* := \{ x \in \mathbb{R} : x = \pi/2 + k \pi \text{ for  } k \text{ an
+odd integer}\}
+\]</div>
+<p class="sd-card-text"><em><strong>Question A.3</strong></em></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">The formulation is not correct. The revenue (after reincerting constant <span class="math notranslate nohighlight">\(A\)</span>) is <span class="math notranslate nohighlight">\(p A k^{\alpha} \ell^{\beta}\)</span>, the costs are <span class="math notranslate nohighlight">\(w \ell + r k\)</span>, and the choice variables are <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(\ell\)</span> (<span class="math notranslate nohighlight">\(w\)</span> and <span class="math notranslate nohighlight">\(r\)</span> are not chosen by the firm).<br />
+The constraint <span class="math notranslate nohighlight">\(\alpha + \beta &lt; 1\)</span> is irrelevant for the optimization problem, instead it is a constraint on the parameters for the problem to be well posed.
+Relevant constraints on the optimization problem are <span class="math notranslate nohighlight">\(k&gt;0\)</span> and <span class="math notranslate nohighlight">\(\ell&gt;0\)</span>, they can be first ignored and checked after we solve the unconstrained version of the problem.</p></li>
+<li><p class="sd-card-text">The correct formulation is (<span class="math notranslate nohighlight">\(A, p, \alpha, \beta, w, r\)</span> are parameters and should be fixed/found out before the firm solves the optimization problem)</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+p A k^{\alpha} \ell^{\beta} - w \ell - r k
+\rightarrow \max_{k, \ell}\\
+\quad \mathrm{s.t.} \quad
+k \ge 0, \ell \ge 0
+\end{split}\]</div>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">See lecture notes</p></li>
+<li><p class="sd-card-text">See lecture notes</p></li>
+<li><p class="sd-card-text">Optimal strategy <span class="math notranslate nohighlight">\(k^*, \ell^*\)</span> are given in the lecture notes. The maximizer is unique because the objective function is strictly concave when <span class="math notranslate nohighlight">\(\alpha+\beta &lt; 1\)</span>.</p></li>
+</ol>
+<p class="sd-card-text"><em><strong>Proof:</strong></em></p>
+<p class="sd-card-text">We check second order conditions for strict concavity.</p>
+<p class="sd-card-text">What we need: for any <span class="math notranslate nohighlight">\(k, \ell &gt; 0\)</span></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pi_{11}(k, \ell) &lt; 0\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(\pi_{11}(k, \ell) \, \pi_{22}(k, \ell) &gt;  \pi_{12}(k, \ell)^2\)</span></p></li>
+</ol>
+<p class="sd-card-text">The second order derivatives are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\pi_{11}(k,\ell) = (\alpha-1)\alpha pA k^{\alpha-2} \ell^\beta \\
+\pi_{22}(k,\ell) = (\beta-1)\beta pA k^{\alpha} \ell^{\beta-2}\\
+\pi_{12}(k, \ell) = \alpha \beta pA k^{\alpha-1} \ell^{\beta-1}.
+\end{split}\]</div>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\(\alpha+\beta&lt;1\)</span> and <span class="math notranslate nohighlight">\(\alpha, \beta \geq 0\)</span>, we have <span class="math notranslate nohighlight">\(\alpha-1&lt;0\)</span>, which implies <span class="math notranslate nohighlight">\(\pi_{11}(k,\ell)&lt;0\)</span> for all <span class="math notranslate nohighlight">\(k, \ell &gt;0\)</span>.<br />
+Moreover, the second order differentials imply</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\pi_{11}(k, \ell) \, \pi_{22}(k, \ell) = (\alpha-1)(\beta-1)\alpha \beta p^2 A^2 k^{2\alpha-2} \ell^{2\beta-2}\\
+(\pi_{22}(k, \ell))^2 = \alpha^2 \beta^2 p^2 A^2 k^{2\alpha-2} \ell^{2\beta-2}.
+\end{split}\]</div>
+<p class="sd-card-text">Assuming that all parameters and variables are positive.
+Then, we obtain <span class="math notranslate nohighlight">\(\pi_{11}(k, \ell) \, \pi_{22}(k, \ell) &gt;  \pi_{12}(k, \ell)^2\)</span> if and only if <span class="math notranslate nohighlight">\((\alpha-1)(\beta-1) &gt; \alpha \beta\)</span> if and only if <span class="math notranslate nohighlight">\(1 &gt; \alpha + \beta\)</span>.</p>
+<p class="sd-card-text"><em><strong>Question A.4</strong></em></p>
+<p class="sd-card-text">The graph of <span class="math notranslate nohighlight">\(f(x,y)\)</span> is</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/9f17d8225a84f50e4af3428865a35a303a960a7dfc688ae24291d0485ed2538d.png"><img alt="_images/9f17d8225a84f50e4af3428865a35a303a960a7dfc688ae24291d0485ed2538d.png" src="_images/9f17d8225a84f50e4af3428865a35a303a960a7dfc688ae24291d0485ed2538d.png" style="width: 80%;" /></a>
+</figure>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(t = x^2+y^2 \geq 0\)</span>.
+The function becomes</p>
+<div class="math notranslate nohighlight">
+\[
+f(x,y) = \frac{\cos(x^2+y^2)}{1 + x^2+y^2} = \frac{\cos(t)}{1 + t} =: g(t)  \quad (t \geq 0).
+\]</div>
+<p class="sd-card-text">First note that since <span class="math notranslate nohighlight">\(t \geq 0\)</span> and <span class="math notranslate nohighlight">\(\cos(t) \leq 1\)</span>, we have <span class="math notranslate nohighlight">\(g(t)\leq 1\)</span> and <span class="math notranslate nohighlight">\(g(0)=1\)</span>.
+Hence, <span class="math notranslate nohighlight">\(t=0\)</span> is a maximizer for <span class="math notranslate nohighlight">\(g\)</span>, or <span class="math notranslate nohighlight">\((x,y)=(0,0)\)</span> is the maximizer for <span class="math notranslate nohighlight">\(f\)</span>.
+It is a unique maximizer, since if <span class="math notranslate nohighlight">\(g(t) &lt; 1\)</span> for <span class="math notranslate nohighlight">\(t &gt;0\)</span>.</p>
+<p class="sd-card-text">Next, we find the stationary points of <span class="math notranslate nohighlight">\(f\)</span> by finding the stationary points of <span class="math notranslate nohighlight">\(g\)</span>.
+The FOC is</p>
+<div class="math notranslate nohighlight">
+\[
+g'(t) = \frac{-\sin(t)(1+t) - \cos(t)}{(1+t)^2} = 0.
+\]</div>
+<p class="sd-card-text">Since <span class="math notranslate nohighlight">\((1+t)^2&gt;0\)</span>, it must be</p>
+<div class="math notranslate nohighlight">
+\[
+-\sin(t)(1+t) - \cos(t) = 0 ⇔ t\sin(t) + \sin(t) + \cos(t)=0.
+\]</div>
+<p class="sd-card-text">The numerical solutions for the smallest stationary point <span class="math notranslate nohighlight">\(t_m\)</span> such that <span class="math notranslate nohighlight">\(\cos(t_m)&lt;0\)</span> are</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="_images/b8f4ba23545cba1a4ae33535ce31abda505ac10be9092284e5b78c1b9df38010.png"><img alt="_images/b8f4ba23545cba1a4ae33535ce31abda505ac10be9092284e5b78c1b9df38010.png" src="_images/b8f4ba23545cba1a4ae33535ce31abda505ac10be9092284e5b78c1b9df38010.png" style="width: 80%;" /></a>
+</figure>
+<p class="sd-card-text"><span class="output text_plain">‘The smallest stationary point is tm=2.889969697678371’</span></p>
+<p class="sd-card-text"><span class="output text_plain">‘The minimum is -0.24897613487740497’</span></p>
+<p class="sd-card-text">The minimizers are <span class="math notranslate nohighlight">\(\{(x,y)\in\mathbb{R}: x^2+y^2 = t_m\}\)</span>.
+To verify that <span class="math notranslate nohighlight">\(t_m\)</span> is the unique minimizer for <span class="math notranslate nohighlight">\(g\)</span>, since <span class="math notranslate nohighlight">\(\cos^2(t) + \sin^2(t)=1\)</span>, we rewrite FOC to get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+t\sin(t) + \sin(t) = \pm \sqrt{1-\sin^2(t)} \\
+⇔ \sin^2(t) = \frac{1}{2 + 2t + t^2} \\
+⇔ \cos^2(t) = 1 - \frac{1}{2+2t + t^2}=\frac{(1+t)^2}{2+2t + t^2}\\
+⇒ g(t) = \frac{\cos(t)}{1+t} = \pm \frac{1}{\sqrt{2+2t +t^2}}  \qquad (\text{$t$ is stationary point}).
+\end{split}\]</div>
+<p class="sd-card-text">Therefore, the smallest stationary point such that <span class="math notranslate nohighlight">\(\cos(t) &lt; 0\)</span> will be the unique minimizer for <span class="math notranslate nohighlight">\(g\)</span>.</p>
+</div>
+</details></section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="12.revision.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Revision</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03.exercises.B.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise set B</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-a-3-profit-maximization-with-cobb-douglas-production-and-linear-costs">Question A.3: Profit maximization with Cobb-Douglas production and linear costs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-a-4">Question A.4*</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fedor Iskhakov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
