@@ -68,6 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exercise set G" href="08.exercises.G.html" />
     <link rel="prev" title="Exercise set E" href="06.exercises.E.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -115,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: lecture 7 'Unconstrained optimization' and exercise set F</div>
+    <div class="bd-header-announcement__content">Latest update: lecture 8 'Constrained optimization', exercise set G and solutions to the exercise set F</div>
   </div>
 
   
@@ -184,6 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="05.exercises.D.html">Exercise set D</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06.exercises.E.html">Exercise set E</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise set F</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.exercises.G.html">Exercise set G</a></li>
 </ul>
 
     </div>
@@ -495,7 +497,244 @@ y_i \\
 <li><p>Derive the gradient and Hessian of the log-likelihood function. Make sure that all multiplied vectors and matrices are conformable.</p></li>
 <li><p>Derive conditions under which the likelihood function has a unique maximizer (and thus the logit model has a unique maximum likelihood estimator).</p></li>
 </ol>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Solutions<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Question F.1</strong></p>
+<p class="sd-card-text">See the last anwer in <a class="reference external" href="https://math.stackexchange.com/questions/307381/why-do-we-assume-that-a-matrix-in-quadratic-form-is-symmetric">this math stackexchange post</a></p>
+<p class="sd-card-text"><strong>Question F.2</strong></p>
+<p class="sd-card-text">A possible answer:</p>
+<p class="sd-card-text">Represent the quadratic form as a dot product of two functions
+<span class="math notranslate nohighlight">\(f({\bf x}) = {\bf x}' A {\bf x} = h({\bf x}) \cdot g({\bf x})\)</span>, where
+<span class="math notranslate nohighlight">\(h({\bf x}) = {\bf x}\)</span> and <span class="math notranslate nohighlight">\(g({\bf x}) = A {\bf x}\)</span>.
+Then <span class="math notranslate nohighlight">\(Dh({\bf x}) = I\)</span> (identity matrix) and <span class="math notranslate nohighlight">\(Dg({\bf x}) = A\)</span>.</p>
+<p class="sd-card-text">The last Jacobian can be easity derived by representing matrix multiplication as a linear combination of columns. Differentiating with respect to each element of <span class="math notranslate nohighlight">\({\bf x}\)</span> then yields a Jacobian composed of columns of matrix <span class="math notranslate nohighlight">\(A\)</span>, therefore equal to it.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+g({\bf x}) = A {\bf x} = 
+\left(
+\begin{array}{ccc}
+a_{11} &amp; \cdots &amp; a_{1N} \\
+\vdots &amp; \ddots &amp; \vdots \\
+a_{N1} &amp; \cdots &amp; a_{NN}
+\end{array}
+\right)
+\left(
+\begin{array}{c}
+x_1 \\ \vdots \\ x_N
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+a_{11} \\ \vdots \\ a_{N1}
+\end{array}
+\right)
+x_1 +
+\cdots
+\left(
+\begin{array}{c}
+a_{1N} \\ \vdots \\ a_{NN}
+\end{array}
+\right)
+x_N
+\end{split}\]</div>
+<p class="sd-card-text">Applying the dot product rule of differentiation we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+D(h \cdot g)({\bf x}) = [f({\bf x})]' Dg({\bf x}) + [g({\bf x})]' Df({\bf x}) = \\
+= {\bf x}'A + [A{\bf x}]' I = {\bf x}'A + {\bf x}' A = 2 {\bf x}' A = 2 [A {\bf x}]'
+\end{split}\]</div>
+<p class="sd-card-text">The last transformation is transpose of a product + utilizing symmetry of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p class="sd-card-text">The final answer is the <span class="math notranslate nohighlight">\(1 \times N\)</span> matrix (row vector) <span class="math notranslate nohighlight">\( Df({\bf x}) = \nabla f({\bf x}) = 2 {\bf x}' A = 2 [A {\bf x}]'\)</span>.</p>
+<p class="sd-card-text"><strong>Question F.3</strong></p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">The optimization problem is:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\max \limits_{\beta \in \mathbb{R}^2} \sum\limits_{i=1}^{n} l_i(\beta, x_1, x_2, z_i, y_i).
+\]</div>
+<ul class="simple">
+<li><p class="sd-card-text">We can control <span class="math notranslate nohighlight">\(\beta = {[\beta_1, \beta_2]^{\prime}}\)</span> (coefficients to be estimated).</p></li>
+<li><p class="sd-card-text">We treat <span class="math notranslate nohighlight">\(x_1, x_2, {(z_i, y_i)}_{i=1}^n\)</span> as
+parameters (data).</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p class="sd-card-text">We can try to apply Weierstrass theorem.</p></li>
+</ol>
+<ul class="simple">
+<li><p class="sd-card-text">The objective function is continuous.</p></li>
+<li><p class="sd-card-text">But the domain is not compact (<span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>
+is closed but unbounded).</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">Denote <span class="math notranslate nohighlight">\(D_{\beta} l_i\)</span> as the Jacobian of
+<span class="math notranslate nohighlight">\(l_i\)</span> with respect to <span class="math notranslate nohighlight">\(\beta\)</span>, <span class="math notranslate nohighlight">\(H_{\beta} l_i\)</span>
+as the Hessian of <span class="math notranslate nohighlight">\(l_i\)</span> with respect to <span class="math notranslate nohighlight">\(\beta\)</span>.</p></li>
+</ol>
+<p class="sd-card-text">Notice that <span class="math notranslate nohighlight">\(l_i(\beta) = l_i\Big(p_i\big(u_i(\beta)\big)\Big)\)</span>, then by the chain rule:</p>
+<div class="math notranslate nohighlight">
+\[
+D_{\beta}l_i  =D_{p_i}l_i ~D_{u_i}p_i 
+~D_{\beta}u_i.
+\]</div>
+<p class="sd-card-text">We calculate the three terms on the r.h.s. one by one:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ll}
+D_{p_i} l_i &amp;= \left[\begin{array}{cc} y_i/p_{i1} &amp; (1-y_i)/p_{i2}\\ \end{array}\right], \\
+D_{u_i} p_i &amp;= \left[\begin{array}{cc} 
+p_{i1}p_{i2} &amp; -p_{i1} p_{i2}\\ 
+-p_{i1} p_{i2} &amp; p_{i1}p_{i2}\\ 
+\end{array}\right] 
+=
+p_{i1} p_{i2} \left[\begin{array}{cc} 
+1 &amp; -1\\ 
+-1 &amp; 1\\ 
+\end{array}\right],
+\\   
+D_{\beta} u_i &amp;= \left[\begin{array}{cc} 
+x_1 &amp; x_1 z_i\\ 
+x_2 &amp; x_2 z_i\\ 
+\end{array}\right].
+\end{array}
+\end{split}\]</div>
+<p class="sd-card-text">Thus,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ll}
+D_\beta l_i &amp;= \left[\begin{array}{cc} y_i/p_{i1} &amp; (1-y_i)/p_{i2}\\ \end{array}\right]
+p_{i1} p_{i2}  \left[\begin{array}{cc} 
+1 &amp; -1\\ 
+-1 &amp; 1\\ 
+\end{array}\right]
+\left[\begin{array}{cc} 
+x_1 &amp; x_1 z_i\\ 
+x_2 &amp; x_2 z_i\\ 
+\end{array}\right],\\
+&amp;= (x_1 -x_2) \cdot 
+\left[\begin{array}{cc} 
+y_i p_{i2} - (1-y_i)p_{i1}
+&amp; 
+y_i p_{i2}z - (1-y_i)p_{i1} z\\ 
+\end{array}\right].
+\end{array}
+\end{split}\]</div>
+<p class="sd-card-text">The Jacobian (gradient) of the MLE objective function is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+D_\beta l = \sum\limits_{i=1}^{n}
+D_\beta l_i = 
+(x_1 -x_2) \cdot
+\sum\limits_{i=1}^{n} 
+  \left[\begin{array}{cc} 
+    y_i p_{i2} - (1-y_i)p_{i1}
+    &amp; 
+    y_i p_{i2}z - (1-y_i )p_{i1} z\\ 
+    \end{array}\right]
+\end{split}\]</div>
+<p class="sd-card-text">We set <span class="math notranslate nohighlight">\(h(\beta_i) \equiv (D_\beta l_i)^{\prime}\)</span>.
+Then
+<span class="math notranslate nohighlight">\( h(\beta)= h\Big(p_i\big(u_i(\beta)\big)\Big)\)</span>
+Thus, by applying the chain rule again,  Hessian of <span class="math notranslate nohighlight">\(l_i\)</span> with respect to <span class="math notranslate nohighlight">\(\beta\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ll}
+H_\beta l_i &amp;= D_{\beta} h(\beta)\\
+&amp;= D_{p_i} h(p_i) ~ D_{u_i} p_i ~ D_{\beta} u_i\\
+&amp;= (x_1 - x_2) 
+\left[\begin{array}{cc}
+-(1-y_i) &amp; y_i \\ 
+-(1-y_i)z_i &amp; y_i z_i \\
+\end{array}\right] 
+p_{i1} p_{i2}
+\left[\begin{array}{cc} 
+1 &amp; -1\\ 
+-1 &amp; 1\\ 
+\end{array}\right]
+\left[\begin{array}{cc} 
+x_1 &amp; x_1 z_i\\ 
+x_2 &amp; x_2 z_i\\ 
+\end{array}\right] \\
+&amp; = 
+(x_1 - x_2)^2
+p_{i1} p_{i2} 
+\left[\begin{array}{cc} 
+-1 &amp; -z_i\\ 
+-z_i &amp; -z_i^2\\ 
+\end{array}\right]
+\end{array}
+\end{split}\]</div>
+<p class="sd-card-text">Thus, the Hessian of the MLE objective function is:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}
+\begin{array}{ll}
+H_\beta l &amp;= \sum\limits_{i=1}^{n} H_\beta l_i \\\end{split}\\\begin{split}&amp;= (x_1 - x_2)^2 
+\sum\limits_{i=1}^{n}
+p_{i1} p_{i2} 
+\left[\begin{array}{cc} 
+x_1 &amp; x_1 z_i\\ 
+x_2 &amp; x_2 z_i\\ 
+\end{array}\right]\\ 
+&amp; = (x_1 - x_2)^2
+\left[\begin{array}{cc}
+- \sum\limits_{i=1}^{n} p_{i1} p_{i2} &amp;
+- \sum\limits_{i=1}^{n} p_{i1} p_{i2} z_i \\
+- \sum\limits_{i=1}^{n} p_{i1} p_{i2} z_i &amp;
+- \sum\limits_{i=1}^{n} p_{i1} p_{i2} z_i^2 \\
+\end{array}\right]
+\end{array}
+\end{split}\end{aligned}\end{align} \]</div>
+<ol class="arabic simple" start="4">
+<li><p class="sd-card-text">If the Hessian <span class="math notranslate nohighlight">\(H_{\beta} l\)</span> is negative      definite for all <span class="math notranslate nohighlight">\(\beta \in \mathbb{R}^2\)</span>,
+then <span class="math notranslate nohighlight">\(\det (H_{\beta} l)&gt; 0\)</span> always holds, we
+know there must be at least one solution to
+the first order conditions <span class="math notranslate nohighlight">\(D_{\beta} l = 0\)</span> by
+the <a class="reference external" href="https://en.wikipedia.org/wiki/Inverse_function_theorem">Inverse function theorem</a>.
+Moreover, if the Hessian is negative definite,
+then the MLE objective is strictly concave,
+i.e., there is a unique maximizer of the log likelihood function, which is the unique solution to the first order conditions.</p></li>
+</ol>
+<p class="sd-card-text">Let us find the conditions under which the Hessian is negative definite.
+Notice that <span class="math notranslate nohighlight">\((x_1 - x_2) &gt; 0\)</span> if and only if <span class="math notranslate nohighlight">\(x_1 \neq x_2\)</span>, and <span class="math notranslate nohighlight">\(p_{i1} p_{i2} &gt; 0\)</span> for all <span class="math notranslate nohighlight">\(i\)</span>. Thus, if <span class="math notranslate nohighlight">\(x_1 \neq x_2\)</span>, we only need to check the condition
+<span class="math notranslate nohighlight">\(det(H_\beta l) &gt; 0\)</span>.
+Notice that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{ll}
+&amp; \quad \quad \quad det(H_\beta l) &gt; 0\\
+&amp;\iff 
+(\sum_i p_{i1}p_{i2})(\sum_i p_{i1} p_{i2} z_i^2) - (\sum_i p_{i1} p_{i2} z_i)^2 &gt; 0. \\
+&amp; \iff 
+\sum_{i, j} p_{i1}p_{i2}p_{j1}p_{j2}z_j^2
+- 
+\sum_{i, j} p_{i1}p_{i2}p_{j1}p_{j2}z_i z_j &gt; 0\\ 
+&amp; \iff 
+\sum_{i &gt; j} p_{i1}p_{i2}p_{j1}p_{j2}(z_i^2 + z_j^2) - \sum_{i &gt; j} p_{i1}p_{i2}p_{j1}p_{j2}(2 z_i z_j) &gt; 0\\
+&amp; \iff
+\sum_{i &gt; j} p_{i1}p_{i2}p_{j1}p_{j2}(z_i - z_j)^2 &gt; 0.\\
+&amp; \iff 
+z_i \neq z_j \text{ for some } i, j.
+\end{array}
+\end{split}\]</div>
+<p class="sd-card-text">Thus, we get a sufficient condition for the unique maximizer:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(x_1 \neq x_2\)</span>,</p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(z_i \neq z_j\)</span> for some <span class="math notranslate nohighlight">\(i, j\)</span>.</p></li>
+</ul>
+<p class="sd-card-text">It’s easy to show this condition is also a necessary condition. Since if <span class="math notranslate nohighlight">\(x_1 = x_2\)</span>,
+<span class="math notranslate nohighlight">\(\beta_1\)</span> has no impact on the likelihood function, and if <span class="math notranslate nohighlight">\(z_i = z_j\)</span> for all <span class="math notranslate nohighlight">\(i, j\)</span>,
+we cannot distinguish <span class="math notranslate nohighlight">\(\beta_1\)</span> from <span class="math notranslate nohighlight">\(\beta_2\)</span> (this is called <em>strict multicollinearity</em> in econometrics).</p>
+<p class="sd-card-text">Thus, the logit model has a unique ML estimator if and only if <span class="math notranslate nohighlight">\(x_1 \neq x_2\)</span>, and <span class="math notranslate nohighlight">\(z_i \neq z_j\)</span> for some <span class="math notranslate nohighlight">\(i, j\)</span>.</p>
+<p class="sd-card-text">The intuition is that if the model can be estimated (<em>identifiable</em> in econometrics jargon), the two alternatives cannot be the same
+(<span class="math notranslate nohighlight">\(x_1 \neq x_2\)</span>), and at least two people in the data set should have different characteristics (<span class="math notranslate nohighlight">\(z_i \neq z_j\)</span> for some <span class="math notranslate nohighlight">\(i, j\)</span>).</p>
+</div>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -537,6 +776,15 @@ y_i \\
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Exercise set E</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="08.exercises.G.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise set G</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
