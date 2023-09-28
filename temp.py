@@ -10,14 +10,18 @@ def f(x,y):
     return -x**2 - 2* y**2 
 
 if __name__ == '__main__':
-    f = lambda x: x[0]**3/3 - 3*x[1]**2 + 5*x[0] - 6*x[0]*x[1]
+    # f = lambda x: x[0]**3/3 - 3*x[1]**2 + 5*x[0] - 6*x[0]*x[1]
 
-    x = y = np.linspace(-10.0, 10.0, 100)
+    f = lambda x: (x[0])**3 - (x[1])**3
+    lb,ub = -1.5,1.5
+
+    x = y = np.linspace(lb,ub, 100)
     X, Y = np.meshgrid(x, y)
     zs = np.array([f((x,y)) for x,y in zip(np.ravel(X), np.ravel(Y))])
     Z = zs.reshape(X.shape)
 
-    a,b=4,8
+    # a,b=4,8
+    a,b=1,1
     # (x/a)^2 + (y/b)^2 = 1
     theta = np.linspace(0, 2 * np.pi, 100)
     X1 = a*np.cos(theta)
