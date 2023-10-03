@@ -76,7 +76,7 @@ html:
   comments:
     hypothesis              : false
     utterances              : false
-  announcement              : "Latest update: slides for the guest lecture 9 + solutions for the exercise set G" # A banner announcement at the top of the site.
+  announcement              : "Latest update: slides for the guest lecture 9 + solutions for the exercise set G and exercise set H" # A banner announcement at the top of the site.
 
 #######################################################################################
 # LaTeX-specific settings
