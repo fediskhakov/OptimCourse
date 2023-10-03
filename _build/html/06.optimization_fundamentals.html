@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: lecture 8 'Constrained optimization', exercise set G and solutions to the exercise set F</div>
+    <div class="bd-header-announcement__content">Latest update: slides for the guest lecture 9</div>
   </div>
 
   
@@ -175,7 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Fundamentals of optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.unconstrained.html">Unconstrained optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08.constrained.html">Constrained optimization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09.practical_session.html">Practical session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.practical_session.html">Guest lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10.envelope_maximum.html">Envelope and maximum theorems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11.dynamic.html">Dynamic optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12.revision.html">Revision</a></li>
@@ -2030,9 +2030,9 @@ f({\bf x}) + g({\bf x}) \leq \sup f + \sup g
 \[\begin{split}
 %
 \sup f = \sup (f - g + g) 
-&amp; \leq \sup (f - g) + \sup g
+\leq \sup (f - g) + \sup g
 \\
-&amp; \leq \sup | f - g | + \sup g
+\leq \sup | f - g | + \sup g
 %
 \end{split}\]</div>
 <div class="math notranslate nohighlight">
@@ -2107,18 +2107,18 @@ f({\bf x}) + g({\bf x}) \leq \sup f + \sup g
 <div class="math notranslate nohighlight">
 \[\begin{split}
 %
-&amp; \| \lambda {\bf x} + (1 - \lambda) {\bf y} - {\bf a} \|
+\| \lambda {\bf x} + (1 - \lambda) {\bf y} - {\bf a} \|
 = \| \lambda {\bf x} - \lambda {\bf a} 
 + (1 - \lambda) {\bf y} - (1 - \lambda) {\bf a} \| \leq
-\\ &amp;
+\\
 \leq \| \lambda {\bf x} - \lambda {\bf a} \|
 + \| (1 - \lambda) {\bf y} - (1 - \lambda) {\bf a} \| =
-\\ &amp;
+\\
 = \lambda \| {\bf x} - {\bf a} \|
 + (1 - \lambda) \| {\bf y} - {\bf a} \| &lt;&gt;
-\\ &amp;
+\\
 &lt; \lambda \epsilon + (1 - \lambda) \epsilon =
-\\ &amp;
+\\
 = \epsilon
 %
 \end{split}\]</div>
@@ -2261,7 +2261,7 @@ E_f := \{ ({\bf x}, y) \in A \times \mathbb{R} \colon f({\bf x \}) \leq y}
 \[\begin{split}
 %
 \|\lambda {\bf x} + (1 - \lambda) {\bf y}\|
-&amp; \leq \|\lambda {\bf x}\| + \|(1 - \lambda) {\bf y}\|
+\leq \|\lambda {\bf x}\| + \|(1 - \lambda) {\bf y}\|
 \\
 = \lambda \|{\bf x}\| + (1 - \lambda) \|{\bf y}\|
 %
@@ -2306,7 +2306,7 @@ Q({\bf x}) = {\bf x}' {\bf A} {\bf x}
 \[\begin{split}
 %
 \lambda Q({\bf x}) + (1 - \lambda) Q({\bf y})
-&amp; - Q(\lambda {\bf x} + (1 - \lambda) {\bf y})
+- Q(\lambda {\bf x} + (1 - \lambda) {\bf y})
 \\
 = \lambda (1 - \lambda) ({\bf x} - {\bf y})' {\bf A} ({\bf x} - {\bf y})
 %

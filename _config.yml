@@ -76,7 +76,7 @@ html:
   comments:
     hypothesis              : false
     utterances              : false
-  announcement              : "Latest update: lecture 8 'Constrained optimization', exercise set G and solutions to the exercise set F" # A banner announcement at the top of the site.
+  announcement              : "Latest update: slides for the guest lecture 9" # A banner announcement at the top of the site.
 
 #######################################################################################
 # LaTeX-specific settings

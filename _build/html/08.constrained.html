@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Practical session" href="09.practical_session.html" />
+    <link rel="next" title="Guest lecture" href="09.practical_session.html" />
     <link rel="prev" title="Unconstrained optimization" href="07.unconstrained.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: lecture 8 'Constrained optimization', exercise set G and solutions to the exercise set F</div>
+    <div class="bd-header-announcement__content">Latest update: slides for the guest lecture 9</div>
   </div>
 
   
@@ -175,7 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="06.optimization_fundamentals.html">Fundamentals of optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07.unconstrained.html">Unconstrained optimization</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Constrained optimization</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09.practical_session.html">Practical session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.practical_session.html">Guest lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10.envelope_maximum.html">Envelope and maximum theorems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11.dynamic.html">Dynamic optimization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="12.revision.html">Revision</a></li>
@@ -946,7 +946,7 @@ x_2^\star = \frac{\beta}{\beta + \alpha} \cdot \frac{m}{p_2}
 <p>Then there exists a vector <span class="math notranslate nohighlight">\(\lambda^\star \in \mathbb{R}^K\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
-Df({\bf x}^\star) - \lambda^\star \cdot Dg_i({\bf x}^\star) =
+Df({\bf x}^\star) - \lambda^\star \cdot Dg({\bf x}^\star) =
 Df({\bf x}^\star) - \sum_{i=1}^K \lambda_i^\star Dg_i({\bf x}^\star) =
 {\bf 0}
 \]</div>
@@ -969,7 +969,7 @@ Df({\bf x}^\star) - \sum_{i=1}^K \lambda_i^\star Dg_i({\bf x}^\star) =
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L}({\bf x},{\bf \lambda}) 
-= f({\bf x}) - \lambda \cdot g_i({\bf x}) =
+= f({\bf x}) - \lambda \cdot g({\bf x}) =
 f({\bf x}) - \sum_{i=1}^K \lambda_i g_i({\bf x})
 \]</div>
 <p>is called a <strong>Lagrangian</strong> (function)</p>
@@ -1468,7 +1468,7 @@ x_1 p_1 + x_2 p_2 -m = 0
 <p>Then there exists a vector <span class="math notranslate nohighlight">\(\lambda^\star \in \mathbb{R}^K\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
-Df({\bf x}^\star) - \lambda^\star \cdot Dg_i({\bf x}^\star) =
+Df({\bf x}^\star) - \lambda^\star \cdot Dg({\bf x}^\star) =
 Df({\bf x}^\star) - \sum_{i=1}^K \lambda_i^\star Dg_i({\bf x}^\star) =
 {\bf 0}
 \]</div>
@@ -1539,6 +1539,9 @@ x_1 \geq 0, \; x_2 \geq 0
 \alpha + \lambda_1 - \lambda_3 p_1 = 0 \\
 \frac{\partial \mathcal{L}}{\partial x_2} = 0 \implies
 \frac{\beta}{x_2} + \lambda_2 - \lambda_3 p_2 = 0 \\
+x_1 \ge 0 \\
+x_2 \ge 0 \\
+x_1 p_1 + x_2 p_2 \le m \\
 \lambda_1 \ge 0 \text { and } \lambda_1 x_1 = 0 \\
 \lambda_2 \ge 0 \text { and } \lambda_2 x_2 = 0 \\
 \lambda_3 \ge 0 \text { and } \lambda_3 (x_1 p_1 + x_2 p_2 -m) = 0 \\
@@ -1715,7 +1718,7 @@ x,y \in \mathbb{R}
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Practical session</p>
+        <p class="prev-next-title">Guest lecture</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
