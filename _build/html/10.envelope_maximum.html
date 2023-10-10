@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: slides for the guest lecture 9 + solutions for the exercise set G and exercise set H</div>
+    <div class="bd-header-announcement__content">Latest update: solutions for the exercise set H</div>
   </div>
 
   
@@ -382,7 +382,14 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-function-and-optimization-problem-parameters">Value function and optimization problem parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-function-and-optimization-problem-parameters">Value function and optimization problem parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-maximum-theorem">The maximum theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-of-correspondences">Continuity of correspondences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-statement-of-the-maximum-theorem">The statement of the maximum theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-maximum-theorem-with-unique-optimizers">The maximum theorem with unique optimizers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#envelope-theorem">Envelope theorem</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrange-multiplyers-as-shadow-prices">Lagrange multiplyers as shadow prices</a></li>
 </ul>
 </li>
@@ -404,15 +411,21 @@ Fedor Iskhakov</p>
 <section id="announcements-reminders">
 <h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>None?</p></li>
+<li><p><em>Test 3</em> <a class="reference external" href="https://www.dropbox.com/scl/fi/specehca5vp3qqqo07ocn/test2_distr_prelim.png?rlkey=wytv2hxscmbur18cy504p77k9&amp;dl=0">results and discussion</a></p></li>
+<li><p>Exam is scheduled to <strong>Monday, 6 November</strong>  9:00 to 12:15, <em>multiple rooms</em></p></li>
 </ul>
 </section>
 <section id="plan-for-this-lecture">
 <h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Envelope theorems</p></li>
-<li><p>Theorem of maximum</p></li>
+<li><p>The maximum theorem</p></li>
+<li><p>Envelope theorem</p></li>
 </ol>
+<p><strong>Supplementary reading:</strong></p>
+<ul class="simple">
+<li><p>Simon &amp; Blume:</p></li>
+<li><p>Sundaram:</p></li>
+</ul>
 </section>
 <section id="value-function-and-optimization-problem-parameters">
 <h2>Value function and optimization problem parameters<a class="headerlink" href="#value-function-and-optimization-problem-parameters" title="Permalink to this heading">#</a></h2>
@@ -436,20 +449,222 @@ h_j(x,\theta) \le 0, \; j\in\{1,\dots,J\}
 <li><p><span class="math notranslate nohighlight">\(x \in \mathbb{R}^N\)</span> are decision/choice variables</p></li>
 <li><p><span class="math notranslate nohighlight">\(\theta \in \mathbb{R}^K\)</span> are parameters</p></li>
 <li><p><span class="math notranslate nohighlight">\(g_i(x,\theta) = 0, \; i\in\{1,\dots,I\}\)</span> where <span class="math notranslate nohighlight">\(g_i \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span>, are equality constraints</p></li>
-<li><p><span class="math notranslate nohighlight">\(h_i(x,\theta) \le 0, \; i\in\{1,\dots,I\}\)</span> where <span class="math notranslate nohighlight">\(h_i \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span>, are inequality constraints</p></li>
+<li><p><span class="math notranslate nohighlight">\(h_j(x,\theta) \le 0, \; j\in\{1,\dots,J\}\)</span> where <span class="math notranslate nohighlight">\(h_j \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span>, are inequality constraints</p></li>
 <li><p><span class="math notranslate nohighlight">\(V(\theta) \colon \mathbb{R}^K \to \mathbb{R}\)</span> is a value function</p></li>
 </ul>
 </div>
 <p>This lecture focuses on the <em>value function</em> in the optimization problem <span class="math notranslate nohighlight">\(V(\theta)\)</span>, and how it depends on the parameters <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>In economics we are interested how the optimized behavior changes when the circumstances of the decision-making process change</p>
 <ul class="simple">
-<li><p>In economics usually used to study how the optimized behavior changes when the circumstances of the decision-making process change</p>
-<ul>
 <li><p>income/budget/wealth changes</p></li>
-<li><p>effects in the behavior change importance</p></li>
 <li><p>intertemporal effects of changes in other time periods</p></li>
 </ul>
-</li>
+<p>We would like to establish the properties of the value function <span class="math notranslate nohighlight">\(V(\theta)\)</span>:</p>
+<ul class="simple">
+<li><p>continuity <span class="math notranslate nohighlight">\(\rightarrow\)</span> <em><strong>The maximum theorem</strong></em></p></li>
+<li><p>monotonicity <span class="math notranslate nohighlight">\(\rightarrow\)</span> Supermodularity and increasing differences (<em>not covered here</em>, see Sundaram ch.10)</p></li>
+<li><p>derivative (<em>if differentiable</em>) <span class="math notranslate nohighlight">\(\rightarrow\)</span> <em><strong>Envelope theorem</strong></em></p></li>
 </ul>
+</section>
+<section id="the-maximum-theorem">
+<h2>The maximum theorem<a class="headerlink" href="#the-maximum-theorem" title="Permalink to this heading">#</a></h2>
+<p>The main idea of the theorem: when the components of the optimization problem <span class="math notranslate nohighlight">\(f(x,\theta)\)</span>, <span class="math notranslate nohighlight">\(g_i(x,\theta)\)</span> and <span class="math notranslate nohighlight">\(h_j(x,\theta)\)</span> are continuous, then the value function <span class="math notranslate nohighlight">\(V(\theta)\)</span> is also continuous, in some sense.</p>
+<ul class="simple">
+<li><p>we need to accurately define the notion of continuity for all components of the optimization problem</p></li>
+</ul>
+<p>Denote the admissible set <span class="math notranslate nohighlight">\(\mathcal{D}(\theta)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{D}(\theta) = \left\{ 
+x \in \mathbb{R}^N \times \mathbb{R}^K \colon
+g_i(x,\theta) = 0, \; i\in\{1,\dots,I\}, \;
+h_j(x,\theta) \le 0, \; j\in\{1,\dots,J\}
+\right\}
+\]</div>
+<p>In solving the optimization problem we are not only interested in the attainable optimal value <span class="math notranslate nohighlight">\(V(\theta)\)</span>, but also in the set of maximizers/minimizers <span class="math notranslate nohighlight">\(\mathcal{D}^\star(\theta)\)</span> corresponding to each parameter value <span class="math notranslate nohighlight">\(\theta\)</span></p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>We will refer to the pair</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V(\theta) = \max_{x} f(x,\theta) \\
+\mathcal{D}^\star(\theta) = \mathrm{arg}\max_x f(x,\theta)
+\end{split}\]</div>
+<p>as the <strong>solution of the optimization problem</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x,\theta) \to \max_{x} \\
+\text{subject to} \; x \in \mathcal{D}(\theta),
+\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{l}
+f(x,\theta) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R},\\
+\mathcal{D}(\theta) \subset \mathbb{R}(N) \text{ for all } \theta,\\
+\theta \in \Theta \subset \mathbb{R}^K
+\end{array}
+\end{split}\]</div>
+</div>
+<p>Note that the mappings of <span class="math notranslate nohighlight">\(\theta\)</span> to <span class="math notranslate nohighlight">\(\mathcal{D}(\theta)\)</span> or <span class="math notranslate nohighlight">\(\mathcal{D}^\star(\theta)\)</span> are not functions because both <span class="math notranslate nohighlight">\(\mathcal{D}(\theta)\)</span> and often <span class="math notranslate nohighlight">\(\mathcal{D}^\star(\theta)\)</span> have multiple elements for a given <span class="math notranslate nohighlight">\(\theta\)</span></p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>A correspondence is</p>
+</div>
+<section id="continuity-of-correspondences">
+<h3>Continuity of correspondences<a class="headerlink" href="#continuity-of-correspondences" title="Permalink to this heading">#</a></h3>
+<p>Recall the definition of the continuous function</p>
+<p>sequences</p>
+<p>Equivalently through the open epsilon-balls</p>
+<p>Generalize to correspondences</p>
+<p>Upper semi-continuity</p>
+<p>Lower semi-continuity</p>
+<p>Examples, examples, examples</p>
+</section>
+<section id="the-statement-of-the-maximum-theorem">
+<h3>The statement of the maximum theorem<a class="headerlink" href="#the-statement-of-the-maximum-theorem" title="Permalink to this heading">#</a></h3>
+<p>General statement of the maximum theorem</p>
+<p>The maximum theorem under concavity</p>
+</section>
+<section id="the-maximum-theorem-with-unique-optimizers">
+<h3>The maximum theorem with unique optimizers<a class="headerlink" href="#the-maximum-theorem-with-unique-optimizers" title="Permalink to this heading">#</a></h3>
+<p>Special case for when the optimizer is unique for each <span class="math notranslate nohighlight">\(\theta\)</span></p>
+<p>In this case the upper semi-continuity, lower semi-continuity coincide with the “usual” continuity</p>
+<p>should be simple</p>
+<ul class="simple">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Maximization of log utility subject to budget constraint</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+u(x_1, x_2) = \alpha \log(x_1) + \beta \log(x_2) \to \max_{x_1, x_2} \\
+\text{ subject to} \\
+p_1 x_1 + p_2 x_2 \leq m
+\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p_i\)</span> is the price of good <span class="math notranslate nohighlight">\(i\)</span>, assumed non-negative</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> is the budget, assumed non-negative</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha&gt;0\)</span>, <span class="math notranslate nohighlight">\(\beta&gt;0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x_1 \geq 0, \; x_2 \geq 0\)</span>, can show that these constraints never bind</p></li>
+</ul>
+</div>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/log_util.png"><img alt="_images/log_util.png" src="_images/log_util.png" style="width: 600.0px; height: 450.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 106 </span><span class="caption-text">Log utility with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/budget_set_3.png"><img alt="_images/budget_set_3.png" src="_images/budget_set_3.png" style="width: 600.0px; height: 450.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 107 </span><span class="caption-text">Utility max for <span class="math notranslate nohighlight">\(p_1=1\)</span>, <span class="math notranslate nohighlight">\(p_2 = 1.2\)</span>, <span class="math notranslate nohighlight">\(m=4\)</span>, <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>,
+<span class="math notranslate nohighlight">\(\beta=0.5\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>TODO: Derivation + the plot of the value as function of budget and each price!</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Maximization of log-linear utility subject to budget constraint</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+u(x_1, x_2) = \alpha x_1 + \beta \log(x_2) \to \max_{x_1, x_2} \\
+\text{ subject to} \\
+p_1 x_1 + p_2 x_2 \leq m \\
+x_1 \geq 0, \; x_2 \geq 0
+\end{split}\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p_i\)</span> is the price of good <span class="math notranslate nohighlight">\(i\)</span>, assumed non-negative</p></li>
+<li><p><span class="math notranslate nohighlight">\(m\)</span> is the budget, assumed non-negative</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha&gt;0\)</span>, <span class="math notranslate nohighlight">\(\beta&gt;0\)</span></p></li>
+</ul>
+<p>Form the Lagrangian with 3 inequality constraints (have to flip the sign for non-negativity to stay within the general formulation)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathcal{L}(x_1,x_2,\lambda_1,\lambda_2,\lambda_3) = \\
+= \alpha x_1 + \beta\log(x_2)  - \lambda_1 (-x_1) - \lambda_2 (-x_2) - \lambda_3 (p_1 x_1 + p_2 x_2 -m) = \\
+= \alpha x_1 + \beta\log(x_2) + \lambda_1 x_1+ \lambda_2 x_2 - \lambda_3 (p_1 x_1 + p_2 x_2 -m)
+\end{split}\]</div>
+<p>The necessary KKT conditions are given by the following system of equations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+\frac{\partial \mathcal{L}}{\partial x_1} = 0 \implies
+\alpha + \lambda_1 - \lambda_3 p_1 = 0 \\
+\frac{\partial \mathcal{L}}{\partial x_2} = 0 \implies
+\frac{\beta}{x_2} + \lambda_2 - \lambda_3 p_2 = 0 \\
+x_1 \ge 0 \\
+x_2 \ge 0 \\
+x_1 p_1 + x_2 p_2 \le m \\
+\lambda_1 \ge 0 \text { and } \lambda_1 x_1 = 0 \\
+\lambda_2 \ge 0 \text { and } \lambda_2 x_2 = 0 \\
+\lambda_3 \ge 0 \text { and } \lambda_3 (x_1 p_1 + x_2 p_2 -m) = 0 \\
+\end{cases}
+\end{split}\]</div>
+<p>The KKT conditions can be solved systematically by considering all combinations of the multipliers. The two cases where the system is consistent:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\lambda_1&gt;0, \;\lambda_2 = 0, \; \lambda_3 &gt; 0 \implies x_1 = 0\)</span> and <span class="math notranslate nohighlight">\(p_1 + x_2 p_2 -m = 0\)</span> <br />
+We have the following system in this case</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{cases}
+  \alpha + \lambda_1 - \lambda_3 p_1 = 0 \\
+  \frac{\beta}{x_2} - \lambda_3 p_2 = 0 \\
+  x_2 p_2 -m = 0
+  \end{cases}
+  \end{split}\]</div>
+<p>From the last equation <span class="math notranslate nohighlight">\(x_2 = m/p_2\)</span>,
+combining the two last equations <span class="math notranslate nohighlight">\(\lambda_3 = \beta/m\)</span>,
+and from the first equation <span class="math notranslate nohighlight">\(\lambda_1 = \beta p_1/m - \alpha\)</span>.
+The solution holds conditional on <span class="math notranslate nohighlight">\(\lambda_1&gt;0\)</span>, i.e. <span class="math notranslate nohighlight">\(p_1/m &gt; \alpha/\beta\)</span>.</p>
+<ol class="arabic simple" start="8">
+<li><p><span class="math notranslate nohighlight">\(\lambda_1&gt;0, \;\lambda_2 &gt; 0, \; \lambda_3 &gt; 0 \implies x_1 = x_2 = p_1 + x_2 p_2 -m = 0\)</span> <br />
+Inconsistent similarly to the previous case</p></li>
+</ol>
+<p>To summarize, the solution to the KKT conditions is given by the following cases (it’s easy to see that the two solutions coincide for the equality in the parameter condition):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{cases}
+x_1^\star = \frac{m}{p_1} - \frac{\beta}{\alpha}, \;
+x_2^\star = \frac{\beta p_1}{\alpha p_2}, &amp; 
+\text{ if } p_1/m \le \alpha/\beta, \\
+x_1^\star = 0, \;
+x_2^\star = \frac{m}{p_2}, &amp; 
+\text{ if } p_1/m &gt; \alpha/\beta \\
+\end{cases}
+\end{split}\]</div>
+</div>
+<figure class="align-default" id="id3">
+<img alt="_images/corner_sol_2.png" src="_images/corner_sol_2.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 108 </span><span class="caption-text">Corner solution</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>TODO: Derivation + the plot of the value as function of budget and each price!</p>
+</section>
+</section>
+<section id="envelope-theorem">
+<h2>Envelope theorem<a class="headerlink" href="#envelope-theorem" title="Permalink to this heading">#</a></h2>
+<p>Next step after continuity – differentiability of the value function <span class="math notranslate nohighlight">\(V(\theta)\)</span> and the marginal effect of relaxing the constraint (<em>derivatives!</em>)</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Back to the log utility case with interior solution</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+u(x_1, x_2) = \alpha \log(x_1) + \beta \log(x_2) \to \max_{x_1, x_2} \\
+\text{ subject to} \\
+p_1 x_1 + p_2 x_2 \leq m
+\end{split}\]</div>
+<p>Solution is</p>
+<p>Value function is</p>
+</div>
+<p>More generally: Lagrangian multiplier is a shadow price</p>
+<p>General form of envelope - CHECK</p>
 <section id="lagrange-multiplyers-as-shadow-prices">
 <h3>Lagrange multiplyers as shadow prices<a class="headerlink" href="#lagrange-multiplyers-as-shadow-prices" title="Permalink to this heading">#</a></h3>
 <p>In the equality constrained optimization problem, the Lagrange multiplier <span class="math notranslate nohighlight">\(\lambda_i\)</span> can be interpreted as the shadow price of the constraint <span class="math notranslate nohighlight">\(g_i(x,\theta) = 0\)</span>.</p>
@@ -527,7 +742,14 @@ h_j(x,\theta) \le 0, \; j\in\{1,\dots,J\}
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-function-and-optimization-problem-parameters">Value function and optimization problem parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#value-function-and-optimization-problem-parameters">Value function and optimization problem parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-maximum-theorem">The maximum theorem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity-of-correspondences">Continuity of correspondences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-statement-of-the-maximum-theorem">The statement of the maximum theorem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-maximum-theorem-with-unique-optimizers">The maximum theorem with unique optimizers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#envelope-theorem">Envelope theorem</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrange-multiplyers-as-shadow-prices">Lagrange multiplyers as shadow prices</a></li>
 </ul>
 </li>

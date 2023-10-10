@@ -6,9 +6,6 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 
-def f(x,y):
-    return -x**2 - 2* y**2 
-
 if __name__ == '__main__':
     # f = lambda x: x[0]**3/3 - 3*x[1]**2 + 5*x[0] - 6*x[0]*x[1]
 
