@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: Lecture 10 (Envelope and maximum theorems)</div>
+    <div class="bd-header-announcement__content">Latest update: Lecture 10 (Envelope and maximum theorems) and exercise set K</div>
   </div>
 
   
@@ -187,6 +187,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="07.exercises.F.html">Exercise set F</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08.exercises.G.html">Exercise set G</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09.exercises.H.html">Exercise set H</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.exercises.K.html">Exercise set K</a></li>
 </ul>
 
     </div>
@@ -1112,7 +1113,7 @@ V(\theta)
 <p class="admonition-title">Envelope theorem for unconstrained problems</p>
 <p>Let <span class="math notranslate nohighlight">\(f(x,\theta) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span> be a differentiable function, and <span class="math notranslate nohighlight">\(x^\star(\theta)\)</span> be the maximizer of <span class="math notranslate nohighlight">\(f(x,\theta)\)</span> for every <span class="math notranslate nohighlight">\(\theta\)</span>.
 Suppose that <span class="math notranslate nohighlight">\(x^\star(\theta)\)</span> is differentiable function itself.
-The the value function of the problem <span class="math notranslate nohighlight">\(V(\theta) = f\big(x^\star(\theta),\theta)\)</span> is differentiable w.r.t. <span class="math notranslate nohighlight">\(\theta\)</span> and</p>
+Then the value function of the problem <span class="math notranslate nohighlight">\(V(\theta) = f\big(x^\star(\theta),\theta)\)</span> is differentiable w.r.t. <span class="math notranslate nohighlight">\(\theta\)</span> and</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial V}{\partial \theta_j} =
@@ -1167,7 +1168,7 @@ g_i(x,\theta) = 0, \; i\in\{1,\dots,I\}\\
 <li><p><span class="math notranslate nohighlight">\(g_i(x,\theta) = 0, \; i\in\{1,\dots,I\}\)</span> where <span class="math notranslate nohighlight">\(g_i \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span>, are equality constraints</p></li>
 <li><p><span class="math notranslate nohighlight">\(V(\theta) \colon \mathbb{R}^K \to \mathbb{R}\)</span> is a value function</p></li>
 </ul>
-<p>Assume that the maximizer correspondence <span class="math notranslate nohighlight">\(\mathcal{D}^\star(\theta) = \mathrm{arg}\max_x f(x,\theta)\)</span> is <em>single-valued</em> and can be represented by the function <span class="math notranslate nohighlight">\(x^\star(\theta) \colon \mathbb{R}^K \to \mathbb{R}^N\)</span>, with the corresponding Lagrange multipliers <span class="math notranslate nohighlight">\(\lambda^\star(\theta) \colon \mathbb{R}^K \to \mathbb{R}^K\)</span>.</p>
+<p>Assume that the maximizer correspondence <span class="math notranslate nohighlight">\(\mathcal{D}^\star(\theta) = \mathrm{arg}\max f(x,\theta)\)</span> is <em>single-valued</em> and can be represented by the function <span class="math notranslate nohighlight">\(x^\star(\theta) \colon \mathbb{R}^K \to \mathbb{R}^N\)</span>, with the corresponding Lagrange multipliers <span class="math notranslate nohighlight">\(\lambda^\star(\theta) \colon \mathbb{R}^K \to \mathbb{R}^K\)</span>.</p>
 <p>Assume that both <span class="math notranslate nohighlight">\(x^\star(\theta)\)</span> and <span class="math notranslate nohighlight">\(\lambda^\star(\theta)\)</span> are differentiable, and that the constraint qualification assumption holds.
 Then</p>
 <div class="math notranslate nohighlight">
