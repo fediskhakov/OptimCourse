@@ -76,7 +76,7 @@ html:
   comments:
     hypothesis              : false
     utterances              : false
-  announcement              : "Latest update: solutions for the exercise set H" # A banner announcement at the top of the site.
+  announcement              : "Latest update: Lecture 10 (Envelope and maximum theorems)" # A banner announcement at the top of the site.
 
 #######################################################################################
 # LaTeX-specific settings
