@@ -1533,7 +1533,7 @@ EV(x) =
     <span class="n">fig1</span><span class="p">,</span> <span class="p">(</span><span class="n">ax</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;0.65&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Inventory&#39;</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Expected value function&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;VFI convergence in the space of expected value functions&#39;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="o">**</span><span class="n">argvars</span><span class="p">):</span>
         <span class="n">mod</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">argvars</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">],</span><span class="n">argvars</span><span class="p">[</span><span class="s1">&#39;ev1&#39;</span><span class="p">],</span><span class="n">argvars</span><span class="p">[</span><span class="s1">&#39;q1&#39;</span><span class="p">]</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span><span class="n">where</span><span class="o">=</span><span class="s1">&#39;mid&#39;</span><span class="p">)</span>
@@ -1564,17 +1564,24 @@ EV(x) =
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mod</span> <span class="o">=</span> <span class="n">inventory_model</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;production&#39;</span><span class="p">,</span><span class="n">max_inventory</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set up the parameters of the model</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">inventory_model</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;production&#39;</span><span class="p">,</span><span class="n">max_inventory</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
 <span class="n">mod</span><span class="o">.</span><span class="n">dp</span><span class="o">=</span><span class="mf">.25</span>
-<span class="n">mod</span><span class="o">.</span><span class="n">demand</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">mod</span><span class="o">.</span><span class="n">dp</span><span class="p">)</span><span class="o">/</span><span class="n">mod</span><span class="o">.</span><span class="n">dp</span><span class="p">)</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">demand</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">mod</span><span class="o">.</span><span class="n">dp</span><span class="p">)</span><span class="o">/</span><span class="n">mod</span><span class="o">.</span><span class="n">dp</span><span class="p">)</span> <span class="c1"># mean for geometric distribution of demand</span>
 <span class="n">mod</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="mf">.25</span>
 <span class="n">mod</span><span class="o">.</span><span class="n">p</span> <span class="o">=</span> <span class="mf">3.5</span>
 <span class="n">mod</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="mf">0.4</span>
 <span class="n">mod</span><span class="o">.</span><span class="n">β</span> <span class="o">=</span> <span class="mf">0.9</span>
-<span class="n">mod</span><span class="o">.</span><span class="n">demand_pr</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># solve the finite horizon version of the model with fixed demand</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
 <span class="n">mod</span> <span class="o">=</span> <span class="n">solver_backwards_induction</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">plot_solution</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
 
+<span class="c1"># visualize the stochastic demand</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">demand_pr</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># solve the infinite horizon version of the model</span>
 <span class="n">ev</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="n">solve_vfi</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
 <span class="n">solve_show</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
 <span class="n">q</span> <span class="o">=</span> <span class="n">optimal_policy</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span><span class="n">ev</span><span class="p">)</span>
@@ -1584,10 +1591,16 @@ EV(x) =
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4ad58ef0adb9ba7ead842ffbb54b67e88d4c29f2c7d03d8a195be84d3a7aa0b5.png" src="_images/4ad58ef0adb9ba7ead842ffbb54b67e88d4c29f2c7d03d8a195be84d3a7aa0b5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inventory model labeled &quot;production&quot;
+Paramters (c,p,r,β) = (0.25,3.5,0.4,0.9)
+Demand=3
+Upper bound on inventory 25
+</pre></div>
+</div>
 <img alt="_images/8e7ac80db141095d38a29e31f722791a0e4ead8fbf337141a58bffac2a0da662.png" src="_images/8e7ac80db141095d38a29e31f722791a0e4ead8fbf337141a58bffac2a0da662.png" />
 <img alt="_images/d6dd2cd591a6080457927469c1d0f988d2b3094c4c81a5a008df1bb8bd310b6b.png" src="_images/d6dd2cd591a6080457927469c1d0f988d2b3094c4c81a5a008df1bb8bd310b6b.png" />
-<img alt="_images/b7571f0debae5ed00c1550848719ae567d020d68385038fc5adf7fd0208b6876.png" src="_images/b7571f0debae5ed00c1550848719ae567d020d68385038fc5adf7fd0208b6876.png" />
+<img alt="_images/4ad58ef0adb9ba7ead842ffbb54b67e88d4c29f2c7d03d8a195be84d3a7aa0b5.png" src="_images/4ad58ef0adb9ba7ead842ffbb54b67e88d4c29f2c7d03d8a195be84d3a7aa0b5.png" />
+<img alt="_images/f623e1b821c4c3f0cfc1ff786b90ea3992d6f1f695ed0191de4196eb2d37c185.png" src="_images/f623e1b821c4c3f0cfc1ff786b90ea3992d6f1f695ed0191de4196eb2d37c185.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal orders of new inventory for d,x:
 (d in rows, x in columns)
 [[7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]

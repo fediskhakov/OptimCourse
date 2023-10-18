@@ -25,6 +25,7 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
+% Set up the parameters of the model
 mod = inventory_model(label='production',max_inventory=25)
 mod.dp=.25
 mod.demand = int((1-mod.dp)/mod.dp)
@@ -32,26 +33,22 @@ mod.c = .25
 mod.p = 3.5
 mod.r = 0.4
 mod.β = 0.9
+
+% visualize the stochastic demand
 mod.demand_pr(plot=True)
+
+% solve the finite horizon version of the model
 mod = solver_backwards_induction(mod,T=15)
 plot_solution(mod)
 
+% solve the infinite horizon version of the model
 ev,q = solve_vfi(mod)
 solve_show(mod)
+q = optimal_policy(mod,ev)
 print('Optimal orders of new inventory for d,x:\n(d in rows, x in columns)')
 print(q)
-
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mAttributeError[0m                            Traceback (most recent call last)
-Cell [0;32mIn[10], line 8[0m
-[1;32m      6[0m mod[38;5;241m.[39mr [38;5;241m=[39m [38;5;241m0.4[39m
-[1;32m      7[0m mod[38;5;241m.[39mβ [38;5;241m=[39m [38;5;241m0.9[39m
-[0;32m----> 8[0m mod[38;5;241m.[39mdemand_pr(plot[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
-[1;32m      9[0m mod [38;5;241m=[39m solver_backwards_induction(mod,T[38;5;241m=[39m[38;5;241m15[39m)
-[1;32m     10[0m plot_solution(mod)
 
-[0;31mAttributeError[0m: 'inventory_model' object has no attribute 'demand_pr'
-AttributeError: 'inventory_model' object has no attribute 'demand_pr'
+UsageError: Line magic function `%` not found.
 
