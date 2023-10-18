@@ -392,6 +392,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-horizon-and-stochastic-dynamic-optimization-problems">Infinite horizon and stochastic dynamic optimization problems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theory-of-dynamic-programming">Theory of dynamic programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inventory-management-in-infinite-horizon">Inventory management in infinite horizon</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-classes-of-dynamic-optimization-problems">Other classes of dynamic optimization problems</a></li>
@@ -1454,8 +1455,11 @@ T(f+a)(x) \le T(f)(x) + \beta a, \text{ for all } f\in B(X), a \ge 0, x\in X,
 <li><p>VFI algorithm is globally convergent</p></li>
 <li><p>does not depend on the numerical implementation of the Bellman operator</p></li>
 </ul>
+</section>
+<section id="inventory-management-in-infinite-horizon">
+<h3>Inventory management in infinite horizon<a class="headerlink" href="#inventory-management-in-infinite-horizon" title="Permalink to this heading">#</a></h3>
 <div class="tip admonition">
-<p class="admonition-title">Example: inventory management in infinite horizon</p>
+<p class="admonition-title">Example</p>
 <p>Return to the above example, now with the following modifications:</p>
 <ul class="simple">
 <li><p>time horizon is infinite</p></li>
@@ -1643,7 +1647,7 @@ This implies that knowing both <span class="math notranslate nohighlight">\(x\)<
 </section>
 <section id="other-classes-of-dynamic-optimization-problems">
 <h2>Other classes of dynamic optimization problems<a class="headerlink" href="#other-classes-of-dynamic-optimization-problems" title="Permalink to this heading">#</a></h2>
-<p>Classification by various criteria:</p>
+<p>Classification of dynamic problems by various criteria:</p>
 <ol class="arabic simple">
 <li><p>Nature of time</p></li>
 </ol>
@@ -1659,13 +1663,44 @@ This implies that knowing both <span class="math notranslate nohighlight">\(x\)<
 <li><p>stochastic problems: some transitions rules are given by conditional densities or transition probabilities from current to next period states</p></li>
 </ul>
 <ol class="arabic simple" start="3">
-<li><p>Structure of choice and state space</p></li>
+<li><p>Nature of choice space</p></li>
 </ol>
 <ul class="simple">
-<li><p>discrete</p></li>
-<li><p>continuous</p></li>
+<li><p>discrete: well suited for numerical full enumeration methods (grid search)</p></li>
+<li><p>continuous: optimization theory of this course applied in full</p></li>
+<li><p>mixed discrete-continuous: math is more complicated and interesting</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Nature of state space</p></li>
+</ol>
+<ul class="simple">
+<li><p>discrete: well suited for numerical methods</p></li>
+<li><p>continuous: most often convert to discrete by discretization (grids)</p></li>
 <li><p>mixed discrete-continuous</p></li>
 </ul>
+<ol class="arabic simple" start="5">
+<li><p>Multiple decision making processes</p></li>
+</ol>
+<ul class="simple">
+<li><p>single agent models: here</p></li>
+<li><p>equilibrium models: each decision makers takes environment variables as given, yet the equilibrium environment is formed by the aggregate behavior</p></li>
+<li><p>multiple agents models: strategic interaction between decision makers, very hard because the joint Bellman operator is no more a contraction</p></li>
+</ul>
+<p>Corresponding to many types of dynamic optimization problems there are many-many variations of the solution approaches</p>
+<p>For finite horizon dynamic problems:</p>
+<ol class="arabic simple">
+<li><p>Standard backwards induction: solving Bellman equation sequentially</p></li>
+<li><p>Backwards induction using F.O.C. of Bellman maximization problem (for problems with continuous choice)</p></li>
+<li><p>Finite horizon version of endogenous gridpoint method (for a particular class of problems)</p></li>
+</ol>
+<p>For infinite horizon dynamic problems:</p>
+<ol class="arabic simple">
+<li><p>Value function iterations (successive approximations to solve for the fixed point of Bellman operator)</p></li>
+<li><p>Time iterations (successive approximations to solve for the fixed point of Coleman-Reffett operator in policy function space)</p></li>
+<li><p>Policy iteration method (Howard’s policy improvement algorithm, iterative solution for the fixed point of Bellman operator)</p></li>
+<li><p>Newton-Kantorovich method (Newton solver for the fixed point of Bellman operator)</p></li>
+<li><p>Endogenous gridpoint method (for a particular class of problems)</p></li>
+</ol>
 </section>
 <section id="extra-material">
 <h2>Extra material<a class="headerlink" href="#extra-material" title="Permalink to this heading">#</a></h2>
@@ -1673,6 +1708,7 @@ This implies that knowing both <span class="math notranslate nohighlight">\(x\)<
 <li><p>Computer science view on DP <a class="reference external" href="https://www.techiedelight.com/introduction-dynamic-programming">https://www.techiedelight.com/introduction-dynamic-programming</a></p></li>
 <li><p>Popular optimal stopping <a class="reference external" href="https://www.americanscientist.org/article/knowing-when-to-stop">https://www.americanscientist.org/article/knowing-when-to-stop</a></p></li>
 <li><p>For more details the inventory problem see <a class="reference external" href="https://youtu.be/JSdjTmaXr0w">my screencast on writing this code</a></p></li>
+<li><p>For more dynamic programming and numerical methods see my <a class="reference external" href="https://fedor.iskh.me/compecon">Foundations of Computational Economics</a> online course</p></li>
 </ul>
 </section>
 </section>
@@ -1754,6 +1790,7 @@ This implies that knowing both <span class="math notranslate nohighlight">\(x\)<
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-horizon-and-stochastic-dynamic-optimization-problems">Infinite horizon and stochastic dynamic optimization problems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theory-of-dynamic-programming">Theory of dynamic programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inventory-management-in-infinite-horizon">Inventory management in infinite horizon</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-classes-of-dynamic-optimization-problems">Other classes of dynamic optimization problems</a></li>
