@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '11.dynamic';</script>
     <link rel="canonical" href="optim.iskh.me/11.dynamic.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -186,6 +188,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="08.exercises.G.html">Exercise set G</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09.exercises.H.html">Exercise set H</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10.exercises.K.html">Exercise set K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.exercises.L.html">Exercise set L</a></li>
 </ul>
 
     </div>
@@ -381,6 +384,17 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-decision-problems">Dynamic decision problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-programming-and-bellman-principle-of-optimality">Dynamic programming and Bellman principle of optimality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-and-infinite-horizon-problems">Finite and infinite horizon problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inventory-management-in-finite-horizon">Inventory management in finite horizon</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-horizon-and-stochastic-dynamic-optimization-problems">Infinite horizon and stochastic dynamic optimization problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theory-of-dynamic-programming">Theory of dynamic programming</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-material">Extra material</a></li>
 </ul>
             </nav>
         </div>
@@ -406,10 +420,1237 @@ Fedor Iskhakov</p>
 <h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Dynamic decision problems</p></li>
-<li><p>Dynamic discrete choice</p></li>
-<li><p>Cake eating and consumption/savings decisions</p></li>
+<li><p>Dynamic programming for finite horizon problems</p></li>
+<li><p>Dynamic programming for infinite horizon problems</p></li>
+<li><p>Other classes of dynamic programming problems</p></li>
 </ol>
-<a class="reference internal image-reference" href="_images/coming_soon.png"><img alt="soming soon" class="align-center" src="_images/coming_soon.png" style="width: 514.0px; height: 360.0px;" /></a>
+<p><strong>Supplementary reading:</strong></p>
+<ul class="simple">
+<li><p>Sundaram: chapter 11</p></li>
+</ul>
+</section>
+<section id="dynamic-decision-problems">
+<h2>Dynamic decision problems<a class="headerlink" href="#dynamic-decision-problems" title="Permalink to this heading">#</a></h2>
+<p>As before, let’s start with our general definition of a general optimization problem</p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>The general form of the optimization problem is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V(\theta) 
+= \max_{x} f(x,\theta)
+\\
+\text {subject to } x \in \mathcal{D}(\theta)
+\end{split}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x,\theta) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span> is an objective function</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \in \mathbb{R}^N\)</span> are decision/choice variables</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta \in \mathbb{R}^K\)</span> are parameters</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}(\theta)\)</span> denotes the admissible set</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{D}(\theta) = \left\{ 
+x \in \mathbb{R}^N \colon
+g_i(x,\theta) = 0, \; i\in\{1,\dots,I\}, \;
+h_j(x,\theta) \le 0, \; j\in\{1,\dots,J\}
+\right\}
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(g_i(x,\theta) = 0, \; i\in\{1,\dots,I\}\)</span> where <span class="math notranslate nohighlight">\(g_i \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span>, are equality constraints</p></li>
+<li><p><span class="math notranslate nohighlight">\(h_j(x,\theta) \le 0, \; j\in\{1,\dots,J\}\)</span> where <span class="math notranslate nohighlight">\(h_j \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span>, are inequality constraints</p></li>
+<li><p><span class="math notranslate nohighlight">\(V(\theta) \colon \mathbb{R}^K \to \mathbb{R}\)</span> is a value function</p></li>
+</ul>
+</div>
+<div class="admonition-crazy-thought admonition">
+<p class="admonition-title">Crazy thought</p>
+<p>Can we let the objective function include the value function as a component?</p>
+</div>
+<ul class="simple">
+<li><p>Think of an optimization problem that repeats over and over again, for example in time</p></li>
+<li><p>Value function (as the maximum attainable value) of the next optimization problem may be part of the current optimization problems</p></li>
+<li><p>The parameters <span class="math notranslate nohighlight">\(\theta\)</span> may be adjusted to link these optimization problems together</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Imagine the optimization problem with <span class="math notranslate nohighlight">\(g(x,\theta)= \sum_{t=0}^{\infty}\beta^{t}u(x,\theta)\)</span> where <span class="math notranslate nohighlight">\(b \in (0,1)\)</span> to ensure the infinite sum converges.
+We can write</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lll}
+V(\theta) &amp; = &amp; \max_x \sum_{t=0}^{\infty}\beta^{t} u(x_t,\theta) \\
+&amp; = &amp; \max_x \Big[u(x_0)+\beta\max_x \sum_{t=1}^{\infty}\beta^{t-1}u(x_t,\theta)\Big] \\
+&amp; = &amp; \max_x \Big[u(c_{0})+\beta V(\theta)\Big]
+\end{array}
+\end{split}\]</div>
+</div>
+<ul class="simple">
+<li><p>Note that the trick in the example above works because <span class="math notranslate nohighlight">\(g(x,\theta)\)</span> is an infinite sum</p></li>
+<li><p>Among other things this implies that <span class="math notranslate nohighlight">\(x\)</span> is infinite dimension!</p></li>
+<li><p>Let the parameter <span class="math notranslate nohighlight">\(\theta\)</span> to <em>keep track</em> time, so let <span class="math notranslate nohighlight">\(\theta = (t, s_t)\)</span></p></li>
+<li><p>Then it is possible to use the same principle for the optimization problems without infinite sums</p></li>
+</ul>
+<p>Introduce new notation for the value function</p>
+<div class="math notranslate nohighlight">
+\[
+\theta=(t, s_t) \rightarrow V(\theta) = V(t, s_t) = V_t(s_t)
+\]</div>
+<div class="caution admonition">
+<p class="admonition-title">Definition: dynamic optimization problems</p>
+<p>The general form of the <em>deterministic dynamic optimization</em> problem is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V_t(s_t)
+= \max_{x} \big[ f(x,s_t) + \beta V_{t+1}(s_{t+1}) \big] \\
+\text {subject to } x \in \mathcal{D}_t(s_t)
+\end{split}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x,s_t) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span> is an instantaneous reward function</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \in \mathbb{R}^N\)</span> are decision/choice variables</p></li>
+<li><p><span class="math notranslate nohighlight">\(s_t \in \mathbb{R}^K\)</span> are <em>state variables</em></p></li>
+<li><p>state transitions are given by <span class="math notranslate nohighlight">\(s_{t+1} = g(x,s_t)\)</span> where <span class="math notranslate nohighlight">\(g \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}^K\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}_t(s_t) \subset \mathbb{R}^N\)</span> denotes the admissible set at decision instance (time period) <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta \in (0,1)\)</span> is a discount factor</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_t(s_t) \colon \mathbb{R}^K \to \mathbb{R}\)</span> is a value function</p></li>
+</ul>
+<p>Denote the set of maximizers of each instantaneous optimization problem as</p>
+<div class="math notranslate nohighlight">
+\[
+x^\star_t(s_t) = \mathrm{argmax}_{x \in \mathcal{D}_t(s_t)} \big[ f(x,s_t) + \beta V_{t+1}(s_{t+1}) \big]
+\]</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x^\star_t(s_t)\)</span> is called a <em>policy correspondence</em> or <em>policy function</em></p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>State space <span class="math notranslate nohighlight">\(s_t\)</span> is of primary importance for the economic interpretation of the problem: it encompasses <em>all</em> the information that the decision maker conditions their decisions on</p></li>
+<li><p>Has to be carefully founded in economic theory and common sense</p></li>
+<li><p>Similarly the transition function <span class="math notranslate nohighlight">\(g(x,s_t)\)</span> reflects the exact beliefs of the decision maker about how the future state is determined and has direct implications for the optimal decisions</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the formulation above, as seen from transition function <span class="math notranslate nohighlight">\(g(x,s_t)\)</span>, we implicitly assume that the history of states from some initial time period <span class="math notranslate nohighlight">\(t_0\)</span> is not taken into account.
+Decision problems where only the current state is relevant for the future are called <strong>Markovian decision problems</strong></p>
+</div>
+<section id="dynamic-programming-and-bellman-principle-of-optimality">
+<h3>Dynamic programming and Bellman principle of optimality<a class="headerlink" href="#dynamic-programming-and-bellman-principle-of-optimality" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>An optimal policy has a property that whatever the initial state and initial decision are, the remaining decisions must constitute an optimal policy with regard to the state resulting from the first decision. <br />
+📖 Bellman, 1957 “Dynamic Programming”</p>
+</div></blockquote>
+<div class="admonition-main-idea admonition">
+<p class="admonition-title">Main idea</p>
+<p>Breaking the problem into sequence of small problems</p>
+</div>
+<blockquote>
+<div><p>Dynamic programming is recursive method for solving sequential decision problems <br />
+📖 Rust 2006, <em>New Palgrave Dictionary of Economics</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>In computer science the meaning of the term is broader: DP is a general algorithm design technique for solving problems with overlapping sub-problems</p></li>
+<li><p>Thus, the sequential decision problem is broken into <em>current decision</em>
+and the <em>future decisions</em> problems, and solved recursively</p></li>
+<li><p>The solution can be computed through <strong>backward induction</strong> which is the process of solving a sequential decision problem from the later periods to the earlier ones, this is the main algorithm used in <strong>dynamic programming (DP)</strong></p></li>
+<li><p>Embodiment of the recursive way of modeling sequential decisions is
+<strong>Bellman equation</strong></p></li>
+</ul>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Bellman equation is a <em>functional equation</em> in an unknown function <span class="math notranslate nohighlight">\(V(\cdot)\)</span> which embodies a dynamic optimization problem and has the form</p>
+<div class="math notranslate nohighlight">
+\[
+V(\text{state}) = \max_{\text{feasible decisions}} \big[ U(\text{state},\text{decision}) + \beta \mathbb{E}\big\{ V(\text{next state}) \big| \text{state},\text{decision} \big\} \big]
+\]</div>
+<ul class="simple">
+<li><p>expectation <span class="math notranslate nohighlight">\(\mathbb{E}\{\cdot\}\)</span> is taken over the distribution of the next period state conditional on current state and decision when the state transitions are given by a stochastic process</p></li>
+<li><p>the optimal choices (policy correspondence) are revealed along the solution of the Bellman equation as decisions which solve the maximization problem in the right hand side, i.e.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\text{decision}^\star(\text{state}) = \underset{\text{feasible decisions}}{\mathrm{argmax}}\big[ U(\text{state},\text{decision}) + \beta \mathbb{E}\big\{ V(\text{next state}) \big| \text{state},\text{decision} \big\} \big]
+\]</div>
+</div>
+<ul class="simple">
+<li><p>DP is a the main tool in analyzing modern micro and macto economic models</p></li>
+<li><p>DP provides a framework to study decision making over time and under uncertainty and can accommodate:</p>
+<ul>
+<li><p>learning and human capital formation</p></li>
+<li><p>wealth accumulation</p></li>
+<li><p>health dynamics</p></li>
+<li><p>strategic interactions between agents (game theory)</p></li>
+<li><p>market interactions (equilibrium theory)</p></li>
+<li><p>etc</p></li>
+</ul>
+</li>
+<li><p>Many important problems and economic models are analyzed and solved
+using dynamic programming:</p>
+<ul>
+<li><p>Dynamic models of labor supply</p></li>
+<li><p>Job search</p></li>
+<li><p>Human capital accumulation</p></li>
+<li><p>Health process, insurance and long term care</p></li>
+<li><p>Consumption/savings choices</p></li>
+<li><p>Durable consumption</p></li>
+<li><p>Growth models</p></li>
+<li><p>Heterogeneous agents models</p></li>
+<li><p>Overlapping generation models</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Origin of the term Dynamic Programming</strong></p>
+<blockquote>
+<div><p>The 1950’s were not good years for mathematical research. We had a very interesting gentleman in Washington named Wilson. He was Secretary of Defence, and he actually had a pathological fear and hatred of the word “research”.<br />
+I’m not using the term lightly; I’m using it precisely. His face would suffuse, he would turn red, and he would get violent if people used the term, research, in his presence. You can imagine how he felt, then,
+about the term, mathematical. <br />
+Hence, I felt I had to do something to shield Wilson and the Air Force from the fact that I was really doing mathematics inside the RAND Corporation. <br />
+What title, what name, could I choose? <br />
+In the first place, I was interested in planning, in decision-making, in thinking. But planning, is not a good word for various reasons. I decided therefore to use the word, “programming”. <br />
+I wanted to get across the idea that this was dynamic, this was multistage, this was time-varying. <br />
+I thought, let’s kill two birds with one stone. Let’s take a word which has an absolutely precise meaning, namely dynamic, in the classical physical sense. <br />
+It also has a very interesting property as an adjective, and that is it’s impossible to use the word, dynamic, in the pejorative sense. <br />
+Thus, I thought dynamic programming was a good name. It was something not even a Congressman could object to. So I used it as an umbrella for my activities. <br />
+📖 Bellman’s autobiography “The Eye of the Hurricane”</p>
+</div></blockquote>
+</section>
+<section id="finite-and-infinite-horizon-problems">
+<h3>Finite and infinite horizon problems<a class="headerlink" href="#finite-and-infinite-horizon-problems" title="Permalink to this heading">#</a></h3>
+<p>Although dynamic programming primarily deals with infinite horizon problems, it can also be applied to the finite horizon problems where <span class="math notranslate nohighlight">\(T &lt; \infty\)</span></p>
+<ul class="simple">
+<li><p>Terms <strong>backwards induction</strong> and <strong>dynamic programming</strong> are associated by many authors respectively with finite and infinite horizon problems</p></li>
+<li><p>Our definition of a dynamic optimization problem contains elements of both finite and infinite horizon problem setup, and needs more detail</p></li>
+</ul>
+<p><em><strong>Finite horizon problems</strong></em></p>
+<ul class="simple">
+<li><p>Time is discrete and finite, <span class="math notranslate nohighlight">\(t \in \{0,1,\dots,T\}\)</span> where <span class="math notranslate nohighlight">\(T &lt; \infty\)</span></p></li>
+<li><p>Parameter vector <span class="math notranslate nohighlight">\(\theta\)</span> indeed contains <span class="math notranslate nohighlight">\(t\)</span> such that the value and policy functions along with other elements of the model do depend on <span class="math notranslate nohighlight">\(t\)</span>, i.e. may differ between time periods</p></li>
+<li><p>“Bellman equation” is a (common!) misuse of the term, because with time subscripts for the value function, it is not a functional equation any more</p></li>
+<li><p>However, the term “Bellman equation” is still used for the finite horizon problems to denote the following expression:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V_t(s_t) = 
+\begin{cases}
+\max_{x \in \mathcal{D}_t(s_t)} \big[ f(x,s_t) + \beta V_{t+1}(s_{t+1}) \big] ,&amp; \text{ if } t&lt;T \\
+\max_{x \in \mathcal{D}_T(s_T)} f(x,s_T) ,&amp; \text{ if } t=T 
+\end{cases}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>Period <span class="math notranslate nohighlight">\(t=T\)</span> is referred to as the <em>terminal period</em>, and the value function at this period is called the <em>terminal value function</em></p></li>
+<li><p>As a rule the terminal value function is set to zero, i.e. <span class="math notranslate nohighlight">\(V_T(s_T) = 0\)</span> for all <span class="math notranslate nohighlight">\(s_T\)</span>, giving the expression for the Bellman equation above</p></li>
+</ul>
+<p><em><strong>Infinite horizon problems</strong></em></p>
+<ul class="simple">
+<li><p>Time is discrete and infinite, <span class="math notranslate nohighlight">\(t \in \{0,1,\dots,\infty\}\)</span>, sometimes denoted as <span class="math notranslate nohighlight">\(T = \infty\)</span></p></li>
+<li><p>Parameter vector <span class="math notranslate nohighlight">\(\theta\)</span> does not contain <span class="math notranslate nohighlight">\(t\)</span> and so the value and policy functions can not depend on <span class="math notranslate nohighlight">\(t\)</span>, and so other elements of the model</p></li>
+<li><p>In other words, the solution of the model in this case has to be time invariant</p></li>
+<li><p>Bellman equation is a proper functional equation, which together with the policy function, describes the optimal decision rule in the long term. In some sense, the solution to the infinite dimensional problem is one pair <span class="math notranslate nohighlight">\((V(s), x^\star(s))\)</span>, whereas in the general setup both elements of the solution are tuples</p></li>
+</ul>
+<p>Let’s look at a particular example</p>
+</section>
+<section id="inventory-management-in-finite-horizon">
+<h3>Inventory management in finite horizon<a class="headerlink" href="#inventory-management-in-finite-horizon" title="Permalink to this heading">#</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>The manager of a store has to order the stock of a product from a wholesales company as the inventory is depleted by sales.</p>
+<p>The manager can order any amount of the product at any time, but there is a fixed cost <span class="math notranslate nohighlight">\(c\)</span> of ordering any amount of new inventory. The manager can also store the product in the warehouse, but there is a cost <span class="math notranslate nohighlight">\(r\)</span> of storing one unit of the product.</p>
+<p>The store receives a profit <span class="math notranslate nohighlight">\(p\)</span> for each unit of the product sold and so the manager’s goal is to maximize the net profit over the time horizon <span class="math notranslate nohighlight">\(t=0,\dots,T\)</span>.</p>
+<p>We have:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(p\)</span> is the profit per one unit of sold good</p></li>
+<li><p><span class="math notranslate nohighlight">\(c\)</span> is the fixed cost of ordering any amount of new inventory</p></li>
+<li><p><span class="math notranslate nohighlight">\(r\)</span> is the cost of storing one unit of good</p></li>
+</ul>
+<p>Let’s introduce some notation:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x_t\ge 0\)</span> is inventory at period <span class="math notranslate nohighlight">\(t\)</span>, let it be measured in <em>discrete units</em></p></li>
+<li><p><span class="math notranslate nohighlight">\(d_t\ge 0\)</span> is <em>potentially stochastic</em> demand at period <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(q_t\ge 0\)</span> is the order of new inventory</p></li>
+</ul>
+<p>Then:</p>
+<ul class="simple">
+<li><p>the sales in period <span class="math notranslate nohighlight">\(t\)</span> are given by <span class="math notranslate nohighlight">\(\min\{x_t,d_t\}\)</span></p></li>
+<li><p>inventory to be stored till next period is given by</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\max\{x_t-d_t,0\} + q_t = x_t - \min\{x_t,d_t\} = x_{t+1}
+\]</div>
+<ul class="simple">
+<li><p>profit in period <span class="math notranslate nohighlight">\(t\)</span> is given by</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{rcl}
+\pi_t &amp; = &amp; p \cdot \text{sales}_t - r \cdot \text{storage}_t - c \cdot (\text{order made in period }t) \\
+&amp; = &amp; 
+p \min\{x_t,d_t\} - r (x_t - \min\{x_t,d_t\}) - c \mathbb{1}\{q_t&gt;0\} \\
+&amp; = &amp; 
+(p+r) \min\{x_t,d_t\} - r x_t - c \mathbb{1}\{q_t&gt;0\}
+\end{array}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>assuming all <span class="math notranslate nohighlight">\(q_t \ge 0\)</span>, we have <span class="math notranslate nohighlight">\(\mathcal{D}_t = \{q_t \colon q_t \ge 0 \}\)</span></p></li>
+<li><p>to make the set of feasible choices <em>compact</em> we may assume a maximum level of inventory <span class="math notranslate nohighlight">\(x_{\max}\)</span>, and so <span class="math notranslate nohighlight">\(\mathcal{D}_t = \{q_t \colon 0 \le q_t \le x_{\max} \}\)</span></p></li>
+</ul>
+<p>The expected profit maximizing problem is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{t=0}^{T} \beta^t \pi_t
+\to \max_{\{q_t\}_{t=0}^T \in \times _{t=0}^T \mathcal{D}_t}
+\]</div>
+<p>or in the case of stochastic with the expectation over its distribution</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbb{E}\Big[ \sum_{t=0}^{T} \beta^t \pi_t \Big]
+\to \max_{\{q_t\}_{t=0}^T \in \times _{t=0}^T \mathcal{D}_t}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta\)</span> is discount factor</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The maximization problem is formulated with respect to a series of choices <span class="math notranslate nohighlight">\(\{q_t\}_{t=0}^T\)</span> which is a tuple of <span class="math notranslate nohighlight">\(T+1\)</span> elements, one for each period <span class="math notranslate nohighlight">\(t=0,\dots,T\)</span>.
+Given that in each period the parameters of the optimization problem change, at least potentially, we will keep in mind that the elements of this series should be thought of as dependent on the corresponding parameters, as in the theorem of maximum. In this case the relevant parameter is the state variable <span class="math notranslate nohighlight">\(s_t\)</span>, and thus we will write <span class="math notranslate nohighlight">\(\{q_t(s_t)\}_{t=0}^T\)</span>.</p>
+</div>
+<p><em><strong>Bellman equation for the problem</strong></em></p>
+<p>Decisions: <span class="math notranslate nohighlight">\(q_t\)</span>, how much new inventory to order</p>
+<p>What is important for the inventory decision at time period <span class="math notranslate nohighlight">\(t\)</span>?</p>
+<ul class="simple">
+<li><p>timing of the decision making process: (beginning of period) - current inventory - demand - (choice) order - stored inventory - (end of period)</p></li>
+<li><p>instanteneous utility (profit) contains <span class="math notranslate nohighlight">\(x_t\)</span> and <span class="math notranslate nohighlight">\(d_t\)</span></p></li>
+</ul>
+<p>So, both <span class="math notranslate nohighlight">\(x_t\)</span> and <span class="math notranslate nohighlight">\(d_t\)</span> are taken into account for the new order to be made, forming the state space</p>
+<p>Therefore, for <span class="math notranslate nohighlight">\(t&lt;T\)</span>, we can write the following Bellman equation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{rcl}
+V(x_t,d_t) &amp;=&amp; \max_{q_t \ge 0} \Big\{ \pi_t + \beta \mathbb{E}\Big[ V\big(x_{t+1} , d_{t+1} \big) \Big| x_t,d_t,q_t \Big] \Big\} \\
+&amp;=&amp; \max_{q_t \ge 0} \Big\{ 
+(p+r) \min\{x_t,d_t\} - r x_t - c \mathbb{1}\{q_t&gt;0\}
++ \beta \mathbb{E}\Big[ V\big(x_{t+1}, d_{t+1} \big) \Big] \Big\}
+\end{array}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+x_{t+1} = x_t - \min\{x_t,d_t\} + q_t
+\]</div>
+<p>The expectation in the Bellman equation is taken over the distribution of the next period demand <span class="math notranslate nohighlight">\(d_{t+1}\)</span>, which we assume is independent of any other variables and across time (idiosyncratic), thus the expectation is not conditioned on current state and choice variable <span class="math notranslate nohighlight">\((x_t,d_t,q_t)\)</span> (although in general it would be)</p>
+<p>Expectation can be written as an integral over the distribution of demand <span class="math notranslate nohighlight">\(F(d)\)</span>, but since inventory is discrete it’s natural to assume demand is as well
+Then the integral then transforms into a sum over the possible value of demand, weighted by their probabilities <span class="math notranslate nohighlight">\(pr(d)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+V(x_t,d_t) =
+\max_{q_t \ge 0} \Big\{ 
+(p+r) \min\{x_t,d_t\} - r x_t - c \mathbb{1}\{q_t&gt;0\}
++ \beta \sum_d V\big(x_{t+1}, d \big) pr(d) \Big\}
+\]</div>
+<p>Because the problem is set in finite time, for <span class="math notranslate nohighlight">\(t=T\)</span> the Bellman takes the simple form without the next period value</p>
+<div class="math notranslate nohighlight">
+\[
+V(x_T,d_T) =
+\max_{q_T \ge 0} \Big\{ 
+(p+r) \min\{x_T,d_T\} - r x_T - c \mathbb{1}\{q_T&gt;0\}\Big\}
+\]</div>
+<p>This part of the Bellman equation can be solved immediately: it is obvious that making any order in the terminal period only brings on the fixed cost of order, and therefore the optimal choice is <span class="math notranslate nohighlight">\(q_T^\star = 0\)</span>, leading to</p>
+<div class="math notranslate nohighlight">
+\[
+V(x_T,d_T) = (p+r) \min\{x_T,d_T\} - r x_T
+\]</div>
+<p><strong>Solving the deterministic version</strong></p>
+<p>Let <span class="math notranslate nohighlight">\(d_t =d\)</span> be fixed and constant across time. How does the Bellman equation change?</p>
+<p>In the deterministic case with fixed <span class="math notranslate nohighlight">\(d\)</span>, it can be simply dropped from the state space, and the Bellman equation can be simplified to</p>
+<div class="math notranslate nohighlight">
+\[
+V(x_t) =
+\max_{q_t \ge 0} \Big\{ 
+(p+r) \min\{x_t,d\} - r x_t - c \mathbb{1}\{q_t&gt;0\}
++ \beta V\big(x_t - \min\{x_t,d\} + q_t \big) \Big\}
+\]</div>
+<div class="important admonition">
+<p class="admonition-title">Backwards induction algorithm</p>
+<p>Solver for the finite horizon dynamic programming problems</p>
+<ol class="arabic simple">
+<li><p>Start at <span class="math notranslate nohighlight">\(t=T\)</span>, assume <span class="math notranslate nohighlight">\(V_T(s_T)=0\)</span></p></li>
+<li><p>Solve Bellman equation at <span class="math notranslate nohighlight">\(t\)</span> using the already known <span class="math notranslate nohighlight">\(V_{t+1}(s_{t+1})\)</span></p></li>
+<li><p>Record optimal choice (policy function) <span class="math notranslate nohighlight">\(x^\star_t(s_t)\)</span> and the value function <span class="math notranslate nohighlight">\(V_t(s_t)\)</span></p></li>
+<li><p>While <span class="math notranslate nohighlight">\(t&gt;1\)</span>, decrease <span class="math notranslate nohighlight">\(t\)</span> by 1 and return to step 2, otherwise stop</p></li>
+</ol>
+</div>
+<p>We already solved the model in terminal period above and determined that <span class="math notranslate nohighlight">\(q_T^\star = 0\)</span>, so we can start at <span class="math notranslate nohighlight">\(t=T-1\)</span> and solve the Bellman equation for <span class="math notranslate nohighlight">\(V_{T-1}(x_{T-1})\)</span> and find <span class="math notranslate nohighlight">\(q_{T-1}^\star(x_{T-1})\)</span>.
+Because the choice variable <span class="math notranslate nohighlight">\(q_{T-1}\)</span> is discrete (takes values from a finite/countable set), there is no FOCs, and we simply compare the value of the objective at different values of the choice variable, and choose the maximum one.</p>
+<p>Let’s do this numerically!</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+
+<span class="k">class</span> <span class="nc">inventory_model</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Small class to hold model fundamentals and its solution&#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;noname&#39;</span><span class="p">,</span>
+                 <span class="n">max_inventory</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>  <span class="c1"># upper bound on the state space</span>
+                 <span class="n">c</span> <span class="o">=</span> <span class="mf">3.2</span><span class="p">,</span>            <span class="c1"># fixed cost of order</span>
+                 <span class="n">p</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">,</span>           <span class="c1"># profit per unit of good</span>
+                 <span class="n">r</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>           <span class="c1"># storage cost per unit of good</span>
+                 <span class="n">β</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span>          <span class="c1"># discount factor</span>
+                 <span class="n">dp</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>          <span class="c1"># parameter in geometric distribution of demand</span>
+                 <span class="n">demand</span> <span class="o">=</span> <span class="mi">4</span>         <span class="c1"># fixed demand</span>
+                 <span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Create model with default parameters&#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">=</span><span class="n">label</span> <span class="c1"># label for the model instance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">β</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dp</span><span class="o">=</span> <span class="n">c</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">β</span><span class="p">,</span> <span class="n">dp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">demand</span> <span class="o">=</span> <span class="n">demand</span>
+        <span class="c1"># created dependent attributes (it would be better to have them updated when underlying parameters change)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">max_inventory</span><span class="o">+</span><span class="mi">1</span>    <span class="c1"># number of inventory levels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">upper</span> <span class="o">=</span> <span class="n">max_inventory</span>  <span class="c1"># upper boundary on inventory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># all possible values of inventory and demand (state space)</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;String representation of the model&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="s1">&#39;Inventory model labeled &quot;</span><span class="si">{}</span><span class="s1">&quot;</span><span class="se">\n</span><span class="s1">Paramters (c,p,r,β) = (</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">)</span><span class="se">\n</span><span class="s1">Demand=</span><span class="si">{}</span><span class="se">\n</span><span class="s1">Upper bound on inventory </span><span class="si">{}</span><span class="s1">&#39;</span> \
+               <span class="o">.</span><span class="n">format</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">r</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">β</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">demand</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">sales</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Sales in given period&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">next_x</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">q</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Inventory to be stored, becomes next period state&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">sales</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="p">)</span> <span class="o">+</span> <span class="n">q</span>
+
+    <span class="k">def</span> <span class="nf">profit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">q</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Profit in given period&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">p</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">sales</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">r</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">next_x</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">q</span><span class="p">)</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">*</span> <span class="p">(</span><span class="n">q</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">demand_pr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">plot</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Computes stochastic demand probs&#39;&#39;&#39;</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>  <span class="c1"># all possible values of demand</span>
+        <span class="n">pr</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">dp</span><span class="p">)</span><span class="o">**</span><span class="n">k</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">dp</span>
+        <span class="n">pr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">pr</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># update last prob to ensure sum=1</span>
+        <span class="k">if</span> <span class="n">plot</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">pr</span><span class="p">,</span><span class="n">where</span><span class="o">=</span><span class="s1">&#39;mid&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of demand&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">pr</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">=</span><span class="n">inventory_model</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inventory model labeled &quot;test&quot;
+Paramters (c,p,r,β) = (3.2,2.5,0.5,0.95)
+Demand=4
+Upper bound on inventory 10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bellman</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">v0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Bellman equation for inventory model</span>
+<span class="sd">        Inputs: model object</span>
+<span class="sd">                next period value function</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># create the grid of choices (same as x), column-vector</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">x</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+    <span class="c1"># compute current period profit (relying on numpy broadcasting to get the matrix with choices in rows)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">profit</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="o">.</span><span class="n">demand</span><span class="p">,</span><span class="n">q</span><span class="p">)</span>
+    <span class="c1"># indexes for next period value with extrapolation using last value</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">next_x</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="o">.</span><span class="n">demand</span><span class="p">,</span><span class="n">q</span><span class="p">),</span><span class="n">m</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+    <span class="c1"># compute the Bellman maximand</span>
+    <span class="n">vm</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="n">β</span><span class="o">*</span><span class="n">v0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="c1"># find max and argmax</span>
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>   <span class="c1"># maximum in every column</span>
+    <span class="n">q1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># arg-maximum in every column = order volume</span>
+    <span class="k">return</span> <span class="n">v1</span><span class="p">,</span> <span class="n">q1</span>
+
+<span class="k">def</span> <span class="nf">solver_backwards_induction</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Backwards induction solver for the finite horizon case&#39;&#39;&#39;</span>
+    <span class="c1"># solution is time dependent</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="o">.</span><span class="n">n</span><span class="p">,</span><span class="n">T</span><span class="p">))</span>
+    <span class="n">m</span><span class="o">.</span><span class="n">policy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="o">.</span><span class="n">n</span><span class="p">,</span><span class="n">T</span><span class="p">))</span>
+    <span class="c1"># main DP loop (from T to 1)</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Time period </span><span class="si">%d</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">t</span>)
+        <span class="n">j</span> <span class="o">=</span> <span class="n">t</span><span class="o">-</span><span class="mi">1</span> <span class="c1"># index of value and policy functions for period t</span>
+        <span class="k">if</span> <span class="n">t</span><span class="o">==</span><span class="n">T</span><span class="p">:</span>
+            <span class="c1"># terminal period: ordering zero is optimal</span>
+            <span class="n">m</span><span class="o">.</span><span class="n">value</span><span class="p">[:,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">profit</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="o">.</span><span class="n">demand</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">n</span><span class="p">))</span>
+            <span class="n">m</span><span class="o">.</span><span class="n">policy</span><span class="p">[:,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># all other periods</span>
+            <span class="n">m</span><span class="o">.</span><span class="n">value</span><span class="p">[:,</span><span class="n">j</span><span class="p">],</span> <span class="n">m</span><span class="o">.</span><span class="n">policy</span><span class="p">[:,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">bellman</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="o">.</span><span class="n">value</span><span class="p">[:,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># next period to Bellman</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="c1"># return model with updated value and policy functions</span>
+    <span class="k">return</span> <span class="n">m</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">inventory_model</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;illustration&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">=</span><span class="n">solver_backwards_induction</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Optimal policy:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">policy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time period 5
+
+[[ 0.   0.   0.   0.   0. ]
+ [ 0.   0.   0.   0.   2.5]
+ [ 0.   0.   0.   0.   5. ]
+ [ 0.   0.   0.   0.   7.5]
+ [ 0.   0.   0.   0.  10. ]
+ [ 0.   0.   0.   0.   9.5]
+ [ 0.   0.   0.   0.   9. ]
+ [ 0.   0.   0.   0.   8.5]
+ [ 0.   0.   0.   0.   8. ]
+ [ 0.   0.   0.   0.   7.5]
+ [ 0.   0.   0.   0.   7. ]] 
+
+Time period 4
+
+[[ 0.     0.     0.     4.3    0.   ]
+ [ 0.     0.     0.     6.8    2.5  ]
+ [ 0.     0.     0.     9.3    5.   ]
+ [ 0.     0.     0.    11.8    7.5  ]
+ [ 0.     0.     0.    14.3   10.   ]
+ [ 0.     0.     0.    14.3    9.5  ]
+ [ 0.     0.     0.    14.3    9.   ]
+ [ 0.     0.     0.    15.625  8.5  ]
+ [ 0.     0.     0.    17.5    8.   ]
+ [ 0.     0.     0.    16.525  7.5  ]
+ [ 0.     0.     0.    15.55   7.   ]] 
+
+Time period 3
+
+[[ 0.     0.     9.425  4.3    0.   ]
+ [ 0.     0.    11.925  6.8    2.5  ]
+ [ 0.     0.    14.425  9.3    5.   ]
+ [ 0.     0.    16.925 11.8    7.5  ]
+ [ 0.     0.    19.425 14.3   10.   ]
+ [ 0.     0.    19.425 14.3    9.5  ]
+ [ 0.     0.    19.425 14.3    9.   ]
+ [ 0.     0.    19.71  15.625  8.5  ]
+ [ 0.     0.    21.585 17.5    8.   ]
+ [ 0.     0.    21.085 16.525  7.5  ]
+ [ 0.     0.    20.585 15.55   7.   ]] 
+
+Time period 2
+
+[[ 0.      13.30575  9.425    4.3      0.     ]
+ [ 0.      15.80575 11.925    6.8      2.5    ]
+ [ 0.      18.30575 14.425    9.3      5.     ]
+ [ 0.      20.80575 16.925   11.8      7.5    ]
+ [ 0.      23.30575 19.425   14.3     10.     ]
+ [ 0.      23.30575 19.425   14.3      9.5    ]
+ [ 0.      23.30575 19.425   14.3      9.     ]
+ [ 0.      24.57875 19.71    15.625    8.5    ]
+ [ 0.      26.45375 21.585   17.5      8.     ]
+ [ 0.      25.95375 21.085   16.525    7.5    ]
+ [ 0.      25.45375 20.585   15.55     7.     ]] 
+
+Time period 1
+
+[[17.9310625 13.30575    9.425      4.3        0.       ]
+ [20.4310625 15.80575   11.925      6.8        2.5      ]
+ [22.9310625 18.30575   14.425      9.3        5.       ]
+ [25.4310625 20.80575   16.925     11.8        7.5      ]
+ [27.9310625 23.30575   19.425     14.3       10.       ]
+ [27.9310625 23.30575   19.425     14.3        9.5      ]
+ [27.9310625 23.30575   19.425     14.3        9.       ]
+ [28.2654625 24.57875   19.71      15.625      8.5      ]
+ [30.1404625 26.45375   21.585     17.5        8.       ]
+ [29.6404625 25.95375   21.085     16.525      7.5      ]
+ [29.1404625 25.45375   20.585     15.55       7.       ]] 
+
+Optimal policy:
+ [[8. 8. 8. 4. 0.]
+ [8. 8. 8. 4. 0.]
+ [8. 8. 8. 4. 0.]
+ [8. 8. 8. 4. 0.]
+ [8. 8. 8. 4. 0.]
+ [7. 7. 7. 3. 0.]
+ [6. 6. 6. 2. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_solution</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">value</span><span class="p">,</span><span class="n">where</span><span class="o">=</span><span class="s1">&#39;mid&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Current inventory, $x_t$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="sa">f</span><span class="s1">&#39;t=</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Value function&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">model</span><span class="o">.</span><span class="n">policy</span><span class="p">,</span><span class="n">where</span><span class="o">=</span><span class="s1">&#39;mid&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Current inventory, $x_t$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="sa">f</span><span class="s1">&#39;t=</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">policy</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Policy function (optimal order sizes)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plot_solution</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="_images/f44b57f62f454dfab1c60c47833c318f17952892e32e77f306b731bcd4c966c2.png"><img alt="_images/f44b57f62f454dfab1c60c47833c318f17952892e32e77f306b731bcd4c966c2.png" class="align-center" src="_images/f44b57f62f454dfab1c60c47833c318f17952892e32e77f306b731bcd4c966c2.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/41a99ca5c1ce4f127f26e55b933b2da9df21e837aa611c08eb5aba4faf96d9af.png"><img alt="_images/41a99ca5c1ce4f127f26e55b933b2da9df21e837aa611c08eb5aba4faf96d9af.png" class="align-center" src="_images/41a99ca5c1ce4f127f26e55b933b2da9df21e837aa611c08eb5aba4faf96d9af.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mod</span> <span class="o">=</span> <span class="n">inventory_model</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;production&#39;</span><span class="p">,</span><span class="n">max_inventory</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">demand</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">p</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="mf">1.4</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">β</span> <span class="o">=</span> <span class="mf">0.975</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">solver_backwards_induction</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plot_solution</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<a class="reference internal image-reference" href="_images/a102e4214443225754efaa0136951668977296ad627a694306321a52bfc73e49.png"><img alt="_images/a102e4214443225754efaa0136951668977296ad627a694306321a52bfc73e49.png" class="align-center" src="_images/a102e4214443225754efaa0136951668977296ad627a694306321a52bfc73e49.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/402def643488152c2a88b7e4a76d645db9f1e5bd4de1d503272d01a4992f609d.png"><img alt="_images/402def643488152c2a88b7e4a76d645db9f1e5bd4de1d503272d01a4992f609d.png" class="align-center" src="_images/402def643488152c2a88b7e4a76d645db9f1e5bd4de1d503272d01a4992f609d.png" style="width: 80%;" /></a>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do we need to use backwards induction for the model above?</p>
+<ul class="simple">
+<li><p>we could set it as a multivariate optimization w.r.t. the vector <span class="math notranslate nohighlight">\((q_0,\dots,q_T)\)</span></p></li>
+<li><p>the objective can be rewritten by plugging in the maximand of in period <span class="math notranslate nohighlight">\(t+1\)</span> into the equation for period <span class="math notranslate nohighlight">\(t\)</span> using the transition equation <span class="math notranslate nohighlight">\(g(\cdot)\)</span></p></li>
+</ul>
+<p>Thus any deterministic infinite horizon problem can be written and solved as a standard constrained optimization problem</p>
+<p>But as soon as we introduce uncertainty, this approach breaks down:</p>
+<ul class="simple">
+<li><p>there is no transition equation <span class="math notranslate nohighlight">\(g(\cdot)\)</span> to plug in, instead there is a transition probability and an expectation</p></li>
+<li><p>the optimization problem in each period depends on the paramters (state variables) in a non-trivial way, and has to be solved separately for each value of parameters</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="infinite-horizon-and-stochastic-dynamic-optimization-problems">
+<h2>Infinite horizon and stochastic dynamic optimization problems<a class="headerlink" href="#infinite-horizon-and-stochastic-dynamic-optimization-problems" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T = \infty\)</span></p></li>
+<li><p>subscripts <span class="math notranslate nohighlight">\(t\)</span> can be dropped</p></li>
+<li><p>solution of the model <span class="math notranslate nohighlight">\(V(s), x^\star(s)\)</span> is time invariant</p></li>
+<li><p>Bellman equation is a proper functional equation where the value function <span class="math notranslate nohighlight">\(V(s)\)</span> is an unknown</p></li>
+</ul>
+<p>In infinite horizon the dynamic optimization problem</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V_t(s_t)
+= \max_{x} \big[ f(x,s_t) + \beta V_{t+1}(s_{t+1}) \big] \\
+\text {subject to } x \in \mathcal{D}_t(s_t)
+\end{split}\]</div>
+<p>becomes a <strong>fixed point</strong> problem of a Bellman operator, i.e. the problem of solving a functional equation.</p>
+<div class="caution admonition">
+<p class="admonition-title">Definition</p>
+<p>Let <span class="math notranslate nohighlight">\(B(S)\)</span> denote a set of all bounded real-valued functions on a set <span class="math notranslate nohighlight">\(S \subset \mathbb{R}^K\)</span>.</p>
+<p><strong>Bellman operator</strong> is a mapping from <span class="math notranslate nohighlight">\(B(S)\)</span> to itself defined as</p>
+<div class="math notranslate nohighlight">
+\[
+T \colon B(S) \ni V \mapsto \max_{x \in \mathcal{D}(s)} 
+\big[ f(x,s) + \beta V\big(g(s,x)\big) \big] \in B(S)
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x,s) \colon \mathbb{R}^N \times S \to \mathbb{R}\)</span> is an instantaneous reward function</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \in \mathbb{R}^N\)</span> are decision/choice variables</p></li>
+<li><p><span class="math notranslate nohighlight">\(s \in S \subset \mathbb{R}^K\)</span> are <em>state variables</em></p></li>
+<li><p>state transitions are given by <span class="math notranslate nohighlight">\(s' = g(x,s)\)</span> where <span class="math notranslate nohighlight">\(g \colon \mathbb{R}^N \times S \to S\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathcal{D}(s) \subset \mathbb{R}^N\)</span> denotes the admissible set</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta \in (0,1)\)</span> is a discount factor</p></li>
+<li><p><span class="math notranslate nohighlight">\(V(s) \colon S \to \mathbb{R}\)</span> is a value function</p></li>
+</ul>
+</div>
+<p>Solution of the Bellman equation is given by a fixed point of the Bellman operator, i.e. such function <span class="math notranslate nohighlight">\(V(\cdot)\)</span> which is mapped to itself by the Bellman operator, and the corresponding policy function</p>
+<div class="math notranslate nohighlight">
+\[
+x^\star(s) = \mathrm{argmax}_{x \in \mathcal{D}(s)} \big[ f(x,s) + \beta V\big(g(x,s)\big) \big]
+\]</div>
+<section id="theory-of-dynamic-programming">
+<h3>Theory of dynamic programming<a class="headerlink" href="#theory-of-dynamic-programming" title="Permalink to this heading">#</a></h3>
+<div class="caution admonition">
+<p class="admonition-title">Definition: contraction mapping</p>
+<p>Let <span class="math notranslate nohighlight">\((S,\rho)\)</span> be a complete metric space, i.e. a metric space where every Cauchy sequence converges to a point in <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(T: S \rightarrow S\)</span> denote an operator mapping <span class="math notranslate nohighlight">\(S\)</span> to itself.
+<span class="math notranslate nohighlight">\(T\)</span> is called a <em>contraction</em> on <span class="math notranslate nohighlight">\(S\)</span> with modulus <span class="math notranslate nohighlight">\(\lambda\)</span> if <span class="math notranslate nohighlight">\(0 \le \lambda &lt; 1\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[
+\rho(Tx,Ty) \le \lambda \rho(x,y) \; \forall x,y \in S
+\]</div>
+</div>
+<p><em>Contraction mapping brings points in its domain “closer” to each other!</em></p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>What is the value of annuity <span class="math notranslate nohighlight">\(V\)</span> paying regular payments <span class="math notranslate nohighlight">\(c\)</span> forever?</p>
+<div class="math notranslate nohighlight">
+\[
+ \stackrel{\nearrow}{V} \quad
+   \stackrel{\searrow}{c} \quad
+   \stackrel{\searrow}{c} \quad
+   \stackrel{\searrow}{c} \quad
+   \dots
+\]</div>
+<p>Let <span class="math notranslate nohighlight">\(r\)</span> be the interest rate, then the value of annuity is given by</p>
+<div class="math notranslate nohighlight">
+\[
+ V=\quad
+   \frac{c}{(1+r)^0} + \quad
+   \frac{c}{(1+r)^1} + \quad
+   \frac{c}{(1+r)^2} + \quad
+   \frac{c}{(1+r)^3} + \quad
+   \dots
+\]</div>
+<p>Equivalently with <span class="math notranslate nohighlight">\(\beta = \frac{1}{1+r}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+V=\quad
+c + \quad
+c \beta + \quad
+c \beta^2 + \quad
+c \beta^3 + \quad
+\dots
+=
+\sum_{t=0}^{\infty} \beta^t c
+\]</div>
+<p>Can reformulate recursively (as “Bellman equation” without choice)</p>
+<div class="math notranslate nohighlight">
+\[
+ V = c + \beta ( c + \beta c + \beta^2 c + \dots ) = c + \beta V
+\]</div>
+<p>with the corresponding “Bellman operator”</p>
+<div class="math notranslate nohighlight">
+\[
+T \colon V \mapsto c + \beta V
+\]</div>
+<p>Is <span class="math notranslate nohighlight">\(T(V)\)</span> a contraction?</p>
+<div class="math notranslate nohighlight">
+\[
+|T(V_1) - T(V_2)| = |(c + \beta V_1) - (c + \beta V_2)| = \beta | V_1 - V_2 |
+\]</div>
+<p>Yes as long as long as <span class="math notranslate nohighlight">\(\beta &lt; 1\)</span>!</p>
+<ul class="simple">
+<li><p>contraction mapping under Euclidean norm</p></li>
+<li><p>modulus of the contraction is <span class="math notranslate nohighlight">\(\beta\)</span></p></li>
+</ul>
+</div>
+<p>Contractions are <em>invaluable</em> because of uniqueness of their fixed point <em>and</em> a surefire algorithm to compute them</p>
+<div class="important admonition">
+<p class="admonition-title">Banach contraction mapping theorem (fixed point theorem)</p>
+<p>Let <span class="math notranslate nohighlight">\((S,\rho)\)</span> be a complete metric space with a contraction mapping <span class="math notranslate nohighlight">\(T: S \rightarrow S\)</span>.
+Then</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(T\)</span> admits a unique fixed-point <span class="math notranslate nohighlight">\(V^{\star} \in S \colon T(V^{\star}) = V^{\star}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(V^{\star}\)</span> can be found by repeated application of the operator <span class="math notranslate nohighlight">\(T\)</span>, i.e. <span class="math notranslate nohighlight">\(T^n(V) \rightarrow V^{\star}\)</span> as <span class="math notranslate nohighlight">\(n\rightarrow \infty\)</span></p></li>
+</ol>
+</div>
+<p>In other words, the fixed point can be found by successive approximations from any starting point <span class="math notranslate nohighlight">\(\rightarrow\)</span> commonly known in economics as value function iterations (VFI) algorithm</p>
+<div class="caution admonition">
+<p class="admonition-title">Value function iterations (VFI) algorithm</p>
+<ol class="arabic simple">
+<li><p>Start with a guess for value function <span class="math notranslate nohighlight">\(V_0\)</span>, <span class="math notranslate nohighlight">\(i=0\)</span></p></li>
+<li><p>Apply Bellman operator to <span class="math notranslate nohighlight">\(V_i\)</span> and increment <span class="math notranslate nohighlight">\(i\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+V_{i+1} = T(V_i)
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Repeat until convergence, i.e. <span class="math notranslate nohighlight">\(\| V_{i+1}-V_i \|&lt;\epsilon\)</span> for some small $\e</p></li>
+</ol>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="k">class</span> <span class="nc">annuity</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="mf">.9</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>           <span class="c1"># Annual payment</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">beta</span> <span class="o">=</span> <span class="n">beta</span>     <span class="c1"># Discount factor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">analytic</span> <span class="o">=</span> <span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span>  <span class="c1"># compute analytic solution right away</span>
+    
+    <span class="k">def</span> <span class="nf">bellman</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">V</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Bellman equation&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta</span><span class="o">*</span><span class="n">V</span>
+
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">maxiter</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;Solves the model using successive approximations&#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:&lt;4}</span><span class="s1"> </span><span class="si">{:&gt;15}</span><span class="s1"> </span><span class="si">{:&gt;15}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Iter&#39;</span><span class="p">,</span><span class="s1">&#39;Value&#39;</span><span class="p">,</span><span class="s1">&#39;Error&#39;</span><span class="p">))</span>
+        <span class="n">V0</span><span class="o">=</span><span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxiter</span><span class="p">):</span>
+            <span class="n">V1</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">bellman</span><span class="p">(</span><span class="n">V0</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:&lt;4d}</span><span class="s1"> </span><span class="si">{:&gt;15.8f}</span><span class="s1"> </span><span class="si">{:&gt;15.8f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">V1</span><span class="p">,</span><span class="n">V1</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">analytic</span><span class="p">))</span>
+            <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">V1</span><span class="o">-</span><span class="n">V0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+                <span class="k">break</span>
+            <span class="n">V0</span><span class="o">=</span><span class="n">V1</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># when i went up to maxiter</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No convergence: maximum number of iterations achieved!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">V1</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">annuity</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">beta</span><span class="o">=</span><span class="mf">0.92</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Numeric solution is &#39;</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="n">solve</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iter           Value           Error
+0        10.00000000   -115.00000000
+1        19.20000000   -105.80000000
+2        27.66400000    -97.33600000
+3        35.45088000    -89.54912000
+4        42.61480960    -82.38519040
+5        49.20562483    -75.79437517
+6        55.26917485    -69.73082515
+7        60.84764086    -64.15235914
+8        65.97982959    -59.02017041
+9        70.70144322    -54.29855678
+10       75.04532776    -49.95467224
+11       79.04170154    -45.95829846
+12       82.71836542    -42.28163458
+13       86.10089619    -38.89910381
+14       89.21282449    -35.78717551
+15       92.07579853    -32.92420147
+16       94.70973465    -30.29026535
+17       97.13295588    -27.86704412
+18       99.36231941    -25.63768059
+19      101.41333385    -23.58666615
+20      103.30026715    -21.69973285
+21      105.03624577    -19.96375423
+22      106.63334611    -18.36665389
+23      108.10267842    -16.89732158
+24      109.45446415    -15.54553585
+25      110.69810702    -14.30189298
+26      111.84225846    -13.15774154
+27      112.89487778    -12.10512222
+28      113.86328756    -11.13671244
+29      114.75422455    -10.24577545
+30      115.57388659     -9.42611341
+31      116.32797566     -8.67202434
+32      117.02173761     -7.97826239
+33      117.65999860     -7.34000140
+34      118.24719871     -6.75280129
+35      118.78742281     -6.21257719
+36      119.28442899     -5.71557101
+37      119.74167467     -5.25832533
+38      120.16234070     -4.83765930
+39      120.54935344     -4.45064656
+40      120.90540517     -4.09459483
+41      121.23297275     -3.76702725
+42      121.53433493     -3.46566507
+43      121.81158814     -3.18841186
+44      122.06666109     -2.93333891
+45      122.30132820     -2.69867180
+46      122.51722194     -2.48277806
+47      122.71584419     -2.28415581
+48      122.89857665     -2.10142335
+49      123.06669052     -1.93330948
+50      123.22135528     -1.77864472
+51      123.36364686     -1.63635314
+52      123.49455511     -1.50544489
+53      123.61499070     -1.38500930
+54      123.72579144     -1.27420856
+55      123.82772813     -1.17227187
+56      123.92150988     -1.07849012
+57      124.00778909     -0.99221091
+58      124.08716596     -0.91283404
+59      124.16019268     -0.83980732
+60      124.22737727     -0.77262273
+61      124.28918709     -0.71081291
+62      124.34605212     -0.65394788
+63      124.39836795     -0.60163205
+64      124.44649851     -0.55350149
+65      124.49077863     -0.50922137
+66      124.53151634     -0.46848366
+67      124.56899504     -0.43100496
+68      124.60347543     -0.39652457
+69      124.63519740     -0.36480260
+70      124.66438161     -0.33561839
+71      124.69123108     -0.30876892
+72      124.71593259     -0.28406741
+73      124.73865798     -0.26134202
+74      124.75956535     -0.24043465
+75      124.77880012     -0.22119988
+76      124.79649611     -0.20350389
+77      124.81277642     -0.18722358
+78      124.82775431     -0.17224569
+79      124.84153396     -0.15846604
+80      124.85421124     -0.14578876
+81      124.86587435     -0.13412565
+82      124.87660440     -0.12339560
+83      124.88647605     -0.11352395
+84      124.89555796     -0.10444204
+85      124.90391333     -0.09608667
+86      124.91160026     -0.08839974
+87      124.91867224     -0.08132776
+88      124.92517846     -0.07482154
+89      124.93116418     -0.06883582
+90      124.93667105     -0.06332895
+91      124.94173736     -0.05826264
+92      124.94639837     -0.05360163
+93      124.95068650     -0.04931350
+94      124.95463158     -0.04536842
+95      124.95826106     -0.04173894
+96      124.96160017     -0.03839983
+97      124.96467216     -0.03532784
+98      124.96749839     -0.03250161
+99      124.97009852     -0.02990148
+100     124.97249063     -0.02750937
+101     124.97469138     -0.02530862
+102     124.97671607     -0.02328393
+103     124.97857879     -0.02142121
+104     124.98029248     -0.01970752
+105     124.98186909     -0.01813091
+106     124.98331956     -0.01668044
+107     124.98465399     -0.01534601
+108     124.98588167     -0.01411833
+109     124.98701114     -0.01298886
+110     124.98805025     -0.01194975
+111     124.98900623     -0.01099377
+112     124.98988573     -0.01011427
+113     124.99069487     -0.00930513
+114     124.99143928     -0.00856072
+115     124.99212414     -0.00787586
+116     124.99275421     -0.00724579
+117     124.99333387     -0.00666613
+118     124.99386716     -0.00613284
+119     124.99435779     -0.00564221
+120     124.99480917     -0.00519083
+121     124.99522443     -0.00477557
+122     124.99560648     -0.00439352
+123     124.99595796     -0.00404204
+124     124.99628132     -0.00371868
+125     124.99657882     -0.00342118
+126     124.99685251     -0.00314749
+127     124.99710431     -0.00289569
+128     124.99733597     -0.00266403
+129     124.99754909     -0.00245091
+130     124.99774516     -0.00225484
+131     124.99792555     -0.00207445
+132     124.99809150     -0.00190850
+133     124.99824418     -0.00175582
+134     124.99838465     -0.00161535
+135     124.99851388     -0.00148612
+136     124.99863277     -0.00136723
+137     124.99874215     -0.00125785
+138     124.99884277     -0.00115723
+139     124.99893535     -0.00106465
+Numeric solution is  124.9989353524933
+</pre></div>
+</div>
+</div>
+</div>
+<p>Answer by the geometric series formula, assuming <span class="math notranslate nohighlight">\(\beta&lt;1\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+ V = \sum_{t=0}^{\infty} \beta^t c = \frac{c}{1-\beta}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Analytic solution is </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">analytic</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Analytic solution is 125.00000000000006
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>When is Bellman operator a contraction?</strong></p>
+<div class="math notranslate nohighlight">
+\[
+T(V)(\text{state}) = \max_{\text{decisions}} \big[ U(\text{state},\text{decision}) + \beta \mathbb{E}\big\{ V(\text{next state}) \big| \text{state},\text{decision} \big\} \big]
+\]</div>
+<ul class="simple">
+<li><p>Bellman operator <span class="math notranslate nohighlight">\(T: U \rightarrow U\)</span> from functional space <span class="math notranslate nohighlight">\(U\)</span> to itself</p></li>
+<li><p>metric space <span class="math notranslate nohighlight">\((U,d_{\infty})\)</span> with uniform/infinity/sup norm (max abs distance between functions over their domain)</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Blackwell sufficient conditions for contraction</p>
+<p>Let <span class="math notranslate nohighlight">\(X \subseteq \mathbb{R}^n\)</span> and <span class="math notranslate nohighlight">\(B(x)\)</span> be the space of bounded functions <span class="math notranslate nohighlight">\(f: X \rightarrow \mathbb{R}\)</span> defined on <span class="math notranslate nohighlight">\(X\)</span>.
+Suppose that <span class="math notranslate nohighlight">\(T: B(X) \rightarrow B(X)\)</span> is an operator satisfying the following conditions:</p>
+<ol class="arabic simple">
+<li><p>(monotonicity) For any <span class="math notranslate nohighlight">\(f,g \in B(X)\)</span> and <span class="math notranslate nohighlight">\(f(x) \le g(x)\)</span> for all <span class="math notranslate nohighlight">\(x\in X\)</span> implies <span class="math notranslate nohighlight">\(T(f)(x) \le T(g)(x)\)</span> for all <span class="math notranslate nohighlight">\(x\in X\)</span>,</p></li>
+<li><p>(discounting) There exists <span class="math notranslate nohighlight">\(\beta \in (0,1)\)</span> such that</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+T(f+a)(x) \le T(f)(x) + \beta a, \text{ for all } f\in B(X), a \ge 0, x\in X,
+\]</div>
+<p>Then <span class="math notranslate nohighlight">\(T\)</span> is a contraction mapping with modulus <span class="math notranslate nohighlight">\(\beta\)</span>.</p>
+</div>
+<ul class="simple">
+<li><p>Monotonicity of Bellman equation follows trivially due to maximization in <span class="math notranslate nohighlight">\(T(V)(x)\)</span></p></li>
+<li><p>Discounting: satisfied by elementary argument when <span class="math notranslate nohighlight">\(\beta&lt;1\)</span></p></li>
+</ul>
+<p>Bellman operator is contraction mapping by Blackwell condition as long as the value function is bounded and the discount factor is less than one</p>
+<ul class="simple">
+<li><p>In practical application with the upper bound on the state space, the value function is generally bounded</p></li>
+<li><p>In many applications the norm <span class="math notranslate nohighlight">\(\rho\)</span> in the metric space can be adjusted to make the value function bounded</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span></p>
+<ul class="simple">
+<li><p>unique solution</p></li>
+<li><p>VFI algorithm is globally convergent</p></li>
+<li><p>does not depend on the numerical implementation of the Bellman operator</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Example: inventory management in infinite horizon</p>
+<p>Return to the above example, now with the following modifications:</p>
+<ul class="simple">
+<li><p>time horizon is infinite</p></li>
+<li><p>demand is stochastic with known distribution</p></li>
+</ul>
+<p>After dropping the time subscripts the Bellman equation is</p>
+<div class="math notranslate nohighlight">
+\[
+V(x,d) =
+\max_{q \ge 0} \Big\{ 
+(p+r) \min\{x,d\} - r x - c \mathbb{1}\{q&gt;0\}
++ \beta \sum_{d'} V\big(x - \min\{x,d\} + q, d' \big) pr(d') \Big\}
+\]</div>
+<p>The sum in the RHS of the equation computes the expectation over realizations of discrete random demands <span class="math notranslate nohighlight">\(d'\)</span>, each happening with probability <span class="math notranslate nohighlight">\(pr(d')\)</span>.</p>
+<p>We could solve the problem as is, but note that <span class="math notranslate nohighlight">\(d\)</span> does not enter the “next period part” of the Bellman equation (due to the assumption that demand is idiosyncratic). In this case we can make our life easier by converting the problem of searching for the fixed point of the Bellman operator to the problem of searching the fixed point of the <em>expected</em> Bellman operator.</p>
+<p>Taking the expectation of the Bellman equation over the distribution of demand <span class="math notranslate nohighlight">\(d\)</span> on both sides, and denoting
+<span class="math notranslate nohighlight">\(EV(x) = \sum_{d} V(x,d) pr(d)\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+EV(x) =
+\sum_{d} \left[
+\max_{q \ge 0} \Big\{ 
+(p+r) \min\{x,d\} - r x - c \mathbb{1}\{q&gt;0\}
++ \beta EV(x - \min\{x,d\} + q) \Big\}
+\right ] pr(d)
+\]</div>
+<p>In the expected value function form the Bellman operator is also a contraction, but the fixed point now has to be solved only in the space of <span class="math notranslate nohighlight">\(x\)</span> and not <span class="math notranslate nohighlight">\(x,d\)</span>. This is much easier for computational solver in the code below.</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bellman_ev</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">ev0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Bellman equation for inventory model</span>
+<span class="sd">       Inputs: model object</span>
+<span class="sd">               next period EXPECTED value function</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">pr</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">demand_pr</span><span class="p">()</span>
+    <span class="n">ev1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span><span class="n">d</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">x</span><span class="p">):</span>  <span class="c1"># over all values of demand</span>
+        <span class="c1"># create the grid of choices (same as x), column-vector</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">x</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+        <span class="c1"># compute current period profit (relying on numpy broadcasting to get the matrix with choices in rows)</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">profit</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">q</span><span class="p">)</span>
+        <span class="c1"># indexes for next period value with extrapolation using last value</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">next_x</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">q</span><span class="p">),</span><span class="n">m</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+        <span class="c1"># compute the Bellman maximand</span>
+        <span class="n">vm</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="n">β</span><span class="o">*</span><span class="n">ev0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="c1"># find max and argmax</span>
+        <span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># maximum in every column</span>
+        <span class="n">ev1</span> <span class="o">=</span> <span class="n">ev1</span> <span class="o">+</span> <span class="n">pr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">v1</span>
+        <span class="n">q1</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">ev1</span><span class="p">,</span> <span class="n">q1</span>
+
+<span class="k">def</span> <span class="nf">solve_vfi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span><span class="n">maxiter</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span><span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Solves the Rust model using value function iterations</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">ev0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span> <span class="c1"># initial point for VFI</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">maxiter</span><span class="p">):</span>  <span class="c1"># main loop</span>
+        <span class="n">ev1</span><span class="p">,</span> <span class="n">q1</span> <span class="o">=</span> <span class="n">bellman_ev</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">ev0</span><span class="p">)</span>  <span class="c1"># update approximation</span>
+        <span class="n">err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ev0</span><span class="o">-</span><span class="n">ev1</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">callback</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span> <span class="n">callback</span><span class="p">(</span><span class="nb">iter</span><span class="o">=</span><span class="n">i</span><span class="p">,</span><span class="n">err</span><span class="o">=</span><span class="n">err</span><span class="p">,</span><span class="n">ev1</span><span class="o">=</span><span class="n">ev1</span><span class="p">,</span><span class="n">ev0</span><span class="o">=</span><span class="n">ev0</span><span class="p">,</span><span class="n">q1</span><span class="o">=</span><span class="n">q1</span><span class="p">,</span><span class="n">model</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">err</span><span class="o">&lt;</span><span class="n">tol</span><span class="p">:</span>
+            <span class="k">break</span>  <span class="c1"># break out if converged</span>
+        <span class="n">ev0</span> <span class="o">=</span> <span class="n">ev1</span>  <span class="c1"># get ready to the next iteration</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Failed to converge in </span><span class="si">%d</span><span class="s1"> iterations&#39;</span><span class="o">%</span><span class="k">maxiter</span>)
+    <span class="k">return</span> <span class="n">ev1</span><span class="p">,</span> <span class="n">q1</span>
+
+<span class="k">def</span> <span class="nf">solve_show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">maxiter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span><span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span><span class="o">**</span><span class="n">kvargs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Illustrate solution&#39;&#39;&#39;</span>
+
+    <span class="n">fig1</span><span class="p">,</span> <span class="p">(</span><span class="n">ax</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;0.65&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Inventory&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Expected value function&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="o">**</span><span class="n">argvars</span><span class="p">):</span>
+        <span class="n">mod</span><span class="p">,</span> <span class="n">ev</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">argvars</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">],</span><span class="n">argvars</span><span class="p">[</span><span class="s1">&#39;ev1&#39;</span><span class="p">],</span><span class="n">argvars</span><span class="p">[</span><span class="s1">&#39;q1&#39;</span><span class="p">]</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span><span class="n">where</span><span class="o">=</span><span class="s1">&#39;mid&#39;</span><span class="p">)</span>
+    <span class="n">ev</span><span class="p">,</span><span class="n">pk</span> <span class="o">=</span> <span class="n">solve_vfi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">maxiter</span><span class="o">=</span><span class="n">maxiter</span><span class="p">,</span><span class="n">tol</span><span class="o">=</span><span class="n">tol</span><span class="p">,</span><span class="n">callback</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span><span class="o">**</span><span class="n">kvargs</span><span class="p">)</span>
+    <span class="c1"># add solutions</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">ev</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span><span class="n">where</span><span class="o">=</span><span class="s1">&#39;mid&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">optimal_policy</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">ev</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Computes the optimal policy function for the stochastic</span>
+<span class="sd">    inventory dynamics model for given EV function&#39;&#39;&#39;</span>
+    <span class="c1"># idea: 3-dim array with q in axes 0, d in axis 1 and x in axis 2</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">x</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>  <span class="c1"># choices</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>  <span class="c1"># demand</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">,:]</span>  <span class="c1"># inventories</span>
+    <span class="c1"># compute current period profit (relying on numpy broadcasting to get the matrix with choices in rows)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">profit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">q</span><span class="p">)</span>  <span class="c1"># 3-dim array</span>
+    <span class="c1"># indexes for next period value with extrapolation using last value</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">next_x</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">q</span><span class="p">),</span><span class="n">m</span><span class="o">.</span><span class="n">upper</span><span class="p">)</span>
+    <span class="c1"># compute the Bellman maximand</span>
+    <span class="n">vm</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="n">β</span><span class="o">*</span><span class="n">ev</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="c1"># find argmax and argmax</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">vm</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># maximum in every column</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mod</span> <span class="o">=</span> <span class="n">inventory_model</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;production&#39;</span><span class="p">,</span><span class="n">max_inventory</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">dp</span><span class="o">=</span><span class="mf">.25</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">demand</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">mod</span><span class="o">.</span><span class="n">dp</span><span class="p">)</span><span class="o">/</span><span class="n">mod</span><span class="o">.</span><span class="n">dp</span><span class="p">)</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="mf">.25</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">p</span> <span class="o">=</span> <span class="mf">3.5</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">r</span> <span class="o">=</span> <span class="mf">0.4</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">β</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">demand_pr</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">solver_backwards_induction</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span><span class="n">T</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plot_solution</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
+
+<span class="n">ev</span><span class="p">,</span><span class="n">q</span> <span class="o">=</span> <span class="n">solve_vfi</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
+<span class="n">solve_show</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">optimal_policy</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span><span class="n">ev</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Optimal orders of new inventory for d,x:</span><span class="se">\n</span><span class="s1">(d in rows, x in columns)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4ad58ef0adb9ba7ead842ffbb54b67e88d4c29f2c7d03d8a195be84d3a7aa0b5.png" src="_images/4ad58ef0adb9ba7ead842ffbb54b67e88d4c29f2c7d03d8a195be84d3a7aa0b5.png" />
+<img alt="_images/8e7ac80db141095d38a29e31f722791a0e4ead8fbf337141a58bffac2a0da662.png" src="_images/8e7ac80db141095d38a29e31f722791a0e4ead8fbf337141a58bffac2a0da662.png" />
+<img alt="_images/d6dd2cd591a6080457927469c1d0f988d2b3094c4c81a5a008df1bb8bd310b6b.png" src="_images/d6dd2cd591a6080457927469c1d0f988d2b3094c4c81a5a008df1bb8bd310b6b.png" />
+<img alt="_images/b7571f0debae5ed00c1550848719ae567d020d68385038fc5adf7fd0208b6876.png" src="_images/b7571f0debae5ed00c1550848719ae567d020d68385038fc5adf7fd0208b6876.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal orders of new inventory for d,x:
+(d in rows, x in columns)
+[[7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [7 7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [7 7 7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [7 7 7 7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [7 7 7 7 7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [7 7 7 7 7 7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [7 7 7 7 7 7 7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [7 7 7 7 7 7 7 7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [7 7 7 7 7 7 7 7 7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0 0 0]
+ [7 7 7 7 7 7 7 7 7 7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0 0]
+ [7 7 7 7 7 7 7 7 7 7 7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0]
+ [7 7 7 7 7 7 7 7 7 7 7 7 6 5 4 3 2 0 0 0 0 0 0 0 0 0]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 6 5 4 3 2 0 0 0 0 0 0 0 0]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 5 4 3 2 0 0 0 0 0 0 0]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 5 4 3 2 0 0 0 0 0 0]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 5 4 3 2 0 0 0 0 0]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 5 4 3 2 0 0 0 0]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 5 4 3 2 0 0 0]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 5 4 3 2 0 0]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 5 4 3 2 0]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 5 4 3 2]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 5 4 3]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 5 4]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6 5]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 6]
+ [7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note the symmetry in the optimal policy!
+This implies that knowing both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(d\)</span> is not necessary for the optional new order, it’s enough to condition on the inventory remaining after sales, i.e. <span class="math notranslate nohighlight">\(x-\min(x,d) = \max(0,x-d)\)</span></p>
+</div>
+<!-- ### Other classes of dynamic optimization problems
+
+Classification by various criteria:
+
+1. Nature of time
+  - discrete time: here
+  - continuous time: studied in the *calculus of variation*, *optimal control theory* and other branches of math
+
+2. Uncertainty in the beliefs of the decision makers
+  - deterministic problems: all transition rules are given by laws of motion, i.e. mappings from states and choices to next period states
+  - stochastic problems: some transitions rules are given by conditional densities or transition probabilities from current to next period states
+
+3. Structure of choice and state space
+  - discrete 
+  - continuous
+  - mixed discrete-continuous
+ -->
+</section>
+</section>
+<section id="extra-material">
+<h2>Extra material<a class="headerlink" href="#extra-material" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Computer science view on DP <a class="reference external" href="https://www.techiedelight.com/introduction-dynamic-programming">https://www.techiedelight.com/introduction-dynamic-programming</a></p></li>
+<li><p>Popular optimal stopping <a class="reference external" href="https://www.americanscientist.org/article/knowing-when-to-stop">https://www.americanscientist.org/article/knowing-when-to-stop</a></p></li>
+<li><p>For more details the inventory problem see <a class="reference external" href="https://youtu.be/JSdjTmaXr0w">my screencast on writing this code</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -482,6 +1723,17 @@ Fedor Iskhakov</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-decision-problems">Dynamic decision problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-programming-and-bellman-principle-of-optimality">Dynamic programming and Bellman principle of optimality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-and-infinite-horizon-problems">Finite and infinite horizon problems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inventory-management-in-finite-horizon">Inventory management in finite horizon</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-horizon-and-stochastic-dynamic-optimization-problems">Infinite horizon and stochastic dynamic optimization problems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theory-of-dynamic-programming">Theory of dynamic programming</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-material">Extra material</a></li>
 </ul>
   </nav></div>
 

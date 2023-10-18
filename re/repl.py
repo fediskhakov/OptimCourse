@@ -30,9 +30,13 @@ def main(args):
   content = args.text_file.read()
   # (---(?:\s|\S)*?---)\n((?:\s|\S)*)
   regexp = re.match(r"(?P<preamble>---(?:\s|\S)*?---)\n(?P<body>(?:\s|\S)*)", content)
-  redict = regexp.groupdict()
-  preamble = redict['preamble']
-  body = redict['body']
+  if regexp:
+    redict = regexp.groupdict()
+    preamble = redict['preamble']
+    body = redict['body']
+  else:
+    preamble = ''
+    body = content
   for p in patterns:
     pt = p['pattern']['re'].strip() # remove trailing and leading spaces
     st = p['pattern']['st'].strip()
@@ -40,9 +44,8 @@ def main(args):
       pprint(f"Applying pattern {pt} --> {st}")
     body = re.sub(pt,st,body)
     # run space reducing pattern after each replacement
-    body = re.sub(r'  ',r' ',body) # remove double spaces
-    body = re.sub(r'\n ',r'\n',body) # remove spaces in beginning of lines
-    body = re.sub(r'\n\n\n',r'\n\n',body) # remove double empty lines
+    body = re.sub(r'(?<![\n ])[ ]{2,}(?![ #])',r' ',body) # replace multiple spaces not at the beginning of line and not followed by # (comment)
+    body = re.sub(r'(?m)\n\n\n',r'\n\n',body) # remove double empty lines
   args.text_file.close() # in case we are replacing
   with open(args.outfile, 'w') as file:
     file.write(preamble + '\n' + body)
