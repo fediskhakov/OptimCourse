@@ -394,13 +394,13 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tangency-condition-algorithm">Tangency condition algorithm</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slope-conditions-for-minimization">Slope Conditions for Minimization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-of-lagrange-multipliers">The method of Lagrange multipliers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangean-as-tangency-condition">Lagrangean as tangency condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-as-tangency-condition">Lagrangian as tangency condition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-conditions">Second order conditions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-method-recipe">Lagrangian method: recipe</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-lagrange-method-fail">When does Lagrange method fail?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inequality-constrains-and-kuhn-tucker-method">Inequality constrains and Kuhn-Tucker method</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inequality-constraints-and-kuhn-tucker-method">Inequality constraints and Kuhn-Tucker method</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karush-kuhn-tucker-method-recipe">Karush - Kuhn-Tucker method: recipe</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Second order conditions</a></li>
 </ul>
@@ -426,7 +426,7 @@ Fedor Iskhakov</p>
 <ul class="simple">
 <li><p>Submit Test 3 before <strong>October 4, 23:59</strong></p></li>
 <li><p>The test will include the material from the last two lectures (unconstrained and constrained optimization) with some additional material on fundamentals of optimization from the lecture before (properties of optima and convexity)</p></li>
-<li><p>Next week you will have a guest lecture by <a class="reference external" href="https://www.linkedin.com/in/esben-scriver-andersen-74159598/?originalSubdomain=au">Dr. Esben Skriver Andersen</a> who is a postdoc at RSE working on structural estimation of dynamic discrete choice and matching models <br />
+<li><p>Next week you will have a guest lecture by <a class="reference external" href="https://www.linkedin.com/in/esben-scriver-andersen-74159598/?originalSubdomain=au">Dr. Esben Scriver Andersen</a> who is a postdoc at RSE working on structural estimation of dynamic discrete choice and matching models <br />
 Topic: numerical methods for practical optimization problems</p></li>
 </ul>
 <a class="reference internal image-reference" href="_images/esben.jpeg"><img alt="_images/esben.jpeg" src="_images/esben.jpeg" style="width: 224.0px; height: 224.0px;" /></a>
@@ -748,10 +748,10 @@ x_2 = \pm \sqrt{1 - x_1^2}
 </ul>
 <div class="admonition-diversion-derivative-of-an-implicit-function admonition">
 <p class="admonition-title">Diversion: derivative of an implicit function</p>
-<p>To continue with the tangency approach we need to know how to differentiate an implicit function <span class="math notranslate nohighlight">\(x_2(x_1)\)</span> which is given by a contour line of the utility function <span class="math notranslate nohighlight">\(u(x_1, x_2)=c\)</span></p>
+<p>To continue with the tangency approach we need to know how to differentiate an implicit function <span class="math notranslate nohighlight">\(x_2(x_1)\)</span> which is given by a contour line of the utility function <span class="math notranslate nohighlight">\(f(x_1, x_2)=c\)</span></p>
 <p>Let’s approach this task in the following way</p>
 <ul class="simple">
-<li><p>utility function is given by <span class="math notranslate nohighlight">\(u \colon \mathbb{R}^2 \to \mathbb{R}\)</span></p></li>
+<li><p>utility function is given by <span class="math notranslate nohighlight">\(f \colon \mathbb{R}^2 \to \mathbb{R}\)</span></p></li>
 <li><p>the contour line is given by <span class="math notranslate nohighlight">\(f(x_1,x_2) = c\)</span> which defines an <em><strong>implicit function</strong></em> <span class="math notranslate nohighlight">\(x_1(x_2)\)</span></p></li>
 <li><p>let map <span class="math notranslate nohighlight">\(g \colon \mathbb{R} \to \mathbb{R}^2\)</span> given by <span class="math notranslate nohighlight">\(g(x_2) = \big[x_1(x_2),x_2\big]\)</span></p></li>
 </ul>
@@ -1021,8 +1021,8 @@ x_2^\star = \frac{\beta}{\beta + \alpha} \cdot \frac{m}{p_2}
 \]</div>
 </div>
 </section>
-<section id="lagrangean-as-tangency-condition">
-<h3>Lagrangean as tangency condition<a class="headerlink" href="#lagrangean-as-tangency-condition" title="Permalink to this heading">#</a></h3>
+<section id="lagrangian-as-tangency-condition">
+<h3>Lagrangian as tangency condition<a class="headerlink" href="#lagrangian-as-tangency-condition" title="Permalink to this heading">#</a></h3>
 <p>The “standard machine” for optimization with equality constraints</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1165,8 +1165,8 @@ H \mathcal{L}({\bf \lambda},{\bf x}) =
 \big(-g({\bf x}) \;, \; Df({\bf x}) - \lambda \cdot Dg({\bf x})\big)
 \]</div>
 <ul class="simple">
-<li><p>The subscripts in the definition above denote the shape of the blocks in the bordered Hessian</p></li>
-<li><p>Some textbooks place the “boarder”, i.e. Jacobians of the constrained in upper left corner and the Hessian w.r.t. <span class="math notranslate nohighlight">\({\bf x}\)</span> of the objective in the lower right corner, with corresponding changes in the propositions below</p></li>
+<li><p>the subscripts in the definition above denote the shape of the blocks in the bordered Hessian</p></li>
+<li><p>some textbooks place the “border”, i.e. Jacobians of the constrained in upper left corner and the Hessian w.r.t. <span class="math notranslate nohighlight">\({\bf x}\)</span> of the objective in the lower right corner, with corresponding changes in the propositions below</p></li>
 <li><p>the sign for the second term in the Lagrangian also appears and may differ between different texts</p></li>
 </ul>
 <div class="caution admonition">
@@ -1285,7 +1285,7 @@ H_{\bf x} \mathcal{L}({\bf \lambda},{\bf x}) =
 \[
 \nabla \mathcal{L}({\bf \lambda},{\bf x}) =
 \left(
-x_1 p_1 + x_2 p_2 -m, \;
+m-x_1 p_1 - x_2 p_2, \;
 \frac{\alpha}{x_1} - \lambda p_1, \;
 \frac{\beta}{x_2} - \lambda p_2
 \right)
@@ -1404,8 +1404,8 @@ x^2-y^3 =0
 <p>Conclusion: great tool, but blind application may lead to wrong results!</p>
 </section>
 </section>
-<section id="inequality-constrains-and-kuhn-tucker-method">
-<h2>Inequality constrains and Kuhn-Tucker method<a class="headerlink" href="#inequality-constrains-and-kuhn-tucker-method" title="Permalink to this heading">#</a></h2>
+<section id="inequality-constraints-and-kuhn-tucker-method">
+<h2>Inequality constraints and Kuhn-Tucker method<a class="headerlink" href="#inequality-constraints-and-kuhn-tucker-method" title="Permalink to this heading">#</a></h2>
 <p>Turning now to the inequality constrained optimization problems</p>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
@@ -1478,7 +1478,7 @@ Df({\bf x}^\star) - \sum_{i=1}^K \lambda_i^\star Dg_i({\bf x}^\star) =
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[
-\lambda_i^\star \ge 0 \text{ with } \lambda_i^\star g_i({\bf x}^\star) =0 \; i=1,\dots,K
+\lambda_i^\star \ge 0 \text{ with } \lambda_i^\star g_i({\bf x}^\star) = 0 \; i=1,\dots,K
 \]</div>
 </div>
 <div class="dropdown admonition">
@@ -1507,7 +1507,7 @@ Df({\bf x}^\star) - \sum_{i=1}^K \lambda_i^\star Dg_i({\bf x}^\star) =
 <ol class="arabic simple">
 <li><p>Write down the Lagrangian function <span class="math notranslate nohighlight">\(\mathcal{L}({\bf x},{\bf \lambda})\)</span></p></li>
 <li><p>Solve the KKT first order conditions to find the stationary points of
-<span class="math notranslate nohighlight">\(\mathcal{L}({\bf x},{\bf \lambda})\)</span> with respect to <span class="math notranslate nohighlight">\({\bf x}\)</span>, together with the non-negativity of KKT multipliers and complimentary slackness conditions</p></li>
+<span class="math notranslate nohighlight">\(\mathcal{L}({\bf x},{\bf \lambda})\)</span> with respect to <span class="math notranslate nohighlight">\({\bf x}\)</span>, together with the non-negativity of KKT multipliers and complementary slackness conditions</p></li>
 <li><p>Using second order conditions using the subset of binding constraints, check if the stationary points at the boundary are local optima. Similarly, using the second order conditions for the unconstrained problem to investigate the interior stationary points</p></li>
 <li><p>Compare the function values at all identified local optima to find the global one</p></li>
 </ol>
@@ -1664,8 +1664,8 @@ x,y \in \mathbb{R}
 </div>
 </details>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/c3ef60110a90d621748f7772b4ccfebc916d6acf001c5d675a9d7541f60b5259.png"><img alt="_images/c3ef60110a90d621748f7772b4ccfebc916d6acf001c5d675a9d7541f60b5259.png" class="align-center" src="_images/c3ef60110a90d621748f7772b4ccfebc916d6acf001c5d675a9d7541f60b5259.png" style="width: 80%;" /></a>
-<a class="reference internal image-reference" href="_images/4bb5f7adf7cb7913ae3dd011eaa25d14cc9bcc3885ebd10b7887b54d67361de3.png"><img alt="_images/4bb5f7adf7cb7913ae3dd011eaa25d14cc9bcc3885ebd10b7887b54d67361de3.png" class="align-center" src="_images/4bb5f7adf7cb7913ae3dd011eaa25d14cc9bcc3885ebd10b7887b54d67361de3.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/9c6f524d6b0a7902469c59abf1311c8d582f92ee14c84d8543831366fabc4433.png"><img alt="_images/9c6f524d6b0a7902469c59abf1311c8d582f92ee14c84d8543831366fabc4433.png" class="align-center" src="_images/9c6f524d6b0a7902469c59abf1311c8d582f92ee14c84d8543831366fabc4433.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/d1641a091417d258e07db925184992333893dee5474522b444ef7de3ab6b398e.png"><img alt="_images/d1641a091417d258e07db925184992333893dee5474522b444ef7de3ab6b398e.png" class="align-center" src="_images/d1641a091417d258e07db925184992333893dee5474522b444ef7de3ab6b398e.png" style="width: 80%;" /></a>
 </div>
 </div>
 </section>
@@ -1755,13 +1755,13 @@ x,y \in \mathbb{R}
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tangency-condition-algorithm">Tangency condition algorithm</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slope-conditions-for-minimization">Slope Conditions for Minimization</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-method-of-lagrange-multipliers">The method of Lagrange multipliers</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangean-as-tangency-condition">Lagrangean as tangency condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-as-tangency-condition">Lagrangian as tangency condition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-conditions">Second order conditions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lagrangian-method-recipe">Lagrangian method: recipe</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-does-lagrange-method-fail">When does Lagrange method fail?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inequality-constrains-and-kuhn-tucker-method">Inequality constrains and Kuhn-Tucker method</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inequality-constraints-and-kuhn-tucker-method">Inequality constraints and Kuhn-Tucker method</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karush-kuhn-tucker-method-recipe">Karush - Kuhn-Tucker method: recipe</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Second order conditions</a></li>
 </ul>

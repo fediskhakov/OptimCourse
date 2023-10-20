@@ -415,7 +415,8 @@ Fedor Iskhakov</p>
 <section id="announcements-reminders">
 <h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>None?</p></li>
+<li><p>Next lecture: revision 1h + questions&amp;answer 1h</p></li>
+<li><p>Exam practice questions will be posted in the next few days</p></li>
 </ul>
 </section>
 <section id="plan-for-this-lecture">
@@ -424,7 +425,6 @@ Fedor Iskhakov</p>
 <li><p>Dynamic decision problems</p></li>
 <li><p>Dynamic programming for finite horizon problems</p></li>
 <li><p>Dynamic programming for infinite horizon problems</p></li>
-<li><p>Other classes of dynamic programming problems</p></li>
 </ol>
 <p><strong>Supplementary reading:</strong></p>
 <ul class="simple">
@@ -433,7 +433,7 @@ Fedor Iskhakov</p>
 </section>
 <section id="dynamic-decision-problems">
 <h2>Dynamic decision problems<a class="headerlink" href="#dynamic-decision-problems" title="Permalink to this heading">#</a></h2>
-<p>As before, let’s start with our general definition of a general optimization problem</p>
+<p>As before, let’s start with our definition of a general optimization problem</p>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
 <p>The general form of the optimization problem is</p>
@@ -640,7 +640,7 @@ V_t(s_t) =
 \end{split}\]</div>
 <ul class="simple">
 <li><p>Period <span class="math notranslate nohighlight">\(t=T\)</span> is referred to as the <em>terminal period</em>, and the value function at this period is called the <em>terminal value function</em></p></li>
-<li><p>As a rule the terminal value function is set to zero, i.e. <span class="math notranslate nohighlight">\(V_T(s_T) = 0\)</span> for all <span class="math notranslate nohighlight">\(s_T\)</span>, giving the expression for the Bellman equation above</p></li>
+<li><p>Because there is no next period in the terminal period, <span class="math notranslate nohighlight">\(V_{T+1}(s_{T+1}) = 0\)</span> for all <span class="math notranslate nohighlight">\(s_T\)</span>, giving the expression for the Bellman equation above</p></li>
 </ul>
 <p><em><strong>Infinite horizon problems</strong></em></p>
 <ul class="simple">
@@ -649,6 +649,11 @@ V_t(s_t) =
 <li><p>In other words, the solution of the model in this case has to be time invariant</p></li>
 <li><p>Bellman equation is a proper functional equation, which together with the policy function, describes the optimal decision rule in the long term. In some sense, the solution to the infinite dimensional problem is one pair <span class="math notranslate nohighlight">\((V(s), x^\star(s))\)</span>, whereas in the general setup both elements of the solution are tuples</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[
+V(s)
+= \max_{x \in \mathcal{D}(s)} \big[ f(x,s) + \beta V(s') \big]
+\]</div>
 <p>Let’s look at a particular example</p>
 </section>
 <section id="inventory-management-in-finite-horizon">
@@ -677,7 +682,7 @@ V_t(s_t) =
 </ul>
 <div class="math notranslate nohighlight">
 \[
-\max\{x_t-d_t,0\} + q_t = x_t - \min\{x_t,d_t\} = x_{t+1}
+\max\{x_t-d_t,0\} + q_t = x_t - \min\{x_t,d_t\} + q_t = x_{t+1}
 \]</div>
 <ul class="simple">
 <li><p>profit in period <span class="math notranslate nohighlight">\(t\)</span> is given by</p></li>
@@ -719,7 +724,7 @@ Given that in each period the parameters of the optimization problem change, at 
 <p>Decisions: <span class="math notranslate nohighlight">\(q_t\)</span>, how much new inventory to order</p>
 <p>What is important for the inventory decision at time period <span class="math notranslate nohighlight">\(t\)</span>?</p>
 <ul class="simple">
-<li><p>timing of the decision making process: (beginning of period) - current inventory - demand - (choice) order - stored inventory - (end of period)</p></li>
+<li><p>timing of the decision making process: (beginning of period) - current inventory - demand - (choice) order - stored inventory - storage during the period <span class="math notranslate nohighlight">\(\rightarrow\)</span> (beginning of the next of period)</p></li>
 <li><p>instanteneous utility (profit) contains <span class="math notranslate nohighlight">\(x_t\)</span> and <span class="math notranslate nohighlight">\(d_t\)</span></p></li>
 </ul>
 <p>So, both <span class="math notranslate nohighlight">\(x_t\)</span> and <span class="math notranslate nohighlight">\(d_t\)</span> are taken into account for the new order to be made, forming the state space</p>
@@ -727,10 +732,10 @@ Given that in each period the parameters of the optimization problem change, at 
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{rcl}
-V(x_t,d_t) &amp;=&amp; \max_{q_t \ge 0} \Big\{ \pi_t + \beta \mathbb{E}\Big[ V\big(x_{t+1} , d_{t+1} \big) \Big| x_t,d_t,q_t \Big] \Big\} \\
+V_t(x_t,d_t) &amp;=&amp; \max_{q_t \ge 0} \Big\{ \pi_t + \beta \mathbb{E}\Big[ V_{t+1}\big(x_{t+1} , d_{t+1} \big) \Big| x_t,d_t,q_t \Big] \Big\} \\
 &amp;=&amp; \max_{q_t \ge 0} \Big\{ 
 (p+r) \min\{x_t,d_t\} - r x_t - c \mathbb{1}\{q_t&gt;0\}
-+ \beta \mathbb{E}\Big[ V\big(x_{t+1}, d_{t+1} \big) \Big] \Big\}
++ \beta \mathbb{E}\Big[ V_{t+1}\big(x_{t+1}, d_{t+1} \big) \Big] \Big\}
 \end{array}
 \end{split}\]</div>
 <div class="math notranslate nohighlight">
@@ -742,32 +747,32 @@ x_{t+1} = x_t - \min\{x_t,d_t\} + q_t
 Then the integral then transforms into a sum over the possible value of demand, weighted by their probabilities <span class="math notranslate nohighlight">\(pr(d)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-V(x_t,d_t) =
+V_t(x_t,d_t) =
 \max_{q_t \ge 0} \Big\{ 
 (p+r) \min\{x_t,d_t\} - r x_t - c \mathbb{1}\{q_t&gt;0\}
-+ \beta \sum_d V\big(x_{t+1}, d \big) pr(d) \Big\}
++ \beta \sum_d V_{t+1}\big(x_{t+1}, d \big) pr(d) \Big\}
 \]</div>
 <p>Because the problem is set in finite time, for <span class="math notranslate nohighlight">\(t=T\)</span> the Bellman takes the simple form without the next period value</p>
 <div class="math notranslate nohighlight">
 \[
-V(x_T,d_T) =
+V_T(x_T,d_T) =
 \max_{q_T \ge 0} \Big\{ 
 (p+r) \min\{x_T,d_T\} - r x_T - c \mathbb{1}\{q_T&gt;0\}\Big\}
 \]</div>
 <p>This part of the Bellman equation can be solved immediately: it is obvious that making any order in the terminal period only brings on the fixed cost of order, and therefore the optimal choice is <span class="math notranslate nohighlight">\(q_T^\star = 0\)</span>, leading to</p>
 <div class="math notranslate nohighlight">
 \[
-V(x_T,d_T) = (p+r) \min\{x_T,d_T\} - r x_T
+V_T(x_T,d_T) = (p+r) \min\{x_T,d_T\} - r x_T
 \]</div>
 <p><strong>Solving the deterministic version</strong></p>
 <p>Let <span class="math notranslate nohighlight">\(d_t =d\)</span> be fixed and constant across time. How does the Bellman equation change?</p>
 <p>In the deterministic case with fixed <span class="math notranslate nohighlight">\(d\)</span>, it can be simply dropped from the state space, and the Bellman equation can be simplified to</p>
 <div class="math notranslate nohighlight">
 \[
-V(x_t) =
+V_t(x_t) =
 \max_{q_t \ge 0} \Big\{ 
 (p+r) \min\{x_t,d\} - r x_t - c \mathbb{1}\{q_t&gt;0\}
-+ \beta V\big(x_t - \min\{x_t,d\} + q_t \big) \Big\}
++ \beta V_{t+1}\big(x_t - \min\{x_t,d\} + q_t \big) \Big\}
 \]</div>
 <div class="important admonition">
 <p class="admonition-title">Backwards induction algorithm</p>
@@ -1034,8 +1039,8 @@ Optimal policy:
 </div>
 </details>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/f44b57f62f454dfab1c60c47833c318f17952892e32e77f306b731bcd4c966c2.png"><img alt="_images/f44b57f62f454dfab1c60c47833c318f17952892e32e77f306b731bcd4c966c2.png" class="align-center" src="_images/f44b57f62f454dfab1c60c47833c318f17952892e32e77f306b731bcd4c966c2.png" style="width: 80%;" /></a>
-<a class="reference internal image-reference" href="_images/41a99ca5c1ce4f127f26e55b933b2da9df21e837aa611c08eb5aba4faf96d9af.png"><img alt="_images/41a99ca5c1ce4f127f26e55b933b2da9df21e837aa611c08eb5aba4faf96d9af.png" class="align-center" src="_images/41a99ca5c1ce4f127f26e55b933b2da9df21e837aa611c08eb5aba4faf96d9af.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/02fcc89ec1b6d03b1636ad4caa0f5dab0125a78f0c64d72e9c9eaa4218fbc9fd.png"><img alt="_images/02fcc89ec1b6d03b1636ad4caa0f5dab0125a78f0c64d72e9c9eaa4218fbc9fd.png" class="align-center" src="_images/02fcc89ec1b6d03b1636ad4caa0f5dab0125a78f0c64d72e9c9eaa4218fbc9fd.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/775a018b36d9bb40456bf8afd55a9927dc0c9025ab5d0c33b37ef314578d721d.png"><img alt="_images/775a018b36d9bb40456bf8afd55a9927dc0c9025ab5d0c33b37ef314578d721d.png" class="align-center" src="_images/775a018b36d9bb40456bf8afd55a9927dc0c9025ab5d0c33b37ef314578d721d.png" style="width: 80%;" /></a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -1052,8 +1057,8 @@ Optimal policy:
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/a102e4214443225754efaa0136951668977296ad627a694306321a52bfc73e49.png"><img alt="_images/a102e4214443225754efaa0136951668977296ad627a694306321a52bfc73e49.png" class="align-center" src="_images/a102e4214443225754efaa0136951668977296ad627a694306321a52bfc73e49.png" style="width: 80%;" /></a>
-<a class="reference internal image-reference" href="_images/402def643488152c2a88b7e4a76d645db9f1e5bd4de1d503272d01a4992f609d.png"><img alt="_images/402def643488152c2a88b7e4a76d645db9f1e5bd4de1d503272d01a4992f609d.png" class="align-center" src="_images/402def643488152c2a88b7e4a76d645db9f1e5bd4de1d503272d01a4992f609d.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/d323fe7b64a80939030d939dfbbcb79573d03011500e561b17f276b820175c31.png"><img alt="_images/d323fe7b64a80939030d939dfbbcb79573d03011500e561b17f276b820175c31.png" class="align-center" src="_images/d323fe7b64a80939030d939dfbbcb79573d03011500e561b17f276b820175c31.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/c4e7cea1def26a58c35bd2d3de2fba2277b9492b58e1cb7c28f580d03270e5af.png"><img alt="_images/c4e7cea1def26a58c35bd2d3de2fba2277b9492b58e1cb7c28f580d03270e5af.png" class="align-center" src="_images/c4e7cea1def26a58c35bd2d3de2fba2277b9492b58e1cb7c28f580d03270e5af.png" style="width: 80%;" /></a>
 </div>
 </div>
 <div class="admonition note">
@@ -1083,11 +1088,12 @@ Optimal policy:
 <p>In infinite horizon the dynamic optimization problem</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-V_t(s_t)
-= \max_{x} \big[ f(x,s_t) + \beta V_{t+1}(s_{t+1}) \big] \\
-\text {subject to } x \in \mathcal{D}_t(s_t)
+V(s)
+= \max_{x} \big[ f(x,s) + \beta V(s') \big] \\
+\text {subject to } x \in \mathcal{D}(s)
 \end{split}\]</div>
-<p>becomes a <strong>fixed point</strong> problem of a Bellman operator, i.e. the problem of solving a functional equation.</p>
+<p>where <span class="math notranslate nohighlight">\(s'\)</span> is the <em>next period</em> state,
+becomes a <strong>fixed point</strong> problem of a Bellman operator, i.e. the problem of solving a functional equation.</p>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
 <p>Let <span class="math notranslate nohighlight">\(B(S)\)</span> denote a set of all bounded real-valued functions on a set <span class="math notranslate nohighlight">\(S \subset \mathbb{R}^K\)</span>.</p>
@@ -1602,10 +1608,10 @@ Demand=3
 Upper bound on inventory 25
 </pre></div>
 </div>
-<img alt="_images/8e7ac80db141095d38a29e31f722791a0e4ead8fbf337141a58bffac2a0da662.png" src="_images/8e7ac80db141095d38a29e31f722791a0e4ead8fbf337141a58bffac2a0da662.png" />
-<img alt="_images/d6dd2cd591a6080457927469c1d0f988d2b3094c4c81a5a008df1bb8bd310b6b.png" src="_images/d6dd2cd591a6080457927469c1d0f988d2b3094c4c81a5a008df1bb8bd310b6b.png" />
-<img alt="_images/4ad58ef0adb9ba7ead842ffbb54b67e88d4c29f2c7d03d8a195be84d3a7aa0b5.png" src="_images/4ad58ef0adb9ba7ead842ffbb54b67e88d4c29f2c7d03d8a195be84d3a7aa0b5.png" />
-<img alt="_images/f623e1b821c4c3f0cfc1ff786b90ea3992d6f1f695ed0191de4196eb2d37c185.png" src="_images/f623e1b821c4c3f0cfc1ff786b90ea3992d6f1f695ed0191de4196eb2d37c185.png" />
+<img alt="_images/3eb537a366c43542ee2924aebcac24de33afbf68ed659559dfc0fb4fa107c2cf.png" src="_images/3eb537a366c43542ee2924aebcac24de33afbf68ed659559dfc0fb4fa107c2cf.png" />
+<img alt="_images/2139a1f465f667db68d6264e70353436eccde879fdbbbf8bf7b5fce0d6b442bc.png" src="_images/2139a1f465f667db68d6264e70353436eccde879fdbbbf8bf7b5fce0d6b442bc.png" />
+<img alt="_images/cd877fb87c58383f2d1abdf223ee474c30dab7217548194ddb61e8426888e4ea.png" src="_images/cd877fb87c58383f2d1abdf223ee474c30dab7217548194ddb61e8426888e4ea.png" />
+<img alt="_images/571fdfc11f6354685d85b3972bdd2d1d8ac00352fdce1c23b4f07fadabcc906d.png" src="_images/571fdfc11f6354685d85b3972bdd2d1d8ac00352fdce1c23b4f07fadabcc906d.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal orders of new inventory for d,x:
 (d in rows, x in columns)
 [[7 6 5 4 3 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
