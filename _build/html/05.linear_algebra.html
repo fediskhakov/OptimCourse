@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: solutions to exercise set L, practice questions</div>
+    <div class="bd-header-announcement__content">Latest update: revision lecture 12</div>
   </div>
 
   
@@ -383,8 +383,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-linear-algebra">Intro to Linear Algebra</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space">Vector Space</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operations">Linear Operations</a></li>
@@ -464,16 +462,13 @@ document.write(`
 <h1>Elements of linear algebra<a class="headerlink" href="#elements-of-linear-algebra" title="Permalink to this heading">#</a></h1>
 <p><strong>ECON2125/6012 Lecture 5</strong><br />
 Fedor Iskhakov</p>
-<section id="announcements-reminders">
-<h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
+<p><strong>Announcements &amp; Reminders</strong></p>
 <ul class="simple">
 <li><p>Tests due last night: feedback soon</p></li>
 <li><p>This lecture is recorded</p></li>
 <li><p>Next week we return to the class</p></li>
 </ul>
-</section>
-<section id="plan-for-this-lecture">
-<h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
+<p><strong>Plan for this lecture</strong></p>
 <p>Review of some concepts in linear algebra</p>
 <ol class="arabic simple">
 <li><p>Vector spaces</p></li>
@@ -506,9 +501,8 @@ Fedor Iskhakov</p>
 <li><p>Sundaram: 1.3, Appendix C.1, C.2</p></li>
 <li><p><a class="reference internal" href="#extra-study-material"><span class="std std-ref">Extra study material in the bottom of this document</span></a></p></li>
 </ul>
-</section>
 <section id="intro-to-linear-algebra">
-<h2>Intro to Linear Algebra<a class="headerlink" href="#intro-to-linear-algebra" title="Permalink to this heading">#</a></h2>
+<span id="ref-linear-algebra"></span><h2>Intro to Linear Algebra<a class="headerlink" href="#intro-to-linear-algebra" title="Permalink to this heading">#</a></h2>
 <p>Linear algebra is used to study linear models</p>
 <p>Foundational for many disciplines related to economics</p>
 <ul class="simple">
@@ -678,7 +672,7 @@ x_3
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solutions is x=[ 0.00000000e+00 -9.00719925e+15  4.50359963e+15]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5d/cjhpvdlx7lg8zt1ypw5fcyy40000gn/T/ipykernel_32139/3978225594.py:8: LinAlgWarning: Ill-conditioned matrix (rcond=4.11194e-18): result may not be accurate.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5d/cjhpvdlx7lg8zt1ypw5fcyy40000gn/T/ipykernel_24435/3978225594.py:8: LinAlgWarning: Ill-conditioned matrix (rcond=4.11194e-18): result may not be accurate.
   x=solve(A, b)
 </pre></div>
 </div>
@@ -4024,10 +4018,9 @@ solution then it has an infinity (in fact a continuum) of solutions</p>
 <ul class="simple">
 <li><p>You don’t need to understand or remember this for our course</p></li>
 </ul>
-<div class="important admonition">
+<div class="important admonition" id="det2by2">
 <p class="admonition-title">Fact</p>
 <p>In the <span class="math notranslate nohighlight">\(N = 2\)</span> case this definition reduces to</p>
-</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 %
@@ -4041,6 +4034,7 @@ c &amp; d \\
 = ad - bc
 %
 \end{split}\]</div>
+</div>
 <ul class="simple">
 <li><p>Remark: But you do need to remember this <span class="math notranslate nohighlight">\(2 \times 2\)</span> case</p></li>
 </ul>
@@ -4110,10 +4104,10 @@ a_{21} &amp; a_{22} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=[[ 0.07945531 -0.44276316]
- [ 1.83885283  0.35085427]]
-det(A)=0.842053515240531
-det(inv(A))=1.1875729771335874
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A=[[ 0.39425014 -0.85971937]
+ [-0.87249514 -1.13225183]]
+det(A)=-1.1964914193617462
+det(inv(A))=-0.8357769924780889
 </pre></div>
 </div>
 </div>
@@ -5510,8 +5504,6 @@ for all <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)<
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-linear-algebra">Intro to Linear Algebra</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-space">Vector Space</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-operations">Linear Operations</a></li>

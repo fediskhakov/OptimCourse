@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '12.revision';</script>
     <link rel="canonical" href="optim.iskh.me/12.revision.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
@@ -114,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: solutions to exercise set L, practice questions</div>
+    <div class="bd-header-announcement__content">Latest update: revision lecture 12</div>
   </div>
 
   
@@ -381,8 +383,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review">Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentals">Fundamentals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization">Optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convexity">Convexity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric">Parametric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-optimization">Dynamic optimization</a></li>
 </ul>
             </nav>
         </div>
@@ -398,20 +404,194 @@ document.write(`
 <h1>Revision<a class="headerlink" href="#revision" title="Permalink to this heading">#</a></h1>
 <p><strong>ECON2125/6012 Lecture 12</strong>
 Fedor Iskhakov</p>
-<section id="announcements-reminders">
-<h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
+<p><strong>Announcements &amp; Reminders</strong></p>
 <ul class="simple">
-<li><p>None?</p></li>
+<li><p>Tutorials this week: Q&amp;A over the whole course + practice questions</p></li>
+<li><p>Exam: <strong>Monday 06 November, 2023</strong> from <strong>9:00</strong>. 15 minutes reading time + <strong>3 hours</strong> of work time. Centrally Invigilated Examination.</p></li>
+<li><p>Locations:</p>
+<ul>
+<li><p>Copland G39</p></li>
+<li><p>Haydon-Allen G40</p></li>
+<li><p>Moran G007</p></li>
+<li><p>Moran G008</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p>Do not be late ⏰</p></li>
+<li><p>Start with easier questions (for you)</p></li>
+<li><p>Manage time while writing the exam ⏱</p></li>
+</ul>
+</div>
+<p><strong>Plan for this lecture</strong></p>
+<ol class="arabic simple">
+<li><p>Main lessons in this course</p></li>
+<li><p>Second half: Q&amp;A</p></li>
+</ol>
+<section id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this heading">#</a></h2>
+<p>Most importantly, make sure to fully understand and remember:</p>
+<ul class="simple">
+<li><p>definitions</p></li>
+<li><p>facts</p></li>
+<li><p>all named facts and definitions are <em>absolutely essential</em></p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Each good proof starts with definitions</p>
+</div>
+</section>
+<section id="fundamentals">
+<h2>Fundamentals<a class="headerlink" href="#fundamentals" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Sets <a class="reference internal" href="03.set_theory.html#ref-sets"><span class="std std-ref">📖</span></a></p>
+<ul class="simple">
+<li><p>language and symbols</p></li>
+<li><p>operations with sets</p></li>
+<li><p>Cartesian product <a class="reference internal" href="03.set_theory.html#ref-cartesian"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Cardinality <a class="reference internal" href="03.set_theory.html#ref-cardinality"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Bounded sets and epsilon-balls <a class="reference internal" href="04.basic_analysis.html#id1"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Open <a class="reference internal" href="04.basic_analysis.html#open-sets"><span class="std std-ref">📖</span></a> and closed <a class="reference internal" href="04.basic_analysis.html#id3"><span class="std std-ref">📖</span></a> sets</p></li>
+<li><p>Compact sets <a class="reference internal" href="04.basic_analysis.html#compact"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Convex sets <a class="reference internal" href="06.optimization_fundamentals.html#convex-set"><span class="std std-ref">📖</span></a></p></li>
+</ul>
+</li>
+<li><p>Sequences and convergence</p>
+<ul class="simple">
+<li><p>Sequences <a class="reference internal" href="04.basic_analysis.html#ref-sequences"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Norm <a class="reference internal" href="04.basic_analysis.html#norm"><span class="std std-ref">📖</span></a> and absolute value <a class="reference internal" href="04.basic_analysis.html#absolute-value"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Limit <a class="reference internal" href="04.basic_analysis.html#limit"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Cauchy Sequences <a class="reference internal" href="04.basic_analysis.html#cauchy"><span class="std std-ref">📖</span></a> <a class="reference internal" href="04.basic_analysis.html#cauchy-k"><span class="std std-ref">📖</span></a></p></li>
+</ul>
+</li>
+<li><p>Functions <span class="xref myst">📖</span></p>
+<ul class="simple">
+<li><p>Domain, co-domain, range</p></li>
+<li><p>Image, pre-image</p></li>
+<li><p>Onto (surjections), one-to-one (injections)</p></li>
+<li><p>Bijections, inverse function</p></li>
+<li><p>Continuity of functions <a class="reference internal" href="04.basic_analysis.html#continuous-functions"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Convexity of functions <a class="reference internal" href="06.optimization_fundamentals.html#convex-function"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Derivative <a class="reference internal" href="04.basic_analysis.html#derivative"><span class="std std-ref">📖</span></a> and Taylor series <a class="reference internal" href="04.basic_analysis.html#ref-taylor"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Vector-valued functions</p></li>
+<li><p>Partial deriavative <a class="reference internal" href="07.unconstrained.html#partial-derivative"><span class="std std-ref">📖</span></a>, total derivative <a class="reference internal" href="07.unconstrained.html#jacobian"><span class="std std-ref">📖</span></a>, gradient <a class="reference internal" href="07.unconstrained.html#gradient"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Hessian of a function <a class="reference internal" href="07.unconstrained.html#hessian"><span class="std std-ref">📖</span></a></p></li>
+</ul>
+</li>
+<li><p>Correspondences <a class="reference internal" href="10.envelope_maximum.html#ref-correspondences"><span class="std std-ref">📖</span></a></p>
+<ul class="simple">
+<li><p>classification, properties of values (smth-valued)</p></li>
+<li><p>upper and lower hemi-continuity <a class="reference internal" href="10.envelope_maximum.html#hemicontinuity"><span class="std std-ref">📖</span></a></p></li>
+</ul>
+</li>
+<li><p>Linear algebra <a class="reference internal" href="05.linear_algebra.html#ref-linear-algebra"><span class="std std-ref">📖</span></a></p>
+<ul class="simple">
+<li><p>Operations on vectors, inner product</p></li>
+<li><p>Linear independence</p></li>
+<li><p>Bases and dimension</p></li>
+<li><p>Linear maps</p></li>
+<li><p>Matrices and linear equations</p></li>
+<li><p>Algebraic operations for matrices</p></li>
+<li><p>Column space, rank, inverses</p></li>
+<li><p>Determinants <a class="reference internal" href="05.linear_algebra.html#det2by2"><span class="std std-ref">📖</span></a>, <a class="reference internal" href="08.constrained.html#det3by3"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Eigenvalues and Eigenvectors</p></li>
+<li><p>Quadratic Forms</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="optimization">
+<h2>Optimization<a class="headerlink" href="#optimization" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>General formulation of optimization problems <a class="reference internal" href="07.unconstrained.html#general-optimization-problem"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Existence of optima</p>
+<ul>
+<li><p>infima, suprema <a class="reference internal" href="06.optimization_fundamentals.html#ref-suprema"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Weierstrass extreme value theorem <a class="reference internal" href="06.optimization_fundamentals.html#extreme-value-theorem"><span class="std std-ref">📖</span></a></p></li>
+</ul>
+</li>
+</ul>
+<ol class="arabic simple">
+<li><p>Univariate <a class="reference internal" href="02.optimization_intro.html#univariate-optimization"><span class="std std-ref">📖</span></a> and bivariate <a class="reference internal" href="02.optimization_intro.html#bivariate-optimization"><span class="std std-ref">📖</span></a> case</p>
+<ul class="simple">
+<li><p>Minimizers and maximizers</p></li>
+<li><p>Stationary points</p></li>
+<li><p>Solution algorithm: enumerations of stationary and boundary points <a class="reference internal" href="02.optimization_intro.html#univariate-solution-algorithm"><span class="std std-ref">📖</span></a></p></li>
+</ul>
+</li>
+<li><p>Multivariate <em>unconstrained</em> case</p>
+<ul class="simple">
+<li><p>First order conditions <a class="reference internal" href="07.unconstrained.html#ref-foc"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Necessary second oder conditions with semi-definiteness <a class="reference internal" href="07.unconstrained.html#necessary-soc"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Sufficient second oder conditions with strict definiteness <a class="reference internal" href="07.unconstrained.html#sufficient-soc"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Second order conditions in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> case <a class="reference internal" href="07.unconstrained.html#d-soc"><span class="std std-ref">📖</span></a></p></li>
+</ul>
+</li>
+<li><p>Multivariate <em>equality constrained</em> case</p>
+<ul class="simple">
+<li><p>Lagrange method <a class="reference internal" href="08.constrained.html#ref-lagrange-method"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Lagrangian and Lagrange multipliers <a class="reference internal" href="08.constrained.html#lagrangian"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Constraint qualification assumption</p></li>
+<li><p>Necessary SOC with semi-definiteness <a class="reference internal" href="08.constrained.html#necessary-soc-lagrange"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Sufficient second oder conditions with strict definiteness <a class="reference internal" href="08.constrained.html#sufficient-soc-lagrange"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Detecting definiteness on a linear constraint set, bordered Hessian <a class="reference internal" href="08.constrained.html#definiteness-bordered-hessian"><span class="std std-ref">📖</span></a></p></li>
+</ul>
+</li>
+<li><p>Multivariate <em>inequality constrained</em> case</p>
+<ul class="simple">
+<li><p>Karush-Kuhn-Tucker conditions <a class="reference internal" href="08.constrained.html#kkt-conditions"><span class="std std-ref">📖</span></a></p></li>
+<li><p>complementary slackness, binding vs. non-binding constraints</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="convexity">
+<h2>Convexity<a class="headerlink" href="#convexity" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>strict <span class="math notranslate nohighlight">\(\implies\)</span> uniqueness <a class="reference internal" href="06.optimization_fundamentals.html#general-uniqueness"><span class="std std-ref">📖</span></a></p></li>
+<li><p>necessary FOCs <span class="math notranslate nohighlight">\(\to\)</span> sufficient for <em>global</em> optima <a class="reference internal" href="06.optimization_fundamentals.html#general-stationary-uniqueness"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Detection of weak/strict convexity/concavity</p>
+<ul>
+<li><p>Univariate case: second derivative test <a class="reference internal" href="02.optimization_intro.html#univariate-concavity"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Multivariate case: Hessian based criterion <a class="reference internal" href="07.unconstrained.html#convexity-hessian-criterion"><span class="std std-ref">📖</span></a></p></li>
+</ul>
+</li>
 </ul>
 </section>
-<section id="plan-for-this-lecture">
-<h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
+<section id="parametric">
+<h2>Parametric<a class="headerlink" href="#parametric" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Main lessons learned in this course</p></li>
-<li><p>Examples of exam questions</p></li>
-<li><p>Q&amp;A (mentimeter)</p></li>
+<li><p>The maximum theorem</p>
+<ul class="simple">
+<li><p>The maximum theorem <a class="reference internal" href="10.envelope_maximum.html#maximum-theorem"><span class="std std-ref">📖</span></a></p></li>
+<li><p>The maximum theorem under convexity <a class="reference internal" href="10.envelope_maximum.html#maximum-theorem-convexity"><span class="std std-ref">📖</span></a></p></li>
+<li><p>budget correspondence</p></li>
+</ul>
+</li>
+<li><p>Envelope theorems</p>
+<ul class="simple">
+<li><p>For unconstrained problems <a class="reference internal" href="10.envelope_maximum.html#envelope-unconstrained"><span class="std std-ref">📖</span></a></p></li>
+<li><p>For constrained problems <a class="reference internal" href="10.envelope_maximum.html#envelope-constrained"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Lagrange multiplyers as shadow prices</p></li>
+</ul>
+</li>
 </ol>
-<a class="reference internal image-reference" href="_images/coming_soon.png"><img alt="soming soon" class="align-center" src="_images/coming_soon.png" style="width: 514.0px; height: 360.0px;" /></a>
+</section>
+<section id="dynamic-optimization">
+<h2>Dynamic optimization<a class="headerlink" href="#dynamic-optimization" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>General formulation of dynamic optimization problem <a class="reference internal" href="11.dynamic.html#dynamic-optimization-problem"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Classification of dynamic optimization problems <a class="reference internal" href="11.dynamic.html#ref-dynamic-classification"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Bellman principle of optimality and dynamic programming</p></li>
+<li><p>Finite and infinite horizon problems</p></li>
+<li><p>Bellman equation <a class="reference internal" href="11.dynamic.html#bellman-equation"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Backwards induction algorithm <a class="reference internal" href="11.dynamic.html#backwards-induction-algorithm"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Bellman operator <a class="reference internal" href="11.dynamic.html#bellman-operator"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Value function iteration algorithm <a class="reference internal" href="11.dynamic.html#vfi"><span class="std std-ref">📖</span></a></p></li>
+<li><p>Contraction mappings <a class="reference internal" href="11.dynamic.html#contraction-mapping"><span class="std std-ref">📖</span></a>, Banah theorem <a class="reference internal" href="11.dynamic.html#contraction-mapping-theorem"><span class="std std-ref">📖</span></a>, Blackwell condition <a class="reference internal" href="11.dynamic.html#blackwell-condition"><span class="std std-ref">📖</span></a></p></li>
+</ul>
 </section>
 </section>
 
@@ -482,8 +662,12 @@ Fedor Iskhakov</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review">Review</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentals">Fundamentals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization">Optimization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convexity">Convexity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric">Parametric</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-optimization">Dynamic optimization</a></li>
 </ul>
   </nav></div>
 

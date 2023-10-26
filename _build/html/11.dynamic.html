@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: solutions to exercise set L, practice questions</div>
+    <div class="bd-header-announcement__content">Latest update: revision lecture 12</div>
   </div>
 
   
@@ -383,8 +383,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-decision-problems">Dynamic decision problems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-programming-and-bellman-principle-of-optimality">Dynamic programming and Bellman principle of optimality</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-and-infinite-horizon-problems">Finite and infinite horizon problems</a></li>
@@ -413,15 +411,12 @@ document.write(`
 <h1>Dynamic optimization<a class="headerlink" href="#dynamic-optimization" title="Permalink to this heading">#</a></h1>
 <p><strong>ECON2125/6012 Lecture 11</strong>
 Fedor Iskhakov</p>
-<section id="announcements-reminders">
-<h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
+<p><strong>Announcements &amp; Reminders</strong></p>
 <ul class="simple">
 <li><p>Next lecture: revision 1h + questions&amp;answer 1h</p></li>
 <li><p>Exam practice questions will be posted in the next few days</p></li>
 </ul>
-</section>
-<section id="plan-for-this-lecture">
-<h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
+<p><strong>Plan for this lecture</strong></p>
 <ol class="arabic simple">
 <li><p>Dynamic decision problems</p></li>
 <li><p>Dynamic programming for finite horizon problems</p></li>
@@ -431,7 +426,6 @@ Fedor Iskhakov</p>
 <ul class="simple">
 <li><p>Sundaram: chapter 11</p></li>
 </ul>
-</section>
 <section id="dynamic-decision-problems">
 <h2>Dynamic decision problems<a class="headerlink" href="#dynamic-decision-problems" title="Permalink to this heading">#</a></h2>
 <p>As before, let’s start with our definition of a general optimization problem</p>
@@ -499,7 +493,7 @@ V(\theta) &amp; = &amp; \max_x \sum_{t=0}^{\infty}\beta^{t} u(x_t,\theta) \\
 \[
 \theta=(t, s_t) \rightarrow V(\theta) = V(t, s_t) = V_t(s_t)
 \]</div>
-<div class="caution admonition">
+<div class="caution admonition" id="dynamic-optimization-problem">
 <p class="admonition-title">Definition: dynamic optimization problems</p>
 <p>The general form of the <em>deterministic dynamic optimization</em> problem is</p>
 <div class="math notranslate nohighlight">
@@ -559,7 +553,7 @@ and the <em>future decisions</em> problems, and solved recursively</p></li>
 <li><p>Embodiment of the recursive way of modeling sequential decisions is
 <strong>Bellman equation</strong></p></li>
 </ul>
-<div class="caution admonition">
+<div class="caution admonition" id="bellman-equation">
 <p class="admonition-title">Definition</p>
 <p>Bellman equation is a <em>functional equation</em> in an unknown function <span class="math notranslate nohighlight">\(V(\cdot)\)</span> which embodies a dynamic optimization problem and has the form</p>
 <div class="math notranslate nohighlight">
@@ -775,7 +769,7 @@ V_t(x_t) =
 (p+r) \min\{x_t,d\} - r x_t - c \mathbb{1}\{q_t&gt;0\}
 + \beta V_{t+1}\big(x_t - \min\{x_t,d\} + q_t \big) \Big\}
 \]</div>
-<div class="important admonition">
+<div class="important admonition" id="backwards-induction-algorithm">
 <p class="admonition-title">Backwards induction algorithm</p>
 <p>Solver for the finite horizon dynamic programming problems</p>
 <ol class="arabic simple">
@@ -1095,7 +1089,7 @@ V(s)
 \end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(s'\)</span> is the <em>next period</em> state,
 becomes a <strong>fixed point</strong> problem of a Bellman operator, i.e. the problem of solving a functional equation.</p>
-<div class="caution admonition">
+<div class="caution admonition" id="bellman-operator">
 <p class="admonition-title">Definition</p>
 <p>Let <span class="math notranslate nohighlight">\(B(S)\)</span> denote a set of all bounded real-valued functions on a set <span class="math notranslate nohighlight">\(S \subset \mathbb{R}^K\)</span>.</p>
 <p><strong>Bellman operator</strong> is a mapping from <span class="math notranslate nohighlight">\(B(S)\)</span> to itself defined as</p>
@@ -1122,7 +1116,7 @@ x^\star(s) = \mathrm{argmax}_{x \in \mathcal{D}(s)} \big[ f(x,s) + \beta V\big(g
 \]</div>
 <section id="theory-of-dynamic-programming">
 <h3>Theory of dynamic programming<a class="headerlink" href="#theory-of-dynamic-programming" title="Permalink to this heading">#</a></h3>
-<div class="caution admonition">
+<div class="caution admonition" id="contraction-mapping">
 <p class="admonition-title">Definition: contraction mapping</p>
 <p>Let <span class="math notranslate nohighlight">\((S,\rho)\)</span> be a complete metric space, i.e. a metric space where every Cauchy sequence converges to a point in <span class="math notranslate nohighlight">\(S\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(T: S \rightarrow S\)</span> denote an operator mapping <span class="math notranslate nohighlight">\(S\)</span> to itself.
@@ -1188,7 +1182,7 @@ T \colon V \mapsto c + \beta V
 </ul>
 </div>
 <p>Contractions are <em>invaluable</em> because of uniqueness of their fixed point <em>and</em> a surefire algorithm to compute them</p>
-<div class="important admonition">
+<div class="important admonition" id="contraction-mapping-theorem">
 <p class="admonition-title">Banach contraction mapping theorem (fixed point theorem)</p>
 <p>Let <span class="math notranslate nohighlight">\((S,\rho)\)</span> be a complete metric space with a contraction mapping <span class="math notranslate nohighlight">\(T: S \rightarrow S\)</span>.
 Then</p>
@@ -1198,7 +1192,7 @@ Then</p>
 </ol>
 </div>
 <p>In other words, the fixed point can be found by successive approximations from any starting point <span class="math notranslate nohighlight">\(\rightarrow\)</span> commonly known in economics as value function iterations (VFI) algorithm</p>
-<div class="caution admonition">
+<div class="caution admonition" id="vfi">
 <p class="admonition-title">Value function iterations (VFI) algorithm</p>
 <ol class="arabic simple">
 <li><p>Start with a guess for value function <span class="math notranslate nohighlight">\(V_0\)</span>, <span class="math notranslate nohighlight">\(i=0\)</span></p></li>
@@ -1433,7 +1427,7 @@ T(V)(\text{state}) = \max_{\text{decisions}} \big[ U(\text{state},\text{decision
 <li><p>Bellman operator <span class="math notranslate nohighlight">\(T: U \rightarrow U\)</span> from functional space <span class="math notranslate nohighlight">\(U\)</span> to itself</p></li>
 <li><p>metric space <span class="math notranslate nohighlight">\((U,d_{\infty})\)</span> with uniform/infinity/sup norm (max abs distance between functions over their domain)</p></li>
 </ul>
-<div class="important admonition">
+<div class="important admonition" id="blackwell-condition">
 <p class="admonition-title">Blackwell sufficient conditions for contraction</p>
 <p>Let <span class="math notranslate nohighlight">\(X \subseteq \mathbb{R}^n\)</span> and <span class="math notranslate nohighlight">\(B(x)\)</span> be the space of bounded functions <span class="math notranslate nohighlight">\(f: X \rightarrow \mathbb{R}\)</span> defined on <span class="math notranslate nohighlight">\(X\)</span>.
 Suppose that <span class="math notranslate nohighlight">\(T: B(X) \rightarrow B(X)\)</span> is an operator satisfying the following conditions:</p>
@@ -1653,7 +1647,7 @@ This implies that knowing both <span class="math notranslate nohighlight">\(x\)<
 </section>
 </section>
 <section id="other-classes-of-dynamic-optimization-problems">
-<h2>Other classes of dynamic optimization problems<a class="headerlink" href="#other-classes-of-dynamic-optimization-problems" title="Permalink to this heading">#</a></h2>
+<span id="ref-dynamic-classification"></span><h2>Other classes of dynamic optimization problems<a class="headerlink" href="#other-classes-of-dynamic-optimization-problems" title="Permalink to this heading">#</a></h2>
 <p>Classification of dynamic problems by various criteria:</p>
 <ol class="arabic simple">
 <li><p>Nature of time</p></li>
@@ -1787,8 +1781,6 @@ This implies that knowing both <span class="math notranslate nohighlight">\(x\)<
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-decision-problems">Dynamic decision problems</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-programming-and-bellman-principle-of-optimality">Dynamic programming and Bellman principle of optimality</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-and-infinite-horizon-problems">Finite and infinite horizon problems</a></li>

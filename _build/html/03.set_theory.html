@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: solutions to exercise set L, practice questions</div>
+    <div class="bd-header-announcement__content">Latest update: revision lecture 12</div>
   </div>
 
   
@@ -383,24 +383,28 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic">Logic</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-by-contradiction">Proof by contradiction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">Sets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervals-of-mathbb-r">Intervals of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-sets">Operations with sets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations-properties">Set operations properties</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-unions-and-intersections">Infinite Unions and Intersections</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">Tuples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cartesian-products">Cartesian Products</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-finite-sequences">Counting Finite Sequences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-cartesian-products">Counting Cartesian Products</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#onto-functions-surjections">Onto Functions (Surjections)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-to-one-functions-injections">One-to-One Functions (Injections)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bijections">Bijections</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cardinality">Cardinality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic">Logic</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-by-contradiction">Proof by contradiction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">Sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intervals-of-mathbb-r">Intervals of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-sets">Operations with sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations-properties">Set operations properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-unions-and-intersections">Infinite Unions and Intersections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">Tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cartesian-products">Cartesian Products</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-finite-sequences">Counting Finite Sequences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-cartesian-products">Counting Cartesian Products</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#onto-functions-surjections">Onto Functions (Surjections)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-to-one-functions-injections">One-to-One Functions (Injections)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bijections">Bijections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cardinality">Cardinality</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-material">Extra material</a></li>
 </ul>
             </nav>
@@ -417,14 +421,11 @@ document.write(`
 <h1>Elements of set theory<a class="headerlink" href="#elements-of-set-theory" title="Permalink to this heading">#</a></h1>
 <p><strong>ECON2125/6012 Lecture 3</strong><br />
 Fedor Iskhakov</p>
-<section id="announcements-reminders">
-<h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
+<p><strong>Announcements &amp; Reminders</strong></p>
 <ul class="simple">
 <li><p>None</p></li>
 </ul>
-</section>
-<section id="plan-for-this-lecture">
-<h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
+<p><strong>Plan for this lecture</strong></p>
 <p>We now turn to more formal / foundational ideas</p>
 <ol class="arabic simple">
 <li><p>Logic and proofs</p></li>
@@ -458,7 +459,6 @@ Fedor Iskhakov</p>
 <li><p><span class="math notranslate nohighlight">\(\mathbb{Q}\)</span> means the rational numbers (ratios of two integers)</p></li>
 </ul>
 </div>
-</section>
 <section id="logic">
 <h2>Logic<a class="headerlink" href="#logic" title="Permalink to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> be statements, such as</p>
@@ -526,9 +526,8 @@ Fedor Iskhakov</p>
 <li><p>Just because <span class="math notranslate nohighlight">\(Q\)</span> fails does not mean that <span class="math notranslate nohighlight">\(P\)</span> fails</p></li>
 </ol>
 </div>
-</section>
 <section id="proof-by-contradiction">
-<h2>Proof by contradiction<a class="headerlink" href="#proof-by-contradiction" title="Permalink to this heading">#</a></h2>
+<h3>Proof by contradiction<a class="headerlink" href="#proof-by-contradiction" title="Permalink to this heading">#</a></h3>
 <p>Suppose we wish to prove a statement such as <span class="math notranslate nohighlight">\(P \implies Q\)</span></p>
 <ol class="arabic simple">
 <li><p>A proof by contradiction starts by <strong>assuming the opposite</strong>: <span class="math notranslate nohighlight">\(P\)</span> holds and yet <span class="math notranslate nohighlight">\(Q\)</span> fails.</p></li>
@@ -631,8 +630,9 @@ Proof<div class="sd-summary-down docutils">
 <p class="sd-card-text">Contradiction</p>
 </div>
 </details></section>
+</section>
 <section id="sets">
-<h2>Sets<a class="headerlink" href="#sets" title="Permalink to this heading">#</a></h2>
+<span id="section-sets"></span><h2>Sets<a class="headerlink" href="#sets" title="Permalink to this heading">#</a></h2>
 <p>Will often refer to the <em><strong>real numbers</strong></em>,  <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
 <p>Understand it to contain “all of the numbers” on the “real line”</p>
 <figure class="align-default" id="real-line">
@@ -673,9 +673,8 @@ Proof<div class="sd-summary-down docutils">
 A = \{ \psi(x), x \in B \colon \text{condition on x}\}
 \]</div>
 </div>
-</section>
 <section id="intervals-of-mathbb-r">
-<h2>Intervals of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span><a class="headerlink" href="#intervals-of-mathbb-r" title="Permalink to this heading">#</a></h2>
+<h3>Intervals of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span><a class="headerlink" href="#intervals-of-mathbb-r" title="Permalink to this heading">#</a></h3>
 <p>Common notation:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -704,7 +703,7 @@ A = \{ \psi(x), x \in B \colon \text{condition on x}\}
 <p>Etc.</p>
 </section>
 <section id="operations-with-sets">
-<h2>Operations with sets<a class="headerlink" href="#operations-with-sets" title="Permalink to this heading">#</a></h2>
+<h3>Operations with sets<a class="headerlink" href="#operations-with-sets" title="Permalink to this heading">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> be any sets</p>
 <p>Statement <span class="math notranslate nohighlight">\(x \in A\)</span> means that <span class="math notranslate nohighlight">\(x\)</span> is an element of <span class="math notranslate nohighlight">\(A\)</span></p>
 <p><span class="math notranslate nohighlight">\(A \subset B\)</span> means that any element of <span class="math notranslate nohighlight">\(A\)</span> is also an element of <span class="math notranslate nohighlight">\(B\)</span></p>
@@ -776,7 +775,7 @@ A^c := S \setminus A :=: \{ x \in S : x \notin A \}
 </figure>
 </section>
 <section id="set-operations-properties">
-<h2>Set operations properties<a class="headerlink" href="#set-operations-properties" title="Permalink to this heading">#</a></h2>
+<h3>Set operations properties<a class="headerlink" href="#set-operations-properties" title="Permalink to this heading">#</a></h3>
 <p>If <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> subsets of <span class="math notranslate nohighlight">\(S\)</span>, then</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(A \cup B = B \cup A\)</span> and <span class="math notranslate nohighlight">\(A \cap B = B \cap A\)</span></p></li>
@@ -792,7 +791,7 @@ A^c := S \setminus A :=: \{ x \in S : x \notin A \}
 <p>If <span class="math notranslate nohighlight">\(A \cap B = \emptyset\)</span>, then <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> said to be <em><strong>disjoint</strong></em></p>
 </section>
 <section id="infinite-unions-and-intersections">
-<h2>Infinite Unions and Intersections<a class="headerlink" href="#infinite-unions-and-intersections" title="Permalink to this heading">#</a></h2>
+<h3>Infinite Unions and Intersections<a class="headerlink" href="#infinite-unions-and-intersections" title="Permalink to this heading">#</a></h3>
 <p>Given a family of sets <span class="math notranslate nohighlight">\(K_{\lambda} \subset S\)</span> with <span class="math notranslate nohighlight">\(\lambda \in \Lambda\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -869,7 +868,7 @@ K_{\lambda}  \right]^{c}  = \bigcup_{\lambda \in \Lambda} K_{\lambda}^{c}
 \]</div>
 </section>
 <section id="tuples">
-<h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h2>
+<h3>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h3>
 <p>We often organize collections with natural order into “tuples”</p>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
@@ -890,7 +889,7 @@ K_{\lambda}  \right]^{c}  = \bigcup_{\lambda \in \Lambda} K_{\lambda}^{c}
 </div>
 </section>
 <section id="cartesian-products">
-<h2>Cartesian Products<a class="headerlink" href="#cartesian-products" title="Permalink to this heading">#</a></h2>
+<span id="ref-cartesian"></span><h3>Cartesian Products<a class="headerlink" href="#cartesian-products" title="Permalink to this heading">#</a></h3>
 <p>We make collections of tuples using Cartesian products</p>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
@@ -939,7 +938,7 @@ B := \Big\{ (b_1, \ldots, b_{10}) : b_n \in \{0, 1\} \text{ for } n = 1, \ldots,
 </div>
 </section>
 <section id="counting-finite-sequences">
-<h2>Counting Finite Sequences<a class="headerlink" href="#counting-finite-sequences" title="Permalink to this heading">#</a></h2>
+<h3>Counting Finite Sequences<a class="headerlink" href="#counting-finite-sequences" title="Permalink to this heading">#</a></h3>
 <p>Counting methods answer common questions such as</p>
 <ul class="simple">
 <li><p>How many arrangements of a sequence?</p></li>
@@ -974,7 +973,7 @@ B := \Big\{ (b_1, \ldots, b_{10}) : b_n \in \{0, 1\} \text{ for } n = 1, \ldots,
 </div>
 </section>
 <section id="counting-cartesian-products">
-<h2>Counting Cartesian Products<a class="headerlink" href="#counting-cartesian-products" title="Permalink to this heading">#</a></h2>
+<h3>Counting Cartesian Products<a class="headerlink" href="#counting-cartesian-products" title="Permalink to this heading">#</a></h3>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <p>If <span class="math notranslate nohighlight">\(A_n\)</span> are finite for <span class="math notranslate nohighlight">\(n=1, \ldots,N\)</span>, then</p>
@@ -1009,8 +1008,9 @@ A_1 \times A_2 \times \cdots
 <p>The set of all binary sequences <span class="math notranslate nohighlight">\(\{0, 1\}^{\mathbb{N}}\)</span></p>
 </div>
 </section>
+</section>
 <section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<span id="ref-functions"></span><h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
 <p>A <em><strong>function</strong></em> <span class="math notranslate nohighlight">\(f \colon A \rightarrow B\)</span> from set <span class="math notranslate nohighlight">\(A\)</span> to set <span class="math notranslate nohighlight">\(B\)</span> is a rule that
@@ -1128,9 +1128,8 @@ function <span class="math notranslate nohighlight">\(g \circ f\)</span> from <s
 <figure class="align-default" id="composition">
 <img alt="_images/composition.png" src="_images/composition.png" />
 </figure>
-</section>
 <section id="onto-functions-surjections">
-<h2>Onto Functions (Surjections)<a class="headerlink" href="#onto-functions-surjections" title="Permalink to this heading">#</a></h2>
+<h3>Onto Functions (Surjections)<a class="headerlink" href="#onto-functions-surjections" title="Permalink to this heading">#</a></h3>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
 <p>A function <span class="math notranslate nohighlight">\(f \colon A \to B\)</span> is called <em><strong>onto</strong></em> (or surjection) if every element of <span class="math notranslate nohighlight">\(B\)</span>
@@ -1192,7 +1191,7 @@ ax^3 + b x^2 + cx + d - y = 0
 </figure>
 </section>
 <section id="one-to-one-functions-injections">
-<h2>One-to-One Functions (Injections)<a class="headerlink" href="#one-to-one-functions-injections" title="Permalink to this heading">#</a></h2>
+<h3>One-to-One Functions (Injections)<a class="headerlink" href="#one-to-one-functions-injections" title="Permalink to this heading">#</a></h3>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
 <p>A function <span class="math notranslate nohighlight">\(f \colon A \to B\)</span> is called <em><strong>one-to-one</strong></em> (or injection) if distinct
@@ -1234,7 +1233,7 @@ has at most one preimage under <span class="math notranslate nohighlight">\(f\)<
 </figure>
 </section>
 <section id="bijections">
-<h2>Bijections<a class="headerlink" href="#bijections" title="Permalink to this heading">#</a></h2>
+<h3>Bijections<a class="headerlink" href="#bijections" title="Permalink to this heading">#</a></h3>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
 <p>A function that is</p>
@@ -1325,7 +1324,7 @@ e^x\)</span></p></li>
 </figure>
 </section>
 <section id="cardinality">
-<h2>Cardinality<a class="headerlink" href="#cardinality" title="Permalink to this heading">#</a></h2>
+<span id="ref-cardinality"></span><h3>Cardinality<a class="headerlink" href="#cardinality" title="Permalink to this heading">#</a></h3>
 <p>If a bijection exists between sets <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> they are said to have the <em><strong>same cardinality</strong></em>, and we write <span class="math notranslate nohighlight">\(|A| = |B|\)</span></p>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
@@ -1539,6 +1538,7 @@ countable or has the power of the continuum</p>
 </figcaption>
 </figure>
 </section>
+</section>
 <section id="extra-material">
 <h2>Extra material<a class="headerlink" href="#extra-material" title="Permalink to this heading">#</a></h2>
 <p><strong>Veritasium</strong> video on paradoxes of set theory and mathematical incompleteness <a class="reference external" href="https://youtu.be/HeQX2HjkcNo">YouTube</a></p>
@@ -1612,24 +1612,28 @@ countable or has the power of the continuum</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic">Logic</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-by-contradiction">Proof by contradiction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">Sets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intervals-of-mathbb-r">Intervals of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-sets">Operations with sets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations-properties">Set operations properties</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-unions-and-intersections">Infinite Unions and Intersections</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">Tuples</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cartesian-products">Cartesian Products</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-finite-sequences">Counting Finite Sequences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-cartesian-products">Counting Cartesian Products</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#onto-functions-surjections">Onto Functions (Surjections)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-to-one-functions-injections">One-to-One Functions (Injections)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bijections">Bijections</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cardinality">Cardinality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic">Logic</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-by-contradiction">Proof by contradiction</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sets">Sets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intervals-of-mathbb-r">Intervals of <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-sets">Operations with sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations-properties">Set operations properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-unions-and-intersections">Infinite Unions and Intersections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples">Tuples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cartesian-products">Cartesian Products</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-finite-sequences">Counting Finite Sequences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#counting-cartesian-products">Counting Cartesian Products</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#onto-functions-surjections">Onto Functions (Surjections)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-to-one-functions-injections">One-to-One Functions (Injections)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bijections">Bijections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cardinality">Cardinality</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extra-material">Extra material</a></li>
 </ul>
   </nav></div>

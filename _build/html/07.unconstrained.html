@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: solutions to exercise set L, practice questions</div>
+    <div class="bd-header-announcement__content">Latest update: revision lecture 12</div>
   </div>
 
   
@@ -383,8 +383,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-optimization-problem">An optimization problem</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-the-optimization-problem">Components of the optimization problem</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-of-the-optimization-problems">Classes of the optimization problems</a></li>
@@ -428,15 +426,12 @@ document.write(`
 <h1>Unconstrained optimization<a class="headerlink" href="#unconstrained-optimization" title="Permalink to this heading">#</a></h1>
 <p><strong>ECON2125/6012 Lecture 7</strong>
 Fedor Iskhakov</p>
-<section id="announcements-reminders">
-<h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
+<p><strong>Announcements &amp; Reminders</strong></p>
 <ul class="simple">
 <li><p><em>Test 2</em> <a class="reference external" href="https://www.dropbox.com/scl/fi/specehca5vp3qqqo07ocn/test2_distr_prelim.png?rlkey=wytv2hxscmbur18cy504p77k9&amp;dl=0">results and discussion</a></p></li>
 <li><p>Exam is <em>preliminary</em> scheduled to <strong>Monday, 6 November</strong>  9:00 to 12:15</p></li>
 </ul>
-</section>
-<section id="plan-for-this-lecture">
-<h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
+<p><strong>Plan for this lecture</strong></p>
 <ol class="arabic simple">
 <li><p>Optimization problems in economics</p></li>
 <li><p>Multivariate calculus</p></li>
@@ -448,7 +443,6 @@ Fedor Iskhakov</p>
 <li><p>Simon &amp; Blume: 13.1, 13.2, 13.3, 14.1, 14.3, 14.4, 14.5, 14.8, whole of chapter 17</p></li>
 <li><p>Sundaram: 1.4, 1.5, 2.1, 2.2, 4.1 to 4.4</p></li>
 </ul>
-</section>
 <section id="an-optimization-problem">
 <h2>An optimization problem<a class="headerlink" href="#an-optimization-problem" title="Permalink to this heading">#</a></h2>
 <div class="tip admonition">
@@ -497,7 +491,7 @@ In the example above <span class="math notranslate nohighlight">\(\alpha\)</span
 <li><p><strong>Value function</strong>: the “optimized” value of the objective function as a function of parameters <br />
 In the example above <span class="math notranslate nohighlight">\(\Pi(\alpha,\beta,\delta)\)</span> is the value function</p></li>
 </ol>
-<div class="caution admonition">
+<div class="caution admonition" id="general-optimization-problem">
 <p class="admonition-title">Definition</p>
 <p>The general form of the optimization problem is</p>
 <div class="math notranslate nohighlight">
@@ -665,7 +659,7 @@ unique minimizer</p></li>
 </ul>
 </div>
 <p>In higher dimensions this definition has to be adjusted to account for the fact that <span class="math notranslate nohighlight">\(h_n\)</span> is a vector in <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span></p>
-<div class="caution admonition">
+<div class="caution admonition" id="jacobian">
 <p class="admonition-title">Definition</p>
 <p>Let</p>
 <ul class="simple">
@@ -692,7 +686,7 @@ can be thought of as a tuple of <span class="math notranslate nohighlight">\(K\)
 <span class="math notranslate nohighlight">\(f_j \colon \mathbb{R}^N \to \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(j \in \{1, \dots, K\}\)</span></p>
 </div>
 <p>Contrast the definition of total derivative to the definition of the <em>partial derivative</em></p>
-<div class="caution admonition">
+<div class="caution admonition" id="partial-derivative">
 <p class="admonition-title">Definition</p>
 <p>Let <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\({\bf x} \in A \subset \mathbb{R}^N\)</span>.
 Denote <span class="math notranslate nohighlight">\({\bf e}_i\)</span> the <span class="math notranslate nohighlight">\(i\)</span>-th unit vector in <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span>, i.e. <span class="math notranslate nohighlight">\({\bf e}_i = (0, \dots, 0, 1, 0, \dots, 0)\)</span> where <span class="math notranslate nohighlight">\(1\)</span> is in the <span class="math notranslate nohighlight">\(i\)</span>-th position.</p>
@@ -831,7 +825,7 @@ x_2x_3
 \end{split}\]</div>
 <p><strong>Exercise:</strong> Derive Jacobian maxtix of <span class="math notranslate nohighlight">\(f\)</span> and compute the  total derivative of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\({\bf x} = (1, 0, 2)\)</span></p>
 </div>
-<div class="caution admonition">
+<div class="caution admonition" id="gradient">
 <p class="admonition-title">Definition</p>
 <p>For a function <span class="math notranslate nohighlight">\(f \colon \mathbb{R}^N \to \mathbb{R}\)</span> the Jacobian matrix takes is <span class="math notranslate nohighlight">\(1 \times N\)</span> vector which is called <em><strong>gradient</strong></em> and is often denoted <span class="math notranslate nohighlight">\(\nabla f({\bf x}) \in \mathbb{R}^N\)</span></p>
 <div class="math notranslate nohighlight">
@@ -1008,7 +1002,7 @@ y_2
 <section id="higher-order-derivatives">
 <h3>Higher order derivatives<a class="headerlink" href="#higher-order-derivatives" title="Permalink to this heading">#</a></h3>
 <p>The higher order derivatives of the function in one dimension generalize naturally to the multivariate case, but the complexity of the needed matrixes and multidimensional arrays (<em>tensors</em>) grows fast.</p>
-<div class="caution admonition">
+<div class="caution admonition" id="hessian">
 <p class="admonition-title">Definition</p>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> denote an open set in <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span>, and let <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span>. Assume that <span class="math notranslate nohighlight">\(f\)</span> is twice differentiable at <span class="math notranslate nohighlight">\({\bf x} \in A\)</span>.</p>
 <p>The total derivative of the gradient of function <span class="math notranslate nohighlight">\(f\)</span> at point <span class="math notranslate nohighlight">\({\bf x}\)</span>, <span class="math notranslate nohighlight">\(\nabla f({\bf x})\)</span> is called the <em><strong>Hessian</strong></em> matrix of <span class="math notranslate nohighlight">\(f\)</span> denoted by <span class="math notranslate nohighlight">\(Hf\)</span> or <span class="math notranslate nohighlight">\(\nabla^2 f\)</span>, and is given by a <span class="math notranslate nohighlight">\(N \times N\)</span> matrix</p>
@@ -1086,7 +1080,7 @@ x_2
 </section>
 </section>
 <section id="first-oder-conditions-foc-necessary">
-<h2>First oder conditions (FOC), necessary<a class="headerlink" href="#first-oder-conditions-foc-necessary" title="Permalink to this heading">#</a></h2>
+<span id="ref-foc"></span><h2>First oder conditions (FOC), necessary<a class="headerlink" href="#first-oder-conditions-foc-necessary" title="Permalink to this heading">#</a></h2>
 <p>In this lecture we focus on the <em>unconstrained</em> optimization problems of the form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1190,9 +1184,9 @@ Parameter <span class="math notranslate nohighlight">\(\theta\)</span> may or ma
 </div>
 </details>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/f1df54196712e9b167e31baacff643d11207698d9e02e22f6589844fa4241cb9.png"><img alt="_images/f1df54196712e9b167e31baacff643d11207698d9e02e22f6589844fa4241cb9.png" class="align-center" src="_images/f1df54196712e9b167e31baacff643d11207698d9e02e22f6589844fa4241cb9.png" style="width: 80%;" /></a>
-<a class="reference internal image-reference" href="_images/413f3299c16b4bce93c05b6d3a89365c78323c7bac7958e65fa3babad13f4d70.png"><img alt="_images/413f3299c16b4bce93c05b6d3a89365c78323c7bac7958e65fa3babad13f4d70.png" class="align-center" src="_images/413f3299c16b4bce93c05b6d3a89365c78323c7bac7958e65fa3babad13f4d70.png" style="width: 80%;" /></a>
-<a class="reference internal image-reference" href="_images/480aa3e8eb7e6636fd9d44acf42a154e3830ec9261d51c2d2a46f10985c57e91.png"><img alt="_images/480aa3e8eb7e6636fd9d44acf42a154e3830ec9261d51c2d2a46f10985c57e91.png" class="align-center" src="_images/480aa3e8eb7e6636fd9d44acf42a154e3830ec9261d51c2d2a46f10985c57e91.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/726583e76051c6f2bc837f6dd03f7cb9a51dbb4fc6ac5ce2e7744f47dfc4c2dd.png"><img alt="_images/726583e76051c6f2bc837f6dd03f7cb9a51dbb4fc6ac5ce2e7744f47dfc4c2dd.png" class="align-center" src="_images/726583e76051c6f2bc837f6dd03f7cb9a51dbb4fc6ac5ce2e7744f47dfc4c2dd.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/a9b7d34a8bb212f19ab5b9ea01fb1a6c85614bdc964c6f42a60741c1baa58cc3.png"><img alt="_images/a9b7d34a8bb212f19ab5b9ea01fb1a6c85614bdc964c6f42a60741c1baa58cc3.png" class="align-center" src="_images/a9b7d34a8bb212f19ab5b9ea01fb1a6c85614bdc964c6f42a60741c1baa58cc3.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/15ea5d0bf5e39e5b3d1a8c18e023a763c30d3636e1aae404d19435111f11d0bd.png"><img alt="_images/15ea5d0bf5e39e5b3d1a8c18e023a763c30d3636e1aae404d19435111f11d0bd.png" class="align-center" src="_images/15ea5d0bf5e39e5b3d1a8c18e023a763c30d3636e1aae404d19435111f11d0bd.png" style="width: 80%;" /></a>
 </div>
 </div>
 <div class="tip admonition">
@@ -1267,9 +1261,9 @@ Parameter <span class="math notranslate nohighlight">\(\theta\)</span> may or ma
 </div>
 </details>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/60ea5d040a8cb150d805afb1ed4646a1a05f87d1a1039320f2df5ba7089e2b01.png"><img alt="_images/60ea5d040a8cb150d805afb1ed4646a1a05f87d1a1039320f2df5ba7089e2b01.png" class="align-center" src="_images/60ea5d040a8cb150d805afb1ed4646a1a05f87d1a1039320f2df5ba7089e2b01.png" style="width: 80%;" /></a>
-<a class="reference internal image-reference" href="_images/5a649bfdd1a9c608b18d510fa280c2c5e7d4f8591a57b4f8d1f374d556e38061.png"><img alt="_images/5a649bfdd1a9c608b18d510fa280c2c5e7d4f8591a57b4f8d1f374d556e38061.png" class="align-center" src="_images/5a649bfdd1a9c608b18d510fa280c2c5e7d4f8591a57b4f8d1f374d556e38061.png" style="width: 80%;" /></a>
-<a class="reference internal image-reference" href="_images/c3a437a523864af50af0c717dc13d2f1d37a03ce62bed6f51dea8be784b3e4dc.png"><img alt="_images/c3a437a523864af50af0c717dc13d2f1d37a03ce62bed6f51dea8be784b3e4dc.png" class="align-center" src="_images/c3a437a523864af50af0c717dc13d2f1d37a03ce62bed6f51dea8be784b3e4dc.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/381d1e6432bc1863c3b68c690c1bc633fe7039b3dc28f62b5c53c06c4298b76e.png"><img alt="_images/381d1e6432bc1863c3b68c690c1bc633fe7039b3dc28f62b5c53c06c4298b76e.png" class="align-center" src="_images/381d1e6432bc1863c3b68c690c1bc633fe7039b3dc28f62b5c53c06c4298b76e.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/fdc93a37e55354c8bc28b05757f4e32b799c5ad77706e341e4e5b74950eb9664.png"><img alt="_images/fdc93a37e55354c8bc28b05757f4e32b799c5ad77706e341e4e5b74950eb9664.png" class="align-center" src="_images/fdc93a37e55354c8bc28b05757f4e32b799c5ad77706e341e4e5b74950eb9664.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/a74bfbe3c94688865021038809d891184a33db0a702c2d352a6104540d09e1d5.png"><img alt="_images/a74bfbe3c94688865021038809d891184a33db0a702c2d352a6104540d09e1d5.png" class="align-center" src="_images/a74bfbe3c94688865021038809d891184a33db0a702c2d352a6104540d09e1d5.png" style="width: 80%;" /></a>
 </div>
 </div>
 <ul class="simple">
@@ -1299,7 +1293,7 @@ for all <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)<
 for all <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)</span></p></li>
 </ul>
 </div>
-<div class="important admonition">
+<div class="important admonition" id="necessary-soc">
 <p class="admonition-title">Fact (necessary SOC)</p>
 <p>Let <span class="math notranslate nohighlight">\(f(x) \colon \mathbb{R}^N \to \mathbb{R}\)</span> be a twice continuously differentiable function and let <span class="math notranslate nohighlight">\({\bf x^\star} \in \mathbb{R}^N\)</span> be a local maximizer/minimizer of <span class="math notranslate nohighlight">\(f\)</span>. Then:</p>
 <ul class="simple">
@@ -1307,7 +1301,7 @@ for all <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)<
 <li><p><span class="math notranslate nohighlight">\(f\)</span> has a local minimum at <span class="math notranslate nohighlight">\({\bf x^\star} \implies Hf({\bf x^\star})\)</span> is positive semi-definite</p></li>
 </ul>
 </div>
-<div class="important admonition">
+<div class="important admonition" id="sufficient-soc">
 <p class="admonition-title">Fact (sufficient SOC)</p>
 <p>Let <span class="math notranslate nohighlight">\(f(x) \colon \mathbb{R}^N \to \mathbb{R}\)</span> be a twice continuously differentiable function.
 Then:</p>
@@ -1415,7 +1409,7 @@ c &amp; d - \lambda
 \lambda_1 \lambda_2 = \mathrm{det}(H)
 \end{split}\]</div>
 <p>Applying this result to a Hessian of a function <span class="math notranslate nohighlight">\(f: \mathbb{R}^2 \to \mathbb{R}\)</span> we have</p>
-<div class="important admonition">
+<div class="important admonition" id="d-soc">
 <p class="admonition-title">Fact</p>
 <p>Given a twice continuously differentiable function <span class="math notranslate nohighlight">\(f: \mathbb{R}^2 \to \mathbb{R}\)</span> and a stationary point <span class="math notranslate nohighlight">\({\bf x^\star}: \; \nabla f({\bf x^\star}) = {\bf 0}\)</span>, the second order conditions provide:</p>
 <ol class="arabic simple">
@@ -1639,7 +1633,7 @@ f(\lambda {\bf x} + (1 - \lambda) {\bf y})
 </section>
 <section id="hessian-based-criterion">
 <h3>Hessian based criterion<a class="headerlink" href="#hessian-based-criterion" title="Permalink to this heading">#</a></h3>
-<div class="important admonition">
+<div class="important admonition" id="convexity-hessian-criterion">
 <p class="admonition-title">Fact</p>
 <p>If <span class="math notranslate nohighlight">\(f \colon A \to \mathbb{R}\)</span> is a <span class="math notranslate nohighlight">\(C^2\)</span> function where <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^K\)</span> is open and convex, then</p>
 <ol class="arabic simple">
@@ -1814,8 +1808,6 @@ f\left( \frac{1}{2} {\bf a} + \frac{1}{2} {\bf b} \right)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-optimization-problem">An optimization problem</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#components-of-the-optimization-problem">Components of the optimization problem</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#classes-of-the-optimization-problems">Classes of the optimization problems</a></li>

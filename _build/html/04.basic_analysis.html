@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: solutions to exercise set L, practice questions</div>
+    <div class="bd-header-announcement__content">Latest update: revision lecture 12</div>
   </div>
 
   
@@ -383,17 +383,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-sets">Bounded sets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epsilon-balls-epsilon-balls">Epsilon-balls (<span class="math notranslate nohighlight">\(\epsilon\)</span>-balls)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences">Sequences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">Convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-limits">Properties of Limits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-limits">Operations with limits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-sums">Infinite Sums</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cauchy-sequences">Cauchy Sequences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsequences">Subsequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-in-mathbb-r">Analysis in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-sets">Bounded sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#epsilon-balls-epsilon-balls">Epsilon-balls (<span class="math notranslate nohighlight">\(\epsilon\)</span>-balls)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences">Sequences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">Convergence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-limits">Properties of Limits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-limits">Operations with limits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-sums">Infinite Sums</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cauchy-sequences">Cauchy Sequences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsequences">Subsequences</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">Derivatives</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-series">Taylor series</a></li>
 </ul>
@@ -430,8 +433,7 @@ document.write(`
 <h1>Basics of real analysis<a class="headerlink" href="#basics-of-real-analysis" title="Permalink to this heading">#</a></h1>
 <p><strong>ECON2125/6012 Lecture 4</strong><br />
 Fedor Iskhakov</p>
-<section id="announcements-reminders">
-<h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
+<p><strong>Announcements &amp; Reminders</strong></p>
 <ol class="arabic simple">
 <li><p>The first test is due before the next lecture!</p></li>
 </ol>
@@ -448,9 +450,7 @@ Fedor Iskhakov</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://dseconf.org">DSE summer school and conference</a></p></li>
 </ul>
-</section>
-<section id="plan-for-this-lecture">
-<h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
+<p><strong>Plan for this lecture</strong></p>
 <p>Continuing with revision of fundamental concepts and ideas</p>
 <ol class="arabic simple">
 <li><p>Sequences</p></li>
@@ -466,6 +466,8 @@ Fedor Iskhakov</p>
 <li><p>Simon &amp; Blume: 12.1, 12.2, 12.3, 12.4, 12.5 10.1, 10.2, 10.3, 10.4, 13.4</p></li>
 <li><p>Sundaram: 1.1.1, 1.1.2, 1.2.1, 1.2.2, 1.2.3, 1.2.7, 1.2.8, 1.4.1</p></li>
 </ul>
+<section id="analysis-in-mathbb-r">
+<h2>Analysis in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span><a class="headerlink" href="#analysis-in-mathbb-r" title="Permalink to this heading">#</a></h2>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Let <span class="math notranslate nohighlight">\(F(x)\)</span> be a profit function, so for solving profit maximization we have to solve <span class="math notranslate nohighlight">\(f(x)=0\)</span> where <span class="math notranslate nohighlight">\(f(x)=F'(x)\)</span>.</p>
@@ -494,10 +496,9 @@ Fedor Iskhakov</p>
 <li><p>How can we compute it?</p></li>
 </ul>
 <p><em>These are typical problems in analysis</em></p>
-</section>
 <section id="bounded-sets">
-<h2>Bounded sets<a class="headerlink" href="#bounded-sets" title="Permalink to this heading">#</a></h2>
-<div class="caution admonition">
+<h3>Bounded sets<a class="headerlink" href="#bounded-sets" title="Permalink to this heading">#</a></h3>
+<div class="caution admonition" id="absolute-value">
 <p class="admonition-title">Definition</p>
 <p>The <em><strong>absolute value</strong></em> of <span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span> denoted <span class="math notranslate nohighlight">\(|x|\)</span> is <span class="math notranslate nohighlight">\(|x| := \max\{x, -x\}\)</span>.</p>
 </div>
@@ -638,7 +639,7 @@ x \in C
 </div>
 </section>
 <section id="epsilon-balls-epsilon-balls">
-<h2>Epsilon-balls (<span class="math notranslate nohighlight">\(\epsilon\)</span>-balls)<a class="headerlink" href="#epsilon-balls-epsilon-balls" title="Permalink to this heading">#</a></h2>
+<h3>Epsilon-balls (<span class="math notranslate nohighlight">\(\epsilon\)</span>-balls)<a class="headerlink" href="#epsilon-balls-epsilon-balls" title="Permalink to this heading">#</a></h3>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
 <p>Given <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> and <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span>, the <em><strong><span class="math notranslate nohighlight">\(\epsilon\)</span>-ball</strong></em>
@@ -698,8 +699,9 @@ B_\epsilon(a)
 <p>Contradiction!</p>
 </div>
 </section>
+</section>
 <section id="sequences">
-<h2>Sequences<a class="headerlink" href="#sequences" title="Permalink to this heading">#</a></h2>
+<span id="ref-sequences"></span><h2>Sequences<a class="headerlink" href="#sequences" title="Permalink to this heading">#</a></h2>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
 <p>A <em><strong>sequence</strong></em> is a function from <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> to <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
@@ -733,9 +735,8 @@ B_\epsilon(a)
 <li><p><span class="math notranslate nohighlight">\(x_n = 2n\)</span> is monotone increasing but not bounded</p></li>
 </ul>
 </div>
-</section>
 <section id="convergence">
-<h2>Convergence<a class="headerlink" href="#convergence" title="Permalink to this heading">#</a></h2>
+<h3>Convergence<a class="headerlink" href="#convergence" title="Permalink to this heading">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(\{x_n\}\)</span> be a sequence</p>
 <p>Suppose, for any <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, we can find an <span class="math notranslate nohighlight">\(N \in \mathbb{N}\)</span> such that</p>
 <div class="math notranslate nohighlight">
@@ -766,7 +767,7 @@ x_n \in B_\epsilon(a) \text{ for all } n \geq N
 <figure class="align-default" id="convergent-seqs4">
 <img alt="_images/convergent_seqs4.png" src="_images/convergent_seqs4.png" />
 </figure>
-<div class="caution admonition">
+<div class="caution admonition" id="limit">
 <p class="admonition-title">Definition</p>
 <p>The point <span class="math notranslate nohighlight">\(a\)</span> is called the <em><strong>limit</strong></em> of the sequence, denoted</p>
 <div class="math notranslate nohighlight">
@@ -963,7 +964,7 @@ B_\epsilon(a) = \{ x \in \mathbb{R} : |x - a| &lt; 0.5 \} = (a-0.5, a+0.5 )
 </div>
 </section>
 <section id="properties-of-limits">
-<h2>Properties of Limits<a class="headerlink" href="#properties-of-limits" title="Permalink to this heading">#</a></h2>
+<h3>Properties of Limits<a class="headerlink" href="#properties-of-limits" title="Permalink to this heading">#</a></h3>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
 <p>Let <span class="math notranslate nohighlight">\(\{x_n\}\)</span> be a sequence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(a \in \mathbb{R}\)</span>.
@@ -1026,7 +1027,7 @@ x_n \to a \iff |x_n - a| \to 0
 </div>
 </section>
 <section id="operations-with-limits">
-<h2>Operations with limits<a class="headerlink" href="#operations-with-limits" title="Permalink to this heading">#</a></h2>
+<h3>Operations with limits<a class="headerlink" href="#operations-with-limits" title="Permalink to this heading">#</a></h3>
 <p>Here are some basic tools for working with limits</p>
 <div class="important admonition">
 <p class="admonition-title">Fact</p>
@@ -1094,7 +1095,7 @@ these points</p>
 </div>
 </section>
 <section id="infinite-sums">
-<h2>Infinite Sums<a class="headerlink" href="#infinite-sums" title="Permalink to this heading">#</a></h2>
+<h3>Infinite Sums<a class="headerlink" href="#infinite-sums" title="Permalink to this heading">#</a></h3>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
 <p>Let <span class="math notranslate nohighlight">\(\{x_n\}\)</span> be a sequence in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></p>
@@ -1161,9 +1162,9 @@ y_k
 </div>
 </section>
 <section id="cauchy-sequences">
-<h2>Cauchy Sequences<a class="headerlink" href="#cauchy-sequences" title="Permalink to this heading">#</a></h2>
+<h3>Cauchy Sequences<a class="headerlink" href="#cauchy-sequences" title="Permalink to this heading">#</a></h3>
 <p>Informal definition: Cauchy sequences are those where <span class="math notranslate nohighlight">\(|x_n - x_{n+1}|\)</span> gets smaller and smaller</p>
-<figure class="align-default" id="cauchy">
+<figure class="align-default">
 <img alt="_images/cauchy.png" src="_images/cauchy.png" />
 </figure>
 <div class="tip admonition">
@@ -1231,7 +1232,7 @@ y_k
 <p>Cauchy sequences “look like” they are converging to something</p>
 <p>A key <em><strong>axiom</strong></em> of analysis is that such sequences do converge to
 something — details follow</p>
-<div class="important admonition">
+<div class="important admonition" id="cauchy">
 <p class="admonition-title">Definition</p>
 <p>A sequence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> is called <em><strong>Cauchy</strong></em> if
 <span class="math notranslate nohighlight">\(\forall \; \epsilon &gt; 0, \;\; \exists \; N \in \mathbb{N}\)</span> such that</p>
@@ -1308,7 +1309,7 @@ of size <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span></p
 <p>Full proof: See any text on analysis</p>
 </section>
 <section id="subsequences">
-<h2>Subsequences<a class="headerlink" href="#subsequences" title="Permalink to this heading">#</a></h2>
+<h3>Subsequences<a class="headerlink" href="#subsequences" title="Permalink to this heading">#</a></h3>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
 <p>A sequence <span class="math notranslate nohighlight">\(\{x_{n_k} \}\)</span> is called a <em><strong>subsequence</strong></em> of <span class="math notranslate nohighlight">\(\{x_n\}\)</span> if</p>
@@ -1374,9 +1375,10 @@ to be used later when we discuss optimization.</p>
 <p>Hence <span class="math notranslate nohighlight">\(\{x_n\}\)</span> has a convergent subsequence</p>
 </div>
 </section>
+</section>
 <section id="derivatives">
 <h2>Derivatives<a class="headerlink" href="#derivatives" title="Permalink to this heading">#</a></h2>
-<div class="caution admonition">
+<div class="caution admonition" id="derivative">
 <p class="admonition-title">Definition</p>
 <p>Let <span class="math notranslate nohighlight">\(f \colon (a, b) \to \mathbb{R}\)</span> and let <span class="math notranslate nohighlight">\(x \in (a, b)\)</span></p>
 <p>Let <span class="math notranslate nohighlight">\(H\)</span> be all sequences <span class="math notranslate nohighlight">\(\{h_n\}\)</span> such that
@@ -1392,7 +1394,7 @@ to be used later when we discuss optimization.</p>
 <li><p><span class="math notranslate nohighlight">\(f'(x)\)</span> is called the <em><strong>derivative</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x\)</span></p></li>
 </ul>
 </div>
-<figure class="align-default" id="derivative">
+<figure class="align-default">
 <img alt="_images/derivative.png" src="_images/derivative.png" />
 </figure>
 <div class="tip admonition">
@@ -1436,7 +1438,7 @@ f'(x)
 \]</div>
 </div>
 <section id="taylor-series">
-<h3>Taylor series<a class="headerlink" href="#taylor-series" title="Permalink to this heading">#</a></h3>
+<span id="ref-taylor"></span><h3>Taylor series<a class="headerlink" href="#taylor-series" title="Permalink to this heading">#</a></h3>
 <p>Loosely speaking, if <span class="math notranslate nohighlight">\(f \colon \mathbb{R} \to \mathbb{R}\)</span> is suitably
 differentiable at <span class="math notranslate nohighlight">\(a\)</span>, then</p>
 <div class="math notranslate nohighlight">
@@ -1494,7 +1496,7 @@ to <span class="math notranslate nohighlight">\(f\)</span> at <span class="math 
 <p>We’ll spend longer on things that are different</p>
 <section id="norm-and-distance">
 <h3>Norm and distance<a class="headerlink" href="#norm-and-distance" title="Permalink to this heading">#</a></h3>
-<div class="caution admonition">
+<div class="caution admonition" id="norm">
 <p class="admonition-title">Definition</p>
 <p>The (Euclidean) <em><strong>norm</strong></em> of <span class="math notranslate nohighlight">\({\bf x} \in \mathbb{R}^N\)</span> is defined as</p>
 <div class="math notranslate nohighlight">
@@ -1545,7 +1547,7 @@ to <span class="math notranslate nohighlight">\(f\)</span> at <span class="math 
 </section>
 <section id="bounded-sets-and-epsilon-balls">
 <h3>Bounded sets and <span class="math notranslate nohighlight">\(\epsilon\)</span>-balls<a class="headerlink" href="#bounded-sets-and-epsilon-balls" title="Permalink to this heading">#</a></h3>
-<div class="caution admonition">
+<div class="caution admonition" id="id1">
 <p class="admonition-title">Definition</p>
 <p>A set <span class="math notranslate nohighlight">\(A \subset \mathbb{R}^K\)</span> called <em><strong>bounded</strong></em> if</p>
 <div class="math notranslate nohighlight">
@@ -1613,7 +1615,7 @@ to <span class="math notranslate nohighlight">\(f\)</span> at <span class="math 
 <p class="admonition-title">Definition</p>
 <p>We call <span class="math notranslate nohighlight">\(\{ {\bf x}_n \}\)</span> <em><strong>convergent</strong></em> if it converges to some limit in <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></p>
 </div>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id2">
 <a class="reference internal image-reference" href="_images/convergence.png"><img alt="_images/convergence.png" src="_images/convergence.png" style="width: 905.6px; height: 460.0px;" /></a>
 </figure>
 <figure class="align-default" id="convergence2">
@@ -1660,7 +1662,7 @@ x^K_n \to a^K &amp;  \quad \text{in } \mathbb{R}
 <section id="from-scalar-to-vector-analysis">
 <h2>From Scalar to Vector Analysis<a class="headerlink" href="#from-scalar-to-vector-analysis" title="Permalink to this heading">#</a></h2>
 <p>More definitions analogous to scalar case:</p>
-<div class="caution admonition">
+<div class="caution admonition" id="cauchy-k">
 <p class="admonition-title">Definition</p>
 <p>A sequence <span class="math notranslate nohighlight">\(\{{\bf x}_n\}\)</span> is called <em><strong>Cauchy</strong></em> if</p>
 <div class="math notranslate nohighlight">
@@ -1820,7 +1822,7 @@ y
 <p>There exists a <span class="math notranslate nohighlight">\(y \in B_\epsilon(1)\)</span> such that <span class="math notranslate nohighlight">\(y \notin [-1, 1]\)</span></p>
 <p>For example, consider the point <span class="math notranslate nohighlight">\(y := 1 + \epsilon/2\)</span></p>
 <p><strong>Exercise:</strong> Check this point: lies in <span class="math notranslate nohighlight">\(B_\epsilon(1)\)</span> but not in <span class="math notranslate nohighlight">\([-1, 1]\)</span></p>
-<div class="caution admonition">
+<div class="caution admonition" id="open-sets">
 <p class="admonition-title">Definition</p>
 <p>A set <span class="math notranslate nohighlight">\(G\subset \mathbb{R}^K\)</span> is called <em><strong>open</strong></em> if all of its points are interior</p>
 </div>
@@ -1844,7 +1846,7 @@ y
 </div>
 <section id="closed-sets">
 <h3>Closed Sets<a class="headerlink" href="#closed-sets" title="Permalink to this heading">#</a></h3>
-<div class="caution admonition">
+<div class="caution admonition" id="id3">
 <p class="admonition-title">Definition</p>
 <p>A set <span class="math notranslate nohighlight">\(F \subset \mathbb{R}^K\)</span> is called <em><strong>closed</strong></em> if every convergent sequence in <span class="math notranslate nohighlight">\(F\)</span> converges to a point in <span class="math notranslate nohighlight">\(F\)</span></p>
 </div>
@@ -2006,7 +2008,7 @@ open</p>
 <p>Therefore it has a convergent subsequence</p>
 <p>Since the subsequence is also contained in <span class="math notranslate nohighlight">\(A\)</span>,
 and <span class="math notranslate nohighlight">\(A\)</span> is closed, the limit must lie in <span class="math notranslate nohighlight">\(A\)</span>.</p>
-<div class="caution admonition">
+<div class="caution admonition" id="compact">
 <p class="admonition-title">Definition</p>
 <p>Bounded and closed sets are called <strong>compact sets</strong> or <strong>compacts</strong></p>
 </div>
@@ -2049,7 +2051,7 @@ for all <span class="math notranslate nohighlight">\({\bf x}\)</span></p>
 <p>Since <span class="math notranslate nohighlight">\({\bf x}\)</span> was arbitrary this bound holds for all <span class="math notranslate nohighlight">\({\bf x}\)</span></p>
 </div>
 <p>Let <span class="math notranslate nohighlight">\(F \colon A \to \mathbb{R}^J\)</span> where <span class="math notranslate nohighlight">\(A\)</span> is a subset of <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span></p>
-<div class="caution admonition">
+<div class="caution admonition" id="continuous-functions">
 <p class="admonition-title">Definition</p>
 <p><span class="math notranslate nohighlight">\(F\)</span> is called <em><strong>continuous at</strong></em> <span class="math notranslate nohighlight">\({\bf x} \in A\)</span> if as <span class="math notranslate nohighlight">\(n \to \infty\)</span></p>
 <div class="math notranslate nohighlight">
@@ -2270,17 +2272,20 @@ F(x) = \frac{\exp(x) + \sin(x)}{2 + \cos(x)} + \frac{x^4}{2}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-sets">Bounded sets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#epsilon-balls-epsilon-balls">Epsilon-balls (<span class="math notranslate nohighlight">\(\epsilon\)</span>-balls)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences">Sequences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">Convergence</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-limits">Properties of Limits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-limits">Operations with limits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-sums">Infinite Sums</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cauchy-sequences">Cauchy Sequences</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsequences">Subsequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-in-mathbb-r">Analysis in <span class="math notranslate nohighlight">\(\mathbb{R}\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-sets">Bounded sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#epsilon-balls-epsilon-balls">Epsilon-balls (<span class="math notranslate nohighlight">\(\epsilon\)</span>-balls)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences">Sequences</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">Convergence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-limits">Properties of Limits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-limits">Operations with limits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#infinite-sums">Infinite Sums</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cauchy-sequences">Cauchy Sequences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsequences">Subsequences</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">Derivatives</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#taylor-series">Taylor series</a></li>
 </ul>

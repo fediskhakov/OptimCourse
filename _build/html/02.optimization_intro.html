@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: solutions to exercise set L, practice questions</div>
+    <div class="bd-header-announcement__content">Latest update: revision lecture 12</div>
   </div>
 
   
@@ -383,8 +383,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing">Computing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-code-in-the-lectures">Computer Code in the Lectures</a></li>
 </ul>
@@ -396,7 +394,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-two-variables">Functions of two variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-optimization">Bivariate Optimization</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Bivariate Optimization</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nasty-secrets">Nasty secrets</a></li>
 </ul>
 </li>
@@ -417,8 +415,7 @@ document.write(`
 <h1>Univariate and bivariate optimization<a class="headerlink" href="#univariate-and-bivariate-optimization" title="Permalink to this heading">#</a></h1>
 <p><strong>ECON2125/6012 Lecture 2</strong>
 Fedor Iskhakov</p>
-<section id="announcements-reminders">
-<h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
+<p><strong>Announcements &amp; Reminders</strong></p>
 <ul class="simple">
 <li><p><strong>Tutorials start tomorrow (Aug 4)</strong></p></li>
 <li><p>Register for tutorials on <a class="reference external" href="https://wattlecourses.anu.edu.au/course/view.php?id=41102">Wattle</a> if you have not done so already</p></li>
@@ -448,9 +445,7 @@ Fedor Iskhakov</p>
 </ol>
 </li>
 </ul>
-</section>
-<section id="plan-for-this-lecture">
-<h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
+<p><strong>Plan for this lecture</strong></p>
 <ol class="arabic simple">
 <li><p>Motivation (math vs. computing)</p></li>
 <li><p>Univariate optimization</p></li>
@@ -462,7 +457,6 @@ Fedor Iskhakov</p>
 <li><p>Simon &amp; Blume: part 1 (revision)</p></li>
 <li><p>Sundaram: sections 1.1, 1.4, chapter 2, chapter 4</p></li>
 </ul>
-</section>
 <section id="computing">
 <h2>Computing<a class="headerlink" href="#computing" title="Permalink to this heading">#</a></h2>
 <p>The <em>classic</em> way we do mathematics is pencil and paper</p>
@@ -557,7 +551,7 @@ f(x, y) = \frac{\cos(x^2 + y^2)}{1 + x^2 + y^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/9f17d8225a84f50e4af3428865a35a303a960a7dfc688ae24291d0485ed2538d.png"><img alt="_images/9f17d8225a84f50e4af3428865a35a303a960a7dfc688ae24291d0485ed2538d.png" class="align-center" src="_images/9f17d8225a84f50e4af3428865a35a303a960a7dfc688ae24291d0485ed2538d.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/909667604afe0bcd62e2186f48f007f863add4ea2ff91a40c4954008f5a35f0b.png"><img alt="_images/909667604afe0bcd62e2186f48f007f863add4ea2ff91a40c4954008f5a35f0b.png" class="align-center" src="_images/909667604afe0bcd62e2186f48f007f863add4ea2ff91a40c4954008f5a35f0b.png" style="width: 80%;" /></a>
 </div>
 </div>
 <div class="tip admonition">
@@ -605,7 +599,7 @@ If you want to do so please refer to <strong>linked GitHub repository</strong> i
 </section>
 </section>
 <section id="univariate-optimization">
-<h2>Univariate Optimization<a class="headerlink" href="#univariate-optimization" title="Permalink to this heading">#</a></h2>
+<span id="id1"></span><h2>Univariate Optimization<a class="headerlink" href="#univariate-optimization" title="Permalink to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(f \colon [a, b] \to \mathbb{R}\)</span> be a differentiable (smooth) function</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\([a, b]\)</span> is all <span class="math notranslate nohighlight">\(x\)</span> with <span class="math notranslate nohighlight">\(a \leq x \leq b\)</span></p></li>
@@ -687,9 +681,9 @@ If you want to do so please refer to <strong>linked GitHub repository</strong> i
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/03f255640860aa89576f92c7d8760ce316c0325fbd813956074e5230fa0755ff.png" src="_images/03f255640860aa89576f92c7d8760ce316c0325fbd813956074e5230fa0755ff.png" />
-<img alt="_images/7a7ba2e2378101f2b281eedf31756eca5d331dc2a4c8578c52ff9485e53e3557.png" src="_images/7a7ba2e2378101f2b281eedf31756eca5d331dc2a4c8578c52ff9485e53e3557.png" />
-<img alt="_images/dc6ae1475886bdbf3870fb56da4b850ca80141076ee12d4c620b333af6eb564d.png" src="_images/dc6ae1475886bdbf3870fb56da4b850ca80141076ee12d4c620b333af6eb564d.png" />
+<img alt="_images/0be34442a538f901c6a5600d100015dc99432fcebd691c4f4df699c5fa2c97f4.png" src="_images/0be34442a538f901c6a5600d100015dc99432fcebd691c4f4df699c5fa2c97f4.png" />
+<img alt="_images/0eec5cd996a9d76bb574b9fb07a99f4fce6a8763d32de9f41e6fe6a1850f85d0.png" src="_images/0eec5cd996a9d76bb574b9fb07a99f4fce6a8763d32de9f41e6fe6a1850f85d0.png" />
+<img alt="_images/49da4b7da743841e858ab2c6c5ec26288fcae0e76dfc3c49276221bd9224f539.png" src="_images/49da4b7da743841e858ab2c6c5ec26288fcae0e76dfc3c49276221bd9224f539.png" />
 </div>
 </details>
 </div>
@@ -705,16 +699,16 @@ If you want to do so please refer to <strong>linked GitHub repository</strong> i
 <li><p><span class="math notranslate nohighlight">\(x^* = 4\)</span> is a maximizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\([2, 8]\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(x^{**} = 8\)</span> is a minimizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\([2, 8]\)</span></p></li>
 </ul>
-<figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="_images/03f255640860aa89576f92c7d8760ce316c0325fbd813956074e5230fa0755ff.png"><img alt="_images/03f255640860aa89576f92c7d8760ce316c0325fbd813956074e5230fa0755ff.png" src="_images/03f255640860aa89576f92c7d8760ce316c0325fbd813956074e5230fa0755ff.png" style="width: 80%;" /></a>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="_images/0be34442a538f901c6a5600d100015dc99432fcebd691c4f4df699c5fa2c97f4.png"><img alt="_images/0be34442a538f901c6a5600d100015dc99432fcebd691c4f4df699c5fa2c97f4.png" src="_images/0be34442a538f901c6a5600d100015dc99432fcebd691c4f4df699c5fa2c97f4.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Maximizer on <span class="math notranslate nohighlight">\([a, b] = [2, 8]\)</span> is <span class="math notranslate nohighlight">\(x^* = 4\)</span></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Maximizer on <span class="math notranslate nohighlight">\([a, b] = [2, 8]\)</span> is <span class="math notranslate nohighlight">\(x^* = 4\)</span></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="_images/7a7ba2e2378101f2b281eedf31756eca5d331dc2a4c8578c52ff9485e53e3557.png"><img alt="_images/7a7ba2e2378101f2b281eedf31756eca5d331dc2a4c8578c52ff9485e53e3557.png" src="_images/7a7ba2e2378101f2b281eedf31756eca5d331dc2a4c8578c52ff9485e53e3557.png" style="width: 80%;" /></a>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="_images/0eec5cd996a9d76bb574b9fb07a99f4fce6a8763d32de9f41e6fe6a1850f85d0.png"><img alt="_images/0eec5cd996a9d76bb574b9fb07a99f4fce6a8763d32de9f41e6fe6a1850f85d0.png" src="_images/0eec5cd996a9d76bb574b9fb07a99f4fce6a8763d32de9f41e6fe6a1850f85d0.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Minimizer on <span class="math notranslate nohighlight">\([a, b] = [2, 8]\)</span> is <span class="math notranslate nohighlight">\(x^{**} = 8\)</span></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Minimizer on <span class="math notranslate nohighlight">\([a, b] = [2, 8]\)</span> is <span class="math notranslate nohighlight">\(x^{**} = 8\)</span></span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -741,10 +735,10 @@ x^2 &amp;  \text{ if } x &lt; 1
 1/2 &amp;  \text{ otherwise}
 \end{cases}
 \end{split}\]</div>
-<figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="_images/dc6ae1475886bdbf3870fb56da4b850ca80141076ee12d4c620b333af6eb564d.png"><img alt="_images/dc6ae1475886bdbf3870fb56da4b850ca80141076ee12d4c620b333af6eb564d.png" src="_images/dc6ae1475886bdbf3870fb56da4b850ca80141076ee12d4c620b333af6eb564d.png" style="width: 80%;" /></a>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="_images/49da4b7da743841e858ab2c6c5ec26288fcae0e76dfc3c49276221bd9224f539.png"><img alt="_images/49da4b7da743841e858ab2c6c5ec26288fcae0e76dfc3c49276221bd9224f539.png" src="_images/49da4b7da743841e858ab2c6c5ec26288fcae0e76dfc3c49276221bd9224f539.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 3 </span><span class="caption-text">No maximizer on <span class="math notranslate nohighlight">\([0, 2]\)</span></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">No maximizer on <span class="math notranslate nohighlight">\([0, 2]\)</span></span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -765,10 +759,10 @@ x^2 &amp;  \text{ if } x &lt; 1
 <p class="admonition-title">Definition</p>
 <p>A <em><strong>stationary point</strong></em> of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\([a, b]\)</span> is an interior point <span class="math notranslate nohighlight">\(x\)</span> with <span class="math notranslate nohighlight">\(f'(x) = 0\)</span></p>
 </div>
-<figure class="align-center" id="id4">
+<figure class="align-center" id="id6">
 <a class="reference internal image-reference" href="_images/stationary.png"><img alt="_images/stationary.png" src="_images/stationary.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Both <span class="math notranslate nohighlight">\(x^*\)</span> and <span class="math notranslate nohighlight">\(x^{**}\)</span> are stationary</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Both <span class="math notranslate nohighlight">\(x^*\)</span> and <span class="math notranslate nohighlight">\(x^{**}\)</span> are stationary</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="important admonition">
@@ -792,13 +786,15 @@ f'(x^*) = \, \lim_{h \to 0} \, \frac{f(x^* + h) - f(x^*)}{h}
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span> any interior maximizer stationary<br />
 <span class="math notranslate nohighlight">\(\Rightarrow\)</span> set of interior maximizers <span class="math notranslate nohighlight">\(\subset\)</span> set of stationary points<br />
 <span class="math notranslate nohighlight">\(\Rightarrow\)</span> maximizers <span class="math notranslate nohighlight">\(\subset\)</span> stationary points <span class="math notranslate nohighlight">\(\cup \{a\} \cup \{b\}\)</span></p>
-<p>Usage:</p>
+<div class="admonition-algorithm-for-univariate-problems admonition" id="univariate-solution-algorithm">
+<p class="admonition-title">Algorithm for univariate problems</p>
 <ol class="arabic simple">
 <li><p>Locate stationary points</p></li>
 <li><p>Evaluate <span class="math notranslate nohighlight">\(y = f(x)\)</span> for each stationary <span class="math notranslate nohighlight">\(x\)</span> and for <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span></p></li>
 <li><p>Pick point giving largest <span class="math notranslate nohighlight">\(y\)</span> value</p></li>
 </ol>
 <p>Minimization: same idea</p>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Example</p>
 <p>Let’s solve</p>
@@ -857,7 +853,7 @@ f(x) = x^3 - 6x^2 + 4x + 8
 </div>
 </details>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/a4d14a03565b14b60ee9ecd8272cd378616f877c542a95ebd514d5114e3928d3.png"><img alt="_images/a4d14a03565b14b60ee9ecd8272cd378616f877c542a95ebd514d5114e3928d3.png" class="align-center" src="_images/a4d14a03565b14b60ee9ecd8272cd378616f877c542a95ebd514d5114e3928d3.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/782ec44636f0282b4eafad93d55d76cc0eebe60bd76cf3a9e7af475c460f2fe4.png"><img alt="_images/782ec44636f0282b4eafad93d55d76cc0eebe60bd76cf3a9e7af475c460f2fe4.png" class="align-center" src="_images/782ec44636f0282b4eafad93d55d76cc0eebe60bd76cf3a9e7af475c460f2fe4.png" style="width: 80%;" /></a>
 </div>
 </div>
 </section>
@@ -886,11 +882,11 @@ f(x) = x^3 - 6x^2 + 4x + 8
 </div>
 </details>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/8d06862c5238701d604531edfbf0b9f77be344ee442dd40ef8cb705c5d9751ed.png"><img alt="_images/8d06862c5238701d604531edfbf0b9f77be344ee442dd40ef8cb705c5d9751ed.png" class="align-center" src="_images/8d06862c5238701d604531edfbf0b9f77be344ee442dd40ef8cb705c5d9751ed.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/5d0eaf934a3f39b10d564b7ae41c29a69ec89f97c958c46a93a58cc1e8c845b0.png"><img alt="_images/5d0eaf934a3f39b10d564b7ae41c29a69ec89f97c958c46a93a58cc1e8c845b0.png" class="align-center" src="_images/5d0eaf934a3f39b10d564b7ae41c29a69ec89f97c958c46a93a58cc1e8c845b0.png" style="width: 80%;" /></a>
 </div>
 </div>
 <p>(Full definition deferred)</p>
-<div class="important admonition">
+<div class="important admonition" id="univariate-concavity">
 <p class="admonition-title">Sufficient conditions for <em>concavity</em> in one dimension</p>
 <p>Let <span class="math notranslate nohighlight">\(f \colon [a, b] \to \mathbb{R}\)</span></p>
 <ul class="simple">
@@ -928,7 +924,7 @@ f(x) = x^3 - 6x^2 + 4x + 8
 </div>
 </details>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/0c09b07311ebff7cc9287196f3dcf72f79e958a9e5c6cb035312c18c5cb6d985.png"><img alt="_images/0c09b07311ebff7cc9287196f3dcf72f79e958a9e5c6cb035312c18c5cb6d985.png" class="align-center" src="_images/0c09b07311ebff7cc9287196f3dcf72f79e958a9e5c6cb035312c18c5cb6d985.png" style="width: 80%;" /></a>
+<a class="reference internal image-reference" href="_images/8505cfa7772b1541c20724fff1b8369ee3fb3c7af5bc69c611da499c1723638b.png"><img alt="_images/8505cfa7772b1541c20724fff1b8369ee3fb3c7af5bc69c611da499c1723638b.png" class="align-center" src="_images/8505cfa7772b1541c20724fff1b8369ee3fb3c7af5bc69c611da499c1723638b.png" style="width: 80%;" /></a>
 </div>
 </div>
 <p>(Full definition deferred)</p>
@@ -950,7 +946,7 @@ convex on <span class="math notranslate nohighlight">\((a, b)\)</span></p></li>
 </div>
 <section id="sufficiency-and-uniqueness-with-shape-conditions">
 <h3>Sufficiency and uniqueness with shape conditions<a class="headerlink" href="#sufficiency-and-uniqueness-with-shape-conditions" title="Permalink to this heading">#</a></h3>
-<div class="important admonition">
+<div class="important admonition" id="univariate-uniqueness">
 <p class="admonition-title">Fact</p>
 <p>For maximizers:</p>
 <ul class="simple">
@@ -1027,16 +1023,16 @@ f(\ell) = \ell^{\alpha}, 0 &lt; \alpha &lt; 1.
 </div>
 </details>
 </div>
-<figure class="align-center" id="id5">
-<a class="reference internal image-reference" href="_images/da3e3ad910ccb28a4b672ed661efdfc0367c570aafdfbff4333a1c47f8c4fcd2.png"><img alt="_images/da3e3ad910ccb28a4b672ed661efdfc0367c570aafdfbff4333a1c47f8c4fcd2.png" src="_images/da3e3ad910ccb28a4b672ed661efdfc0367c570aafdfbff4333a1c47f8c4fcd2.png" style="width: 80%;" /></a>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="_images/742316a5373c1d51f2975315640fb4bdcfa1a5879f3bee137a36d9627fb87816.png"><img alt="_images/742316a5373c1d51f2975315640fb4bdcfa1a5879f3bee137a36d9627fb87816.png" src="_images/742316a5373c1d51f2975315640fb4bdcfa1a5879f3bee137a36d9627fb87816.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Profit maximization with <span class="math notranslate nohighlight">\(p=2\)</span>, <span class="math notranslate nohighlight">\(w=1\)</span>, <span class="math notranslate nohighlight">\(\alpha=0.6\)</span>, <span class="math notranslate nohighlight">\(\ell^*=\)</span><span class="output text_plain">1.5774</span></span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Profit maximization with <span class="math notranslate nohighlight">\(p=2\)</span>, <span class="math notranslate nohighlight">\(w=1\)</span>, <span class="math notranslate nohighlight">\(\alpha=0.6\)</span>, <span class="math notranslate nohighlight">\(\ell^*=\)</span><span class="output text_plain">1.5774</span></span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 </section>
 <section id="functions-of-two-variables">
-<h2>Functions of two variables<a class="headerlink" href="#functions-of-two-variables" title="Permalink to this heading">#</a></h2>
+<span id="bivariate-optimization"></span><h2>Functions of two variables<a class="headerlink" href="#functions-of-two-variables" title="Permalink to this heading">#</a></h2>
 <p>Let’s have a look at some functions of two variables</p>
 <ul class="simple">
 <li><p>How to visualize them</p></li>
@@ -1052,39 +1048,39 @@ f(k, \ell) = k^{\alpha} \ell^{\beta}\\
 \end{split}\]</div>
 <p>Let’s graph it in two dimensions.</p>
 </div>
-<figure class="align-center" id="id6">
+<figure class="align-center" id="id8">
 <a class="reference internal image-reference" href="_images/prod2d.png"><img alt="_images/prod2d.png" src="_images/prod2d.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Production function with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span> (a)</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Production function with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span> (a)</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id7">
+<figure class="align-center" id="id9">
 <a class="reference internal image-reference" href="_images/prod2d_1.png"><img alt="_images/prod2d_1.png" src="_images/prod2d_1.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Production function with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span> (b)</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Production function with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span> (b)</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id8">
+<figure class="align-center" id="id10">
 <a class="reference internal image-reference" href="_images/prod2d_2.png"><img alt="_images/prod2d_2.png" src="_images/prod2d_2.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Production function with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span> (c)</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Production function with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span> (c)</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Like many 3D plots it’s hard to get a good understanding</p>
 <p>Let’s try again with contours plus heat map</p>
-<figure class="align-center" id="id9">
+<figure class="align-center" id="id11">
 <a class="reference internal image-reference" href="_images/prodcontour.png"><img alt="_images/prodcontour.png" src="_images/prodcontour.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Production function with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span>, contours</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Production function with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span>, contours</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In this context the contour lines are called <em><strong>isoquants</strong></em></p>
 <p>Can you see how <span class="math notranslate nohighlight">\(\alpha &lt; \beta\)</span> shows up in the slope of the contours?</p>
 <p>We can drop the colours to see the numbers more clearly</p>
-<figure class="align-center" id="id10">
+<figure class="align-center" id="id12">
 <a class="reference internal image-reference" href="_images/prodcontour2.png"><img alt="_images/prodcontour2.png" src="_images/prodcontour2.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Production function with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span></span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Production function with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span></span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -1102,18 +1098,18 @@ u(x_1, x_2) = \alpha \log(x_1) + \beta \log(x_2)
 <li><p>The log functions mean “diminishing returns” in each good</p></li>
 </ul>
 </div>
-<figure class="align-center" id="id11">
+<figure class="align-center" id="id13">
 <a class="reference internal image-reference" href="_images/log_util.png"><img alt="_images/log_util.png" src="_images/log_util.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Log utility with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span></span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Log utility with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span></span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Let’s look at the contour lines</p>
 <p>For utility functions, contour lines called <em><strong>indifference curves</strong></em></p>
-<figure class="align-center" id="id12">
+<figure class="align-center" id="id14">
 <a class="reference internal image-reference" href="_images/log_util_contour.png"><img alt="_images/log_util_contour.png" src="_images/log_util_contour.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Indifference curves of log utility with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span></span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Indifference curves of log utility with <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span></span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -1126,16 +1122,16 @@ u(x_1, x_2) = x_1 + \log(x_2)
 <li><p>Called quasi-linear because linear in good 1</p></li>
 </ul>
 </div>
-<figure class="align-center" id="id13">
+<figure class="align-center" id="id15">
 <a class="reference internal image-reference" href="_images/ql_utility.png"><img alt="_images/ql_utility.png" src="_images/ql_utility.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Quasi-linear utility</span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Quasi-linear utility</span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id14">
+<figure class="align-center" id="id16">
 <a class="reference internal image-reference" href="_images/ql_utility_contour.png"><img alt="_images/ql_utility_contour.png" src="_images/ql_utility_contour.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Indifference curves of quasi-linear utility</span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Indifference curves of quasi-linear utility</span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -1151,21 +1147,21 @@ u(x_1, x_2) = - (x_1 - b_1)^2 - (x_2 - b_2)^2
 </ul>
 </div>
 <p>Dissatisfaction increases with deviations from the bliss points</p>
-<figure class="align-center" id="id15">
+<figure class="align-center" id="id17">
 <a class="reference internal image-reference" href="_images/quad_util.png"><img alt="_images/quad_util.png" src="_images/quad_util.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Quadratic utility with <span class="math notranslate nohighlight">\(b_1 = 3\)</span> and <span class="math notranslate nohighlight">\(b_2 = 2\)</span></span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Quadratic utility with <span class="math notranslate nohighlight">\(b_1 = 3\)</span> and <span class="math notranslate nohighlight">\(b_2 = 2\)</span></span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id16">
+<figure class="align-center" id="id18">
 <a class="reference internal image-reference" href="_images/quad_util_contour.png"><img alt="_images/quad_util_contour.png" src="_images/quad_util_contour.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Indifference curves quadratic utility with <span class="math notranslate nohighlight">\(b_1 = 3\)</span> and <span class="math notranslate nohighlight">\(b_2 = 2\)</span></span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Indifference curves quadratic utility with <span class="math notranslate nohighlight">\(b_1 = 3\)</span> and <span class="math notranslate nohighlight">\(b_2 = 2\)</span></span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
-<section id="bivariate-optimization">
-<h2>Bivariate Optimization<a class="headerlink" href="#bivariate-optimization" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h2>Bivariate Optimization<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Consider <span class="math notranslate nohighlight">\(f \colon I \to \mathbb{R}\)</span> where <span class="math notranslate nohighlight">\(I \subset \mathbb{R}^2\)</span></p>
 <p>The set <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> is all <span class="math notranslate nohighlight">\((x_1, x_2)\)</span> pairs</p>
 <div class="caution admonition">
@@ -1359,7 +1355,7 @@ f_{12}(x_1, x_2) = f_{21}(x_1, x_2)
 <li><p><span class="math notranslate nohighlight">\(f_{11}(x_1, x_2) \, f_{22}(x_1, x_2) &gt;  f_{12}(x_1, x_2)^2\)</span></p></li>
 </ol>
 <p>When is stationarity sufficient?</p>
-<div class="important admonition">
+<div class="important admonition" id="bivariate-uniqueness">
 <p class="admonition-title">Fact</p>
 <p>If <span class="math notranslate nohighlight">\(f\)</span> is differentiable and strictly concave on <span class="math notranslate nohighlight">\(I\)</span>, then any
 stationary point of <span class="math notranslate nohighlight">\(f\)</span> is also a unique maximizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(I\)</span></p>
@@ -1369,16 +1365,16 @@ stationary point of <span class="math notranslate nohighlight">\(f\)</span> is a
 <p>If <span class="math notranslate nohighlight">\(f\)</span> is differentiable and strictly convex on <span class="math notranslate nohighlight">\(I\)</span>, then any
 stationary point of <span class="math notranslate nohighlight">\(f\)</span> is also a unique minimizer of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(I\)</span></p>
 </div>
-<figure class="align-center" id="id17">
+<figure class="align-center" id="id19">
 <a class="reference internal image-reference" href="_images/concave_max.png"><img alt="_images/concave_max.png" src="_images/concave_max.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Maximizer of a concave function</span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Maximizer of a concave function</span><a class="headerlink" href="#id19" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id18">
+<figure class="align-center" id="id20">
 <a class="reference internal image-reference" href="_images/convex_min.png"><img alt="_images/convex_min.png" src="_images/convex_min.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Minimizer of a convex function</span><a class="headerlink" href="#id18" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Minimizer of a convex function</span><a class="headerlink" href="#id20" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="tip admonition">
@@ -1463,16 +1459,16 @@ p (\beta/w)^{1 - \alpha}  (\alpha/r)^{\alpha}
 <li><p><span class="math notranslate nohighlight">\(\pi_{11}(k, \ell) \, \pi_{22}(k, \ell) &gt;  \pi_{12}(k, \ell)^2\)</span></p></li>
 </ol>
 <p><strong>Exercise:</strong> Show both inequalities satisfied when <span class="math notranslate nohighlight">\(\alpha + \beta &lt; 1\)</span></p>
-<figure class="align-center" id="id19">
+<figure class="align-center" id="id21">
 <a class="reference internal image-reference" href="_images/optprod.png"><img alt="_images/optprod.png" src="_images/optprod.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Profit function when <span class="math notranslate nohighlight">\(p=5\)</span>, <span class="math notranslate nohighlight">\(r=w=2\)</span>, <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span></span><a class="headerlink" href="#id19" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Profit function when <span class="math notranslate nohighlight">\(p=5\)</span>, <span class="math notranslate nohighlight">\(r=w=2\)</span>, <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span></span><a class="headerlink" href="#id21" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id20">
+<figure class="align-center" id="id22">
 <a class="reference internal image-reference" href="_images/optprod_contour.png"><img alt="_images/optprod_contour.png" src="_images/optprod_contour.png" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Optimal choice, <span class="math notranslate nohighlight">\(p=5\)</span>, <span class="math notranslate nohighlight">\(r=w=2\)</span>, <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span></span><a class="headerlink" href="#id20" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Optimal choice, <span class="math notranslate nohighlight">\(p=5\)</span>, <span class="math notranslate nohighlight">\(r=w=2\)</span>, <span class="math notranslate nohighlight">\(\alpha=0.4\)</span>, <span class="math notranslate nohighlight">\(\beta=0.5\)</span></span><a class="headerlink" href="#id22" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1545,8 +1541,6 @@ p (\beta/w)^{1 - \alpha}  (\alpha/r)^{\alpha}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing">Computing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computer-code-in-the-lectures">Computer Code in the Lectures</a></li>
 </ul>
@@ -1558,7 +1552,7 @@ p (\beta/w)^{1 - \alpha}  (\alpha/r)^{\alpha}
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-two-variables">Functions of two variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bivariate-optimization">Bivariate Optimization</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Bivariate Optimization</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nasty-secrets">Nasty secrets</a></li>
 </ul>
 </li>

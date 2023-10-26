@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: solutions to exercise set L, practice questions</div>
+    <div class="bd-header-announcement__content">Latest update: revision lecture 12</div>
   </div>
 
   
@@ -383,8 +383,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-continuity">Parametric continuity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#value-function-and-parameters-of-optimization-problems">Value function and parameters of optimization problems</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondences">Correspondences</a></li>
@@ -412,16 +410,13 @@ document.write(`
 <h1>Envelope and maximum theorems<a class="headerlink" href="#envelope-and-maximum-theorems" title="Permalink to this heading">#</a></h1>
 <p><strong>ECON2125/6012 Lecture 8</strong>
 Fedor Iskhakov</p>
-<section id="announcements-reminders">
-<h2>Announcements &amp; Reminders<a class="headerlink" href="#announcements-reminders" title="Permalink to this heading">#</a></h2>
+<p><strong>Announcements &amp; Reminders</strong></p>
 <ul class="simple">
 <li><p><em>Test 3</em> <a class="reference external" href="https://www.dropbox.com/scl/fi/gktdohn29fdjaw5apmapv/test3_distr_prelim.png?rlkey=aeaig92s79m7xgr2u7h728u06&amp;dl=0">results and discussion</a></p></li>
 <li><p>Thank you for submitting comments to the lecture notes!</p></li>
 <li><p>Exam is scheduled to <strong>Monday, 6 November</strong>  9:00 to 12:15, <em>multiple rooms</em></p></li>
 </ul>
-</section>
-<section id="plan-for-this-lecture">
-<h2>Plan for this lecture<a class="headerlink" href="#plan-for-this-lecture" title="Permalink to this heading">#</a></h2>
+<p><strong>Plan for this lecture</strong></p>
 <ol class="arabic simple">
 <li><p>Correspondences and continuity</p></li>
 <li><p>The maximum theorem</p></li>
@@ -432,7 +427,6 @@ Fedor Iskhakov</p>
 <li><p>Simon &amp; Blume: 19.1, 19.2</p></li>
 <li><p>Sundaram: chapter 9, 5.2.3</p></li>
 </ul>
-</section>
 <section id="parametric-continuity">
 <h2>Parametric continuity<a class="headerlink" href="#parametric-continuity" title="Permalink to this heading">#</a></h2>
 <section id="value-function-and-parameters-of-optimization-problems">
@@ -518,7 +512,7 @@ f(x,\theta) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R},\\
 </div>
 </section>
 <section id="correspondences">
-<h3>Correspondences<a class="headerlink" href="#correspondences" title="Permalink to this heading">#</a></h3>
+<span id="ref-correspondences"></span><h3>Correspondences<a class="headerlink" href="#correspondences" title="Permalink to this heading">#</a></h3>
 <p>Note that the mappings of <span class="math notranslate nohighlight">\(\theta\)</span> to <span class="math notranslate nohighlight">\(\mathcal{D}(\theta)\)</span> or <span class="math notranslate nohighlight">\(\mathcal{D}^\star(\theta)\)</span> are not functions because both <span class="math notranslate nohighlight">\(\mathcal{D}(\theta)\)</span> and often <span class="math notranslate nohighlight">\(\mathcal{D}^\star(\theta)\)</span> have multiple elements for a given <span class="math notranslate nohighlight">\(\theta\)</span></p>
 <div class="caution admonition">
 <p class="admonition-title">Definition</p>
@@ -620,7 +614,7 @@ f({\bf x}_n) \to f({\bf x})
 <li><p><span class="math notranslate nohighlight">\({\bf x}' \in B_\delta({\bf x}) \implies f({\bf x}') \subset B_\epsilon(f({\bf x}))\)</span>, or</p></li>
 <li><p><span class="math notranslate nohighlight">\({\bf x}' \in B_\delta({\bf x}) \ne \emptyset \implies f({\bf x}') \cap B_\epsilon(f({\bf x})) \ne \emptyset\)</span></p></li>
 </ul>
-<div class="caution admonition">
+<div class="caution admonition" id="hemicontinuity">
 <p class="admonition-title">Definition</p>
 <p>Correspondence <span class="math notranslate nohighlight">\(\gamma \colon X \to 2^Y\)</span> is called <em><strong>upper hemi-continuous (uhc)</strong></em> at <span class="math notranslate nohighlight">\({\bf x} \in X\)</span> if for every open set <span class="math notranslate nohighlight">\(V\)</span> <em>containing</em> <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, i.e. <span class="math notranslate nohighlight">\(f({\bf x}) \subset V\)</span>, there is an open set <span class="math notranslate nohighlight">\(U\)</span> such that</p>
 <div class="math notranslate nohighlight">
@@ -671,7 +665,7 @@ f({\bf x}_n) \to f({\bf x})
 <li><p>theory of economic growth</p></li>
 <li><p>game theory and industrial relations</p></li>
 </ul>
-<div class="important admonition">
+<div class="important admonition" id="maximum-theorem">
 <p class="admonition-title">The maximum theorem</p>
 <p>Let <span class="math notranslate nohighlight">\(f(x,\theta) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span> be a continuous function, and <span class="math notranslate nohighlight">\(\mathcal{D}(\theta)\)</span> be a compact-valued continuous correspondence.
 Then the value function <span class="math notranslate nohighlight">\(V(\theta)\)</span> is continuous on <span class="math notranslate nohighlight">\(\mathbb{R}^K\)</span> and <span class="math notranslate nohighlight">\(\mathcal{D}^\star(\theta)\)</span> is a compact-valued upper hemi-continuous correspondence on <span class="math notranslate nohighlight">\(\Theta\)</span></p>
@@ -690,7 +684,7 @@ V(\theta) \text{ continuous}\\
 \mathcal{D}^\star(\theta) \text{ upper hemi-continuous}
 \end{array}
 \end{split}\]</div>
-<div class="important admonition">
+<div class="important admonition" id="maximum-theorem-convexity">
 <p class="admonition-title">Maximum theorem under convexity</p>
 <p>Let <span class="math notranslate nohighlight">\(f(x,\theta) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span> be a continuous function, and <span class="math notranslate nohighlight">\(\mathcal{D}(\theta)\)</span> be a compact-valued continuous correspondence.
 Then:</p>
@@ -1111,7 +1105,7 @@ V(\theta)
 <li><p><span class="math notranslate nohighlight">\(\theta \in \mathbb{R}^K\)</span> are parameters</p></li>
 <li><p><span class="math notranslate nohighlight">\(V(\theta) \colon \mathbb{R}^K \to \mathbb{R}\)</span> is a value function</p></li>
 </ul>
-<div class="important admonition">
+<div class="important admonition" id="envelope-unconstrained">
 <p class="admonition-title">Envelope theorem for unconstrained problems</p>
 <p>Let <span class="math notranslate nohighlight">\(f(x,\theta) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span> be a differentiable function, and <span class="math notranslate nohighlight">\(x^\star(\theta)\)</span> be the maximizer of <span class="math notranslate nohighlight">\(f(x,\theta)\)</span> for every <span class="math notranslate nohighlight">\(\theta\)</span>.
 Suppose that <span class="math notranslate nohighlight">\(x^\star(\theta)\)</span> is differentiable function itself.
@@ -1150,7 +1144,7 @@ What is the (approximate) effect of a unit increase in <span class="math notrans
 V'(a) = \frac{\partial f}{\partial a} (x^\star(a),a) = 2x + 8a \Big|_{x=a} = 10a
 \]</div>
 </div>
-<div class="important admonition">
+<div class="important admonition" id="envelope-constrained">
 <p class="admonition-title">Envelope theorem for constrained problems</p>
 <p>Consider an equality constrained optimization problem</p>
 <div class="math notranslate nohighlight">
@@ -1335,8 +1329,6 @@ V(p_1,p_2,m) = \alpha \log\left(
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#announcements-reminders">Announcements &amp; Reminders</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-for-this-lecture">Plan for this lecture</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-continuity">Parametric continuity</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#value-function-and-parameters-of-optimization-problems">Value function and parameters of optimization problems</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correspondences">Correspondences</a></li>
