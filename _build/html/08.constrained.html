@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: revision lecture 12</div>
+    <div class="bd-header-announcement__content">Latest update: typos/errors in the solutions of exercise set H and G corrected!</div>
   </div>
 
   
@@ -1459,10 +1459,10 @@ x_1 p_1 + x_2 p_2 -m = 0
 </figure>
 <p>Let’s look at the systematic solution approach where the corner solutions will emerge naturally when they are optimal.</p>
 <div class="important admonition" id="kkt-conditions">
-<p class="admonition-title">Karush-Kuhn-Tucker conditions</p>
+<p class="admonition-title">Karush-Kuhn-Tucker conditions (maximization)</p>
 <p>Let <span class="math notranslate nohighlight">\(f \colon \mathbb{R}^N \to \mathbb{R}\)</span> and <span class="math notranslate nohighlight">\(g \colon \mathbb{R}^N \to \mathbb{R}^K\)</span> be continuously differentiable functions.</p>
 <p>Let <span class="math notranslate nohighlight">\(D = U \cap \{ {\bf x} \colon g_i({\bf x}) \le 0, i=1,\dots,K \}\)</span> where <span class="math notranslate nohighlight">\(U \subset \mathbb{R}^N\)</span> is an open set.</p>
-<p>Suppose that <span class="math notranslate nohighlight">\({\bf x}^\star \in D\)</span> is a local extremum of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(D\)</span> and that the gradients of the constraint functions <span class="math notranslate nohighlight">\(g_i\)</span> <em>corresponding to the binding constraints</em> are linearly independent at <span class="math notranslate nohighlight">\({\bf x}^\star\)</span> (equivalently, the rank of the matrix composed of the gradients of the binding constraints is equal to the number of binding constraints).</p>
+<p>Suppose that <span class="math notranslate nohighlight">\({\bf x}^\star \in D\)</span> is a local <strong>maximum</strong> of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(D\)</span> and that the gradients of the constraint functions <span class="math notranslate nohighlight">\(g_i\)</span> <em>corresponding to the binding constraints</em> are linearly independent at <span class="math notranslate nohighlight">\({\bf x}^\star\)</span> (equivalently, the rank of the matrix composed of the gradients of the binding constraints is equal to the number of binding constraints).</p>
 <p>Then there exists a vector <span class="math notranslate nohighlight">\(\lambda^\star \in \mathbb{R}^K\)</span> such that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1479,6 +1479,22 @@ Df({\bf x}^\star) - \sum_{i=1}^K \lambda_i^\star Dg_i({\bf x}^\star) =
 <div class="dropdown admonition">
 <p class="admonition-title">Proof</p>
 <p>See Sundaram 6.5</p>
+</div>
+<div class="important admonition" id="kkt-conditions-minimization">
+<p class="admonition-title">Karush-Kuhn-Tucker conditions (miminization)</p>
+<p>In the settings of KKT conditions (maximization), suppose that <span class="math notranslate nohighlight">\({\bf x}^\star \in D\)</span> is a local <strong>minimum</strong> of <span class="math notranslate nohighlight">\(f\)</span> on <span class="math notranslate nohighlight">\(D\)</span> as before the matrix composed of the gradients of the binding constraints has full rank.</p>
+<p>Then there exists a vector <span class="math notranslate nohighlight">\(\lambda^\star \in \mathbb{R}^K\)</span> such that (<em>note opposite sign</em>)</p>
+<div class="math notranslate nohighlight">
+\[
+Df({\bf x}^\star) + \lambda^\star \cdot Dg({\bf x}^\star) =
+Df({\bf x}^\star) + \sum_{i=1}^K \lambda_i^\star Dg_i({\bf x}^\star) =
+{\bf 0}
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda_i^\star \ge 0 \text{ with } \lambda_i^\star g_i({\bf x}^\star) = 0 \; i=1,\dots,K
+\]</div>
 </div>
 <ul class="simple">
 <li><p>Very similar to the Lagrange theorem, but now we have inequalities!</p></li>

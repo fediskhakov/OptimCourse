@@ -116,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
   <div class="bd-header-announcement container-fluid bd-header-announcement">
-    <div class="bd-header-announcement__content">Latest update: revision lecture 12</div>
+    <div class="bd-header-announcement__content">Latest update: typos/errors in the solutions of exercise set H and G corrected!</div>
   </div>
 
   
@@ -429,15 +429,8 @@ x \ge 0, y \ge 0 ,z \ge 0,\\
 <p class="admonition-title">Hint</p>
 <p>If you don’t know how to compute a higher order determinant, you may skip it, but explain the decision process which involves these determinants</p>
 </div>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-Solutions<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text"><strong>Question H.1</strong></p>
-<p class="sd-card-text">We first wite down the Lagrangian:</p>
+<p><strong>Question H.1</strong></p>
+<p>We first wite down the Lagrangian:</p>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -445,27 +438,30 @@ Solutions<div class="sd-summary-down docutils">
 = xy - \lambda(x^2 + y^2 - 2a^2).
 %
 \]</div>
-<p class="sd-card-text">We have:</p>
+<p>We have:</p>
 <div class="math notranslate nohighlight">
 \[
 %
-\nabla \mathcal{L}(\lambda, x, y) = \left[ \begin{array}{ccc}
+\nabla \mathcal{L}(\lambda, x, y) = \left( \begin{array}{ccc}
 -(x^2 + y^2 - 2a^2), &amp; y - 2\lambda x, &amp; x - 2\lambda y
 \end{array}
-\right].
+\right).
 %
 \]</div>
-<p class="sd-card-text">F.O.C.s are <span class="math notranslate nohighlight">\(\nabla \mathcal{L}(\lambda, x, y) = 0\)</span>.</p>
-<p class="sd-card-text">If <span class="math notranslate nohighlight">\(\lambda = 0\)</span>, then <span class="math notranslate nohighlight">\(x=y=0\)</span>, which contradicts with <span class="math notranslate nohighlight">\(x^2 + y^2 - 2a^2 = 0\)</span> and <span class="math notranslate nohighlight">\(a&gt;0\)</span>. Thus, <span class="math notranslate nohighlight">\(\lambda \neq 0\)</span>.</p>
-<p class="sd-card-text">If <span class="math notranslate nohighlight">\(x=0\)</span>, then <span class="math notranslate nohighlight">\(\lambda = y = 0\)</span>, which contradicts with <span class="math notranslate nohighlight">\(\lambda \neq 0\)</span>. Thus, <span class="math notranslate nohighlight">\(x \neq 0\)</span>.</p>
-<p class="sd-card-text">Similarly, we can prove <span class="math notranslate nohighlight">\(y \neq 0\)</span>.</p>
-<p class="sd-card-text">Thus, from <span class="math notranslate nohighlight">\(y = 2 \lambda x, x = 2 \lambda y\)</span> and <span class="math notranslate nohighlight">\(x, y, \lambda \neq 0\)</span> we know <span class="math notranslate nohighlight">\(x=y\)</span> or <span class="math notranslate nohighlight">\(x=-y\)</span>. Plug this into
-<span class="math notranslate nohighlight">\(x^2 + y^2 = 2a^2\)</span> we get four critical points:</p>
-<p class="sd-card-text">(1). <span class="math notranslate nohighlight">\(x=a, y=a, \lambda = \frac{1}{2}\)</span>,</p>
-<p class="sd-card-text">(2). <span class="math notranslate nohighlight">\(x=a, y=-a, \lambda = -\frac{1}{2}\)</span>,</p>
-<p class="sd-card-text">(3). <span class="math notranslate nohighlight">\(x=a, y=-a, \lambda = -\frac{1}{2}\)</span>,</p>
-<p class="sd-card-text">(4). <span class="math notranslate nohighlight">\(x=-a, y=-a, \lambda = \frac{1}{2}\)</span>.</p>
-<p class="sd-card-text">The bordered Hessian:</p>
+<p>F.O.C.s are <span class="math notranslate nohighlight">\(\nabla \mathcal{L}(\lambda, x, y) = 0\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(\lambda = 0\)</span>, then <span class="math notranslate nohighlight">\(x=y=0\)</span>, which contradicts with <span class="math notranslate nohighlight">\(x^2 + y^2 - 2a^2 = 0\)</span> because <span class="math notranslate nohighlight">\(a&gt;0\)</span>. Thus, <span class="math notranslate nohighlight">\(\lambda \neq 0\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(x=0\)</span>, then <span class="math notranslate nohighlight">\(\lambda = y = 0\)</span>, which contradicts with <span class="math notranslate nohighlight">\(\lambda \neq 0\)</span>. Thus, <span class="math notranslate nohighlight">\(x \neq 0\)</span>.</p>
+<p>Similarly, we can prove <span class="math notranslate nohighlight">\(y \neq 0\)</span>.</p>
+<p>Thus, we have <span class="math notranslate nohighlight">\(y = 2 \lambda x\)</span>, <span class="math notranslate nohighlight">\(x = 2 \lambda y\)</span> and <span class="math notranslate nohighlight">\(x,y,\lambda \ne 0\)</span>. Combining the two equation we have <span class="math notranslate nohighlight">\(y = 4 \lambda^2 y\)</span> and <span class="math notranslate nohighlight">\(\lambda^2 = 1/4\)</span>.
+Consider the two cases one by one: for <span class="math notranslate nohighlight">\(\lambda = 1/2\)</span> we have <span class="math notranslate nohighlight">\(x=y\)</span>, and for <span class="math notranslate nohighlight">\(\lambda = -1/2\)</span> we have <span class="math notranslate nohighlight">\(x=-y\)</span>.  Taking into account the constraint, each of the two cases leads to two each, namely <span class="math notranslate nohighlight">\(x=\pm a\)</span> and <span class="math notranslate nohighlight">\(y= \pm a\)</span>.</p>
+<p>Altogether we get four critical points:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(x=a, y=a, \lambda = \frac{1}{2}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x=a, y=-a, \lambda = -\frac{1}{2}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x=-a, y=a, \lambda = -\frac{1}{2}\)</span>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(x=-a, y=-a, \lambda = \frac{1}{2}\)</span>.</p></li>
+</ol>
+<p>The bordered Hessian:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 %
@@ -480,7 +476,7 @@ H\mathcal{L}(\lambda, x, y)
 \right]
 %
 \end{split}\]</div>
-<p class="sd-card-text">Since there are two variables, one constraint, we only
+<p>Since there are two variables, one constraint, we only
 need to check the sign of the determinant of the bordered Hessian (the last leading principal minor):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -488,7 +484,7 @@ need to check the sign of the determinant of the bordered Hessian (the last lead
 \det(H\mathcal{L}(\lambda, x, y)) = 8\big(xy + \lambda (x^2 + y^2)\big).
 %
 \]</div>
-<p class="sd-card-text">Notice that:</p>
+<p>Notice that:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 %
@@ -498,11 +494,11 @@ need to check the sign of the determinant of the bordered Hessian (the last lead
 \end{align*}
 %
 \end{split}\]</div>
-<p class="sd-card-text">Thus, we know that the critical points <span class="math notranslate nohighlight">\((a, a)\)</span> and <span class="math notranslate nohighlight">\((-a, -a)\)</span> are local maximizers, and the critical points <span class="math notranslate nohighlight">\((a, -a)\)</span> and <span class="math notranslate nohighlight">\((-a, a)\)</span> are local minimizers.</p>
-<p class="sd-card-text">In this question, the gloabl maximizer/minimizer exists by Weierstrass theorem and must be some local maximizer/minimizer.
+<p>Thus, we know that the critical points <span class="math notranslate nohighlight">\((a, a)\)</span> and <span class="math notranslate nohighlight">\((-a, -a)\)</span> are local maximizers, and the critical points <span class="math notranslate nohighlight">\((a, -a)\)</span> and <span class="math notranslate nohighlight">\((-a, a)\)</span> are local minimizers.</p>
+<p>In this question, the gloabl maximizer/minimizer exists by Weierstrass theorem and must be some local maximizer/minimizer.
 From <span class="math notranslate nohighlight">\(f(a, a) = f(-a, -a) = a^2, f(-a, a) = f(a, -a) = -a^2\)</span>, we know the maxima is <span class="math notranslate nohighlight">\(a^2\)</span> and the minima is <span class="math notranslate nohighlight">\(-a^2\)</span>.</p>
-<p class="sd-card-text"><strong>Question H.2</strong></p>
-<p class="sd-card-text">We first wite down the Lagrangian:</p>
+<p><strong>Question H.2</strong></p>
+<p>We first wite down the Lagrangian:</p>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -511,7 +507,7 @@ From <span class="math notranslate nohighlight">\(f(a, a) = f(-a, -a) = a^2, f(-
 - \lambda (\frac{1}{x^2} + \frac{1}{y^2} - \frac{1}{a^2}).
 %
 \]</div>
-<p class="sd-card-text">The F.O.C.s are:</p>
+<p>The F.O.C.s are:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 %
@@ -524,10 +520,10 @@ From <span class="math notranslate nohighlight">\(f(a, a) = f(-a, -a) = a^2, f(-
 = 0.
 %
 \end{split}\]</div>
-<p class="sd-card-text">Solving F.O.C.s, we get two solutions:</p>
-<p class="sd-card-text">(1). <span class="math notranslate nohighlight">\(x=y=\sqrt{2}a, \lambda = \frac{\sqrt{2}}{2}a.\)</span></p>
-<p class="sd-card-text">(2). <span class="math notranslate nohighlight">\(x=y=-\sqrt{2}a, \lambda = -\frac{\sqrt{2}}{2}a.\)</span></p>
-<p class="sd-card-text">The bordered Hessian:</p>
+<p>Solving F.O.C.s, we get two solutions:</p>
+<p>(1). <span class="math notranslate nohighlight">\(x=y=\sqrt{2}a, \lambda = \frac{\sqrt{2}}{2}a.\)</span></p>
+<p>(2). <span class="math notranslate nohighlight">\(x=y=-\sqrt{2}a, \lambda = -\frac{\sqrt{2}}{2}a.\)</span></p>
+<p>The bordered Hessian:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 %
@@ -542,7 +538,7 @@ H\mathcal{L}(\lambda, x, y)
 \right] 
 %
 \end{split}\]</div>
-<p class="sd-card-text">Since there are two variables, one constraint, we only
+<p>Since there are two variables, one constraint, we only
 need to check the sign of the determinant of the bordered Hessian (the last leading principal minor):</p>
 <div class="math notranslate nohighlight">
 \[
@@ -553,10 +549,10 @@ need to check the sign of the determinant of the bordered Hessian (the last lead
 \Big).
 %
 \]</div>
-<p class="sd-card-text">Since for both critical points, we have <span class="math notranslate nohighlight">\(x=y=2\lambda\)</span>,
+<p>Since for both critical points, we have <span class="math notranslate nohighlight">\(x=y=2\lambda\)</span>,
 we only need to consider
 <span class="math notranslate nohighlight">\(\det(H\mathcal{L}(x/2, x, x)) = 8/x^9\)</span>.</p>
-<p class="sd-card-text">Notice that:</p>
+<p>Notice that:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 %
@@ -567,15 +563,15 @@ we only need to consider
 \end{align*}
 %
 \end{split}\]</div>
-<p class="sd-card-text">Thus, we know that the critical point <span class="math notranslate nohighlight">\((\sqrt{2}a, \sqrt{2}a)\)</span> is local maximizer, and the critical points <span class="math notranslate nohighlight">\((-\sqrt{2}a, -\sqrt{2}a)\)</span> are local minimizers.</p>
-<p class="sd-card-text">In this question, the gloabl maximizer/minimizer exists by Weierstrass theorem and must be some local maximizer/minimizer.
+<p>Thus, we know that the critical point <span class="math notranslate nohighlight">\((\sqrt{2}a, \sqrt{2}a)\)</span> is local maximizer, and the critical points <span class="math notranslate nohighlight">\((-\sqrt{2}a, -\sqrt{2}a)\)</span> are local minimizers.</p>
+<p>In this question, the gloabl maximizer/minimizer exists by Weierstrass theorem and must be some local maximizer/minimizer.
 We know the maxima is <span class="math notranslate nohighlight">\(f(\sqrt{2}a, \sqrt{2}a) = \frac{\sqrt{2}}{a}\)</span> and the minima is <span class="math notranslate nohighlight">\(f(-\sqrt{2}a, -\sqrt{2}a) = -\frac{\sqrt{2}}{a}\)</span>.</p>
-<p class="sd-card-text"><strong>Question H.3</strong></p>
-<p class="sd-card-text">First, notice that if <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(f(0, y,z) = 0 &lt; f(1, 1, 1)=1\)</span>, thus, <span class="math notranslate nohighlight">\(x&gt;0\)</span>. Similarly, we can prove <span class="math notranslate nohighlight">\(y &gt; 0\)</span> and <span class="math notranslate nohighlight">\(z &gt; 0\)</span>.</p>
-<p class="sd-card-text">Second, notice that if <span class="math notranslate nohighlight">\(x + 2y + z &lt; 10\)</span>, we can set <span class="math notranslate nohighlight">\(x^{\prime} = 10 - 2y - z\)</span>, which implies <span class="math notranslate nohighlight">\(x^{\prime} &gt; x\)</span>
+<p><strong>Question H.3</strong></p>
+<p>First, notice that if <span class="math notranslate nohighlight">\(x=0\)</span>, <span class="math notranslate nohighlight">\(f(0, y,z) = 0 &lt; f(1, 1, 1)=1\)</span>, thus, <span class="math notranslate nohighlight">\(x&gt;0\)</span>. Similarly, we can prove <span class="math notranslate nohighlight">\(y &gt; 0\)</span> and <span class="math notranslate nohighlight">\(z &gt; 0\)</span>.</p>
+<p>Second, notice that if <span class="math notranslate nohighlight">\(x + 2y + z &lt; 10\)</span>, we can set <span class="math notranslate nohighlight">\(x^{\prime} = 10 - 2y - z\)</span>, which implies <span class="math notranslate nohighlight">\(x^{\prime} &gt; x\)</span>
 and <span class="math notranslate nohighlight">\(f(x^{\prime}, y, z) &gt; f(x, y, z)\)</span>.</p>
-<p class="sd-card-text">Thus, the only binding constraint is <span class="math notranslate nohighlight">\(x + 2y + z = 10\)</span>.</p>
-<p class="sd-card-text">The Lagrangian is:</p>
+<p>Thus, the only binding constraint is <span class="math notranslate nohighlight">\(x + 2y + z = 10\)</span>.</p>
+<p>The Lagrangian is:</p>
 <div class="math notranslate nohighlight">
 \[
 %
@@ -583,7 +579,7 @@ and <span class="math notranslate nohighlight">\(f(x^{\prime}, y, z) &gt; f(x, y
 = x y^{1/2}z^{1/3} - \lambda (3x + 2y + z -10).
 %
 \]</div>
-<p class="sd-card-text">The gradient of the Lagrangian w.r.t. <span class="math notranslate nohighlight">\((\lambda, x, y, z)\)</span> is:</p>
+<p>The gradient of the Lagrangian w.r.t. <span class="math notranslate nohighlight">\((\lambda, x, y, z)\)</span> is:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 %
@@ -597,8 +593,8 @@ and <span class="math notranslate nohighlight">\(f(x^{\prime}, y, z) &gt; f(x, y
 \end{pmatrix}.
 %
 \end{split}\]</div>
-<p class="sd-card-text">Solve <span class="math notranslate nohighlight">\(\nabla \mathcal{L}(\lambda, x, y, z) = 0\)</span>, we get <span class="math notranslate nohighlight">\(x = z = \frac{4}{3}y = \frac{20}{11}\)</span>.</p>
-<p class="sd-card-text">The bordered Hessian:</p>
+<p>Solve <span class="math notranslate nohighlight">\(\nabla \mathcal{L}(\lambda, x, y, z) = 0\)</span>, we get <span class="math notranslate nohighlight">\(x = z = \frac{4}{3}y = \frac{20}{11}\)</span>.</p>
+<p>The bordered Hessian:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 %
@@ -612,9 +608,9 @@ H\mathcal{L}(\lambda, x, y, z)
 \end{bmatrix}.
 %
 \end{split}\]</div>
-<p class="sd-card-text">Since there are three variables, one constraint, we need to check the determinant of the bordered Hessian and the last but one
+<p>Since there are three variables, one constraint, we need to check the determinant of the bordered Hessian and the last but one
 leading principal minor (Let us denote the matrix composed of the intersection of first three rows and first three columns of <span class="math notranslate nohighlight">\(H\mathcal{L}\)</span> by <span class="math notranslate nohighlight">\(M(\lambda, x, y, z)\)</span>).</p>
-<p class="sd-card-text">We can simplify <span class="math notranslate nohighlight">\(H\mathcal{L}\)</span> by using
+<p>We can simplify <span class="math notranslate nohighlight">\(H\mathcal{L}\)</span> by using
 <span class="math notranslate nohighlight">\(x = z = \frac{4}{3}y\)</span> at the critical point:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -629,28 +625,27 @@ H\mathcal{L}(\lambda, z, \frac{3}{4}z, z)
 \end{bmatrix}.
 %
 \end{split}\]</div>
-<p class="sd-card-text">The determinants are:</p>
+<p>The determinants are:</p>
 <div class="math notranslate nohighlight">
 \[
 %
 \det(H\mathcal{L}(\lambda, z, \frac{3}{4}z, z))
 = -\frac{11}{3}z^{-1/3} &lt; 0%
 \]</div>
-<p class="sd-card-text">and</p>
+<p>and</p>
 <div class="math notranslate nohighlight">
 \[
 %
 \det(M(\lambda, z, \frac{3}{4}z, z)) = 6\sqrt{3}z^{-1/6} &gt; 0
 %
 \]</div>
-<p class="sd-card-text">since <span class="math notranslate nohighlight">\(z = 20/11\)</span> at the critical point.</p>
-<p class="sd-card-text">Thus, the sign of the last leading principal minor is negative, and the sign of the determinant of the last but one leading principal minor is positive (recall there are three variables, and we need to confirm
+<p>since <span class="math notranslate nohighlight">\(z = 20/11\)</span> at the critical point.</p>
+<p>Thus, the sign of the last leading principal minor is negative, and the sign of the determinant of the last but one leading principal minor is positive (recall there are three variables, and we need to confirm
 <span class="math notranslate nohighlight">\(H_{(x, y, z)}\mathcal{L}(\lambda, x, y, z)\)</span> is
 negative definite on the constraint set). Thus, the critical point is a local maximizer.</p>
-<p class="sd-card-text">By Weierstrass theorem, we know the unique local maximizer must be the global maximizer.
+<p>By Weierstrass theorem, we know the unique local maximizer must be the global maximizer.
 The maxima is <span class="math notranslate nohighlight">\(f(20/11, 15/11, 20/11) = (\frac{20}{11})^{4/3} (\frac{15}{11})^{1/2}\)</span>.</p>
-</div>
-</details></section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
