@@ -1,0 +1,718 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercise set L &#8212; ECON2125/6012</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '11.exercises.L';</script>
+    <link rel="canonical" href="https://optim.iskh.me/11.exercises.L.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Practice questions" href="99.practice_questions.html" />
+    <link rel="prev" title="Exercise set K" href="10.exercises.K.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Welcome to ECON2125/6012 in semester 1, 2024</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="00.index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/optim_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/optim_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00.index.html">
+                    ECON2125/6012
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01.introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.optimization_intro.html">Univariate and bivariate optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.set_theory.html">Elements of set theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.basic_analysis.html">Basics of real analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.linear_algebra.html">Elements of linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.optimization_fundamentals.html">Fundamentals of optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.unconstrained.html">Unconstrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.constrained.html">Constrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.practical_session.html">Guest lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.envelope_maximum.html">Envelope and maximum theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.dynamic.html">Dynamic optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.revision.html">Revision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.exercises.A.html">Exercise set A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.exercises.B.html">Exercise set B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.exercises.C.html">Exercise set C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.exercises.D.html">Exercise set D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.exercises.E.html">Exercise set E</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.exercises.F.html">Exercise set F</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.exercises.G.html">Exercise set G</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.exercises.H.html">Exercise set H</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.exercises.K.html">Exercise set K</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise set L</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99.practice_questions.html">Practice questions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse/issues/new?title=Issue%20on%20page%20%2F11.exercises.L.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/11.exercises.L.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise set L</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-l-1">Question L.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-l-2">Question L.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-l-3">Question L.3</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <a class="reference internal image-reference" href="_images/cake.png"><img alt="_images/cake.png" class="align-left" src="_images/cake.png" style="width: 10%;" /></a>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-set-l">
+<h1>Exercise set L<a class="headerlink" href="#exercise-set-l" title="Permalink to this heading">#</a></h1>
+<p>Please, see the
+<a class="reference internal" href="02.exercises.A.html"><span class="doc std std-doc"><strong>general comment on the tutorial exercises</strong></span></a></p>
+<section id="question-l-1">
+<h2>Question L.1<a class="headerlink" href="#question-l-1" title="Permalink to this heading">#</a></h2>
+<p>Consider the dynamic optimization problem of dividing a fixed amount of resource over time to maximize the discounted sum of utilities in each period, which can be represented by a simple process of eating a cake over time. (This type of problems is known as <code class="docutils literal notranslate"><span class="pre">cake</span> <span class="pre">eating</span></code>).</p>
+<p>Assume that:</p>
+<ul class="simple">
+<li><p>The initial size of the cake be <span class="math notranslate nohighlight">\(m_0\)</span></p></li>
+<li><p>The cake has to be eaten within <span class="math notranslate nohighlight">\(T=3\)</span> days</p></li>
+<li><p>The choice is how much cake to eat each day, denoted <span class="math notranslate nohighlight">\(0 \le c_t \le m_t\)</span>, where <span class="math notranslate nohighlight">\(m_t\)</span> is the size of the cake in the morning of day <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p>Naturally, what is not eaten in period <span class="math notranslate nohighlight">\(t\)</span> is left for the future, so <span class="math notranslate nohighlight">\(m_{t+1}=m_t-c_t\)</span></p></li>
+<li><p>Let the utility be additively separable, i.e. the total utility represented by a sum of per-day utilities denoted <span class="math notranslate nohighlight">\(u(c_t)\)</span></p></li>
+<li><p>Assume that each day the cake becomes less tasty, so that from the point of view of day <span class="math notranslate nohighlight">\(t\)</span> the utility of eating the cake the next day is discounted by (i.e. multiplied with) a coefficient <span class="math notranslate nohighlight">\(0 &lt; \beta &lt; 1\)</span></p></li>
+</ul>
+<p>Tasks:</p>
+<ol class="arabic simple">
+<li><p>Write down the dynamic optimization problem in the form of <em>Bellman equation</em></p></li>
+<li><p>Derive the value function and the policy function in each period starting from the last, i.e. performing by-hand backwards induction, when <span class="math notranslate nohighlight">\(u(c_t)=\log(c_t)\)</span></p></li>
+</ol>
+</section>
+<section id="question-l-2">
+<h2>Question L.2<a class="headerlink" href="#question-l-2" title="Permalink to this heading">#</a></h2>
+<p>Now consider the infinite horizon version of the cake eating problem. The only difference from your formulation in the previous question is that <span class="math notranslate nohighlight">\(T=\infty\)</span> and the termination condition in the <em>Bellman equation</em> disappears.</p>
+<p>The <em>Bellman equation</em> is now a functional equation which solution is given by a fixed point of the contracting Bellman operator in the functional space.
+The only by-hand solution in this case is to guess the solution and verify it.</p>
+<p>Find the solution (value and policy functions) of the problem by guessing a functional form, and then verifying that it satisfies the <em>Bellman equation</em>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>By guessing a functional form we mean that you should guess the form of the value function as function of the state variables and some intermediate parameters, which can be determined during the verification step.</p>
+</div>
+</section>
+<section id="question-l-3">
+<h2>Question L.3<a class="headerlink" href="#question-l-3" title="Permalink to this heading">#</a></h2>
+<p>The first order condition for the cake eating problem is given by a so-called Euler equation which links the optimal consumption level in any period to the optimal consumption level in the next period, and is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d u}{d c}\big(c^\star(m)\big) = \beta \frac{d u}{d c}\big(c^\star(m')\big)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(m' = m-c^\star(m)\)</span> the size of the cake in the next time period under the optimal consumption.</p>
+<ol class="arabic simple">
+<li><p>Derive this equation</p></li>
+<li><p>Verify that solving it for the infinite horizon case with <span class="math notranslate nohighlight">\(u(c)=\log(c)\)</span> gives the same solution as in the previous question.</p></li>
+</ol>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Euler equation is a combination of the first order conditions <em>and</em> the envelope theorem applied to the value function.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solutions</p>
+<p><strong>Question L.1</strong></p>
+<p>Overall goal is to maximize the discounted expected utility</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{t=1}^T\beta^{t-1}u(c_{t}) 
+\to \max_{\{c_{t}\}_{t=1}^T}
+\]</div>
+<p>The <em>Bellman equation</em> is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V_t(m_t) = 
+\begin{cases}
+\max_{0 \le c_t \le m_t} \big( u(c_t) + \beta V(m_t-c_t) \big)
+&amp;,\text{ if } t&lt;T=3\\
+\max_{0 \le c_t \le m_t} u(c_t) 
+&amp;,\text{ if } t=T=3
+\end{cases}
+\end{split}\]</div>
+<ul class="simple">
+<li><p>the state space is given by one variable <span class="math notranslate nohighlight">\(m_t\)</span></p></li>
+<li><p>the choice space is given by one variable <span class="math notranslate nohighlight">\(c_t\)</span></p></li>
+<li><p>the preferences are given by the utility function <span class="math notranslate nohighlight">\(u(c_t)=\log(c_t)\)</span> and the discount factor <span class="math notranslate nohighlight">\(\beta\)</span></p></li>
+<li><p>the beliefs are given by the transition rule <span class="math notranslate nohighlight">\(m_{t+1}=m_t-c_t\)</span></p></li>
+</ul>
+<hr class="docutils" />
+<p>Performing backwards induction by hand:</p>
+<p>In the terminal period <span class="math notranslate nohighlight">\(t=T=3\)</span> the problem is</p>
+<div class="math notranslate nohighlight">
+\[
+\max_{0 \le c_T \le m_T} \log(c_T),
+\]</div>
+<p>logarithm is continuous, feasible set is a closed interval (closed and bounded), so the solution exists by the Weierrstrass theorem. There are no stationary points (FOC <span class="math notranslate nohighlight">\(1/c_T = 0\)</span> does not have solutions), so only have to look at the bondary points. Thus, the solution is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{l}
+c_3^\star=m_3 \\
+V_3(m_3) = \log(m_3)
+\end{array}
+\end{split}\]</div>
+<p>In the period <span class="math notranslate nohighlight">\(t=T-1=2\)</span> the optimization problem takes the form</p>
+<div class="math notranslate nohighlight">
+\[
+\max_{0 \le c_2 \le m_2} \big( \log(c_2) + \beta \log(m_2 - c_2) \big)
+\]</div>
+<p>Solving FOC gives <span class="math notranslate nohighlight">\(c_2^\star = \frac{m_2}{1+\beta}\)</span>, which after noting that the objective function is strictly concave, is the global maximum. Thus, the solution is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{l}
+c_2^\star=\frac{m_2}{1+\beta} \\
+V_2(m_2) = \log(c_2^\star) + \beta \log(m_2 - c_2^\star) = (1+\beta)\log(\frac{m_2}{1+\beta} ) + \beta \log(\beta)
+\end{array}
+\end{split}\]</div>
+<p>In the period <span class="math notranslate nohighlight">\(t=T-2=1\)</span> the optimization problem takes the form</p>
+<div class="math notranslate nohighlight">
+\[
+\max_{0 \le c_1 \le m_1} \Big( \log(c_1) + \beta \Big[ (1+\beta)\log(\frac{m_1-c_1}{1+\beta} ) + \beta \log(\beta) \Big] \Big)
+\]</div>
+<p>FOC for this problems is similar to the case of <span class="math notranslate nohighlight">\(t=2\)</span>, and again it is not hard to show that the objective function is strictly concave, making the FOC a sufficient condition for maximum.  The solution is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{l}
+c_1^\star=\frac{m_1}{1+\beta(1+\beta)} \\
+V_1(m_1) = \big(1+\beta(1+\beta)\big)\log(\frac{m_1}{1+\beta(1+\beta)} ) + \big(\beta(1+\beta)+\beta^2\big) \log(\beta)
+\end{array}
+\end{split}\]</div>
+<p>Obviously, this approach can be continued and is thus applicable for any <span class="math notranslate nohighlight">\(T\)</span>, although the algebra becomes more and more tedious. In practice, after a few steps one can guess the general form of a solution (involving <span class="math notranslate nohighlight">\(t\)</span>) and verify it by plugging it into the Bellman equation.</p>
+<p><strong>Question L.2</strong></p>
+<p>The main change for the infinite horizon is that the Bellman equation does not have a special termination condition for <span class="math notranslate nohighlight">\(t=T\)</span>, and that the time subscripts can be dropped. The later is due to the fact that the maximum attainable utility can be achieved in any period, so the optimal choice is the same in all periods, making the value function also time-invariant.</p>
+<p>Let’s find the solution by guessing a functional form for the value function: <span class="math notranslate nohighlight">\(V(m)=A+B\log(m)\)</span> where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are some parameters to be determined. Then the Bellman equation becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{rcl}
+V(m) &amp; = &amp; \max_{c}\big\{u(c)+\beta V(m-c)\big\} \\
+A+B\log(m) &amp; = &amp; \max_{c} \big\{\log(c)+\beta[A+B\log(()m-c)] \big\}
+\end{array}
+\end{split}\]</div>
+<p>Now we can determine <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> and find the optimal rule for cake consumption.</p>
+<p>F.O.C. for <span class="math notranslate nohighlight">\(c\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{c} - \frac{\beta B}{m - c} = 0 \implies c = \frac {m} {1 + \beta B}, \; m - c = \frac {\beta B m} {1 + \beta B}
+\]</div>
+<p>Then we have</p>
+<div class="math notranslate nohighlight">
+\[
+A + B\log(m) = \log(m) + \log\frac{1}{1+\beta B} + 
+\beta A + \beta B \log(m) + \beta B \log\frac{\beta B}{1+\beta B}
+\]</div>
+<p>Making sure the coefficient with <span class="math notranslate nohighlight">\(\log(m)\)</span> and the constants are the same on both RHS and LHS of the equality, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left\{
+\begin{array}{rcl}
+A &amp;=&amp; \beta A + \log\frac{1}{1+\beta B} + \beta B \log\frac{\beta B}{1+\beta B} \\
+B &amp;=&amp; 1 + \beta B
+\end{array}
+\right.
+\end{split}\]</div>
+<p>After some algebra</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+c^{\star}(m) = \frac {m} {1 + \beta B} = \frac {m} {1 + \frac{\beta}{1-\beta}} = (1-\beta)m \\
+V(m) = \frac{\log(m)}{1-\beta} + \frac{\log(1-\beta)}{1-\beta} + \frac{\beta \log(\beta)}{(1-\beta)^2}
+\end{split}\]</div>
+<p><strong>Question L.3</strong></p>
+<p>We start from the Bellman equation for the infinite horizon version of cake eating problem</p>
+<div class="math notranslate nohighlight">
+\[
+V(m)=\max_{0 \le c \le m}\big\{u(c)+\beta V(m-c)\big\}
+\]</div>
+<p>Assuming the interior solution, the optimal consumption <span class="math notranslate nohighlight">\(c^\star(m)\)</span> satisfies for all <span class="math notranslate nohighlight">\(m\)</span> the FOC condition</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d u}{d c}\big(c^\star(m)\big) - \beta \frac{d V}{d m}\big(m-c^\star(m)\big) = 0
+\]</div>
+<p>On the other hand, if we denote <span class="math notranslate nohighlight">\(G(m,c) = u(c)+\beta V(m-c)\)</span> the maximand on the RHS, the envelope theorem states that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d V}{d m}(m) = 
+\frac{\partial G}{\partial m}(m,c) \Big|_{c=c^\star(m)}= 
+\frac{d}{d m} \big(u(c)+\beta V(m-c)\big) \Big|_{c=c^\star(m)} =
+\beta \frac{d V}{d m}(m-c^\star(m))
+\]</div>
+<p>Combining the two expressions we have <span class="math notranslate nohighlight">\(\frac{d u}{d c}\big(c^\star(m)\big) = \frac{d V}{d m}(m)\)</span>, and after plugging this expression back to the FOC, we derive the required expression</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d u}{d c}\big(c^\star(m)\big) = \beta \frac{d u}{d c}\Big(c^\star\big(m-c^\star(m)\big)\Big)
+\]</div>
+<hr class="docutils" />
+<p>Euler equation above is another functional equation, as the unknown is a function <span class="math notranslate nohighlight">\(c^\star(m)\)</span>.
+Solving it requires a guess-and-verify approach again.</p>
+<p>Given the series of finite horizon solutions (which are constructive) we can guess that <span class="math notranslate nohighlight">\(c^\star(m)\)</span> is a linear function of <span class="math notranslate nohighlight">\(m\)</span>, i.e. <span class="math notranslate nohighlight">\(c^\star(m) = \gamma m\)</span>. Then for <span class="math notranslate nohighlight">\(u(c)=\log(c)\)</span> we have</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{\gamma m} = \beta \frac{1}{\gamma (m - \gamma m)} \implies
+1 = \frac{\beta}{1-\gamma} \implies
+\gamma = 1-\beta
+\]</div>
+<p>Thus, we have <span class="math notranslate nohighlight">\(c^\star(m) = (1-\beta) m\)</span> which matches the solution we got above!</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="10.exercises.K.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise set K</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="99.practice_questions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Practice questions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-l-1">Question L.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-l-2">Question L.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-l-3">Question L.3</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fedor Iskhakov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

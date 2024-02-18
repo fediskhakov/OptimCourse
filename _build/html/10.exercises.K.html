@@ -1,0 +1,736 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercise set K &#8212; ECON2125/6012</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '10.exercises.K';</script>
+    <link rel="canonical" href="https://optim.iskh.me/10.exercises.K.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Exercise set L" href="11.exercises.L.html" />
+    <link rel="prev" title="Exercise set H" href="09.exercises.H.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+
+  <div class="bd-header-announcement container-fluid bd-header-announcement">
+    <div class="bd-header-announcement__content">Welcome to ECON2125/6012 in semester 1, 2024</div>
+  </div>
+
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="00.index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/optim_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/optim_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="00.index.html">
+                    ECON2125/6012
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01.introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.optimization_intro.html">Univariate and bivariate optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.set_theory.html">Elements of set theory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.basic_analysis.html">Basics of real analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.linear_algebra.html">Elements of linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.optimization_fundamentals.html">Fundamentals of optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.unconstrained.html">Unconstrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.constrained.html">Constrained optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.practical_session.html">Guest lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10.envelope_maximum.html">Envelope and maximum theorems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.dynamic.html">Dynamic optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12.revision.html">Revision</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02.exercises.A.html">Exercise set A</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03.exercises.B.html">Exercise set B</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04.exercises.C.html">Exercise set C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05.exercises.D.html">Exercise set D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06.exercises.E.html">Exercise set E</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07.exercises.F.html">Exercise set F</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08.exercises.G.html">Exercise set G</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09.exercises.H.html">Exercise set H</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise set K</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11.exercises.L.html">Exercise set L</a></li>
+<li class="toctree-l1"><a class="reference internal" href="99.practice_questions.html">Practice questions</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/fediskhakov/OptimCourse/issues/new?title=Issue%20on%20page%20%2F10.exercises.K.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/10.exercises.K.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise set K</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-k-1">Question K.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-k-2">Question K.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-k-3">Question K.3</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-set-k">
+<h1>Exercise set K<a class="headerlink" href="#exercise-set-k" title="Permalink to this heading">#</a></h1>
+<p>Please, see the
+<a class="reference internal" href="02.exercises.A.html"><span class="doc std std-doc"><strong>general comment on the tutorial exercises</strong></span></a></p>
+<section id="question-k-1">
+<h2>Question K.1<a class="headerlink" href="#question-k-1" title="Permalink to this heading">#</a></h2>
+<p>Consider an unconstrained optimization problem</p>
+<div class="math notranslate nohighlight">
+\[
+V(\theta) 
+= \max_{x} f(x,\theta)
+\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x,\theta) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span> is an objective function</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \in \mathbb{R}^N\)</span> are decision/choice variables</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta \in \mathbb{R}^K\)</span> are parameters</p></li>
+<li><p><span class="math notranslate nohighlight">\(V(\theta) \colon \mathbb{R}^K \to \mathbb{R}\)</span> is a value function</p></li>
+</ul>
+<p>Prove the following statement</p>
+<div class="important admonition">
+<p class="admonition-title">Statement</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x,\theta) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span> be a differentiable function, and <span class="math notranslate nohighlight">\(x^\star(\theta)\)</span> be the maximizer of <span class="math notranslate nohighlight">\(f(x,\theta)\)</span> for every <span class="math notranslate nohighlight">\(\theta\)</span>.
+Suppose that <span class="math notranslate nohighlight">\(x^\star(\theta)\)</span> is differentiable function itself.
+Then the value function of the problem <span class="math notranslate nohighlight">\(V(\theta) = f\big(x^\star(\theta),\theta)\)</span> is differentiable w.r.t. <span class="math notranslate nohighlight">\(\theta\)</span> and</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial V}{\partial \theta_j} =
+\frac{\partial f}{\partial \theta_j} \big(x^\star(\theta),\theta\big),
+\forall j
+\]</div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Total derivative + first order conditions</p>
+</div>
+</section>
+<section id="question-k-2">
+<h2>Question K.2<a class="headerlink" href="#question-k-2" title="Permalink to this heading">#</a></h2>
+<p>Consider an equality constrained optimization problem</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V(\theta) 
+= \max_{x} f(x,\theta)
+\\
+\text {subject to}
+\\
+g_i(x,\theta) = 0, \; i\in\{1,\dots,I\}\\
+\end{split}\]</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x,\theta) \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span> is an objective function</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \in \mathbb{R}^N\)</span> are decision/choice variables</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta \in \mathbb{R}^K\)</span> are parameters</p></li>
+<li><p><span class="math notranslate nohighlight">\(g_i(x,\theta) = 0, \; i\in\{1,\dots,I\}\)</span> where <span class="math notranslate nohighlight">\(g_i \colon \mathbb{R}^N \times \mathbb{R}^K \to \mathbb{R}\)</span>, are equality constraints</p></li>
+<li><p><span class="math notranslate nohighlight">\(V(\theta) \colon \mathbb{R}^K \to \mathbb{R}\)</span> is a value function</p></li>
+</ul>
+<p>Prove the following statement</p>
+<div class="important admonition">
+<p class="admonition-title">Statement</p>
+<p>Assume that the maximizer correspondence in the problem above is <em>single-valued</em> and can be represented by the function <span class="math notranslate nohighlight">\(x^\star(\theta) \colon \mathbb{R}^K \to \mathbb{R}^N\)</span>, with the corresponding Lagrange multipliers <span class="math notranslate nohighlight">\(\lambda^\star(\theta) \colon \mathbb{R}^K \to \mathbb{R}^K\)</span>.</p>
+<p>Assume that both <span class="math notranslate nohighlight">\(x^\star(\theta)\)</span> and <span class="math notranslate nohighlight">\(\lambda^\star(\theta)\)</span> are differentiable, and that the constraint qualification assumption holds.
+Then</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial V}{\partial \theta_j} =
+\frac{\partial \mathcal{L}}{\partial \theta_j} \big(x^\star(\theta),\lambda^\star(\theta),\theta\big),
+\forall j
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{L}(x,\lambda,\theta)\)</span> is the Lagrangian of the problem.</p>
+</div>
+</section>
+<section id="question-k-3">
+<h2>Question K.3<a class="headerlink" href="#question-k-3" title="Permalink to this heading">#</a></h2>
+<div class="important admonition">
+<p class="admonition-title">Roy’s identity</p>
+<p>Consider the choice problem of a consumer endowed with strictly concave and differentiable utility function <span class="math notranslate nohighlight">\(u \colon \mathbb{R}^N_{++} \to \mathbb{R}\)</span> where <span class="math notranslate nohighlight">\(\mathbb{R}^N_{++}\)</span> denotes the set of vector in <span class="math notranslate nohighlight">\(\mathbb{R}^N\)</span> with strictly positive elements.</p>
+<p>The budget constraint is given by <span class="math notranslate nohighlight">\({\bf p}\cdot{\bf x} \le m\)</span> where <span class="math notranslate nohighlight">\({\bf p} \in \mathbb{R}^N_{++}\)</span> are prices and <span class="math notranslate nohighlight">\(m&gt;0\)</span> is income.</p>
+<p>Then the demand function <span class="math notranslate nohighlight">\(x^\star({\bf p},m)\)</span> and the indirect utility function (value function of the problem) satisfy the equations</p>
+<div class="math notranslate nohighlight">
+\[
+x_i^\star({\bf p},m) = -\frac{\partial v}{\partial p_i}({\bf p},m) \Big/ \frac{\partial v}{\partial m}({\bf p},m), \; \forall i \in \{1,\dots,N\}
+\]</div>
+</div>
+<ol class="arabic simple">
+<li><p>Prove the statement</p></li>
+<li><p>Verify the statement by direct calculation (i.e. by expressing the indirect utility and plugging its partials into the identity) using the following specification of utility</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+u({\bf x}) = \prod_{i=1}^N x_i^{\alpha_i}, \; \alpha_i &gt; 0
+\]</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Envelope theorem should be useful</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Solutions</p>
+<p><strong>Question K.1</strong></p>
+<p>See Theorem 19.4 in Simon and Blume (1994), pp. 453-454</p>
+<p><strong>Question K.2</strong></p>
+<p>Here is a version of proof. The Lagrangian is</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}(x^\star(\theta),\lambda^\star(\theta), \theta) = 
+f(x^\star(\theta),\theta)- \sum_{i=1}^{I}\lambda_{i}^\star(\theta) g_{i}(x^\star(\theta), \theta )
+\]</div>
+<p>For any <span class="math notranslate nohighlight">\(j=1,\dots,K\)</span> the partial derivative with respect to <span class="math notranslate nohighlight">\(\theta_{j}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{rl}
+\frac{\partial\mathcal{L}(x^\star(\theta), \lambda^\star(\theta), \theta)}{\partial{\theta_{j}}}
+&amp;= 
+\frac{\partial f(x^\star(\theta), \theta)}{\partial{\theta_{j}}} 
+- \sum_{i=1}^{I} \left[ \frac{\partial\lambda_{i}^\star(\theta)}{\partial \theta_{j}}g_{i}(x^\star(\theta), \theta) + \lambda_{i}^\star(\theta) \frac{\partial g_{i}(x^\star(\theta), \theta) }{\partial \theta_{j}}\right] \\
+&amp;= \frac{\partial f(x^\star(\theta), \theta)}{\partial{\theta_{j}}} 
+- \sum_{i=1}^{I} \lambda_{i}^\star(\theta) \frac{\partial g_{i}(x^\star(\theta), \theta) }{\partial \theta_{j}} 
+\end{array}\end{split}\]</div>
+<p>where the last equality follows from the equality constraints <span class="math notranslate nohighlight">\(g_{i}(x^\star(\theta), \theta)=0\)</span> for all <span class="math notranslate nohighlight">\(i\)</span>.
+The partial derivative of value function is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{rl}
+\frac{\partial V(\theta)}{\partial{\theta_{j}}}
+&amp;= 
+\frac{d f(x^\star(\theta),\theta)}{d \theta_{j}} \\ 
+&amp;= \sum_{n=1}^{N} \frac{\partial f(x^\star(\theta), \theta)}{\partial x_{n}} \frac{\partial x_n(\theta)}{\partial \theta_{j}} 
++\frac{\partial f(x^\star(\theta), \theta) }{\partial \theta_{j}} \\
+&amp;= \sum_{n=1}^{N} \left(\sum_{i=1}^{I}\lambda_{i} \frac{\partial g_i(x^\star(\theta), \theta)}{\partial x_{n}} \right)\frac{\partial x_{n}(\theta)}{ \partial \theta_{j}} 
++\frac{\partial f(x^\star(\theta), \theta) }{\partial \theta_{j}} \\
+&amp;= \sum_{i=1}^{I}\lambda_{i} \sum_{n=1}^{N} \frac{\partial g_i(x^\star(\theta), \theta)}{\partial x_{n}}\frac{\partial x_{n}(\theta)}{\partial\theta_{j}} 
++\frac{\partial f(x^\star(\theta), \theta) }{\partial \theta_{j}} \\
+&amp;= - \sum_{i=1}^{I}\lambda_{i} \frac{\partial g_i(x^\star(\theta), \theta)}{\partial \theta_j}
++\frac{\partial f(x^\star(\theta), \theta) }{\partial \theta_{j}}\\
+&amp;= \frac{\partial\mathcal{L}(x^\star(\theta), \lambda^\star(\theta), \theta)}{\partial{\theta_{j}}}
+\end{array}\end{split}\]</div>
+<p>where the third equality follows from the first-order conditions,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{rl}
+0 = \frac{\partial\mathcal{L}(x^\star(\theta), \lambda^\star(\theta), \theta)}{\partial{x_n}}
+&amp;= 
+\frac{\partial f(x^\star(\theta), \theta)}{\partial{x_n}} 
+- \sum_{i=1}^{I} \lambda_{i}^\star(\theta) \frac{\partial g_{i}(x^\star(\theta), \theta) }{\partial x_{n}}, \\
+\end{array}
+\end{split}\]</div>
+<p>and the fifth equality follows from the constraint and its total derivative</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+g_{i}(x^\star(\theta), \theta)=0\\ \Longrightarrow 
+\sum_{n=1}^{N} \frac{\partial g_i(x^\star(\theta), \theta)}{\partial x_{n}}\frac{\partial x_{n}(\theta)}{ \partial\theta_{j}} 
++ \frac{\partial g_i(x^\star(\theta), \theta)}{\partial \theta_{j}}= 0
+\end{split}\]</div>
+<p><strong>Question K.3</strong></p>
+<p>We first show the Roy’s identity.
+The value function is <span class="math notranslate nohighlight">\(V(p, m)=\max\{u(x): p \cdot x \leq m\}\)</span> where <span class="math notranslate nohighlight">\(u\colon \mathbb{R}^{N}_{++}\to \mathbb{R}\)</span>.
+The Lagrangian of the maximization problem is <span class="math notranslate nohighlight">\(\mathcal{L}(x, \lambda, p, m) = u(x) - \lambda (\sum_{i=1}^{N}p_{i}x_{i}- m)\)</span>.
+The Envelope Theorem implies</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align*}
+&amp;\frac{\partial V}{\partial p_{j}}=\frac{\partial\mathcal{L}}{\partial{p_{j}}}=-\lambda x_{j} \qquad (j=1,\dots, N)\\
+&amp;\frac{\partial{V}}{\partial{m}}= \frac{\partial{\mathcal{L}}}{\partial{m}}=\lambda
+\end{align*}\end{split}\]</div>
+<p>It follows from the previous equations that</p>
+<div class="math notranslate nohighlight">
+\[
+x_{j}=- \frac{1}{\lambda} \frac{\partial V}{\partial p_{j}} = - \frac{\partial V}{\partial p_{j}} \bigg/ \frac{\partial V}{\partial m}.
+\]</div>
+<p>Next, let <span class="math notranslate nohighlight">\(u(x)= \prod_{i=1}^{N}x_{i}^{\alpha_i}\)</span> where <span class="math notranslate nohighlight">\(\alpha_i&gt;0\)</span> for all <span class="math notranslate nohighlight">\(i\)</span>.
+Since <span class="math notranslate nohighlight">\(\log(\cdot)\)</span> function is strictly monotone, the optimization problem is equivalent to maximize <span class="math notranslate nohighlight">\(u(x)=\sum_{i=1}^{N}\alpha_{i}\log(x_i)\)</span>.
+The corresponding Lagrangian is</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}(x, \lambda, p, m) = \sum_{i=1}^{N}\alpha_{i}\log(x_{i}) - \lambda (\sum_{i}^{N}p_{i}x_{i}- m)
+\]</div>
+<p>The first-order conditions yield</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\frac{\partial\mathcal{L}}{\partial{x_{j}}}&amp;= \frac{\alpha_{i}}{x_{j}}-\lambda p_{j=0} \qquad (j=1,\dots, N)\\
+\frac{\partial\mathcal{L}}{\partial{\lambda}}&amp;= \sum_{i}^{N}p_{i}x_{i}- m = 0 \\
+\Longrightarrow \lambda&amp;= \frac{\sum_{i=1}^{N}\alpha_{i}}{m}\\
+x_{j}&amp;= \frac{\alpha_{j}}{\lambda p_{j}} 
+=\frac{\alpha_{j}}{\sum_{i=1}^{N}\alpha_{i}} \frac{m}{p_{j}}
+\end{align*}
+\end{split}\]</div>
+<p>Hence, the optimal value function is</p>
+<div class="math notranslate nohighlight">
+\[
+V(p,m)=u(x^{*}(p,m))=\prod_{i=1}^{N}\left(\frac{\alpha_{j}}{\sum_{i=1}^{N}\alpha_{i}} \frac{m}{p_{j}}\right)^{\alpha_{i}}
+\]</div>
+<p>To verify Roy’s identity, observe that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\frac{\partial{V}}{\partial{p_{j}}}&amp;=\frac{\partial}{\partial{p_{j}}} e^{\log v} 
+= e^{\log v} \frac{\partial}{\partial{p_{j}}}\log v = v \frac{\partial}{\partial{p_{j}}}\log v\\
+&amp;= v\frac{\partial}{\partial{p_{j}}}\left\{\sum_{i=1}^{N}\log\left(\frac{\alpha_{i}}{\sum_{i}\alpha_{i}}\right)+\alpha_{i}\log \frac{m}{p_{i}} \right\}\\
+&amp;= v \left(\alpha_{j} \frac{1}{\frac{m}{p_{j}}}\frac{-m}{p_{j}^{2}} \right)
+=\frac{-\alpha_j}{p_{j}}v \\
+\frac{\partial{v}}{\partial{m}}&amp;=v\frac{\partial}{\partial{p_{j}}} \log v \\
+&amp;= v \sum_{i=1}^{N}\alpha_{i}\frac{1}{\frac{m}{p_{j}}} \frac{1}{p_{i}} = \frac{\sum_{i=1}^{N}\alpha_{i}}{m} v 
+\end{align*}\end{split}\]</div>
+<p>Then, we have</p>
+<div class="math notranslate nohighlight">
+\[-\frac{\partial{v}}{\partial{p_{j}}}\Bigg/ \frac{\partial{v}}{\partial{m}}
+=\frac{\frac{-\alpha_j}{p_{j}}v} {\frac{\sum_{i=1}^{N}\alpha_{i}}{m} v}
+=\frac{\alpha_{j}}{\sum_{i=1}^{N}\alpha_{i}} \frac{m}{p_{j}} 
+=x_{j}.\]</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="09.exercises.H.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise set H</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="11.exercises.L.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise set L</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-k-1">Question K.1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-k-2">Question K.2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-k-3">Question K.3</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Fedor Iskhakov
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
