@@ -1,9 +1,0 @@
-- pattern: # $$ with % on both sides
-    re: (?m)\$\$([\s\S]*?)\$\$
-    st: |
-      %
-      $$
-      \1
-      $$
-      %
-
