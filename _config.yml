@@ -4,8 +4,8 @@
 # Book settings
 title                       : ECON2125/6012  # The title of the book. Will be placed in the left navbar.
 author                      : Fedor Iskhakov  # The author of the book
-copyright                   : "2023"  # Copyright year to be placed in the footer
-logo                        : "_static/img/penrose.png"  # A path to the book logo
+copyright                   : "2024"  # Copyright year to be placed in the footer
+logo                        : "_static/img/optim_logo.png"  # A path to the book logo
 # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
 exclude_patterns            : [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 # Auto-exclude files not in the toc
@@ -71,12 +71,14 @@ html:
   extra_footer              : ""  # Will be displayed underneath the footer.
   google_analytics_id       : ""  # A GA id that can be used to track book views.
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
-  baseurl                   : "https://fedor.iskh.me/backup/econ2125_6012_2023s2"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
+  baseurl                   : "https://optim.iskh.me"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   analytics:
   comments:
     hypothesis              : false
     utterances              : false
-  announcement              : "This is a BACKUP copy of lecture notes from 2023, semester 1" # A banner announcement at the top of the site.
+#######################################################################################
+# A banner announcement at the top of the site.
+  announcement: "Welcome to ECON2125/6012 in semester 1, 2024" 
 
 #######################################################################################
 # LaTeX-specific settings
@@ -98,7 +100,7 @@ latex:
 repository:
   url                       : https://github.com/fediskhakov/OptimCourse  # The URL to your book's repository
   path_to_book              : ""  # A path to your book's folder, relative to the repository root.
-  branch                    : main  # Which branch of the repository should be used when creating links
+  branch                    : publish  # Which branch of the repository should be used when creating links
 
 
 #######################################################################################
