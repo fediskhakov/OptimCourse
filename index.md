@@ -187,7 +187,13 @@ by Carl P. Simon and Lawrence Blume
 :width: 160px
 ```
 
-```{note}
-- each lecture will reference book chapters
-- each lecture will give additional references for self-study
+3. **Additional references** will be provided in the lecture notes if needed.
+
+
+```{admonition} Previous versions
+:class: danger
+
+This page contains the current lecture notes for the course.  
+An archive of lectures notes from previous years can be found at [https://fedor.iskh.me/teaching](https://fedor.iskh.me/teaching)
+
 ```
