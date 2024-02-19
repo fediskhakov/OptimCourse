@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: 00.index
+root: index
 title: ECON2125/6012
 chapters:
 - file: 01.introduction
