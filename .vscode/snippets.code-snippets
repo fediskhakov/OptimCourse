@@ -1,0 +1,125 @@
+{
+	// Place your source.Optimization workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+"BoldFaceMath": {
+	"scope": "",
+	"prefix": "bf",
+	"body": "{\\bf $TM_SELECTED_TEXT$0}",
+	"description": "Bold face variables in math mode"
+},
+"Note": {
+	"scope": "",
+	"prefix": "note",
+	"body": [
+		"```{note}"
+		":class: caution"
+		""
+		"$TM_SELECTED_TEXT$0"
+		"```"
+		""
+	],
+	"description": "Admonition for a note (jupyter-book)"
+},
+"Definition": {
+	"scope": "",
+	"prefix": "defi",
+	"body": [
+		"```{admonition} Definition"
+		":class: caution"
+		""
+		"$TM_SELECTED_TEXT$0"
+		"```"
+		""
+	],
+	"description": "Admonition for a definition (jupyter-book)"
+},
+"Fact": {
+	"scope": "",
+	"prefix": "fact",
+	"body": [
+		"```{admonition} Fact"
+		":class: important"
+		""
+		"$TM_SELECTED_TEXT$0"
+		"```"
+		""
+	],
+	"description": "Admonition for a fact (jupyter-book)"
+},
+"Example": {
+	"scope": "",
+	"prefix": "examp",
+	"body": [
+		"```{admonition} Example"
+		":class: tip"
+		""
+		"$TM_SELECTED_TEXT$0"
+		"```"
+		""
+	],
+	"description": "Admonition for a example (jupyter-book)"
+},
+"DropdownProofs": {
+	"scope": "",
+	"prefix": "proof",
+	"body": [
+		"````{admonition} Proof"
+		":class: dropdown"
+		""
+		"$TM_SELECTED_TEXT$0"
+		"````"
+		""
+	],
+	"description": "Dropdown hidden section for proofs (jupyter-book)"
+},
+"DropdownSolutions": {
+	"scope": "",
+	"prefix": "drop",
+	"body": [
+		"````{admonition} Solutions"
+		":class: dropdown"
+		""
+		"$TM_SELECTED_TEXT$0"
+		"````"
+		""
+	],
+	"description": "Dropdown hidden section for solutions (jupyter-book)"
+},
+"CodeCell": {
+	"scope": "",
+	"prefix": "code-cell",
+	"body": [
+		"```{code-cell} python3"
+		"$0:tags: [hide/remove-cell/input/output]"
+		"---"
+		"mystnb:"
+		"	image:"
+		"		width: 80%"
+		"		align: center"
+		"---"
+		"tags:"
+		"	- hide-input"
+		"	- remove-output"
+		""
+		"$TM_SELECTED_TEXT"
+		"```"
+		""
+	],
+	"description": "Code-cell block with popular options (jupyter-book)"
+}
+}
