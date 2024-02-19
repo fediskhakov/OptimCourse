@@ -27,15 +27,100 @@ Course title: **Optimisation for Economics and Financial Economics**
 | 12 | May 21 | [Revision](12.revision.md) | |
 | | | Final exam 55% | 3h, invigilated |
 
-## ANU course pages
+## Course web pages
+
+[**Class summary ECON2125**](https://programsandcourses.anu.edu.au/course/ECON2125/First%20Semester/3020) 
+[**ECON6012**](https://programsandcourses.anu.edu.au/course/ECON6012/First%20Semester/4103) 
+- Official course description
 
 [**Course Wattle page**](https://wattlecourses.anu.edu.au/course/view.php?id=42514)
+- Announcements
+- Recordings
 - Assessments
 - Grades
-- Recordings
 
-[**Class summary**](https://programsandcourses.anu.edu.au/course/ECON2125/First%20Semester/3020) 
-- Official course description
+[<font size="16">optim.iskh.me</font>](https://optim.iskh.me)
+
+- sufficient lecture notes
+- downloadable as markdown or pdf
+- GitHub based
+- submit issues and typos through the provided button
+- **Latest version of the notes a day before the lecture**
+- check for the updates in the morning
+
+## Course convener and lecturer
+
+Professor **Fedor Iskhakov**
+
+```{figure} _static/photo/f2.jpg
+:height: 300 px
+:align: left
+```
+
+- Office: 1021 HW Arndt Building
+- Email: fedor.iskhakov@anu.edu.au
+- Web: [fedor.iskh.me](https://fedor.iskh.me)
+- Office hours: **Monday 09:30 to 11:00** during teaching weeks `updated`
+
+> I’m an applied micro-econometrician and a computational economist working in the field of structural estimation of dynamic models of individual and strategic choice, with applications to labor economics, public economics, durable goods markets, household finance, applied industrial organization and dynamic games.
+
+
+## Tutoring team
+
+**Wending Liu**
+
+```{figure} _static/photo/Wending-Liu.jpg
+:height: 300 px
+:align: left
+```
+
+- Email: `Wending.Liu@.anu.edu.au`
+- Web: [Personal page](https://wendingliu.com/)
+- Room: Room 2084, Copland Bld (24)
+- Office hours: TBA
+
+<div style="clear: both"></div>
+
+**Fajar Oktiyanto**
+
+```{figure} _static/photo/Fajar-Oktiyanto.jpg
+:height: 300 px
+:align: left
+```
+
+- Email: Fajar.Oktiyanto@anu.edu.au
+- Room: 
+- Office hours: TBA
+
+<div style="clear: both"></div>
+
+## Lecture times
+
+- Lectures: **Tuesday 15:00 --- 17:00**
+- Location: **Roomm G31, Copland Bldg 24**
+- Room has $\approx$ 100 seats
+- Real-time video broadcast on Echo-360
+- Echo-360 recordings on Wattle
+- **Face-to-face is strictly preferred**
+
+## Tutorial times
+
+- 8 tutorials during the week
+- see schedule for [https://mytimetable.anu.edu.au/even/timetable](https://mytimetable.anu.edu.au/even/timetable) 
+- search for ECON2125 or ECON6012 and select 2024 semester 1
+- register for your selected tutorial at [Wattle page](https://wattlecourses.anu.edu.au/course/view.php?id=42514)
+
+| Day | From | To | Room | Tutor |
+| ---- | ---- | ----- | ----- | ----- |
+| Monday | 16:00 | 17:00 | Tutorial Room 1, HW Arndt Bldg 25A | Fajar |
+| Wednesday | 9:00 | 10:00 | Lecture Theatre 1, HW Arndt Bldg 25A | Wending |
+| Wednesday | 13:00 | 14:00 | Lecture Theatre 3, CBE Bldg 26C | Wending |
+| Wednesday | 14:00 | 15:00 | Tutorial Room 5, CBE Bldg 26C | Wending |
+| Wednesday | 15:00 | 16:00 | Tutorial Room 3, HW Arndt Bldg 25A | Wending |
+| Wednesday | 16:00 | 17:00 | Tutorial Room 2, HW Arndt Bldg 25A | Fajar |
+| Thursday | 16:00 | 17:00 | Tutorial Room 2, HW Arndt Bldg 25A | Fajar |
+<!-- | Monday | 17:00 | 18:00 | Tutorial Room 1, HW Arndt Bldg 25A | Fajar | -->
+
 
 ## Assessment
 
@@ -78,22 +163,31 @@ Computerized quizzes are located at the course Wattle page
 - Will be held during the examination period May 30 to June 16
 
 
-## Tutoring team
+## Reading materials
 
-**Wending Liu**
+1. **Primary reference:** lecture slides
 
-- Email: Wending.Liu@anu.edu.au
-- Room: Room 2084, Copland Bld (24)
-- Office hours:
+2. ***A first course in Optimization Theory***  
+by Rangarajan K. Sundaram
 
-**Fajar Oktiyanto**
+{cite:ps}`sundaram1996`
 
-- Email: fajar.oktiyanto@anu.edu.au
-- Room: 
-- Office hours: 
+```{image} _static/img/bibliography/sundaram1996.png
+:alt: Sundaram 1996
+:width: 160px
+```
 
+2. ***Mathematics for Economists***  
+by Carl P. Simon and Lawrence Blume
 
-<!-- ## List of topics
+{cite:ps}`simon1994`
 
-```{tableofcontents}
-``` -->
+```{image} _static/img/bibliography/simon1994.png
+:alt: Simon, CP, and L Blume (1994), Mathematics for economists
+:width: 160px
+```
+
+```{note}
+- each lecture will reference book chapters
+- each lecture will give additional references for self-study
+```
