@@ -6,7 +6,7 @@ Course title: **Optimisation for Economics and Financial Economics**
 
 | Week | Date | Topic | Notes |
 | ---- | ---- | ----- | ----- |
-| 1 | Feb 20 | [Introduction: optimization in economics](01.introduction) | |
+| 1 | Feb 20 | [Introduction: optimization in economics](01.introduction) <br/> [Introduction: optimization in economics](01.introduction) | |
 | 2 | Feb 27 | [Univariate and bivariate optimization](02.optimization_intro) | Tutorials start |
 | 3 | March 5 | [Elements of set theory](03.set_theory) | |
 | | March 11 | Quiz 3% | 1h, computerized |
@@ -89,7 +89,8 @@ Professor **Fedor Iskhakov**
 ```
 
 - Email: Fajar.Oktiyanto@anu.edu.au
-- Room: 
+- Web: [Personal page](https://oktiyanto.github.io)
+- Room: 1002 HW Arndt Building
 - Office hours: TBA
 
 <div style="clear: both"></div>
@@ -113,13 +114,13 @@ Professor **Fedor Iskhakov**
 | Day | From | To | Room | Tutor |
 | ---- | ---- | ----- | ----- | ----- |
 | Monday | 16:00 | 17:00 | Tutorial Room 1, HW Arndt Bldg 25A | Fajar |
+| Monday | 17:00 | 18:00 | Tutorial Room 1, HW Arndt Bldg 25A | Fajar |
 | Wednesday | 9:00 | 10:00 | Lecture Theatre 1, HW Arndt Bldg 25A | Wending |
 | Wednesday | 13:00 | 14:00 | Lecture Theatre 3, CBE Bldg 26C | Wending |
 | Wednesday | 14:00 | 15:00 | Tutorial Room 5, CBE Bldg 26C | Wending |
 | Wednesday | 15:00 | 16:00 | Tutorial Room 3, HW Arndt Bldg 25A | Wending |
 | Wednesday | 16:00 | 17:00 | Tutorial Room 2, HW Arndt Bldg 25A | Fajar |
 | Thursday | 16:00 | 17:00 | Tutorial Room 2, HW Arndt Bldg 25A | Fajar |
-<!-- | Monday | 17:00 | 18:00 | Tutorial Room 1, HW Arndt Bldg 25A | Fajar | -->
 
 
 ## Assessment
