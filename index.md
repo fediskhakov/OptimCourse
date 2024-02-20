@@ -6,25 +6,36 @@ Course title: **Optimisation for Economics and Financial Economics**
 
 | Week | Date | Topic | Notes |
 | ---- | ---- | ----- | ----- |
-| 1 | Feb 20 | [Introduction: optimization in economics](01.introduction) <br/> [Introduction: optimization in economics](01.introduction) | |
-| 2 | Feb 27 | [Univariate and bivariate optimization](02.optimization_intro) | Tutorials start |
-| 3 | March 5 | [Elements of set theory](03.set_theory) | |
+| 1 | Feb 20 | 📖 [Introduction: optimization in economics](01.introduction) <br/> 📖 [Logic and proofs](01.logic_proofs) | |
+| 2 | | 🔬 Tutorial problem set alpha | |
+| | Feb 27 | 📖 Univariate and bivariate optimization | |
+| 3 | | 🔬 Tutorial problem set beta | |
+| | March 5 | 📖 Elements of set theory | |
+| 4 | | 🔬 Tutorial problem set gamma | |
 | | March 11 | Quiz 3% | 1h, computerized |
-| 4 | March 12 | [Basics of real analysis](04.basic_analysis) | |
-| 5 | March 19 | [Elements of linear algebra](05.linear_algebra) | |
+| | March 12 | 📖 Basics of real analysis | |
+| 5 | | 🔬 Tutorial problem set delta | |
+| | March 19 | 📖 Elements of linear algebra | |
+| 6 | | 🔬 Tutorial problem set epsilon | |
 | | March 25 | Quiz 3% | 1h, computerized |
-| 6 | March 26 | [Fundamentals of optimization](06.optimization_fundamentals) | |
+| | March 26 | 📖 Fundamentals of optimization | |
 | | | Midterm exam 35% | 1h, invigilated |
 | | | Teaching break | 2 weeks |
-| 7 | April 16 | [Unconstrained optimization](07.unconstrained) | |
+| 7 | | 🔬 Tutorial problem set zeta | |
+| | April 16 | 📖 Unconstrained optimization | |
+| 8 | | 🔬 Tutorial problem set eta | |
 | | April 22 | Quiz 3% | 1h, computerized |
-| 8 | April 23 | [Constrained optimization](08.constrained) | |
-| 9 | April 30 | [Convex optimization](09.practical_session) | TBA |
+| | April 23 | 📖 Constrained optimization | |
+| 9 | | 🔬 Tutorial problem set theta | |
+| | April 30 | 📖 Convex optimization |
+| 10 | | 🔬 Tutorial problem set iota | |
 | | May 6 | Quiz 3% | 1h, computerized |
-| 10 | May 7 | [Envelope and maximum theorems](10.envelope_maximum) | |
+| | May 7 | 📖 Envelope and maximum theorems | |
+| 11 | | 🔬 Tutorial problem set kappa | |
 | | May 13 | Quiz 3% | 1h, computerized |
-| 11 | May 14 | [Dynamic optimization](11.dynamic) | |
-| 12 | May 21 | [Revision](12.revision.md) | |
+| | May 14 | 📖 Dynamic optimization | |
+| 12 | | 🔬 Consultation hours | |
+| | May 21 | 📖 Revision | |
 | | | Final exam 55% | 3h, invigilated |
 
 ## Course web pages
@@ -77,7 +88,7 @@ Professor **Fedor Iskhakov**
 - Email: `Wending.Liu@.anu.edu.au`
 - Web: [Personal page](https://wendingliu.com/)
 - Room: Room 2084, Copland Bld (24)
-- Office hours: TBA
+- Office hours: Wednesday 4pm to 6pm
 
 <div style="clear: both"></div>
 
@@ -91,7 +102,7 @@ Professor **Fedor Iskhakov**
 - Email: Fajar.Oktiyanto@anu.edu.au
 - Web: [Personal page](https://oktiyanto.github.io)
 - Room: 1002 HW Arndt Building
-- Office hours: TBA
+- Office hours: Monday 3pm to 4pm
 
 <div style="clear: both"></div>
 
