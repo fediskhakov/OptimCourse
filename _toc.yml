@@ -7,6 +7,8 @@ title: ECON2125/6012
 chapters:
 - file: 01.introduction
 - file: 01.logic_proofs
+- file: ps00_comments.md
+- file: ps01_alfa.md
 # - file: 02.optimization_intro
 # - file: 03.set_theory
 # - file: 04.basic_analysis
