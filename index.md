@@ -101,8 +101,8 @@ Professor **Fedor Iskhakov**
 
 - Email: Fajar.Oktiyanto@anu.edu.au
 - Web: [Personal page](https://oktiyanto.github.io)
-- Room: 1002 HW Arndt Building
-- Office hours: Monday 3pm to 4pm
+- Room: 2115, Copland Bld (24) `updated`
+- Office hours: Monday 2pm to 4pm
 
 <div style="clear: both"></div>
 
@@ -111,7 +111,6 @@ Professor **Fedor Iskhakov**
 - Lectures: **Tuesday 15:00 --- 17:00**
 - Location: **Roomm G31, Copland Bldg 24**
 - Room has $\approx$ 100 seats
-- Real-time video broadcast on Echo-360
 - Echo-360 recordings on Wattle
 - **Face-to-face is strictly preferred**
 
