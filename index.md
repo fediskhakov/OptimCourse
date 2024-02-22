@@ -7,7 +7,7 @@ Course title: **Optimisation for Economics and Financial Economics**
 | Week | Date | Topic | Notes |
 | ---- | ---- | ----- | ----- |
 | 1 | Feb 20 | 📖 [Introduction: optimization in economics](01.introduction) <br/> 📖 [Logic and proofs](01.logic_proofs) | |
-| 2 | | 🔬 Problem set *alpha* | |
+| 2 | | 🔬 [Problem set *alpha*](ps01_alfa) | |
 | | Feb 27 | 📖 Univariate and bivariate optimization | |
 | 3 | | 🔬 Problem set *beta* | |
 | | March 5 | 📖 Elements of set theory | |
