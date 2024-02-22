@@ -1,0 +1,1 @@
+Verify the statement holds for $n=1$, and assuming $n<2^n$ prove that $n+1 < 2^{n+1}$.

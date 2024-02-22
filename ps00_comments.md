@@ -16,7 +16,7 @@ kernelspec:
 
 | | | Week | Topic |
 | ---- | ---- | ----- | ----- |
-| $\alpha$ | *alpha* | 2 | 🔬 [Logic and proofs](ps01_alpha)
+| $\alpha$ | *alpha* | 2 | 🔬 [Logic and proofs](/ps01_alfa)
 | $\beta$ | *beta* | 3 | |
 | $\gamma$ | *gamma* | 4 | |
 | $\delta$ | *delta* | 5 | |

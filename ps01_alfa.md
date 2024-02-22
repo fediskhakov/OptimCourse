@@ -17,14 +17,13 @@ kernelspec:
 
 ::::::{tab-set}
 :::::{tab-item} Formulation
-:::{include} ../02.tutorials/alpha1_formulation.md
+:::{include} problem_sets/alpha1_formulation.md
 :::::
 :::::{tab-item} Hint
-:::{include} ../02.tutorials/alpha1_hint.md
+:::{include} problem_sets/alpha1_hint.md
 :::::
 :::::{tab-item} Solution
-⏱
-<!-- :::{include} ../02.tutorials/alpha1_solution.md -->
+:::{include} problem_sets/alpha1_solution.md
 :::::
 ::::::
 
@@ -32,11 +31,13 @@ kernelspec:
 
 ::::::{tab-set}
 :::::{tab-item} Formulation
-:::{include} ../02.tutorials/alpha2_formulation.md
+:::{include} problem_sets/alpha2_formulation.md
+:::::
+:::::{tab-item} Hint
+:::{include} problem_sets/alpha2_hint.md
 :::::
 :::::{tab-item} Solution
-⏱
-<!-- :::{include} ../02.tutorials/alpha2_solution.md -->
+:::{include} problem_sets/alpha2_solution.md
 :::::
 ::::::
 
@@ -44,14 +45,13 @@ kernelspec:
 
 ::::::{tab-set}
 :::::{tab-item} Formulation
-:::{include} ../02.tutorials/alpha3_formulation.md
+:::{include} problem_sets/alpha3_formulation.md
 :::::
 :::::{tab-item} Hint
-:::{include} ../02.tutorials/alpha3_hint.md
+:::{include} problem_sets/alpha3_hint.md
 :::::
 :::::{tab-item} Solution
-⏱
-<!-- :::{include} ../02.tutorials/alpha3_solution.md -->
+:::{include} problem_sets/alpha3_solution.md
 :::::
 ::::::
 
@@ -59,14 +59,13 @@ kernelspec:
 
 ::::::{tab-set}
 :::::{tab-item} Formulation
-:::{include} ../02.tutorials/alpha4_formulation.md
+:::{include} problem_sets/alpha4_formulation.md
 :::::
 :::::{tab-item} Hint
-:::{include} ../02.tutorials/alpha4_hint.md
+:::{include} problem_sets/alpha4_hint.md
 :::::
 :::::{tab-item} Solution
-⏱
-<!-- :::{include} ../02.tutorials/alpha4_solution.md -->
+:::{include} problem_sets/alpha4_solution.md
 :::::
 ::::::
 
@@ -74,14 +73,13 @@ kernelspec:
 
 ::::::{tab-set}
 :::::{tab-item} Formulation
-:::{include} ../02.tutorials/alpha5_formulation.md
+:::{include} problem_sets/alpha5_formulation.md
 :::::
 :::::{tab-item} Hint
-:::{include} ../02.tutorials/alpha5_hint.md
+:::{include} problem_sets/alpha5_hint.md
 :::::
 :::::{tab-item} Solution
-⏱
-<!-- :::{include} ../02.tutorials/alpha5_solution.md -->
+:::{include} problem_sets/alpha5_solution.md
 :::::
 ::::::
 
