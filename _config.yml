@@ -78,7 +78,7 @@ html:
     utterances              : false
 #######################################################################################
 # A banner announcement at the top of the site.
-  announcement: "Welcome to ECON2125/6012 in semester 1, 2024" 
+  announcement: "" 
 
 #######################################################################################
 # LaTeX-specific settings
