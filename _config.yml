@@ -7,7 +7,7 @@ author                      : Fedor Iskhakov, based on notes by J. Stachurski, D
 copyright                   : "2024"  # Copyright year to be placed in the footer
 logo                        : "_static/img/optim_logo.png"  # A path to the book logo
 # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
-exclude_patterns            : [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
+exclude_patterns            : [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", problem_sets]
 # Auto-exclude files not in the toc
 only_build_toc_files        : false
 

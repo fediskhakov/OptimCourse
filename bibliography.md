@@ -22,7 +22,6 @@ kernelspec:
 ```{image} _static/img/bibliography/sundaram1996.png
 :alt: RK Sundaram (1996), A first course in optimization theory
 :width: 60%
-:align: center
 ```
 
 {cite:ps}`simon1994`
