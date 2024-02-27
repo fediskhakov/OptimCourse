@@ -68,7 +68,6 @@ html:
   use_repository_button     : true  # Whether to add a link to your repository button
   use_issues_button         : true  # Whether to add an "open an issue" button
   use_multitoc_numbering    : true   # Continuous numbering across parts/chapters
-  extra_footer              : ""  # Will be displayed underneath the footer.
   google_analytics_id       : ""  # A GA id that can be used to track book views.
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
   baseurl                   : "https://optim.iskh.me"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
@@ -76,6 +75,12 @@ html:
   comments:
     hypothesis              : false
     utterances              : false
+  extra_footer              : |
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    if (typeof jQuery == 'undefined') {document.write(unescape("%3Cscript src='_static/js/lib/jquery.1.9.1.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+    <script src="_static/js/readingTime.min.js"></script>
+    <script>$((function(){$("article").readingTime({wordCountTarget:".words",wordsPerMinute:100,lang:"en"})}));</script>
 #######################################################################################
 # A banner announcement at the top of the site.
   announcement: "" 
