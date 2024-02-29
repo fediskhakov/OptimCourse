@@ -14,9 +14,6 @@ kernelspec:
 
 # Exercise set B
 
-Please, see the 
-[**general comment on the tutorial exercises**](02.exercises.A.md)
-
 ## Question B.1
 
 Each of the definitions below is an attempt to define a set. Determine whether a set is indeed defined in each case, and if not explain why.
@@ -107,7 +104,7 @@ $f(x, y) = x^2 − y^2 − xy − x^3$ is concave.
 
 ***Question B.1***
 
-A set is _a collection of objects viewed as a whole_, see a precise [definition](ref:set-defition).
+A set is _a collection of objects viewed as a whole_, see a precise definition.
 
 Therefore:
 

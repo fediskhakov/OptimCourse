@@ -10,27 +10,27 @@ Course title: **Optimisation for Economics and Financial Economics**
 | 2 | | 🔬 [Problem set *alpha*](ps01_alfa) | |
 | | Feb 27 | 📖 [Univariate and bivariate optimization](02.optimization_intro) | |
 | 3 | | 🔬 Problem set *beta* | |
-| | March 5 | 📖 Elements of set theory | |
+| | March 5 | 📖 [Sets](03.sets) <br/> 📖 [Mappings](03.mappings) | |
 | 4 | | 🔬 Problem set *gamma* | |
 | | March 11 | Quiz 3% | 1h, computerized |
-| | March 12 | 📖 Basics of real analysis | |
+| | March 12 | 📖 Sequences, limits and continuity | |
 | 5 | | 🔬 Problem set *delta* | |
-| | March 19 | 📖 Elements of linear algebra | |
+| | March 19 | 📖 Fundamentals of optimization | |
 | 6 | | 🔬 Problem set *epsilon* | |
 | | March 25 | Quiz 3% | 1h, computerized |
-| | March 26 | 📖 Fundamentals of optimization | |
+| | March 26 | 📖 Multivariate calculus | |
 | | | Midterm exam 35% | 1h, invigilated |
 | | | Teaching break | 2 weeks |
 | 7 | | 🔬 Problem set *zeta* | |
-| | April 16 | 📖 Unconstrained optimization | |
+| | April 16 | 📖 Vector spaces and linear operators | |
 | 8 | | 🔬 Problem set *eta* | |
 | | April 22 | Quiz 3% | 1h, computerized |
-| | April 23 | 📖 Constrained optimization | |
+| | April 23 | 📖 Quadratic forms | |
 | 9 | | 🔬 Problem set *theta* | |
-| | April 30 | 📖 Convex optimization |
+| | April 30 | 📖 Unconstrained optimization |
 | 10 | | 🔬 Problem set *iota* | |
 | | May 6 | Quiz 3% | 1h, computerized |
-| | May 7 | 📖 Envelope and maximum theorems | |
+| | May 7 | 📖 Constrained optimization | |
 | 11 | | 🔬 Problem set *kappa* | |
 | | May 13 | Quiz 3% | 1h, computerized |
 | | May 14 | 📖 Dynamic optimization | |

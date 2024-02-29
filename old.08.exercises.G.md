@@ -14,9 +14,6 @@ kernelspec:
 
 # Exercise set G
 
-Please, see the 
-[**general comment on the tutorial exercises**](02.exercises.A.md)
-
 ## Question G.1
 
 Solve the following constrained maximization problem using the Lagrange method, including the second order conditions.

@@ -1,0 +1,1 @@
+Review the algorithm for univariate optimization in the lecture notes

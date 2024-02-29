@@ -19,9 +19,6 @@ kernelspec:
 
 # Exercise set L
 
-Please, see the 
-[**general comment on the tutorial exercises**](02.exercises.A.md)
-
 ## Question L.1
 
 Consider the dynamic optimization problem of dividing a fixed amount of resource over time to maximize the discounted sum of utilities in each period, which can be represented by a simple process of eating a cake over time. (This type of problems is known as `cake eating`). 

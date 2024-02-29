@@ -14,9 +14,6 @@ kernelspec:
 
 # Exercise set K
 
-Please, see the 
-[**general comment on the tutorial exercises**](02.exercises.A.md)
-
 ## Question K.1
 
 Consider an unconstrained optimization problem 

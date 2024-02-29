@@ -14,9 +14,6 @@ kernelspec:
 
 # Exercise set F
 
-Please, see the 
-[**general comment on the tutorial exercises**](02.exercises.A.md)
-
 ## Question F.1
 
 Consider a function $f : \mathbb{R}^N \ni {\bf x} \mapsto {\bf x}'B{\bf x} \in \mathbb{R}$, where $N \times N$ matrix $B$ is square but not symmetric.

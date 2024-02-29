@@ -14,9 +14,6 @@ kernelspec:
 
 # Exercise set C
 
-Please, see the 
-[**general comment on the tutorial exercises**](02.exercises.A.md)
-
 ## Question C.1
 
 Consider two convergent sequences in $\mathbb{R}^n$, $\{{\bf x}_i\}_{i=1}^\infty$ and 

@@ -1,0 +1,1 @@
+Draw a graph of function $f$.

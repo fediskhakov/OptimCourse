@@ -125,7 +125,6 @@ $$
 
 ```
 
-(ref-correspondences)=
 ### Correspondences 
 
 Note that the mappings of $\theta$ to $\mathcal{D}(\theta)$ or $\mathcal{D}^\star(\theta)$ are not functions because both $\mathcal{D}(\theta)$ and often $\mathcal{D}^\star(\theta)$ have multiple elements for a given $\theta$
@@ -184,7 +183,6 @@ $$
 ```
 
 ```{figure} _static/img/uhc_lhc.png
-:name: uhc_lhc
 :scale: 80%
 
 Examples of correspondences (for labels see below)

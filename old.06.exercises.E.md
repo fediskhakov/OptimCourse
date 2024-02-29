@@ -14,8 +14,6 @@ kernelspec:
 
 # Exercise set E
 
-Please, see the 
-[**general comment on the tutorial exercises**](02.exercises.A.md)
 
 ## Question E.1
 
