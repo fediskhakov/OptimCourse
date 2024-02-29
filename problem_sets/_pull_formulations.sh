@@ -3,7 +3,7 @@
 # Argument should be the prefix for the file name to copy, compulsory
 
 # Outside folder with exercises
-source_dir="../../02.tutorials"
+source_dir="../../01.tutorials"
 
 if [ $# -eq 0 ]
   then
