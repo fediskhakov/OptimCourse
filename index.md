@@ -11,7 +11,7 @@ Course title: **Optimisation for Economics and Financial Economics**
 | | Feb 27 | 📖 [Univariate and bivariate optimization](02.optimization_intro) | |
 | 3 | | 🔬 [Problem set *beta*](ps02_beta) | |
 | | March 5 | 📖 [Sets](03.sets) <br/> 📖 [Mappings](03.mappings) | |
-| 4 | | 🔬 [Problem set *gamma*](ps03_gamma) | |
+| 4 | | 🔬 Problem set *gamma* | |
 | | March 11 | Quiz 3% | 1h, computerized |
 | | March 12 | 📖 Sequences, limits and continuity | |
 | 5 | | 🔬 Problem set *delta* | |
