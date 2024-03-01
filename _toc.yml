@@ -7,28 +7,10 @@ title: ECON2125/6012
 chapters:
 - file: 01.introduction
 - file: 01.logic_proofs
-- file: ps00_comments.md
-- file: ps01_alfa.md
+- file: ps00_comments
+- file: ps01_alfa
 - file: 02.optimization_intro
-# - file: 03.set_theory
-# - file: 04.basic_analysis
-# - file: 05.linear_algebra
-# - file: 06.optimization_fundamentals
-# - file: 07.unconstrained
-# - file: 08.constrained
-# - file: 09.practical_session
-# - file: 10.envelope_maximum
-# - file: 11.dynamic
-# - file: 12.revision
-# - file: 02.exercises.A
-# - file: 03.exercises.B
-# - file: 04.exercises.C
-# - file: 05.exercises.D
-# - file: 06.exercises.E
-# - file: 07.exercises.F
-# - file: 08.exercises.G
-# - file: 09.exercises.H
-# - file: 10.exercises.K
-# - file: 11.exercises.L
-# - file: 99.practice_questions
+- file: ps02_beta
+- file: 03.sets
+- file: 03.mappings
 - file: bibliography

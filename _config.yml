@@ -83,7 +83,7 @@ html:
     <script>$((function(){$("article").readingTime({wordCountTarget:".words",wordsPerMinute:100,lang:"en"})}));</script>
 #######################################################################################
 # A banner announcement at the top of the site.
-  announcement: "" 
+  announcement: "Solutions to problem set <i>alpha</i> are now published. " 
 
 #######################################################################################
 # LaTeX-specific settings
