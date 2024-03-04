@@ -68,3 +68,17 @@ kernelspec:
 :::{include} problem_sets/gamma4_solution.md
 :::::
 ::::::
+
+## $\gamma$.5
+
+::::::{tab-set}
+:::::{tab-item} Formulation
+:::{include} problem_sets/gamma5_formulation.md
+:::::
+:::::{tab-item} Hint
+:::{include} problem_sets/gamma5_hint.md
+:::::
+:::::{tab-item} Solution
+:::{include} problem_sets/gamma5_solution.md
+:::::
+::::::

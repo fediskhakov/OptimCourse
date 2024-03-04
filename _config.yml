@@ -7,7 +7,7 @@ author                      : Fedor Iskhakov, based on notes by J. Stachurski, D
 copyright                   : "2024"  # Copyright year to be placed in the footer
 logo                        : "_static/img/optim_logo.png"  # A path to the book logo
 # Patterns to skip when building the book. Can be glob-style (e.g. "*skip.ipynb")
-exclude_patterns            : [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", problem_sets, README.md]
+exclude_patterns            : [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints", problem_sets, README.md, _*.sh]
 # Auto-exclude files not in the toc
 only_build_toc_files        : false
 
@@ -83,7 +83,7 @@ html:
     <script>$((function(){$("article").readingTime({wordCountTarget:".words",wordsPerMinute:100,lang:"en"})}));</script>
 #######################################################################################
 # A banner announcement at the top of the site.
-  announcement: "" 
+  announcement: "Solutions to problem set <i>alpha</i> are now published. " 
 
 #######################################################################################
 # LaTeX-specific settings
