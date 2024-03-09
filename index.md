@@ -12,31 +12,31 @@ Course title: **Optimisation for Economics and Financial Economics**
 | 3 | | 🔬 [Problem set *beta*](ps02_beta) | |
 | | March 5 | 📖 [Revision of set theory](03.sets) <br/> 📖 [Mappings and cardinality](03.mappings) | |
 | 4 | | 🔬 [Problem set *gamma*](ps03_gamma) | |
-| | March 11 | Quiz 3% | 1h, computerized |
+| | March 11 | Quiz 1 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | March 12 | 📖 Sequences, limits and continuity | |
 | 5 | | 🔬 Problem set *delta* | |
 | | March 19 | 📖 Fundamentals of optimization | |
 | 6 | | 🔬 Problem set *epsilon* | |
-| | March 25 | Quiz 3% | 1h, computerized |
+| | March 25 | Quiz 2 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | March 26 | 📖 Multivariate calculus | |
-| | | Midterm exam 35% | 1h, invigilated |
+| | | Midterm exam (35%) | 1h, invigilated |
 | | | Teaching break | 2 weeks |
 | 7 | | 🔬 Problem set *zeta* | |
 | | April 16 | 📖 Vector spaces and linear operators | |
 | 8 | | 🔬 Problem set *eta* | |
-| | April 22 | Quiz 3% | 1h, computerized |
+| | April 22 | Quiz 3 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | April 23 | 📖 Quadratic forms | |
 | 9 | | 🔬 Problem set *theta* | |
 | | April 30 | 📖 Unconstrained optimization |
 | 10 | | 🔬 Problem set *iota* | |
-| | May 6 | Quiz 3% | 1h, computerized |
+| | May 6 | Quiz 4 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | May 7 | 📖 Constrained optimization | |
 | 11 | | 🔬 Problem set *kappa* | |
-| | May 13 | Quiz 3% | 1h, computerized |
 | | May 14 | 📖 Dynamic optimization | |
 | 12 | | 🔬 Consultation hours | |
+| | May 20 | Quiz 5 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | May 21 | 📖 Revision | |
-| | | Final exam 55% | 3h, invigilated |
+| | | Final exam (55%) | 3h, invigilated |
 
 ## Course web pages
 
