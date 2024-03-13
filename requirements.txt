@@ -4,4 +4,3 @@ numpy
 scipy
 sympy
 matplotlib_venn
-__future__
