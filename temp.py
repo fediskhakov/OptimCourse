@@ -1,28 +1,41 @@
-import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
 
-# Create a grid of x and y values
-x = np.linspace(-5, 5, 100)
-y = np.linspace(-5, 5, 100)
-X, Y = np.meshgrid(x, y)
+from matplotlib import rc
+rc('font',**{'family':'serif','serif':['Palatino']})
+rc('text', usetex=True)
 
-# Calculate the values of the function min(x, y) for each (x, y) pair
-Z = X - np.minimum(X, Y)
-# Z = np.maximum(X-Y,0)
+def fx(n):
+    return 1 + 1/(n**(0.7))
+def subplots(fs):
+    "Custom subplots with axes throught the origin"
+    fig, ax = plt.subplots(figsize=fs)
+    # Set the axes through the origin
+    for spine in ['left', 'bottom']:
+        ax.spines[spine].set_position('zero')
+    for spine in ['right', 'top']:
+        ax.spines[spine].set_color('none')
+    return fig, ax
+def plot_seq(N,epsilon,a,fn):
+    fig, ax = subplots((9, 5))  
+    xmin, xmax = 0.5, N+1
+    ax.set_xlim(xmin, xmax)
+    ax.set_ylim(0, 2.1)
+    n = np.arange(1, N+1)
+    ax.set_xticks([])
+    ax.plot(n, fn(n), 'ko', label=r'$x_n$', alpha=0.8)
+    ax.hlines(a, xmin, xmax, color='k', lw=0.5, label='$a$')
+    ax.hlines([a - epsilon, a + epsilon], xmin, xmax, color='k', lw=0.5, linestyles='dashed')
+    ax.fill_between((xmin, xmax), a - epsilon, a + epsilon, facecolor='blue', alpha=0.1)
+    ax.set_yticks((a - epsilon, a, a + epsilon))
+    ax.set_yticklabels((r'$a - \epsilon$', r'$a$', r'$a + \epsilon$'))
+    ax.legend(loc='upper right', frameon=False, fontsize=14)
+    plt.show()
 
+N = 50
+a = 1
 
-# Create a 3D plot
-fig = plt.figure()
-ax = fig.add_subplot(111, projection='3d')
+plot_seq(N,0.30,a,fx)
+plot_seq(N,0.15,a,fx)
+plot_seq(N,0.08,a,fx)
 
-# Plot the surface
-ax.plot_surface(X, Y, Z, cmap='viridis')
-
-# Set axis labels
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('min(X, Y)')
-
-# Show the plot
-plt.show()
