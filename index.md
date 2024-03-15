@@ -14,7 +14,7 @@ Course title: **Optimisation for Economics and Financial Economics**
 | 4 | | 🔬 [Problem set *gamma*](ps03_gamma) | |
 | | March 11 | Quiz 1 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | March 12 | 📖 [Sequences, limits and continuity](04.basic_analysis) <br/> 📖 [Fundamentals of optimization](05.optimization_fundamentals) | |
-| 5 | | 🔬 Problem set *delta* | |
+| 5 | | 🔬 [Problem set *delta*](ps04_delta) | |
 | | March 19 | 📖 Multivariate calculus | |
 | 6 | | 🔬 Problem set *epsilon* | |
 | | March 25 | Quiz 2 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
