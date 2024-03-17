@@ -1,0 +1,1 @@
+Let $\beta \in (0,1)$. Show that the utility function $u(c_1,c_2) = \sqrt{c_1} + \beta \sqrt{c_2}$ from $[0,\infty) \times [0,\infty)$ to $\mathbb{R}$ to $\mathbb{R}$ is continuous everywhere in its domain.

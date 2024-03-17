@@ -1,0 +1,1 @@
+Let $A$ be the set of all consumption pairs $(c_1,c_2)$ such that $c_1 \ge 0$, $c_2 \ge 0$ and $p_1 c_1 + p_2 c_2 \le M$ Here $p_1$, $p_2$ and $M$ are positive constants. Show that $A$ is a closed subset of $\mathbb{R}^2$.

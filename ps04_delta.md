@@ -17,13 +17,13 @@ kernelspec:
 
 ::::::{tab-set}
 :::::{tab-item} Formulation
-:::{include} ../01.problem_sets/delta1_formulation.md
+:::{include} problem_sets/delta1_formulation.md
 :::::
 :::::{tab-item} Hint
-:::{include} ../01.problem_sets/delta1_hint.md
+:::{include} problem_sets/delta1_hint.md
 :::::
 :::::{tab-item} Solution
-:::{include} ../01.problem_sets/delta1_solution.md
+:::{include} problem_sets/delta1_solution.md
 :::::
 ::::::
 
@@ -31,13 +31,13 @@ kernelspec:
 
 ::::::{tab-set}
 :::::{tab-item} Formulation
-:::{include} ../01.problem_sets/delta2_formulation.md
+:::{include} problem_sets/delta2_formulation.md
 :::::
 :::::{tab-item} Hint
-:::{include} ../01.problem_sets/delta2_hint.md
+:::{include} problem_sets/delta2_hint.md
 :::::
 :::::{tab-item} Solution
-:::{include} ../01.problem_sets/delta2_solution.md
+:::{include} problem_sets/delta2_solution.md
 :::::
 ::::::
 
@@ -45,13 +45,13 @@ kernelspec:
 
 ::::::{tab-set}
 :::::{tab-item} Formulation
-:::{include} ../01.problem_sets/delta3_formulation.md
+:::{include} problem_sets/delta3_formulation.md
 :::::
 :::::{tab-item} Hint
-:::{include} ../01.problem_sets/delta3_hint.md
+:::{include} problem_sets/delta3_hint.md
 :::::
 :::::{tab-item} Solution
-:::{include} ../01.problem_sets/delta3_solution.md
+:::{include} problem_sets/delta3_solution.md
 :::::
 ::::::
 
@@ -59,13 +59,13 @@ kernelspec:
 
 ::::::{tab-set}
 :::::{tab-item} Formulation
-:::{include} ../01.problem_sets/delta4_formulation.md
+:::{include} problem_sets/delta4_formulation.md
 :::::
 :::::{tab-item} Hint
-:::{include} ../01.problem_sets/delta4_hint.md
+:::{include} problem_sets/delta4_hint.md
 :::::
 :::::{tab-item} Solution
-:::{include} ../01.problem_sets/delta4_solution.md
+:::{include} problem_sets/delta4_solution.md
 :::::
 ::::::
 
@@ -73,13 +73,13 @@ kernelspec:
 
 ::::::{tab-set}
 :::::{tab-item} Formulation
-:::{include} ../01.problem_sets/delta5_formulation.md
+:::{include} problem_sets/delta5_formulation.md
 :::::
 :::::{tab-item} Hint
-:::{include} ../01.problem_sets/delta5_hint.md
+:::{include} problem_sets/delta5_hint.md
 :::::
 :::::{tab-item} Solution
-:::{include} ../01.problem_sets/delta5_solution.md
+:::{include} problem_sets/delta5_solution.md
 :::::
 ::::::
 
@@ -87,12 +87,12 @@ kernelspec:
 
 ::::::{tab-set}
 :::::{tab-item} Formulation
-:::{include} ../01.problem_sets/delta6_formulation.md
+:::{include} problem_sets/delta6_formulation.md
 :::::
 :::::{tab-item} Hint
-:::{include} ../01.problem_sets/delta6_hint.md
+:::{include} problem_sets/delta6_hint.md
 :::::
 :::::{tab-item} Solution
-:::{include} ../01.problem_sets/delta6_solution.md
+:::{include} problem_sets/delta6_solution.md
 :::::
 ::::::

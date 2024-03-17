@@ -19,7 +19,7 @@ kernelspec:
 | $\alpha$ | *alpha* | 2 | 🔬 [Logic and proofs](/ps01_alfa)
 | $\beta$ | *beta* | 3 | 🔬 [Univariate and bivariate optimization](/ps02_beta) |
 | $\gamma$ | *gamma* | 4 | 🔬 [Sets and mappings](/ps03_gamma) |
-| $\delta$ | *delta* | 5 | |
+| $\delta$ | *delta* | 5 | 🔬 [Limits and continuity](/ps04_delta) |
 | $\epsilon$ | *epsilon* | 6 | |
 | $\zeta$ | *zeta* | 7 | |
 | $\eta$ | *eta* | 8 | |
