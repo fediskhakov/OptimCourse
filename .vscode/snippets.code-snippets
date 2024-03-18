@@ -82,6 +82,7 @@
 		":class: dropdown"
 		""
 		"$TM_SELECTED_TEXT$0"
+		"$\\blacksquare$"
 		"````"
 		""
 	],
