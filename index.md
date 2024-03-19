@@ -15,13 +15,13 @@ Course title: **Optimisation for Economics and Financial Economics**
 | | March 11 | Quiz 1 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | March 12 | 📖 [Sequences, limits and continuity](04.basic_analysis) <br/> 📖 [Fundamentals of optimization](05.optimization_fundamentals) | |
 | 5 | | 🔬 [Problem set *delta*](ps04_delta) | |
-| | March 19 | 📖 Multivariate calculus | |
+| | March 19 | 📖 [Multivariate calculus](06.multivariate_calculus) | |
 | 6 | | 🔬 Problem set *epsilon* | |
 | | March 25 | Quiz 2 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | March 26 | 📖 Vector spaces and linear operators | |
-| | | Midterm exam (35%) | 1h, invigilated |
 | | | Teaching break | 2 weeks |
 | 7 | | 🔬 Problem set *zeta* | |
+| | April 15 | Midterm exam (35%) | 1h, invigilated |
 | | April 16 | 📖 Convexity and uniqueness <br/> 📖 Quadratic forms | |
 | 8 | | 🔬 Problem set *eta* | |
 | | April 22 | Quiz 3 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
@@ -152,6 +152,12 @@ Computerized quizzes are located at the course Wattle page
 ``
 
 ### Midterm exam, 35%
+
+```{Note}
+:class: warning
+
+The midterm is scheduled at **18:30 to 19:45** (1 hour + 15 min reading time) on **Monday, April 15** in **Melville Hall**
+```
 
 - Classic close book on-campus 
 - Invigilated 
