@@ -83,7 +83,7 @@ html:
     <script>$((function(){$("article").readingTime({wordCountTarget:".words",wordsPerMinute:100,lang:"en"})}));</script>
 #######################################################################################
 # A banner announcement at the top of the site.
-  announcement: "Week 4 lecture notes updated to the FINAL VERSION" 
+  announcement: "Week 5 lecture DRAFT VERSION" 
 
 #######################################################################################
 # LaTeX-specific settings

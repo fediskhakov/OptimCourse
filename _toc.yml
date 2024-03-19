@@ -18,7 +18,7 @@ chapters:
 - file: 04.basic_analysis
 - file: 05.optimization_fundamentals
 - file: ps04_delta
-# - file: 06.multivariate_calculus
+- file: 06.multivariate_calculus
 # - file: 07.linear_algebra
 # - file: 08.quadratic_forms
 # - file: 09.unconstrained
