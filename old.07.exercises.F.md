@@ -100,62 +100,6 @@ Assignments:
 ```{admonition} Solution
 :class: caution
 
-
-See the last anwer in [this math stackexchange post](https://math.stackexchange.com/questions/307381/why-do-we-assume-that-a-matrix-in-quadratic-form-is-symmetric)
-
-**Question F.2**
-
-A possible answer:
-
-Represent the quadratic form as a dot product of two functions
-$f({\bf x}) = {\bf x}' A {\bf x} = h({\bf x}) \cdot g({\bf x})$, where
-$h({\bf x}) = {\bf x}$ and $g({\bf x}) = A {\bf x}$.
-Then $Dh({\bf x}) = I$ (identity matrix) and $Dg({\bf x}) = A$. 
-
-The last Jacobian can be easity derived by representing matrix multiplication as a linear combination of columns. Differentiating with respect to each element of ${\bf x}$ then yields a Jacobian composed of columns of matrix $A$, therefore equal to it.
-%
-$$
-g({\bf x}) = A {\bf x} = 
-\left(
-\begin{array}{ccc}
-a_{11} & \cdots & a_{1N} \\
-\vdots & \ddots & \vdots \\
-a_{N1} & \cdots & a_{NN}
-\end{array}
-\right)
-\left(
-\begin{array}{c}
-x_1 \\ \vdots \\ x_N
-\end{array}
-\right)
-=
-\left(
-\begin{array}{c}
-a_{11} \\ \vdots \\ a_{N1}
-\end{array}
-\right)
-x_1 +
-\cdots
-\left(
-\begin{array}{c}
-a_{1N} \\ \vdots \\ a_{NN}
-\end{array}
-\right)
-x_N
-$$
-%
-
-Applying the dot product rule of differentiation we have
-%
-$$
-D(h \cdot g)({\bf x}) = [h({\bf x})]' Dg({\bf x}) + [g({\bf x})]' Dh({\bf x}) = \\
-= {\bf x}'A + [A{\bf x}]' I = {\bf x}'A + {\bf x}' A = 2 {\bf x}' A = 2 [A {\bf x}]'
-$$
-% 
-The last transformation is transpose of a product + utilizing symmetry of $A$.
-
-The final answer is the $1 \times N$ matrix (row vector) $ Df({\bf x}) = \nabla f({\bf x}) = 2 {\bf x}' A = 2 [A {\bf x}]'$.
-
 **Question F.3**
 
 1. The optimization problem is:

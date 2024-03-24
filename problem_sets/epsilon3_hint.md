@@ -1,0 +1,1 @@
+Review the definition and facts about the gradient of a multivariate functions.

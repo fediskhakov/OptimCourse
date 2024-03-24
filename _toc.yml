@@ -20,6 +20,7 @@ chapters:
 - file: ps04_delta
 - file: 06.matrix_arithmetic
 - file: 06.multivariate_calculus
+- file: ps05_epsilon
 - file: 07.linear_algebra
 - file: 08.quadratic_forms
 - file: 09.unconstrained
