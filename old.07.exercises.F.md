@@ -14,29 +14,6 @@ kernelspec:
 
 # Exercise set F
 
-## Question F.1
-
-Consider a function $f : \mathbb{R}^N \ni {\bf x} \mapsto {\bf x}'B{\bf x} \in \mathbb{R}$, where $N \times N$ matrix $B$ is square but not symmetric.
-Show that the same function can be represented as ${\bf x}'A{\bf x}$ where $A$ is symmetric.
-
-```{hint}
-Recall that the definition of a quadratic form calls for the symmetry of matrix $A$. This exercise shows that this assumption is without loss of generality.
-```
-
-```{hint}
-Given a square matrix $M$, you can use the identity $M = \tfrac{1}{2}(M+M') + \tfrac{1}{2}(M-M')$ where the first component is symmetric and the second is not symmetric.
-```
-
-## Question F.2
-
-Consider a quadratic form $f : \mathbb{R}^N \ni {\bf x} \mapsto {\bf x}'A{\bf x} \in \mathbb{R}$, where $N \times N$ matrix $A$ is symmetric.
-
-Using the product rule of multivariate calculus, derive the gradient and Hessian of $f$. Make sure that all multiplied vectors and matrices are conformable.
-
-```{hint}
-You can assume that ${\bf x}$ is a column vector, and that any vector function of ${\bf x}$ is also a column vector.
-```
-
 ## Question F.3
 
 This exercise takes you on a tour of a binary logit model and its properties.
@@ -118,9 +95,11 @@ Assignments:
 
 4. Derive conditions under which the likelihood function has a unique maximizer (and thus the logit model has a unique maximum likelihood estimator).
 
-```{dropdown} Solutions
 
-**Question F.1**
+
+```{admonition} Solution
+:class: caution
+
 
 See the last anwer in [this math stackexchange post](https://math.stackexchange.com/questions/307381/why-do-we-assume-that-a-matrix-in-quadratic-form-is-symmetric)
 

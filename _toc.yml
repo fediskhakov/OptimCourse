@@ -28,9 +28,8 @@ chapters:
 
 - file: old.10.envelope_maximum
 
-- file: old.02.exercises.A
-- file: old.03.exercises.B
-- file: old.04.exercises.C
+- file: old.exercises.bank.md
+
 - file: old.05.exercises.D
 - file: old.06.exercises.E
 - file: old.07.exercises.F
