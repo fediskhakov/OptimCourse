@@ -16,7 +16,7 @@ Course title: **Optimisation for Economics and Financial Economics**
 | | March 12 | 📖 [Sequences, limits and continuity](04.basic_analysis) <br/> 📖 [Fundamentals of optimization](05.optimization_fundamentals) | |
 | 5 | | 🔬 [Problem set *delta*](ps04_delta) | |
 | | March 19 | 📖 [Matrices and matrix arithmetic](06.matrix_arithmetic) <br/> 📖 [Multivariate calculus](06.multivariate_calculus) | |
-| 6 | | 🔬 Problem set *epsilon* | |
+| 6 | | 🔬 [Problem set *epsilon*](ps05_epsilon) | |
 | | March 25 | Quiz 2 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | March 26 | 📖 Vector spaces and linear operators | |
 | | | Teaching break | 2 weeks |
