@@ -18,7 +18,7 @@ Course title: **Optimisation for Economics and Financial Economics**
 | | March 19 | 📖 [Matrices and matrix arithmetic](06.matrix_arithmetic) <br/> 📖 [Multivariate calculus](06.multivariate_calculus) | |
 | 6 | | 🔬 [Problem set *epsilon*](ps05_epsilon) | |
 | | March 25 | Quiz 2 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
-| | March 26 | 📖 Vector spaces and linear operators | |
+| | March 26 | 📖 [Vector spaces and linear operators](07.linear_algebra) | |
 | | | Teaching break | 2 weeks |
 | 7 | | 🔬 Problem set *zeta* | |
 | | April 15 | Midterm exam (35%) | 1h, invigilated |
