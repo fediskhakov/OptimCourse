@@ -21,7 +21,7 @@ Course title: **Optimisation for Economics and Financial Economics**
 | | March 26 | 📖 [Vector spaces and linear operators](07.linear_algebra) | |
 | | | Teaching break | 2 weeks |
 | 7 | | 🔬 Problem set *zeta* | |
-| | April 15 | Midterm exam (35%) | 1h, invigilated |
+| | April 15 | Midterm exam (35%) <br/> 🛟 [Practice problems](ps_practice_midterm) | 1h, invigilated |
 | | April 16 | 📖 Convexity and uniqueness <br/> 📖 Quadratic forms | |
 | 8 | | 🔬 Problem set *eta* | |
 | | April 22 | Quiz 3 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
