@@ -12,4 +12,17 @@ kernelspec:
 
 # 🛟 Practice problems for the midterm exam
 
-`COMING SOON`
+::::::{tab-set}
+:::::{tab-item} Formulation
+
+
+
+
+:::::
+:::::{tab-item} Solution
+
+
+
+
+:::::
+::::::

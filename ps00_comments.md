@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# 🧭 Tips for exercises
+# 🛟 Tips for exercises
 
 - tutorial exercises are organized in **problem sets** labeled with greek letters
 
