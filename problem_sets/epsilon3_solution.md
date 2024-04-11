@@ -33,7 +33,7 @@ $$
 We need to make sure that the direction vector had length 1, so we divide by its norm 
 
 $$
-\|(27, 6)\| = \sqrt{27^2+6^2} = \sqrt{3^{6}+3^2 2^2} = 3 sqrt{81+4}
+\|(27, 6)\| = \sqrt{27^2+6^2} = \sqrt{3^{6}+3^2 2^2} = 3 \sqrt{81+4}
 $$
 
 The direction vector is then $(27, 6)/3\sqrt{85} = (9/\sqrt{85}, 2/\sqrt{85})$
