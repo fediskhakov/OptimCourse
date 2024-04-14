@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# 🛟 Practice problems for the midterm exam
+# 🛟 Midterm exam practice
 
 First and foremost, practice by going through the solutions of **all of the tutorial problems**. They are the best resource in preparation for the exam.
 
