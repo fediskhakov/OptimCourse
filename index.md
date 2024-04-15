@@ -22,10 +22,10 @@ Course title: **Optimisation for Economics and Financial Economics**
 | | | Teaching break | 2 weeks |
 | 7 | | 🔬 [Problem set *zeta*](ps06_zeta) | |
 | | April 15 | Midterm exam (35%) <br/> 🛟 [Practice problems](ps_practice_midterm) | 1h, invigilated |
-| | April 16 | 📖 Convexity and uniqueness <br/> 📖 Quadratic forms | |
+| | April 16 | 📖 [Eigenpairs and diagonalization](08.determinants_eigenpairs) <br/> 📖 [Quadratic forms](08.quadratic_forms) | |
 | 8 | | 🔬 Problem set *eta* | |
 | | April 22 | Quiz 3 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
-| | April 23 | 📖 Unconstrained optimization | |
+| | April 23 | 📖 Unconstrained optimization <br/> 📖 Convexity and uniqueness | |
 | 9 | | 🔬 Problem set *theta* | |
 | | April 30 | 📖 Constrained optimization |
 | 10 | | 🔬 Problem set *iota* | |

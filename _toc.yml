@@ -24,7 +24,8 @@ chapters:
 - file: 07.linear_algebra
 - file: ps_practice_midterm
 - file: ps06_zeta
-# - file: 08.quadratic_forms
+- file: 08.determinants_eigenpairs
+- file: 08.quadratic_forms
 # - file: 09.unconstrained
 # - file: 10.constrained
 # - file: 11.dynamic
