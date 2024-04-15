@@ -83,7 +83,7 @@ html:
     <script>$((function(){$("article").readingTime({wordCountTarget:".words",wordsPerMinute:100,lang:"en"})}));</script>
 #######################################################################################
 # A banner announcement at the top of the site.
-  announcement: "Midterm exam will be based on lectures up and including WEEK 5 and problem set EPSILON" 
+  announcement: "Quiz on Monday April 22 will include all materials on linear algebra" 
 
 #######################################################################################
 # LaTeX-specific settings
