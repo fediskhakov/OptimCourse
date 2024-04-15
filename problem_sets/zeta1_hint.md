@@ -1,0 +1,1 @@
+Check all [relevant definitions and facts](https://optim.iskh.me/07.linear_algebra.html#bases-and-dimension)
