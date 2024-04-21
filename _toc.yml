@@ -26,9 +26,16 @@ chapters:
 - file: ps06_zeta
 - file: 08.determinants_eigenpairs
 - file: 08.quadratic_forms
-# - file: 09.unconstrained
-# - file: 10.constrained
-# - file: 11.dynamic
+
+- file: 09.unconstrained
+- file: 09.convexity_uniqueness
+- file: 10.constrained.Lagrange
+- file: 10.constrained.KKT
+- file: 11.maximum_theorem
+- file: 11.envelope_theorem
+- file: 12.dynamic
+
 # - file: 12.revision
 # - file: 99.practice_questions
+
 - file: bibliography
