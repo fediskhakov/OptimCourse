@@ -25,14 +25,14 @@ Course title: **Optimisation for Economics and Financial Economics**
 | | April 16 | 📖 [Eigenpairs and diagonalization](08.determinants_eigenpairs) <br/> 📖 [Quadratic forms](08.quadratic_forms) | |
 | 8 | | 🔬 [Problem set *eta*](ps07_eta) | |
 | | April 22 | Quiz 3 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
-| | April 23 | 📖 Unconstrained optimization <br/> 📖 Convexity and uniqueness | |
+| | April 23 | 📖 [Unconstrained optimization](09.unconstrained) <br/> 📖 [Convexity and uniqueness](09.convexity_uniqueness) | |
 | 9 | | 🔬 Problem set *theta* | |
-| | April 30 | 📖 Constrained optimization |
+| | April 30 | 📖 [Constrained optimization](10.constrained.Lagrange) <br/> 📖 [Kuhn-Tucker conditions](10.constrained.KKT) <br/> |
 | 10 | | 🔬 Problem set *iota* | |
 | | May 6 | Quiz 4 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
-| | May 7 | 📖 Maximum theorem <br/> 📖 Envelope theorem | |
+| | May 7 | 📖 [Maximum theorem](11.maximum_theorem) <br/> 📖 [Envelope theorem](11.envelope_theorem) | |
 | 11 | | 🔬 Problem set *kappa* | |
-| | May 14 | 📖 Dynamic optimization | |
+| | May 14 | 📖 [Dynamic optimization](12.dynamic.md) | |
 | 12 | | 🔬 Consultation hours | |
 | | May 20 | Quiz 5 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | May 21 | 📖 Revision | |
