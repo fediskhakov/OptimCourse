@@ -1,0 +1,1 @@
+Properties of the determinants help in finding an elegant solution.
