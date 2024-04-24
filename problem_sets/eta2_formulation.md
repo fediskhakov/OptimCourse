@@ -18,6 +18,24 @@ T_2 =
 \end{pmatrix}
 $$
 
+$$
+T_3 =
+\begin{pmatrix}
+5 & 0 & 1 \\
+1 & 1 & 0 \\
+-7 & 1 & 0
+\end{pmatrix}
+$$
+
+$$
+T_4 =
+\begin{pmatrix}
+2 & 0 & 0 \\
+0 & 3 & -1 \\
+0 & -1 & 3
+\end{pmatrix}
+$$
+
 perform the following tasks:
 
 1. Find eigenvalues
