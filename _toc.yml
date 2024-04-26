@@ -29,6 +29,7 @@ chapters:
 - file: ps07_eta
 - file: 09.unconstrained
 - file: 09.convexity_uniqueness
+- file: ps08_theta
 
 - file: 10.constrained.Lagrange
 - file: 10.constrained.KKT
