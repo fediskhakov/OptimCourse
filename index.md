@@ -26,7 +26,7 @@ Course title: **Optimisation for Economics and Financial Economics**
 | 8 | | 🔬 [Problem set *eta*](ps07_eta) | |
 | | April 22 | Quiz 3 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | April 23 | 📖 [Unconstrained optimization](09.unconstrained) <br/> 📖 [Convexity and uniqueness](09.convexity_uniqueness) | |
-| 9 | | 🔬 Problem set *theta* | |
+| 9 | | 🔬 [Problem set *theta*](ps08_theta) | |
 | | April 30 | 📖 [Constrained optimization](10.constrained.Lagrange) <br/> 📖 [Kuhn-Tucker conditions](10.constrained.KKT) <br/> |
 | 10 | | 🔬 Problem set *iota* | |
 | | May 6 | Quiz 4 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
