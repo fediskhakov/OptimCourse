@@ -21,9 +21,9 @@ kernelspec:
 | $\gamma$ | *gamma* | 4 | 🔬 [Sets and mappings](ps03_gamma) |
 | $\delta$ | *delta* | 5 | 🔬 [Limits and continuity](ps04_delta) |
 | $\epsilon$ | *epsilon* | 6 | 🔬 [Multivariate calculus](ps05_epsilon) |
-| $\zeta$ | *zeta* | 7 | [Vector spaces](ps06_zeta) |
-| $\eta$ | *eta* | 8 | |
-| $\theta$ | *theta* | 9 | |
+| $\zeta$ | *zeta* | 7 | 🔬 [Vector spaces](ps06_zeta) |
+| $\eta$ | *eta* | 8 | 🔬 [Determinants and quadratic forms](ps07_eta) |
+| $\theta$ | *theta* | 9 | 🔬 [Definiteness](ps08_theta) |
 | $\iota$ | *iota* | 10 | |
 | $\kappa$ | *kappa* | 11 | |
 
