@@ -3,9 +3,9 @@ Determine definiteness of the quadratic forms defined with the following matrixe
 $$
 A_1 =
 \begin{pmatrix}
--1 & 0 & 1 \\
--1 & 3 & 0 \\
--4 & 13 & -1
+5 & 0 & 1 \\
+1 & 1 & 0 \\
+-7 & 1 & 0
 \end{pmatrix}
 $$
 
