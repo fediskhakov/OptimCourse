@@ -1,4 +1,4 @@
-Consider an $(n \times n)$ **Vandermonde matrix** [this one can be named 🙂] of the form
+Consider an $(n \times n)$ **Vandermonde matrix** [this one can be named :)] of the form
 
 $$
 V =
@@ -17,4 +17,4 @@ $$
 \det(V) = \Pi_{j<i \leqslant n}(x_i-x_j)
 $$
 
-for the cases $n=2$ and $n=3$
+for the cases $n=2$, $n=3$ and  $n=4$

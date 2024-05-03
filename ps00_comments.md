@@ -23,7 +23,7 @@ kernelspec:
 | $\epsilon$ | *epsilon* | 6 | 🔬 [Multivariate calculus](ps05_epsilon) |
 | $\zeta$ | *zeta* | 7 | 🔬 [Vector spaces](ps06_zeta) |
 | $\eta$ | *eta* | 8 | 🔬 [Determinants and quadratic forms](ps07_eta) |
-| $\theta$ | *theta* | 9 | 🔬 [Definiteness](ps08_theeta) |
+| $\theta$ | *theta* | 9 | 🔬 [Definiteness](ps08_theta) |
 | $\iota$ | *iota* | 10 | |
 | $\kappa$ | *kappa* | 11 | |
 

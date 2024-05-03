@@ -69,17 +69,3 @@ kernelspec:
 :::::
 ::::::
 
-## $\eta$.5
-
-::::::{tab-set}
-:::::{tab-item} Formulation
-:::{include} problem_sets/eta5_formulation.md
-:::::
-:::::{tab-item} Hint
-:::{include} problem_sets/eta5_hint.md
-:::::
-:::::{tab-item} Solution
-:::{include} problem_sets/eta5_solution.md
-:::::
-::::::
-

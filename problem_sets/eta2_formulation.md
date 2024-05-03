@@ -1,15 +1,45 @@
-CHANGE OF BASIS
-by hand computation
-3x3 
+For each of the linear maps defined by the following matrices
 
-there and back
+$$
+T_1 =
+\begin{pmatrix}
+4/3 & -2/3 & 0 \\
+-1/3 & 5/3 & 0 \\
+0 & 0 & -1
+\end{pmatrix}
+$$
 
-start with daigonal matrix as linear function
-change basis 
-compute the transformation matrix and inverse
-compute linear map in new basis
+$$
+T_2 =
+\begin{pmatrix}
+4 & 0 & 1 \\
+-2 & 1 & 0 \\
+-2 & 0 & 1
+\end{pmatrix}
+$$
 
-compute eigenvalues
-compute eigenvectors
-compute diagonalization
+$$
+T_3 =
+\begin{pmatrix}
+5 & 0 & 1 \\
+1 & 1 & 0 \\
+-7 & 1 & 0
+\end{pmatrix}
+$$
 
+$$
+T_4 =
+\begin{pmatrix}
+2 & 0 & 0 \\
+0 & 3 & -1 \\
+0 & -1 & 3
+\end{pmatrix}
+$$
+
+perform the following tasks:
+
+1. Find eigenvalues
+2. Find at least one eigenvector for each eigenvalue
+3. Form a new basis from the eigenvectors (normalized or not)
+4. Compute the transformation matrix to the new basis
+5. Find the matrix $T$ in the new basis and verify that it is diagonal

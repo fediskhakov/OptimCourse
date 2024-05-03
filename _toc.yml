@@ -27,17 +27,16 @@ chapters:
 - file: 08.determinants_eigenpairs
 - file: 08.quadratic_forms
 - file: ps07_eta
-
 - file: 09.unconstrained
 - file: 09.convexity_uniqueness
-
+- file: ps08_theta
 - file: 10.constrained.Lagrange
 - file: 10.constrained.KKT
-
-- file: 11.maximum_theorem
 - file: 11.envelope_theorem
-
 - file: 12.dynamic
+- file: 11.maximum_theorem
+
+######
 
 - file: 12.revision
 
@@ -52,4 +51,5 @@ chapters:
 
 - file: 99.linear_algebra_2023
 - file: 99.practice_questions
+
 - file: bibliography
