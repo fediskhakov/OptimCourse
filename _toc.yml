@@ -35,7 +35,9 @@ chapters:
 - file: 10.constrained.KKT
 - file: 11.envelope_theorem
 - file: 12.dynamic
+
 - file: 11.maximum_theorem
+- file: 12.dynamic_inventory
 
 # - file: 12.revision
 # - file: 99.practice_questions
