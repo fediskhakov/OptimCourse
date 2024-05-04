@@ -1,4 +1,4 @@
-Determine definiteness of the quadratic forms defined with the following matrixes by both Silvester's criterion and eigenvalue criterion.
+Determine definiteness of the quadratic forms defined with the following matrixes either by Silvester's criterion or eigenvalue criterion.
 For the asymmetric matrices use their symmetric part $\frac{1}{2}(A+A^{T})$ when constructing a quadratic form (see exercise [$\epsilon$.1](https://optim.iskh.me/ps05_epsilon.html#epsilon-1))
 
 $$

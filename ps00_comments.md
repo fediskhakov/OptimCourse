@@ -24,7 +24,7 @@ kernelspec:
 | $\zeta$ | *zeta* | 7 | 🔬 [Vector spaces](ps06_zeta) |
 | $\eta$ | *eta* | 8 | 🔬 [Determinants and quadratic forms](ps07_eta) |
 | $\theta$ | *theta* | 9 | 🔬 [Definiteness](ps08_theta) |
-| $\iota$ | *iota* | 10 | |
+| $\iota$ | *iota* | 10 | 🔬 [Convexity and unconstrained optimization](ps09_iota) |
 | $\kappa$ | *kappa* | 11 | |
 
 

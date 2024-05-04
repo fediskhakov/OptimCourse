@@ -1,0 +1,1 @@
+It is useful to review the Hessian based conditions for concavity and the conditions for definiteness of a Hessian of $\mathbb{R}^2 \to \mathbb{R}$ functions.

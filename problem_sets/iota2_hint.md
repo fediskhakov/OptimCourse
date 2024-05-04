@@ -1,0 +1,1 @@
+Because the function is not differentiable everywhere in its domain, using the definition of concavity could be an easier way.

@@ -31,6 +31,7 @@ chapters:
 - file: 09.convexity_uniqueness
 - file: ps08_theta
 - file: 10.constrained.Lagrange
+- file: ps09_iota
 - file: 10.constrained.KKT
 - file: 11.envelope_theorem
 - file: 12.dynamic
