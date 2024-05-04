@@ -40,10 +40,7 @@ chapters:
 
 - file: 12.revision
 
-- file: old.exercises.bank.md
-
-- file: old.06.exercises.E
-- file: old.07.exercises.F
+- file: old.exercises_bank
 - file: old.08.exercises.G
 - file: old.09.exercises.H
 - file: old.10.exercises.K
