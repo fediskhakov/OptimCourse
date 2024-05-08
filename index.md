@@ -31,9 +31,9 @@ Course title: **Optimisation for Economics and Financial Economics**
 | 10 | | 🔬 [Problem set *iota*](ps09_iota) | |
 | | May 6 | Quiz 4 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | May 7 | 📖 [Constrained optimization](10.constrained.Lagrange) | |
-| 11 | | 🔬 Problem set *kappa* | |
+| 11 | | 🔬 [Problem set *kappa*](ps10_kappa) | |
 | | May 14 | 📖 [Kuhn-Tucker conditions](10.constrained.KKT) <br/> 📖 [Envelope theorem](11.envelope_theorem) | |
-| 12 | | 🔬 Problem set *lambda* <br/> 🛟 Consultations | |
+| 12 | | 🔬 [Problem set *lambda*](ps11_lambda) <br/> 🛟 Consultations | |
 | | May 20 | Quiz 5 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
 | | May 21 | 📖 Revision | |
 | | | Final exam (55%) | 3h, invigilated |

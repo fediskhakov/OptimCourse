@@ -39,8 +39,8 @@ chapters:
 
 - file: 11.maximum_theorem
 - file: 12.dynamic
-- file: 12.dynamic_inventory
 - file: 12.dynamic_cake_eating
+- file: 12.dynamic_inventory
 
 # - file: 12.revision
 # - file: 99.practice_questions
