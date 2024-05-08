@@ -54,4 +54,6 @@ and hence $u/2$ is an upper bound of $A$. Therefore $\sup A \leq u/2$.
 Rearranging gives $\bar b \leq u$, as claimed.
 
 
-````
+
+
+
