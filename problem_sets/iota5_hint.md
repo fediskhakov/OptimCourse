@@ -1,0 +1,1 @@
+To answer the first part of the question, review facts of existence of optima.

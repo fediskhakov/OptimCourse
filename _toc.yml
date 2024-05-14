@@ -28,15 +28,19 @@ chapters:
 - file: 08.quadratic_forms
 - file: ps07_eta
 - file: 09.unconstrained
-- file: 09.convexity_uniqueness
 - file: ps08_theta
+- file: 09.convexity_uniqueness
+- file: ps09_iota
 - file: 10.constrained.Lagrange
+- file: ps10_kappa
 - file: 10.constrained.KKT
 - file: 11.envelope_theorem
-- file: 12.dynamic
-- file: 11.maximum_theorem
+- file: ps11_lambda
 
-######
+- file: 11.maximum_theorem
+- file: 12.dynamic
+- file: 12.dynamic_cake_eating
+- file: 12.dynamic_inventory
 
 - file: 12.revision
 
