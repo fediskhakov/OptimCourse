@@ -1,0 +1,1 @@
+Envelope theorem should be useful here.

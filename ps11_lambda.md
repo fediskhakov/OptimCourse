@@ -164,3 +164,18 @@ Level curves of the criterion function and constraint curve.
 ::::::
 
 
+## $\lambda$.3
+
+::::::{tab-set}
+:::::{tab-item} Formulation
+:::{include} problem_sets/lambda3_formulation.md
+:::::
+:::::{tab-item} Hint
+:::{include} problem_sets/lambda3_hint.md
+:::
+:::::
+:::::{tab-item} Solution
+:::{include} problem_sets/lambda3_solution.md
+:::::
+::::::
+
