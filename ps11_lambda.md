@@ -143,20 +143,6 @@ Level curves of the criterion function and constraint curve.
 :::::{tab-item} Hint
 :::{include} problem_sets/lambda2_hint.md
 :::
-
-:::{glue:figure} pic3
-:width: 50%
-:align: center
-
-Level curves of the criterion function and constraint curve.
-:::
-:::{glue:figure} pic4
-:width: 50%
-:align: center
-
-3D plot of the criterion surface with the constraint curve projected to it.
-:::
-
 :::::
 :::::{tab-item} Solution
 :::{include} problem_sets/lambda2_solution.md
