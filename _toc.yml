@@ -42,11 +42,7 @@ chapters:
 - file: 12.dynamic_cake_eating
 - file: 12.dynamic_inventory
 
-- file: 12.revision
-
-- file: old.exercises_bank
-- file: old.11.exercises.L
-- file: 99.linear_algebra_2023
-- file: 99.practice_questions
+- file: 13.revision
+- file: 13.previous_exams
 
 - file: bibliography
