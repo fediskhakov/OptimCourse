@@ -35,7 +35,7 @@ Course title: **Optimisation for Economics and Financial Economics**
 | | May 14 | 📖 [Kuhn-Tucker conditions](10.constrained.KKT) <br/> 📖 [Envelope theorem](11.envelope_theorem) | |
 | 12 | | 🔬 [Problem set *lambda*](ps11_lambda) <br/> 🛟 Consultations | |
 | | May 20 | Quiz 5 (3%) [link](https://wattlecourses.anu.edu.au/course/view.php?id=42514#section-1) | 20min, computerized |
-| | May 21 | 📖 [Revision](13.revision) <br/> 🔬 [Previous exams](13.previous_exams) | |
+| | May 21 | 📖 [Revision](13.revision) | |
 | | | Final exam (55%) | 3h, invigilated |
 
 ## Course web pages
